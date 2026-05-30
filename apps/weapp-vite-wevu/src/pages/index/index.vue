@@ -13,6 +13,7 @@ import {
   replaceCount,
   sliceWindow,
   sortByScoreThenId,
+  stressCycles,
   updateEveryNth,
   type BenchmarkItem,
   type RuntimeMetric,
@@ -56,48 +57,66 @@ async function runBenchmark() {
   metrics.value = []
   groups.value = []
   let start = now()
-  items.value = createItems(initialCount)
-  visibleItems.value = items.value
-  await nextTick()
+  for (let index = 0; index < stressCycles.initialRender; index += 1) {
+    items.value = createItems(initialCount, index * 10_000)
+    visibleItems.value = items.value
+    groups.value = []
+    await nextTick()
+  }
   record('initial-render', start, visibleItems.value)
 
   start = now()
-  items.value = [...items.value, ...createItems(batchCount, items.value.length)]
-  visibleItems.value = items.value
-  await nextTick()
+  for (let index = 0; index < stressCycles.appendBatch; index += 1) {
+    items.value = [...items.value, ...createItems(batchCount, items.value.length)]
+    visibleItems.value = items.value
+    await nextTick()
+  }
   record('append-batch', start, visibleItems.value)
 
   start = now()
-  items.value = updateEveryNth(items.value)
-  visibleItems.value = items.value
-  await nextTick()
+  for (let index = 0; index < stressCycles.updateEveryNth; index += 1) {
+    items.value = updateEveryNth(items.value, 3 + (index % 5))
+    visibleItems.value = items.value
+    await nextTick()
+  }
   record('update-every-5th', start, visibleItems.value)
 
   start = now()
-  visibleItems.value = sortByScoreThenId(items.value)
-  await nextTick()
+  for (let index = 0; index < stressCycles.sortScoreDesc; index += 1) {
+    const sortedItems = sortByScoreThenId(items.value)
+    visibleItems.value = index % 2 === 0 ? sortedItems : sortedItems.reverse()
+    await nextTick()
+  }
   record('sort-score-desc', start, visibleItems.value)
 
   start = now()
-  visibleItems.value = filterActiveHighScore(items.value)
-  await nextTick()
+  for (let index = 0; index < stressCycles.filterActiveHighScore; index += 1) {
+    visibleItems.value = index % 2 === 0 ? filterActiveHighScore(items.value) : items.value
+    await nextTick()
+  }
   record('filter-active-high-score', start, visibleItems.value)
 
   start = now()
-  groups.value = groupItems(items.value)
-  await nextTick()
+  for (let index = 0; index < stressCycles.groupAggregate; index += 1) {
+    groups.value = groupItems(items.value)
+    await nextTick()
+  }
   recordGroups('group-aggregate-render', start, groups.value)
 
   start = now()
-  visibleItems.value = sliceWindow(items.value)
-  await nextTick()
+  for (let index = 0; index < stressCycles.windowSlice; index += 1) {
+    visibleItems.value = sliceWindow(items.value, index * 53)
+    await nextTick()
+  }
   record('window-slice-middle', start, visibleItems.value)
 
   start = now()
-  items.value = createItems(replaceCount, 10_000)
-  visibleItems.value = items.value
-  groups.value = []
-  await nextTick()
+  for (let index = 0; index < stressCycles.replaceDataset; index += 1) {
+    items.value = createItems(replaceCount, 100_000 + index * replaceCount)
+    visibleItems.value = items.value
+    groups.value = []
+    await nextTick()
+  }
   record('replace-dataset', start, visibleItems.value)
 
   // eslint-disable-next-line no-console

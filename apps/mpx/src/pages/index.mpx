@@ -51,6 +51,7 @@ import {
   replaceCount,
   sliceWindow,
   sortByScoreThenId,
+  stressCycles,
   updateEveryNth,
 } from '../shared/benchmark'
 
@@ -97,55 +98,73 @@ createPage({
       this.metrics = []
       this.groups = []
       let start = now()
-      this.items = createItems(initialCount)
-      this.visibleItems = this.items
-      this.summary = `${this.visibleItems.length}/${this.items.length}`
-      await this.renderTick()
+      for (let index = 0; index < stressCycles.initialRender; index += 1) {
+        this.items = createItems(initialCount, index * 10000)
+        this.visibleItems = this.items
+        this.groups = []
+        this.summary = `${this.visibleItems.length}/${this.items.length}`
+        await this.renderTick()
+      }
       this.record('initial-render', start, this.visibleItems)
 
       start = now()
-      this.items = [...this.items, ...createItems(batchCount, this.items.length)]
-      this.visibleItems = this.items
-      this.summary = `${this.visibleItems.length}/${this.items.length}`
-      await this.renderTick()
+      for (let index = 0; index < stressCycles.appendBatch; index += 1) {
+        this.items = [...this.items, ...createItems(batchCount, this.items.length)]
+        this.visibleItems = this.items
+        this.summary = `${this.visibleItems.length}/${this.items.length}`
+        await this.renderTick()
+      }
       this.record('append-batch', start, this.visibleItems)
 
       start = now()
-      this.items = updateEveryNth(this.items)
-      this.visibleItems = this.items
-      this.summary = `${this.visibleItems.length}/${this.items.length}`
-      await this.renderTick()
+      for (let index = 0; index < stressCycles.updateEveryNth; index += 1) {
+        this.items = updateEveryNth(this.items, 3 + (index % 5))
+        this.visibleItems = this.items
+        this.summary = `${this.visibleItems.length}/${this.items.length}`
+        await this.renderTick()
+      }
       this.record('update-every-5th', start, this.visibleItems)
 
       start = now()
-      this.visibleItems = sortByScoreThenId(this.items)
-      this.summary = `${this.visibleItems.length}/${this.items.length}`
-      await this.renderTick()
+      for (let index = 0; index < stressCycles.sortScoreDesc; index += 1) {
+        const sortedItems = sortByScoreThenId(this.items)
+        this.visibleItems = index % 2 === 0 ? sortedItems : sortedItems.reverse()
+        this.summary = `${this.visibleItems.length}/${this.items.length}`
+        await this.renderTick()
+      }
       this.record('sort-score-desc', start, this.visibleItems)
 
       start = now()
-      this.visibleItems = filterActiveHighScore(this.items)
-      this.summary = `${this.visibleItems.length}/${this.items.length}`
-      await this.renderTick()
+      for (let index = 0; index < stressCycles.filterActiveHighScore; index += 1) {
+        this.visibleItems = index % 2 === 0 ? filterActiveHighScore(this.items) : this.items
+        this.summary = `${this.visibleItems.length}/${this.items.length}`
+        await this.renderTick()
+      }
       this.record('filter-active-high-score', start, this.visibleItems)
 
       start = now()
-      this.groups = groupItems(this.items)
-      await this.renderTick()
+      for (let index = 0; index < stressCycles.groupAggregate; index += 1) {
+        this.groups = groupItems(this.items)
+        await this.renderTick()
+      }
       this.recordGroups('group-aggregate-render', start, this.groups)
 
       start = now()
-      this.visibleItems = sliceWindow(this.items)
-      this.summary = `${this.visibleItems.length}/${this.items.length}`
-      await this.renderTick()
+      for (let index = 0; index < stressCycles.windowSlice; index += 1) {
+        this.visibleItems = sliceWindow(this.items, index * 53)
+        this.summary = `${this.visibleItems.length}/${this.items.length}`
+        await this.renderTick()
+      }
       this.record('window-slice-middle', start, this.visibleItems)
 
       start = now()
-      this.items = createItems(replaceCount, 10000)
-      this.visibleItems = this.items
-      this.groups = []
-      this.summary = `${this.visibleItems.length}/${this.items.length}`
-      await this.renderTick()
+      for (let index = 0; index < stressCycles.replaceDataset; index += 1) {
+        this.items = createItems(replaceCount, 100000 + index * replaceCount)
+        this.visibleItems = this.items
+        this.groups = []
+        this.summary = `${this.visibleItems.length}/${this.items.length}`
+        await this.renderTick()
+      }
       this.record('replace-dataset', start, this.visibleItems)
 
       // eslint-disable-next-line no-console

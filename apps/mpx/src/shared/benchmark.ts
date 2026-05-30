@@ -20,10 +20,21 @@ export interface BenchmarkGroup {
   totalScore: number
 }
 
-export const initialCount = 300
+export const initialCount = 480
 export const batchCount = 120
-export const replaceCount = 360
-export const windowSize = 80
+export const replaceCount = 640
+export const windowSize = 140
+
+export const stressCycles = {
+  initialRender: 3,
+  appendBatch: 4,
+  updateEveryNth: 6,
+  sortScoreDesc: 5,
+  filterActiveHighScore: 6,
+  groupAggregate: 6,
+  windowSlice: 10,
+  replaceDataset: 3,
+} as const
 
 export function now() {
   return Date.now()
@@ -93,6 +104,7 @@ export function groupChecksum(groups: BenchmarkGroup[]) {
   ), 0)
 }
 
-export function sliceWindow(items: BenchmarkItem[], start = 160, size = windowSize) {
-  return items.slice(start, start + size)
+export function sliceWindow(items: BenchmarkItem[], start = 240, size = windowSize) {
+  const safeStart = Math.max(0, Math.min(start, Math.max(0, items.length - size)))
+  return items.slice(safeStart, safeStart + size)
 }

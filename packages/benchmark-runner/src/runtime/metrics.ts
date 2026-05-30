@@ -1,5 +1,6 @@
 import type { RuntimeMetric } from '../scenario'
-import { metricCount } from './constants'
+import process from 'node:process'
+import { defaultMetricsTimeout, metricCount } from './constants'
 
 function isRuntimeMetric(value: unknown): value is RuntimeMetric {
   if (!value || typeof value !== 'object') {
@@ -21,7 +22,8 @@ function normalizeMetrics(value: unknown): RuntimeMetric[] {
 
 export async function waitForMetrics(page: { data: (path?: string) => Promise<unknown> }) {
   const started = Date.now()
-  while (Date.now() - started < 10_000) {
+  const timeout = Number(process.env['BENCH_RUNTIME_METRICS_TIMEOUT'] ?? defaultMetricsTimeout)
+  while (Date.now() - started < timeout) {
     const direct = normalizeMetrics(await page.data('metrics'))
     if (direct.length >= metricCount) {
       return direct

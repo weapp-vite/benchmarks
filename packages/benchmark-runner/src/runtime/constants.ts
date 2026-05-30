@@ -1,5 +1,6 @@
 export const defaultIterations = 3
 export const defaultLaunchTimeout = 60_000
+export const defaultMetricsTimeout = 45_000
 export const metricCount = 8
 
 export const commonWechatCliPaths = [
