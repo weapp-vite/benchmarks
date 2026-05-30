@@ -40,9 +40,6 @@ jobs:
       - name: Install Dependencies
         run: pnpm i
 
-      - name: Build Release Tooling
-        run: pnpm run tooling:build
-
       - name: Create Release Pull Request or Publish to npm
         id: changesets
         uses: changesets/action@v1
@@ -81,9 +78,6 @@ jobs:
 
       - name: Install Dependencies
         run: pnpm i
-
-      - name: Build Release Tooling
-        run: pnpm run tooling:build
 
       - name: Configure Git
         run: |
