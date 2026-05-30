@@ -20,7 +20,7 @@
     "dev": "turbo run dev --parallel",
     "test": "vitest run",
     "test:dev": "vitest",
-    "lint": "pnpm run tooling:build && turbo run lint",
+    "lint": "turbo run lint",
     "tsd": "turbo run tsd",
     "audit": "pnpm audit --audit-level=moderate",
     "audit:fix": "pnpm audit --fix",
