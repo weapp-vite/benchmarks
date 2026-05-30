@@ -1,0 +1,16 @@
+{
+  "name": "uni-app vite vue3 benchmark",
+  "appid": "__UNI_BENCHMARK_VUE3__",
+  "description": "uni-app vite vue3 benchmark",
+  "versionName": "0.0.0",
+  "versionCode": "1",
+  "mp-weixin": {
+    "appid": "wxb3d842a4a7e3440d",
+    "setting": {
+      "urlCheck": false,
+      "es6": true,
+      "minified": true
+    }
+  },
+  "vueVersion": "3"
+}

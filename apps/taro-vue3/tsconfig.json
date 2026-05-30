@@ -1,0 +1,15 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "composite": true,
+    "jsx": "preserve",
+    "types": [
+      "@tarojs/taro"
+    ]
+  },
+  "include": [
+    "config/**/*.ts",
+    "src/**/*.ts",
+    "src/**/*.vue"
+  ]
+}

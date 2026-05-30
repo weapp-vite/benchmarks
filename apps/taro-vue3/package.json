@@ -1,0 +1,31 @@
+{
+  "name": "@benchmarks/taro-vue3",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "pnpm run build:weapp",
+    "build:weapp": "taro build --type weapp",
+    "dev": "taro build --type weapp --watch",
+    "lint": "node ../../node_modules/eslint/bin/eslint.js .",
+    "typecheck": "vue-tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@tarojs/components": "4.2.0",
+    "@tarojs/helper": "4.2.0",
+    "@tarojs/plugin-framework-vue3": "4.2.0",
+    "@tarojs/plugin-platform-weapp": "4.2.0",
+    "@tarojs/runtime": "4.2.0",
+    "@tarojs/shared": "4.2.0",
+    "@tarojs/taro": "4.2.0",
+    "vue": "^3.5.35"
+  },
+  "devDependencies": {
+    "@tarojs/cli": "4.2.0",
+    "@tarojs/vite-runner": "4.2.0",
+    "@vue/compiler-sfc": "^3.5.35",
+    "typescript": "^6.0.3",
+    "vite": "^4.5.14",
+    "vue-tsc": "^3.3.3"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "uni-app x benchmark",
+  "appid": "__UNI_BENCHMARK_X__",
+  "description": "uni-app x benchmark",
+  "versionName": "0.0.0",
+  "versionCode": "1",
+  "uni-app-x": {},
+  "mp-weixin": {
+    "appid": "wxb3d842a4a7e3440d",
+    "setting": {
+      "urlCheck": false,
+      "es6": true,
+      "minified": true
+    }
+  },
+  "vueVersion": "3"
+}

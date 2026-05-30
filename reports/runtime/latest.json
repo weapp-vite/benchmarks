@@ -1,0 +1,524 @@
+{
+  "generatedAt": "2026-05-30T17:47:45.128Z",
+  "mode": "ide-e2e",
+  "iterations": 3,
+  "samples": [
+    {
+      "project": "weapp-vite-wevu",
+      "label": "weapp-vite + wevu",
+      "iteration": 1,
+      "page": "pages/index/index",
+      "ok": true,
+      "source": "page-data",
+      "metrics": [
+        {
+          "name": "initial-render",
+          "durationMs": 4,
+          "count": 300,
+          "checksum": 59999
+        },
+        {
+          "name": "append-batch",
+          "durationMs": 3,
+          "count": 420,
+          "checksum": 109096
+        },
+        {
+          "name": "update-every-5th",
+          "durationMs": 7,
+          "count": 420,
+          "checksum": 109050
+        },
+        {
+          "name": "filter-active-high-score",
+          "durationMs": 2,
+          "count": 126,
+          "checksum": 36486
+        }
+      ]
+    },
+    {
+      "project": "weapp-vite-wevu",
+      "label": "weapp-vite + wevu",
+      "iteration": 2,
+      "page": "pages/index/index",
+      "ok": true,
+      "source": "page-data",
+      "metrics": [
+        {
+          "name": "initial-render",
+          "durationMs": 2,
+          "count": 300,
+          "checksum": 59999
+        },
+        {
+          "name": "append-batch",
+          "durationMs": 5,
+          "count": 420,
+          "checksum": 109096
+        },
+        {
+          "name": "update-every-5th",
+          "durationMs": 6,
+          "count": 420,
+          "checksum": 109050
+        },
+        {
+          "name": "filter-active-high-score",
+          "durationMs": 2,
+          "count": 126,
+          "checksum": 36486
+        }
+      ]
+    },
+    {
+      "project": "weapp-vite-wevu",
+      "label": "weapp-vite + wevu",
+      "iteration": 3,
+      "page": "pages/index/index",
+      "ok": true,
+      "source": "page-data",
+      "metrics": [
+        {
+          "name": "initial-render",
+          "durationMs": 6,
+          "count": 300,
+          "checksum": 59999
+        },
+        {
+          "name": "append-batch",
+          "durationMs": 3,
+          "count": 420,
+          "checksum": 109096
+        },
+        {
+          "name": "update-every-5th",
+          "durationMs": 3,
+          "count": 420,
+          "checksum": 109050
+        },
+        {
+          "name": "filter-active-high-score",
+          "durationMs": 4,
+          "count": 126,
+          "checksum": 36486
+        }
+      ]
+    },
+    {
+      "project": "uni-app-vite-vue3",
+      "label": "uni-app vite vue3",
+      "iteration": 1,
+      "page": "pages/index/index",
+      "ok": true,
+      "source": "console-log",
+      "metrics": [
+        {
+          "name": "initial-render",
+          "durationMs": 2,
+          "count": 300,
+          "checksum": 59999
+        },
+        {
+          "name": "append-batch",
+          "durationMs": 3,
+          "count": 420,
+          "checksum": 109096
+        },
+        {
+          "name": "update-every-5th",
+          "durationMs": 6,
+          "count": 420,
+          "checksum": 109050
+        },
+        {
+          "name": "filter-active-high-score",
+          "durationMs": 4,
+          "count": 126,
+          "checksum": 36486
+        }
+      ]
+    },
+    {
+      "project": "uni-app-vite-vue3",
+      "label": "uni-app vite vue3",
+      "iteration": 2,
+      "page": "pages/index/index",
+      "ok": true,
+      "source": "console-log",
+      "metrics": [
+        {
+          "name": "initial-render",
+          "durationMs": 3,
+          "count": 300,
+          "checksum": 59999
+        },
+        {
+          "name": "append-batch",
+          "durationMs": 6,
+          "count": 420,
+          "checksum": 109096
+        },
+        {
+          "name": "update-every-5th",
+          "durationMs": 5,
+          "count": 420,
+          "checksum": 109050
+        },
+        {
+          "name": "filter-active-high-score",
+          "durationMs": 3,
+          "count": 126,
+          "checksum": 36486
+        }
+      ]
+    },
+    {
+      "project": "uni-app-vite-vue3",
+      "label": "uni-app vite vue3",
+      "iteration": 3,
+      "page": "pages/index/index",
+      "ok": true,
+      "source": "console-log",
+      "metrics": [
+        {
+          "name": "initial-render",
+          "durationMs": 3,
+          "count": 300,
+          "checksum": 59999
+        },
+        {
+          "name": "append-batch",
+          "durationMs": 4,
+          "count": 420,
+          "checksum": 109096
+        },
+        {
+          "name": "update-every-5th",
+          "durationMs": 4,
+          "count": 420,
+          "checksum": 109050
+        },
+        {
+          "name": "filter-active-high-score",
+          "durationMs": 2,
+          "count": 126,
+          "checksum": 36486
+        }
+      ]
+    },
+    {
+      "project": "uni-app-x",
+      "label": "uni-app x",
+      "iteration": 1,
+      "page": "pages/index/index",
+      "ok": true,
+      "source": "console-log",
+      "metrics": [
+        {
+          "name": "initial-render",
+          "durationMs": 2,
+          "count": 300,
+          "checksum": 59999
+        },
+        {
+          "name": "append-batch",
+          "durationMs": 4,
+          "count": 420,
+          "checksum": 109096
+        },
+        {
+          "name": "update-every-5th",
+          "durationMs": 3,
+          "count": 420,
+          "checksum": 109050
+        },
+        {
+          "name": "filter-active-high-score",
+          "durationMs": 4,
+          "count": 126,
+          "checksum": 36486
+        }
+      ]
+    },
+    {
+      "project": "uni-app-x",
+      "label": "uni-app x",
+      "iteration": 2,
+      "page": "pages/index/index",
+      "ok": true,
+      "source": "console-log",
+      "metrics": [
+        {
+          "name": "initial-render",
+          "durationMs": 3,
+          "count": 300,
+          "checksum": 59999
+        },
+        {
+          "name": "append-batch",
+          "durationMs": 4,
+          "count": 420,
+          "checksum": 109096
+        },
+        {
+          "name": "update-every-5th",
+          "durationMs": 6,
+          "count": 420,
+          "checksum": 109050
+        },
+        {
+          "name": "filter-active-high-score",
+          "durationMs": 3,
+          "count": 126,
+          "checksum": 36486
+        }
+      ]
+    },
+    {
+      "project": "uni-app-x",
+      "label": "uni-app x",
+      "iteration": 3,
+      "page": "pages/index/index",
+      "ok": true,
+      "source": "console-log",
+      "metrics": [
+        {
+          "name": "initial-render",
+          "durationMs": 1,
+          "count": 300,
+          "checksum": 59999
+        },
+        {
+          "name": "append-batch",
+          "durationMs": 4,
+          "count": 420,
+          "checksum": 109096
+        },
+        {
+          "name": "update-every-5th",
+          "durationMs": 4,
+          "count": 420,
+          "checksum": 109050
+        },
+        {
+          "name": "filter-active-high-score",
+          "durationMs": 1,
+          "count": 126,
+          "checksum": 36486
+        }
+      ]
+    },
+    {
+      "project": "mpx",
+      "label": "mpx",
+      "iteration": 1,
+      "page": "pages/index",
+      "ok": true,
+      "source": "page-data",
+      "metrics": [
+        {
+          "name": "initial-render",
+          "durationMs": 5,
+          "count": 300,
+          "checksum": 59999
+        },
+        {
+          "name": "append-batch",
+          "durationMs": 1,
+          "count": 420,
+          "checksum": 109096
+        },
+        {
+          "name": "update-every-5th",
+          "durationMs": 2,
+          "count": 420,
+          "checksum": 109050
+        },
+        {
+          "name": "filter-active-high-score",
+          "durationMs": 0,
+          "count": 126,
+          "checksum": 36486
+        }
+      ]
+    },
+    {
+      "project": "mpx",
+      "label": "mpx",
+      "iteration": 2,
+      "page": "pages/index",
+      "ok": true,
+      "source": "page-data",
+      "metrics": [
+        {
+          "name": "initial-render",
+          "durationMs": 1,
+          "count": 300,
+          "checksum": 59999
+        },
+        {
+          "name": "append-batch",
+          "durationMs": 0,
+          "count": 420,
+          "checksum": 109096
+        },
+        {
+          "name": "update-every-5th",
+          "durationMs": 0,
+          "count": 420,
+          "checksum": 109050
+        },
+        {
+          "name": "filter-active-high-score",
+          "durationMs": 0,
+          "count": 126,
+          "checksum": 36486
+        }
+      ]
+    },
+    {
+      "project": "mpx",
+      "label": "mpx",
+      "iteration": 3,
+      "page": "pages/index",
+      "ok": true,
+      "source": "page-data",
+      "metrics": [
+        {
+          "name": "initial-render",
+          "durationMs": 1,
+          "count": 300,
+          "checksum": 59999
+        },
+        {
+          "name": "append-batch",
+          "durationMs": 0,
+          "count": 420,
+          "checksum": 109096
+        },
+        {
+          "name": "update-every-5th",
+          "durationMs": 1,
+          "count": 420,
+          "checksum": 109050
+        },
+        {
+          "name": "filter-active-high-score",
+          "durationMs": 0,
+          "count": 126,
+          "checksum": 36486
+        }
+      ]
+    },
+    {
+      "project": "taro-vue3",
+      "label": "taro vue3",
+      "iteration": 1,
+      "page": "pages/index/index",
+      "ok": true,
+      "source": "console-log",
+      "metrics": [
+        {
+          "name": "initial-render",
+          "durationMs": 3,
+          "count": 300,
+          "checksum": 59999
+        },
+        {
+          "name": "append-batch",
+          "durationMs": 22,
+          "count": 420,
+          "checksum": 109096
+        },
+        {
+          "name": "update-every-5th",
+          "durationMs": 10,
+          "count": 420,
+          "checksum": 109050
+        },
+        {
+          "name": "filter-active-high-score",
+          "durationMs": 7,
+          "count": 126,
+          "checksum": 36486
+        }
+      ]
+    },
+    {
+      "project": "taro-vue3",
+      "label": "taro vue3",
+      "iteration": 2,
+      "page": "pages/index/index",
+      "ok": true,
+      "source": "console-log",
+      "metrics": [
+        {
+          "name": "initial-render",
+          "durationMs": 2,
+          "count": 300,
+          "checksum": 59999
+        },
+        {
+          "name": "append-batch",
+          "durationMs": 23,
+          "count": 420,
+          "checksum": 109096
+        },
+        {
+          "name": "update-every-5th",
+          "durationMs": 14,
+          "count": 420,
+          "checksum": 109050
+        },
+        {
+          "name": "filter-active-high-score",
+          "durationMs": 5,
+          "count": 126,
+          "checksum": 36486
+        }
+      ]
+    },
+    {
+      "project": "taro-vue3",
+      "label": "taro vue3",
+      "iteration": 3,
+      "page": "pages/index/index",
+      "ok": true,
+      "source": "console-log",
+      "metrics": [
+        {
+          "name": "initial-render",
+          "durationMs": 2,
+          "count": 300,
+          "checksum": 59999
+        },
+        {
+          "name": "append-batch",
+          "durationMs": 21,
+          "count": 420,
+          "checksum": 109096
+        },
+        {
+          "name": "update-every-5th",
+          "durationMs": 10,
+          "count": 420,
+          "checksum": 109050
+        },
+        {
+          "name": "filter-active-high-score",
+          "durationMs": 7,
+          "count": 126,
+          "checksum": 36486
+        }
+      ]
+    }
+  ],
+  "notes": [
+    "运行时数据由 e2e/ide/runtime-benchmark.ts 通过微信开发者工具真实 IDE 自动化采集。",
+    "运行时耗时在各框架页面内部统计，覆盖状态变更和下一次渲染 tick。",
+    "每轮都会重新打开 benchmark 页面，确保各框架从同一组确定性数据开始。",
+    "DevTools 启动超时默认是 60000ms，可通过 BENCH_RUNTIME_TIMEOUT 覆盖。",
+    "微信开发者工具 CLI：/Applications/wechatwebdevtools.app/Contents/MacOS/cli"
+  ]
+}

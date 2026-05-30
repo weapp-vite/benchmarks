@@ -1,0 +1,306 @@
+{
+  "generatedAt": "2026-05-30T17:15:44.948Z",
+  "iterations": 3,
+  "samples": [
+    {
+      "project": "weapp-vite-wevu",
+      "label": "weapp-vite + wevu",
+      "iteration": 1,
+      "command": "pnpm build",
+      "durationMs": 1297,
+      "ok": true,
+      "exitCode": 0,
+      "output": {
+        "files": 14,
+        "bytes": 192196,
+        "jsBytes": 190044,
+        "jsonBytes": 445,
+        "templateBytes": 887,
+        "styleBytes": 820,
+        "assetBytes": 0
+      },
+      "stdoutTail": "\n> @benchmarks/weapp-vite-wevu@0.0.0 build /Users/icebreaker/Projects/github/benchmarks/apps/weapp-vite-wevu\n> wv build\n\n[info] 目标平台：weapp\n[success] 已清空 dist/ 目录\n[success] 小程序构建完成，耗时：357ms\n[success] 主包/分包体积报告：\n[info] 主包：188 KB\n[success] 开发服务已就绪：\n[info] 小程序：执行 pnpm run open，或手动导入 project.config.json\n[info] UI：未启用\n[info] 提示：手动打开对应平台开发者工具，导入根目录（project.config.json 文件所在目录）\n",
+      "stderrTail": ""
+    },
+    {
+      "project": "weapp-vite-wevu",
+      "label": "weapp-vite + wevu",
+      "iteration": 2,
+      "command": "pnpm build",
+      "durationMs": 1104,
+      "ok": true,
+      "exitCode": 0,
+      "output": {
+        "files": 14,
+        "bytes": 192196,
+        "jsBytes": 190044,
+        "jsonBytes": 445,
+        "templateBytes": 887,
+        "styleBytes": 820,
+        "assetBytes": 0
+      },
+      "stdoutTail": "\n> @benchmarks/weapp-vite-wevu@0.0.0 build /Users/icebreaker/Projects/github/benchmarks/apps/weapp-vite-wevu\n> wv build\n\n[info] 目标平台：weapp\n[success] 已清空 dist/ 目录\n[success] 小程序构建完成，耗时：337ms\n[success] 主包/分包体积报告：\n[info] 主包：188 KB\n[success] 开发服务已就绪：\n[info] 小程序：执行 pnpm run open，或手动导入 project.config.json\n[info] UI：未启用\n[info] 提示：手动打开对应平台开发者工具，导入根目录（project.config.json 文件所在目录）\n",
+      "stderrTail": ""
+    },
+    {
+      "project": "weapp-vite-wevu",
+      "label": "weapp-vite + wevu",
+      "iteration": 3,
+      "command": "pnpm build",
+      "durationMs": 1092,
+      "ok": true,
+      "exitCode": 0,
+      "output": {
+        "files": 14,
+        "bytes": 192196,
+        "jsBytes": 190044,
+        "jsonBytes": 445,
+        "templateBytes": 887,
+        "styleBytes": 820,
+        "assetBytes": 0
+      },
+      "stdoutTail": "\n> @benchmarks/weapp-vite-wevu@0.0.0 build /Users/icebreaker/Projects/github/benchmarks/apps/weapp-vite-wevu\n> wv build\n\n[info] 目标平台：weapp\n[success] 已清空 dist/ 目录\n[success] 小程序构建完成，耗时：330ms\n[success] 主包/分包体积报告：\n[info] 主包：188 KB\n[success] 开发服务已就绪：\n[info] 小程序：执行 pnpm run open，或手动导入 project.config.json\n[info] UI：未启用\n[info] 提示：手动打开对应平台开发者工具，导入根目录（project.config.json 文件所在目录）\n",
+      "stderrTail": ""
+    },
+    {
+      "project": "uni-app-vite-vue3",
+      "label": "uni-app vite vue3",
+      "iteration": 1,
+      "command": "pnpm build:mp-weixin",
+      "durationMs": 2382,
+      "ok": true,
+      "exitCode": 0,
+      "output": {
+        "files": 15,
+        "bytes": 70889,
+        "jsBytes": 68405,
+        "jsonBytes": 1017,
+        "templateBytes": 698,
+        "styleBytes": 769,
+        "assetBytes": 0
+      },
+      "stdoutTail": "\n> @benchmarks/uni-app-vite-vue3@0.0.0 build:mp-weixin /Users/icebreaker/Projects/github/benchmarks/apps/uni-app-vite-vue3\n> uni build -p mp-weixin\n\nCompiler version: 5.12（vue3）\nCompiling...\nDONE  Build complete.\nRun method: open Weixin Mini Program Devtools, import dist/build/mp-weixin run.\n",
+      "stderrTail": ""
+    },
+    {
+      "project": "uni-app-vite-vue3",
+      "label": "uni-app vite vue3",
+      "iteration": 2,
+      "command": "pnpm build:mp-weixin",
+      "durationMs": 2369,
+      "ok": true,
+      "exitCode": 0,
+      "output": {
+        "files": 15,
+        "bytes": 70889,
+        "jsBytes": 68405,
+        "jsonBytes": 1017,
+        "templateBytes": 698,
+        "styleBytes": 769,
+        "assetBytes": 0
+      },
+      "stdoutTail": "\n> @benchmarks/uni-app-vite-vue3@0.0.0 build:mp-weixin /Users/icebreaker/Projects/github/benchmarks/apps/uni-app-vite-vue3\n> uni build -p mp-weixin\n\nCompiler version: 5.12（vue3）\nCompiling...\nDONE  Build complete.\nRun method: open Weixin Mini Program Devtools, import dist/build/mp-weixin run.\n",
+      "stderrTail": ""
+    },
+    {
+      "project": "uni-app-vite-vue3",
+      "label": "uni-app vite vue3",
+      "iteration": 3,
+      "command": "pnpm build:mp-weixin",
+      "durationMs": 2354,
+      "ok": true,
+      "exitCode": 0,
+      "output": {
+        "files": 15,
+        "bytes": 70889,
+        "jsBytes": 68405,
+        "jsonBytes": 1017,
+        "templateBytes": 698,
+        "styleBytes": 769,
+        "assetBytes": 0
+      },
+      "stdoutTail": "\n> @benchmarks/uni-app-vite-vue3@0.0.0 build:mp-weixin /Users/icebreaker/Projects/github/benchmarks/apps/uni-app-vite-vue3\n> uni build -p mp-weixin\n\nCompiler version: 5.12（vue3）\nCompiling...\nDONE  Build complete.\nRun method: open Weixin Mini Program Devtools, import dist/build/mp-weixin run.\n",
+      "stderrTail": ""
+    },
+    {
+      "project": "uni-app-x",
+      "label": "uni-app x",
+      "iteration": 1,
+      "command": "pnpm build:mp-weixin",
+      "durationMs": 3059,
+      "ok": true,
+      "exitCode": 0,
+      "output": {
+        "files": 17,
+        "bytes": 99098,
+        "jsBytes": 90441,
+        "jsonBytes": 1006,
+        "templateBytes": 1292,
+        "styleBytes": 3909,
+        "assetBytes": 2450
+      },
+      "stdoutTail": "\n> @benchmarks/uni-app-x@0.0.0 build:mp-weixin /Users/icebreaker/Projects/github/benchmarks/apps/uni-app-x\n> uni build -p mp-weixin\n\nCompiler version: 5.12（uni-app x）\nStyle isolation version: 1.0\nCompiling...\nDONE  Build complete.\nRun method: open Weixin Mini Program Devtools, import dist/build/mp-weixin run.\n",
+      "stderrTail": ""
+    },
+    {
+      "project": "uni-app-x",
+      "label": "uni-app x",
+      "iteration": 2,
+      "command": "pnpm build:mp-weixin",
+      "durationMs": 3056,
+      "ok": true,
+      "exitCode": 0,
+      "output": {
+        "files": 17,
+        "bytes": 99098,
+        "jsBytes": 90441,
+        "jsonBytes": 1006,
+        "templateBytes": 1292,
+        "styleBytes": 3909,
+        "assetBytes": 2450
+      },
+      "stdoutTail": "\n> @benchmarks/uni-app-x@0.0.0 build:mp-weixin /Users/icebreaker/Projects/github/benchmarks/apps/uni-app-x\n> uni build -p mp-weixin\n\nCompiler version: 5.12（uni-app x）\nStyle isolation version: 1.0\nCompiling...\nDONE  Build complete.\nRun method: open Weixin Mini Program Devtools, import dist/build/mp-weixin run.\n",
+      "stderrTail": ""
+    },
+    {
+      "project": "uni-app-x",
+      "label": "uni-app x",
+      "iteration": 3,
+      "command": "pnpm build:mp-weixin",
+      "durationMs": 3066,
+      "ok": true,
+      "exitCode": 0,
+      "output": {
+        "files": 17,
+        "bytes": 99098,
+        "jsBytes": 90441,
+        "jsonBytes": 1006,
+        "templateBytes": 1292,
+        "styleBytes": 3909,
+        "assetBytes": 2450
+      },
+      "stdoutTail": "\n> @benchmarks/uni-app-x@0.0.0 build:mp-weixin /Users/icebreaker/Projects/github/benchmarks/apps/uni-app-x\n> uni build -p mp-weixin\n\nCompiler version: 5.12（uni-app x）\nStyle isolation version: 1.0\nCompiling...\nDONE  Build complete.\nRun method: open Weixin Mini Program Devtools, import dist/build/mp-weixin run.\n",
+      "stderrTail": ""
+    },
+    {
+      "project": "mpx",
+      "label": "mpx",
+      "iteration": 1,
+      "command": "pnpm build",
+      "durationMs": 1954,
+      "ok": true,
+      "exitCode": 0,
+      "output": {
+        "files": 12,
+        "bytes": 176203,
+        "jsBytes": 174646,
+        "jsonBytes": 223,
+        "templateBytes": 757,
+        "styleBytes": 577,
+        "assetBytes": 0
+      },
+      "stdoutTail": "\n> @benchmarks/mpx@0.0.0 build /Users/icebreaker/Projects/github/benchmarks/apps/mpx\n> cross-env NODE_ENV=production webpack --config webpack.config.cjs\n\nassets by path pages/ 119 KiB\n  assets by chunk 1.11 KiB (auxiliary name: pages/index) 3 assets\n  assets by chunk 231 bytes (auxiliary name: pages/detail)\n    asset pages/detail.wxml 117 bytes [emitted] (auxiliary name: pages/detail)\n    + 2 assets\n  assets by path pages/*.js 118 KiB\n    asset pages/index.js 59.8 KiB [emitted] [minimized] (name: pages/index)\n    asset pages/detail.js 58.2 KiB [emitted] [minimized] (name: pages/detail)\nassets by path *.js 52.6 KiB\n  asset app.js 51 KiB [emitted] [minimized] (name: app)\n  asset bundle.js 1.57 KiB [emitted] [minimized] (name: bundle)\nassets by chunk 194 bytes (auxiliary name: app)\n  asset app.json 156 bytes [emitted] (auxiliary name: app)\n  asset app.wxss 38 bytes [emitted] (auxiliary name: app)\nEntrypoint app 52.6 KiB (193 bytes) = bundle.js 1.57 KiB app.js 51 KiB 3 auxiliary assets\nEntrypoint pages/index 61.4 KiB (1.1 KiB) = bundle.js 1.57 KiB pages/index.js 59.8 KiB 5 auxiliary assets\nEntrypoint pages/detail 59.7 KiB (229 bytes) = bundle.js 1.57 KiB pages/detail.js 58.2 KiB 5 auxiliary assets\norphan modules 96 KiB [orphan] 65 modules\nruntime modules 3.75 KiB 8 modules\nbuilt modules 184 KiB [built]\n  modules by path ../../node_modules/.pnpm/ 175 KiB\n    modules by path ../../node_modules/.pnpm/@mpxjs+core@2.10.20_@mpxjs+api-proxy@2.10.20_vue@2.7.16...(truncated) 137 KiB 20 modules\n    modules by path ../../node_modules/.pnpm/lodash@4.18.1/node_modules/lodash/*.js 8.24 KiB 14 modules\n    ../../node_modules/.pnpm/@mpxjs+utils@2.10.20_@mpxjs+core@2.10.20/node_modules/@...(truncated) 29.5 KiB [built] [code generated]\n    ../../node_modules/.pnpm/@mpxjs+webpack-plugin@2.10.20_@mpxjs+core@2.10.20_vue@2...(truncated) 39 bytes [built] [code generated]\n  modules by path ./src/ 9.28 KiB\n    cacheable modules 9.27 KiB\n      modules by path ./src/pages/*.mpx 5.42 KiB 8 modules\n      modules by path ./src/*.mpx 3.86 KiB 3 modules\n    ./src/app.mpx.json?asScript!=!../../node_modules/.pnpm/@mpxjs+webpack-plugin@2.10.20_@mpxjs+core@2.10.20_vue@2.7.16_webpack@5.107.2/node_modules/@mpxjs/webpack-plugin/lib/selector.js?mode=wx&env=!./src/app.mpx?asScript&extract&index=0&mpx&type=json 1 bytes [not cacheable] [built] [code generated]\n    ./src/pages/index.mpx.json?asScript&isFirst&isPage!=!../../node_modules/.pnpm/@mpxjs+webpack-plugin@2.10.20_@mpxjs+core@2.10.20_vue@2.7.16_webpack@5.107.2/node_modules/@mpxjs/webpack-plugin/lib/selector.js?mode=wx&env=!./src/pages/index.mpx?asScript&extract&index=0&isFirst&isPage&mpx&type=json 1 bytes [not cacheable] [built] [code generated]\n    ./src/pages/detail.mpx.json?asScript&isPage!=!../../node_modules/.pnpm/@mpxjs+webpack-plugin@2.10.20_@mpxjs+core@2.10.20_vue@2.7.16_webpack@5.107.2/node_modules/@mpxjs/webpack-plugin/lib/selector.js?mode=wx&env=!./src/pages/detail.mpx?asScript&extract&index=0&isPage&mpx&type=json 1 bytes [not cacheable] [built] [code generated]\nwebpack 5.107.2 compiled successfully in 1251 ms\n",
+      "stderrTail": ""
+    },
+    {
+      "project": "mpx",
+      "label": "mpx",
+      "iteration": 2,
+      "command": "pnpm build",
+      "durationMs": 1607,
+      "ok": true,
+      "exitCode": 0,
+      "output": {
+        "files": 12,
+        "bytes": 176203,
+        "jsBytes": 174646,
+        "jsonBytes": 223,
+        "templateBytes": 757,
+        "styleBytes": 577,
+        "assetBytes": 0
+      },
+      "stdoutTail": "\n> @benchmarks/mpx@0.0.0 build /Users/icebreaker/Projects/github/benchmarks/apps/mpx\n> cross-env NODE_ENV=production webpack --config webpack.config.cjs\n\nassets by path pages/ 119 KiB\n  assets by chunk 1.11 KiB (auxiliary name: pages/index) 3 assets\n  assets by chunk 231 bytes (auxiliary name: pages/detail)\n    asset pages/detail.wxml 117 bytes [emitted] (auxiliary name: pages/detail)\n    + 2 assets\n  assets by path pages/*.js 118 KiB\n    asset pages/index.js 59.8 KiB [emitted] [minimized] (name: pages/index)\n    asset pages/detail.js 58.2 KiB [emitted] [minimized] (name: pages/detail)\nassets by path *.js 52.6 KiB\n  asset app.js 51 KiB [emitted] [minimized] (name: app)\n  asset bundle.js 1.57 KiB [emitted] [minimized] (name: bundle)\nassets by chunk 194 bytes (auxiliary name: app)\n  asset app.json 156 bytes [emitted] (auxiliary name: app)\n  asset app.wxss 38 bytes [emitted] (auxiliary name: app)\nEntrypoint app 52.6 KiB (193 bytes) = bundle.js 1.57 KiB app.js 51 KiB 3 auxiliary assets\nEntrypoint pages/index 61.4 KiB (1.1 KiB) = bundle.js 1.57 KiB pages/index.js 59.8 KiB 5 auxiliary assets\nEntrypoint pages/detail 59.7 KiB (229 bytes) = bundle.js 1.57 KiB pages/detail.js 58.2 KiB 5 auxiliary assets\norphan modules 96 KiB [orphan] 65 modules\nruntime modules 3.75 KiB 8 modules\nbuilt modules 184 KiB [built]\n  modules by path ../../node_modules/.pnpm/ 175 KiB\n    modules by path ../../node_modules/.pnpm/@mpxjs+core@2.10.20_@mpxjs+api-proxy@2.10.20_vue@2.7.16...(truncated) 137 KiB 20 modules\n    modules by path ../../node_modules/.pnpm/lodash@4.18.1/node_modules/lodash/*.js 8.24 KiB 14 modules\n    ../../node_modules/.pnpm/@mpxjs+utils@2.10.20_@mpxjs+core@2.10.20/node_modules/@...(truncated) 29.5 KiB [built] [code generated]\n    ../../node_modules/.pnpm/@mpxjs+webpack-plugin@2.10.20_@mpxjs+core@2.10.20_vue@2...(truncated) 39 bytes [built] [code generated]\n  modules by path ./src/ 9.28 KiB\n    cacheable modules 9.27 KiB\n      modules by path ./src/pages/*.mpx 5.42 KiB 8 modules\n      modules by path ./src/*.mpx 3.86 KiB 3 modules\n    ./src/app.mpx.json?asScript!=!../../node_modules/.pnpm/@mpxjs+webpack-plugin@2.10.20_@mpxjs+core@2.10.20_vue@2.7.16_webpack@5.107.2/node_modules/@mpxjs/webpack-plugin/lib/selector.js?mode=wx&env=!./src/app.mpx?asScript&extract&index=0&mpx&type=json 1 bytes [not cacheable] [built] [code generated]\n    ./src/pages/index.mpx.json?asScript&isFirst&isPage!=!../../node_modules/.pnpm/@mpxjs+webpack-plugin@2.10.20_@mpxjs+core@2.10.20_vue@2.7.16_webpack@5.107.2/node_modules/@mpxjs/webpack-plugin/lib/selector.js?mode=wx&env=!./src/pages/index.mpx?asScript&extract&index=0&isFirst&isPage&mpx&type=json 1 bytes [not cacheable] [built] [code generated]\n    ./src/pages/detail.mpx.json?asScript&isPage!=!../../node_modules/.pnpm/@mpxjs+webpack-plugin@2.10.20_@mpxjs+core@2.10.20_vue@2.7.16_webpack@5.107.2/node_modules/@mpxjs/webpack-plugin/lib/selector.js?mode=wx&env=!./src/pages/detail.mpx?asScript&extract&index=0&isPage&mpx&type=json 1 bytes [not cacheable] [built] [code generated]\nwebpack 5.107.2 compiled successfully in 1065 ms\n",
+      "stderrTail": ""
+    },
+    {
+      "project": "mpx",
+      "label": "mpx",
+      "iteration": 3,
+      "command": "pnpm build",
+      "durationMs": 1610,
+      "ok": true,
+      "exitCode": 0,
+      "output": {
+        "files": 12,
+        "bytes": 176203,
+        "jsBytes": 174646,
+        "jsonBytes": 223,
+        "templateBytes": 757,
+        "styleBytes": 577,
+        "assetBytes": 0
+      },
+      "stdoutTail": "\n> @benchmarks/mpx@0.0.0 build /Users/icebreaker/Projects/github/benchmarks/apps/mpx\n> cross-env NODE_ENV=production webpack --config webpack.config.cjs\n\nassets by path pages/ 119 KiB\n  assets by chunk 1.11 KiB (auxiliary name: pages/index) 3 assets\n  assets by chunk 231 bytes (auxiliary name: pages/detail)\n    asset pages/detail.wxml 117 bytes [emitted] (auxiliary name: pages/detail)\n    + 2 assets\n  assets by path pages/*.js 118 KiB\n    asset pages/index.js 59.8 KiB [emitted] [minimized] (name: pages/index)\n    asset pages/detail.js 58.2 KiB [emitted] [minimized] (name: pages/detail)\nassets by path *.js 52.6 KiB\n  asset app.js 51 KiB [emitted] [minimized] (name: app)\n  asset bundle.js 1.57 KiB [emitted] [minimized] (name: bundle)\nassets by chunk 194 bytes (auxiliary name: app)\n  asset app.json 156 bytes [emitted] (auxiliary name: app)\n  asset app.wxss 38 bytes [emitted] (auxiliary name: app)\nEntrypoint app 52.6 KiB (193 bytes) = bundle.js 1.57 KiB app.js 51 KiB 3 auxiliary assets\nEntrypoint pages/index 61.4 KiB (1.1 KiB) = bundle.js 1.57 KiB pages/index.js 59.8 KiB 5 auxiliary assets\nEntrypoint pages/detail 59.7 KiB (229 bytes) = bundle.js 1.57 KiB pages/detail.js 58.2 KiB 5 auxiliary assets\norphan modules 96 KiB [orphan] 65 modules\nruntime modules 3.75 KiB 8 modules\nbuilt modules 184 KiB [built]\n  modules by path ../../node_modules/.pnpm/ 175 KiB\n    modules by path ../../node_modules/.pnpm/@mpxjs+core@2.10.20_@mpxjs+api-proxy@2.10.20_vue@2.7.16...(truncated) 137 KiB 20 modules\n    modules by path ../../node_modules/.pnpm/lodash@4.18.1/node_modules/lodash/*.js 8.24 KiB 14 modules\n    ../../node_modules/.pnpm/@mpxjs+utils@2.10.20_@mpxjs+core@2.10.20/node_modules/@...(truncated) 29.5 KiB [built] [code generated]\n    ../../node_modules/.pnpm/@mpxjs+webpack-plugin@2.10.20_@mpxjs+core@2.10.20_vue@2...(truncated) 39 bytes [built] [code generated]\n  modules by path ./src/ 9.28 KiB\n    cacheable modules 9.27 KiB\n      modules by path ./src/pages/*.mpx 5.42 KiB 8 modules\n      modules by path ./src/*.mpx 3.86 KiB 3 modules\n    ./src/app.mpx.json?asScript!=!../../node_modules/.pnpm/@mpxjs+webpack-plugin@2.10.20_@mpxjs+core@2.10.20_vue@2.7.16_webpack@5.107.2/node_modules/@mpxjs/webpack-plugin/lib/selector.js?mode=wx&env=!./src/app.mpx?asScript&extract&index=0&mpx&type=json 1 bytes [not cacheable] [built] [code generated]\n    ./src/pages/index.mpx.json?asScript&isFirst&isPage!=!../../node_modules/.pnpm/@mpxjs+webpack-plugin@2.10.20_@mpxjs+core@2.10.20_vue@2.7.16_webpack@5.107.2/node_modules/@mpxjs/webpack-plugin/lib/selector.js?mode=wx&env=!./src/pages/index.mpx?asScript&extract&index=0&isFirst&isPage&mpx&type=json 1 bytes [not cacheable] [built] [code generated]\n    ./src/pages/detail.mpx.json?asScript&isPage!=!../../node_modules/.pnpm/@mpxjs+webpack-plugin@2.10.20_@mpxjs+core@2.10.20_vue@2.7.16_webpack@5.107.2/node_modules/@mpxjs/webpack-plugin/lib/selector.js?mode=wx&env=!./src/pages/detail.mpx?asScript&extract&index=0&isPage&mpx&type=json 1 bytes [not cacheable] [built] [code generated]\nwebpack 5.107.2 compiled successfully in 1064 ms\n",
+      "stderrTail": ""
+    },
+    {
+      "project": "taro-vue3",
+      "label": "taro vue3",
+      "iteration": 1,
+      "command": "pnpm build:weapp",
+      "durationMs": 3341,
+      "ok": true,
+      "exitCode": 0,
+      "output": {
+        "files": 19,
+        "bytes": 224583,
+        "jsBytes": 166394,
+        "jsonBytes": 746,
+        "templateBytes": 55839,
+        "styleBytes": 607,
+        "assetBytes": 997
+      },
+      "stdoutTail": "\n> @benchmarks/taro-vue3@0.0.0 build:weapp /Users/icebreaker/Projects/github/benchmarks/apps/taro-vue3\n> taro build --type weapp\n\n👽 Taro v4.2.0\n\nvite v4.5.14 building for production...\ntransforming...\n✓ 98 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/app.wxss                   0.03 kB\ndist/app-origin.wxss            0.04 kB\ndist/pages/detail/index.wxss    0.08 kB\ndist/pages/index/index.wxml     0.08 kB\ndist/pages/detail/index.wxml    0.08 kB\ndist/pages/detail/index.json    0.09 kB │ gzip:  0.10 kB\ndist/pages/index/index.json     0.10 kB │ gzip:  0.11 kB\ndist/comp.json                  0.11 kB │ gzip:  0.11 kB\ndist/comp.wxml                  0.14 kB\ndist/app.json                   0.22 kB │ gzip:  0.16 kB\ndist/pages/index/index.wxss     0.46 kB\ndist/utils.wxs                  1.00 kB\ndist/base.wxml                 55.54 kB\ndist/comp.js                    0.09 kB │ gzip:  0.10 kB\ndist/app.js                     0.40 kB │ gzip:  0.31 kB\ndist/pages/detail/index.js      0.51 kB │ gzip:  0.35 kB\ndist/pages/index/index.js       3.24 kB │ gzip:  1.39 kB\ndist/taro.js                  162.16 kB │ gzip: 58.31 kB\n✓ built in 1.70s\n",
+      "stderrTail": "\u001b[33mThe CJS build of Vite's Node API is deprecated. See https://vitejs.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.\u001b[39m\n"
+    },
+    {
+      "project": "taro-vue3",
+      "label": "taro vue3",
+      "iteration": 2,
+      "command": "pnpm build:weapp",
+      "durationMs": 2791,
+      "ok": true,
+      "exitCode": 0,
+      "output": {
+        "files": 19,
+        "bytes": 224583,
+        "jsBytes": 166394,
+        "jsonBytes": 746,
+        "templateBytes": 55839,
+        "styleBytes": 607,
+        "assetBytes": 997
+      },
+      "stdoutTail": "\n> @benchmarks/taro-vue3@0.0.0 build:weapp /Users/icebreaker/Projects/github/benchmarks/apps/taro-vue3\n> taro build --type weapp\n\n👽 Taro v4.2.0\n\nvite v4.5.14 building for production...\ntransforming...\n✓ 98 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/app.wxss                   0.03 kB\ndist/app-origin.wxss            0.04 kB\ndist/pages/detail/index.wxss    0.08 kB\ndist/pages/index/index.wxml     0.08 kB\ndist/pages/detail/index.wxml    0.08 kB\ndist/pages/detail/index.json    0.09 kB │ gzip:  0.10 kB\ndist/pages/index/index.json     0.10 kB │ gzip:  0.11 kB\ndist/comp.json                  0.11 kB │ gzip:  0.11 kB\ndist/comp.wxml                  0.14 kB\ndist/app.json                   0.22 kB │ gzip:  0.16 kB\ndist/pages/index/index.wxss     0.46 kB\ndist/utils.wxs                  1.00 kB\ndist/base.wxml                 55.54 kB\ndist/comp.js                    0.09 kB │ gzip:  0.10 kB\ndist/app.js                     0.40 kB │ gzip:  0.31 kB\ndist/pages/detail/index.js      0.51 kB │ gzip:  0.35 kB\ndist/pages/index/index.js       3.24 kB │ gzip:  1.39 kB\ndist/taro.js                  162.16 kB │ gzip: 58.31 kB\n✓ built in 1.62s\n",
+      "stderrTail": "\u001b[33mThe CJS build of Vite's Node API is deprecated. See https://vitejs.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.\u001b[39m\n"
+    },
+    {
+      "project": "taro-vue3",
+      "label": "taro vue3",
+      "iteration": 3,
+      "command": "pnpm build:weapp",
+      "durationMs": 3519,
+      "ok": true,
+      "exitCode": 0,
+      "output": {
+        "files": 19,
+        "bytes": 224583,
+        "jsBytes": 166394,
+        "jsonBytes": 746,
+        "templateBytes": 55839,
+        "styleBytes": 607,
+        "assetBytes": 997
+      },
+      "stdoutTail": "\n> @benchmarks/taro-vue3@0.0.0 build:weapp /Users/icebreaker/Projects/github/benchmarks/apps/taro-vue3\n> taro build --type weapp\n\n👽 Taro v4.2.0\n\nvite v4.5.14 building for production...\ntransforming...\n✓ 98 modules transformed.\nrendering chunks...\ncomputing gzip size...\ndist/app.wxss                   0.03 kB\ndist/app-origin.wxss            0.04 kB\ndist/pages/detail/index.wxss    0.08 kB\ndist/pages/index/index.wxml     0.08 kB\ndist/pages/detail/index.wxml    0.08 kB\ndist/pages/detail/index.json    0.09 kB │ gzip:  0.10 kB\ndist/pages/index/index.json     0.10 kB │ gzip:  0.11 kB\ndist/comp.json                  0.11 kB │ gzip:  0.11 kB\ndist/comp.wxml                  0.14 kB\ndist/app.json                   0.22 kB │ gzip:  0.16 kB\ndist/pages/index/index.wxss     0.46 kB\ndist/utils.wxs                  1.00 kB\ndist/base.wxml                 55.54 kB\ndist/comp.js                    0.09 kB │ gzip:  0.10 kB\ndist/app.js                     0.40 kB │ gzip:  0.31 kB\ndist/pages/detail/index.js      0.51 kB │ gzip:  0.35 kB\ndist/pages/index/index.js       3.24 kB │ gzip:  1.39 kB\ndist/taro.js                  162.16 kB │ gzip: 58.31 kB\n✓ built in 1.68s\n",
+      "stderrTail": "\u001b[33mThe CJS build of Vite's Node API is deprecated. See https://vitejs.dev/guide/troubleshooting.html#vite-cjs-node-api-deprecated for more details.\u001b[39m\n"
+    }
+  ]
+}

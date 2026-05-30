@@ -1,0 +1,35 @@
+{
+  "name": "@benchmarks/uni-app-x",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "pnpm run build:mp-weixin",
+    "build:mp-weixin": "uni build -p mp-weixin",
+    "dev": "uni -p mp-weixin",
+    "hbuilderx": "hbuilderx",
+    "hbuilderx:launch:mp-weixin": "uni-launch mp-weixin --runtime-log true --project $PWD",
+    "hbuilderx:logcat:mp-weixin": "uni-logcat mp-weixin --project $PWD",
+    "lint": "eslint .",
+    "test:hbuilderx:mp-weixin": "uni-launch mp-weixin --compile true --project $PWD",
+    "typecheck": "vue-tsc --noEmit -p tsconfig.json"
+  },
+  "dependencies": {
+    "@dcloudio/uni-app": "3.0.0-alpha-5010220260529001",
+    "@dcloudio/uni-app-x": "0.7.124",
+    "@dcloudio/uni-components": "3.0.0-alpha-5010220260529001",
+    "@dcloudio/uni-mp-weixin": "3.0.0-alpha-5010220260529001",
+    "@dcloudio/uni-shared": "3.0.0-alpha-5010220260529001",
+    "vue": "3.4.21"
+  },
+  "devDependencies": {
+    "@dcloudio/hbuilderx-cli": "1.2.0",
+    "@dcloudio/types": "3.4.31",
+    "@dcloudio/uni-uts-v1": "3.0.0-alpha-5010220260529001",
+    "@dcloudio/uts": "3.0.0-alpha-3040820220424002",
+    "@dcloudio/vite-plugin-uni": "3.0.0-alpha-5010220260529001",
+    "typescript": "^6.0.3",
+    "vite": "5.2.8",
+    "vue-tsc": "^3.3.3"
+  }
+}

@@ -1,0 +1,30 @@
+<template>
+  <view class="page">
+    <view class="title">Detail page</view>
+    <view>Navigation target for runtime benchmark.</view>
+  </view>
+</template>
+
+<script>
+import { createPage } from '@mpxjs/core'
+
+createPage({})
+</script>
+
+<script type="application/json">
+{
+  "navigationBarTitleText": "Detail"
+}
+</script>
+
+<style>
+.page {
+  padding: 32rpx;
+}
+
+.title {
+  margin-bottom: 16rpx;
+  font-size: 32rpx;
+  font-weight: 700;
+}
+</style>

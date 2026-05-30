@@ -1,0 +1,22 @@
+{
+  "name": "@benchmarks/weapp-vite-wevu",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "wv build",
+    "dev": "wv dev",
+    "lint": "eslint . --ignore-pattern .weapp-vite",
+    "typecheck": "vue-tsc --noEmit -p .weapp-vite/tsconfig.app.json",
+    "postinstall": "wv prepare"
+  },
+  "dependencies": {
+    "wevu": "6.16.30"
+  },
+  "devDependencies": {
+    "miniprogram-api-typings": "^5.0.0",
+    "typescript": "^6.0.3",
+    "vue-tsc": "^3.3.3",
+    "weapp-vite": "6.16.30"
+  }
+}

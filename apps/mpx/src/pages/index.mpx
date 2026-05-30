@@ -1,0 +1,161 @@
+<template>
+  <view class="page">
+    <view class="toolbar">
+      <view class="title">mpx</view>
+      <view class="summary">{{ summary }}</view>
+      <button size="mini" bindtap="runBenchmark">Run</button>
+    </view>
+    <view class="metrics">
+      <view wx:for="{{ metrics }}" wx:key="name" class="metric">
+        <text>{{ item.name }}</text>
+        <text>{{ item.durationMs }}ms</text>
+        <text>{{ item.count }}</text>
+      </view>
+    </view>
+    <view class="list">
+      <view
+        wx:for="{{ visibleItems }}"
+        wx:key="id"
+        class="row"
+        data-id="{{ item.id }}"
+        data-score="{{ item.score }}"
+        bindtap="goDetail"
+      >
+        <text class="row__title">{{ item.title }}</text>
+        <text>g{{ item.group }}</text>
+        <text>{{ item.score }}</text>
+      </view>
+    </view>
+  </view>
+</template>
+
+<script>
+import { createPage } from '@mpxjs/core'
+import {
+  batchCount,
+  checksum,
+  createItems,
+  filterActiveHighScore,
+  initialCount,
+  now,
+  updateEveryNth,
+} from '../shared/benchmark'
+
+createPage({
+  data: {
+    items: createItems(),
+    visibleItems: createItems(),
+    metrics: [],
+    summary: `${initialCount}/${initialCount}`,
+  },
+  onLoad() {
+    this.runBenchmark()
+  },
+  methods: {
+    record(name, start, list) {
+      this.metrics = [
+        ...this.metrics,
+        {
+          name,
+          durationMs: now() - start,
+          count: list.length,
+          checksum: checksum(list),
+        },
+      ]
+    },
+    runBenchmark() {
+      this.metrics = []
+      let start = now()
+      this.items = createItems(initialCount)
+      this.visibleItems = this.items
+      this.summary = `${this.visibleItems.length}/${this.items.length}`
+      this.record('initial-render', start, this.visibleItems)
+
+      start = now()
+      this.items = [...this.items, ...createItems(batchCount, this.items.length)]
+      this.visibleItems = this.items
+      this.summary = `${this.visibleItems.length}/${this.items.length}`
+      this.record('append-batch', start, this.visibleItems)
+
+      start = now()
+      this.items = updateEveryNth(this.items)
+      this.visibleItems = this.items
+      this.summary = `${this.visibleItems.length}/${this.items.length}`
+      this.record('update-every-5th', start, this.visibleItems)
+
+      start = now()
+      this.visibleItems = filterActiveHighScore(this.items)
+      this.summary = `${this.visibleItems.length}/${this.items.length}`
+      this.record('filter-active-high-score', start, this.visibleItems)
+
+      // eslint-disable-next-line no-console
+      console.log('BENCHMARK_RUNTIME', {
+        framework: 'mpx',
+        metrics: this.metrics,
+      })
+    },
+    goDetail(event) {
+      const { id, score } = event.currentTarget.dataset
+      wx.navigateTo({
+        url: `/pages/detail?id=${id}&score=${score}`,
+      })
+    },
+  },
+})
+</script>
+
+<script type="application/json">
+{
+  "navigationBarTitleText": "mpx"
+}
+</script>
+
+<style>
+.page {
+  min-height: 100vh;
+  padding: 24rpx;
+}
+
+.toolbar,
+.metric,
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.toolbar {
+  gap: 16rpx;
+  padding: 20rpx;
+  background: #fff;
+  border: 1rpx solid #d1d5db;
+}
+
+.title {
+  font-size: 30rpx;
+  font-weight: 700;
+}
+
+.summary {
+  color: #2563eb;
+}
+
+.metrics {
+  margin: 20rpx 0;
+}
+
+.metric,
+.row {
+  padding: 16rpx 20rpx;
+  margin-bottom: 12rpx;
+  background: #fff;
+  border: 1rpx solid #e5e7eb;
+}
+
+.row__title {
+  width: 260rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+</style>

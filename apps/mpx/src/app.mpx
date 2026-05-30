@@ -1,0 +1,34 @@
+<script>
+import { createApp } from '@mpxjs/core'
+
+createApp({
+  onLaunch() {},
+})
+</script>
+
+<script type="application/json">
+{
+  "pages": [
+    {
+      "src": "./pages/index.mpx",
+      "path": "pages/index"
+    },
+    {
+      "src": "./pages/detail.mpx",
+      "path": "pages/detail"
+    }
+  ],
+  "window": {
+    "navigationBarTitleText": "mpx",
+    "navigationBarBackgroundColor": "#1f2937",
+    "navigationBarTextStyle": "white"
+  }
+}
+</script>
+
+<style>
+page {
+  color: #111827;
+  background: #f7f7f8;
+}
+</style>

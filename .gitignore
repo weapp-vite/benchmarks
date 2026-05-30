@@ -33,6 +33,9 @@ yarn-error.log*
 .turbo
 
 dist
+**/.swc/
+*.tsbuildinfo
+.weapp-vite
 vite.config.ts.timestamp-*.mjs
 config.ts.timestamp-*.mjs
 .vite-inspect
