@@ -1,0 +1,5 @@
+{
+  "extends": "repoctl/tsconfig.json",
+  "references": [],
+  "files": []
+}

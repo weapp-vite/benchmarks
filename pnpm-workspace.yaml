@@ -1,0 +1,11 @@
+packages:
+  - apps/*
+  - packages/*
+  - templates/*
+  - '!**/test/**'
+
+onlyBuiltDependencies:
+  - '@tailwindcss/oxide'
+  - esbuild
+  - sharp
+  - workerd
