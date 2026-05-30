@@ -13,8 +13,21 @@ export interface RuntimeMetric {
   checksum: number
 }
 
+export interface BenchmarkGroup {
+  group: number
+  count: number
+  activeCount: number
+  totalScore: number
+}
+
 export const initialCount = 300
 export const batchCount = 120
+export const replaceCount = 360
+export const windowSize = 80
+
+export function now() {
+  return Date.now()
+}
 
 export function createItems(count = initialCount, offset = 0): BenchmarkItem[] {
   return Array.from({ length: count }, (_, index) => {
@@ -48,4 +61,38 @@ export function updateEveryNth(items: BenchmarkItem[], nth = 5) {
 
 export function filterActiveHighScore(items: BenchmarkItem[]) {
   return items.filter(item => item.active && item.score >= 50)
+}
+
+export function sortByScoreThenId(items: BenchmarkItem[]) {
+  return [...items].sort((left, right) => {
+    const scoreDiff = right.score - left.score
+    return scoreDiff === 0 ? left.id - right.id : scoreDiff
+  })
+}
+
+export function groupItems(items: BenchmarkItem[]) {
+  const groups = new Map<number, BenchmarkGroup>()
+  for (const item of items) {
+    const group = groups.get(item.group) ?? {
+      group: item.group,
+      count: 0,
+      activeCount: 0,
+      totalScore: 0,
+    }
+    group.count += 1
+    group.activeCount += item.active ? 1 : 0
+    group.totalScore += item.score
+    groups.set(item.group, group)
+  }
+  return [...groups.values()].sort((left, right) => left.group - right.group)
+}
+
+export function groupChecksum(groups: BenchmarkGroup[]) {
+  return groups.reduce((total, group) => (
+    total + group.group + group.count + group.activeCount + group.totalScore
+  ), 0)
+}
+
+export function sliceWindow(items: BenchmarkItem[], start = 160, size = windowSize) {
+  return items.slice(start, start + size)
 }

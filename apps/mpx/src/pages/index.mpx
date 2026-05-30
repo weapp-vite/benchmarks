@@ -12,6 +12,14 @@
         <text>{{ item.count }}</text>
       </view>
     </view>
+    <view class="groups">
+      <view wx:for="{{ groups }}" wx:key="group" class="group">
+        <text>g{{ item.group }}</text>
+        <text>{{ item.count }}</text>
+        <text>{{ item.activeCount }}</text>
+        <text>{{ item.totalScore }}</text>
+      </view>
+    </view>
     <view class="list">
       <view
         wx:for="{{ visibleItems }}"
@@ -36,8 +44,13 @@ import {
   checksum,
   createItems,
   filterActiveHighScore,
+  groupChecksum,
+  groupItems,
   initialCount,
   now,
+  replaceCount,
+  sliceWindow,
+  sortByScoreThenId,
   updateEveryNth,
 } from '../shared/benchmark'
 
@@ -45,6 +58,7 @@ createPage({
   data: {
     items: createItems(),
     visibleItems: createItems(),
+    groups: [],
     metrics: [],
     summary: `${initialCount}/${initialCount}`,
   },
@@ -63,30 +77,76 @@ createPage({
         },
       ]
     },
-    runBenchmark() {
+    recordGroups(name, start, list) {
+      this.metrics = [
+        ...this.metrics,
+        {
+          name,
+          durationMs: now() - start,
+          count: list.length,
+          checksum: groupChecksum(list),
+        },
+      ]
+    },
+    renderTick() {
+      return new Promise((resolve) => {
+        this.setData({}, resolve)
+      })
+    },
+    async runBenchmark() {
       this.metrics = []
+      this.groups = []
       let start = now()
       this.items = createItems(initialCount)
       this.visibleItems = this.items
       this.summary = `${this.visibleItems.length}/${this.items.length}`
+      await this.renderTick()
       this.record('initial-render', start, this.visibleItems)
 
       start = now()
       this.items = [...this.items, ...createItems(batchCount, this.items.length)]
       this.visibleItems = this.items
       this.summary = `${this.visibleItems.length}/${this.items.length}`
+      await this.renderTick()
       this.record('append-batch', start, this.visibleItems)
 
       start = now()
       this.items = updateEveryNth(this.items)
       this.visibleItems = this.items
       this.summary = `${this.visibleItems.length}/${this.items.length}`
+      await this.renderTick()
       this.record('update-every-5th', start, this.visibleItems)
+
+      start = now()
+      this.visibleItems = sortByScoreThenId(this.items)
+      this.summary = `${this.visibleItems.length}/${this.items.length}`
+      await this.renderTick()
+      this.record('sort-score-desc', start, this.visibleItems)
 
       start = now()
       this.visibleItems = filterActiveHighScore(this.items)
       this.summary = `${this.visibleItems.length}/${this.items.length}`
+      await this.renderTick()
       this.record('filter-active-high-score', start, this.visibleItems)
+
+      start = now()
+      this.groups = groupItems(this.items)
+      await this.renderTick()
+      this.recordGroups('group-aggregate-render', start, this.groups)
+
+      start = now()
+      this.visibleItems = sliceWindow(this.items)
+      this.summary = `${this.visibleItems.length}/${this.items.length}`
+      await this.renderTick()
+      this.record('window-slice-middle', start, this.visibleItems)
+
+      start = now()
+      this.items = createItems(replaceCount, 10000)
+      this.visibleItems = this.items
+      this.groups = []
+      this.summary = `${this.visibleItems.length}/${this.items.length}`
+      await this.renderTick()
+      this.record('replace-dataset', start, this.visibleItems)
 
       // eslint-disable-next-line no-console
       console.log('BENCHMARK_RUNTIME', {
@@ -118,6 +178,7 @@ createPage({
 
 .toolbar,
 .metric,
+.group,
 .row {
   display: flex;
   align-items: center;
@@ -145,6 +206,7 @@ createPage({
 }
 
 .metric,
+.group,
 .row {
   padding: 16rpx 20rpx;
   margin-bottom: 12rpx;

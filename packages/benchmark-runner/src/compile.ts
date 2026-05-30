@@ -21,8 +21,29 @@ interface CompileSample {
 const defaultIterations = 3
 const tailLimit = 4_000
 
+function average(values: number[]) {
+  return values.length
+    ? Math.round(values.reduce((total, value) => total + value, 0) / values.length)
+    : 0
+}
+
 function tail(value: string) {
   return value.length > tailLimit ? value.slice(-tailLimit) : value
+}
+
+function formatMs(value: number | undefined) {
+  return typeof value === 'number' ? `${value}ms` : '-'
+}
+
+function formatBytes(value: number | undefined) {
+  return typeof value === 'number' ? `${value}` : '-'
+}
+
+function formatGap(base: number | undefined, value: number | undefined) {
+  if (!base || typeof value !== 'number') {
+    return '-'
+  }
+  return `${(value / base).toFixed(2)}x`
 }
 
 async function runCommand(command: string, cwd: string) {
@@ -93,10 +114,128 @@ async function runCompileBenchmark() {
     samples,
   })
 
+  const successfulSamples = samples.filter(sample => sample.ok)
+  const projectSummaries = benchmarkProjects.map((project) => {
+    const projectSamples = successfulSamples.filter(sample => sample.project === project.id)
+    const first = projectSamples[0]
+    return {
+      id: project.id,
+      label: project.label,
+      avgDurationMs: average(projectSamples.map(sample => sample.durationMs)),
+      avgBytes: average(projectSamples.map(sample => sample.output.bytes)),
+      avgJsBytes: average(projectSamples.map(sample => sample.output.jsBytes)),
+      avgTemplateBytes: average(projectSamples.map(sample => sample.output.templateBytes)),
+      avgStyleBytes: average(projectSamples.map(sample => sample.output.styleBytes)),
+      files: first?.output.files ?? 0,
+      ok: projectSamples.length === iterations,
+      sampleCount: projectSamples.length,
+    }
+  })
+  const completeSummaries = projectSummaries.filter(summary => summary.ok)
+  const incompleteSummaries = projectSummaries.filter(summary => !summary.ok)
+  const byDuration = [...completeSummaries].sort((left, right) => left.avgDurationMs - right.avgDurationMs)
+  const bySize = [...completeSummaries].sort((left, right) => left.avgBytes - right.avgBytes)
+  const fastest = byDuration[0]
+  const slowest = byDuration.at(-1)
+  const smallest = bySize[0]
+  const largest = bySize.at(-1)
+  const durationRank = new Map(byDuration.map((summary, index) => [summary.id, index + 1]))
+  const sizeRank = new Map(bySize.map((summary, index) => [summary.id, index + 1]))
+  const insightRows = completeSummaries.map((summary) => {
+    const buildRank = durationRank.get(summary.id) ?? 0
+    const outputRank = sizeRank.get(summary.id) ?? 0
+    const verdict = buildRank === 1 && outputRank <= 2
+      ? '编译最快且体积靠前'
+      : buildRank === 1
+        ? '编译最快'
+        : outputRank === 1
+          ? '产物最小'
+          : buildRank === completeSummaries.length || outputRank === completeSummaries.length
+            ? '存在明显短板'
+            : '表现居中'
+    return {
+      ...summary,
+      buildRank,
+      outputRank,
+      verdict,
+    }
+  }).sort((left, right) => left.buildRank - right.buildRank)
+
   const lines = [
     '# 编译基准报告',
     '',
     `生成时间：${generatedAt}`,
+    '',
+    '## 一眼结论',
+    '',
+    `- 编译最快：${fastest?.label ?? '-'}，平均 ${fastest?.avgDurationMs ?? 0}ms。`,
+    `- 编译最慢：${slowest?.label ?? '-'}，平均 ${slowest?.avgDurationMs ?? 0}ms。`,
+    `- 产物最小：${smallest?.label ?? '-'}，平均 ${smallest?.avgBytes ?? 0} 字节。`,
+    `- 产物最大：${largest?.label ?? '-'}，平均 ${largest?.avgBytes ?? 0} 字节。`,
+    incompleteSummaries.length
+      ? `- 未纳入排名：${incompleteSummaries.map(summary => `${summary.label}（有效样本 ${summary.sampleCount}/${iterations}）`).join('、')}。`
+      : '- 所有项目构建样本完整，均已纳入排名。',
+    '',
+    '## 项目优劣速览',
+    '',
+    '| 项目 | 编译排名 | 体积排名 | 平均耗时 | 慢于最快 | 平均体积 | 大于最小 | JS 字节 | 模板字节 | 判断 |',
+    '| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- |',
+    ...insightRows.map(summary => [
+      summary.label,
+      summary.buildRank,
+      summary.outputRank,
+      formatMs(summary.avgDurationMs),
+      formatGap(fastest?.avgDurationMs, summary.avgDurationMs),
+      formatBytes(summary.avgBytes),
+      formatGap(smallest?.avgBytes, summary.avgBytes),
+      formatBytes(summary.avgJsBytes),
+      formatBytes(summary.avgTemplateBytes),
+      summary.verdict,
+    ].join(' | ')).map(row => `| ${row} |`),
+    ...(incompleteSummaries.length
+      ? [
+          '',
+          '## 未完成构建',
+          '',
+          '| 项目 | 有效样本 | 问题 |',
+          '| --- | ---: | --- |',
+          ...incompleteSummaries.map((summary) => {
+            const errors = samples
+              .filter(sample => sample.project === summary.id && !sample.ok)
+              .map(sample => `exitCode ${sample.exitCode ?? 'signal'}`)
+            return `| ${summary.label} | ${summary.sampleCount}/${iterations} | ${[...new Set(errors)].join('；')} |`
+          }),
+        ]
+      : []),
+    '',
+    '## 编译耗时排名',
+    '',
+    '| 排名 | 项目 | 平均耗时 | 相对最快 | 构建通过 |',
+    '| ---: | --- | ---: | ---: | --- |',
+    ...byDuration.map((summary, index) => [
+      index + 1,
+      summary.label,
+      formatMs(summary.avgDurationMs),
+      formatGap(fastest?.avgDurationMs, summary.avgDurationMs),
+      summary.ok ? '是' : '否',
+    ].join(' | ')).map(row => `| ${row} |`),
+    '',
+    '## 产物体积排名',
+    '',
+    '| 排名 | 项目 | 平均总字节 | JS 字节 | 模板字节 | 样式字节 | 文件数 | 相对最小 |',
+    '| ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: |',
+    ...bySize.map((summary, index) => [
+      index + 1,
+      summary.label,
+      formatBytes(summary.avgBytes),
+      formatBytes(summary.avgJsBytes),
+      formatBytes(summary.avgTemplateBytes),
+      formatBytes(summary.avgStyleBytes),
+      summary.files,
+      formatGap(smallest?.avgBytes, summary.avgBytes),
+    ].join(' | ')).map(row => `| ${row} |`),
+    '',
+    '## 原始明细',
     '',
     '| 项目 | 轮次 | 通过 | 耗时 | 文件数 | 总字节 | JS 字节 | 模板字节 | 样式字节 | JSON 字节 |',
     '| --- | ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |',
@@ -112,7 +251,6 @@ async function runCompileBenchmark() {
       sample.output.styleBytes,
       sample.output.jsonBytes,
     ].join(' | ')).map(row => `| ${row} |`),
-    '',
   ]
   await writeText(path.join(reportDir, 'latest.md'), `${lines.join('\n')}\n`)
 

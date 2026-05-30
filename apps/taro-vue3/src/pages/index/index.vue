@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { BenchmarkItem, RuntimeMetric } from '../../shared/benchmark'
+import type { BenchmarkGroup, BenchmarkItem, RuntimeMetric } from '../../shared/benchmark'
 import Taro from '@tarojs/taro'
 import { computed, nextTick, onMounted, ref } from 'vue'
 import {
@@ -8,8 +8,13 @@ import {
   checksum,
   createItems,
   filterActiveHighScore,
+  groupChecksum,
+  groupItems,
   initialCount,
   now,
+  replaceCount,
+  sliceWindow,
+  sortByScoreThenId,
 
   updateEveryNth,
 } from '../../shared/benchmark'
@@ -17,6 +22,7 @@ import './index.css'
 
 const items = ref<BenchmarkItem[]>(createItems())
 const visibleItems = ref<BenchmarkItem[]>(items.value)
+const groups = ref<BenchmarkGroup[]>([])
 const metrics = ref<RuntimeMetric[]>([])
 const summary = computed(() => `${visibleItems.value.length}/${items.value.length}`)
 
@@ -32,8 +38,21 @@ function record(name: string, start: number, list: BenchmarkItem[]) {
   ]
 }
 
+function recordGroups(name: string, start: number, list: BenchmarkGroup[]) {
+  metrics.value = [
+    ...metrics.value,
+    {
+      name,
+      durationMs: now() - start,
+      count: list.length,
+      checksum: groupChecksum(list),
+    },
+  ]
+}
+
 async function runBenchmark() {
   metrics.value = []
+  groups.value = []
   let start = now()
   items.value = createItems(initialCount)
   visibleItems.value = items.value
@@ -53,9 +72,31 @@ async function runBenchmark() {
   record('update-every-5th', start, visibleItems.value)
 
   start = now()
+  visibleItems.value = sortByScoreThenId(items.value)
+  await nextTick()
+  record('sort-score-desc', start, visibleItems.value)
+
+  start = now()
   visibleItems.value = filterActiveHighScore(items.value)
   await nextTick()
   record('filter-active-high-score', start, visibleItems.value)
+
+  start = now()
+  groups.value = groupItems(items.value)
+  await nextTick()
+  recordGroups('group-aggregate-render', start, groups.value)
+
+  start = now()
+  visibleItems.value = sliceWindow(items.value)
+  await nextTick()
+  record('window-slice-middle', start, visibleItems.value)
+
+  start = now()
+  items.value = createItems(replaceCount, 10_000)
+  visibleItems.value = items.value
+  groups.value = []
+  await nextTick()
+  record('replace-dataset', start, visibleItems.value)
 
   // eslint-disable-next-line no-console
   console.log('BENCHMARK_RUNTIME', {
@@ -93,6 +134,14 @@ onMounted(() => {
         <text>{{ metric.name }}</text>
         <text>{{ metric.durationMs }}ms</text>
         <text>{{ metric.count }}</text>
+      </view>
+    </view>
+    <view class="groups">
+      <view v-for="group in groups" :key="group.group" class="group">
+        <text>g{{ group.group }}</text>
+        <text>{{ group.count }}</text>
+        <text>{{ group.activeCount }}</text>
+        <text>{{ group.totalScore }}</text>
       </view>
     </view>
     <view class="list">

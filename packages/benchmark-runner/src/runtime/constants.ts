@@ -1,6 +1,6 @@
 export const defaultIterations = 3
 export const defaultLaunchTimeout = 60_000
-export const metricCount = 4
+export const metricCount = 8
 
 export const commonWechatCliPaths = [
   '/Applications/wechatwebdevtools.app/Contents/MacOS/cli',

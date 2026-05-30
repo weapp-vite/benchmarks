@@ -5,6 +5,7 @@
 
 .toolbar,
 .metric,
+.group,
 .row {
   display: flex;
   align-items: center;
@@ -32,6 +33,7 @@
 }
 
 .metric,
+.group,
 .row {
   padding: 16px 20px;
   margin-bottom: 12px;
