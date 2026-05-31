@@ -28,7 +28,7 @@ export const compileProjects: CompileBenchmarkProject[] = [
   },
   {
     id: 'weapp-vite-native',
-    label: 'weapp-vite native',
+    label: 'weapp-vite 原生',
     appDir: 'apps/weapp-vite-native',
     buildCommand: 'pnpm build',
     outputDir: 'dist',

@@ -3,7 +3,7 @@
 本仓库用同一套小程序场景对比以下框架：
 
 - `weapp-vite + wevu`
-- `weapp-vite native`，纯原生微信小程序页面，由 `weapp-vite` 负责编译
+- `weapp-vite 原生`，纯原生微信小程序页面，由 `weapp-vite` 负责编译
 - `uni-app vite vue3`
 - `uni-app x`
 - `mpx`
@@ -34,7 +34,7 @@ pnpm bench:compile
 
 `@vue-mini/core` 没有独立构建链路，本仓库只把它纳入运行时对比，不纳入编译时排名。
 
-`weapp-vite native` 没有引入 `wevu`，源码是原生 `Page` / `setData` 写法。它参与编译时 benchmark，用来观察只使用 `weapp-vite` 编译链路时的构建成本；运行时报告中则作为原生小程序实现列出，方便和 `weapp-vite + wevu`、`@vue-mini/core` 等运行时方案分开看。
+`weapp-vite 原生` 没有引入 `wevu`，源码是原生 `Page` / `setData` 写法。它参与编译时 benchmark，用来观察只使用 `weapp-vite` 编译链路时的构建成本；运行时报告中则作为原生小程序实现列出，方便和 `weapp-vite + wevu`、`@vue-mini/core` 等运行时方案分开看。
 
 ## 运行时
 
@@ -56,7 +56,7 @@ pnpm bench:compile
 
 `@vue-mini/core` 运行时项目是原生微信小程序，启动前会通过微信开发者工具 `build-npm` 准备 npm 依赖；这一步只用于运行时采集准备，不进入编译时 benchmark。
 
-`weapp-vite native` 运行时项目同样是原生微信小程序页面，但它不需要 `build-npm`。运行时数据由 IDE E2E 打开 `weapp-vite` 编译后的 `dist/` 小程序项目采集。
+`weapp-vite 原生` 运行时项目同样是原生微信小程序页面，但它不需要 `build-npm`。运行时数据由 IDE E2E 打开 `weapp-vite` 编译后的 `dist/` 小程序项目采集。
 
 运行时报告会优先展示直观对比：
 

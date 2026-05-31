@@ -1,12 +1,12 @@
 # 编译基准报告
 
-生成时间：2026-05-31T02:51:52.532Z
+生成时间：2026-05-31T02:58:22.347Z
 
 ## 一眼结论
 
-- 编译最快：weapp-vite native，平均 917ms。
-- 编译最慢：taro vue3，平均 3469ms。
-- 产物最小：weapp-vite native，平均 8.7 KB。
+- 编译最快：weapp-vite 原生，平均 991ms。
+- 编译最慢：taro vue3，平均 3525ms。
+- 产物最小：weapp-vite 原生，平均 8.7 KB。
 - 产物最大：taro vue3，平均 221.3 KB。
 - 所有项目构建样本完整，均已纳入排名。
 
@@ -14,29 +14,29 @@
 
 | 项目              | 编译排名 | 体积排名 | 平均耗时 | 慢于最快 | 平均体积 | 大于最小 |  JS 大小 | 模板大小 | 判断               |
 | ----------------- | -------: | -------: | -------: | -------: | -------: | -------: | -------: | -------: | ------------------ |
-| weapp-vite native |        1 |        1 |    917ms |    1.00x |   8.7 KB |    1.00x |   6.3 KB |   1.2 KB | 编译最快且体积靠前 |
-| weapp-vite + wevu |        2 |        5 |   1147ms |    1.25x | 190.9 KB |   21.91x | 188.5 KB |   1.1 KB | 表现居中           |
-| mpx               |        3 |        4 |   1745ms |    1.90x | 174.1 KB |   19.99x | 172.4 KB |   1.0 KB | 表现居中           |
-| uni-app vite vue3 |        4 |        2 |   2491ms |    2.72x |  71.4 KB |    8.19x |  68.7 KB |   0.9 KB | 表现居中           |
-| uni-app x         |        5 |        3 |   3166ms |    3.45x |  99.4 KB |   11.42x |  90.8 KB |   1.5 KB | 表现居中           |
-| taro vue3         |        6 |        6 |   3469ms |    3.78x | 221.3 KB |   25.40x | 164.4 KB |  54.5 KB | 存在明显短板       |
+| weapp-vite 原生   |        1 |        1 |    991ms |    1.00x |   8.7 KB |    1.00x |   6.3 KB |   1.2 KB | 编译最快且体积靠前 |
+| weapp-vite + wevu |        2 |        5 |   1279ms |    1.29x | 190.9 KB |   21.91x | 188.5 KB |   1.1 KB | 表现居中           |
+| mpx               |        3 |        4 |   1865ms |    1.88x | 174.1 KB |   19.99x | 172.4 KB |   1.0 KB | 表现居中           |
+| uni-app vite vue3 |        4 |        2 |   2524ms |    2.55x |  71.4 KB |    8.19x |  68.7 KB |   0.9 KB | 表现居中           |
+| uni-app x         |        5 |        3 |   3358ms |    3.39x |  99.4 KB |   11.42x |  90.8 KB |   1.5 KB | 表现居中           |
+| taro vue3         |        6 |        6 |   3525ms |    3.56x | 221.3 KB |   25.40x | 164.4 KB |  54.5 KB | 存在明显短板       |
 
 ## 编译耗时排名
 
 | 排名 | 项目              | 平均耗时 | 相对最快 | 构建通过 |
 | ---: | ----------------- | -------: | -------: | -------- |
-|    1 | weapp-vite native |    917ms |    1.00x | 是       |
-|    2 | weapp-vite + wevu |   1147ms |    1.25x | 是       |
-|    3 | mpx               |   1745ms |    1.90x | 是       |
-|    4 | uni-app vite vue3 |   2491ms |    2.72x | 是       |
-|    5 | uni-app x         |   3166ms |    3.45x | 是       |
-|    6 | taro vue3         |   3469ms |    3.78x | 是       |
+|    1 | weapp-vite 原生   |    991ms |    1.00x | 是       |
+|    2 | weapp-vite + wevu |   1279ms |    1.29x | 是       |
+|    3 | mpx               |   1865ms |    1.88x | 是       |
+|    4 | uni-app vite vue3 |   2524ms |    2.55x | 是       |
+|    5 | uni-app x         |   3358ms |    3.39x | 是       |
+|    6 | taro vue3         |   3525ms |    3.56x | 是       |
 
 ## 产物体积排名
 
 | 排名 | 项目              | 平均总大小 |  JS 大小 | 模板大小 | 样式大小 | 文件数 | 相对最小 |
 | ---: | ----------------- | ---------: | -------: | -------: | -------: | -----: | -------: |
-|    1 | weapp-vite native |     8.7 KB |   6.3 KB |   1.2 KB |   0.8 KB |     12 |    1.00x |
+|    1 | weapp-vite 原生   |     8.7 KB |   6.3 KB |   1.2 KB |   0.8 KB |     12 |    1.00x |
 |    2 | uni-app vite vue3 |    71.4 KB |  68.7 KB |   0.9 KB |   0.8 KB |     15 |    8.19x |
 |    3 | uni-app x         |    99.4 KB |  90.8 KB |   1.5 KB |   3.8 KB |     17 |   11.42x |
 |    4 | mpx               |   174.1 KB | 172.4 KB |   1.0 KB |   0.6 KB |     12 |   19.99x |
@@ -47,21 +47,21 @@
 
 | 项目              | 轮次 | 通过 |   耗时 | 文件数 |   总大小 |  JS 大小 | 模板大小 | 样式大小 | JSON 大小 |
 | ----------------- | ---: | ---- | -----: | -----: | -------: | -------: | -------: | -------: | --------: |
-| weapp-vite + wevu |    1 | 是   | 1151ms |     14 | 190.9 KB | 188.5 KB |   1.1 KB |   0.8 KB |    0.4 KB |
-| weapp-vite + wevu |    2 | 是   | 1124ms |     14 | 190.9 KB | 188.5 KB |   1.1 KB |   0.8 KB |    0.4 KB |
-| weapp-vite + wevu |    3 | 是   | 1165ms |     14 | 190.9 KB | 188.5 KB |   1.1 KB |   0.8 KB |    0.4 KB |
-| weapp-vite native |    1 | 是   |  930ms |     12 |   8.7 KB |   6.3 KB |   1.2 KB |   0.8 KB |    0.4 KB |
-| weapp-vite native |    2 | 是   |  917ms |     12 |   8.7 KB |   6.3 KB |   1.2 KB |   0.8 KB |    0.4 KB |
-| weapp-vite native |    3 | 是   |  904ms |     12 |   8.7 KB |   6.3 KB |   1.2 KB |   0.8 KB |    0.4 KB |
-| uni-app vite vue3 |    1 | 是   | 2712ms |     15 |  71.4 KB |  68.7 KB |   0.9 KB |   0.8 KB |    1.0 KB |
-| uni-app vite vue3 |    2 | 是   | 2377ms |     15 |  71.4 KB |  68.7 KB |   0.9 KB |   0.8 KB |    1.0 KB |
-| uni-app vite vue3 |    3 | 是   | 2384ms |     15 |  71.4 KB |  68.7 KB |   0.9 KB |   0.8 KB |    1.0 KB |
-| uni-app x         |    1 | 是   | 3250ms |     17 |  99.4 KB |  90.8 KB |   1.5 KB |   3.8 KB |    1.0 KB |
-| uni-app x         |    2 | 是   | 3134ms |     17 |  99.4 KB |  90.8 KB |   1.5 KB |   3.8 KB |    1.0 KB |
-| uni-app x         |    3 | 是   | 3114ms |     17 |  99.4 KB |  90.8 KB |   1.5 KB |   3.8 KB |    1.0 KB |
-| mpx               |    1 | 是   | 1982ms |     12 | 174.1 KB | 172.4 KB |   1.0 KB |   0.6 KB |    0.2 KB |
-| mpx               |    2 | 是   | 1677ms |     12 | 174.1 KB | 172.4 KB |   1.0 KB |   0.6 KB |    0.2 KB |
-| mpx               |    3 | 是   | 1576ms |     12 | 174.1 KB | 172.4 KB |   1.0 KB |   0.6 KB |    0.2 KB |
-| taro vue3         |    1 | 是   | 3235ms |     19 | 221.3 KB | 164.4 KB |  54.5 KB |   0.6 KB |    0.7 KB |
-| taro vue3         |    2 | 是   | 3582ms |     19 | 221.3 KB | 164.4 KB |  54.5 KB |   0.6 KB |    0.7 KB |
-| taro vue3         |    3 | 是   | 3590ms |     19 | 221.3 KB | 164.4 KB |  54.5 KB |   0.6 KB |    0.7 KB |
+| weapp-vite + wevu |    1 | 是   | 1321ms |     14 | 190.9 KB | 188.5 KB |   1.1 KB |   0.8 KB |    0.4 KB |
+| weapp-vite + wevu |    2 | 是   | 1276ms |     14 | 190.9 KB | 188.5 KB |   1.1 KB |   0.8 KB |    0.4 KB |
+| weapp-vite + wevu |    3 | 是   | 1240ms |     14 | 190.9 KB | 188.5 KB |   1.1 KB |   0.8 KB |    0.4 KB |
+| weapp-vite 原生   |    1 | 是   |  960ms |     12 |   8.7 KB |   6.3 KB |   1.2 KB |   0.8 KB |    0.4 KB |
+| weapp-vite 原生   |    2 | 是   | 1004ms |     12 |   8.7 KB |   6.3 KB |   1.2 KB |   0.8 KB |    0.4 KB |
+| weapp-vite 原生   |    3 | 是   | 1010ms |     12 |   8.7 KB |   6.3 KB |   1.2 KB |   0.8 KB |    0.4 KB |
+| uni-app vite vue3 |    1 | 是   | 2550ms |     15 |  71.4 KB |  68.7 KB |   0.9 KB |   0.8 KB |    1.0 KB |
+| uni-app vite vue3 |    2 | 是   | 2448ms |     15 |  71.4 KB |  68.7 KB |   0.9 KB |   0.8 KB |    1.0 KB |
+| uni-app vite vue3 |    3 | 是   | 2573ms |     15 |  71.4 KB |  68.7 KB |   0.9 KB |   0.8 KB |    1.0 KB |
+| uni-app x         |    1 | 是   | 3318ms |     17 |  99.4 KB |  90.8 KB |   1.5 KB |   3.8 KB |    1.0 KB |
+| uni-app x         |    2 | 是   | 3396ms |     17 |  99.4 KB |  90.8 KB |   1.5 KB |   3.8 KB |    1.0 KB |
+| uni-app x         |    3 | 是   | 3361ms |     17 |  99.4 KB |  90.8 KB |   1.5 KB |   3.8 KB |    1.0 KB |
+| mpx               |    1 | 是   | 1916ms |     12 | 174.1 KB | 172.4 KB |   1.0 KB |   0.6 KB |    0.2 KB |
+| mpx               |    2 | 是   | 1759ms |     12 | 174.1 KB | 172.4 KB |   1.0 KB |   0.6 KB |    0.2 KB |
+| mpx               |    3 | 是   | 1920ms |     12 | 174.1 KB | 172.4 KB |   1.0 KB |   0.6 KB |    0.2 KB |
+| taro vue3         |    1 | 是   | 3092ms |     19 | 221.3 KB | 164.4 KB |  54.5 KB |   0.6 KB |    0.7 KB |
+| taro vue3         |    2 | 是   | 3770ms |     19 | 221.3 KB | 164.4 KB |  54.5 KB |   0.6 KB |    0.7 KB |
+| taro vue3         |    3 | 是   | 3712ms |     19 | 221.3 KB | 164.4 KB |  54.5 KB |   0.6 KB |    0.7 KB |
