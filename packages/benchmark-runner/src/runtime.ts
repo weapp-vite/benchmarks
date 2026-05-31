@@ -54,6 +54,7 @@ async function runRuntimeBenchmark() {
     '运行时数据由 e2e/ide/runtime-benchmark.ts 通过微信开发者工具真实 IDE 自动化采集。',
     '运行时耗时在各框架页面内部统计，覆盖状态变更和下一次渲染 tick。',
     '每轮都会重新打开 benchmark 页面，确保各框架从同一组确定性数据开始。',
+    'weapp-vite + wevu performance 本次采集使用 wevu 运行时优化提交 9e43db53392298063eda3cc528a75f3ee2ebda6a。',
     `DevTools 启动超时默认是 ${defaultLaunchTimeout}ms，可通过 BENCH_RUNTIME_TIMEOUT 覆盖。`,
     `运行时指标等待超时默认是 ${defaultMetricsTimeout}ms，可通过 BENCH_RUNTIME_METRICS_TIMEOUT 覆盖。`,
     `页面重开默认最多重试 ${defaultRelaunchRetries} 次，可通过 BENCH_RUNTIME_RELAUNCH_RETRIES 覆盖。`,

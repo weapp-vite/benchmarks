@@ -1,0 +1,63 @@
+export interface HmrProfileSample {
+  timestamp?: string
+  totalMs?: number
+  eventId?: string
+  event?: string
+  file?: string
+  relativeFile?: string
+  sourceRootFile?: string
+  buildCoreMs?: number
+  transformMs?: number
+  writeMs?: number
+  watchToDirtyMs?: number
+  emitMs?: number
+  sharedChunkResolveMs?: number
+  dirtyCount?: number
+  pendingCount?: number
+  emittedCount?: number
+  dirtyReasonSummary?: string[]
+  pendingReasonSummary?: string[]
+}
+
+export interface HmrScenario {
+  id: string
+  label: string
+  group: 'vue-sfc' | 'native'
+  project: string
+  projectLabel: string
+  appDir: string
+  sourceFile: string
+  applyMarker: (source: string, marker: string) => string
+}
+
+export interface HmrSample {
+  scenario: string
+  label: string
+  group: HmrScenario['group']
+  project: string
+  projectLabel: string
+  iteration: number
+  sourceFile: string
+  ok: boolean
+  wallMs?: number
+  totalMs?: number
+  buildCoreMs?: number
+  transformMs?: number
+  writeMs?: number
+  watchToDirtyMs?: number
+  emitMs?: number
+  sharedChunkResolveMs?: number
+  dirtyCount?: number
+  pendingCount?: number
+  emittedCount?: number
+  profileEvent?: string
+  sourceRootFile?: string
+  error?: string
+}
+
+export interface HmrReport {
+  generatedAt: string
+  iterations: number
+  samples: HmrSample[]
+  notes: string[]
+}

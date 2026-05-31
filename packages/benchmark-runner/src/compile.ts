@@ -2,6 +2,7 @@ import { spawn } from 'node:child_process'
 import { performance } from 'node:perf_hooks'
 import process from 'node:process'
 import path from 'pathe'
+import { defaultTimingIterations } from './constants'
 import { ensureDir, removeDir, summarizeDir, writeJson, writeText } from './fs'
 import { compileProjects, repoRoot } from './projects'
 
@@ -18,7 +19,6 @@ interface CompileSample {
   stderrTail: string
 }
 
-const defaultIterations = 3
 const tailLimit = 4_000
 
 function average(values: number[]) {
@@ -82,7 +82,7 @@ async function runCommand(command: string, cwd: string) {
 }
 
 async function runCompileBenchmark() {
-  const iterations = Number(process.env['BENCH_ITERATIONS'] ?? defaultIterations)
+  const iterations = Number(process.env['BENCH_ITERATIONS'] ?? defaultTimingIterations)
   const samples: CompileSample[] = []
 
   for (const project of compileProjects) {
@@ -168,6 +168,7 @@ async function runCompileBenchmark() {
     '# 编译基准报告',
     '',
     `生成时间：${generatedAt}`,
+    `采样次数：${iterations} 次，报告中的平均耗时由有效样本计算。`,
     '',
     '## 一眼结论',
     '',

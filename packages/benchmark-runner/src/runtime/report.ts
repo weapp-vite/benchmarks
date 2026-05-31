@@ -215,6 +215,7 @@ export async function writeReport(reportDir: string, report: RuntimeReport) {
     '',
     `生成时间：${report.generatedAt}`,
     `模式：${report.mode === 'ide-e2e' ? 'IDE E2E 采集' : '手动计划'}`,
+    `采样次数：${report.iterations} 次，报告中的场景均值和总耗时由有效样本计算。`,
     '',
     '## 一眼结论',
     '',

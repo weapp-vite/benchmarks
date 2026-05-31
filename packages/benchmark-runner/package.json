@@ -4,8 +4,9 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "bench": "pnpm run bench:compile && pnpm run bench:runtime",
+    "bench": "pnpm run bench:compile && pnpm run bench:runtime && pnpm run bench:hmr",
     "bench:compile": "tsx src/compile.ts",
+    "bench:hmr": "tsx src/hmr.ts",
     "bench:runtime": "tsx src/runtime.ts",
     "build": "tsdown",
     "lint": "eslint .",

@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.json",
+  "references": [
+    {
+      "path": "./.weapp-vite/tsconfig.app.json"
+    },
+    {
+      "path": "./.weapp-vite/tsconfig.node.json"
+    }
+  ],
+  "files": []
+}

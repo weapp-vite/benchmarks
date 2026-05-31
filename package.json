@@ -19,6 +19,7 @@
     "build": "turbo run build",
     "bench": "pnpm --filter @benchmarks/runner bench",
     "bench:compile": "pnpm --filter @benchmarks/runner bench:compile",
+    "bench:hmr": "pnpm --filter @benchmarks/runner bench:hmr",
     "bench:runtime": "pnpm --filter @benchmarks/runner bench:runtime",
     "dev": "turbo run dev --parallel",
     "e2e:ide:runtime": "tsx e2e/ide/runtime-benchmark.ts",

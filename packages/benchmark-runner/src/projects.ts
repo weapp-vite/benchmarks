@@ -27,6 +27,15 @@ export const compileProjects: CompileBenchmarkProject[] = [
     runtimePage: 'pages/index/index',
   },
   {
+    id: 'weapp-vite-wevu-performance',
+    label: 'weapp-vite + wevu performance',
+    appDir: 'apps/weapp-vite-wevu-performance',
+    buildCommand: 'pnpm build',
+    outputDir: 'dist',
+    runtimeProjectDir: 'apps/weapp-vite-wevu-performance',
+    runtimePage: 'pages/index/index',
+  },
+  {
     id: 'weapp-vite-native',
     label: 'weapp-vite 原生',
     appDir: 'apps/weapp-vite-native',

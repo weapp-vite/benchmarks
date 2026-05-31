@@ -1,0 +1,19 @@
+{
+  "description": "weapp-vite + wevu performance benchmark",
+  "miniprogramRoot": "dist/",
+  "compileType": "miniprogram",
+  "appid": "wxb3d842a4a7e3440d",
+  "setting": {
+    "es6": true,
+    "minified": true,
+    "postcss": false,
+    "packNpmManually": true,
+    "packNpmRelationList": [
+      {
+        "packageJsonPath": "./package.json",
+        "miniprogramNpmDistDir": "./dist"
+      }
+    ],
+    "minifyWXML": true
+  }
+}
