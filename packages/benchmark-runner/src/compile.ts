@@ -35,8 +35,11 @@ function formatMs(value: number | undefined) {
   return typeof value === 'number' ? `${value}ms` : '-'
 }
 
-function formatBytes(value: number | undefined) {
-  return typeof value === 'number' ? `${value}` : '-'
+function formatKb(value: number | undefined) {
+  if (typeof value !== 'number') {
+    return '-'
+  }
+  return `${(value / 1024).toFixed(1)} KB`
 }
 
 function formatGap(base: number | undefined, value: number | undefined) {
@@ -170,15 +173,15 @@ async function runCompileBenchmark() {
     '',
     `- 编译最快：${fastest?.label ?? '-'}，平均 ${fastest?.avgDurationMs ?? 0}ms。`,
     `- 编译最慢：${slowest?.label ?? '-'}，平均 ${slowest?.avgDurationMs ?? 0}ms。`,
-    `- 产物最小：${smallest?.label ?? '-'}，平均 ${smallest?.avgBytes ?? 0} 字节。`,
-    `- 产物最大：${largest?.label ?? '-'}，平均 ${largest?.avgBytes ?? 0} 字节。`,
+    `- 产物最小：${smallest?.label ?? '-'}，平均 ${formatKb(smallest?.avgBytes)}。`,
+    `- 产物最大：${largest?.label ?? '-'}，平均 ${formatKb(largest?.avgBytes)}。`,
     incompleteSummaries.length
       ? `- 未纳入排名：${incompleteSummaries.map(summary => `${summary.label}（有效样本 ${summary.sampleCount}/${iterations}）`).join('、')}。`
       : '- 所有项目构建样本完整，均已纳入排名。',
     '',
     '## 项目优劣速览',
     '',
-    '| 项目 | 编译排名 | 体积排名 | 平均耗时 | 慢于最快 | 平均体积 | 大于最小 | JS 字节 | 模板字节 | 判断 |',
+    '| 项目 | 编译排名 | 体积排名 | 平均耗时 | 慢于最快 | 平均体积 | 大于最小 | JS 大小 | 模板大小 | 判断 |',
     '| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- |',
     ...insightRows.map(summary => [
       summary.label,
@@ -186,10 +189,10 @@ async function runCompileBenchmark() {
       summary.outputRank,
       formatMs(summary.avgDurationMs),
       formatGap(fastest?.avgDurationMs, summary.avgDurationMs),
-      formatBytes(summary.avgBytes),
+      formatKb(summary.avgBytes),
       formatGap(smallest?.avgBytes, summary.avgBytes),
-      formatBytes(summary.avgJsBytes),
-      formatBytes(summary.avgTemplateBytes),
+      formatKb(summary.avgJsBytes),
+      formatKb(summary.avgTemplateBytes),
       summary.verdict,
     ].join(' | ')).map(row => `| ${row} |`),
     ...(incompleteSummaries.length
@@ -222,22 +225,22 @@ async function runCompileBenchmark() {
     '',
     '## 产物体积排名',
     '',
-    '| 排名 | 项目 | 平均总字节 | JS 字节 | 模板字节 | 样式字节 | 文件数 | 相对最小 |',
+    '| 排名 | 项目 | 平均总大小 | JS 大小 | 模板大小 | 样式大小 | 文件数 | 相对最小 |',
     '| ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: |',
     ...bySize.map((summary, index) => [
       index + 1,
       summary.label,
-      formatBytes(summary.avgBytes),
-      formatBytes(summary.avgJsBytes),
-      formatBytes(summary.avgTemplateBytes),
-      formatBytes(summary.avgStyleBytes),
+      formatKb(summary.avgBytes),
+      formatKb(summary.avgJsBytes),
+      formatKb(summary.avgTemplateBytes),
+      formatKb(summary.avgStyleBytes),
       summary.files,
       formatGap(smallest?.avgBytes, summary.avgBytes),
     ].join(' | ')).map(row => `| ${row} |`),
     '',
     '## 原始明细',
     '',
-    '| 项目 | 轮次 | 通过 | 耗时 | 文件数 | 总字节 | JS 字节 | 模板字节 | 样式字节 | JSON 字节 |',
+    '| 项目 | 轮次 | 通过 | 耗时 | 文件数 | 总大小 | JS 大小 | 模板大小 | 样式大小 | JSON 大小 |',
     '| --- | ---: | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |',
     ...samples.map(sample => [
       sample.label,
@@ -245,11 +248,11 @@ async function runCompileBenchmark() {
       sample.ok ? '是' : `否（${sample.exitCode ?? 'signal'}）`,
       `${sample.durationMs}ms`,
       sample.output.files,
-      sample.output.bytes,
-      sample.output.jsBytes,
-      sample.output.templateBytes,
-      sample.output.styleBytes,
-      sample.output.jsonBytes,
+      formatKb(sample.output.bytes),
+      formatKb(sample.output.jsBytes),
+      formatKb(sample.output.templateBytes),
+      formatKb(sample.output.styleBytes),
+      formatKb(sample.output.jsonBytes),
     ].join(' | ')).map(row => `| ${row} |`),
   ]
   await writeText(path.join(reportDir, 'latest.md'), `${lines.join('\n')}\n`)
