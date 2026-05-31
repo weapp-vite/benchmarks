@@ -51,6 +51,7 @@ export async function writeHmrReport(reportDir: string, report: HmrReport) {
     label: sample.label,
     group: sample.group,
     projectLabel: sample.projectLabel,
+    collector: sample.collector,
     sourceFile: sample.sourceFile,
   }])).values()]
 
@@ -80,11 +81,25 @@ export async function writeHmrReport(reportDir: string, report: HmrReport) {
   const fastest = ranked[0]
   const slowest = ranked.at(-1)
 
+  const formatGroup = (group: HmrSample['group']) => {
+    if (group === 'native') {
+      return '原生文件'
+    }
+    if (group === 'mpx-sfc') {
+      return 'Mpx SFC'
+    }
+    return 'Vue SFC'
+  }
+
+  const formatCollector = (collector: HmrSample['collector']) => collector === 'weapp-vite-profile'
+    ? '内部 profile'
+    : '产物变化'
+
   const lines = [
     '# HMR 基准报告',
     '',
     `生成时间：${report.generatedAt}`,
-    `采样次数：${report.iterations} 次，报告中的平均值由 weapp-vite HMR profile 有效样本计算。`,
+    `采样次数：${report.iterations} 次，报告中的平均值由有效样本计算。`,
     '',
     '## 一眼结论',
     '',
@@ -93,18 +108,20 @@ export async function writeHmrReport(reportDir: string, report: HmrReport) {
     incompleteSummaries.length
       ? `- 未纳入排名：${incompleteSummaries.map(summary => `${summary.label}（有效样本 ${summary.sampleCount}/${report.iterations}）`).join('、')}。`
       : '- 所有 HMR 场景样本完整，均已纳入排名。',
-    '- 场景覆盖：Vue SFC 的 script、template、style、页面配置，以及原生 JS、WXML、WXSS、JSON 文件。',
-    '- 读数口径：HMR 总耗时来自 weapp-vite 内部 profile；外部等待是文件写入到 profile 落盘的墙钟耗时，只用于排查 watcher 延迟。',
+    '- 场景覆盖：weapp-vite + wevu、weapp-vite + wevu performance、weapp-vite 原生、uni-app vite vue3、uni-app x、taro vue3、mpx。',
+    '- 读数口径：weapp-vite 使用内部 profile；其他框架使用源文件写入到目标产物更新的墙钟耗时，因此阶段列只在 weapp-vite 场景有值。',
+    '- @vue-mini/core 没有独立编译/watch 链路，只保留 runtime 对比，不纳入 HMR 排名。',
     '',
     '## 场景速览',
     '',
-    '| 排名 | 场景 | 项目 | 类型 | 平均 HMR | 相对最快 | 外部等待 | 构建核心 | 转换 | 写入 | 产物发射 | 共享 chunk | 平均脏入口 | 平均输出文件 |',
-    '| ---: | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |',
+    '| 排名 | 场景 | 项目 | 类型 | 采集方式 | 平均 HMR | 相对最快 | 外部等待 | 构建核心 | 转换 | 写入 | 产物发射 | 共享 chunk | 平均脏入口 | 平均输出文件 |',
+    '| ---: | --- | --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |',
     ...ranked.map((summary, index) => [
       index + 1,
       summary.label,
       summary.projectLabel,
-      summary.group === 'vue-sfc' ? 'Vue SFC' : '原生文件',
+      formatGroup(summary.group),
+      formatCollector(summary.collector),
       formatMs(summary.totalMs),
       formatGap(fastest?.totalMs, summary.totalMs),
       formatMs(summary.wallMs),
@@ -134,10 +151,11 @@ export async function writeHmrReport(reportDir: string, report: HmrReport) {
     '',
     '## 阶段均值',
     '',
-    `| 场景 | ${metricKeys.map(([, label]) => label).join(' | ')} | 脏入口 | 输出文件 | 源文件 |`,
-    `| --- | ${metricKeys.map(() => '---:').join(' | ')} | ---: | ---: | --- |`,
+    `| 场景 | 采集方式 | ${metricKeys.map(([, label]) => label).join(' | ')} | 脏入口 | 输出文件 | 源文件 |`,
+    `| --- | --- | ${metricKeys.map(() => '---:').join(' | ')} | ---: | ---: | --- |`,
     ...summaries.map(summary => [
       summary.label,
+      formatCollector(summary.collector),
       ...metricKeys.map(([key]) => formatMs(summary[key])),
       formatCount(summary.dirtyCount),
       formatCount(summary.emittedCount),
@@ -146,12 +164,13 @@ export async function writeHmrReport(reportDir: string, report: HmrReport) {
     '',
     '## 原始明细',
     '',
-    `| 场景 | 轮次 | 通过 | ${metricKeys.map(([, label]) => label).join(' | ')} | 脏入口 | 输出文件 |`,
-    `| --- | ---: | --- | ${metricKeys.map(() => '---:').join(' | ')} | ---: | ---: |`,
+    `| 场景 | 轮次 | 通过 | 采集方式 | ${metricKeys.map(([, label]) => label).join(' | ')} | 脏入口 | 输出文件 |`,
+    `| --- | ---: | --- | --- | ${metricKeys.map(() => '---:').join(' | ')} | ---: | ---: |`,
     ...report.samples.map(sample => [
       sample.label,
       sample.iteration,
       sample.ok ? '是' : `否${sample.error ? `（${sample.error}）` : ''}`,
+      formatCollector(sample.collector),
       ...metricKeys.map(([key]) => formatMs(sample[key])),
       sample.dirtyCount ?? '',
       sample.emittedCount ?? '',

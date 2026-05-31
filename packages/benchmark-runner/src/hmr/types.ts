@@ -22,10 +22,13 @@ export interface HmrProfileSample {
 export interface HmrScenario {
   id: string
   label: string
-  group: 'vue-sfc' | 'native'
+  group: 'vue-sfc' | 'native' | 'mpx-sfc'
   project: string
   projectLabel: string
   appDir: string
+  collector: 'weapp-vite-profile' | 'artifact'
+  readyPattern?: RegExp
+  outputFiles?: string[]
   sourceFile: string
   applyMarker: (source: string, marker: string) => string
 }
@@ -36,6 +39,7 @@ export interface HmrSample {
   group: HmrScenario['group']
   project: string
   projectLabel: string
+  collector: HmrScenario['collector']
   iteration: number
   sourceFile: string
   ok: boolean

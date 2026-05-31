@@ -5,13 +5,13 @@ import process from 'node:process'
 import path from 'pathe'
 import { defaultTimingIterations } from './constants'
 import { ensureDir } from './fs'
+import { snapshotArtifacts, waitForArtifactChange, waitForArtifacts } from './hmr/artifacts'
 import { startDevProcess } from './hmr/dev'
 import { readProfileSamples, waitForNextProfileSample } from './hmr/profile'
 import { writeHmrReport } from './hmr/report'
-import { hmrScenarios } from './hmr/scenarios'
+import { hmrScenarios } from './hmr/scenarios/index'
 import { repoRoot } from './projects'
 
-const readyRe = /小程序初次构建完成[\s\S]*开发服务已就绪|开发服务已就绪/
 const defaultTimeoutMs = 90_000
 
 function sleep(ms: number) {
@@ -45,6 +45,7 @@ function createSampleFromProfile(options: {
     group: scenario.group,
     project: scenario.project,
     projectLabel: scenario.projectLabel,
+    collector: scenario.collector,
     iteration,
     sourceFile: scenario.sourceFile,
     ok: true,
@@ -88,6 +89,7 @@ function createFailedSample(options: {
     group: scenario.group,
     project: scenario.project,
     projectLabel: scenario.projectLabel,
+    collector: scenario.collector,
     iteration,
     sourceFile: scenario.sourceFile,
     ok: false,
@@ -95,14 +97,55 @@ function createFailedSample(options: {
   }
 }
 
-async function restoreSource(filePath: string, originalSource: string, profilePath: string, timeoutMs: number) {
+function createSampleFromArtifact(options: {
+  scenario: HmrScenario
+  iteration: number
+  wallMs: number
+}): HmrSample {
+  const { scenario, iteration, wallMs } = options
+  return {
+    scenario: scenario.id,
+    label: scenario.label,
+    group: scenario.group,
+    project: scenario.project,
+    projectLabel: scenario.projectLabel,
+    collector: scenario.collector,
+    iteration,
+    sourceFile: scenario.sourceFile,
+    ok: true,
+    wallMs,
+    totalMs: wallMs,
+  }
+}
+
+function resolveOutputFiles(scenario: HmrScenario) {
+  return (scenario.outputFiles ?? []).map(file => path.join(repoRoot, scenario.appDir, file))
+}
+
+async function restoreSource(options: {
+  scenario: HmrScenario
+  filePath: string
+  originalSource: string
+  profilePath: string
+  timeoutMs: number
+}) {
+  const { scenario, filePath, originalSource, profilePath, timeoutMs } = options
   const currentSource = await readFile(filePath, 'utf8').catch(() => '')
   if (currentSource === originalSource) {
     return
   }
-  const previousCount = (await readProfileSamples(profilePath)).length
+  const previousCount = scenario.collector === 'weapp-vite-profile'
+    ? (await readProfileSamples(profilePath)).length
+    : 0
+  const outputFiles = scenario.collector === 'artifact' ? resolveOutputFiles(scenario) : []
+  const beforeArtifacts = outputFiles.length ? await snapshotArtifacts(outputFiles) : []
   await writeFile(filePath, originalSource, 'utf8')
-  await waitForNextProfileSample(profilePath, previousCount, timeoutMs).catch(() => undefined)
+  if (scenario.collector === 'weapp-vite-profile') {
+    await waitForNextProfileSample(profilePath, previousCount, timeoutMs).catch(() => undefined)
+  }
+  else if (beforeArtifacts.length) {
+    await waitForArtifactChange(beforeArtifacts, timeoutMs).catch(() => undefined)
+  }
 }
 
 async function runScenario(options: {
@@ -115,6 +158,7 @@ async function runScenario(options: {
   const sourcePath = path.join(repoRoot, scenario.appDir, scenario.sourceFile)
   const originalSource = await readFile(sourcePath, 'utf8')
   const samples: HmrSample[] = []
+  const outputFiles = resolveOutputFiles(scenario)
 
   try {
     for (let iteration = 1; iteration <= iterations; iteration += 1) {
@@ -122,16 +166,29 @@ async function runScenario(options: {
       const marker = `${scenario.id}-${iteration}-${Date.now().toString(36)}`
       const nextSource = scenario.applyMarker(originalSource, marker)
       const previousCount = (await readProfileSamples(profilePath)).length
+      const beforeArtifacts = scenario.collector === 'artifact'
+        ? await snapshotArtifacts(outputFiles)
+        : []
       const started = performance.now()
       try {
         await writeFile(sourcePath, nextSource, 'utf8')
-        const profile = await waitForNextProfileSample(profilePath, previousCount, timeoutMs)
-        samples.push(createSampleFromProfile({
-          scenario,
-          iteration,
-          wallMs: performance.now() - started,
-          profile,
-        }))
+        if (scenario.collector === 'weapp-vite-profile') {
+          const profile = await waitForNextProfileSample(profilePath, previousCount, timeoutMs)
+          samples.push(createSampleFromProfile({
+            scenario,
+            iteration,
+            wallMs: performance.now() - started,
+            profile,
+          }))
+        }
+        else {
+          await waitForArtifactChange(beforeArtifacts, timeoutMs)
+          samples.push(createSampleFromArtifact({
+            scenario,
+            iteration,
+            wallMs: performance.now() - started,
+          }))
+        }
       }
       catch (error) {
         samples.push(createFailedSample({ scenario, iteration, error }))
@@ -140,7 +197,7 @@ async function runScenario(options: {
     }
   }
   finally {
-    await restoreSource(sourcePath, originalSource, profilePath, timeoutMs)
+    await restoreSource({ scenario, filePath: sourcePath, originalSource, profilePath, timeoutMs })
   }
 
   return samples
@@ -162,6 +219,7 @@ async function runProjectScenarios(options: {
   const profilePath = path.join(reportDir, 'profiles', `${project.project}.jsonl`)
   await rm(profilePath, { force: true })
   await rm(path.join(appDir, 'dist'), { recursive: true, force: true })
+  const projectOutputFiles = [...new Set(scenarios.flatMap(scenario => resolveOutputFiles(scenario)))]
 
   process.stdout.write(`[hmr] ${project.projectLabel}: launch ${appDir}\n`)
   const dev = startDevProcess({
@@ -172,12 +230,19 @@ async function runProjectScenarios(options: {
       ...process.env,
       CI: '1',
       FORCE_COLOR: '0',
-      WEAPP_VITE_HMR_PROFILE_JSON: profilePath,
+      ...(project.collector === 'weapp-vite-profile'
+        ? { WEAPP_VITE_HMR_PROFILE_JSON: profilePath }
+        : {}),
     },
   })
 
   try {
-    await dev.waitForOutput(readyRe, `${project.projectLabel} dev ready`, timeoutMs)
+    if (project.readyPattern) {
+      await dev.waitForOutput(project.readyPattern, `${project.projectLabel} dev ready`, timeoutMs)
+    }
+    if (project.collector === 'artifact') {
+      await dev.waitFor(waitForArtifacts(projectOutputFiles, timeoutMs), `${project.projectLabel} 初始产物`)
+    }
     const samples: HmrSample[] = []
     for (const scenario of scenarios) {
       samples.push(...await dev.waitFor(
@@ -213,9 +278,11 @@ async function runHmrBenchmark() {
     iterations,
     samples,
     notes: [
-      'HMR 数据来自 weapp-vite dev 模式的 JSONL profile。',
+      'weapp-vite 项目使用 dev 模式 JSONL profile 采集 HMR 内部阶段耗时。',
+      '非 weapp-vite 项目使用 dev/watch 模式下“写入源文件到目标小程序产物更新”的墙钟耗时，内部阶段列没有框架可比的公开数据时显示为 -。',
       '每个场景连续写入不同 marker 触发热更新，场景结束后恢复源码。',
-      'Vue SFC 场景拆分 script、template、style 和页面配置；原生场景拆分 JS、WXML、WXSS、JSON 文件。',
+      'Vue SFC 场景拆分 script、template、style 和页面配置；原生场景拆分 JS、WXML、WXSS、JSON 文件；Mpx 拆分 template、script、style 和页面配置。',
+      '@vue-mini/core 是原生小程序运行时对比项，没有独立编译/watch 链路，因此不纳入 HMR 排名。',
       `HMR 等待超时默认是 ${defaultTimeoutMs}ms，可通过 BENCH_HMR_TIMEOUT 覆盖。`,
     ],
   })
