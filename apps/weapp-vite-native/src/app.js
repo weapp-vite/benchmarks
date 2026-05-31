@@ -1,0 +1,3 @@
+/* global App */
+
+App({})

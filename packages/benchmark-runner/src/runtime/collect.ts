@@ -5,8 +5,32 @@ import { spawn } from 'node:child_process'
 import process from 'node:process'
 import path from 'pathe'
 import { repoRoot } from '../projects'
-import { defaultLaunchTimeout, metricCount } from './constants'
+import { defaultLaunchTimeout, defaultRelaunchRetries, metricCount } from './constants'
 import { parseConsolePayload, waitForConsoleMetrics, waitForMetrics } from './metrics'
+
+function sleep(ms: number) {
+  return new Promise(resolve => setTimeout(resolve, ms))
+}
+
+async function relaunchPage(miniProgram: MiniProgram, url: string) {
+  const retries = Number(process.env['BENCH_RUNTIME_RELAUNCH_RETRIES'] ?? defaultRelaunchRetries)
+  let lastError: unknown
+
+  for (let attempt = 1; attempt <= retries; attempt += 1) {
+    try {
+      return await miniProgram.reLaunch(url)
+    }
+    catch (error) {
+      lastError = error
+      if (attempt >= retries) {
+        break
+      }
+      await sleep(1_000)
+    }
+  }
+
+  throw lastError
+}
 
 async function buildProjectNpm(project: BenchmarkProject, cliPath: string, projectPath: string) {
   if (!project.runtimeNpmBuild) {
@@ -33,7 +57,7 @@ async function collectIteration(
 ): Promise<RuntimeSample> {
   try {
     consoleMetrics.length = 0
-    await miniProgram.reLaunch(`/${project.runtimePage}?benchIteration=${iteration}`)
+    await relaunchPage(miniProgram, `/${project.runtimePage}?benchIteration=${iteration}`)
 
     const fromConsole = await waitForConsoleMetrics(consoleMetrics)
     if (fromConsole.length >= metricCount) {

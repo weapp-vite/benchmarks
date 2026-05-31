@@ -1,0 +1,49 @@
+.page {
+  min-height: 100vh;
+  padding: 24rpx;
+}
+
+.toolbar,
+.metric,
+.group,
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.toolbar {
+  gap: 16rpx;
+  padding: 20rpx;
+  background: #fff;
+  border: 1rpx solid #d1d5db;
+}
+
+.title {
+  font-size: 30rpx;
+  font-weight: 700;
+}
+
+.summary {
+  color: #2563eb;
+}
+
+.metrics {
+  margin: 20rpx 0;
+}
+
+.metric,
+.group,
+.row {
+  padding: 16rpx 20rpx;
+  margin-bottom: 12rpx;
+  background: #fff;
+  border: 1rpx solid #e5e7eb;
+}
+
+.row__title {
+  width: 260rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

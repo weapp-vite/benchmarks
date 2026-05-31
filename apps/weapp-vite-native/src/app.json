@@ -1,0 +1,12 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/detail/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "weapp-vite native",
+    "navigationBarBackgroundColor": "#1f2937",
+    "navigationBarTextStyle": "white"
+  },
+  "sitemapLocation": "sitemap.json"
+}

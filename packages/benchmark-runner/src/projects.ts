@@ -27,6 +27,15 @@ export const compileProjects: CompileBenchmarkProject[] = [
     runtimePage: 'pages/index/index',
   },
   {
+    id: 'weapp-vite-native',
+    label: 'weapp-vite native',
+    appDir: 'apps/weapp-vite-native',
+    buildCommand: 'pnpm build',
+    outputDir: 'dist',
+    runtimeProjectDir: 'apps/weapp-vite-native',
+    runtimePage: 'pages/index/index',
+  },
+  {
     id: 'uni-app-vite-vue3',
     label: 'uni-app vite vue3',
     appDir: 'apps/uni-app-vite-vue3',

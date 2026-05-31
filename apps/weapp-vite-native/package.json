@@ -1,0 +1,18 @@
+{
+  "name": "@benchmarks/weapp-vite-native",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "wv build",
+    "dev": "wv dev",
+    "lint": "eslint . --ignore-pattern .weapp-vite",
+    "typecheck": "tsc -p tsconfig.json",
+    "postinstall": "wv prepare"
+  },
+  "devDependencies": {
+    "miniprogram-api-typings": "^5.0.0",
+    "typescript": "^6.0.3",
+    "weapp-vite": "6.16.30"
+  }
+}

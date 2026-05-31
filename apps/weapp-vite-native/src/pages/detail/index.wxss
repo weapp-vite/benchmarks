@@ -1,0 +1,9 @@
+.page {
+  padding: 32rpx;
+}
+
+.title {
+  margin-bottom: 16rpx;
+  font-size: 32rpx;
+  font-weight: 700;
+}
