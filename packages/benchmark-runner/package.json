@@ -8,6 +8,7 @@
     "bench:compile": "tsx src/compile.ts",
     "bench:hmr": "tsx src/hmr.ts",
     "bench:runtime": "tsx src/runtime.ts",
+    "bench:size:wevu": "tsx src/size/wevu.ts",
     "build": "tsdown",
     "lint": "eslint .",
     "typecheck": "tsc -p tsconfig.json"

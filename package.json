@@ -21,6 +21,7 @@
     "bench:compile": "pnpm --filter @benchmarks/runner bench:compile",
     "bench:hmr": "pnpm --filter @benchmarks/runner bench:hmr",
     "bench:runtime": "pnpm --filter @benchmarks/runner bench:runtime",
+    "bench:size:wevu": "pnpm --filter @benchmarks/runner bench:size:wevu",
     "dev": "turbo run dev --parallel",
     "e2e:ide:runtime": "tsx e2e/ide/runtime-benchmark.ts",
     "test": "turbo run test",
