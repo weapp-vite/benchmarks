@@ -3,7 +3,7 @@ import { performance } from 'node:perf_hooks'
 import process from 'node:process'
 import path from 'pathe'
 import { ensureDir, removeDir, summarizeDir, writeJson, writeText } from './fs'
-import { benchmarkProjects, repoRoot } from './projects'
+import { compileProjects, repoRoot } from './projects'
 
 interface CompileSample {
   project: string
@@ -82,7 +82,7 @@ async function runCompileBenchmark() {
   const iterations = Number(process.env['BENCH_ITERATIONS'] ?? defaultIterations)
   const samples: CompileSample[] = []
 
-  for (const project of benchmarkProjects) {
+  for (const project of compileProjects) {
     const appDir = path.join(repoRoot, project.appDir)
     const outDir = path.join(appDir, project.outputDir)
 
@@ -115,7 +115,7 @@ async function runCompileBenchmark() {
   })
 
   const successfulSamples = samples.filter(sample => sample.ok)
-  const projectSummaries = benchmarkProjects.map((project) => {
+  const projectSummaries = compileProjects.map((project) => {
     const projectSamples = successfulSamples.filter(sample => sample.project === project.id)
     const first = projectSamples[0]
     return {

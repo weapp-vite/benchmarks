@@ -1,11 +1,29 @@
 import type { BenchmarkProject } from '../projects'
 import type { RuntimeMetric } from '../scenario'
 import type { MiniProgram, RuntimeSample } from './types'
+import { spawn } from 'node:child_process'
 import process from 'node:process'
 import path from 'pathe'
 import { repoRoot } from '../projects'
 import { defaultLaunchTimeout, metricCount } from './constants'
-import { parseConsolePayload, waitForMetrics } from './metrics'
+import { parseConsolePayload, waitForConsoleMetrics, waitForMetrics } from './metrics'
+
+async function buildProjectNpm(project: BenchmarkProject, cliPath: string, projectPath: string) {
+  if (!project.runtimeNpmBuild) {
+    return
+  }
+  process.stdout.write(`[runtime] ${project.label}: build npm\n`)
+  const child = spawn(cliPath, ['build-npm', '--project', projectPath], {
+    cwd: repoRoot,
+    stdio: 'inherit',
+  })
+  const exitCode = await new Promise<number | null>((resolve) => {
+    child.on('close', resolve)
+  })
+  if (exitCode !== 0) {
+    throw new Error(`微信开发者工具 build-npm 失败：${exitCode ?? 'signal'}`)
+  }
+}
 
 async function collectIteration(
   project: BenchmarkProject,
@@ -16,6 +34,20 @@ async function collectIteration(
   try {
     consoleMetrics.length = 0
     await miniProgram.reLaunch(`/${project.runtimePage}?benchIteration=${iteration}`)
+
+    const fromConsole = await waitForConsoleMetrics(consoleMetrics)
+    if (fromConsole.length >= metricCount) {
+      return {
+        project: project.id,
+        label: project.label,
+        iteration,
+        page: project.runtimePage,
+        ok: true,
+        source: 'console-log',
+        metrics: fromConsole,
+      }
+    }
+
     const page = await miniProgram.currentPage({ retries: 20, timeout: 1_000 })
     const metrics = await waitForMetrics(page)
     if (metrics.length >= metricCount) {
@@ -30,19 +62,16 @@ async function collectIteration(
       }
     }
 
-    const fromConsole = consoleMetrics.at(-1) ?? []
     const sample: RuntimeSample = {
       project: project.id,
       label: project.label,
       iteration,
       page: project.runtimePage,
-      ok: fromConsole.length >= metricCount,
-      source: fromConsole.length >= metricCount ? 'console-log' : 'none',
-      metrics: fromConsole,
+      ok: false,
+      source: 'none',
+      metrics: [],
     }
-    if (!fromConsole.length) {
-      sample.error = '未在页面数据或控制台日志中找到运行时指标'
-    }
+    sample.error = '未在页面数据或控制台日志中找到运行时指标'
     return sample
   }
   catch (error) {
@@ -74,6 +103,8 @@ export async function collectProjectSamples(
   process.stdout.write(`[runtime] ${project.label}: launch ${projectPath}\n`)
 
   try {
+    await buildProjectNpm(project, cliPath, projectPath)
+
     const launched = await launcher.launch({
       platform: 'wechat',
       cliPath,

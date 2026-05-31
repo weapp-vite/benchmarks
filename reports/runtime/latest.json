@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-30T19:03:20.959Z",
+  "generatedAt": "2026-05-31T02:21:51.051Z",
   "mode": "ide-e2e",
   "iterations": 3,
   "samples": [
@@ -9,139 +9,23 @@
       "iteration": 1,
       "page": "pages/index/index",
       "ok": true,
-      "source": "page-data",
+      "source": "console-log",
       "metrics": [
         {
           "name": "initial-render",
-          "durationMs": 13,
+          "durationMs": 10,
           "count": 480,
           "checksum": 9739246
         },
         {
           "name": "append-batch",
-          "durationMs": 27,
+          "durationMs": 22,
           "count": 960,
           "checksum": 10108853
         },
         {
           "name": "update-every-5th",
-          "durationMs": 59,
-          "count": 960,
-          "checksum": 10108726
-        },
-        {
-          "name": "sort-score-desc",
-          "durationMs": 44,
-          "count": 960,
-          "checksum": 10108726
-        },
-        {
-          "name": "filter-active-high-score",
-          "durationMs": 28,
-          "count": 960,
-          "checksum": 10108726
-        },
-        {
-          "name": "group-aggregate-render",
-          "durationMs": 35,
-          "count": 12,
-          "checksum": 49432
-        },
-        {
-          "name": "window-slice-middle",
-          "durationMs": 32,
-          "count": 140,
-          "checksum": 143028
-        },
-        {
-          "name": "replace-dataset",
-          "durationMs": 16,
-          "count": 640,
-          "checksum": 65056103
-        }
-      ]
-    },
-    {
-      "project": "weapp-vite-wevu",
-      "label": "weapp-vite + wevu",
-      "iteration": 2,
-      "page": "pages/index/index",
-      "ok": true,
-      "source": "page-data",
-      "metrics": [
-        {
-          "name": "initial-render",
-          "durationMs": 11,
-          "count": 480,
-          "checksum": 9739246
-        },
-        {
-          "name": "append-batch",
-          "durationMs": 25,
-          "count": 960,
-          "checksum": 10108853
-        },
-        {
-          "name": "update-every-5th",
-          "durationMs": 62,
-          "count": 960,
-          "checksum": 10108726
-        },
-        {
-          "name": "sort-score-desc",
-          "durationMs": 39,
-          "count": 960,
-          "checksum": 10108726
-        },
-        {
-          "name": "filter-active-high-score",
-          "durationMs": 28,
-          "count": 960,
-          "checksum": 10108726
-        },
-        {
-          "name": "group-aggregate-render",
-          "durationMs": 33,
-          "count": 12,
-          "checksum": 49432
-        },
-        {
-          "name": "window-slice-middle",
-          "durationMs": 34,
-          "count": 140,
-          "checksum": 143028
-        },
-        {
-          "name": "replace-dataset",
-          "durationMs": 19,
-          "count": 640,
-          "checksum": 65056103
-        }
-      ]
-    },
-    {
-      "project": "weapp-vite-wevu",
-      "label": "weapp-vite + wevu",
-      "iteration": 3,
-      "page": "pages/index/index",
-      "ok": true,
-      "source": "page-data",
-      "metrics": [
-        {
-          "name": "initial-render",
-          "durationMs": 11,
-          "count": 480,
-          "checksum": 9739246
-        },
-        {
-          "name": "append-batch",
-          "durationMs": 27,
-          "count": 960,
-          "checksum": 10108853
-        },
-        {
-          "name": "update-every-5th",
-          "durationMs": 63,
+          "durationMs": 48,
           "count": 960,
           "checksum": 10108726
         },
@@ -153,19 +37,77 @@
         },
         {
           "name": "filter-active-high-score",
-          "durationMs": 29,
+          "durationMs": 25,
           "count": 960,
           "checksum": 10108726
         },
         {
           "name": "group-aggregate-render",
-          "durationMs": 35,
+          "durationMs": 26,
           "count": 12,
           "checksum": 49432
         },
         {
           "name": "window-slice-middle",
-          "durationMs": 28,
+          "durationMs": 23,
+          "count": 140,
+          "checksum": 143028
+        },
+        {
+          "name": "replace-dataset",
+          "durationMs": 13,
+          "count": 640,
+          "checksum": 65056103
+        }
+      ]
+    },
+    {
+      "project": "weapp-vite-wevu",
+      "label": "weapp-vite + wevu",
+      "iteration": 2,
+      "page": "pages/index/index",
+      "ok": true,
+      "source": "console-log",
+      "metrics": [
+        {
+          "name": "initial-render",
+          "durationMs": 11,
+          "count": 480,
+          "checksum": 9739246
+        },
+        {
+          "name": "append-batch",
+          "durationMs": 21,
+          "count": 960,
+          "checksum": 10108853
+        },
+        {
+          "name": "update-every-5th",
+          "durationMs": 51,
+          "count": 960,
+          "checksum": 10108726
+        },
+        {
+          "name": "sort-score-desc",
+          "durationMs": 30,
+          "count": 960,
+          "checksum": 10108726
+        },
+        {
+          "name": "filter-active-high-score",
+          "durationMs": 23,
+          "count": 960,
+          "checksum": 10108726
+        },
+        {
+          "name": "group-aggregate-render",
+          "durationMs": 25,
+          "count": 12,
+          "checksum": 49432
+        },
+        {
+          "name": "window-slice-middle",
+          "durationMs": 25,
           "count": 140,
           "checksum": 143028
         },
@@ -178,6 +120,64 @@
       ]
     },
     {
+      "project": "weapp-vite-wevu",
+      "label": "weapp-vite + wevu",
+      "iteration": 3,
+      "page": "pages/index/index",
+      "ok": true,
+      "source": "console-log",
+      "metrics": [
+        {
+          "name": "initial-render",
+          "durationMs": 9,
+          "count": 480,
+          "checksum": 9739246
+        },
+        {
+          "name": "append-batch",
+          "durationMs": 19,
+          "count": 960,
+          "checksum": 10108853
+        },
+        {
+          "name": "update-every-5th",
+          "durationMs": 50,
+          "count": 960,
+          "checksum": 10108726
+        },
+        {
+          "name": "sort-score-desc",
+          "durationMs": 31,
+          "count": 960,
+          "checksum": 10108726
+        },
+        {
+          "name": "filter-active-high-score",
+          "durationMs": 22,
+          "count": 960,
+          "checksum": 10108726
+        },
+        {
+          "name": "group-aggregate-render",
+          "durationMs": 28,
+          "count": 12,
+          "checksum": 49432
+        },
+        {
+          "name": "window-slice-middle",
+          "durationMs": 27,
+          "count": 140,
+          "checksum": 143028
+        },
+        {
+          "name": "replace-dataset",
+          "durationMs": 14,
+          "count": 640,
+          "checksum": 65056103
+        }
+      ]
+    },
+    {
       "project": "uni-app-vite-vue3",
       "label": "uni-app vite vue3",
       "iteration": 1,
@@ -187,49 +187,49 @@
       "metrics": [
         {
           "name": "initial-render",
-          "durationMs": 22,
+          "durationMs": 20,
           "count": 480,
           "checksum": 9739246
         },
         {
           "name": "append-batch",
-          "durationMs": 21,
+          "durationMs": 14,
           "count": 960,
           "checksum": 10108853
         },
         {
           "name": "update-every-5th",
-          "durationMs": 52,
+          "durationMs": 35,
           "count": 960,
           "checksum": 10108726
         },
         {
           "name": "sort-score-desc",
-          "durationMs": 92,
+          "durationMs": 73,
           "count": 960,
           "checksum": 10108726
         },
         {
           "name": "filter-active-high-score",
-          "durationMs": 32,
+          "durationMs": 25,
           "count": 960,
           "checksum": 10108726
         },
         {
           "name": "group-aggregate-render",
-          "durationMs": 30,
+          "durationMs": 22,
           "count": 12,
           "checksum": 49432
         },
         {
           "name": "window-slice-middle",
-          "durationMs": 29,
+          "durationMs": 18,
           "count": 140,
           "checksum": 143028
         },
         {
           "name": "replace-dataset",
-          "durationMs": 27,
+          "durationMs": 21,
           "count": 640,
           "checksum": 65056103
         }
@@ -245,49 +245,49 @@
       "metrics": [
         {
           "name": "initial-render",
-          "durationMs": 26,
+          "durationMs": 15,
           "count": 480,
           "checksum": 9739246
         },
         {
           "name": "append-batch",
-          "durationMs": 26,
+          "durationMs": 14,
           "count": 960,
           "checksum": 10108853
         },
         {
           "name": "update-every-5th",
-          "durationMs": 84,
+          "durationMs": 34,
           "count": 960,
           "checksum": 10108726
         },
         {
           "name": "sort-score-desc",
-          "durationMs": 99,
+          "durationMs": 73,
           "count": 960,
           "checksum": 10108726
         },
         {
           "name": "filter-active-high-score",
-          "durationMs": 49,
+          "durationMs": 25,
           "count": 960,
           "checksum": 10108726
         },
         {
           "name": "group-aggregate-render",
-          "durationMs": 46,
+          "durationMs": 22,
           "count": 12,
           "checksum": 49432
         },
         {
           "name": "window-slice-middle",
-          "durationMs": 51,
+          "durationMs": 18,
           "count": 140,
           "checksum": 143028
         },
         {
           "name": "replace-dataset",
-          "durationMs": 32,
+          "durationMs": 21,
           "count": 640,
           "checksum": 65056103
         }
@@ -303,49 +303,49 @@
       "metrics": [
         {
           "name": "initial-render",
-          "durationMs": 26,
+          "durationMs": 13,
           "count": 480,
           "checksum": 9739246
         },
         {
           "name": "append-batch",
-          "durationMs": 24,
+          "durationMs": 13,
           "count": 960,
           "checksum": 10108853
         },
         {
           "name": "update-every-5th",
-          "durationMs": 65,
+          "durationMs": 33,
           "count": 960,
           "checksum": 10108726
         },
         {
           "name": "sort-score-desc",
-          "durationMs": 104,
+          "durationMs": 71,
           "count": 960,
           "checksum": 10108726
         },
         {
           "name": "filter-active-high-score",
-          "durationMs": 50,
+          "durationMs": 25,
           "count": 960,
           "checksum": 10108726
         },
         {
           "name": "group-aggregate-render",
-          "durationMs": 38,
+          "durationMs": 22,
           "count": 12,
           "checksum": 49432
         },
         {
           "name": "window-slice-middle",
-          "durationMs": 41,
+          "durationMs": 17,
           "count": 140,
           "checksum": 143028
         },
         {
           "name": "replace-dataset",
-          "durationMs": 45,
+          "durationMs": 22,
           "count": 640,
           "checksum": 65056103
         }
@@ -361,7 +361,65 @@
       "metrics": [
         {
           "name": "initial-render",
-          "durationMs": 25,
+          "durationMs": 22,
+          "count": 480,
+          "checksum": 9739246
+        },
+        {
+          "name": "append-batch",
+          "durationMs": 16,
+          "count": 960,
+          "checksum": 10108853
+        },
+        {
+          "name": "update-every-5th",
+          "durationMs": 34,
+          "count": 960,
+          "checksum": 10108726
+        },
+        {
+          "name": "sort-score-desc",
+          "durationMs": 74,
+          "count": 960,
+          "checksum": 10108726
+        },
+        {
+          "name": "filter-active-high-score",
+          "durationMs": 27,
+          "count": 960,
+          "checksum": 10108726
+        },
+        {
+          "name": "group-aggregate-render",
+          "durationMs": 23,
+          "count": 12,
+          "checksum": 49432
+        },
+        {
+          "name": "window-slice-middle",
+          "durationMs": 18,
+          "count": 140,
+          "checksum": 143028
+        },
+        {
+          "name": "replace-dataset",
+          "durationMs": 21,
+          "count": 640,
+          "checksum": 65056103
+        }
+      ]
+    },
+    {
+      "project": "uni-app-x",
+      "label": "uni-app x",
+      "iteration": 2,
+      "page": "pages/index/index",
+      "ok": true,
+      "source": "console-log",
+      "metrics": [
+        {
+          "name": "initial-render",
+          "durationMs": 17,
           "count": 480,
           "checksum": 9739246
         },
@@ -373,95 +431,37 @@
         },
         {
           "name": "update-every-5th",
-          "durationMs": 41,
+          "durationMs": 38,
           "count": 960,
           "checksum": 10108726
         },
         {
           "name": "sort-score-desc",
-          "durationMs": 85,
+          "durationMs": 80,
           "count": 960,
           "checksum": 10108726
         },
         {
           "name": "filter-active-high-score",
-          "durationMs": 32,
+          "durationMs": 25,
           "count": 960,
           "checksum": 10108726
         },
         {
           "name": "group-aggregate-render",
-          "durationMs": 27,
-          "count": 12,
-          "checksum": 49432
-        },
-        {
-          "name": "window-slice-middle",
           "durationMs": 23,
-          "count": 140,
-          "checksum": 143028
-        },
-        {
-          "name": "replace-dataset",
-          "durationMs": 22,
-          "count": 640,
-          "checksum": 65056103
-        }
-      ]
-    },
-    {
-      "project": "uni-app-x",
-      "label": "uni-app x",
-      "iteration": 2,
-      "page": "pages/index/index",
-      "ok": true,
-      "source": "console-log",
-      "metrics": [
-        {
-          "name": "initial-render",
-          "durationMs": 22,
-          "count": 480,
-          "checksum": 9739246
-        },
-        {
-          "name": "append-batch",
-          "durationMs": 21,
-          "count": 960,
-          "checksum": 10108853
-        },
-        {
-          "name": "update-every-5th",
-          "durationMs": 55,
-          "count": 960,
-          "checksum": 10108726
-        },
-        {
-          "name": "sort-score-desc",
-          "durationMs": 99,
-          "count": 960,
-          "checksum": 10108726
-        },
-        {
-          "name": "filter-active-high-score",
-          "durationMs": 42,
-          "count": 960,
-          "checksum": 10108726
-        },
-        {
-          "name": "group-aggregate-render",
-          "durationMs": 37,
           "count": 12,
           "checksum": 49432
         },
         {
           "name": "window-slice-middle",
-          "durationMs": 24,
+          "durationMs": 18,
           "count": 140,
           "checksum": 143028
         },
         {
           "name": "replace-dataset",
-          "durationMs": 28,
+          "durationMs": 20,
           "count": 640,
           "checksum": 65056103
         }
@@ -477,49 +477,49 @@
       "metrics": [
         {
           "name": "initial-render",
-          "durationMs": 23,
+          "durationMs": 13,
           "count": 480,
           "checksum": 9739246
         },
         {
           "name": "append-batch",
-          "durationMs": 22,
+          "durationMs": 14,
           "count": 960,
           "checksum": 10108853
         },
         {
           "name": "update-every-5th",
-          "durationMs": 45,
+          "durationMs": 32,
           "count": 960,
           "checksum": 10108726
         },
         {
           "name": "sort-score-desc",
-          "durationMs": 107,
+          "durationMs": 75,
           "count": 960,
           "checksum": 10108726
         },
         {
           "name": "filter-active-high-score",
-          "durationMs": 37,
+          "durationMs": 26,
           "count": 960,
           "checksum": 10108726
         },
         {
           "name": "group-aggregate-render",
-          "durationMs": 35,
+          "durationMs": 23,
           "count": 12,
           "checksum": 49432
         },
         {
           "name": "window-slice-middle",
-          "durationMs": 23,
+          "durationMs": 18,
           "count": 140,
           "checksum": 143028
         },
         {
           "name": "replace-dataset",
-          "durationMs": 27,
+          "durationMs": 21,
           "count": 640,
           "checksum": 65056103
         }
@@ -531,53 +531,53 @@
       "iteration": 1,
       "page": "pages/index",
       "ok": true,
-      "source": "page-data",
+      "source": "console-log",
       "metrics": [
         {
           "name": "initial-render",
-          "durationMs": 446,
+          "durationMs": 284,
           "count": 480,
           "checksum": 9739246
         },
         {
           "name": "append-batch",
-          "durationMs": 308,
+          "durationMs": 122,
           "count": 960,
           "checksum": 10108853
         },
         {
           "name": "update-every-5th",
-          "durationMs": 191,
+          "durationMs": 133,
           "count": 960,
           "checksum": 10108726
         },
         {
           "name": "sort-score-desc",
-          "durationMs": 365,
+          "durationMs": 274,
           "count": 960,
           "checksum": 10108726
         },
         {
           "name": "filter-active-high-score",
-          "durationMs": 432,
+          "durationMs": 346,
           "count": 960,
           "checksum": 10108726
         },
         {
           "name": "group-aggregate-render",
-          "durationMs": 93,
+          "durationMs": 69,
           "count": 12,
           "checksum": 49432
         },
         {
           "name": "window-slice-middle",
-          "durationMs": 140,
+          "durationMs": 108,
           "count": 140,
           "checksum": 143028
         },
         {
           "name": "replace-dataset",
-          "durationMs": 276,
+          "durationMs": 214,
           "count": 640,
           "checksum": 65056103
         }
@@ -589,53 +589,53 @@
       "iteration": 2,
       "page": "pages/index",
       "ok": true,
-      "source": "page-data",
+      "source": "console-log",
       "metrics": [
         {
           "name": "initial-render",
-          "durationMs": 347,
+          "durationMs": 278,
           "count": 480,
           "checksum": 9739246
         },
         {
           "name": "append-batch",
-          "durationMs": 148,
+          "durationMs": 120,
           "count": 960,
           "checksum": 10108853
         },
         {
           "name": "update-every-5th",
-          "durationMs": 173,
+          "durationMs": 130,
           "count": 960,
           "checksum": 10108726
         },
         {
           "name": "sort-score-desc",
-          "durationMs": 405,
+          "durationMs": 288,
           "count": 960,
           "checksum": 10108726
         },
         {
           "name": "filter-active-high-score",
-          "durationMs": 463,
+          "durationMs": 339,
           "count": 960,
           "checksum": 10108726
         },
         {
           "name": "group-aggregate-render",
-          "durationMs": 86,
+          "durationMs": 64,
           "count": 12,
           "checksum": 49432
         },
         {
           "name": "window-slice-middle",
-          "durationMs": 167,
+          "durationMs": 104,
           "count": 140,
           "checksum": 143028
         },
         {
           "name": "replace-dataset",
-          "durationMs": 274,
+          "durationMs": 214,
           "count": 640,
           "checksum": 65056103
         }
@@ -647,53 +647,53 @@
       "iteration": 3,
       "page": "pages/index",
       "ok": true,
-      "source": "page-data",
+      "source": "console-log",
       "metrics": [
         {
           "name": "initial-render",
-          "durationMs": 366,
+          "durationMs": 273,
           "count": 480,
           "checksum": 9739246
         },
         {
           "name": "append-batch",
-          "durationMs": 156,
+          "durationMs": 116,
           "count": 960,
           "checksum": 10108853
         },
         {
           "name": "update-every-5th",
-          "durationMs": 182,
+          "durationMs": 133,
           "count": 960,
           "checksum": 10108726
         },
         {
           "name": "sort-score-desc",
-          "durationMs": 372,
+          "durationMs": 273,
           "count": 960,
           "checksum": 10108726
         },
         {
           "name": "filter-active-high-score",
-          "durationMs": 437,
+          "durationMs": 362,
           "count": 960,
           "checksum": 10108726
         },
         {
           "name": "group-aggregate-render",
-          "durationMs": 85,
+          "durationMs": 68,
           "count": 12,
           "checksum": 49432
         },
         {
           "name": "window-slice-middle",
-          "durationMs": 140,
+          "durationMs": 112,
           "count": 140,
           "checksum": 143028
         },
         {
           "name": "replace-dataset",
-          "durationMs": 305,
+          "durationMs": 246,
           "count": 640,
           "checksum": 65056103
         }
@@ -715,43 +715,43 @@
         },
         {
           "name": "append-batch",
-          "durationMs": 116,
+          "durationMs": 93,
           "count": 960,
           "checksum": 10108853
         },
         {
           "name": "update-every-5th",
-          "durationMs": 288,
+          "durationMs": 205,
           "count": 960,
           "checksum": 10108726
         },
         {
           "name": "sort-score-desc",
-          "durationMs": 956,
+          "durationMs": 779,
           "count": 960,
           "checksum": 10108726
         },
         {
           "name": "filter-active-high-score",
-          "durationMs": 552,
+          "durationMs": 392,
           "count": 960,
           "checksum": 10108726
         },
         {
           "name": "group-aggregate-render",
-          "durationMs": 39,
+          "durationMs": 21,
           "count": 12,
           "checksum": 49432
         },
         {
           "name": "window-slice-middle",
-          "durationMs": 159,
+          "durationMs": 98,
           "count": 140,
           "checksum": 143028
         },
         {
           "name": "replace-dataset",
-          "durationMs": 221,
+          "durationMs": 148,
           "count": 640,
           "checksum": 65056103
         }
@@ -767,49 +767,49 @@
       "metrics": [
         {
           "name": "initial-render",
-          "durationMs": 135,
+          "durationMs": 95,
           "count": 480,
           "checksum": 9739246
         },
         {
           "name": "append-batch",
-          "durationMs": 114,
+          "durationMs": 86,
           "count": 960,
           "checksum": 10108853
         },
         {
           "name": "update-every-5th",
-          "durationMs": 329,
+          "durationMs": 218,
           "count": 960,
           "checksum": 10108726
         },
         {
           "name": "sort-score-desc",
-          "durationMs": 1025,
+          "durationMs": 757,
           "count": 960,
           "checksum": 10108726
         },
         {
           "name": "filter-active-high-score",
-          "durationMs": 521,
+          "durationMs": 376,
           "count": 960,
           "checksum": 10108726
         },
         {
           "name": "group-aggregate-render",
-          "durationMs": 40,
+          "durationMs": 22,
           "count": 12,
           "checksum": 49432
         },
         {
           "name": "window-slice-middle",
-          "durationMs": 125,
+          "durationMs": 96,
           "count": 140,
           "checksum": 143028
         },
         {
           "name": "replace-dataset",
-          "durationMs": 203,
+          "durationMs": 148,
           "count": 640,
           "checksum": 65056103
         }
@@ -825,49 +825,223 @@
       "metrics": [
         {
           "name": "initial-render",
-          "durationMs": 114,
+          "durationMs": 70,
           "count": 480,
           "checksum": 9739246
         },
         {
           "name": "append-batch",
-          "durationMs": 104,
+          "durationMs": 83,
           "count": 960,
           "checksum": 10108853
         },
         {
           "name": "update-every-5th",
-          "durationMs": 260,
+          "durationMs": 214,
           "count": 960,
           "checksum": 10108726
         },
         {
           "name": "sort-score-desc",
-          "durationMs": 895,
+          "durationMs": 727,
           "count": 960,
           "checksum": 10108726
         },
         {
           "name": "filter-active-high-score",
-          "durationMs": 506,
+          "durationMs": 388,
           "count": 960,
           "checksum": 10108726
         },
         {
           "name": "group-aggregate-render",
-          "durationMs": 34,
+          "durationMs": 23,
           "count": 12,
           "checksum": 49432
         },
         {
           "name": "window-slice-middle",
-          "durationMs": 122,
+          "durationMs": 97,
           "count": 140,
           "checksum": 143028
         },
         {
           "name": "replace-dataset",
-          "durationMs": 166,
+          "durationMs": 136,
+          "count": 640,
+          "checksum": 65056103
+        }
+      ]
+    },
+    {
+      "project": "vue-mini-core",
+      "label": "@vue-mini/core",
+      "iteration": 1,
+      "page": "pages/index/index",
+      "ok": true,
+      "source": "console-log",
+      "metrics": [
+        {
+          "name": "initial-render",
+          "durationMs": 27,
+          "count": 480,
+          "checksum": 9739246
+        },
+        {
+          "name": "append-batch",
+          "durationMs": 63,
+          "count": 960,
+          "checksum": 10108853
+        },
+        {
+          "name": "update-every-5th",
+          "durationMs": 110,
+          "count": 960,
+          "checksum": 10108726
+        },
+        {
+          "name": "sort-score-desc",
+          "durationMs": 59,
+          "count": 960,
+          "checksum": 10108726
+        },
+        {
+          "name": "filter-active-high-score",
+          "durationMs": 43,
+          "count": 960,
+          "checksum": 10108726
+        },
+        {
+          "name": "group-aggregate-render",
+          "durationMs": 14,
+          "count": 12,
+          "checksum": 49432
+        },
+        {
+          "name": "window-slice-middle",
+          "durationMs": 23,
+          "count": 140,
+          "checksum": 143028
+        },
+        {
+          "name": "replace-dataset",
+          "durationMs": 34,
+          "count": 640,
+          "checksum": 65056103
+        }
+      ]
+    },
+    {
+      "project": "vue-mini-core",
+      "label": "@vue-mini/core",
+      "iteration": 2,
+      "page": "pages/index/index",
+      "ok": true,
+      "source": "console-log",
+      "metrics": [
+        {
+          "name": "initial-render",
+          "durationMs": 28,
+          "count": 480,
+          "checksum": 9739246
+        },
+        {
+          "name": "append-batch",
+          "durationMs": 59,
+          "count": 960,
+          "checksum": 10108853
+        },
+        {
+          "name": "update-every-5th",
+          "durationMs": 109,
+          "count": 960,
+          "checksum": 10108726
+        },
+        {
+          "name": "sort-score-desc",
+          "durationMs": 64,
+          "count": 960,
+          "checksum": 10108726
+        },
+        {
+          "name": "filter-active-high-score",
+          "durationMs": 42,
+          "count": 960,
+          "checksum": 10108726
+        },
+        {
+          "name": "group-aggregate-render",
+          "durationMs": 14,
+          "count": 12,
+          "checksum": 49432
+        },
+        {
+          "name": "window-slice-middle",
+          "durationMs": 22,
+          "count": 140,
+          "checksum": 143028
+        },
+        {
+          "name": "replace-dataset",
+          "durationMs": 51,
+          "count": 640,
+          "checksum": 65056103
+        }
+      ]
+    },
+    {
+      "project": "vue-mini-core",
+      "label": "@vue-mini/core",
+      "iteration": 3,
+      "page": "pages/index/index",
+      "ok": true,
+      "source": "console-log",
+      "metrics": [
+        {
+          "name": "initial-render",
+          "durationMs": 28,
+          "count": 480,
+          "checksum": 9739246
+        },
+        {
+          "name": "append-batch",
+          "durationMs": 62,
+          "count": 960,
+          "checksum": 10108853
+        },
+        {
+          "name": "update-every-5th",
+          "durationMs": 108,
+          "count": 960,
+          "checksum": 10108726
+        },
+        {
+          "name": "sort-score-desc",
+          "durationMs": 55,
+          "count": 960,
+          "checksum": 10108726
+        },
+        {
+          "name": "filter-active-high-score",
+          "durationMs": 43,
+          "count": 960,
+          "checksum": 10108726
+        },
+        {
+          "name": "group-aggregate-render",
+          "durationMs": 14,
+          "count": 12,
+          "checksum": 49432
+        },
+        {
+          "name": "window-slice-middle",
+          "durationMs": 24,
+          "count": 140,
+          "checksum": 143028
+        },
+        {
+          "name": "replace-dataset",
+          "durationMs": 34,
           "count": 640,
           "checksum": 65056103
         }

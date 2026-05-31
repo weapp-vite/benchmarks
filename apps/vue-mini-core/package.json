@@ -1,0 +1,15 @@
+{
+  "name": "@benchmarks/vue-mini-core",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "lint": "eslint .",
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@vue-mini/core": "1.2.11"
+  },
+  "devDependencies": {
+    "typescript": "^6.0.3"
+  }
+}

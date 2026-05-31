@@ -1,0 +1,3 @@
+[submodule "submodules/weapp-vite"]
+	path = submodules/weapp-vite
+	url = https://github.com/weapp-vite/weapp-vite.git

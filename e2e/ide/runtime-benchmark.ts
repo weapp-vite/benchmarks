@@ -1,7 +1,7 @@
 import process from 'node:process'
 import path from 'pathe'
 import { writeJson } from '../../packages/benchmark-runner/src/fs'
-import { benchmarkProjects, repoRoot } from '../../packages/benchmark-runner/src/projects'
+import { repoRoot, runtimeProjects } from '../../packages/benchmark-runner/src/projects'
 import { collectProjectSamples } from '../../packages/benchmark-runner/src/runtime/collect'
 import { defaultIterations } from '../../packages/benchmark-runner/src/runtime/constants'
 import { resolveWechatCliPath } from '../../packages/benchmark-runner/src/runtime/devtools'
@@ -25,7 +25,7 @@ async function runRuntimeIdeE2e() {
   }
 
   const samples = []
-  for (const [projectIndex, project] of benchmarkProjects.entries()) {
+  for (const [projectIndex, project] of runtimeProjects.entries()) {
     samples.push(...await collectProjectSamples(
       project,
       iterations,

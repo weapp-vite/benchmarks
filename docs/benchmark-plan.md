@@ -7,6 +7,7 @@
 - `uni-app x`
 - `mpx`
 - `taro vue3`
+- `@vue-mini/core` 原生小程序
 
 基准测试分为两层：编译时和运行时。
 
@@ -30,6 +31,8 @@ pnpm bench:compile
 
 结果会写入 `reports/compile/latest.json` 和 `reports/compile/latest.md`。
 
+`@vue-mini/core` 没有独立构建链路，本仓库只把它纳入运行时对比，不纳入编译时排名。
+
 ## 运行时
 
 每个应用都实现同一套页面场景：
@@ -47,6 +50,8 @@ pnpm bench:compile
 运行时页面通过各框架原生的状态更新机制暴露同一套 benchmark 概念。每个指标都包含多轮真实状态变更和渲染提交，记录的是累计耗时，避免单次 5ms、34ms 这类轻量操作差值被误读。每个页面会把指标写入页面状态，并打印 `BENCHMARK_RUNTIME` 日志载荷。
 
 运行时数据必须从 `e2e/ide/runtime-benchmark.ts` 获取。这个 IDE E2E 入口会通过微信开发者工具 automator 启动真实小程序项目，并在同一个项目会话内复用 automator，多轮数据通过 `miniProgram.reLaunch(...)` 串联采集。`pnpm bench:runtime` 只负责调用这条 IDE E2E 链路并把样本渲染成报告。
+
+`@vue-mini/core` 运行时项目是原生微信小程序，启动前会通过微信开发者工具 `build-npm` 准备 npm 依赖；这一步只用于运行时采集准备，不进入编译时 benchmark。
 
 运行时报告会优先展示直观对比：
 
@@ -120,3 +125,5 @@ pnpm --filter @benchmarks/uni-app-x hbuilderx:logcat:mp-weixin
 ## 项目布局
 
 框架项目位于 `apps/*`。共享 runner 逻辑位于 `packages/benchmark-runner`。
+
+`submodules/weapp-vite` 挂载 `weapp-vite/weapp-vite` 源码，用于后续对照和追踪上游实现。

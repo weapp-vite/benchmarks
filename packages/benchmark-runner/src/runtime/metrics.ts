@@ -50,6 +50,19 @@ export async function waitForMetrics(page: { data: (path?: string) => Promise<un
   return []
 }
 
+export async function waitForConsoleMetrics(metricsQueue: RuntimeMetric[][]) {
+  const started = Date.now()
+  const timeout = Number(process.env['BENCH_RUNTIME_METRICS_TIMEOUT'] ?? defaultMetricsTimeout)
+  while (Date.now() - started < timeout) {
+    const metrics = metricsQueue.at(-1) ?? []
+    if (metrics.length >= metricCount) {
+      return metrics
+    }
+    await new Promise(resolve => setTimeout(resolve, 250))
+  }
+  return []
+}
+
 export function parseConsolePayload(payload: unknown) {
   const text = JSON.stringify(payload)
   if (!text.includes('BENCHMARK_RUNTIME')) {

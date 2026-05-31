@@ -4,7 +4,7 @@ import { readFile } from 'node:fs/promises'
 import process from 'node:process'
 import path from 'pathe'
 import { ensureDir } from './fs'
-import { benchmarkProjects, repoRoot } from './projects'
+import { repoRoot, runtimeProjects } from './projects'
 import { defaultIterations, defaultLaunchTimeout, defaultMetricsTimeout } from './runtime/constants'
 import { resolveWechatCliPath, runtimeMode } from './runtime/devtools'
 import { renderPlan, writeReport } from './runtime/report'
@@ -58,7 +58,7 @@ async function runRuntimeBenchmark() {
       generatedAt: new Date().toISOString(),
       mode: 'ide-e2e',
       iterations,
-      samples: benchmarkProjects.flatMap(project => Array.from({ length: iterations }, (_, index) => ({
+      samples: runtimeProjects.flatMap(project => Array.from({ length: iterations }, (_, index) => ({
         project: project.id,
         label: project.label,
         iteration: index + 1,

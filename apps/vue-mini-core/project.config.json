@@ -1,0 +1,19 @@
+{
+  "appid": "wxb3d842a4a7e3440d",
+  "compileType": "miniprogram",
+  "miniprogramRoot": "src/",
+  "projectname": "benchmarks-vue-mini-core",
+  "setting": {
+    "es6": true,
+    "minified": true,
+    "postcss": true,
+    "minifyWXML": true,
+    "packNpmManually": true,
+    "packNpmRelationList": [
+      {
+        "packageJsonPath": "./package.json",
+        "miniprogramNpmDistDir": "./src"
+      }
+    ]
+  }
+}

@@ -1,7 +1,7 @@
 import type { RuntimeReport } from './types'
 import path from 'pathe'
 import { writeJson, writeText } from '../fs'
-import { benchmarkProjects } from '../projects'
+import { runtimeProjects } from '../projects'
 import { batchCount, initialCount, replaceCount, stressCycles, windowSize } from '../scenario'
 
 const metricLabels = [
@@ -105,7 +105,7 @@ export function renderPlan(reportDir: string) {
     '',
     '| 项目 | 页面 | 采集状态 |',
     '| --- | --- | --- |',
-    ...benchmarkProjects.map(project => `| ${project.label} | \`${project.runtimePage}\` | 等待手动或 DevTools 日志采集 |`),
+    ...runtimeProjects.map(project => `| ${project.label} | \`${project.runtimePage}\` | 等待手动或 DevTools 日志采集 |`),
     '',
     '计划采集流程：',
     '',
@@ -128,7 +128,7 @@ export async function writeReport(reportDir: string, report: RuntimeReport) {
   await writeJson(path.join(reportDir, 'latest.json'), report)
 
   const successfulSamples = report.samples.filter(sample => sample.ok)
-  const projectSummaries = benchmarkProjects.map((project) => {
+  const projectSummaries = runtimeProjects.map((project) => {
     const samples = successfulSamples.filter(sample => sample.project === project.id)
     const metricAverages = new Map<string, number>()
     for (const [metricName] of metricLabels) {

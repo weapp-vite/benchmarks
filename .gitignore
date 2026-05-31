@@ -34,6 +34,7 @@ yarn-error.log*
 
 dist
 **/.swc/
+**/miniprogram_npm/
 *.tsbuildinfo
 .weapp-vite
 vite.config.ts.timestamp-*.mjs

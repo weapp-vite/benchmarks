@@ -4,15 +4,19 @@ export interface BenchmarkProject {
   id: string
   label: string
   appDir: string
-  buildCommand: string
-  outputDir: string
   runtimeProjectDir: string
   runtimePage: string
+  runtimeNpmBuild?: boolean
+}
+
+export interface CompileBenchmarkProject extends BenchmarkProject {
+  buildCommand: string
+  outputDir: string
 }
 
 export const repoRoot = path.resolve(import.meta.dirname, '../../..')
 
-export const benchmarkProjects: BenchmarkProject[] = [
+export const compileProjects: CompileBenchmarkProject[] = [
   {
     id: 'weapp-vite-wevu',
     label: 'weapp-vite + wevu',
@@ -59,3 +63,17 @@ export const benchmarkProjects: BenchmarkProject[] = [
     runtimePage: 'pages/index/index',
   },
 ]
+
+export const runtimeProjects: BenchmarkProject[] = [
+  ...compileProjects,
+  {
+    id: 'vue-mini-core',
+    label: '@vue-mini/core',
+    appDir: 'apps/vue-mini-core',
+    runtimeProjectDir: 'apps/vue-mini-core',
+    runtimePage: 'pages/index/index',
+    runtimeNpmBuild: true,
+  },
+]
+
+export const benchmarkProjects = compileProjects
