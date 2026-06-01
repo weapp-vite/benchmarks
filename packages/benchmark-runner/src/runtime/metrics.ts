@@ -20,29 +20,40 @@ function normalizeMetrics(value: unknown): RuntimeMetric[] {
   return []
 }
 
+async function readPageMetrics(page: { data: (path?: string) => Promise<unknown> }) {
+  const direct = normalizeMetrics(await page.data('metrics'))
+  if (direct.length >= metricCount) {
+    return direct
+  }
+
+  const fullData = await page.data()
+  if (!fullData || typeof fullData !== 'object') {
+    return []
+  }
+
+  const data = fullData as Record<string, unknown>
+  const candidates = [
+    data['metrics'],
+    data['$metrics'],
+    data['__metrics'],
+  ]
+  for (const candidate of candidates) {
+    const metrics = normalizeMetrics(candidate)
+    if (metrics.length >= metricCount) {
+      return metrics
+    }
+  }
+
+  return []
+}
+
 export async function waitForMetrics(page: { data: (path?: string) => Promise<unknown> }) {
   const started = Date.now()
   const timeout = Number(process.env['BENCH_RUNTIME_METRICS_TIMEOUT'] ?? defaultMetricsTimeout)
   while (Date.now() - started < timeout) {
-    const direct = normalizeMetrics(await page.data('metrics'))
-    if (direct.length >= metricCount) {
-      return direct
-    }
-
-    const fullData = await page.data()
-    if (fullData && typeof fullData === 'object') {
-      const data = fullData as Record<string, unknown>
-      const candidates = [
-        data['metrics'],
-        data['$metrics'],
-        data['__metrics'],
-      ]
-      for (const candidate of candidates) {
-        const metrics = normalizeMetrics(candidate)
-        if (metrics.length >= metricCount) {
-          return metrics
-        }
-      }
+    const metrics = await readPageMetrics(page)
+    if (metrics.length >= metricCount) {
+      return metrics
     }
 
     await new Promise(resolve => setTimeout(resolve, 250))
@@ -61,6 +72,38 @@ export async function waitForConsoleMetrics(metricsQueue: RuntimeMetric[][]) {
     await new Promise(resolve => setTimeout(resolve, 250))
   }
   return []
+}
+
+export async function waitForRuntimeMetrics(
+  metricsQueue: RuntimeMetric[][],
+  page: { data: (path?: string) => Promise<unknown> },
+) {
+  const started = Date.now()
+  const timeout = Number(process.env['BENCH_RUNTIME_METRICS_TIMEOUT'] ?? defaultMetricsTimeout)
+  while (Date.now() - started < timeout) {
+    const fromConsole = metricsQueue.at(-1) ?? []
+    if (fromConsole.length >= metricCount) {
+      return {
+        metrics: fromConsole,
+        source: 'console-log' as const,
+      }
+    }
+
+    const fromPage = await readPageMetrics(page)
+    if (fromPage.length >= metricCount) {
+      return {
+        metrics: fromPage,
+        source: 'page-data' as const,
+      }
+    }
+
+    await new Promise(resolve => setTimeout(resolve, 250))
+  }
+
+  return {
+    metrics: [],
+    source: 'none' as const,
+  }
 }
 
 export function parseConsolePayload(payload: unknown) {

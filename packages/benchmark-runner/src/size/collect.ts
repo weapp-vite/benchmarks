@@ -51,12 +51,15 @@ function bucketOfFile(file: string): FileBucket {
 async function listFiles(dir: string) {
   const files: string[] = []
 
-  async function walk(current: string) {
+  async function walk(current: string, isRoot = false) {
     let entries
     try {
       entries = await readdir(current, { withFileTypes: true })
     }
-    catch {
+    catch (error) {
+      if (isRoot) {
+        throw new Error(`size output directory is not readable: ${current}`, { cause: error })
+      }
       return
     }
 
@@ -72,7 +75,7 @@ async function listFiles(dir: string) {
     }))
   }
 
-  await walk(dir)
+  await walk(dir, true)
   return files.sort()
 }
 
@@ -143,6 +146,9 @@ export async function analyzeProject(project: ProjectInput): Promise<ProjectSize
       type: typeOfFile(relativePath),
       bucket: bucketOfFile(relativePath),
     })
+  }
+  if (files.length === 0) {
+    throw new Error(`size output directory has no files: ${absoluteOutputDir}`)
   }
 
   const totals = files.reduce((total, file) => {

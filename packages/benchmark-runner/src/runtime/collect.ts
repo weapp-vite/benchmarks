@@ -6,7 +6,7 @@ import process from 'node:process'
 import path from 'pathe'
 import { repoRoot } from '../projects'
 import { defaultLaunchTimeout, defaultRelaunchRetries, metricCount } from './constants'
-import { parseConsolePayload, waitForConsoleMetrics, waitForMetrics } from './metrics'
+import { parseConsolePayload, waitForRuntimeMetrics } from './metrics'
 
 function sleep(ms: number) {
   return new Promise(resolve => setTimeout(resolve, ms))
@@ -59,21 +59,8 @@ async function collectIteration(
     consoleMetrics.length = 0
     await relaunchPage(miniProgram, `/${project.runtimePage}?benchIteration=${iteration}`)
 
-    const fromConsole = await waitForConsoleMetrics(consoleMetrics)
-    if (fromConsole.length >= metricCount) {
-      return {
-        project: project.id,
-        label: project.label,
-        iteration,
-        page: project.runtimePage,
-        ok: true,
-        source: 'console-log',
-        metrics: fromConsole,
-      }
-    }
-
     const page = await miniProgram.currentPage({ retries: 20, timeout: 1_000 })
-    const metrics = await waitForMetrics(page)
+    const { metrics, source } = await waitForRuntimeMetrics(consoleMetrics, page)
     if (metrics.length >= metricCount) {
       return {
         project: project.id,
@@ -81,7 +68,7 @@ async function collectIteration(
         iteration,
         page: project.runtimePage,
         ok: true,
-        source: 'page-data',
+        source,
         metrics,
       }
     }
