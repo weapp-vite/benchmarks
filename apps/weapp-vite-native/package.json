@@ -13,6 +13,6 @@
   "devDependencies": {
     "miniprogram-api-typings": "^5.0.0",
     "typescript": "^6.0.3",
-    "weapp-vite": "6.16.31"
+    "weapp-vite": "6.16.32"
   }
 }
