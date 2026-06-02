@@ -1,5 +1,7 @@
 import { readFile, stat } from 'node:fs/promises'
 
+export const defaultArtifactChangePollIntervalMs = 10
+
 function sleep(ms: number) {
   return new Promise(resolve => setTimeout(resolve, ms))
 }
@@ -69,6 +71,7 @@ export async function waitForArtifacts(files: string[], timeoutMs: number) {
 export async function waitForArtifactChange(
   before: ArtifactState[],
   timeoutMs: number,
+  pollIntervalMs = defaultArtifactChangePollIntervalMs,
 ) {
   const started = Date.now()
   const files = before.map(state => state.file)
@@ -81,7 +84,7 @@ export async function waitForArtifactChange(
     if (changed) {
       return changed
     }
-    await sleep(50)
+    await sleep(pollIntervalMs)
   }
   throw new Error(`等待 HMR 产物更新超时：${files.join('、')}`)
 }

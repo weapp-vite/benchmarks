@@ -5,7 +5,12 @@ import process from 'node:process'
 import path from 'pathe'
 import { defaultTimingIterations } from './constants'
 import { ensureDir } from './fs'
-import { snapshotArtifacts, waitForArtifactChange, waitForArtifacts } from './hmr/artifacts'
+import {
+  defaultArtifactChangePollIntervalMs,
+  snapshotArtifacts,
+  waitForArtifactChange,
+  waitForArtifacts,
+} from './hmr/artifacts'
 import { startDevProcess } from './hmr/dev'
 import { writeHmrReport } from './hmr/report'
 import { hmrScenarios } from './hmr/scenarios/index'
@@ -81,8 +86,9 @@ async function restoreSource(options: {
   filePath: string
   originalSource: string
   timeoutMs: number
+  pollIntervalMs: number
 }) {
-  const { scenario, filePath, originalSource, timeoutMs } = options
+  const { scenario, filePath, originalSource, timeoutMs, pollIntervalMs } = options
   const currentSource = await readFile(filePath, 'utf8').catch(() => '')
   if (currentSource === originalSource) {
     return
@@ -91,7 +97,7 @@ async function restoreSource(options: {
   const beforeArtifacts = outputFiles.length ? await snapshotArtifacts(outputFiles) : []
   await writeFile(filePath, originalSource, 'utf8')
   if (beforeArtifacts.length) {
-    await waitForArtifactChange(beforeArtifacts, timeoutMs).catch(() => undefined)
+    await waitForArtifactChange(beforeArtifacts, timeoutMs, pollIntervalMs).catch(() => undefined)
   }
 }
 
@@ -99,8 +105,9 @@ async function runScenario(options: {
   scenario: HmrScenario
   iterations: number
   timeoutMs: number
+  pollIntervalMs: number
 }) {
-  const { scenario, iterations, timeoutMs } = options
+  const { scenario, iterations, timeoutMs, pollIntervalMs } = options
   const sourcePath = path.join(repoRoot, scenario.appDir, scenario.sourceFile)
   const originalSource = await readFile(sourcePath, 'utf8')
   const samples: HmrSample[] = []
@@ -115,7 +122,7 @@ async function runScenario(options: {
       const started = performance.now()
       try {
         await writeFile(sourcePath, nextSource, 'utf8')
-        await waitForArtifactChange(beforeArtifacts, timeoutMs)
+        await waitForArtifactChange(beforeArtifacts, timeoutMs, pollIntervalMs)
         samples.push(createSampleFromArtifact({
           scenario,
           iteration,
@@ -129,7 +136,7 @@ async function runScenario(options: {
     }
   }
   finally {
-    await restoreSource({ scenario, filePath: sourcePath, originalSource, timeoutMs })
+    await restoreSource({ scenario, filePath: sourcePath, originalSource, timeoutMs, pollIntervalMs })
   }
 
   return samples
@@ -139,8 +146,9 @@ async function runProjectScenarios(options: {
   scenarios: HmrScenario[]
   iterations: number
   timeoutMs: number
+  pollIntervalMs: number
 }) {
-  const { scenarios, iterations, timeoutMs } = options
+  const { scenarios, iterations, timeoutMs, pollIntervalMs } = options
   const project = scenarios[0]
   if (!project) {
     return []
@@ -170,7 +178,7 @@ async function runProjectScenarios(options: {
     const samples: HmrSample[] = []
     for (const scenario of scenarios) {
       samples.push(...await dev.waitFor(
-        runScenario({ scenario, iterations, timeoutMs }),
+        runScenario({ scenario, iterations, timeoutMs, pollIntervalMs }),
         `${scenario.label} HMR`,
       ))
     }
@@ -184,6 +192,9 @@ async function runProjectScenarios(options: {
 async function runHmrBenchmark() {
   const iterations = Number(process.env['BENCH_HMR_ITERATIONS'] ?? defaultTimingIterations)
   const timeoutMs = Number(process.env['BENCH_HMR_TIMEOUT'] ?? defaultTimeoutMs)
+  const pollIntervalMs = Number(
+    process.env['BENCH_HMR_POLL_INTERVAL'] ?? defaultArtifactChangePollIntervalMs,
+  )
   const reportDir = path.join(repoRoot, 'reports/hmr')
   await ensureDir(reportDir)
 
@@ -193,6 +204,7 @@ async function runHmrBenchmark() {
       scenarios,
       iterations,
       timeoutMs,
+      pollIntervalMs,
     }))
   }
 
@@ -207,6 +219,7 @@ async function runHmrBenchmark() {
       'Vue SFC 场景拆分 script、template、style 和页面配置；原生场景拆分 JS、WXML、WXSS、JSON 文件；Mpx 拆分 template、script、style 和页面配置。',
       '@vue-mini/core 是原生小程序运行时对比项，没有独立编译/watch 链路，因此不纳入 HMR 排名。',
       `HMR 等待超时默认是 ${defaultTimeoutMs}ms，可通过 BENCH_HMR_TIMEOUT 覆盖。`,
+      `HMR 产物变化轮询间隔默认是 ${defaultArtifactChangePollIntervalMs}ms，可通过 BENCH_HMR_POLL_INTERVAL 覆盖。`,
     ],
   })
 }
