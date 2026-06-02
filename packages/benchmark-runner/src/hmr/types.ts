@@ -26,7 +26,7 @@ export interface HmrScenario {
   project: string
   projectLabel: string
   appDir: string
-  collector: 'weapp-vite-profile' | 'artifact'
+  collector: 'artifact'
   readyPattern?: RegExp
   outputFiles?: string[]
   sourceFile: string

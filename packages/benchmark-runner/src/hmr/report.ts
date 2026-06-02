@@ -91,9 +91,7 @@ export async function writeHmrReport(reportDir: string, report: HmrReport) {
     return 'Vue SFC'
   }
 
-  const formatCollector = (collector: HmrSample['collector']) => collector === 'weapp-vite-profile'
-    ? '内部 profile'
-    : '产物变化'
+  const formatCollector = (_collector: HmrSample['collector']) => '产物变化'
 
   const lines = [
     '# HMR 基准报告',
@@ -109,7 +107,7 @@ export async function writeHmrReport(reportDir: string, report: HmrReport) {
       ? `- 未纳入排名：${incompleteSummaries.map(summary => `${summary.label}（有效样本 ${summary.sampleCount}/${report.iterations}）`).join('、')}。`
       : '- 所有 HMR 场景样本完整，均已纳入排名。',
     '- 场景覆盖：weapp-vite + wevu、weapp-vite + wevu performance、weapp-vite 原生、uni-app vite vue3、uni-app x、taro vue3、mpx。',
-    '- 读数口径：weapp-vite 使用内部 profile；其他框架使用源文件写入到目标产物更新的墙钟耗时，因此阶段列只在 weapp-vite 场景有值。',
+    '- 读数口径：所有框架统一使用源文件写入到目标小程序产物更新的墙钟耗时，内部阶段列没有统一可比数据时显示为 -。',
     '- @vue-mini/core 没有独立编译/watch 链路，只保留 runtime 对比，不纳入 HMR 排名。',
     '',
     '## 场景速览',
