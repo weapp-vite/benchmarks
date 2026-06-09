@@ -33,6 +33,7 @@ yarn-error.log*
 .turbo
 
 dist
+apps/mpx/.cache/
 **/.swc/
 **/miniprogram_npm/
 *.tsbuildinfo

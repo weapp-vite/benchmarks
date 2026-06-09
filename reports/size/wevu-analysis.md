@@ -1,21 +1,21 @@
 # wevu 体积分析
 
-生成时间：2026-05-31T19:58:40.520Z
+生成时间：2026-06-09T09:33:42.623Z
 
 ## 结论
 
-- 当前差距主要来自 JS 固定运行时成本：weapp-vite + wevu 的 JS 为 234.8 KB，uni-app vite vue3 为 68.7 KB，差值 166.0 KB。
-- wevu 的 vendor JS 为 228.2 KB，uni-app 的 vendor JS 为 64.6 KB，vendor 差值 163.6 KB，这是最主要的大头。
-- 对比 weapp-vite 原生，wevu 增加的运行时税约 228.4 KB。业务页面 JS 本身只有 6.0 KB，不是主要问题。
-- performance preset 的体积没有变小，当前比普通 wevu 多 0.9 KB。它优化的是运行时 setData 策略和诊断配置，不是体积优化模式。
+- 当前差距主要来自 JS 固定运行时成本：weapp-vite + wevu 的 JS 为 193.7 KB，uni-app vite vue3 为 68.7 KB，差值 124.9 KB。
+- wevu 的 vendor JS 为 186.9 KB，uni-app 的 vendor JS 为 64.6 KB，vendor 差值 122.3 KB，这是最主要的大头。
+- 对比 weapp-vite 原生，wevu 增加的运行时税约 187.3 KB。业务页面 JS 本身只有 6.1 KB，不是主要问题。
+- performance preset 的体积没有变小，当前比普通 wevu 多 1.0 KB。它优化的是运行时 setData 策略和诊断配置，不是体积优化模式。
 - 这不是“完全没有 tree shaking”。wevu 包声明了 `sideEffects: false`，但主入口 re-export 的小程序 renderer、生命周期 glue、layout/router/store 桥接和响应式辅助之间引用链较粗，最终仍会把完整运行时基座放进 vendor。
 
 ## 总览
 
 | 项目                          |   总体积 |    gzip |  brotli |       JS | vendor JS | 页面 JS | JS 占比 | 相对最小 |
 | ----------------------------- | -------: | ------: | ------: | -------: | --------: | ------: | ------: | -------: |
-| weapp-vite + wevu             | 237.1 KB | 57.3 KB | 48.7 KB | 234.8 KB |  228.2 KB |  6.0 KB |   99.0% |   27.23x |
-| weapp-vite + wevu performance | 238.0 KB | 57.6 KB | 48.9 KB | 235.6 KB |  228.2 KB |  6.4 KB |   99.0% |   27.33x |
+| weapp-vite + wevu             | 196.1 KB | 49.0 KB | 41.6 KB | 193.7 KB |  186.9 KB |  6.1 KB |   98.8% |   22.51x |
+| weapp-vite + wevu performance | 197.0 KB | 49.4 KB | 41.9 KB | 194.6 KB |  186.9 KB |  6.6 KB |   98.8% |   22.62x |
 | weapp-vite 原生               |   8.7 KB |  3.3 KB |  2.8 KB |   6.3 KB |    0.0 KB |  6.3 KB |   72.6% |    1.00x |
 | uni-app vite vue3             |  71.4 KB | 28.4 KB | 25.2 KB |  68.7 KB |   64.6 KB |  2.5 KB |   96.3% |    8.19x |
 
@@ -23,29 +23,29 @@
 
 ### weapp-vite + wevu
 
-| 文件                         |      raw |    gzip |  brotli | 类型     | 分组   |
-| ---------------------------- | -------: | ------: | ------: | -------- | ------ |
-| weapp-vendors/wevu-src.js    | 128.4 KB | 31.7 KB | 26.8 KB | js       | vendor |
-| weapp-vendors/wevu-ref.js    |  54.1 KB | 12.4 KB | 10.7 KB | js       | vendor |
-| weapp-vendors/wevu-router.js |  45.6 KB |  9.6 KB |  8.1 KB | js       | vendor |
-| pages/index/index.js         |   5.8 KB |  1.8 KB |  1.6 KB | js       | page   |
-| pages/index/index.wxml       |   1.0 KB |  0.4 KB |  0.3 KB | template | page   |
-| pages/index/index.wxss       |   0.6 KB |  0.4 KB |  0.3 KB | style    | page   |
-| app.js                       |   0.6 KB |  0.3 KB |  0.2 KB | js       | app    |
-| app.json                     |   0.3 KB |  0.2 KB |  0.2 KB | json     | app    |
+| 文件                              |      raw |    gzip |  brotli | 类型     | 分组   |
+| --------------------------------- | -------: | ------: | ------: | -------- | ------ |
+| weapp-vendors/wevu-templateRef.js | 130.1 KB | 32.0 KB | 27.0 KB | js       | vendor |
+| weapp-vendors/wevu-ref.js         |  56.8 KB | 13.4 KB | 11.5 KB | js       | vendor |
+| pages/index/index.js              |   5.9 KB |  1.8 KB |  1.6 KB | js       | page   |
+| pages/index/index.wxml            |   1.0 KB |  0.4 KB |  0.3 KB | template | page   |
+| pages/index/index.wxss            |   0.6 KB |  0.4 KB |  0.3 KB | style    | page   |
+| app.js                            |   0.6 KB |  0.3 KB |  0.2 KB | js       | app    |
+| app.json                          |   0.3 KB |  0.2 KB |  0.2 KB | json     | app    |
+| pages/detail/index.js             |   0.2 KB |  0.2 KB |  0.1 KB | js       | page   |
 
 ### weapp-vite + wevu performance
 
-| 文件                         |      raw |    gzip |  brotli | 类型     | 分组   |
-| ---------------------------- | -------: | ------: | ------: | -------- | ------ |
-| weapp-vendors/wevu-src.js    | 128.4 KB | 31.7 KB | 26.8 KB | js       | vendor |
-| weapp-vendors/wevu-ref.js    |  54.1 KB | 12.4 KB | 10.7 KB | js       | vendor |
-| weapp-vendors/wevu-router.js |  45.6 KB |  9.6 KB |  8.1 KB | js       | vendor |
-| pages/index/index.js         |   6.0 KB |  1.9 KB |  1.7 KB | js       | page   |
-| app.js                       |   1.1 KB |  0.4 KB |  0.3 KB | js       | app    |
-| pages/index/index.wxml       |   1.0 KB |  0.4 KB |  0.3 KB | template | page   |
-| pages/index/index.wxss       |   0.6 KB |  0.4 KB |  0.3 KB | style    | page   |
-| pages/detail/index.js        |   0.3 KB |  0.3 KB |  0.2 KB | js       | page   |
+| 文件                              |      raw |    gzip |  brotli | 类型     | 分组   |
+| --------------------------------- | -------: | ------: | ------: | -------- | ------ |
+| weapp-vendors/wevu-templateRef.js | 130.1 KB | 32.0 KB | 27.0 KB | js       | vendor |
+| weapp-vendors/wevu-ref.js         |  56.8 KB | 13.4 KB | 11.5 KB | js       | vendor |
+| pages/index/index.js              |   6.2 KB |  1.9 KB |  1.7 KB | js       | page   |
+| app.js                            |   1.1 KB |  0.4 KB |  0.3 KB | js       | app    |
+| pages/index/index.wxml            |   1.0 KB |  0.4 KB |  0.3 KB | template | page   |
+| pages/index/index.wxss            |   0.6 KB |  0.4 KB |  0.3 KB | style    | page   |
+| pages/detail/index.js             |   0.4 KB |  0.3 KB |  0.2 KB | js       | page   |
+| app.json                          |   0.3 KB |  0.2 KB |  0.2 KB | json     | app    |
 
 ### weapp-vite 原生
 
@@ -75,18 +75,17 @@
 
 ## wevu 源包入口
 
-wevu 版本：6.16.31；package.json 的 `sideEffects`：`false`。
+wevu 版本：6.16.43；package.json 的 `sideEffects`：`false`。
 
-| 源包文件                 |      raw |    gzip |  brotli |
-| ------------------------ | -------: | ------: | ------: |
-| dist/src-BtONVPDv.mjs    | 108.1 KB | 31.8 KB | 27.3 KB |
-| dist/router.mjs          |  21.7 KB |  6.8 KB |  6.1 KB |
-| dist/router-C1IObdgc.mjs |  13.2 KB |  4.7 KB |  4.1 KB |
-| dist/ref-CRwjgX_d.mjs    |  10.3 KB |  3.7 KB |  3.4 KB |
-| dist/store-CNXa5BsN.mjs  |   5.1 KB |  1.9 KB |  1.7 KB |
-| dist/vue-demi.mjs        |   4.5 KB |  1.9 KB |  1.7 KB |
-| dist/index.mjs           |   4.4 KB |  1.9 KB |  1.6 KB |
-| dist/store.mjs           |   0.1 KB |  0.1 KB |  0.1 KB |
+| 源包文件                 |     raw |   gzip | brotli |
+| ------------------------ | ------: | -----: | -----: |
+| dist/router.mjs          | 21.7 KB | 6.8 KB | 6.1 KB |
+| dist/ref-CRwjgX_d.mjs    | 10.3 KB | 3.7 KB | 3.4 KB |
+| dist/router-BiJKkvy7.mjs |  8.8 KB | 3.4 KB | 3.0 KB |
+| dist/store-B9C0AuaO.mjs  |  4.8 KB | 1.8 KB | 1.6 KB |
+| dist/vue-demi.mjs        |  4.7 KB | 2.0 KB | 1.7 KB |
+| dist/index.mjs           |  4.6 KB | 1.9 KB | 1.7 KB |
+| dist/store.mjs           |  0.1 KB | 0.1 KB | 0.1 KB |
 
 ## 判断
 

@@ -28,6 +28,7 @@
     "@dcloudio/uni-uts-v1": "3.0.0-alpha-5010220260529001",
     "@dcloudio/uts": "3.0.0-alpha-3040820220424002",
     "@dcloudio/vite-plugin-uni": "3.0.0-alpha-5010220260529001",
+    "postcss": "^8.5.15",
     "typescript": "^6.0.3",
     "vite": "5.2.8",
     "vue-tsc": "^3.3.4"

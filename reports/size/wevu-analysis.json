@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-31T19:58:40.520Z",
+  "generatedAt": "2026-06-09T09:33:42.623Z",
   "projects": [
     {
       "id": "weapp-vite-wevu",
@@ -8,9 +8,9 @@
       "files": [
         {
           "path": "app.js",
-          "bytes": 589,
-          "gzipBytes": 265,
-          "brotliBytes": 246,
+          "bytes": 621,
+          "gzipBytes": 268,
+          "brotliBytes": 240,
           "type": "js",
           "bucket": "app"
         },
@@ -32,9 +32,9 @@
         },
         {
           "path": "pages/detail/index.js",
-          "bytes": 197,
-          "gzipBytes": 177,
-          "brotliBytes": 143,
+          "bytes": 205,
+          "gzipBytes": 182,
+          "brotliBytes": 144,
           "type": "js",
           "bucket": "page"
         },
@@ -64,9 +64,9 @@
         },
         {
           "path": "pages/index/index.js",
-          "bytes": 5939,
-          "gzipBytes": 1801,
-          "brotliBytes": 1608,
+          "bytes": 6075,
+          "gzipBytes": 1817,
+          "brotliBytes": 1628,
           "type": "js",
           "bucket": "page"
         },
@@ -80,9 +80,9 @@
         },
         {
           "path": "pages/index/index.wxml",
-          "bytes": 1030,
-          "gzipBytes": 380,
-          "brotliBytes": 330,
+          "bytes": 1054,
+          "gzipBytes": 370,
+          "brotliBytes": 325,
           "type": "template",
           "bucket": "page"
         },
@@ -104,42 +104,34 @@
         },
         {
           "path": "weapp-vendors/wevu-ref.js",
-          "bytes": 55414,
-          "gzipBytes": 12685,
-          "brotliBytes": 10966,
+          "bytes": 58152,
+          "gzipBytes": 13740,
+          "brotliBytes": 11782,
           "type": "js",
           "bucket": "vendor"
         },
         {
-          "path": "weapp-vendors/wevu-router.js",
-          "bytes": 46734,
-          "gzipBytes": 9831,
-          "brotliBytes": 8315,
-          "type": "js",
-          "bucket": "vendor"
-        },
-        {
-          "path": "weapp-vendors/wevu-src.js",
-          "bytes": 131522,
-          "gzipBytes": 32415,
-          "brotliBytes": 27426,
+          "path": "weapp-vendors/wevu-templateRef.js",
+          "bytes": 133250,
+          "gzipBytes": 32745,
+          "brotliBytes": 27690,
           "type": "js",
           "bucket": "vendor"
         }
       ],
       "totals": {
-        "files": 15,
-        "bytes": 242825,
-        "gzipBytes": 58631,
-        "brotliBytes": 49874,
-        "jsBytes": 240395,
-        "templateBytes": 1149,
+        "files": 14,
+        "bytes": 200757,
+        "gzipBytes": 50199,
+        "brotliBytes": 42649,
+        "jsBytes": 198303,
+        "templateBytes": 1173,
         "styleBytes": 836,
         "jsonBytes": 445,
         "assetBytes": 0,
-        "vendorJsBytes": 233670,
-        "pageJsBytes": 6136,
-        "appJsBytes": 589,
+        "vendorJsBytes": 191402,
+        "pageJsBytes": 6280,
+        "appJsBytes": 621,
         "sharedJsBytes": 0
       }
     },
@@ -150,9 +142,9 @@
       "files": [
         {
           "path": "app.js",
-          "bytes": 1079,
-          "gzipBytes": 391,
-          "brotliBytes": 328,
+          "bytes": 1111,
+          "gzipBytes": 394,
+          "brotliBytes": 327,
           "type": "js",
           "bucket": "app"
         },
@@ -174,9 +166,9 @@
         },
         {
           "path": "pages/detail/index.js",
-          "bytes": 353,
-          "gzipBytes": 269,
-          "brotliBytes": 208,
+          "bytes": 361,
+          "gzipBytes": 274,
+          "brotliBytes": 232,
           "type": "js",
           "bucket": "page"
         },
@@ -206,9 +198,9 @@
         },
         {
           "path": "pages/index/index.js",
-          "bytes": 6181,
-          "gzipBytes": 1921,
-          "brotliBytes": 1705,
+          "bytes": 6374,
+          "gzipBytes": 1961,
+          "brotliBytes": 1743,
           "type": "js",
           "bucket": "page"
         },
@@ -222,9 +214,9 @@
         },
         {
           "path": "pages/index/index.wxml",
-          "bytes": 1042,
-          "gzipBytes": 388,
-          "brotliBytes": 335,
+          "bytes": 1066,
+          "gzipBytes": 378,
+          "brotliBytes": 333,
           "type": "template",
           "bucket": "page"
         },
@@ -246,42 +238,34 @@
         },
         {
           "path": "weapp-vendors/wevu-ref.js",
-          "bytes": 55414,
-          "gzipBytes": 12685,
-          "brotliBytes": 10966,
+          "bytes": 58152,
+          "gzipBytes": 13740,
+          "brotliBytes": 11782,
           "type": "js",
           "bucket": "vendor"
         },
         {
-          "path": "weapp-vendors/wevu-router.js",
-          "bytes": 46734,
-          "gzipBytes": 9831,
-          "brotliBytes": 8315,
-          "type": "js",
-          "bucket": "vendor"
-        },
-        {
-          "path": "weapp-vendors/wevu-src.js",
-          "bytes": 131522,
-          "gzipBytes": 32415,
-          "brotliBytes": 27426,
+          "path": "weapp-vendors/wevu-templateRef.js",
+          "bytes": 133250,
+          "gzipBytes": 32745,
+          "brotliBytes": 27690,
           "type": "js",
           "bucket": "vendor"
         }
       ],
       "totals": {
-        "files": 15,
-        "bytes": 243749,
-        "gzipBytes": 58997,
-        "brotliBytes": 50116,
-        "jsBytes": 241283,
-        "templateBytes": 1161,
+        "files": 14,
+        "bytes": 201738,
+        "gzipBytes": 50589,
+        "brotliBytes": 42940,
+        "jsBytes": 199248,
+        "templateBytes": 1185,
         "styleBytes": 836,
         "jsonBytes": 469,
         "assetBytes": 0,
-        "vendorJsBytes": 233670,
-        "pageJsBytes": 6534,
-        "appJsBytes": 1079,
+        "vendorJsBytes": 191402,
+        "pageJsBytes": 6735,
+        "appJsBytes": 1111,
         "sharedJsBytes": 0
       }
     },
@@ -547,26 +531,14 @@
     }
   ],
   "wevuPackage": {
-    "version": "6.16.31",
+    "version": "6.16.43",
     "sideEffects": false,
     "entryFiles": [
       {
-        "file": "dist/src-BtONVPDv.mjs",
-        "bytes": 110745,
-        "gzipBytes": 32592,
-        "brotliBytes": 28001
-      },
-      {
         "file": "dist/router.mjs",
-        "bytes": 22184,
-        "gzipBytes": 6964,
-        "brotliBytes": 6244
-      },
-      {
-        "file": "dist/router-C1IObdgc.mjs",
-        "bytes": 13483,
-        "gzipBytes": 4803,
-        "brotliBytes": 4159
+        "bytes": 22215,
+        "gzipBytes": 6982,
+        "brotliBytes": 6260
       },
       {
         "file": "dist/ref-CRwjgX_d.mjs",
@@ -575,28 +547,34 @@
         "brotliBytes": 3468
       },
       {
-        "file": "dist/store-CNXa5BsN.mjs",
-        "bytes": 5190,
-        "gzipBytes": 1974,
-        "brotliBytes": 1782
+        "file": "dist/router-BiJKkvy7.mjs",
+        "bytes": 9055,
+        "gzipBytes": 3526,
+        "brotliBytes": 3084
+      },
+      {
+        "file": "dist/store-B9C0AuaO.mjs",
+        "bytes": 4934,
+        "gzipBytes": 1826,
+        "brotliBytes": 1663
       },
       {
         "file": "dist/vue-demi.mjs",
-        "bytes": 4593,
-        "gzipBytes": 1986,
-        "brotliBytes": 1724
+        "bytes": 4782,
+        "gzipBytes": 2042,
+        "brotliBytes": 1767
       },
       {
         "file": "dist/index.mjs",
-        "bytes": 4470,
-        "gzipBytes": 1902,
-        "brotliBytes": 1657
+        "bytes": 4668,
+        "gzipBytes": 1968,
+        "brotliBytes": 1721
       },
       {
         "file": "dist/store.mjs",
         "bytes": 114,
         "gzipBytes": 108,
-        "brotliBytes": 93
+        "brotliBytes": 88
       }
     ]
   }
