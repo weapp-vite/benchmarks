@@ -5,7 +5,7 @@
   </view>
 </template>
 
-<script>
+<script lang="ts">
 import { createPage } from '@mpxjs/core'
 
 createPage({})

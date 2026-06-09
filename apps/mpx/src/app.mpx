@@ -1,6 +1,8 @@
 <script>
-import { createApp } from '@mpxjs/core'
+import mpx, { createApp } from '@mpxjs/core'
+import apiProxy from '@mpxjs/api-proxy'
 
+mpx.use(apiProxy, { usePromise: true })
 createApp({
   onLaunch() {},
 })
@@ -9,14 +11,8 @@ createApp({
 <script type="application/json">
 {
   "pages": [
-    {
-      "src": "./pages/index.mpx",
-      "path": "pages/index"
-    },
-    {
-      "src": "./pages/detail.mpx",
-      "path": "pages/detail"
-    }
+    "./pages/index",
+    "./pages/detail"
   ],
   "window": {
     "navigationBarTitleText": "mpx",

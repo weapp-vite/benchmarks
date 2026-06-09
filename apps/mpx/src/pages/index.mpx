@@ -167,7 +167,6 @@ createPage({
       }
       this.record('replace-dataset', start, this.visibleItems)
 
-      // eslint-disable-next-line no-console
       console.log('BENCHMARK_RUNTIME', {
         framework: 'mpx',
         metrics: this.metrics,

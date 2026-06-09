@@ -68,7 +68,7 @@ export const compileProjects: CompileBenchmarkProject[] = [
     appDir: 'apps/mpx',
     buildCommand: 'pnpm build',
     outputDir: 'dist/wx',
-    runtimeProjectDir: 'apps/mpx',
+    runtimeProjectDir: 'apps/mpx/dist/wx',
     runtimePage: 'pages/index',
   },
   {

@@ -1,17 +1,32 @@
 {
-  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "composite": true,
+    "target": "esnext",
+    "module": "esnext",
+    "baseUrl": "./",
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "noEmit": true,
+    "moduleResolution": "node",
+    "lib": [
+      "esnext"
+    ],
     "types": [
       "miniprogram-api-typings"
     ],
-    "allowJs": true,
-    "checkJs": false
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    }
   },
   "include": [
     "src/**/*.ts",
-    "src/**/*.js",
-    "src/**/*.mpx",
-    "webpack.config.cjs"
+    "src/**/*.d.ts"
+  ],
+  "exclude": [
+    "build",
+    "dist",
+    "config"
   ]
 }
