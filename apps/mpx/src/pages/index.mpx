@@ -167,6 +167,7 @@ createPage({
       }
       this.record('replace-dataset', start, this.visibleItems)
 
+      this.setData({ __metrics: this.metrics })
       console.log('BENCHMARK_RUNTIME', {
         framework: 'mpx',
         metrics: this.metrics,

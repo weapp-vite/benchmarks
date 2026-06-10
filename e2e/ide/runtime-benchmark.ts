@@ -14,6 +14,16 @@ function readIterations() {
   return Number(process.env['BENCH_RUNTIME_ITERATIONS'] ?? defaultIterations)
 }
 
+function resolveRuntimeProjects() {
+  const projectFilter = process.env['BENCH_RUNTIME_PROJECTS']
+  if (!projectFilter) {
+    return runtimeProjects
+  }
+
+  const filters = new Set(projectFilter.split(',').map(item => item.trim()).filter(Boolean))
+  return runtimeProjects.filter(project => filters.has(project.id) || filters.has(project.label))
+}
+
 async function runRuntimeIdeE2e() {
   const iterations = readIterations()
   const cliPath = await resolveWechatCliPath()
@@ -24,8 +34,9 @@ async function runRuntimeIdeE2e() {
     throw new Error('未找到微信开发者工具 CLI，无法运行 e2e/ide 运行时采集')
   }
 
+  const projects = resolveRuntimeProjects()
   const samples = []
-  for (const [projectIndex, project] of runtimeProjects.entries()) {
+  for (const [projectIndex, project] of projects.entries()) {
     samples.push(...await collectProjectSamples(
       project,
       iterations,

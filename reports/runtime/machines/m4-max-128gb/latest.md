@@ -1,6 +1,6 @@
 # 运行时基准报告
 
-生成时间：2026-06-09T09:41:50.718Z
+生成时间：2026-06-10T03:05:42.307Z
 模式：IDE E2E 采集
 采样次数：20 次，报告中的场景均值和总耗时由有效样本计算。
 
@@ -11,15 +11,15 @@
 - CPU：Apple M4 Max；核心数：16；内存：128GB
 - Node：v24.14.1；pnpm：10.33.4
 - 微信开发者工具 CLI：/Applications/wechatwebdevtools.app/Contents/MacOS/cli
-- Git commit：f72e7673f575286294866cd166d5a60b86927a7b
+- Git commit：07081ad4cf74e28e9dfca142b28ed340ca8a5529
 - weapp-vite submodule：fa75b2ff90b4fdf005ac510245812cab8c19a4cb
 
 ## 一眼结论
 
-- 总耗时最好：weapp-vite + wevu performance，8 个场景平均合计 162ms。
-- 总耗时最差：taro vue3，8 个场景平均合计 1593ms。
-- 差距最大场景：全量排序，最慢比最快多 648ms。
-- 未纳入排名：weapp-vite + wevu（有效样本 0/20）、mpx（有效样本 0/20）、@vue-mini/core（有效样本 0/20）。
+- 总耗时最好：weapp-vite + wevu performance，8 个场景平均合计 161ms。
+- 总耗时最差：taro vue3，8 个场景平均合计 1621ms。
+- 差距最大场景：全量排序，最慢比最快多 674ms。
+- 所有项目样本完整，均已纳入排名。
 - 场景覆盖：初始渲染、追加列表、批量更新、全量排序、过滤、分组聚合渲染、窗口切片和整表替换。
 - 读数规则：性能指数以最快项目为 100，越接近 100 越好；小于 120ms 的绝对差值标为弱信号，只作为参考。
 
@@ -27,42 +27,40 @@
 
 | 项目                          | 总排名 | 性能指数 | 总耗时 | 慢于最快 | 绝对差 | 场景最快数 | 场景最慢数 | 主要优势                  | 主要短板                  | 判断       |
 | ----------------------------- | -----: | -------: | -----: | -------: | -----: | ---------: | ---------: | ------------------------- | ------------------------- | ---------- |
-| weapp-vite + wevu performance |      1 |      100 |  162ms |    1.00x |    0ms |          5 |          0 | 初始渲染、全量排序等 5 项 | -                         | 整体最快   |
-| uni-app vite vue3             |      2 |       78 |  207ms |    1.28x |   45ms |          2 |          0 | 追加批次、窗口切片        | -                         | 有局部优势 |
-| uni-app x                     |      3 |       78 |  209ms |    1.29x |   47ms |          1 |          0 | 批量更新                  | -                         | 表现居中   |
-| weapp-vite 原生               |      4 |       13 | 1269ms |    7.83x | 1107ms |          0 |          5 | -                         | 初始渲染、追加批次等 5 项 | 多场景偏慢 |
-| taro vue3                     |      5 |       10 | 1593ms |    9.83x | 1431ms |          0 |          3 | -                         | 批量更新、全量排序等 3 项 | 整体最慢   |
+| weapp-vite + wevu performance |      1 |      100 |  161ms |    1.00x |    0ms |          4 |          0 | 初始渲染、全量排序等 4 项 | -                         | 整体最快   |
+| weapp-vite + wevu             |      2 |       84 |  192ms |    1.19x |   31ms |          0 |          0 | -                         | -                         | 表现居中   |
+| uni-app vite vue3             |      3 |       81 |  199ms |    1.24x |   38ms |          2 |          0 | 追加批次、窗口切片        | -                         | 有局部优势 |
+| uni-app x                     |      4 |       79 |  205ms |    1.27x |   44ms |          1 |          0 | 批量更新                  | -                         | 表现居中   |
+| @vue-mini/core                |      5 |       47 |  342ms |    2.12x |  181ms |          1 |          0 | 分组聚合渲染              | -                         | 表现居中   |
+| weapp-vite 原生               |      6 |       13 | 1252ms |    7.78x | 1091ms |          0 |          1 | -                         | 分组聚合渲染              | 表现居中   |
+| mpx                           |      7 |       12 | 1373ms |    8.53x | 1212ms |          0 |          4 | -                         | 初始渲染、追加批次等 4 项 | 多场景偏慢 |
+| taro vue3                     |      8 |       10 | 1621ms |   10.07x | 1460ms |          0 |          3 | -                         | 批量更新、全量排序等 3 项 | 整体最慢   |
 
 ## 总耗时排名
 
 | 排名 | 项目                          | 性能指数 | 8 场景平均合计 | 相对最快 | 绝对差 | 有效样本 | 全部通过 |
 | ---: | ----------------------------- | -------: | -------------: | -------: | -----: | -------: | -------- |
-|    1 | weapp-vite + wevu performance |      100 |          162ms |    1.00x |    0ms |       20 | 是       |
-|    2 | uni-app vite vue3             |       78 |          207ms |    1.28x |   45ms |       20 | 是       |
-|    3 | uni-app x                     |       78 |          209ms |    1.29x |   47ms |       20 | 是       |
-|    4 | weapp-vite 原生               |       13 |         1269ms |    7.83x | 1107ms |       20 | 是       |
-|    5 | taro vue3                     |       10 |         1593ms |    9.83x | 1431ms |       20 | 是       |
-
-## 未完成采集
-
-| 项目              | 有效样本 | 问题                          |
-| ----------------- | -------: | ----------------------------- |
-| weapp-vite + wevu |     0/20 | Wait timed out after 60000 ms |
-| mpx               |     0/20 | Wait timed out after 60000 ms |
-| @vue-mini/core    |     0/20 | Wait timed out after 60000 ms |
+|    1 | weapp-vite + wevu performance |      100 |          161ms |    1.00x |    0ms |       20 | 是       |
+|    2 | weapp-vite + wevu             |       84 |          192ms |    1.19x |   31ms |       20 | 是       |
+|    3 | uni-app vite vue3             |       81 |          199ms |    1.24x |   38ms |       20 | 是       |
+|    4 | uni-app x                     |       79 |          205ms |    1.27x |   44ms |       20 | 是       |
+|    5 | @vue-mini/core                |       47 |          342ms |    2.12x |  181ms |       20 | 是       |
+|    6 | weapp-vite 原生               |       13 |         1252ms |    7.78x | 1091ms |       20 | 是       |
+|    7 | mpx                           |       12 |         1373ms |    8.53x | 1212ms |       20 | 是       |
+|    8 | taro vue3                     |       10 |         1621ms |   10.07x | 1460ms |       20 | 是       |
 
 ## 各场景最快和最慢
 
 | 场景           | 最快                          | 最快均值 | 最慢            | 最慢均值 | 相对差距 | 绝对差 | 信号强度 |
 | -------------- | ----------------------------- | -------: | --------------- | -------: | -------: | -----: | -------- |
-| 初始渲染       | weapp-vite + wevu performance |      7ms | weapp-vite 原生 |    130ms |   18.57x |  123ms | 中       |
-| 追加批次       | uni-app vite vue3             |     13ms | weapp-vite 原生 |    103ms |    7.92x |   90ms | 弱       |
-| 批量更新       | uni-app x                     |     30ms | taro vue3       |    184ms |    6.13x |  154ms | 中       |
-| 全量排序       | weapp-vite + wevu performance |     27ms | taro vue3       |    675ms |   25.00x |  648ms | 强       |
-| 过滤高分活跃项 | weapp-vite + wevu performance |     18ms | taro vue3       |    354ms |   19.67x |  336ms | 强       |
-| 分组聚合渲染   | weapp-vite + wevu performance |     17ms | weapp-vite 原生 |     98ms |    5.76x |   81ms | 弱       |
-| 窗口切片       | uni-app vite vue3             |     16ms | weapp-vite 原生 |     97ms |    6.06x |   81ms | 弱       |
-| 整表替换       | weapp-vite + wevu performance |     10ms | weapp-vite 原生 |    212ms |   21.20x |  202ms | 中       |
+| 初始渲染       | weapp-vite + wevu performance |      7ms | mpx             |    236ms |   33.71x |  229ms | 中       |
+| 追加批次       | uni-app vite vue3             |     12ms | mpx             |    107ms |    8.92x |   95ms | 弱       |
+| 批量更新       | uni-app x                     |     29ms | taro vue3       |    190ms |    6.55x |  161ms | 中       |
+| 全量排序       | weapp-vite + wevu performance |     27ms | taro vue3       |    701ms |   25.96x |  674ms | 强       |
+| 过滤高分活跃项 | weapp-vite + wevu performance |     19ms | taro vue3       |    352ms |   18.53x |  333ms | 强       |
+| 分组聚合渲染   | @vue-mini/core                |     14ms | weapp-vite 原生 |     97ms |    6.93x |   83ms | 弱       |
+| 窗口切片       | uni-app vite vue3             |     16ms | mpx             |     98ms |    6.13x |   82ms | 弱       |
+| 整表替换       | weapp-vite + wevu performance |     11ms | mpx             |    209ms |   19.00x |  198ms | 中       |
 
 ## 场景含义
 
@@ -81,176 +79,179 @@
 
 | 项目                          | 总耗时 | 初始渲染 | 追加批次 | 批量更新 | 全量排序 | 过滤高分活跃项 | 分组聚合渲染 | 窗口切片 | 整表替换 |
 | ----------------------------- | -----: | -------: | -------: | -------: | -------: | -------------: | -----------: | -------: | -------: |
-| weapp-vite + wevu performance |  162ms |      7ms |     15ms |     37ms |     27ms |           18ms |         17ms |     31ms |     10ms |
-| uni-app vite vue3             |  207ms |     13ms |     13ms |     32ms |     69ms |           23ms |         20ms |     16ms |     21ms |
-| uni-app x                     |  209ms |     14ms |     13ms |     30ms |     71ms |           24ms |         21ms |     16ms |     20ms |
-| weapp-vite 原生               | 1269ms |    130ms |    103ms |    101ms |    229ms |          299ms |         98ms |     97ms |    212ms |
-| taro vue3                     | 1593ms |     67ms |     74ms |    184ms |    675ms |          354ms |         19ms |     91ms |    129ms |
+| weapp-vite + wevu performance |  161ms |      7ms |     16ms |     36ms |     27ms |           19ms |         17ms |     28ms |     11ms |
+| weapp-vite + wevu             |  192ms |     10ms |     20ms |     46ms |     30ms |           23ms |         27ms |     22ms |     14ms |
+| uni-app vite vue3             |  199ms |     13ms |     12ms |     30ms |     67ms |           23ms |         20ms |     16ms |     18ms |
+| uni-app x                     |  205ms |     13ms |     13ms |     29ms |     71ms |           23ms |         20ms |     16ms |     20ms |
+| @vue-mini/core                |  342ms |     27ms |     55ms |     98ms |     54ms |           40ms |         14ms |     21ms |     33ms |
+| weapp-vite 原生               | 1252ms |    125ms |    101ms |     98ms |    228ms |          299ms |         97ms |     97ms |    207ms |
+| mpx                           | 1373ms |    236ms |    107ms |    116ms |    240ms |          300ms |         67ms |     98ms |    209ms |
+| taro vue3                     | 1621ms |     66ms |     76ms |    190ms |    701ms |          352ms |         19ms |     90ms |    127ms |
 
 ## 原始明细
 
-| 项目                          | 轮次 | 通过                                | 来源       | 初始渲染 | 追加批次 | 批量更新 | 全量排序 | 过滤高分活跃项 | 分组聚合渲染 | 窗口切片 | 整表替换 |
-| ----------------------------- | ---: | ----------------------------------- | ---------- | -------: | -------: | -------: | -------: | -------------: | -----------: | -------: | -------: |
-| weapp-vite + wevu             |    1 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| weapp-vite + wevu             |    2 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| weapp-vite + wevu             |    3 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| weapp-vite + wevu             |    4 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| weapp-vite + wevu             |    5 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| weapp-vite + wevu             |    6 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| weapp-vite + wevu             |    7 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| weapp-vite + wevu             |    8 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| weapp-vite + wevu             |    9 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| weapp-vite + wevu             |   10 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| weapp-vite + wevu             |   11 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| weapp-vite + wevu             |   12 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| weapp-vite + wevu             |   13 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| weapp-vite + wevu             |   14 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| weapp-vite + wevu             |   15 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| weapp-vite + wevu             |   16 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| weapp-vite + wevu             |   17 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| weapp-vite + wevu             |   18 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| weapp-vite + wevu             |   19 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| weapp-vite + wevu             |   20 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| weapp-vite + wevu performance |    1 | 是                                  | 控制台日志 |        8 |       16 |       35 |       27 |             19 |           17 |       31 |       11 |
-| weapp-vite + wevu performance |    2 | 是                                  | 控制台日志 |        7 |       16 |       36 |       26 |             18 |           16 |       32 |       10 |
-| weapp-vite + wevu performance |    3 | 是                                  | 控制台日志 |        7 |       15 |       36 |       27 |             19 |           17 |       29 |        9 |
-| weapp-vite + wevu performance |    4 | 是                                  | 控制台日志 |        6 |       14 |       37 |       26 |             19 |           17 |       29 |       10 |
-| weapp-vite + wevu performance |    5 | 是                                  | 控制台日志 |        7 |       16 |       36 |       26 |             19 |           17 |       31 |       10 |
-| weapp-vite + wevu performance |    6 | 是                                  | 控制台日志 |        7 |       15 |       37 |       27 |             18 |           17 |       32 |       10 |
-| weapp-vite + wevu performance |    7 | 是                                  | 控制台日志 |        7 |       16 |       38 |       27 |             19 |           19 |       31 |       10 |
-| weapp-vite + wevu performance |    8 | 是                                  | 控制台日志 |        7 |       15 |       38 |       27 |             18 |           19 |       29 |       10 |
-| weapp-vite + wevu performance |    9 | 是                                  | 控制台日志 |        7 |       15 |       37 |       25 |             17 |           17 |       34 |       10 |
-| weapp-vite + wevu performance |   10 | 是                                  | 控制台日志 |        7 |       16 |       35 |       25 |             18 |           16 |       28 |       10 |
-| weapp-vite + wevu performance |   11 | 是                                  | 控制台日志 |        7 |       15 |       36 |       26 |             18 |           17 |       33 |        9 |
-| weapp-vite + wevu performance |   12 | 是                                  | 控制台日志 |        7 |       14 |       36 |       25 |             18 |           17 |       30 |       10 |
-| weapp-vite + wevu performance |   13 | 是                                  | 控制台日志 |        7 |       16 |       35 |       27 |             19 |           17 |       28 |       11 |
-| weapp-vite + wevu performance |   14 | 是                                  | 控制台日志 |        7 |       13 |       35 |       30 |             22 |           17 |       30 |       10 |
-| weapp-vite + wevu performance |   15 | 是                                  | 控制台日志 |        6 |       14 |       42 |       27 |             18 |           17 |       33 |       10 |
-| weapp-vite + wevu performance |   16 | 是                                  | 控制台日志 |        7 |       16 |       43 |       29 |             18 |           17 |       29 |       10 |
-| weapp-vite + wevu performance |   17 | 是                                  | 控制台日志 |        7 |       16 |       36 |       28 |             18 |           17 |       32 |       10 |
-| weapp-vite + wevu performance |   18 | 是                                  | 控制台日志 |        8 |       15 |       36 |       26 |             17 |           17 |       30 |       10 |
-| weapp-vite + wevu performance |   19 | 是                                  | 控制台日志 |        7 |       15 |       35 |       26 |             17 |           17 |       30 |       10 |
-| weapp-vite + wevu performance |   20 | 是                                  | 控制台日志 |        7 |       14 |       37 |       25 |             17 |           17 |       34 |       10 |
-| weapp-vite 原生               |    1 | 是                                  | 控制台日志 |      126 |      104 |       97 |      228 |            293 |           97 |       95 |      215 |
-| weapp-vite 原生               |    2 | 是                                  | 控制台日志 |      127 |      103 |       96 |      222 |            291 |          102 |      101 |      217 |
-| weapp-vite 原生               |    3 | 是                                  | 控制台日志 |      128 |       99 |      101 |      221 |            290 |           92 |       97 |      222 |
-| weapp-vite 原生               |    4 | 是                                  | 控制台日志 |      134 |      105 |      101 |      220 |            295 |           97 |       94 |      225 |
-| weapp-vite 原生               |    5 | 是                                  | 控制台日志 |      127 |      106 |       99 |      245 |            317 |          102 |      102 |      198 |
-| weapp-vite 原生               |    6 | 是                                  | 控制台日志 |      140 |      112 |      103 |      232 |            292 |          104 |      119 |      220 |
-| weapp-vite 原生               |    7 | 是                                  | 控制台日志 |      123 |       99 |       92 |      230 |            306 |           98 |       94 |      186 |
-| weapp-vite 原生               |    8 | 是                                  | 控制台日志 |      128 |      100 |       93 |      233 |            316 |           96 |       95 |      218 |
-| weapp-vite 原生               |    9 | 是                                  | 控制台日志 |      129 |      102 |       95 |      238 |            306 |           99 |       92 |      218 |
-| weapp-vite 原生               |   10 | 是                                  | 控制台日志 |      127 |      101 |       97 |      228 |            301 |           99 |       92 |      213 |
-| weapp-vite 原生               |   11 | 是                                  | 控制台日志 |      126 |      100 |       97 |      222 |            296 |           92 |       95 |      211 |
-| weapp-vite 原生               |   12 | 是                                  | 控制台日志 |      154 |      101 |      103 |      222 |            316 |          104 |       93 |      183 |
-| weapp-vite 原生               |   13 | 是                                  | 控制台日志 |      126 |      100 |       95 |      221 |            289 |           98 |       94 |      219 |
-| weapp-vite 原生               |   14 | 是                                  | 控制台日志 |      128 |      105 |       92 |      234 |            297 |           97 |       93 |      222 |
-| weapp-vite 原生               |   15 | 是                                  | 控制台日志 |      127 |      113 |      142 |      233 |            299 |           95 |       94 |      213 |
-| weapp-vite 原生               |   16 | 是                                  | 控制台日志 |      129 |      104 |       93 |      226 |            292 |           97 |       99 |      210 |
-| weapp-vite 原生               |   17 | 是                                  | 控制台日志 |      132 |      109 |      108 |      231 |            298 |           90 |       90 |      224 |
-| weapp-vite 原生               |   18 | 是                                  | 控制台日志 |      134 |      102 |      116 |      229 |            306 |          100 |       96 |      195 |
-| weapp-vite 原生               |   19 | 是                                  | 控制台日志 |      123 |       99 |       97 |      227 |            292 |           96 |       98 |      224 |
-| weapp-vite 原生               |   20 | 是                                  | 控制台日志 |      130 |      101 |       93 |      228 |            293 |          102 |       98 |      216 |
-| uni-app vite vue3             |    1 | 是                                  | 控制台日志 |       19 |       13 |       31 |       78 |             24 |           22 |       17 |       19 |
-| uni-app vite vue3             |    2 | 是                                  | 控制台日志 |       14 |       13 |       33 |       69 |             24 |           20 |       17 |       36 |
-| uni-app vite vue3             |    3 | 是                                  | 控制台日志 |       13 |       12 |       31 |       66 |             23 |           19 |       16 |       18 |
-| uni-app vite vue3             |    4 | 是                                  | 控制台日志 |       13 |       13 |       32 |       77 |             22 |           20 |       25 |       20 |
-| uni-app vite vue3             |    5 | 是                                  | 控制台日志 |       13 |       12 |       32 |       67 |             24 |           21 |       18 |       20 |
-| uni-app vite vue3             |    6 | 是                                  | 控制台日志 |       12 |       12 |       30 |       65 |             23 |           20 |       15 |       18 |
-| uni-app vite vue3             |    7 | 是                                  | 控制台日志 |       16 |       14 |       32 |       67 |             23 |           19 |       15 |       20 |
-| uni-app vite vue3             |    8 | 是                                  | 控制台日志 |       12 |       12 |       40 |       64 |             22 |           20 |       15 |       25 |
-| uni-app vite vue3             |    9 | 是                                  | 控制台日志 |       12 |       12 |       29 |       64 |             22 |           19 |       16 |       28 |
-| uni-app vite vue3             |   10 | 是                                  | 控制台日志 |       13 |       14 |       31 |       65 |             22 |           20 |       14 |       19 |
-| uni-app vite vue3             |   11 | 是                                  | 控制台日志 |       11 |       12 |       32 |       70 |             23 |           19 |       16 |       18 |
-| uni-app vite vue3             |   12 | 是                                  | 控制台日志 |       13 |       12 |       30 |       81 |             24 |           25 |       16 |       19 |
-| uni-app vite vue3             |   13 | 是                                  | 控制台日志 |       13 |       12 |       30 |       66 |             23 |           20 |       17 |       18 |
-| uni-app vite vue3             |   14 | 是                                  | 控制台日志 |       12 |       12 |       30 |       64 |             23 |           20 |       16 |       33 |
-| uni-app vite vue3             |   15 | 是                                  | 控制台日志 |       13 |       13 |       34 |       66 |             22 |           19 |       16 |       20 |
-| uni-app vite vue3             |   16 | 是                                  | 控制台日志 |       12 |       11 |       29 |       66 |             22 |           21 |       15 |       18 |
-| uni-app vite vue3             |   17 | 是                                  | 控制台日志 |       15 |       14 |       33 |       66 |             23 |           19 |       16 |       19 |
-| uni-app vite vue3             |   18 | 是                                  | 控制台日志 |       13 |       14 |       30 |       64 |             23 |           20 |       16 |       18 |
-| uni-app vite vue3             |   19 | 是                                  | 控制台日志 |       13 |       13 |       31 |       77 |             23 |           19 |       16 |       19 |
-| uni-app vite vue3             |   20 | 是                                  | 控制台日志 |       13 |       13 |       32 |       73 |             26 |           23 |       17 |       19 |
-| uni-app x                     |    1 | 是                                  | 控制台日志 |       18 |       13 |       29 |       79 |             23 |           20 |       20 |       25 |
-| uni-app x                     |    2 | 是                                  | 控制台日志 |       13 |       14 |       30 |       67 |             23 |           21 |       17 |       19 |
-| uni-app x                     |    3 | 是                                  | 控制台日志 |       13 |       12 |       30 |       69 |             23 |           31 |       17 |       20 |
-| uni-app x                     |    4 | 是                                  | 控制台日志 |       12 |       12 |       28 |       78 |             24 |           20 |       15 |       20 |
-| uni-app x                     |    5 | 是                                  | 控制台日志 |       13 |       13 |       29 |       66 |             23 |           19 |       16 |       18 |
-| uni-app x                     |    6 | 是                                  | 控制台日志 |       15 |       13 |       33 |       75 |             24 |           22 |       16 |       20 |
-| uni-app x                     |    7 | 是                                  | 控制台日志 |       19 |       15 |       44 |       79 |             25 |           21 |       15 |       21 |
-| uni-app x                     |    8 | 是                                  | 控制台日志 |       12 |       12 |       29 |       67 |             25 |           19 |       16 |       19 |
-| uni-app x                     |    9 | 是                                  | 控制台日志 |       14 |       16 |       30 |       70 |             24 |           26 |       17 |       31 |
-| uni-app x                     |   10 | 是                                  | 控制台日志 |       14 |       15 |       29 |       68 |             23 |           19 |       15 |       19 |
-| uni-app x                     |   11 | 是                                  | 控制台日志 |       12 |       13 |       31 |       66 |             29 |           20 |       16 |       19 |
-| uni-app x                     |   12 | 是                                  | 控制台日志 |       14 |       12 |       28 |       82 |             26 |           20 |       16 |       20 |
-| uni-app x                     |   13 | 是                                  | 控制台日志 |       12 |       12 |       28 |       74 |             27 |           19 |       16 |       20 |
-| uni-app x                     |   14 | 是                                  | 控制台日志 |       12 |       11 |       28 |       66 |             23 |           20 |       15 |       18 |
-| uni-app x                     |   15 | 是                                  | 控制台日志 |       15 |       14 |       31 |       67 |             24 |           20 |       16 |       19 |
-| uni-app x                     |   16 | 是                                  | 控制台日志 |       14 |       13 |       30 |       72 |             25 |           20 |       16 |       20 |
-| uni-app x                     |   17 | 是                                  | 控制台日志 |       13 |       13 |       30 |       79 |             23 |           20 |       16 |       20 |
-| uni-app x                     |   18 | 是                                  | 控制台日志 |       12 |       11 |       28 |       69 |             25 |           20 |       16 |       19 |
-| uni-app x                     |   19 | 是                                  | 控制台日志 |       13 |       13 |       29 |       65 |             23 |           19 |       17 |       19 |
-| uni-app x                     |   20 | 是                                  | 控制台日志 |       15 |       14 |       29 |       65 |             23 |           20 |       15 |       19 |
-| mpx                           |    1 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| mpx                           |    2 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| mpx                           |    3 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| mpx                           |    4 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| mpx                           |    5 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| mpx                           |    6 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| mpx                           |    7 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| mpx                           |    8 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| mpx                           |    9 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| mpx                           |   10 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| mpx                           |   11 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| mpx                           |   12 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| mpx                           |   13 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| mpx                           |   14 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| mpx                           |   15 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| mpx                           |   16 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| mpx                           |   17 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| mpx                           |   18 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| mpx                           |   19 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| mpx                           |   20 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| taro vue3                     |    1 | 是                                  | 控制台日志 |       83 |       91 |      202 |      678 |            358 |           20 |       88 |      131 |
-| taro vue3                     |    2 | 是                                  | 控制台日志 |       67 |       74 |      180 |      652 |            352 |           18 |       90 |      128 |
-| taro vue3                     |    3 | 是                                  | 控制台日志 |       67 |       73 |      179 |      649 |            349 |           18 |       89 |      139 |
-| taro vue3                     |    4 | 是                                  | 控制台日志 |       66 |       70 |      171 |      626 |            351 |           19 |       88 |      126 |
-| taro vue3                     |    5 | 是                                  | 控制台日志 |       65 |       72 |      172 |      626 |            355 |           20 |       88 |      129 |
-| taro vue3                     |    6 | 是                                  | 控制台日志 |       67 |       73 |      178 |      649 |            350 |           21 |      109 |      128 |
-| taro vue3                     |    7 | 是                                  | 控制台日志 |       65 |       72 |      180 |      666 |            348 |           18 |       90 |      127 |
-| taro vue3                     |    8 | 是                                  | 控制台日志 |       69 |       72 |      179 |      656 |            350 |           19 |       90 |      128 |
-| taro vue3                     |    9 | 是                                  | 控制台日志 |       65 |       70 |      176 |      655 |            353 |           22 |       89 |      127 |
-| taro vue3                     |   10 | 是                                  | 控制台日志 |       67 |       78 |      206 |      773 |            350 |           17 |       89 |      129 |
-| taro vue3                     |   11 | 是                                  | 控制台日志 |       65 |       70 |      181 |      663 |            346 |           19 |       89 |      129 |
-| taro vue3                     |   12 | 是                                  | 控制台日志 |       66 |       74 |      186 |      715 |            362 |           20 |       93 |      128 |
-| taro vue3                     |   13 | 是                                  | 控制台日志 |       68 |       72 |      193 |      690 |            358 |           19 |       99 |      127 |
-| taro vue3                     |   14 | 是                                  | 控制台日志 |       66 |       68 |      187 |      691 |            360 |           20 |       91 |      129 |
-| taro vue3                     |   15 | 是                                  | 控制台日志 |       66 |       71 |      192 |      702 |            356 |           19 |       89 |      128 |
-| taro vue3                     |   16 | 是                                  | 控制台日志 |       69 |       78 |      193 |      712 |            353 |           18 |       92 |      135 |
-| taro vue3                     |   17 | 是                                  | 控制台日志 |       67 |       75 |      185 |      658 |            365 |           19 |       90 |      126 |
-| taro vue3                     |   18 | 是                                  | 控制台日志 |       65 |       74 |      182 |      672 |            357 |           18 |       89 |      127 |
-| taro vue3                     |   19 | 是                                  | 控制台日志 |       70 |       75 |      194 |      709 |            354 |           21 |       94 |      126 |
-| taro vue3                     |   20 | 是                                  | 控制台日志 |       65 |       69 |      173 |      654 |            354 |           19 |       89 |      127 |
-| @vue-mini/core                |    1 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| @vue-mini/core                |    2 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| @vue-mini/core                |    3 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| @vue-mini/core                |    4 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| @vue-mini/core                |    5 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| @vue-mini/core                |    6 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| @vue-mini/core                |    7 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| @vue-mini/core                |    8 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| @vue-mini/core                |    9 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| @vue-mini/core                |   10 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| @vue-mini/core                |   11 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| @vue-mini/core                |   12 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| @vue-mini/core                |   13 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| @vue-mini/core                |   14 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| @vue-mini/core                |   15 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| @vue-mini/core                |   16 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| @vue-mini/core                |   17 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| @vue-mini/core                |   18 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| @vue-mini/core                |   19 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
-| @vue-mini/core                |   20 | 否（Wait timed out after 60000 ms） | 无         |          |          |          |          |                |              |          |          |
+| 项目                          | 轮次 | 通过 | 来源       | 初始渲染 | 追加批次 | 批量更新 | 全量排序 | 过滤高分活跃项 | 分组聚合渲染 | 窗口切片 | 整表替换 |
+| ----------------------------- | ---: | ---- | ---------- | -------: | -------: | -------: | -------: | -------------: | -----------: | -------: | -------: |
+| weapp-vite + wevu             |    1 | 是   | 控制台日志 |       11 |       22 |       44 |       29 |             31 |           23 |       21 |       13 |
+| weapp-vite + wevu             |    2 | 是   | 控制台日志 |       10 |       21 |       46 |       28 |             21 |           24 |       23 |       12 |
+| weapp-vite + wevu             |    3 | 是   | 控制台日志 |       10 |       19 |       46 |       30 |             22 |           51 |       22 |       12 |
+| weapp-vite + wevu             |    4 | 是   | 控制台日志 |       10 |       20 |       43 |       30 |             21 |           24 |       21 |       13 |
+| weapp-vite + wevu             |    5 | 是   | 控制台日志 |       10 |       20 |       46 |       29 |             21 |           24 |       22 |       12 |
+| weapp-vite + wevu             |    6 | 是   | 控制台日志 |       10 |       20 |       53 |       29 |             22 |           26 |       23 |       15 |
+| weapp-vite + wevu             |    7 | 是   | 控制台日志 |       10 |       20 |       43 |       30 |             22 |           24 |       23 |       13 |
+| weapp-vite + wevu             |    8 | 是   | 控制台日志 |        9 |       20 |       44 |       31 |             21 |           24 |       22 |       13 |
+| weapp-vite + wevu             |    9 | 是   | 控制台日志 |        9 |       20 |       43 |       29 |             21 |           24 |       22 |       30 |
+| weapp-vite + wevu             |   10 | 是   | 控制台日志 |       10 |       23 |       44 |       31 |             23 |           25 |       22 |       13 |
+| weapp-vite + wevu             |   11 | 是   | 控制台日志 |       10 |       21 |       46 |       31 |             23 |           25 |       22 |       13 |
+| weapp-vite + wevu             |   12 | 是   | 控制台日志 |       10 |       20 |       46 |       30 |             32 |           24 |       23 |       13 |
+| weapp-vite + wevu             |   13 | 是   | 控制台日志 |       10 |       20 |       45 |       30 |             22 |           24 |       23 |       13 |
+| weapp-vite + wevu             |   14 | 是   | 控制台日志 |       11 |       20 |       42 |       31 |             23 |           23 |       23 |       13 |
+| weapp-vite + wevu             |   15 | 是   | 控制台日志 |       10 |       19 |       73 |       30 |             21 |           24 |       22 |       12 |
+| weapp-vite + wevu             |   16 | 是   | 控制台日志 |        9 |       18 |       46 |       32 |             22 |           24 |       21 |       12 |
+| weapp-vite + wevu             |   17 | 是   | 控制台日志 |       10 |       20 |       44 |       29 |             21 |           27 |       23 |       13 |
+| weapp-vite + wevu             |   18 | 是   | 控制台日志 |       10 |       19 |       43 |       29 |             22 |           24 |       21 |       12 |
+| weapp-vite + wevu             |   19 | 是   | 控制台日志 |       10 |       21 |       43 |       28 |             21 |           46 |       21 |       13 |
+| weapp-vite + wevu             |   20 | 是   | 控制台日志 |       11 |       23 |       45 |       28 |             21 |           23 |       22 |       21 |
+| weapp-vite + wevu performance |    1 | 是   | 控制台日志 |        8 |       17 |       36 |       28 |             19 |           16 |       29 |       11 |
+| weapp-vite + wevu performance |    2 | 是   | 控制台日志 |        7 |       17 |       36 |       28 |             18 |           16 |       29 |       10 |
+| weapp-vite + wevu performance |    3 | 是   | 控制台日志 |        7 |       15 |       38 |       27 |             18 |           16 |       29 |       10 |
+| weapp-vite + wevu performance |    4 | 是   | 控制台日志 |        7 |       16 |       38 |       27 |             20 |           17 |       29 |       11 |
+| weapp-vite + wevu performance |    5 | 是   | 控制台日志 |        7 |       16 |       36 |       27 |             25 |           22 |       28 |       10 |
+| weapp-vite + wevu performance |    6 | 是   | 控制台日志 |        7 |       15 |       33 |       27 |             18 |           16 |       28 |        9 |
+| weapp-vite + wevu performance |    7 | 是   | 控制台日志 |        7 |       20 |       41 |       28 |             19 |           17 |       28 |       10 |
+| weapp-vite + wevu performance |    8 | 是   | 控制台日志 |        7 |       16 |       35 |       28 |             17 |           17 |       28 |       10 |
+| weapp-vite + wevu performance |    9 | 是   | 控制台日志 |        7 |       15 |       37 |       27 |             18 |           17 |       28 |        9 |
+| weapp-vite + wevu performance |   10 | 是   | 控制台日志 |        7 |       16 |       35 |       27 |             17 |           16 |       27 |       11 |
+| weapp-vite + wevu performance |   11 | 是   | 控制台日志 |        7 |       15 |       36 |       25 |             18 |           16 |       28 |       10 |
+| weapp-vite + wevu performance |   12 | 是   | 控制台日志 |        7 |       15 |       37 |       28 |             19 |           21 |       29 |       11 |
+| weapp-vite + wevu performance |   13 | 是   | 控制台日志 |        6 |       15 |       35 |       26 |             17 |           16 |       27 |       23 |
+| weapp-vite + wevu performance |   14 | 是   | 控制台日志 |        7 |       15 |       34 |       26 |             18 |           16 |       29 |       10 |
+| weapp-vite + wevu performance |   15 | 是   | 控制台日志 |        7 |       16 |       37 |       27 |             18 |           16 |       28 |       10 |
+| weapp-vite + wevu performance |   16 | 是   | 控制台日志 |        7 |       15 |       34 |       31 |             18 |           17 |       27 |       10 |
+| weapp-vite + wevu performance |   17 | 是   | 控制台日志 |        6 |       14 |       38 |       28 |             19 |           18 |       28 |        9 |
+| weapp-vite + wevu performance |   18 | 是   | 控制台日志 |        7 |       15 |       35 |       27 |             20 |           17 |       34 |       13 |
+| weapp-vite + wevu performance |   19 | 是   | 控制台日志 |        7 |       15 |       35 |       27 |             19 |           17 |       27 |       11 |
+| weapp-vite + wevu performance |   20 | 是   | 控制台日志 |        7 |       14 |       34 |       26 |             17 |           17 |       28 |       10 |
+| weapp-vite 原生               |    1 | 是   | 控制台日志 |      122 |       98 |       98 |      231 |            314 |           98 |      101 |      225 |
+| weapp-vite 原生               |    2 | 是   | 控制台日志 |      121 |       98 |       94 |      220 |            308 |           96 |      107 |      185 |
+| weapp-vite 原生               |    3 | 是   | 控制台日志 |      122 |       99 |       95 |      236 |            309 |          121 |       98 |      184 |
+| weapp-vite 原生               |    4 | 是   | 控制台日志 |      121 |       99 |       96 |      228 |            315 |           97 |       97 |      189 |
+| weapp-vite 原生               |    5 | 是   | 控制台日志 |      121 |      105 |       95 |      230 |            294 |          112 |       98 |      211 |
+| weapp-vite 原生               |    6 | 是   | 控制台日志 |      123 |      101 |       92 |      233 |            289 |           94 |       93 |      211 |
+| weapp-vite 原生               |    7 | 是   | 控制台日志 |      122 |      100 |       98 |      234 |            290 |           94 |       94 |      215 |
+| weapp-vite 原生               |    8 | 是   | 控制台日志 |      120 |      101 |      104 |      222 |            289 |           94 |       96 |      214 |
+| weapp-vite 原生               |    9 | 是   | 控制台日志 |      132 |       98 |      101 |      230 |            293 |           96 |       96 |      210 |
+| weapp-vite 原生               |   10 | 是   | 控制台日志 |      130 |      125 |      103 |      241 |            289 |           96 |       93 |      218 |
+| weapp-vite 原生               |   11 | 是   | 控制台日志 |      129 |      104 |       95 |      231 |            291 |           95 |       91 |      218 |
+| weapp-vite 原生               |   12 | 是   | 控制台日志 |      120 |      104 |      100 |      238 |            298 |           95 |       93 |      216 |
+| weapp-vite 原生               |   13 | 是   | 控制台日志 |      123 |      100 |       97 |      230 |            314 |          106 |      101 |      184 |
+| weapp-vite 原生               |   14 | 是   | 控制台日志 |      137 |       99 |      103 |      226 |            285 |           94 |      111 |      213 |
+| weapp-vite 原生               |   15 | 是   | 控制台日志 |      121 |       99 |      102 |      220 |            289 |           92 |       97 |      213 |
+| weapp-vite 原生               |   16 | 是   | 控制台日志 |      121 |       98 |      101 |      220 |            292 |           92 |       93 |      214 |
+| weapp-vite 原生               |   17 | 是   | 控制台日志 |      124 |       97 |      107 |      224 |            295 |           94 |       90 |      208 |
+| weapp-vite 原生               |   18 | 是   | 控制台日志 |      134 |       97 |       97 |      222 |            299 |           93 |       96 |      219 |
+| weapp-vite 原生               |   19 | 是   | 控制台日志 |      133 |      102 |       92 |      223 |            315 |           92 |       94 |      217 |
+| weapp-vite 原生               |   20 | 是   | 控制台日志 |      123 |       98 |       93 |      220 |            318 |           98 |       92 |      182 |
+| uni-app vite vue3             |    1 | 是   | 控制台日志 |       22 |       15 |       30 |       65 |             21 |           18 |       16 |       18 |
+| uni-app vite vue3             |    2 | 是   | 控制台日志 |       13 |       15 |       33 |       92 |             24 |           20 |       15 |       20 |
+| uni-app vite vue3             |    3 | 是   | 控制台日志 |       16 |       14 |       30 |       67 |             24 |           21 |       15 |       19 |
+| uni-app vite vue3             |    4 | 是   | 控制台日志 |       13 |       12 |       31 |       65 |             23 |           30 |       17 |       22 |
+| uni-app vite vue3             |    5 | 是   | 控制台日志 |       12 |       12 |       29 |       63 |             22 |           19 |       15 |       17 |
+| uni-app vite vue3             |    6 | 是   | 控制台日志 |       12 |       12 |       30 |       66 |             21 |           19 |       15 |       18 |
+| uni-app vite vue3             |    7 | 是   | 控制台日志 |       11 |       12 |       31 |       65 |             23 |           20 |       15 |       17 |
+| uni-app vite vue3             |    8 | 是   | 控制台日志 |       13 |       13 |       31 |       85 |             24 |           18 |       16 |       19 |
+| uni-app vite vue3             |    9 | 是   | 控制台日志 |       12 |       11 |       30 |       63 |             32 |           19 |       16 |       18 |
+| uni-app vite vue3             |   10 | 是   | 控制台日志 |       12 |       12 |       31 |       65 |             23 |           20 |       16 |       19 |
+| uni-app vite vue3             |   11 | 是   | 控制台日志 |       12 |       12 |       28 |       71 |             22 |           19 |       16 |       18 |
+| uni-app vite vue3             |   12 | 是   | 控制台日志 |       13 |       12 |       30 |       65 |             22 |           19 |       14 |       17 |
+| uni-app vite vue3             |   13 | 是   | 控制台日志 |       14 |       13 |       32 |       65 |             22 |           19 |       15 |       19 |
+| uni-app vite vue3             |   14 | 是   | 控制台日志 |       13 |       11 |       30 |       65 |             21 |           18 |       15 |       18 |
+| uni-app vite vue3             |   15 | 是   | 控制台日志 |       12 |       11 |       30 |       63 |             22 |           18 |       16 |       18 |
+| uni-app vite vue3             |   16 | 是   | 控制台日志 |       14 |       14 |       32 |       65 |             22 |           20 |       15 |       18 |
+| uni-app vite vue3             |   17 | 是   | 控制台日志 |       14 |       11 |       29 |       63 |             21 |           18 |       16 |       17 |
+| uni-app vite vue3             |   18 | 是   | 控制台日志 |       12 |       11 |       28 |       62 |             22 |           29 |       16 |       20 |
+| uni-app vite vue3             |   19 | 是   | 控制台日志 |       13 |       12 |       32 |       64 |             22 |           19 |       15 |       17 |
+| uni-app vite vue3             |   20 | 是   | 控制台日志 |       12 |       11 |       28 |       63 |             21 |           19 |       16 |       17 |
+| uni-app x                     |    1 | 是   | 控制台日志 |       19 |       14 |       31 |       80 |             24 |           20 |       17 |       19 |
+| uni-app x                     |    2 | 是   | 控制台日志 |       14 |       12 |       29 |       66 |             23 |           20 |       16 |       19 |
+| uni-app x                     |    3 | 是   | 控制台日志 |       13 |       13 |       28 |       67 |             23 |           20 |       17 |       20 |
+| uni-app x                     |    4 | 是   | 控制台日志 |       12 |       12 |       27 |       77 |             24 |           20 |       16 |       19 |
+| uni-app x                     |    5 | 是   | 控制台日志 |       13 |       12 |       29 |       67 |             22 |           19 |       16 |       18 |
+| uni-app x                     |    6 | 是   | 控制台日志 |       12 |       12 |       27 |       66 |             23 |           20 |       16 |       19 |
+| uni-app x                     |    7 | 是   | 控制台日志 |       13 |       13 |       28 |       81 |             25 |           19 |       16 |       20 |
+| uni-app x                     |    8 | 是   | 控制台日志 |       13 |       12 |       36 |       69 |             22 |           20 |       17 |       19 |
+| uni-app x                     |    9 | 是   | 控制台日志 |       12 |       14 |       28 |       75 |             24 |           21 |       17 |       32 |
+| uni-app x                     |   10 | 是   | 控制台日志 |       13 |       13 |       30 |       67 |             23 |           20 |       16 |       19 |
+| uni-app x                     |   11 | 是   | 控制台日志 |       13 |       12 |       28 |       66 |             23 |           19 |       16 |       19 |
+| uni-app x                     |   12 | 是   | 控制台日志 |       12 |       12 |       28 |       79 |             24 |           20 |       17 |       19 |
+| uni-app x                     |   13 | 是   | 控制台日志 |       13 |       14 |       29 |       66 |             23 |           19 |       15 |       19 |
+| uni-app x                     |   14 | 是   | 控制台日志 |       13 |       13 |       29 |       67 |             23 |           19 |       16 |       19 |
+| uni-app x                     |   15 | 是   | 控制台日志 |       15 |       13 |       31 |       68 |             23 |           20 |       17 |       19 |
+| uni-app x                     |   16 | 是   | 控制台日志 |       12 |       13 |       30 |       67 |             24 |           20 |       15 |       19 |
+| uni-app x                     |   17 | 是   | 控制台日志 |       12 |       13 |       30 |       81 |             24 |           19 |       16 |       21 |
+| uni-app x                     |   18 | 是   | 控制台日志 |       13 |       12 |       31 |       66 |             24 |           20 |       16 |       19 |
+| uni-app x                     |   19 | 是   | 控制台日志 |       13 |       12 |       28 |       66 |             24 |           21 |       17 |       31 |
+| uni-app x                     |   20 | 是   | 控制台日志 |       13 |       13 |       29 |       69 |             22 |           20 |       17 |       19 |
+| mpx                           |    1 | 是   | 控制台日志 |      250 |      103 |      130 |      232 |            303 |           67 |      102 |      212 |
+| mpx                           |    2 | 是   | 控制台日志 |      232 |      107 |      119 |      243 |            302 |           67 |      106 |      207 |
+| mpx                           |    3 | 是   | 控制台日志 |      235 |      104 |      113 |      240 |            318 |           74 |       96 |      213 |
+| mpx                           |    4 | 是   | 控制台日志 |      231 |      103 |      114 |      228 |            286 |           64 |      102 |      224 |
+| mpx                           |    5 | 是   | 控制台日志 |      256 |      111 |      128 |      240 |            290 |           77 |       99 |      183 |
+| mpx                           |    6 | 是   | 控制台日志 |      237 |      107 |      112 |      242 |            300 |           65 |       97 |      215 |
+| mpx                           |    7 | 是   | 控制台日志 |      253 |      106 |      112 |      233 |            295 |           77 |       93 |      182 |
+| mpx                           |    8 | 是   | 控制台日志 |      226 |      106 |      108 |      250 |            302 |           64 |       89 |      204 |
+| mpx                           |    9 | 是   | 控制台日志 |      230 |      107 |      105 |      240 |            313 |           64 |       97 |      207 |
+| mpx                           |   10 | 是   | 控制台日志 |      227 |      101 |      114 |      253 |            293 |           66 |      100 |      230 |
+| mpx                           |   11 | 是   | 控制台日志 |      230 |      113 |      106 |      243 |            299 |           65 |       96 |      204 |
+| mpx                           |   12 | 是   | 控制台日志 |      229 |      103 |      117 |      235 |            284 |           64 |       93 |      218 |
+| mpx                           |   13 | 是   | 控制台日志 |      233 |      117 |      131 |      225 |            293 |           65 |      118 |      198 |
+| mpx                           |   14 | 是   | 控制台日志 |      227 |      108 |      115 |      231 |            305 |           64 |       96 |      221 |
+| mpx                           |   15 | 是   | 控制台日志 |      231 |      105 |      116 |      249 |            289 |           65 |      102 |      216 |
+| mpx                           |   16 | 是   | 控制台日志 |      240 |      106 |      117 |      238 |            293 |           65 |       89 |      201 |
+| mpx                           |   17 | 是   | 控制台日志 |      225 |      107 |      118 |      236 |            284 |           64 |       96 |      216 |
+| mpx                           |   18 | 是   | 控制台日志 |      232 |      104 |      117 |      229 |            290 |           66 |       93 |      216 |
+| mpx                           |   19 | 是   | 控制台日志 |      237 |      105 |      107 |      262 |            312 |           64 |       97 |      210 |
+| mpx                           |   20 | 是   | 控制台日志 |      251 |      107 |      121 |      253 |            340 |           67 |      108 |      206 |
+| taro vue3                     |    1 | 是   | 控制台日志 |       74 |       86 |      178 |      672 |            355 |           18 |       87 |      136 |
+| taro vue3                     |    2 | 是   | 控制台日志 |       71 |       75 |      181 |      673 |            362 |           17 |       89 |      124 |
+| taro vue3                     |    3 | 是   | 控制台日志 |       66 |       77 |      194 |      702 |            359 |           20 |       89 |      125 |
+| taro vue3                     |    4 | 是   | 控制台日志 |       68 |       88 |      193 |      717 |            349 |           18 |       99 |      127 |
+| taro vue3                     |    5 | 是   | 控制台日志 |       65 |       74 |      186 |      692 |            348 |           19 |       89 |      131 |
+| taro vue3                     |    6 | 是   | 控制台日志 |       66 |       70 |      180 |      647 |            343 |           20 |       90 |      124 |
+| taro vue3                     |    7 | 是   | 控制台日志 |       66 |       72 |      188 |      699 |            383 |           18 |       91 |      156 |
+| taro vue3                     |    8 | 是   | 控制台日志 |       64 |       73 |      190 |      680 |            352 |           21 |       94 |      129 |
+| taro vue3                     |    9 | 是   | 控制台日志 |       64 |       83 |      208 |      762 |            347 |           19 |       88 |      125 |
+| taro vue3                     |   10 | 是   | 控制台日志 |       65 |       72 |      186 |      679 |            363 |           19 |       89 |      124 |
+| taro vue3                     |   11 | 是   | 控制台日志 |       66 |       84 |      214 |      783 |            353 |           18 |       90 |      128 |
+| taro vue3                     |   12 | 是   | 控制台日志 |       64 |       69 |      182 |      681 |            350 |           18 |       89 |      124 |
+| taro vue3                     |   13 | 是   | 控制台日志 |       66 |       80 |      199 |      722 |            342 |           20 |       93 |      124 |
+| taro vue3                     |   14 | 是   | 控制台日志 |       66 |       76 |      197 |      735 |            353 |           18 |       89 |      124 |
+| taro vue3                     |   15 | 是   | 控制台日志 |       64 |       70 |      188 |      691 |            346 |           18 |       88 |      124 |
+| taro vue3                     |   16 | 是   | 控制台日志 |       65 |       73 |      185 |      675 |            348 |           19 |       89 |      124 |
+| taro vue3                     |   17 | 是   | 控制台日志 |       65 |       74 |      189 |      705 |            347 |           19 |       99 |      126 |
+| taro vue3                     |   18 | 是   | 控制台日志 |       65 |       72 |      186 |      697 |            342 |           18 |       88 |      123 |
+| taro vue3                     |   19 | 是   | 控制台日志 |       65 |       72 |      192 |      712 |            344 |           18 |       88 |      123 |
+| taro vue3                     |   20 | 是   | 控制台日志 |       65 |       74 |      190 |      703 |            345 |           18 |       90 |      126 |
+| @vue-mini/core                |    1 | 是   | 控制台日志 |       26 |       53 |      104 |       54 |             41 |           14 |       22 |       33 |
+| @vue-mini/core                |    2 | 是   | 控制台日志 |       25 |       57 |       96 |       53 |             41 |           14 |       20 |       33 |
+| @vue-mini/core                |    3 | 是   | 控制台日志 |       25 |       51 |       96 |       52 |             38 |           13 |       21 |       33 |
+| @vue-mini/core                |    4 | 是   | 控制台日志 |       25 |       51 |       97 |       52 |             39 |           13 |       21 |       32 |
+| @vue-mini/core                |    5 | 是   | 控制台日志 |       40 |       67 |       99 |       54 |             40 |           15 |       22 |       33 |
+| @vue-mini/core                |    6 | 是   | 控制台日志 |       26 |       51 |       94 |       61 |             40 |           14 |       21 |       33 |
+| @vue-mini/core                |    7 | 是   | 控制台日志 |       26 |       52 |      102 |       51 |             44 |           14 |       21 |       32 |
+| @vue-mini/core                |    8 | 是   | 控制台日志 |       26 |       53 |       95 |       54 |             41 |           14 |       20 |       31 |
+| @vue-mini/core                |    9 | 是   | 控制台日志 |       26 |       53 |       99 |       52 |             39 |           13 |       21 |       31 |
+| @vue-mini/core                |   10 | 是   | 控制台日志 |       27 |       54 |       95 |       54 |             40 |           14 |       22 |       33 |
+| @vue-mini/core                |   11 | 是   | 控制台日志 |       26 |       52 |       98 |       59 |             42 |           15 |       22 |       34 |
+| @vue-mini/core                |   12 | 是   | 控制台日志 |       26 |       55 |      100 |       53 |             41 |           14 |       22 |       32 |
+| @vue-mini/core                |   13 | 是   | 控制台日志 |       26 |       53 |       96 |       51 |             39 |           13 |       21 |       32 |
+| @vue-mini/core                |   14 | 是   | 控制台日志 |       26 |       56 |      100 |       54 |             42 |           14 |       21 |       33 |
+| @vue-mini/core                |   15 | 是   | 控制台日志 |       39 |       77 |       99 |       54 |             38 |           15 |       22 |       33 |
+| @vue-mini/core                |   16 | 是   | 控制台日志 |       26 |       55 |       99 |       55 |             39 |           13 |       21 |       34 |
+| @vue-mini/core                |   17 | 是   | 控制台日志 |       26 |       52 |       96 |       53 |             40 |           14 |       21 |       31 |
+| @vue-mini/core                |   18 | 是   | 控制台日志 |       26 |       52 |      100 |       55 |             41 |           13 |       22 |       32 |
+| @vue-mini/core                |   19 | 是   | 控制台日志 |       26 |       52 |       97 |       55 |             42 |           16 |       20 |       33 |
+| @vue-mini/core                |   20 | 是   | 控制台日志 |       25 |       52 |      100 |       54 |             40 |           14 |       20 |       33 |
 
 说明：
 
@@ -258,7 +259,9 @@
 - 运行时耗时在各框架页面内部统计，覆盖状态变更和下一次渲染 tick。
 - 每轮都会重新打开 benchmark 页面，确保各框架从同一组确定性数据开始。
 - weapp-vite + wevu performance 本次采集使用 wevu 运行时优化提交 9e43db53392298063eda3cc528a75f3ee2ebda6a。
-- DevTools 启动超时默认是 60000ms，可通过 BENCH_RUNTIME_TIMEOUT 覆盖。
-- 运行时指标等待超时默认是 45000ms，可通过 BENCH_RUNTIME_METRICS_TIMEOUT 覆盖。
+- DevTools 启动超时默认是 180000ms，可通过 BENCH_RUNTIME_TIMEOUT 覆盖。
+- DevTools 启动默认最多重试 3 次，可通过 BENCH_RUNTIME_LAUNCH_RETRIES 覆盖。
+- 运行时指标等待超时默认是 180000ms，可通过 BENCH_RUNTIME_METRICS_TIMEOUT 覆盖。
+- 单轮采样默认最多重试 3 次，可通过 BENCH_RUNTIME_ITERATION_RETRIES 覆盖。
 - 页面重开默认最多重试 3 次，可通过 BENCH_RUNTIME_RELAUNCH_RETRIES 覆盖。
 - 微信开发者工具 CLI：/Applications/wechatwebdevtools.app/Contents/MacOS/cli

@@ -1,4 +1,4 @@
-/* global wx */
+/* global getCurrentPages, wx */
 
 const {
   computed,
@@ -119,6 +119,9 @@ definePage(() => {
       await nextTick()
     }
     record('replace-dataset', start, visibleItems.value)
+
+    const pages = getCurrentPages()
+    pages[pages.length - 1]?.setData?.({ __metrics: metrics.value })
 
     // eslint-disable-next-line no-console
     console.log('BENCHMARK_RUNTIME', {

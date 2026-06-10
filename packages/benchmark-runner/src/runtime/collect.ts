@@ -5,8 +5,14 @@ import { spawn } from 'node:child_process'
 import process from 'node:process'
 import path from 'pathe'
 import { repoRoot } from '../projects'
-import { defaultLaunchTimeout, defaultRelaunchRetries, metricCount } from './constants'
-import { parseConsolePayload, waitForRuntimeMetrics } from './metrics'
+import {
+  defaultIterationRetries,
+  defaultLaunchRetries,
+  defaultLaunchTimeout,
+  defaultRelaunchRetries,
+  metricCount,
+} from './constants'
+import { parseConsolePayload, waitForConsoleMetrics, waitForMetrics } from './metrics'
 
 function sleep(ms: number) {
   return new Promise(resolve => setTimeout(resolve, ms))
@@ -49,53 +55,105 @@ async function buildProjectNpm(project: BenchmarkProject, cliPath: string, proje
   }
 }
 
+async function launchProject(
+  launcher: InstanceType<typeof import('@weapp-vite/miniprogram-automator').Launcher>,
+  project: BenchmarkProject,
+  cliPath: string,
+  projectPath: string,
+  port: number,
+) {
+  const retries = Number(process.env['BENCH_RUNTIME_LAUNCH_RETRIES'] ?? defaultLaunchRetries)
+  const timeout = Number(process.env['BENCH_RUNTIME_TIMEOUT'] ?? defaultLaunchTimeout)
+  let lastError: unknown
+
+  for (let attempt = 1; attempt <= retries; attempt += 1) {
+    try {
+      return await launcher.launch({
+        platform: 'wechat',
+        cliPath,
+        projectPath,
+        port,
+        timeout,
+        headless: process.env['BENCH_RUNTIME_HEADLESS'] === '1',
+        trustProject: true,
+      })
+    }
+    catch (error) {
+      lastError = error
+      process.stdout.write(`[runtime] ${project.label}: launch retry ${attempt}/${retries} failed\n`)
+      if (attempt >= retries) {
+        break
+      }
+      await sleep(2_000)
+    }
+  }
+
+  throw lastError
+}
+
 async function collectIteration(
   project: BenchmarkProject,
   iteration: number,
   miniProgram: MiniProgram,
   consoleMetrics: RuntimeMetric[][],
 ): Promise<RuntimeSample> {
-  try {
-    consoleMetrics.length = 0
-    await relaunchPage(miniProgram, `/${project.runtimePage}?benchIteration=${iteration}`)
+  const retries = Number(process.env['BENCH_RUNTIME_ITERATION_RETRIES'] ?? defaultIterationRetries)
+  let lastError: unknown
 
-    const page = await miniProgram.currentPage({ retries: 20, timeout: 1_000 })
-    const { metrics, source } = await waitForRuntimeMetrics(consoleMetrics, page)
-    if (metrics.length >= metricCount) {
-      return {
-        project: project.id,
-        label: project.label,
-        iteration,
-        page: project.runtimePage,
-        ok: true,
-        source,
-        metrics,
+  for (let attempt = 1; attempt <= retries; attempt += 1) {
+    try {
+      consoleMetrics.length = 0
+      await relaunchPage(miniProgram, `/${project.runtimePage}?benchIteration=${iteration}&benchAttempt=${attempt}`)
+
+      const fromConsole = await waitForConsoleMetrics(consoleMetrics)
+      if (fromConsole.length >= metricCount) {
+        return {
+          project: project.id,
+          label: project.label,
+          iteration,
+          page: project.runtimePage,
+          ok: true,
+          source: 'console-log',
+          metrics: fromConsole,
+        }
       }
+
+      const page = await miniProgram.currentPage({ retries: 60, timeout: 2_000 })
+      const fromPage = await waitForMetrics(page)
+      if (fromPage.length >= metricCount) {
+        return {
+          project: project.id,
+          label: project.label,
+          iteration,
+          page: project.runtimePage,
+          ok: true,
+          source: 'page-data',
+          metrics: fromPage,
+        }
+      }
+
+      lastError = new Error('未在页面数据或控制台日志中找到运行时指标')
+    }
+    catch (error) {
+      lastError = error
     }
 
-    const sample: RuntimeSample = {
-      project: project.id,
-      label: project.label,
-      iteration,
-      page: project.runtimePage,
-      ok: false,
-      source: 'none',
-      metrics: [],
+    if (attempt < retries) {
+      process.stdout.write(`[runtime] ${project.label}: iteration ${iteration} retry ${attempt}/${retries} failed\n`)
+      await sleep(1_000)
     }
-    sample.error = '未在页面数据或控制台日志中找到运行时指标'
-    return sample
   }
-  catch (error) {
-    return {
-      project: project.id,
-      label: project.label,
-      iteration,
-      page: project.runtimePage,
-      ok: false,
-      source: 'none',
-      metrics: [],
-      error: error instanceof Error ? error.message : String(error),
-    }
+
+  const message = lastError instanceof Error ? lastError.message : String(lastError)
+  return {
+    project: project.id,
+    label: project.label,
+    iteration,
+    page: project.runtimePage,
+    ok: false,
+    source: 'none',
+    metrics: [],
+    error: message,
   }
 }
 
@@ -116,15 +174,7 @@ export async function collectProjectSamples(
   try {
     await buildProjectNpm(project, cliPath, projectPath)
 
-    const launched = await launcher.launch({
-      platform: 'wechat',
-      cliPath,
-      projectPath,
-      port,
-      timeout: Number(process.env['BENCH_RUNTIME_TIMEOUT'] ?? defaultLaunchTimeout),
-      headless: process.env['BENCH_RUNTIME_HEADLESS'] === '1',
-      trustProject: true,
-    })
+    const launched = await launchProject(launcher, project, cliPath, projectPath, port)
     miniProgram = launched
 
     launched.on('console', (payload: unknown) => {

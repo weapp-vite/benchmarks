@@ -1,8 +1,10 @@
 import { defaultTimingIterations } from '../constants'
 
 export const defaultIterations = defaultTimingIterations
-export const defaultLaunchTimeout = 60_000
-export const defaultMetricsTimeout = 45_000
+export const defaultLaunchTimeout = 180_000
+export const defaultLaunchRetries = 3
+export const defaultMetricsTimeout = 180_000
+export const defaultIterationRetries = 3
 export const defaultRelaunchRetries = 3
 export const metricCount = 8
 
