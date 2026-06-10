@@ -17,6 +17,7 @@
 - Node.js 20 或更高版本
 - pnpm 10.x
 - 微信开发者工具，并确保 CLI 可用
+- HBuilderX，用于运行 uni-app x 的 CLI 构建和 `uni-launch` 测试
 - 运行 IDE 自动化采集前，需要在微信开发者工具中登录
 
 默认会尝试查找以下 CLI 路径：
@@ -32,6 +33,8 @@
 ```bash
 WECHAT_DEVTOOLS_CLI=/path/to/wechat/devtools/cli pnpm bench:runtime
 ```
+
+uni-app x 的构建和 `pnpm test:hbuilderx:uni-app-x` 会调用 HBuilderX CLI。安装 HBuilderX 后，请确保 `hbuilderx`、`uni`、`uni-launch`、`uni-logcat` 等命令可用；如果没有配置到 `PATH`，需要先按 HBuilderX 的本机安装方式补齐命令路径。
 
 ## 安装
 
@@ -110,6 +113,14 @@ pnpm bench:runtime
 pnpm bench:hmr
 pnpm bench:size:wevu
 ```
+
+uni-app x 的 HBuilderX 测试入口：
+
+```bash
+pnpm test:hbuilderx:uni-app-x
+```
+
+这个命令依赖本机已安装并可启动的 HBuilderX。
 
 ## 运行时基准测试
 
