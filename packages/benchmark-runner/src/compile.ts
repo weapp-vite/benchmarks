@@ -3,8 +3,10 @@ import { performance } from 'node:perf_hooks'
 import process from 'node:process'
 import path from 'pathe'
 import { defaultTimingIterations } from './constants'
-import { ensureDir, removeDir, summarizeDir, writeJson, writeText } from './fs'
+import { ensureDir, removeDir, summarizeDir } from './fs'
 import { compileProjects, repoRoot } from './projects'
+import { writeMachineReport } from './reports/archive'
+import { createMachineEnvironment, machineEnvironmentLines } from './reports/environment'
 
 interface CompileSample {
   project: string
@@ -111,11 +113,12 @@ async function runCompileBenchmark() {
   const reportDir = path.join(repoRoot, 'reports/compile')
   await ensureDir(reportDir)
   const generatedAt = new Date().toISOString()
-  await writeJson(path.join(reportDir, 'latest.json'), {
+  const report = {
     generatedAt,
     iterations,
+    environment: await createMachineEnvironment(),
     samples,
-  })
+  }
 
   const successfulSamples = samples.filter(sample => sample.ok)
   const projectSummaries = compileProjects.map((project) => {
@@ -169,6 +172,8 @@ async function runCompileBenchmark() {
     '',
     `生成时间：${generatedAt}`,
     `采样次数：${iterations} 次，报告中的平均耗时由有效样本计算。`,
+    '',
+    ...machineEnvironmentLines(report.environment),
     '',
     '## 一眼结论',
     '',
@@ -256,7 +261,12 @@ async function runCompileBenchmark() {
       formatKb(sample.output.jsonBytes),
     ].join(' | ')).map(row => `| ${row} |`),
   ]
-  await writeText(path.join(reportDir, 'latest.md'), `${lines.join('\n')}\n`)
+  await writeMachineReport({
+    reportDir,
+    report,
+    markdown: `${lines.join('\n')}\n`,
+    reportName: 'compile',
+  })
 
   const failed = samples.filter(sample => !sample.ok)
   if (failed.length) {

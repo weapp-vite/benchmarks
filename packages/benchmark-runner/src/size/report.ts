@@ -1,4 +1,5 @@
 import type { AnalysisOutput, ProjectSize, WevuPackageInfo } from './types'
+import { toolchainEnvironmentLines } from '../reports/environment'
 import { formatGap, formatKb, formatPercent, rows } from './format'
 
 function topFiles(project: ProjectSize, count = 8) {
@@ -51,12 +52,10 @@ function wevuPackageTable(info: WevuPackageInfo | null) {
   return [
     `wevu 版本：${info.version}；package.json 的 \`sideEffects\`：\`${String(info.sideEffects)}\`。`,
     '',
-    '| 源包文件 | raw | gzip | brotli |',
-    '| --- | ---: | ---: | ---: |',
+    '| 源包文件 | 压缩后体积 brotli |',
+    '| --- | ---: |',
     ...rows(info.entryFiles.map(file => [
       file.file,
-      formatKb(file.bytes),
-      formatKb(file.gzipBytes),
       formatKb(file.brotliBytes),
     ])),
   ]
@@ -84,6 +83,8 @@ export function generateReport(output: AnalysisOutput) {
     '# wevu 体积分析',
     '',
     `生成时间：${output.generatedAt}`,
+    '',
+    ...toolchainEnvironmentLines(output.toolchain),
     '',
     '## 结论',
     '',
@@ -115,7 +116,7 @@ export function generateReport(output: AnalysisOutput) {
     '',
     '1. 拆分 wevu public entry：新增轻量入口，至少把 `ref/computed/nextTick/onMounted` 与 router/store/layout/selector 等能力分离。',
     '2. 让 SFC 编译器按实际用到的能力导入内部 helper，页面注册只引入 page runtime，组件场景再引入 component runtime，layout/router/store 改为显式 opt-in。',
-    '3. 对 weapp-vite 的 chunk 策略补一个模块级 analyze 输出，持续统计 `wevu-src`、`wevu-ref`、页面业务代码、shared helper 的 raw/gzip/brotli。',
+    '3. 对 weapp-vite 的 chunk 策略补一个模块级 analyze 输出，持续统计 `wevu-src`、`wevu-ref`、页面业务代码、shared helper 的压缩后体积。',
     '4. 给 benchmarks 加一个“最小 wevu 页面”场景，和当前复杂列表场景分开，避免业务压力用例掩盖固定 runtime 税。',
     '5. 优化后以本报告作为回归口径：优先看 vendor JS 是否下降，而不是只看总包体积。',
     '',

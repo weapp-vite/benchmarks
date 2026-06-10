@@ -1,7 +1,9 @@
 import type { RuntimeReport } from './types'
 import path from 'pathe'
-import { writeJson, writeText } from '../fs'
+import { writeText } from '../fs'
 import { runtimeProjects } from '../projects'
+import { writeMachineReport } from '../reports/archive'
+import { machineEnvironmentLines } from '../reports/environment'
 import { batchCount, initialCount, replaceCount, stressCycles, windowSize } from '../scenario'
 
 const metricLabels = [
@@ -125,8 +127,6 @@ export function renderPlan(reportDir: string) {
 }
 
 export async function writeReport(reportDir: string, report: RuntimeReport) {
-  await writeJson(path.join(reportDir, 'latest.json'), report)
-
   const successfulSamples = report.samples.filter(sample => sample.ok)
   const projectSummaries = runtimeProjects.map((project) => {
     const samples = successfulSamples.filter(sample => sample.project === project.id)
@@ -216,6 +216,8 @@ export async function writeReport(reportDir: string, report: RuntimeReport) {
     `生成时间：${report.generatedAt}`,
     `模式：${report.mode === 'ide-e2e' ? 'IDE E2E 采集' : '手动计划'}`,
     `采样次数：${report.iterations} 次，报告中的场景均值和总耗时由有效样本计算。`,
+    '',
+    ...machineEnvironmentLines(report.environment),
     '',
     '## 一眼结论',
     '',
@@ -326,5 +328,12 @@ export async function writeReport(reportDir: string, report: RuntimeReport) {
     '',
     ...report.notes.map(note => `- ${note}`),
   ]
-  await writeText(path.join(reportDir, 'latest.md'), `${lines.join('\n')}\n`)
+  const markdown = `${lines.join('\n')}\n`
+  await writeMachineReport({
+    reportDir,
+    report,
+    markdown,
+    reportName: 'runtime',
+    samples: report.samples,
+  })
 }

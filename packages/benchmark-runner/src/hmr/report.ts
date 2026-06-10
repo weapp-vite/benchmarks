@@ -1,6 +1,7 @@
 import type { HmrReport, HmrSample } from './types'
 import path from 'pathe'
-import { writeJson, writeText } from '../fs'
+import { writeMachineReport } from '../reports/archive'
+import { machineEnvironmentLines } from '../reports/environment'
 
 const metricKeys = [
   ['totalMs', 'HMR 总耗时'],
@@ -44,8 +45,6 @@ function metricAverage(samples: HmrSample[], key: keyof HmrSample) {
 }
 
 export async function writeHmrReport(reportDir: string, report: HmrReport) {
-  await writeJson(path.join(reportDir, 'latest.json'), report)
-
   const scenarios = [...new Map(report.samples.map(sample => [sample.scenario, {
     id: sample.scenario,
     label: sample.label,
@@ -98,6 +97,8 @@ export async function writeHmrReport(reportDir: string, report: HmrReport) {
     '',
     `生成时间：${report.generatedAt}`,
     `采样次数：${report.iterations} 次，报告中的平均值由有效样本计算。`,
+    '',
+    ...machineEnvironmentLines(report.environment),
     '',
     '## 一眼结论',
     '',
@@ -179,5 +180,16 @@ export async function writeHmrReport(reportDir: string, report: HmrReport) {
     ...report.notes.map(note => `- ${note}`),
   ]
 
-  await writeText(path.join(reportDir, 'latest.md'), `${lines.join('\n')}\n`)
+  await writeMachineReport({
+    reportDir,
+    report,
+    markdown: `${lines.join('\n')}\n`,
+    reportName: 'HMR',
+    copyDirs: [
+      {
+        from: path.join(reportDir, 'profiles'),
+        to: 'profiles',
+      },
+    ],
+  })
 }

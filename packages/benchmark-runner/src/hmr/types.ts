@@ -1,3 +1,5 @@
+import type { MachineEnvironment } from '../reports/environment'
+
 export interface HmrProfileSample {
   timestamp?: string
   totalMs?: number
@@ -62,6 +64,7 @@ export interface HmrSample {
 export interface HmrReport {
   generatedAt: string
   iterations: number
+  environment?: MachineEnvironment
   samples: HmrSample[]
   notes: string[]
 }

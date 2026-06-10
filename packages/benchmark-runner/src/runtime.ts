@@ -12,6 +12,7 @@ import {
   defaultRelaunchRetries,
 } from './runtime/constants'
 import { resolveWechatCliPath, runtimeMode } from './runtime/devtools'
+import { createRuntimeEnvironment } from './runtime/environment'
 import { renderPlan, writeReport } from './runtime/report'
 
 async function runIdeE2eCollector(iterations: number, cliPath: string) {
@@ -61,10 +62,12 @@ async function runRuntimeBenchmark() {
   ]
 
   if (!cliPath) {
+    const environment = await createRuntimeEnvironment()
     await writeReport(reportDir, {
       generatedAt: new Date().toISOString(),
       mode: 'ide-e2e',
       iterations,
+      environment,
       samples: runtimeProjects.flatMap(project => Array.from({ length: iterations }, (_, index) => ({
         project: project.id,
         label: project.label,
@@ -87,11 +90,13 @@ async function runRuntimeBenchmark() {
   const samples = JSON.parse(
     await readFile(path.join(reportDir, 'latest.samples.json'), 'utf8'),
   ) as RuntimeSample[]
+  const environment = await createRuntimeEnvironment({ wechatDevtools: cliPath })
 
   await writeReport(reportDir, {
     generatedAt: new Date().toISOString(),
     mode: 'ide-e2e',
     iterations,
+    environment,
     samples,
     notes: [
       ...notes,

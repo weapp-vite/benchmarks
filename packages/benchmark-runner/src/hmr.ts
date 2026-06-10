@@ -15,6 +15,7 @@ import { startDevProcess } from './hmr/dev'
 import { writeHmrReport } from './hmr/report'
 import { hmrScenarios } from './hmr/scenarios/index'
 import { repoRoot } from './projects'
+import { createMachineEnvironment } from './reports/environment'
 
 const defaultTimeoutMs = 90_000
 
@@ -211,6 +212,7 @@ async function runHmrBenchmark() {
   await writeHmrReport(reportDir, {
     generatedAt: new Date().toISOString(),
     iterations,
+    environment: await createMachineEnvironment(),
     samples,
     notes: [
       '所有项目统一使用 dev/watch 模式下“写入源文件到目标小程序产物更新”的墙钟耗时。',

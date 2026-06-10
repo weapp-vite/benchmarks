@@ -1,3 +1,5 @@
+import type { ToolchainEnvironment } from '../reports/environment'
+
 export interface ProjectInput {
   id: string
   label: string
@@ -51,6 +53,7 @@ export interface WevuPackageInfo {
 
 export interface AnalysisOutput {
   generatedAt: string
+  toolchain?: ToolchainEnvironment
   projects: ProjectSize[]
   wevuPackage: WevuPackageInfo | null
 }

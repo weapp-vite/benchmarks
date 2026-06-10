@@ -1,0 +1,16 @@
+# Apple M4 Max 128GB
+
+机器 ID：`m4-max-128gb`
+
+| 项                 | 值                                                     |
+| ------------------ | ------------------------------------------------------ |
+| 系统               | macOS 26.5.1 (25F80)                                   |
+| 架构               | darwin/arm64                                           |
+| CPU                | Apple M4 Max                                           |
+| 核心数             | 16                                                     |
+| 内存               | 128GB                                                  |
+| Node               | v24.14.1                                               |
+| pnpm               | 10.33.4                                                |
+| 微信开发者工具 CLI | /Applications/wechatwebdevtools.app/Contents/MacOS/cli |
+
+这个目录下的 runtime 报告只和同一机器 ID 的历史结果直接比较；跨机器结果只能作为趋势参考。

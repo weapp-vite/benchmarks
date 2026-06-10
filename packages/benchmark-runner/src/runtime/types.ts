@@ -1,3 +1,4 @@
+import type { MachineEnvironment } from '../reports/environment'
 import type { RuntimeMetric } from '../scenario'
 
 export interface RuntimeSample {
@@ -15,6 +16,7 @@ export interface RuntimeReport {
   generatedAt: string
   mode: 'ide-e2e' | 'plan'
   iterations: number
+  environment?: MachineEnvironment
   samples: RuntimeSample[]
   notes: string[]
 }
