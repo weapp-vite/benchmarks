@@ -11,12 +11,12 @@
     "postinstall": "wv prepare"
   },
   "dependencies": {
-    "wevu": "6.16.43"
+    "wevu": "6.16.45"
   },
   "devDependencies": {
     "miniprogram-api-typings": "^5.0.0",
     "typescript": "^6.0.3",
-    "vue-tsc": "^3.3.4",
-    "weapp-vite": "6.16.43"
+    "vue-tsc": "^3.3.5",
+    "weapp-vite": "6.16.45"
   }
 }
