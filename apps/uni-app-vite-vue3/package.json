@@ -17,11 +17,11 @@
     "vue": "3.4.21"
   },
   "devDependencies": {
-    "@dcloudio/types": "3.4.31",
+    "@dcloudio/types": "3.4.32",
     "@dcloudio/vite-plugin-uni": "3.0.0-alpha-5010220260529001",
-    "postcss": "8.5.15",
+    "postcss": "8.5.18",
     "typescript": "^6.0.3",
     "vite": "5.2.8",
-    "vue-tsc": "^3.3.5"
+    "vue-tsc": "^3.3.7"
   }
 }

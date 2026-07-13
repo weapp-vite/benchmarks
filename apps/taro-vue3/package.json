@@ -23,9 +23,9 @@
   "devDependencies": {
     "@tarojs/cli": "4.2.0",
     "@tarojs/vite-runner": "4.2.0",
-    "@vue/compiler-sfc": "^3.5.38",
+    "@vue/compiler-sfc": "^3.5.39",
     "typescript": "^6.0.3",
     "vite": "^4.5.14",
-    "vue-tsc": "^3.3.5"
+    "vue-tsc": "^3.3.7"
   }
 }

@@ -7,7 +7,7 @@
     "typecheck": "tsc -p tsconfig.json"
   },
   "dependencies": {
-    "@vue-mini/core": "1.2.11"
+    "@vue-mini/core": "1.2.13"
   },
   "devDependencies": {
     "typescript": "^6.0.3"
