@@ -17,7 +17,7 @@ export function updateSingleQuotedValue(source: string, key: string, value: stri
 }
 
 export function appendScriptMarker(source: string, marker: string) {
-  return appendBefore(source, '</script>', `\nconst __hmrScriptMarker = '${marker}'\n`)
+  return appendBefore(source, '</script>', `\nconsole.debug('hmr-script-marker: ${marker}')\n`)
 }
 
 export function appendStyleMarker(source: string, marker: string) {

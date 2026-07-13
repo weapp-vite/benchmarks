@@ -1,0 +1,2156 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="小程序框架编译、运行时、HMR 和体积基准测试结果" />
+    <title>小程序框架基准测试</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #fff;
+        --fg: #20242b;
+        --muted: #667085;
+        --line: #d9dee8;
+        --soft: #f4f6f8;
+        --accent: #1769aa;
+        --ok: #16794d;
+        --bad: #b42318;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #17191d;
+          --fg: #f2f4f7;
+          --muted: #aab2c0;
+          --line: #3a404b;
+          --soft: #22262d;
+          --accent: #62a8e5;
+          --ok: #61c995;
+          --bad: #ff8b83;
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--fg);
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif;
+      }
+      a {
+        color: var(--accent);
+      }
+      header {
+        border-bottom: 1px solid var(--line);
+        padding: 32px max(20px, calc((100% - 1280px) / 2));
+      }
+      h1 {
+        margin: 0 0 12px;
+        font-size: 30px;
+        font-weight: 500;
+        letter-spacing: 0;
+      }
+      h2 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 0;
+      }
+      .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 24px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .meta strong {
+        color: var(--fg);
+        font-weight: 500;
+      }
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 14px 20px;
+        border-bottom: 1px solid var(--line);
+      }
+      .tab {
+        border: 0;
+        border-bottom: 2px solid transparent;
+        background: transparent;
+        color: var(--muted);
+        padding: 10px 14px;
+        font: inherit;
+        cursor: pointer;
+      }
+      .tab[aria-selected='true'] {
+        color: var(--fg);
+        border-bottom-color: var(--accent);
+      }
+      .tab:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+      }
+      main {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 24px 20px 56px;
+      }
+      .panel[hidden] {
+        display: none;
+      }
+      .chart {
+        width: 100%;
+        height: 650px;
+        min-height: 420px;
+      }
+      #chart-compile,
+      #chart-size {
+        height: 760px;
+      }
+      .caption,
+      .empty {
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .table-wrap {
+        margin-top: 28px;
+        overflow-x: auto;
+        border-top: 1px solid var(--line);
+      }
+      .table-heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        padding: 20px 0 12px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+      }
+      th,
+      td {
+        padding: 11px 12px;
+        border-bottom: 1px solid var(--line);
+        text-align: right;
+        white-space: nowrap;
+      }
+      th:first-child,
+      td:first-child {
+        text-align: left;
+      }
+      thead th {
+        color: var(--muted);
+        font-weight: 500;
+        background: var(--soft);
+      }
+      tbody th {
+        font-weight: 400;
+      }
+      code {
+        color: var(--fg);
+      }
+      .status {
+        font-weight: 500;
+      }
+      .status-passed {
+        color: var(--ok);
+      }
+      .status-failed {
+        color: var(--bad);
+      }
+      .status-skipped {
+        color: var(--muted);
+      }
+      @media (max-width: 640px) {
+        header {
+          padding-top: 24px;
+          padding-bottom: 24px;
+        }
+        h1 {
+          font-size: 24px;
+        }
+        main {
+          padding-left: 12px;
+          padding-right: 12px;
+        }
+        nav {
+          padding-left: 8px;
+          padding-right: 8px;
+        }
+        .tab {
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+        .chart,
+        #chart-compile,
+        #chart-size {
+          height: 540px;
+        }
+        th,
+        td {
+          padding: 10px 9px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>小程序框架基准测试</h1>
+      <div class="meta">
+        <span><strong>部分完成</strong></span>
+        <span>生成时间 2026-07-13T12:19:07.665Z</span>
+        <span>机器 Apple M4 Max 128GB</span>
+        <span>Commit <code>e89e08dd979b</code></span>
+      </div>
+    </header>
+    <nav role="tablist" aria-label="报告视图">
+      <button
+        id="tab-overview"
+        class="tab"
+        type="button"
+        role="tab"
+        aria-controls="panel-overview"
+        aria-selected="true"
+      >
+        总览</button
+      ><button
+        id="tab-compile"
+        class="tab"
+        type="button"
+        role="tab"
+        aria-controls="panel-compile"
+        aria-selected="false"
+      >
+        编译</button
+      ><button
+        id="tab-runtime"
+        class="tab"
+        type="button"
+        role="tab"
+        aria-controls="panel-runtime"
+        aria-selected="false"
+      >
+        运行时</button
+      ><button id="tab-hmr" class="tab" type="button" role="tab" aria-controls="panel-hmr" aria-selected="false">
+        HMR</button
+      ><button id="tab-size" class="tab" type="button" role="tab" aria-controls="panel-size" aria-selected="false">
+        体积</button
+      ><button
+        id="tab-verification"
+        class="tab"
+        type="button"
+        role="tab"
+        aria-controls="panel-verification"
+        aria-selected="false"
+      >
+        验证
+      </button>
+    </nav>
+    <main>
+      <section id="panel-overview" class="panel" role="tabpanel" aria-labelledby="tab-overview">
+        <div
+          id="chart-overview"
+          class="chart"
+          role="img"
+          aria-label="每个维度以当前完整样本中的最佳结果为 100；缺失或不完整样本显示 N/A。"
+        ></div>
+        <p class="caption">每个维度以当前完整样本中的最佳结果为 100；缺失或不完整样本显示 N/A。</p>
+      </section>
+      <section id="panel-compile" class="panel" role="tabpanel" aria-labelledby="tab-compile" hidden>
+        <div
+          id="chart-compile"
+          class="chart"
+          role="img"
+          aria-label="上图为平均生产构建耗时，下图为同一次构建生成的平均产物体积。"
+        ></div>
+
+        <div class="table-wrap">
+          <div class="table-heading">
+            <h2>编译结果</h2>
+            <a href="/benchmarks/reports/compile/latest.md">详细报告</a>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">项目</th>
+                <th scope="col">平均耗时</th>
+                <th scope="col">平均体积</th>
+                <th scope="col">样本</th>
+                <th scope="col">状态</th>
+                <th scope="col">较上次</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">weapp-vite + wevu</th>
+                <td>1006.0 ms</td>
+                <td>198.9 KB</td>
+                <td>20/20</td>
+                <td>完整</td>
+                <td>-13.6%</td>
+              </tr>
+              <tr>
+                <th scope="row">weapp-vite + wevu performance</th>
+                <td>1009.1 ms</td>
+                <td>199.8 KB</td>
+                <td>20/20</td>
+                <td>完整</td>
+                <td>-12.9%</td>
+              </tr>
+              <tr>
+                <th scope="row">weapp-vite 原生</th>
+                <td>913.2 ms</td>
+                <td>8.7 KB</td>
+                <td>20/20</td>
+                <td>完整</td>
+                <td>-4.1%</td>
+              </tr>
+              <tr>
+                <th scope="row">uni-app vite vue3</th>
+                <td>2449.6 ms</td>
+                <td>132.3 KB</td>
+                <td>20/20</td>
+                <td>完整</td>
+                <td>+4.1%</td>
+              </tr>
+              <tr>
+                <th scope="row">uni-app x</th>
+                <td>2804.1 ms</td>
+                <td>99.9 KB</td>
+                <td>20/20</td>
+                <td>完整</td>
+                <td>-5.5%</td>
+              </tr>
+              <tr>
+                <th scope="row">mpx</th>
+                <td>1803.2 ms</td>
+                <td>1137.6 KB</td>
+                <td>20/20</td>
+                <td>完整</td>
+                <td>-10.8%</td>
+              </tr>
+              <tr>
+                <th scope="row">taro vue3</th>
+                <td>3516.0 ms</td>
+                <td>221.4 KB</td>
+                <td>20/20</td>
+                <td>完整</td>
+                <td>-10.2%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section id="panel-runtime" class="panel" role="tabpanel" aria-labelledby="tab-runtime" hidden>
+        <div
+          id="chart-runtime"
+          class="chart"
+          role="img"
+          aria-label="八个真实 IDE E2E 场景的平均累计耗时，单位为毫秒。"
+        ></div>
+
+        <div class="table-wrap">
+          <div class="table-heading">
+            <h2>运行时结果</h2>
+            <a href="/benchmarks/reports/runtime/latest.md">详细报告</a>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">项目</th>
+                <th scope="col">八场景合计</th>
+                <th scope="col">样本</th>
+                <th scope="col">状态</th>
+                <th scope="col">较上次</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">weapp-vite + wevu</th>
+                <td>214.9 ms</td>
+                <td>20/20</td>
+                <td>完整</td>
+                <td>+12.0%</td>
+              </tr>
+              <tr>
+                <th scope="row">weapp-vite + wevu performance</th>
+                <td>173.2 ms</td>
+                <td>20/20</td>
+                <td>完整</td>
+                <td>+7.6%</td>
+              </tr>
+              <tr>
+                <th scope="row">weapp-vite 原生</th>
+                <td>1469.9 ms</td>
+                <td>20/20</td>
+                <td>完整</td>
+                <td>+17.3%</td>
+              </tr>
+              <tr>
+                <th scope="row">uni-app vite vue3</th>
+                <td>212.6 ms</td>
+                <td>20/20</td>
+                <td>完整</td>
+                <td>+6.5%</td>
+              </tr>
+              <tr>
+                <th scope="row">uni-app x</th>
+                <td>215.3 ms</td>
+                <td>20/20</td>
+                <td>完整</td>
+                <td>+4.7%</td>
+              </tr>
+              <tr>
+                <th scope="row">mpx</th>
+                <td>1460.3 ms</td>
+                <td>20/20</td>
+                <td>完整</td>
+                <td>+6.4%</td>
+              </tr>
+              <tr>
+                <th scope="row">taro vue3</th>
+                <td>1759.9 ms</td>
+                <td>20/20</td>
+                <td>完整</td>
+                <td>+8.5%</td>
+              </tr>
+              <tr>
+                <th scope="row">@vue-mini/core</th>
+                <td>357.6 ms</td>
+                <td>20/20</td>
+                <td>完整</td>
+                <td>+4.4%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section id="panel-hmr" class="panel" role="tabpanel" aria-labelledby="tab-hmr" hidden>
+        <div
+          id="chart-hmr"
+          class="chart"
+          role="img"
+          aria-label="从写入源文件到目标小程序产物变化的墙钟耗时，单位为毫秒。"
+        ></div>
+
+        <div class="table-wrap">
+          <div class="table-heading">
+            <h2>HMR 结果</h2>
+            <a href="/benchmarks/reports/hmr/latest.md">详细报告</a>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">项目</th>
+                <th scope="col">场景平均</th>
+                <th scope="col">样本</th>
+                <th scope="col">状态</th>
+                <th scope="col">较上次</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">weapp-vite + wevu</th>
+                <td>170.3 ms</td>
+                <td>80/80</td>
+                <td>完整</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <th scope="row">weapp-vite + wevu performance</th>
+                <td>190.9 ms</td>
+                <td>80/80</td>
+                <td>完整</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <th scope="row">weapp-vite 原生</th>
+                <td>64.3 ms</td>
+                <td>80/80</td>
+                <td>完整</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <th scope="row">uni-app vite vue3</th>
+                <td>283.4 ms</td>
+                <td>60/60</td>
+                <td>完整</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <th scope="row">uni-app x</th>
+                <td>315.3 ms</td>
+                <td>60/60</td>
+                <td>完整</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <th scope="row">taro vue3</th>
+                <td>332.0 ms</td>
+                <td>60/60</td>
+                <td>完整</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <th scope="row">mpx</th>
+                <td>164.2 ms</td>
+                <td>80/80</td>
+                <td>完整</td>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section id="panel-size" class="panel" role="tabpanel" aria-labelledby="tab-size" hidden>
+        <div
+          id="chart-size"
+          class="chart"
+          role="img"
+          aria-label="上图对比 raw、gzip 和 brotli，下图拆分 JavaScript 与 vendor JavaScript。"
+        ></div>
+
+        <div class="table-wrap">
+          <div class="table-heading">
+            <h2>体积结果</h2>
+            <a href="/benchmarks/reports/size/wevu-analysis.md">详细报告</a>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">项目</th>
+                <th scope="col">raw</th>
+                <th scope="col">gzip</th>
+                <th scope="col">brotli</th>
+                <th scope="col">样本</th>
+                <th scope="col">状态</th>
+                <th scope="col">较上次</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">weapp-vite + wevu</th>
+                <td>198.9 KB</td>
+                <td>50.1 KB</td>
+                <td>42.4 KB</td>
+                <td>1/1</td>
+                <td>完整</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <th scope="row">weapp-vite + wevu performance</th>
+                <td>199.8 KB</td>
+                <td>50.5 KB</td>
+                <td>42.6 KB</td>
+                <td>1/1</td>
+                <td>完整</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <th scope="row">weapp-vite 原生</th>
+                <td>8.7 KB</td>
+                <td>3.3 KB</td>
+                <td>2.8 KB</td>
+                <td>1/1</td>
+                <td>完整</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <th scope="row">uni-app vite vue3</th>
+                <td>132.3 KB</td>
+                <td>47.2 KB</td>
+                <td>41.3 KB</td>
+                <td>1/1</td>
+                <td>完整</td>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section id="panel-verification" class="panel" role="tabpanel" aria-labelledby="tab-verification" hidden>
+        <div class="table-wrap">
+          <div class="table-heading">
+            <h2>验证流水线</h2>
+            <a href="/benchmarks/reports/verification/latest.md">详细报告</a>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th scope="col">检查</th>
+                <th scope="col">状态</th>
+                <th scope="col">耗时</th>
+                <th scope="col">命令</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">安装依赖</th>
+                <td><span class="status status-passed">passed</span></td>
+                <td>2.9s</td>
+                <td><code>pnpm install --frozen-lockfile</code></td>
+              </tr>
+              <tr>
+                <th scope="row">构建</th>
+                <td><span class="status status-passed">passed</span></td>
+                <td>1.6s</td>
+                <td><code>pnpm run build</code></td>
+              </tr>
+              <tr>
+                <th scope="row">代码检查</th>
+                <td><span class="status status-passed">passed</span></td>
+                <td>3.2s</td>
+                <td><code>pnpm run lint</code></td>
+              </tr>
+              <tr>
+                <th scope="row">类型检查</th>
+                <td><span class="status status-passed">passed</span></td>
+                <td>2.4s</td>
+                <td><code>pnpm run typecheck</code></td>
+              </tr>
+              <tr>
+                <th scope="row">类型 API 测试</th>
+                <td><span class="status status-passed">passed</span></td>
+                <td>0.3s</td>
+                <td><code>pnpm run tsd</code></td>
+              </tr>
+              <tr>
+                <th scope="row">单元与集成测试</th>
+                <td><span class="status status-passed">passed</span></td>
+                <td>1.2s</td>
+                <td><code>pnpm run test</code></td>
+              </tr>
+              <tr>
+                <th scope="row">依赖安全审计</th>
+                <td><span class="status status-failed">failed</span></td>
+                <td>7.0s</td>
+                <td><code>pnpm audit --audit-level=moderate</code></td>
+              </tr>
+              <tr>
+                <th scope="row">HBuilderX uni-app x smoke</th>
+                <td><span class="status status-passed">passed</span></td>
+                <td>4.3s</td>
+                <td><code>pnpm run test:hbuilderx:uni-app-x</code></td>
+              </tr>
+              <tr>
+                <th scope="row">编译基准</th>
+                <td><span class="status status-passed">passed</span></td>
+                <td>271.0s</td>
+                <td><code>pnpm run bench:compile</code></td>
+              </tr>
+              <tr>
+                <th scope="row">运行时 IDE E2E 基准</th>
+                <td><span class="status status-passed">passed</span></td>
+                <td>565.0s</td>
+                <td><code>pnpm run bench:runtime</code></td>
+              </tr>
+              <tr>
+                <th scope="row">HMR 基准</th>
+                <td><span class="status status-passed">passed</span></td>
+                <td>176.9s</td>
+                <td><code>pnpm run bench:hmr</code></td>
+              </tr>
+              <tr>
+                <th scope="row">wevu 体积分析</th>
+                <td><span class="status status-passed">passed</span></td>
+                <td>4.3s</td>
+                <td><code>pnpm run bench:size:wevu</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/echarts@6.1.0/dist/echarts.min.js"></script>
+    <script>
+      const chartDefinitions = {
+        light: [
+          {
+            id: 'overview',
+            title: '跨维度性能指数',
+            description: '每个维度以当前完整样本中的最佳结果为 100；缺失或不完整样本显示 N/A。',
+            width: 1120,
+            height: 594,
+            option: {
+              backgroundColor: '#ffffff',
+              color: ['#1769aa', '#d1495b', '#2a9d8f', '#e09f3e', '#6d597a', '#3a7d44'],
+              animationDuration: 350,
+              textStyle: {
+                color: '#20242b',
+                fontFamily: 'Arial, sans-serif',
+                fontSize: 12,
+              },
+              title: {
+                text: '跨维度性能指数',
+                subtext: '每列独立归一化，100 为当前维度最佳；N/A 不参与比较',
+                left: 20,
+                top: 16,
+                textStyle: { color: '#20242b', fontSize: 18, fontWeight: 500 },
+                subtextStyle: {
+                  color: '#667085',
+                  fontSize: 12,
+                  fontWeight: 400,
+                },
+              },
+              tooltip: {
+                trigger: 'item',
+                backgroundColor: '#ffffff',
+                borderColor: '#d9dee8',
+                textStyle: { color: '#20242b' },
+              },
+              aria: { enabled: true },
+              grid: { left: 220, right: 80, top: 110, bottom: 70 },
+              xAxis: {
+                axisLine: { lineStyle: { color: '#d9dee8' } },
+                axisTick: { lineStyle: { color: '#d9dee8' } },
+                axisLabel: { color: '#667085' },
+                splitLine: { lineStyle: { color: '#d9dee8' } },
+                nameTextStyle: { color: '#667085' },
+                type: 'category',
+                data: ['编译耗时', '运行时总耗时', 'HMR 平均耗时', '产物体积'],
+                splitArea: { show: true, areaStyle: { color: ['#ffffff'] } },
+              },
+              yAxis: {
+                axisLine: { lineStyle: { color: '#d9dee8' } },
+                axisTick: { lineStyle: { color: '#d9dee8' } },
+                axisLabel: { color: '#667085' },
+                splitLine: { lineStyle: { color: '#d9dee8' } },
+                nameTextStyle: { color: '#667085' },
+                type: 'category',
+                data: [
+                  'weapp-vite + wevu',
+                  'weapp-vite + wevu performance',
+                  'weapp-vite 原生',
+                  'uni-app vite vue3',
+                  'uni-app x',
+                  'mpx',
+                  'taro vue3',
+                  '@vue-mini/core',
+                ],
+                inverse: true,
+                splitArea: { show: true, areaStyle: { color: ['#ffffff'] } },
+              },
+              visualMap: {
+                min: 0,
+                max: 100,
+                calculable: false,
+                orient: 'horizontal',
+                left: 'center',
+                bottom: 16,
+                inRange: { color: ['#eef2f7', '#1769aa'] },
+                textStyle: { color: '#667085' },
+              },
+              series: [
+                {
+                  name: '性能指数',
+                  type: 'heatmap',
+                  data: [
+                    [0, 0, 90.8],
+                    [1, 0, 80.6],
+                    [2, 0, 37.8],
+                    [3, 0, 4.4],
+                    [0, 1, 90.5],
+                    [1, 1, 100],
+                    [2, 1, 33.7],
+                    [3, 1, 4.3],
+                    [0, 2, 100],
+                    [1, 2, 11.8],
+                    [2, 2, 100],
+                    [3, 2, 100],
+                    [0, 3, 37.3],
+                    [1, 3, 81.5],
+                    [2, 3, 22.7],
+                    [3, 3, 6.6],
+                    [0, 4, 32.6],
+                    [1, 4, 80.4],
+                    [2, 4, 20.4],
+                    [0, 5, 50.6],
+                    [1, 5, 11.9],
+                    [2, 5, 39.2],
+                    [0, 6, 26],
+                    [1, 6, 9.8],
+                    [2, 6, 19.4],
+                    [1, 7, 48.4],
+                  ],
+                  label: {
+                    show: true,
+                    formatter: '{@[2]}',
+                    color: '#20242b',
+                    fontWeight: 500,
+                  },
+                  itemStyle: { borderColor: '#ffffff', borderWidth: 3 },
+                  emphasis: {
+                    itemStyle: { borderColor: '#20242b', borderWidth: 2 },
+                  },
+                },
+                {
+                  name: '未参与',
+                  type: 'scatter',
+                  data: [
+                    [3, 4],
+                    [3, 5],
+                    [3, 6],
+                    [0, 7],
+                    [2, 7],
+                    [3, 7],
+                  ],
+                  symbolSize: 0,
+                  tooltip: { show: false },
+                  label: {
+                    show: true,
+                    formatter: 'N/A',
+                    position: 'inside',
+                    color: '#667085',
+                  },
+                },
+              ],
+            },
+          },
+          {
+            id: 'compile',
+            title: '编译性能',
+            description: '上图为平均生产构建耗时，下图为同一次构建生成的平均产物体积。',
+            width: 1120,
+            height: 760,
+            option: {
+              backgroundColor: '#ffffff',
+              color: ['#1769aa', '#d1495b', '#2a9d8f', '#e09f3e', '#6d597a', '#3a7d44'],
+              animationDuration: 350,
+              textStyle: {
+                color: '#20242b',
+                fontFamily: 'Arial, sans-serif',
+                fontSize: 12,
+              },
+              title: {
+                text: '编译性能',
+                subtext: '仅完整样本参与排序；耗时和体积均越小越好',
+                left: 20,
+                top: 16,
+                textStyle: { color: '#20242b', fontSize: 18, fontWeight: 500 },
+                subtextStyle: {
+                  color: '#667085',
+                  fontSize: 12,
+                  fontWeight: 400,
+                },
+              },
+              tooltip: {
+                trigger: 'item',
+                backgroundColor: '#ffffff',
+                borderColor: '#d9dee8',
+                textStyle: { color: '#20242b' },
+              },
+              aria: { enabled: true },
+              grid: [
+                { left: 230, right: 90, top: 110, height: 230 },
+                { left: 230, right: 90, top: 430, height: 230 },
+              ],
+              xAxis: [
+                {
+                  axisLine: { lineStyle: { color: '#d9dee8' } },
+                  axisTick: { lineStyle: { color: '#d9dee8' } },
+                  axisLabel: { color: '#667085' },
+                  splitLine: { lineStyle: { color: '#d9dee8' } },
+                  nameTextStyle: { color: '#667085' },
+                  type: 'value',
+                  name: '毫秒',
+                  gridIndex: 0,
+                },
+                {
+                  axisLine: { lineStyle: { color: '#d9dee8' } },
+                  axisTick: { lineStyle: { color: '#d9dee8' } },
+                  axisLabel: { color: '#667085' },
+                  splitLine: { lineStyle: { color: '#d9dee8' } },
+                  nameTextStyle: { color: '#667085' },
+                  type: 'value',
+                  name: 'KB',
+                  gridIndex: 1,
+                },
+              ],
+              yAxis: [
+                {
+                  axisLine: { lineStyle: { color: '#d9dee8' } },
+                  axisTick: { lineStyle: { color: '#d9dee8' } },
+                  axisLabel: { color: '#667085' },
+                  splitLine: { lineStyle: { color: '#d9dee8' } },
+                  nameTextStyle: { color: '#667085' },
+                  type: 'category',
+                  data: [
+                    'weapp-vite 原生',
+                    'weapp-vite + wevu',
+                    'weapp-vite + wevu performance',
+                    'mpx',
+                    'uni-app vite vue3',
+                    'uni-app x',
+                    'taro vue3',
+                  ],
+                  inverse: true,
+                  gridIndex: 0,
+                },
+                {
+                  axisLine: { lineStyle: { color: '#d9dee8' } },
+                  axisTick: { lineStyle: { color: '#d9dee8' } },
+                  axisLabel: { color: '#667085' },
+                  splitLine: { lineStyle: { color: '#d9dee8' } },
+                  nameTextStyle: { color: '#667085' },
+                  type: 'category',
+                  data: [
+                    'weapp-vite 原生',
+                    'weapp-vite + wevu',
+                    'weapp-vite + wevu performance',
+                    'mpx',
+                    'uni-app vite vue3',
+                    'uni-app x',
+                    'taro vue3',
+                  ],
+                  inverse: true,
+                  gridIndex: 1,
+                },
+              ],
+              graphic: [
+                {
+                  type: 'text',
+                  left: 24,
+                  top: 110,
+                  style: {
+                    text: '平均构建耗时',
+                    fill: '#20242b',
+                    fontSize: 14,
+                    fontWeight: 500,
+                  },
+                },
+                {
+                  type: 'text',
+                  left: 24,
+                  top: 430,
+                  style: {
+                    text: '平均产物体积',
+                    fill: '#20242b',
+                    fontSize: 14,
+                    fontWeight: 500,
+                  },
+                },
+              ],
+              series: [
+                {
+                  name: '平均构建耗时',
+                  type: 'bar',
+                  xAxisIndex: 0,
+                  yAxisIndex: 0,
+                  data: [913.2, 1006, 1009.1, 1803.2, 2449.6, 2804.1, 3516],
+                  label: {
+                    show: true,
+                    position: 'right',
+                    formatter: '{c} ms',
+                    color: '#20242b',
+                  },
+                  itemStyle: { color: '#1769aa' },
+                },
+                {
+                  name: '平均产物体积',
+                  type: 'bar',
+                  xAxisIndex: 1,
+                  yAxisIndex: 1,
+                  data: [8.7, 198.9, 199.8, 1137.6, 132.3, 99.9, 221.4],
+                  label: {
+                    show: true,
+                    position: 'right',
+                    formatter: '{c} KB',
+                    color: '#20242b',
+                  },
+                  itemStyle: { color: '#2a9d8f' },
+                },
+              ],
+            },
+          },
+          {
+            id: 'runtime',
+            title: '运行时场景耗时',
+            description: '八个真实 IDE E2E 场景的平均累计耗时，单位为毫秒。',
+            width: 1280,
+            height: 640,
+            option: {
+              backgroundColor: '#ffffff',
+              color: ['#1769aa', '#d1495b', '#2a9d8f', '#e09f3e', '#6d597a', '#3a7d44'],
+              animationDuration: 350,
+              textStyle: {
+                color: '#20242b',
+                fontFamily: 'Arial, sans-serif',
+                fontSize: 12,
+              },
+              title: {
+                text: '运行时场景耗时',
+                subtext: '微信开发者工具 IDE E2E；数值越小越好',
+                left: 20,
+                top: 16,
+                textStyle: { color: '#20242b', fontSize: 18, fontWeight: 500 },
+                subtextStyle: {
+                  color: '#667085',
+                  fontSize: 12,
+                  fontWeight: 400,
+                },
+              },
+              tooltip: {
+                trigger: 'item',
+                backgroundColor: '#ffffff',
+                borderColor: '#d9dee8',
+                textStyle: { color: '#20242b' },
+              },
+              aria: { enabled: true },
+              grid: { left: 220, right: 90, top: 115, bottom: 110 },
+              xAxis: {
+                axisLine: { lineStyle: { color: '#d9dee8' } },
+                axisTick: { lineStyle: { color: '#d9dee8' } },
+                axisLabel: { color: '#667085', rotate: 24 },
+                splitLine: { lineStyle: { color: '#d9dee8' } },
+                nameTextStyle: { color: '#667085' },
+                type: 'category',
+                data: ['初始渲染', '追加列表', '批量更新', '全量排序', '过滤切换', '分组聚合', '窗口切片', '整表替换'],
+              },
+              yAxis: {
+                axisLine: { lineStyle: { color: '#d9dee8' } },
+                axisTick: { lineStyle: { color: '#d9dee8' } },
+                axisLabel: { color: '#667085' },
+                splitLine: { lineStyle: { color: '#d9dee8' } },
+                nameTextStyle: { color: '#667085' },
+                type: 'category',
+                data: [
+                  'weapp-vite + wevu performance',
+                  'uni-app vite vue3',
+                  'weapp-vite + wevu',
+                  'uni-app x',
+                  '@vue-mini/core',
+                  'mpx',
+                  'weapp-vite 原生',
+                  'taro vue3',
+                ],
+                inverse: true,
+              },
+              visualMap: {
+                min: 0,
+                max: 749.1,
+                orient: 'horizontal',
+                left: 'center',
+                bottom: 20,
+                inRange: { color: ['#eef2f7', '#b54708'] },
+                textStyle: { color: '#667085' },
+              },
+              series: [
+                {
+                  name: '平均耗时',
+                  type: 'heatmap',
+                  data: [
+                    [0, 0, 7.4],
+                    [1, 0, 16.5],
+                    [2, 0, 40.4],
+                    [3, 0, 30],
+                    [4, 0, 19.2],
+                    [5, 0, 17.4],
+                    [6, 0, 30.7],
+                    [7, 0, 11.6],
+                    [0, 1, 13.2],
+                    [1, 1, 13.4],
+                    [2, 1, 32.4],
+                    [3, 1, 71.7],
+                    [4, 1, 25],
+                    [5, 1, 20.9],
+                    [6, 1, 16.3],
+                    [7, 1, 19.7],
+                    [0, 2, 11],
+                    [1, 2, 23.8],
+                    [2, 2, 54.4],
+                    [3, 2, 33.2],
+                    [4, 2, 25.5],
+                    [5, 2, 27.9],
+                    [6, 2, 24.6],
+                    [7, 2, 14.5],
+                    [0, 3, 13.7],
+                    [1, 3, 13.2],
+                    [2, 3, 31.5],
+                    [3, 3, 71.3],
+                    [4, 3, 24.6],
+                    [5, 3, 22.2],
+                    [6, 3, 17.2],
+                    [7, 3, 21.6],
+                    [0, 4, 27.1],
+                    [1, 4, 55.8],
+                    [2, 4, 103.8],
+                    [3, 4, 56.8],
+                    [4, 4, 42.8],
+                    [5, 4, 14.6],
+                    [6, 4, 22],
+                    [7, 4, 34.7],
+                    [0, 5, 252.7],
+                    [1, 5, 111.7],
+                    [2, 5, 121.3],
+                    [3, 5, 261.6],
+                    [4, 5, 320],
+                    [5, 5, 68.3],
+                    [6, 5, 102.8],
+                    [7, 5, 221.9],
+                    [0, 6, 144.4],
+                    [1, 6, 115.9],
+                    [2, 6, 126.9],
+                    [3, 6, 266.4],
+                    [4, 6, 348.7],
+                    [5, 6, 112.7],
+                    [6, 6, 117.5],
+                    [7, 6, 237.4],
+                    [0, 7, 76.6],
+                    [1, 7, 86.9],
+                    [2, 7, 217.4],
+                    [3, 7, 749.1],
+                    [4, 7, 377.4],
+                    [5, 7, 21.8],
+                    [6, 7, 96.3],
+                    [7, 7, 134.4],
+                  ],
+                  label: { show: true, formatter: '{@[2]}', color: '#20242b' },
+                  itemStyle: { borderColor: '#ffffff', borderWidth: 3 },
+                },
+                {
+                  name: '样本不完整',
+                  type: 'scatter',
+                  data: [],
+                  symbolSize: 0,
+                  tooltip: { show: false },
+                  label: {
+                    show: true,
+                    formatter: 'N/A',
+                    position: 'inside',
+                    color: '#667085',
+                  },
+                },
+              ],
+            },
+          },
+          {
+            id: 'hmr',
+            title: 'HMR 场景耗时',
+            description: '从写入源文件到目标小程序产物变化的墙钟耗时，单位为毫秒。',
+            width: 1120,
+            height: 570,
+            option: {
+              backgroundColor: '#ffffff',
+              color: ['#1769aa', '#d1495b', '#2a9d8f', '#e09f3e', '#6d597a', '#3a7d44'],
+              animationDuration: 350,
+              textStyle: {
+                color: '#20242b',
+                fontFamily: 'Arial, sans-serif',
+                fontSize: 12,
+              },
+              title: {
+                text: 'HMR 场景耗时',
+                subtext: 'dev/watch 模式墙钟耗时；N/A 表示该框架没有对应场景',
+                left: 20,
+                top: 16,
+                textStyle: { color: '#20242b', fontSize: 18, fontWeight: 500 },
+                subtextStyle: {
+                  color: '#667085',
+                  fontSize: 12,
+                  fontWeight: 400,
+                },
+              },
+              tooltip: {
+                trigger: 'item',
+                backgroundColor: '#ffffff',
+                borderColor: '#d9dee8',
+                textStyle: { color: '#20242b' },
+              },
+              aria: { enabled: true },
+              grid: { left: 230, right: 90, top: 115, bottom: 90 },
+              xAxis: {
+                axisLine: { lineStyle: { color: '#d9dee8' } },
+                axisTick: { lineStyle: { color: '#d9dee8' } },
+                axisLabel: { color: '#667085' },
+                splitLine: { lineStyle: { color: '#d9dee8' } },
+                nameTextStyle: { color: '#667085' },
+                type: 'category',
+                data: ['脚本', '模板', '样式', '页面配置'],
+              },
+              yAxis: {
+                axisLine: { lineStyle: { color: '#d9dee8' } },
+                axisTick: { lineStyle: { color: '#d9dee8' } },
+                axisLabel: { color: '#667085' },
+                splitLine: { lineStyle: { color: '#d9dee8' } },
+                nameTextStyle: { color: '#667085' },
+                type: 'category',
+                data: [
+                  'weapp-vite + wevu',
+                  'weapp-vite + wevu performance',
+                  'weapp-vite 原生',
+                  'uni-app vite vue3',
+                  'uni-app x',
+                  'taro vue3',
+                  'mpx',
+                ],
+                inverse: true,
+              },
+              visualMap: {
+                min: 0,
+                max: 476,
+                orient: 'horizontal',
+                left: 'center',
+                bottom: 18,
+                inRange: { color: ['#eef2f7', '#b54708'] },
+                textStyle: { color: '#667085' },
+              },
+              series: [
+                {
+                  name: '平均 HMR',
+                  type: 'heatmap',
+                  data: [
+                    [0, 0, 98.3],
+                    [1, 0, 166.6],
+                    [2, 0, 78.3],
+                    [3, 0, 337.9],
+                    [0, 1, 256.9],
+                    [1, 1, 184.3],
+                    [2, 1, 177.5],
+                    [3, 1, 144.7],
+                    [0, 2, 116.1],
+                    [1, 2, 48.4],
+                    [2, 2, 47.1],
+                    [3, 2, 45.5],
+                    [0, 3, 315],
+                    [1, 3, 261],
+                    [2, 3, 274.1],
+                    [0, 4, 476],
+                    [1, 4, 213.5],
+                    [2, 4, 256.3],
+                    [0, 5, 326.2],
+                    [1, 5, 330],
+                    [2, 5, 339.7],
+                    [0, 6, 170.7],
+                    [1, 6, 165.4],
+                    [2, 6, 164.5],
+                    [3, 6, 156.3],
+                  ],
+                  label: { show: true, formatter: '{@[2]}', color: '#20242b' },
+                  itemStyle: { borderColor: '#ffffff', borderWidth: 3 },
+                },
+                {
+                  name: '无对应场景',
+                  type: 'scatter',
+                  data: [
+                    [3, 3],
+                    [3, 4],
+                    [3, 5],
+                  ],
+                  symbolSize: 0,
+                  tooltip: { show: false },
+                  label: {
+                    show: true,
+                    formatter: 'N/A',
+                    position: 'inside',
+                    color: '#667085',
+                  },
+                },
+              ],
+            },
+          },
+          {
+            id: 'size',
+            title: '产物体积分析',
+            description: '上图对比 raw、gzip 和 brotli，下图拆分 JavaScript 与 vendor JavaScript。',
+            width: 1120,
+            height: 760,
+            option: {
+              backgroundColor: '#ffffff',
+              color: ['#1769aa', '#d1495b', '#2a9d8f', '#e09f3e', '#6d597a', '#3a7d44'],
+              animationDuration: 350,
+              textStyle: {
+                color: '#20242b',
+                fontFamily: 'Arial, sans-serif',
+                fontSize: 12,
+              },
+              title: {
+                text: '产物体积分析',
+                subtext: '当前 size 专项覆盖四个项目；单位 KB，越小越好',
+                left: 20,
+                top: 16,
+                textStyle: { color: '#20242b', fontSize: 18, fontWeight: 500 },
+                subtextStyle: {
+                  color: '#667085',
+                  fontSize: 12,
+                  fontWeight: 400,
+                },
+              },
+              tooltip: {
+                trigger: 'item',
+                backgroundColor: '#ffffff',
+                borderColor: '#d9dee8',
+                textStyle: { color: '#20242b' },
+              },
+              aria: { enabled: true },
+              legend: [
+                {
+                  data: ['raw', 'gzip', 'brotli'],
+                  top: 80,
+                  right: 50,
+                  textStyle: { color: '#667085' },
+                },
+                {
+                  data: ['全部 JS', 'vendor JS'],
+                  top: 400,
+                  right: 50,
+                  textStyle: { color: '#667085' },
+                },
+              ],
+              grid: [
+                { left: 230, right: 90, top: 115, height: 230 },
+                { left: 230, right: 90, top: 435, height: 230 },
+              ],
+              xAxis: [
+                {
+                  axisLine: { lineStyle: { color: '#d9dee8' } },
+                  axisTick: { lineStyle: { color: '#d9dee8' } },
+                  axisLabel: { color: '#667085' },
+                  splitLine: { lineStyle: { color: '#d9dee8' } },
+                  nameTextStyle: { color: '#667085' },
+                  type: 'value',
+                  name: 'KB',
+                  gridIndex: 0,
+                },
+                {
+                  axisLine: { lineStyle: { color: '#d9dee8' } },
+                  axisTick: { lineStyle: { color: '#d9dee8' } },
+                  axisLabel: { color: '#667085' },
+                  splitLine: { lineStyle: { color: '#d9dee8' } },
+                  nameTextStyle: { color: '#667085' },
+                  type: 'value',
+                  name: 'KB',
+                  gridIndex: 1,
+                },
+              ],
+              yAxis: [
+                {
+                  axisLine: { lineStyle: { color: '#d9dee8' } },
+                  axisTick: { lineStyle: { color: '#d9dee8' } },
+                  axisLabel: { color: '#667085' },
+                  splitLine: { lineStyle: { color: '#d9dee8' } },
+                  nameTextStyle: { color: '#667085' },
+                  type: 'category',
+                  data: ['weapp-vite 原生', 'uni-app vite vue3', 'weapp-vite + wevu', 'weapp-vite + wevu performance'],
+                  inverse: true,
+                  gridIndex: 0,
+                },
+                {
+                  axisLine: { lineStyle: { color: '#d9dee8' } },
+                  axisTick: { lineStyle: { color: '#d9dee8' } },
+                  axisLabel: { color: '#667085' },
+                  splitLine: { lineStyle: { color: '#d9dee8' } },
+                  nameTextStyle: { color: '#667085' },
+                  type: 'category',
+                  data: ['weapp-vite 原生', 'uni-app vite vue3', 'weapp-vite + wevu', 'weapp-vite + wevu performance'],
+                  inverse: true,
+                  gridIndex: 1,
+                },
+              ],
+              series: [
+                {
+                  name: 'raw',
+                  type: 'bar',
+                  xAxisIndex: 0,
+                  yAxisIndex: 0,
+                  data: [8.7, 132.3, 198.9, 199.8],
+                },
+                {
+                  name: 'gzip',
+                  type: 'bar',
+                  xAxisIndex: 0,
+                  yAxisIndex: 0,
+                  data: [3.3, 47.2, 50.1, 50.5],
+                },
+                {
+                  name: 'brotli',
+                  type: 'bar',
+                  xAxisIndex: 0,
+                  yAxisIndex: 0,
+                  data: [2.8, 41.3, 42.4, 42.6],
+                },
+                {
+                  name: '全部 JS',
+                  type: 'bar',
+                  xAxisIndex: 1,
+                  yAxisIndex: 1,
+                  data: [6.3, 129.7, 196.5, 197.4],
+                },
+                {
+                  name: 'vendor JS',
+                  type: 'bar',
+                  xAxisIndex: 1,
+                  yAxisIndex: 1,
+                  data: [0, 125.5, 189.4, 189.4],
+                },
+              ],
+            },
+          },
+        ],
+        dark: [
+          {
+            id: 'overview',
+            title: '跨维度性能指数',
+            description: '每个维度以当前完整样本中的最佳结果为 100；缺失或不完整样本显示 N/A。',
+            width: 1120,
+            height: 594,
+            option: {
+              backgroundColor: '#17191d',
+              color: ['#62a8e5', '#f27b88', '#54c4b1', '#f2bd5b', '#b49bc8', '#79b985'],
+              animationDuration: 350,
+              textStyle: {
+                color: '#f2f4f7',
+                fontFamily: 'Arial, sans-serif',
+                fontSize: 12,
+              },
+              title: {
+                text: '跨维度性能指数',
+                subtext: '每列独立归一化，100 为当前维度最佳；N/A 不参与比较',
+                left: 20,
+                top: 16,
+                textStyle: { color: '#f2f4f7', fontSize: 18, fontWeight: 500 },
+                subtextStyle: {
+                  color: '#aab2c0',
+                  fontSize: 12,
+                  fontWeight: 400,
+                },
+              },
+              tooltip: {
+                trigger: 'item',
+                backgroundColor: '#17191d',
+                borderColor: '#3a404b',
+                textStyle: { color: '#f2f4f7' },
+              },
+              aria: { enabled: true },
+              grid: { left: 220, right: 80, top: 110, bottom: 70 },
+              xAxis: {
+                axisLine: { lineStyle: { color: '#3a404b' } },
+                axisTick: { lineStyle: { color: '#3a404b' } },
+                axisLabel: { color: '#aab2c0' },
+                splitLine: { lineStyle: { color: '#3a404b' } },
+                nameTextStyle: { color: '#aab2c0' },
+                type: 'category',
+                data: ['编译耗时', '运行时总耗时', 'HMR 平均耗时', '产物体积'],
+                splitArea: { show: true, areaStyle: { color: ['#17191d'] } },
+              },
+              yAxis: {
+                axisLine: { lineStyle: { color: '#3a404b' } },
+                axisTick: { lineStyle: { color: '#3a404b' } },
+                axisLabel: { color: '#aab2c0' },
+                splitLine: { lineStyle: { color: '#3a404b' } },
+                nameTextStyle: { color: '#aab2c0' },
+                type: 'category',
+                data: [
+                  'weapp-vite + wevu',
+                  'weapp-vite + wevu performance',
+                  'weapp-vite 原生',
+                  'uni-app vite vue3',
+                  'uni-app x',
+                  'mpx',
+                  'taro vue3',
+                  '@vue-mini/core',
+                ],
+                inverse: true,
+                splitArea: { show: true, areaStyle: { color: ['#17191d'] } },
+              },
+              visualMap: {
+                min: 0,
+                max: 100,
+                calculable: false,
+                orient: 'horizontal',
+                left: 'center',
+                bottom: 16,
+                inRange: { color: ['#282d35', '#62a8e5'] },
+                textStyle: { color: '#aab2c0' },
+              },
+              series: [
+                {
+                  name: '性能指数',
+                  type: 'heatmap',
+                  data: [
+                    [0, 0, 90.8],
+                    [1, 0, 80.6],
+                    [2, 0, 37.8],
+                    [3, 0, 4.4],
+                    [0, 1, 90.5],
+                    [1, 1, 100],
+                    [2, 1, 33.7],
+                    [3, 1, 4.3],
+                    [0, 2, 100],
+                    [1, 2, 11.8],
+                    [2, 2, 100],
+                    [3, 2, 100],
+                    [0, 3, 37.3],
+                    [1, 3, 81.5],
+                    [2, 3, 22.7],
+                    [3, 3, 6.6],
+                    [0, 4, 32.6],
+                    [1, 4, 80.4],
+                    [2, 4, 20.4],
+                    [0, 5, 50.6],
+                    [1, 5, 11.9],
+                    [2, 5, 39.2],
+                    [0, 6, 26],
+                    [1, 6, 9.8],
+                    [2, 6, 19.4],
+                    [1, 7, 48.4],
+                  ],
+                  label: {
+                    show: true,
+                    formatter: '{@[2]}',
+                    color: '#f2f4f7',
+                    fontWeight: 500,
+                  },
+                  itemStyle: { borderColor: '#17191d', borderWidth: 3 },
+                  emphasis: {
+                    itemStyle: { borderColor: '#f2f4f7', borderWidth: 2 },
+                  },
+                },
+                {
+                  name: '未参与',
+                  type: 'scatter',
+                  data: [
+                    [3, 4],
+                    [3, 5],
+                    [3, 6],
+                    [0, 7],
+                    [2, 7],
+                    [3, 7],
+                  ],
+                  symbolSize: 0,
+                  tooltip: { show: false },
+                  label: {
+                    show: true,
+                    formatter: 'N/A',
+                    position: 'inside',
+                    color: '#aab2c0',
+                  },
+                },
+              ],
+            },
+          },
+          {
+            id: 'compile',
+            title: '编译性能',
+            description: '上图为平均生产构建耗时，下图为同一次构建生成的平均产物体积。',
+            width: 1120,
+            height: 760,
+            option: {
+              backgroundColor: '#17191d',
+              color: ['#62a8e5', '#f27b88', '#54c4b1', '#f2bd5b', '#b49bc8', '#79b985'],
+              animationDuration: 350,
+              textStyle: {
+                color: '#f2f4f7',
+                fontFamily: 'Arial, sans-serif',
+                fontSize: 12,
+              },
+              title: {
+                text: '编译性能',
+                subtext: '仅完整样本参与排序；耗时和体积均越小越好',
+                left: 20,
+                top: 16,
+                textStyle: { color: '#f2f4f7', fontSize: 18, fontWeight: 500 },
+                subtextStyle: {
+                  color: '#aab2c0',
+                  fontSize: 12,
+                  fontWeight: 400,
+                },
+              },
+              tooltip: {
+                trigger: 'item',
+                backgroundColor: '#17191d',
+                borderColor: '#3a404b',
+                textStyle: { color: '#f2f4f7' },
+              },
+              aria: { enabled: true },
+              grid: [
+                { left: 230, right: 90, top: 110, height: 230 },
+                { left: 230, right: 90, top: 430, height: 230 },
+              ],
+              xAxis: [
+                {
+                  axisLine: { lineStyle: { color: '#3a404b' } },
+                  axisTick: { lineStyle: { color: '#3a404b' } },
+                  axisLabel: { color: '#aab2c0' },
+                  splitLine: { lineStyle: { color: '#3a404b' } },
+                  nameTextStyle: { color: '#aab2c0' },
+                  type: 'value',
+                  name: '毫秒',
+                  gridIndex: 0,
+                },
+                {
+                  axisLine: { lineStyle: { color: '#3a404b' } },
+                  axisTick: { lineStyle: { color: '#3a404b' } },
+                  axisLabel: { color: '#aab2c0' },
+                  splitLine: { lineStyle: { color: '#3a404b' } },
+                  nameTextStyle: { color: '#aab2c0' },
+                  type: 'value',
+                  name: 'KB',
+                  gridIndex: 1,
+                },
+              ],
+              yAxis: [
+                {
+                  axisLine: { lineStyle: { color: '#3a404b' } },
+                  axisTick: { lineStyle: { color: '#3a404b' } },
+                  axisLabel: { color: '#aab2c0' },
+                  splitLine: { lineStyle: { color: '#3a404b' } },
+                  nameTextStyle: { color: '#aab2c0' },
+                  type: 'category',
+                  data: [
+                    'weapp-vite 原生',
+                    'weapp-vite + wevu',
+                    'weapp-vite + wevu performance',
+                    'mpx',
+                    'uni-app vite vue3',
+                    'uni-app x',
+                    'taro vue3',
+                  ],
+                  inverse: true,
+                  gridIndex: 0,
+                },
+                {
+                  axisLine: { lineStyle: { color: '#3a404b' } },
+                  axisTick: { lineStyle: { color: '#3a404b' } },
+                  axisLabel: { color: '#aab2c0' },
+                  splitLine: { lineStyle: { color: '#3a404b' } },
+                  nameTextStyle: { color: '#aab2c0' },
+                  type: 'category',
+                  data: [
+                    'weapp-vite 原生',
+                    'weapp-vite + wevu',
+                    'weapp-vite + wevu performance',
+                    'mpx',
+                    'uni-app vite vue3',
+                    'uni-app x',
+                    'taro vue3',
+                  ],
+                  inverse: true,
+                  gridIndex: 1,
+                },
+              ],
+              graphic: [
+                {
+                  type: 'text',
+                  left: 24,
+                  top: 110,
+                  style: {
+                    text: '平均构建耗时',
+                    fill: '#f2f4f7',
+                    fontSize: 14,
+                    fontWeight: 500,
+                  },
+                },
+                {
+                  type: 'text',
+                  left: 24,
+                  top: 430,
+                  style: {
+                    text: '平均产物体积',
+                    fill: '#f2f4f7',
+                    fontSize: 14,
+                    fontWeight: 500,
+                  },
+                },
+              ],
+              series: [
+                {
+                  name: '平均构建耗时',
+                  type: 'bar',
+                  xAxisIndex: 0,
+                  yAxisIndex: 0,
+                  data: [913.2, 1006, 1009.1, 1803.2, 2449.6, 2804.1, 3516],
+                  label: {
+                    show: true,
+                    position: 'right',
+                    formatter: '{c} ms',
+                    color: '#f2f4f7',
+                  },
+                  itemStyle: { color: '#62a8e5' },
+                },
+                {
+                  name: '平均产物体积',
+                  type: 'bar',
+                  xAxisIndex: 1,
+                  yAxisIndex: 1,
+                  data: [8.7, 198.9, 199.8, 1137.6, 132.3, 99.9, 221.4],
+                  label: {
+                    show: true,
+                    position: 'right',
+                    formatter: '{c} KB',
+                    color: '#f2f4f7',
+                  },
+                  itemStyle: { color: '#54c4b1' },
+                },
+              ],
+            },
+          },
+          {
+            id: 'runtime',
+            title: '运行时场景耗时',
+            description: '八个真实 IDE E2E 场景的平均累计耗时，单位为毫秒。',
+            width: 1280,
+            height: 640,
+            option: {
+              backgroundColor: '#17191d',
+              color: ['#62a8e5', '#f27b88', '#54c4b1', '#f2bd5b', '#b49bc8', '#79b985'],
+              animationDuration: 350,
+              textStyle: {
+                color: '#f2f4f7',
+                fontFamily: 'Arial, sans-serif',
+                fontSize: 12,
+              },
+              title: {
+                text: '运行时场景耗时',
+                subtext: '微信开发者工具 IDE E2E；数值越小越好',
+                left: 20,
+                top: 16,
+                textStyle: { color: '#f2f4f7', fontSize: 18, fontWeight: 500 },
+                subtextStyle: {
+                  color: '#aab2c0',
+                  fontSize: 12,
+                  fontWeight: 400,
+                },
+              },
+              tooltip: {
+                trigger: 'item',
+                backgroundColor: '#17191d',
+                borderColor: '#3a404b',
+                textStyle: { color: '#f2f4f7' },
+              },
+              aria: { enabled: true },
+              grid: { left: 220, right: 90, top: 115, bottom: 110 },
+              xAxis: {
+                axisLine: { lineStyle: { color: '#3a404b' } },
+                axisTick: { lineStyle: { color: '#3a404b' } },
+                axisLabel: { color: '#aab2c0', rotate: 24 },
+                splitLine: { lineStyle: { color: '#3a404b' } },
+                nameTextStyle: { color: '#aab2c0' },
+                type: 'category',
+                data: ['初始渲染', '追加列表', '批量更新', '全量排序', '过滤切换', '分组聚合', '窗口切片', '整表替换'],
+              },
+              yAxis: {
+                axisLine: { lineStyle: { color: '#3a404b' } },
+                axisTick: { lineStyle: { color: '#3a404b' } },
+                axisLabel: { color: '#aab2c0' },
+                splitLine: { lineStyle: { color: '#3a404b' } },
+                nameTextStyle: { color: '#aab2c0' },
+                type: 'category',
+                data: [
+                  'weapp-vite + wevu performance',
+                  'uni-app vite vue3',
+                  'weapp-vite + wevu',
+                  'uni-app x',
+                  '@vue-mini/core',
+                  'mpx',
+                  'weapp-vite 原生',
+                  'taro vue3',
+                ],
+                inverse: true,
+              },
+              visualMap: {
+                min: 0,
+                max: 749.1,
+                orient: 'horizontal',
+                left: 'center',
+                bottom: 20,
+                inRange: { color: ['#282d35', '#f2bd5b'] },
+                textStyle: { color: '#aab2c0' },
+              },
+              series: [
+                {
+                  name: '平均耗时',
+                  type: 'heatmap',
+                  data: [
+                    [0, 0, 7.4],
+                    [1, 0, 16.5],
+                    [2, 0, 40.4],
+                    [3, 0, 30],
+                    [4, 0, 19.2],
+                    [5, 0, 17.4],
+                    [6, 0, 30.7],
+                    [7, 0, 11.6],
+                    [0, 1, 13.2],
+                    [1, 1, 13.4],
+                    [2, 1, 32.4],
+                    [3, 1, 71.7],
+                    [4, 1, 25],
+                    [5, 1, 20.9],
+                    [6, 1, 16.3],
+                    [7, 1, 19.7],
+                    [0, 2, 11],
+                    [1, 2, 23.8],
+                    [2, 2, 54.4],
+                    [3, 2, 33.2],
+                    [4, 2, 25.5],
+                    [5, 2, 27.9],
+                    [6, 2, 24.6],
+                    [7, 2, 14.5],
+                    [0, 3, 13.7],
+                    [1, 3, 13.2],
+                    [2, 3, 31.5],
+                    [3, 3, 71.3],
+                    [4, 3, 24.6],
+                    [5, 3, 22.2],
+                    [6, 3, 17.2],
+                    [7, 3, 21.6],
+                    [0, 4, 27.1],
+                    [1, 4, 55.8],
+                    [2, 4, 103.8],
+                    [3, 4, 56.8],
+                    [4, 4, 42.8],
+                    [5, 4, 14.6],
+                    [6, 4, 22],
+                    [7, 4, 34.7],
+                    [0, 5, 252.7],
+                    [1, 5, 111.7],
+                    [2, 5, 121.3],
+                    [3, 5, 261.6],
+                    [4, 5, 320],
+                    [5, 5, 68.3],
+                    [6, 5, 102.8],
+                    [7, 5, 221.9],
+                    [0, 6, 144.4],
+                    [1, 6, 115.9],
+                    [2, 6, 126.9],
+                    [3, 6, 266.4],
+                    [4, 6, 348.7],
+                    [5, 6, 112.7],
+                    [6, 6, 117.5],
+                    [7, 6, 237.4],
+                    [0, 7, 76.6],
+                    [1, 7, 86.9],
+                    [2, 7, 217.4],
+                    [3, 7, 749.1],
+                    [4, 7, 377.4],
+                    [5, 7, 21.8],
+                    [6, 7, 96.3],
+                    [7, 7, 134.4],
+                  ],
+                  label: { show: true, formatter: '{@[2]}', color: '#f2f4f7' },
+                  itemStyle: { borderColor: '#17191d', borderWidth: 3 },
+                },
+                {
+                  name: '样本不完整',
+                  type: 'scatter',
+                  data: [],
+                  symbolSize: 0,
+                  tooltip: { show: false },
+                  label: {
+                    show: true,
+                    formatter: 'N/A',
+                    position: 'inside',
+                    color: '#aab2c0',
+                  },
+                },
+              ],
+            },
+          },
+          {
+            id: 'hmr',
+            title: 'HMR 场景耗时',
+            description: '从写入源文件到目标小程序产物变化的墙钟耗时，单位为毫秒。',
+            width: 1120,
+            height: 570,
+            option: {
+              backgroundColor: '#17191d',
+              color: ['#62a8e5', '#f27b88', '#54c4b1', '#f2bd5b', '#b49bc8', '#79b985'],
+              animationDuration: 350,
+              textStyle: {
+                color: '#f2f4f7',
+                fontFamily: 'Arial, sans-serif',
+                fontSize: 12,
+              },
+              title: {
+                text: 'HMR 场景耗时',
+                subtext: 'dev/watch 模式墙钟耗时；N/A 表示该框架没有对应场景',
+                left: 20,
+                top: 16,
+                textStyle: { color: '#f2f4f7', fontSize: 18, fontWeight: 500 },
+                subtextStyle: {
+                  color: '#aab2c0',
+                  fontSize: 12,
+                  fontWeight: 400,
+                },
+              },
+              tooltip: {
+                trigger: 'item',
+                backgroundColor: '#17191d',
+                borderColor: '#3a404b',
+                textStyle: { color: '#f2f4f7' },
+              },
+              aria: { enabled: true },
+              grid: { left: 230, right: 90, top: 115, bottom: 90 },
+              xAxis: {
+                axisLine: { lineStyle: { color: '#3a404b' } },
+                axisTick: { lineStyle: { color: '#3a404b' } },
+                axisLabel: { color: '#aab2c0' },
+                splitLine: { lineStyle: { color: '#3a404b' } },
+                nameTextStyle: { color: '#aab2c0' },
+                type: 'category',
+                data: ['脚本', '模板', '样式', '页面配置'],
+              },
+              yAxis: {
+                axisLine: { lineStyle: { color: '#3a404b' } },
+                axisTick: { lineStyle: { color: '#3a404b' } },
+                axisLabel: { color: '#aab2c0' },
+                splitLine: { lineStyle: { color: '#3a404b' } },
+                nameTextStyle: { color: '#aab2c0' },
+                type: 'category',
+                data: [
+                  'weapp-vite + wevu',
+                  'weapp-vite + wevu performance',
+                  'weapp-vite 原生',
+                  'uni-app vite vue3',
+                  'uni-app x',
+                  'taro vue3',
+                  'mpx',
+                ],
+                inverse: true,
+              },
+              visualMap: {
+                min: 0,
+                max: 476,
+                orient: 'horizontal',
+                left: 'center',
+                bottom: 18,
+                inRange: { color: ['#282d35', '#f2bd5b'] },
+                textStyle: { color: '#aab2c0' },
+              },
+              series: [
+                {
+                  name: '平均 HMR',
+                  type: 'heatmap',
+                  data: [
+                    [0, 0, 98.3],
+                    [1, 0, 166.6],
+                    [2, 0, 78.3],
+                    [3, 0, 337.9],
+                    [0, 1, 256.9],
+                    [1, 1, 184.3],
+                    [2, 1, 177.5],
+                    [3, 1, 144.7],
+                    [0, 2, 116.1],
+                    [1, 2, 48.4],
+                    [2, 2, 47.1],
+                    [3, 2, 45.5],
+                    [0, 3, 315],
+                    [1, 3, 261],
+                    [2, 3, 274.1],
+                    [0, 4, 476],
+                    [1, 4, 213.5],
+                    [2, 4, 256.3],
+                    [0, 5, 326.2],
+                    [1, 5, 330],
+                    [2, 5, 339.7],
+                    [0, 6, 170.7],
+                    [1, 6, 165.4],
+                    [2, 6, 164.5],
+                    [3, 6, 156.3],
+                  ],
+                  label: { show: true, formatter: '{@[2]}', color: '#f2f4f7' },
+                  itemStyle: { borderColor: '#17191d', borderWidth: 3 },
+                },
+                {
+                  name: '无对应场景',
+                  type: 'scatter',
+                  data: [
+                    [3, 3],
+                    [3, 4],
+                    [3, 5],
+                  ],
+                  symbolSize: 0,
+                  tooltip: { show: false },
+                  label: {
+                    show: true,
+                    formatter: 'N/A',
+                    position: 'inside',
+                    color: '#aab2c0',
+                  },
+                },
+              ],
+            },
+          },
+          {
+            id: 'size',
+            title: '产物体积分析',
+            description: '上图对比 raw、gzip 和 brotli，下图拆分 JavaScript 与 vendor JavaScript。',
+            width: 1120,
+            height: 760,
+            option: {
+              backgroundColor: '#17191d',
+              color: ['#62a8e5', '#f27b88', '#54c4b1', '#f2bd5b', '#b49bc8', '#79b985'],
+              animationDuration: 350,
+              textStyle: {
+                color: '#f2f4f7',
+                fontFamily: 'Arial, sans-serif',
+                fontSize: 12,
+              },
+              title: {
+                text: '产物体积分析',
+                subtext: '当前 size 专项覆盖四个项目；单位 KB，越小越好',
+                left: 20,
+                top: 16,
+                textStyle: { color: '#f2f4f7', fontSize: 18, fontWeight: 500 },
+                subtextStyle: {
+                  color: '#aab2c0',
+                  fontSize: 12,
+                  fontWeight: 400,
+                },
+              },
+              tooltip: {
+                trigger: 'item',
+                backgroundColor: '#17191d',
+                borderColor: '#3a404b',
+                textStyle: { color: '#f2f4f7' },
+              },
+              aria: { enabled: true },
+              legend: [
+                {
+                  data: ['raw', 'gzip', 'brotli'],
+                  top: 80,
+                  right: 50,
+                  textStyle: { color: '#aab2c0' },
+                },
+                {
+                  data: ['全部 JS', 'vendor JS'],
+                  top: 400,
+                  right: 50,
+                  textStyle: { color: '#aab2c0' },
+                },
+              ],
+              grid: [
+                { left: 230, right: 90, top: 115, height: 230 },
+                { left: 230, right: 90, top: 435, height: 230 },
+              ],
+              xAxis: [
+                {
+                  axisLine: { lineStyle: { color: '#3a404b' } },
+                  axisTick: { lineStyle: { color: '#3a404b' } },
+                  axisLabel: { color: '#aab2c0' },
+                  splitLine: { lineStyle: { color: '#3a404b' } },
+                  nameTextStyle: { color: '#aab2c0' },
+                  type: 'value',
+                  name: 'KB',
+                  gridIndex: 0,
+                },
+                {
+                  axisLine: { lineStyle: { color: '#3a404b' } },
+                  axisTick: { lineStyle: { color: '#3a404b' } },
+                  axisLabel: { color: '#aab2c0' },
+                  splitLine: { lineStyle: { color: '#3a404b' } },
+                  nameTextStyle: { color: '#aab2c0' },
+                  type: 'value',
+                  name: 'KB',
+                  gridIndex: 1,
+                },
+              ],
+              yAxis: [
+                {
+                  axisLine: { lineStyle: { color: '#3a404b' } },
+                  axisTick: { lineStyle: { color: '#3a404b' } },
+                  axisLabel: { color: '#aab2c0' },
+                  splitLine: { lineStyle: { color: '#3a404b' } },
+                  nameTextStyle: { color: '#aab2c0' },
+                  type: 'category',
+                  data: ['weapp-vite 原生', 'uni-app vite vue3', 'weapp-vite + wevu', 'weapp-vite + wevu performance'],
+                  inverse: true,
+                  gridIndex: 0,
+                },
+                {
+                  axisLine: { lineStyle: { color: '#3a404b' } },
+                  axisTick: { lineStyle: { color: '#3a404b' } },
+                  axisLabel: { color: '#aab2c0' },
+                  splitLine: { lineStyle: { color: '#3a404b' } },
+                  nameTextStyle: { color: '#aab2c0' },
+                  type: 'category',
+                  data: ['weapp-vite 原生', 'uni-app vite vue3', 'weapp-vite + wevu', 'weapp-vite + wevu performance'],
+                  inverse: true,
+                  gridIndex: 1,
+                },
+              ],
+              series: [
+                {
+                  name: 'raw',
+                  type: 'bar',
+                  xAxisIndex: 0,
+                  yAxisIndex: 0,
+                  data: [8.7, 132.3, 198.9, 199.8],
+                },
+                {
+                  name: 'gzip',
+                  type: 'bar',
+                  xAxisIndex: 0,
+                  yAxisIndex: 0,
+                  data: [3.3, 47.2, 50.1, 50.5],
+                },
+                {
+                  name: 'brotli',
+                  type: 'bar',
+                  xAxisIndex: 0,
+                  yAxisIndex: 0,
+                  data: [2.8, 41.3, 42.4, 42.6],
+                },
+                {
+                  name: '全部 JS',
+                  type: 'bar',
+                  xAxisIndex: 1,
+                  yAxisIndex: 1,
+                  data: [6.3, 129.7, 196.5, 197.4],
+                },
+                {
+                  name: 'vendor JS',
+                  type: 'bar',
+                  xAxisIndex: 1,
+                  yAxisIndex: 1,
+                  data: [0, 125.5, 189.4, 189.4],
+                },
+              ],
+            },
+          },
+        ],
+      }
+      const media = window.matchMedia('(prefers-color-scheme: dark)')
+      const instances = new Map()
+      function currentDefinitions() {
+        return media.matches ? chartDefinitions.dark : chartDefinitions.light
+      }
+      function renderCharts() {
+        for (const definition of currentDefinitions()) {
+          const element = document.getElementById('chart-' + definition.id)
+          if (!element) continue
+          let instance = instances.get(definition.id)
+          if (!instance) {
+            instance = echarts.init(element, null, { renderer: 'canvas' })
+            instances.set(definition.id, instance)
+          }
+          instance.setOption(definition.option, true)
+        }
+      }
+      function selectTab(id) {
+        for (const button of document.querySelectorAll('[role="tab"]')) {
+          const active = button.id === 'tab-' + id
+          button.setAttribute('aria-selected', String(active))
+        }
+        for (const panel of document.querySelectorAll('[role="tabpanel"]')) {
+          panel.hidden = panel.id !== 'panel-' + id
+        }
+        const chart = instances.get(id)
+        if (chart) requestAnimationFrame(() => chart.resize())
+      }
+      for (const button of document.querySelectorAll('[role="tab"]')) {
+        button.addEventListener('click', () => selectTab(button.id.replace('tab-', '')))
+      }
+      window.addEventListener('resize', () => {
+        for (const chart of instances.values()) chart.resize()
+      })
+      media.addEventListener('change', renderCharts)
+      renderCharts()
+    </script>
+  </body>
+</html>

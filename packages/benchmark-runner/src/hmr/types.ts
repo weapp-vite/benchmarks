@@ -43,6 +43,7 @@ export interface HmrSample {
   projectLabel: string
   collector: HmrScenario['collector']
   iteration: number
+  attempts?: number
   sourceFile: string
   ok: boolean
   wallMs?: number

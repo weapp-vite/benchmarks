@@ -11,6 +11,9 @@
     "bench:size:wevu": "tsx src/size/wevu.ts",
     "build": "tsdown",
     "lint": "eslint .",
+    "report:dashboard": "tsx src/dashboard/generate.ts",
+    "report:refresh": "tsx src/dashboard/refresh.ts",
+    "test": "vitest run",
     "typecheck": "tsc -p tsconfig.json"
   },
   "dependencies": {
@@ -19,8 +22,11 @@
   "devDependencies": {
     "@types/node": "^25.9.3",
     "@weapp-vite/miniprogram-automator": "1.2.7",
+    "echarts": "6.1.0",
+    "prettier": "3.9.5",
     "tsdown": "0.22.7",
     "tsx": "^4.23.1",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "vitest": "~4.1.10"
   }
 }

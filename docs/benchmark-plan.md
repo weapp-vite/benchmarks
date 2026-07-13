@@ -93,6 +93,24 @@ pnpm e2e:ide:runtime
 
 原始样本会写入 `reports/runtime/latest.samples.json`。
 
+## 全量刷新和图表
+
+完整刷新会先执行构建、lint、类型检查、tsd、测试、安全审计和 HBuilderX smoke，再依次采集 compile、runtime、HMR 和 size 报告：
+
+```bash
+pnpm report:refresh
+```
+
+命令会继续收集每一个阶段的状态，最后统一返回成功或失败。验证明细写入 `reports/verification/latest.json`，聚合结果和图表写入 `reports/dashboard/`。
+
+如果只需要从已有 JSON 重新生成 ECharts 页面和 README SVG：
+
+```bash
+pnpm report:dashboard
+```
+
+`pnpm bench:size:wevu` 会先重建体积分析依赖的四个生产产物，再执行统计，避免 HMR 的 dev 输出清理生产目录后得到陈旧或缺失结果。
+
 ## uni-app x HBuilderX 检查
 
 `uni-app x` 应用额外提供 HBuilderX CLI smoke 路径。这个检查没有放进默认 benchmark 命令，因为它依赖本机安装 HBuilderX。
@@ -103,10 +121,11 @@ pnpm e2e:ide:runtime
 pnpm test:hbuilderx:uni-app-x
 ```
 
-该脚本会调用 `@dcloudio/hbuilderx-cli`：
+该脚本会调用 `@dcloudio/hbuilderx-cli`，先导入项目再按 HBuilderX 项目名编译：
 
 ```bash
-uni-launch mp-weixin --compile true --project $PWD
+hbuilderx project open --path $PWD
+uni-launch mp-weixin --compile true --project uni-app-x
 ```
 
 交互式 HBuilderX 运行：

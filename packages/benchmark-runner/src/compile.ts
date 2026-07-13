@@ -3,7 +3,7 @@ import { performance } from 'node:perf_hooks'
 import process from 'node:process'
 import path from 'pathe'
 import { defaultTimingIterations } from './constants'
-import { ensureDir, removeDir, summarizeDir } from './fs'
+import { ensureDir, removeDir, sanitizeTerminalOutput, summarizeDir } from './fs'
 import { compileProjects, repoRoot } from './projects'
 import { writeMachineReport } from './reports/archive'
 import { createMachineEnvironment, machineEnvironmentLines } from './reports/environment'
@@ -30,7 +30,8 @@ function average(values: number[]) {
 }
 
 function tail(value: string) {
-  return value.length > tailLimit ? value.slice(-tailLimit) : value
+  const sanitized = sanitizeTerminalOutput(value)
+  return sanitized.length > tailLimit ? sanitized.slice(-tailLimit) : sanitized
 }
 
 function formatMs(value: number | undefined) {

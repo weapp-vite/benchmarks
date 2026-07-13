@@ -72,6 +72,7 @@ export async function waitForArtifactChange(
   before: ArtifactState[],
   timeoutMs: number,
   pollIntervalMs = defaultArtifactChangePollIntervalMs,
+  expectedContent?: string,
 ) {
   const started = Date.now()
   const files = before.map(state => state.file)
@@ -79,7 +80,8 @@ export async function waitForArtifactChange(
     const after = await snapshotArtifacts(files)
     const changed = after.find((state, index) => {
       const previous = before[index]
-      return previous ? hasChanged(previous, state) : false
+      const contentMatches = !expectedContent || state.content?.includes(expectedContent)
+      return previous ? hasChanged(previous, state) && contentMatches : false
     })
     if (changed) {
       return changed

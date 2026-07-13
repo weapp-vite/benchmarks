@@ -1,0 +1,435 @@
+<svg role="img" aria-label="HMR 场景耗时" width="1120" height="570" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 1120 570"><title>HMR 场景耗时</title><desc>从写入源文件到目标小程序产物变化的墙钟耗时，单位为毫秒。</desc>
+<rect width="1120" height="570" x="0" y="0" fill="#ffffff"></rect>
+<path d="M230.5 115L230.5 480" fill="none" pointer-events="visible" stroke="#d9dee8" stroke-linecap="round" class="zr3-cls-83"></path>
+<path d="M230 480.5L1030 480.5" fill="none" pointer-events="visible" stroke="#d9dee8" stroke-linecap="round" class="zr3-cls-83"></path>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(222 141.0714)" fill="#667085">weapp-vite + wevu</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(222 193.2143)" fill="#667085">weapp-vite + wevu performance</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(222 245.3571)" fill="#667085">weapp-vite 原生</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(222 297.5)" fill="#667085">uni-app vite vue3</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(222 349.6429)" fill="#667085">uni-app x</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(222 401.7857)" fill="#667085">taro vue3</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Arial, sans-serif;" transform="translate(222 453.9286)" fill="#667085">mpx</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" y="6" transform="translate(330 488)" fill="#667085">脚本</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" y="6" transform="translate(530 488)" fill="#667085">模板</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" y="6" transform="translate(730 488)" fill="#667085">样式</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" y="6" transform="translate(930 488)" fill="#667085">页面配置</text>
+<path d="M229.8 114.7l200.5 0l0 52.6l-200.5 0Z" fill="rgb(226,207,198)" stroke="#ffffff" stroke-width="3" ecmeta_series_index="0" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr3-cls-84"></path>
+<path d="M429.8 114.7l200.5 0l0 52.6l-200.5 0Z" fill="rgb(218,182,163)" stroke="#ffffff" stroke-width="3" ecmeta_series_index="0" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr3-cls-85"></path>
+<path d="M629.8 114.7l200.5 0l0 52.6l-200.5 0Z" fill="rgb(229,214,208)" stroke="#ffffff" stroke-width="3" ecmeta_series_index="0" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr3-cls-86"></path>
+<path d="M829.8 114.7l200.5 0l0 52.6l-200.5 0Z" fill="rgb(198,121,77)" stroke="#ffffff" stroke-width="3" ecmeta_series_index="0" ecmeta_data_index="3" ecmeta_ssr_type="chart" class="zr3-cls-87"></path>
+<path d="M229.8 166.9l200.5 0l0 52.6l-200.5 0Z" fill="rgb(207,150,118)" stroke="#ffffff" stroke-width="3" ecmeta_series_index="0" ecmeta_data_index="4" ecmeta_ssr_type="chart" class="zr3-cls-88"></path>
+<path d="M429.8 166.9l200.5 0l0 52.6l-200.5 0Z" fill="rgb(216,176,154)" stroke="#ffffff" stroke-width="3" ecmeta_series_index="0" ecmeta_data_index="5" ecmeta_ssr_type="chart" class="zr3-cls-89"></path>
+<path d="M629.8 166.9l200.5 0l0 52.6l-200.5 0Z" fill="rgb(217,178,158)" stroke="#ffffff" stroke-width="3" ecmeta_series_index="0" ecmeta_data_index="6" ecmeta_ssr_type="chart" class="zr3-cls-90"></path>
+<path d="M829.8 166.9l200.5 0l0 52.6l-200.5 0Z" fill="rgb(221,190,174)" stroke="#ffffff" stroke-width="3" ecmeta_series_index="0" ecmeta_data_index="7" ecmeta_ssr_type="chart" class="zr3-cls-91"></path>
+<path d="M229.8 219l200.5 0l0 52.6l-200.5 0Z" fill="rgb(224,200,189)" stroke="#ffffff" stroke-width="3" ecmeta_series_index="0" ecmeta_data_index="8" ecmeta_ssr_type="chart" class="zr3-cls-92"></path>
+<path d="M429.8 219l200.5 0l0 52.6l-200.5 0Z" fill="rgb(232,225,223)" stroke="#ffffff" stroke-width="3" ecmeta_series_index="0" ecmeta_data_index="9" ecmeta_ssr_type="chart" class="zr3-cls-93"></path>
+<path d="M629.8 219l200.5 0l0 52.6l-200.5 0Z" fill="rgb(232,225,223)" stroke="#ffffff" stroke-width="3" ecmeta_series_index="0" ecmeta_data_index="10" ecmeta_ssr_type="chart" class="zr3-cls-93"></path>
+<path d="M829.8 219l200.5 0l0 52.6l-200.5 0Z" fill="rgb(233,226,224)" stroke="#ffffff" stroke-width="3" ecmeta_series_index="0" ecmeta_data_index="11" ecmeta_ssr_type="chart" class="zr3-cls-94"></path>
+<path d="M229.8 271.2l200.5 0l0 52.6l-200.5 0Z" fill="rgb(200,129,89)" stroke="#ffffff" stroke-width="3" ecmeta_series_index="0" ecmeta_data_index="12" ecmeta_ssr_type="chart" class="zr3-cls-95"></path>
+<path d="M429.8 271.2l200.5 0l0 52.6l-200.5 0Z" fill="rgb(207,148,116)" stroke="#ffffff" stroke-width="3" ecmeta_series_index="0" ecmeta_data_index="13" ecmeta_ssr_type="chart" class="zr3-cls-96"></path>
+<path d="M629.8 271.2l200.5 0l0 52.6l-200.5 0Z" fill="rgb(205,144,109)" stroke="#ffffff" stroke-width="3" ecmeta_series_index="0" ecmeta_data_index="14" ecmeta_ssr_type="chart" class="zr3-cls-97"></path>
+<path d="M229.8 323.3l200.5 0l0 52.6l-200.5 0Z" fill="rgb(181,71,8)" stroke="#ffffff" stroke-width="3" ecmeta_series_index="0" ecmeta_data_index="15" ecmeta_ssr_type="chart" class="zr3-cls-98"></path>
+<path d="M429.8 323.3l200.5 0l0 52.6l-200.5 0Z" fill="rgb(212,165,140)" stroke="#ffffff" stroke-width="3" ecmeta_series_index="0" ecmeta_data_index="16" ecmeta_ssr_type="chart" class="zr3-cls-99"></path>
+<path d="M629.8 323.3l200.5 0l0 52.6l-200.5 0Z" fill="rgb(207,150,118)" stroke="#ffffff" stroke-width="3" ecmeta_series_index="0" ecmeta_data_index="17" ecmeta_ssr_type="chart" class="zr3-cls-88"></path>
+<path d="M229.8 375.5l200.5 0l0 52.6l-200.5 0Z" fill="rgb(199,125,83)" stroke="#ffffff" stroke-width="3" ecmeta_series_index="0" ecmeta_data_index="18" ecmeta_ssr_type="chart" class="zr3-cls-100"></path>
+<path d="M429.8 375.5l200.5 0l0 52.6l-200.5 0Z" fill="rgb(198,123,81)" stroke="#ffffff" stroke-width="3" ecmeta_series_index="0" ecmeta_data_index="19" ecmeta_ssr_type="chart" class="zr3-cls-101"></path>
+<path d="M629.8 375.5l200.5 0l0 52.6l-200.5 0Z" fill="rgb(197,120,76)" stroke="#ffffff" stroke-width="3" ecmeta_series_index="0" ecmeta_data_index="20" ecmeta_ssr_type="chart" class="zr3-cls-102"></path>
+<path d="M229.8 427.6l200.5 0l0 52.6l-200.5 0Z" fill="rgb(218,181,161)" stroke="#ffffff" stroke-width="3" ecmeta_series_index="0" ecmeta_data_index="21" ecmeta_ssr_type="chart" class="zr3-cls-103"></path>
+<path d="M429.8 427.6l200.5 0l0 52.6l-200.5 0Z" fill="rgb(218,183,164)" stroke="#ffffff" stroke-width="3" ecmeta_series_index="0" ecmeta_data_index="22" ecmeta_ssr_type="chart" class="zr3-cls-104"></path>
+<path d="M629.8 427.6l200.5 0l0 52.6l-200.5 0Z" fill="rgb(218,183,164)" stroke="#ffffff" stroke-width="3" ecmeta_series_index="0" ecmeta_data_index="23" ecmeta_ssr_type="chart" class="zr3-cls-104"></path>
+<path d="M829.8 427.6l200.5 0l0 52.6l-200.5 0Z" fill="rgb(219,186,169)" stroke="#ffffff" stroke-width="3" ecmeta_series_index="0" ecmeta_data_index="24" ecmeta_ssr_type="chart" class="zr3-cls-105"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" transform="translate(330 141.0714)" fill="#20242b">98.3</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" transform="translate(530 141.0714)" fill="#20242b">166.6</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" transform="translate(730 141.0714)" fill="#20242b">78.3</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" transform="translate(930 141.0714)" fill="#20242b">337.9</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" transform="translate(330 193.2143)" fill="#20242b">256.9</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" transform="translate(530 193.2143)" fill="#20242b">184.3</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" transform="translate(730 193.2143)" fill="#20242b">177.5</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" transform="translate(930 193.2143)" fill="#20242b">144.7</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" transform="translate(330 245.3571)" fill="#20242b">116.1</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" transform="translate(530 245.3571)" fill="#20242b">48.4</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" transform="translate(730 245.3571)" fill="#20242b">47.1</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" transform="translate(930 245.3571)" fill="#20242b">45.5</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" transform="translate(330 297.5)" fill="#20242b">315</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" transform="translate(530 297.5)" fill="#20242b">261</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" transform="translate(730 297.5)" fill="#20242b">274.1</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" transform="translate(330 349.6429)" fill="#20242b">476</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" transform="translate(530 349.6429)" fill="#20242b">213.5</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" transform="translate(730 349.6429)" fill="#20242b">256.3</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" transform="translate(330 401.7857)" fill="#20242b">326.2</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" transform="translate(530 401.7857)" fill="#20242b">330</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" transform="translate(730 401.7857)" fill="#20242b">339.7</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" transform="translate(330 453.9286)" fill="#20242b">170.7</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" transform="translate(530 453.9286)" fill="#20242b">165.4</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" transform="translate(730 453.9286)" fill="#20242b">164.5</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" transform="translate(930 453.9286)" fill="#20242b">156.3</text>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(0,0,0,0,930,297.5)" fill="rgb(238,241,245)" fill-opacity="0.8" ecmeta_series_index="1" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr3-cls-106 zr3-cls-107"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(0,0,0,0,930,349.6429)" fill="rgb(238,241,245)" fill-opacity="0.8" ecmeta_series_index="1" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr3-cls-108 zr3-cls-107"></path>
+<path d="M1 0A1 1 0 1 1 1 -0.1A1 1 0 0 1 1 0" transform="matrix(0,0,0,0,930,401.7857)" fill="rgb(237,240,244)" fill-opacity="0.8" ecmeta_series_index="1" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr3-cls-109 zr3-cls-107"></path>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" transform="translate(930 297.5)" fill="#667085" fill-opacity="0.8">N/A</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" transform="translate(930 349.6429)" fill="#667085" fill-opacity="0.8">N/A</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" transform="translate(930 401.7857)" fill="#667085" fill-opacity="0.8">N/A</text>
+<path d="M-15 -35l170 0l0 50l-170 0Z" transform="translate(490 537)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#cfd2d7" stroke-width="0" class="zr3-cls-83"></path>
+<g clip-path="url(#zr3-c0)">
+<polygon points="0 0 20 0 20 140 0 140" transform="matrix(0,-1,1,0,490,537)" fill="url(#zr3-g0)" class="zr3-cls-111"></polygon>
+<polygon points="0 0 20 0 20 140 0 140" transform="matrix(0,-1,1,0,490,537)" fill="url(#zr3-g1)" class="zr3-cls-112"></polygon>
+</g>
+<path d="M-5 -5l307 0l0 50l-307 0Z" transform="translate(25 21)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#3c3c41" stroke-width="0" class="zr3-cls-83"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:18px;font-family:Arial, sans-serif;font-weight:500;" xml:space="preserve" y="9" transform="translate(25 21)" fill="#20242b">HMR 场景耗时</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Arial, sans-serif;font-weight:400;" xml:space="preserve" y="34" transform="translate(25 21)" fill="#667085">dev/watch 模式墙钟耗时；N/A 表示该框架没有对应场景</text>
+<defs >
+<clipPath id="zr3-c0">
+<path d="M3 0L17 0A3 3 0 0 1 20 3L20 137A3 3 0 0 1 17 140L3 140A3 3 0 0 1 0 137L0 3A3 3 0 0 1 3 0Z" transform="matrix(0,-1,1,0,490,537)" fill="#000" class="zr3-cls-110"></path>
+</clipPath>
+<linearGradient gradientUnits="objectBoundingBox" x1="0" y1="0" x2="0" y2="1" id="zr3-g0">
+<stop offset="0%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="1%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="2%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="3%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="4%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="5%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="6%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="7.000000000000001%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="8%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="9%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="10%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="11%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="12%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="13%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="14.000000000000002%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="15%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="16%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="17%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="18%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="19%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="20%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="21%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="22%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="23%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="24%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="25%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="26%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="27%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="28.000000000000004%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="28.999999999999996%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="30%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="31%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="32%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="33%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="34%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="35%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="36%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="37%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="38%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="39%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="40%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="41%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="42%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="43%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="44%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="45%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="46%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="47%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="48%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="49%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="50%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="51%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="52%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="53%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="54%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="55.00000000000001%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="56.00000000000001%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="56.99999999999999%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="57.99999999999999%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="59%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="60%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="61%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="62%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="63%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="64%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="65%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="66%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="67%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="68%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="69%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="70%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="71%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="72%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="73%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="74%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="75%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="76%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="77%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="78%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="79%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="80%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="81%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="82%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="83%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="84%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="85%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="86%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="87%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="88%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="89%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="90%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="91%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="92%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="93%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="94%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="95%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="96%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="97%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="98%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="99%" stop-color="rgb(207,210,215)"></stop>
+<stop offset="100%" stop-color="rgb(207,210,215)"></stop>
+</linearGradient>
+<linearGradient gradientUnits="objectBoundingBox" x1="0" y1="0" x2="0" y2="1" id="zr3-g1">
+<stop offset="0%" stop-color="rgb(238,242,247)"></stop>
+<stop offset="1%" stop-color="rgb(237,240,245)"></stop>
+<stop offset="2%" stop-color="rgb(237,239,242)"></stop>
+<stop offset="3%" stop-color="rgb(236,237,240)"></stop>
+<stop offset="4%" stop-color="rgb(236,235,237)"></stop>
+<stop offset="5%" stop-color="rgb(235,233,235)"></stop>
+<stop offset="6%" stop-color="rgb(235,232,233)"></stop>
+<stop offset="7.000000000000001%" stop-color="rgb(234,230,230)"></stop>
+<stop offset="8%" stop-color="rgb(233,228,228)"></stop>
+<stop offset="9%" stop-color="rgb(233,227,225)"></stop>
+<stop offset="10%" stop-color="rgb(232,225,223)"></stop>
+<stop offset="11%" stop-color="rgb(232,223,221)"></stop>
+<stop offset="12%" stop-color="rgb(231,221,218)"></stop>
+<stop offset="13%" stop-color="rgb(231,220,216)"></stop>
+<stop offset="14.000000000000002%" stop-color="rgb(230,218,214)"></stop>
+<stop offset="15%" stop-color="rgb(229,216,211)"></stop>
+<stop offset="16%" stop-color="rgb(229,215,209)"></stop>
+<stop offset="17%" stop-color="rgb(228,213,206)"></stop>
+<stop offset="18%" stop-color="rgb(228,211,204)"></stop>
+<stop offset="19%" stop-color="rgb(227,210,202)"></stop>
+<stop offset="20%" stop-color="rgb(227,208,199)"></stop>
+<stop offset="21%" stop-color="rgb(226,206,197)"></stop>
+<stop offset="22%" stop-color="rgb(225,204,194)"></stop>
+<stop offset="23%" stop-color="rgb(225,203,192)"></stop>
+<stop offset="24%" stop-color="rgb(224,201,190)"></stop>
+<stop offset="25%" stop-color="rgb(224,199,187)"></stop>
+<stop offset="26%" stop-color="rgb(223,198,185)"></stop>
+<stop offset="27%" stop-color="rgb(223,196,182)"></stop>
+<stop offset="28.000000000000004%" stop-color="rgb(222,194,180)"></stop>
+<stop offset="28.999999999999996%" stop-color="rgb(221,192,178)"></stop>
+<stop offset="30%" stop-color="rgb(221,191,175)"></stop>
+<stop offset="31%" stop-color="rgb(220,189,173)"></stop>
+<stop offset="32%" stop-color="rgb(220,187,171)"></stop>
+<stop offset="33%" stop-color="rgb(219,186,168)"></stop>
+<stop offset="34%" stop-color="rgb(219,184,166)"></stop>
+<stop offset="35%" stop-color="rgb(218,182,163)"></stop>
+<stop offset="36%" stop-color="rgb(217,180,161)"></stop>
+<stop offset="37%" stop-color="rgb(217,179,159)"></stop>
+<stop offset="38%" stop-color="rgb(216,177,156)"></stop>
+<stop offset="39%" stop-color="rgb(216,175,154)"></stop>
+<stop offset="40%" stop-color="rgb(215,174,151)"></stop>
+<stop offset="41%" stop-color="rgb(215,172,149)"></stop>
+<stop offset="42%" stop-color="rgb(214,170,147)"></stop>
+<stop offset="43%" stop-color="rgb(213,168,144)"></stop>
+<stop offset="44%" stop-color="rgb(213,167,142)"></stop>
+<stop offset="45%" stop-color="rgb(212,165,139)"></stop>
+<stop offset="46%" stop-color="rgb(212,163,137)"></stop>
+<stop offset="47%" stop-color="rgb(211,162,135)"></stop>
+<stop offset="48%" stop-color="rgb(211,160,132)"></stop>
+<stop offset="49%" stop-color="rgb(210,158,130)"></stop>
+<stop offset="50%" stop-color="rgb(210,157,128)"></stop>
+<stop offset="51%" stop-color="rgb(209,155,125)"></stop>
+<stop offset="52%" stop-color="rgb(208,153,123)"></stop>
+<stop offset="53%" stop-color="rgb(208,151,120)"></stop>
+<stop offset="54%" stop-color="rgb(207,150,118)"></stop>
+<stop offset="55.00000000000001%" stop-color="rgb(207,148,116)"></stop>
+<stop offset="56.00000000000001%" stop-color="rgb(206,146,113)"></stop>
+<stop offset="56.99999999999999%" stop-color="rgb(206,145,111)"></stop>
+<stop offset="57.99999999999999%" stop-color="rgb(205,143,108)"></stop>
+<stop offset="59%" stop-color="rgb(204,141,106)"></stop>
+<stop offset="60%" stop-color="rgb(204,139,104)"></stop>
+<stop offset="61%" stop-color="rgb(203,138,101)"></stop>
+<stop offset="62%" stop-color="rgb(203,136,99)"></stop>
+<stop offset="63%" stop-color="rgb(202,134,96)"></stop>
+<stop offset="64%" stop-color="rgb(202,133,94)"></stop>
+<stop offset="65%" stop-color="rgb(201,131,92)"></stop>
+<stop offset="66%" stop-color="rgb(200,129,89)"></stop>
+<stop offset="67%" stop-color="rgb(200,127,87)"></stop>
+<stop offset="68%" stop-color="rgb(199,126,84)"></stop>
+<stop offset="69%" stop-color="rgb(199,124,82)"></stop>
+<stop offset="70%" stop-color="rgb(198,122,80)"></stop>
+<stop offset="71%" stop-color="rgb(198,121,77)"></stop>
+<stop offset="72%" stop-color="rgb(197,119,75)"></stop>
+<stop offset="73%" stop-color="rgb(196,117,73)"></stop>
+<stop offset="74%" stop-color="rgb(196,115,70)"></stop>
+<stop offset="75%" stop-color="rgb(195,114,68)"></stop>
+<stop offset="76%" stop-color="rgb(195,112,65)"></stop>
+<stop offset="77%" stop-color="rgb(194,110,63)"></stop>
+<stop offset="78%" stop-color="rgb(194,109,61)"></stop>
+<stop offset="79%" stop-color="rgb(193,107,58)"></stop>
+<stop offset="80%" stop-color="rgb(192,105,56)"></stop>
+<stop offset="81%" stop-color="rgb(192,103,53)"></stop>
+<stop offset="82%" stop-color="rgb(191,102,51)"></stop>
+<stop offset="83%" stop-color="rgb(191,100,49)"></stop>
+<stop offset="84%" stop-color="rgb(190,98,46)"></stop>
+<stop offset="85%" stop-color="rgb(190,97,44)"></stop>
+<stop offset="86%" stop-color="rgb(189,95,41)"></stop>
+<stop offset="87%" stop-color="rgb(188,93,39)"></stop>
+<stop offset="88%" stop-color="rgb(188,92,37)"></stop>
+<stop offset="89%" stop-color="rgb(187,90,34)"></stop>
+<stop offset="90%" stop-color="rgb(187,88,32)"></stop>
+<stop offset="91%" stop-color="rgb(186,86,30)"></stop>
+<stop offset="92%" stop-color="rgb(186,85,27)"></stop>
+<stop offset="93%" stop-color="rgb(185,83,25)"></stop>
+<stop offset="94%" stop-color="rgb(184,81,22)"></stop>
+<stop offset="95%" stop-color="rgb(184,80,20)"></stop>
+<stop offset="96%" stop-color="rgb(183,78,18)"></stop>
+<stop offset="97%" stop-color="rgb(183,76,15)"></stop>
+<stop offset="98%" stop-color="rgb(182,74,13)"></stop>
+<stop offset="99%" stop-color="rgb(182,73,10)"></stop>
+<stop offset="100%" stop-color="rgb(181,71,8)"></stop>
+</linearGradient>
+</defs>
+<style ><![CDATA[
+.zr3-cls-83:hover {
+pointer-events:none;
+}
+.zr3-cls-84:hover {
+cursor:pointer;
+fill:rgba(248,227,217,1);
+}
+.zr3-cls-85:hover {
+cursor:pointer;
+fill:rgba(239,200,179,1);
+}
+.zr3-cls-86:hover {
+cursor:pointer;
+fill:rgba(251,235,228,1);
+}
+.zr3-cls-87:hover {
+cursor:pointer;
+fill:rgba(217,133,84,1);
+}
+.zr3-cls-88:hover {
+cursor:pointer;
+fill:rgba(227,165,129,1);
+}
+.zr3-cls-89:hover {
+cursor:pointer;
+fill:rgba(237,193,169,1);
+}
+.zr3-cls-90:hover {
+cursor:pointer;
+fill:rgba(238,195,173,1);
+}
+.zr3-cls-91:hover {
+cursor:pointer;
+fill:rgba(243,209,191,1);
+}
+.zr3-cls-92:hover {
+cursor:pointer;
+fill:rgba(246,220,207,1);
+}
+.zr3-cls-93:hover {
+cursor:pointer;
+fill:rgba(255,247,245,1);
+}
+.zr3-cls-94:hover {
+cursor:pointer;
+fill:rgba(255,248,246,1);
+}
+.zr3-cls-95:hover {
+cursor:pointer;
+fill:rgba(220,141,97,1);
+}
+.zr3-cls-96:hover {
+cursor:pointer;
+fill:rgba(227,162,127,1);
+}
+.zr3-cls-97:hover {
+cursor:pointer;
+fill:rgba(225,158,119,1);
+}
+.zr3-cls-98:hover {
+cursor:pointer;
+fill:rgba(199,78,8,1);
+}
+.zr3-cls-99:hover {
+cursor:pointer;
+fill:rgba(233,181,154,1);
+}
+.zr3-cls-100:hover {
+cursor:pointer;
+fill:rgba(218,137,91,1);
+}
+.zr3-cls-101:hover {
+cursor:pointer;
+fill:rgba(217,135,89,1);
+}
+.zr3-cls-102:hover {
+cursor:pointer;
+fill:rgba(216,132,83,1);
+}
+.zr3-cls-103:hover {
+cursor:pointer;
+fill:rgba(239,199,177,1);
+}
+.zr3-cls-104:hover {
+cursor:pointer;
+fill:rgba(239,201,180,1);
+}
+.zr3-cls-105:hover {
+cursor:pointer;
+fill:rgba(240,204,185,1);
+}
+.zr3-cls-106 {
+animation:zr3-ani-0 0.35s cubic-bezier(0.65,0,0.35,1) both;
+}
+.zr3-cls-107:hover {
+cursor:pointer;
+fill:rgba(255,255,255,1);
+}
+.zr3-cls-108 {
+animation:zr3-ani-1 0.35s cubic-bezier(0.65,0,0.35,1) both;
+}
+.zr3-cls-109 {
+animation:zr3-ani-2 0.35s cubic-bezier(0.65,0,0.35,1) both;
+}
+.zr3-cls-110:hover {
+cursor:pointer;
+fill:rgba(0,0,0,1);
+}
+.zr3-cls-111:hover {
+cursor:pointer;
+fill:[object Object];
+}
+.zr3-cls-112:hover {
+cursor:pointer;
+fill:[object Object];
+}
+@keyframes zr3-ani-0 {
+0% {
+opacity:0;
+}
+100% {
+opacity:0.8;
+}
+}
+@keyframes zr3-ani-1 {
+0% {
+opacity:0;
+}
+100% {
+opacity:0.8;
+}
+}
+@keyframes zr3-ani-2 {
+0% {
+opacity:0;
+}
+100% {
+opacity:0.8;
+}
+}
+]]>
+
+</style>
+</svg>

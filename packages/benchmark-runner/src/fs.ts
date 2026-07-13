@@ -14,6 +14,15 @@ export interface SizeSummary {
 const jsExtensions = new Set(['.js', '.mjs', '.cjs'])
 const templateExtensions = new Set(['.wxml', '.axml', '.ttml', '.swan'])
 const styleExtensions = new Set(['.wxss', '.css', '.acss', '.ttss'])
+const invisibleTerminalFormatting = /[\u200B-\u200D\u2060\uFEFF]/g
+
+export function sanitizeTerminalOutput(value: string) {
+  return value.replace(invisibleTerminalFormatting, '')
+}
+
+export function normalizeGeneratedText(value: string) {
+  return `${value.replace(/[\t ]+$/gm, '').trimEnd()}\n`
+}
 
 export async function removeDir(dir: string) {
   await rm(dir, { recursive: true, force: true })

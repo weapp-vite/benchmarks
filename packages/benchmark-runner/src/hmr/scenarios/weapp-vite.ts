@@ -111,7 +111,10 @@ export const weappViteHmrScenarios: HmrScenario[] = [
     readyPattern: weappViteReadyPattern,
     outputFiles: ['dist/pages/index/index.js'],
     sourceFile: `${nativePageBase}.js`,
-    applyMarker: (source, marker) => `${source.trimEnd()}\n// hmr-js-marker: ${marker}\n`,
+    applyMarker: (source, marker) => source.replace(
+      'Page({\n  data:',
+      `Page({\n  __hmrMarker: '${marker}',\n\n  data:`,
+    ),
   },
   {
     id: 'native-wxml',

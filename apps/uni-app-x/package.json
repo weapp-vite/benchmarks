@@ -11,7 +11,7 @@
     "hbuilderx:launch:mp-weixin": "uni-launch mp-weixin --runtime-log true --project $PWD",
     "hbuilderx:logcat:mp-weixin": "uni-logcat mp-weixin --project $PWD",
     "lint": "eslint .",
-    "test:hbuilderx:mp-weixin": "uni-launch mp-weixin --compile true --project $PWD",
+    "test:hbuilderx:mp-weixin": "hbuilderx project open --path $PWD && uni-launch mp-weixin --compile true --project uni-app-x",
     "typecheck": "vue-tsc --noEmit -p tsconfig.json",
     "up:pkg": "pnpm up -rLi \"!@dcloudio/*\"",
     "up:uniapp": "pnpx @dcloudio/uvm@latest"
@@ -31,6 +31,7 @@
     "@dcloudio/uni-mp-lark": "3.0.0-5010520260709002",
     "@dcloudio/uni-mp-qq": "3.0.0-5010520260709002",
     "@dcloudio/uni-mp-toutiao": "3.0.0-5010520260709002",
+    "@dcloudio/uni-mp-vue": "3.0.0-5010520260709002",
     "@dcloudio/uni-mp-weixin": "3.0.0-5010520260709002",
     "@dcloudio/uni-mp-xhs": "3.0.0-5010520260709002",
     "@dcloudio/uni-quickapp-webview": "3.0.0-5010520260709002",

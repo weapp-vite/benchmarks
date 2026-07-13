@@ -3,13 +3,11 @@ import {
   appendScriptMarker,
   appendStyleMarker,
   insertTemplateMarker,
-  updateSingleQuotedValue,
 } from './shared'
 
 const uniPage = 'src/pages/index/index.vue'
 const taroPage = 'src/pages/index/index.vue'
 const taroStyle = 'src/pages/index/index.css'
-const taroPageConfig = 'src/pages/index/index.config.ts'
 const mpxPage = 'src/pages/index.mpx'
 
 const uniPageOutputBase = 'dist/dev/mp-weixin/pages/index/index'
@@ -19,7 +17,7 @@ const mpxPageOutputBase = 'dist/wx/pages/index'
 function appendMpxScriptMarker(source: string, marker: string) {
   return source.replace(
     '</script>\n\n<script type="application/json">',
-    `\nconst __hmrScriptMarker = '${marker}'\n</script>\n\n<script type="application/json">`,
+    `\nconsole.debug('hmr-script-marker: ${marker}')\n</script>\n\n<script type="application/json">`,
   )
 }
 
@@ -96,7 +94,7 @@ export const frameworkHmrScenarios: HmrScenario[] = [
     projectLabel: 'taro vue3',
     appDir: 'apps/taro-vue3',
     collector: 'artifact',
-    outputFiles: [`${taroPageOutputBase}.wxml`],
+    outputFiles: [`${taroPageOutputBase}.js`],
     sourceFile: taroPage,
     applyMarker: insertTemplateMarker,
   },
@@ -111,18 +109,6 @@ export const frameworkHmrScenarios: HmrScenario[] = [
     outputFiles: [`${taroPageOutputBase}.wxss`],
     sourceFile: taroStyle,
     applyMarker: (source, marker) => `${source.trimEnd()}\n.hmr-style-marker-${marker} { color: #123456; }\n`,
-  },
-  {
-    id: 'taro-vue3-page-config',
-    label: 'taro vue3 / 页面配置',
-    group: 'vue-sfc',
-    project: 'taro-vue3',
-    projectLabel: 'taro vue3',
-    appDir: 'apps/taro-vue3',
-    collector: 'artifact',
-    outputFiles: [`${taroPageOutputBase}.json`],
-    sourceFile: taroPageConfig,
-    applyMarker: (source, marker) => updateSingleQuotedValue(source, 'navigationBarTitleText', `taro vue3 ${marker}`),
   },
   {
     id: 'mpx-template',

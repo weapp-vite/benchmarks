@@ -18,6 +18,7 @@ import { repoRoot } from './projects'
 import { createMachineEnvironment } from './reports/environment'
 
 const defaultTimeoutMs = 90_000
+const defaultIterationAttempts = 2
 
 function sleep(ms: number) {
   return new Promise(resolve => setTimeout(resolve, ms))
@@ -37,12 +38,28 @@ function groupByProject(scenarios: HmrScenario[]) {
   return [...groups.values()]
 }
 
+function selectedScenarios() {
+  const projectIds = process.env['BENCH_HMR_PROJECTS']
+    ?.split(',')
+    .map(value => value.trim())
+    .filter(Boolean)
+  if (!projectIds?.length) {
+    return hmrScenarios
+  }
+  const selected = hmrScenarios.filter(scenario => projectIds.includes(scenario.project))
+  if (!selected.length) {
+    throw new Error(`BENCH_HMR_PROJECTS 未匹配任何项目：${projectIds.join(', ')}`)
+  }
+  return selected
+}
+
 function createFailedSample(options: {
   scenario: HmrScenario
   iteration: number
+  attempts: number
   error: unknown
 }): HmrSample {
-  const { scenario, iteration, error } = options
+  const { scenario, iteration, attempts, error } = options
   return {
     scenario: scenario.id,
     label: scenario.label,
@@ -51,6 +68,7 @@ function createFailedSample(options: {
     projectLabel: scenario.projectLabel,
     collector: scenario.collector,
     iteration,
+    attempts,
     sourceFile: scenario.sourceFile,
     ok: false,
     error: normalizeError(error),
@@ -60,9 +78,10 @@ function createFailedSample(options: {
 function createSampleFromArtifact(options: {
   scenario: HmrScenario
   iteration: number
+  attempts: number
   wallMs: number
 }): HmrSample {
-  const { scenario, iteration, wallMs } = options
+  const { scenario, iteration, attempts, wallMs } = options
   return {
     scenario: scenario.id,
     label: scenario.label,
@@ -71,6 +90,7 @@ function createSampleFromArtifact(options: {
     projectLabel: scenario.projectLabel,
     collector: scenario.collector,
     iteration,
+    attempts,
     sourceFile: scenario.sourceFile,
     ok: true,
     wallMs,
@@ -107,8 +127,9 @@ async function runScenario(options: {
   iterations: number
   timeoutMs: number
   pollIntervalMs: number
+  iterationAttempts: number
 }) {
-  const { scenario, iterations, timeoutMs, pollIntervalMs } = options
+  const { scenario, iterations, timeoutMs, pollIntervalMs, iterationAttempts } = options
   const sourcePath = path.join(repoRoot, scenario.appDir, scenario.sourceFile)
   const originalSource = await readFile(sourcePath, 'utf8')
   const samples: HmrSample[] = []
@@ -117,21 +138,38 @@ async function runScenario(options: {
   try {
     for (let iteration = 1; iteration <= iterations; iteration += 1) {
       process.stdout.write(`[hmr] ${scenario.label}: iteration ${iteration}\n`)
-      const marker = `${scenario.id}-${iteration}-${Date.now().toString(36)}`
-      const nextSource = scenario.applyMarker(originalSource, marker)
-      const beforeArtifacts = await snapshotArtifacts(outputFiles)
-      const started = performance.now()
-      try {
-        await writeFile(sourcePath, nextSource, 'utf8')
-        await waitForArtifactChange(beforeArtifacts, timeoutMs, pollIntervalMs)
-        samples.push(createSampleFromArtifact({
+      let lastError: unknown
+      for (let attempt = 1; attempt <= iterationAttempts; attempt += 1) {
+        const marker = `${scenario.id}-${iteration}-${attempt}-${Date.now().toString(36)}`
+        const nextSource = scenario.applyMarker(originalSource, marker)
+        const beforeArtifacts = await snapshotArtifacts(outputFiles)
+        const started = performance.now()
+        try {
+          await writeFile(sourcePath, nextSource, 'utf8')
+          await waitForArtifactChange(beforeArtifacts, timeoutMs, pollIntervalMs, marker)
+          samples.push(createSampleFromArtifact({
+            scenario,
+            iteration,
+            attempts: attempt,
+            wallMs: performance.now() - started,
+          }))
+          lastError = undefined
+          break
+        }
+        catch (error) {
+          lastError = error
+          if (attempt < iterationAttempts) {
+            process.stdout.write(`[hmr] ${scenario.label}: iteration ${iteration} retry ${attempt + 1}\n`)
+          }
+        }
+      }
+      if (lastError) {
+        samples.push(createFailedSample({
           scenario,
           iteration,
-          wallMs: performance.now() - started,
+          attempts: iterationAttempts,
+          error: lastError,
         }))
-      }
-      catch (error) {
-        samples.push(createFailedSample({ scenario, iteration, error }))
       }
       await sleep(100)
     }
@@ -148,8 +186,9 @@ async function runProjectScenarios(options: {
   iterations: number
   timeoutMs: number
   pollIntervalMs: number
+  iterationAttempts: number
 }) {
-  const { scenarios, iterations, timeoutMs, pollIntervalMs } = options
+  const { scenarios, iterations, timeoutMs, pollIntervalMs, iterationAttempts } = options
   const project = scenarios[0]
   if (!project) {
     return []
@@ -179,7 +218,7 @@ async function runProjectScenarios(options: {
     const samples: HmrSample[] = []
     for (const scenario of scenarios) {
       samples.push(...await dev.waitFor(
-        runScenario({ scenario, iterations, timeoutMs, pollIntervalMs }),
+        runScenario({ scenario, iterations, timeoutMs, pollIntervalMs, iterationAttempts }),
         `${scenario.label} HMR`,
       ))
     }
@@ -196,16 +235,20 @@ async function runHmrBenchmark() {
   const pollIntervalMs = Number(
     process.env['BENCH_HMR_POLL_INTERVAL'] ?? defaultArtifactChangePollIntervalMs,
   )
+  const iterationAttempts = Number(
+    process.env['BENCH_HMR_ITERATION_ATTEMPTS'] ?? defaultIterationAttempts,
+  )
   const reportDir = path.join(repoRoot, 'reports/hmr')
   await ensureDir(reportDir)
 
   const samples: HmrSample[] = []
-  for (const scenarios of groupByProject(hmrScenarios)) {
+  for (const scenarios of groupByProject(selectedScenarios())) {
     samples.push(...await runProjectScenarios({
       scenarios,
       iterations,
       timeoutMs,
       pollIntervalMs,
+      iterationAttempts,
     }))
   }
 
@@ -218,12 +261,17 @@ async function runHmrBenchmark() {
       '所有项目统一使用 dev/watch 模式下“写入源文件到目标小程序产物更新”的墙钟耗时。',
       '本报告不使用 weapp-vite 内部 profile；阶段列没有统一可比数据时显示为 -。',
       '每个场景连续写入不同 marker 触发热更新，场景结束后恢复源码。',
-      'Vue SFC 场景拆分 script、template、style 和页面配置；原生场景拆分 JS、WXML、WXSS、JSON 文件；Mpx 拆分 template、script、style 和页面配置。',
+      'Vue SFC 场景按 watch 链路实际支持情况覆盖 script、template、style 和页面配置；原生场景拆分 JS、WXML、WXSS、JSON 文件；Mpx 拆分 template、script、style 和页面配置。',
+      'Taro watch 模式不会因页面 .config.ts 变化重新生成页面 JSON，因此该格按不支持处理并显示为 N/A。',
       '@vue-mini/core 是原生小程序运行时对比项，没有独立编译/watch 链路，因此不纳入 HMR 排名。',
       `HMR 等待超时默认是 ${defaultTimeoutMs}ms，可通过 BENCH_HMR_TIMEOUT 覆盖。`,
       `HMR 产物变化轮询间隔默认是 ${defaultArtifactChangePollIntervalMs}ms，可通过 BENCH_HMR_POLL_INTERVAL 覆盖。`,
+      `HMR 单轮最多尝试 ${iterationAttempts} 次，重试会写入 attempts 字段；可通过 BENCH_HMR_ITERATION_ATTEMPTS 覆盖。`,
     ],
   })
+  if (samples.some(sample => !sample.ok)) {
+    process.exitCode = 1
+  }
 }
 
 runHmrBenchmark().catch((error) => {

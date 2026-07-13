@@ -2,6 +2,30 @@
 
 这个仓库用于对比多种小程序技术栈在构建、运行时、HMR 和包体积维度的表现。当前覆盖的测试项目包括 `weapp-vite + wevu`、`weapp-vite` 原生、uni-app、uni-app x、Mpx、Taro 和 `@vue-mini/core`。
 
+## 最新测试总览
+
+[打开 ECharts 交互式报告](https://weapp-vite.github.io/benchmarks/) · [查看聚合数据](reports/dashboard/latest.json) · [查看全量验证结果](reports/verification/latest.md)
+
+![小程序框架跨维度性能指数](reports/dashboard/overview.svg)
+
+### 编译性能
+
+![小程序框架编译性能](reports/dashboard/compile.svg)
+
+### 运行时性能
+
+![小程序框架运行时性能](reports/dashboard/runtime.svg)
+
+### HMR 性能
+
+![小程序框架 HMR 性能](reports/dashboard/hmr.svg)
+
+`N/A` 表示对应 watch 链路不支持或没有该类场景。Taro 的页面 `.config.ts` 变化不会在 watch 模式下重新生成页面 JSON，因此不作为 HMR 成功样本。
+
+### 产物体积
+
+![小程序框架产物体积](reports/dashboard/size.svg)
+
 ## 目录结构
 
 | 路径                         | 说明                                 |
@@ -34,7 +58,7 @@
 WECHAT_DEVTOOLS_CLI=/path/to/wechat/devtools/cli pnpm bench:runtime
 ```
 
-uni-app x 的构建和 `pnpm test:hbuilderx:uni-app-x` 会调用 HBuilderX CLI。安装 HBuilderX 后，请确保 `hbuilderx`、`uni`、`uni-launch`、`uni-logcat` 等命令可用；如果没有配置到 `PATH`，需要先按 HBuilderX 的本机安装方式补齐命令路径。
+uni-app x 的构建和 `pnpm test:hbuilderx:uni-app-x` 会调用 HBuilderX CLI。测试脚本会先把项目导入 HBuilderX，再按项目名执行微信小程序编译。安装 HBuilderX 后，请确保 `hbuilderx`、`uni`、`uni-launch`、`uni-logcat` 等命令可用；如果没有配置到 `PATH`，需要先按 HBuilderX 的本机安装方式补齐命令路径。
 
 ## 安装
 
@@ -114,6 +138,20 @@ pnpm bench:hmr
 pnpm bench:size:wevu
 ```
 
+体积命令会先重建 wevu、performance preset、原生和 uni-app 四个输入项目，因此可以在 HMR 或其他会清理 `dist/` 的任务之后独立执行。
+
+重新执行完整验证、HBuilderX smoke、四类基准测试并刷新所有图表：
+
+```bash
+pnpm report:refresh
+```
+
+只根据已有的 `reports/**/latest.json` 重新生成 ECharts 页面和 README SVG：
+
+```bash
+pnpm report:dashboard
+```
+
 uni-app x 的 HBuilderX 测试入口：
 
 ```bash
@@ -139,16 +177,18 @@ pnpm build
 
 可用环境变量：
 
-| 变量                              | 说明                                         |
-| --------------------------------- | -------------------------------------------- |
-| `WECHAT_DEVTOOLS_CLI`             | 指定微信开发者工具 CLI 路径                  |
-| `BENCH_RUNTIME_ITERATIONS`        | 每个项目的采样轮数，默认 20                  |
-| `BENCH_RUNTIME_PROJECTS`          | 只采集指定项目，多个项目用逗号分隔，适合调试 |
-| `BENCH_RUNTIME_TIMEOUT`           | DevTools 启动超时                            |
-| `BENCH_RUNTIME_LAUNCH_RETRIES`    | DevTools 启动重试次数                        |
-| `BENCH_RUNTIME_METRICS_TIMEOUT`   | 单次等待指标输出的超时                       |
-| `BENCH_RUNTIME_ITERATION_RETRIES` | 单轮采样失败后的重试次数                     |
-| `BENCH_RUNTIME_RELAUNCH_RETRIES`  | 页面 `reLaunch` 重试次数                     |
+| 变量                              | 说明                                              |
+| --------------------------------- | ------------------------------------------------- |
+| `WECHAT_DEVTOOLS_CLI`             | 指定微信开发者工具 CLI 路径                       |
+| `BENCH_RUNTIME_ITERATIONS`        | 每个项目的采样轮数，默认 20                       |
+| `BENCH_RUNTIME_PROJECTS`          | 只采集指定项目，多个项目用逗号分隔，适合调试      |
+| `BENCH_RUNTIME_TIMEOUT`           | DevTools 启动超时                                 |
+| `BENCH_RUNTIME_LAUNCH_RETRIES`    | DevTools 启动重试次数                             |
+| `BENCH_RUNTIME_METRICS_TIMEOUT`   | 单次等待指标输出的超时                            |
+| `BENCH_RUNTIME_ITERATION_RETRIES` | 单轮采样失败后的重试次数                          |
+| `BENCH_RUNTIME_RELAUNCH_RETRIES`  | 页面 `reLaunch` 重试次数                          |
+| `BENCH_HMR_ITERATION_ATTEMPTS`    | HMR 单轮等待产物 marker 的最大尝试次数，默认 2    |
+| `BENCH_HMR_PROJECTS`              | 只采集指定 HMR 项目，多个项目用逗号分隔，适合调试 |
 
 只调试某几个项目时可以使用：
 
@@ -166,6 +206,9 @@ BENCH_RUNTIME_PROJECTS=mpx,vue-mini-core BENCH_RUNTIME_ITERATIONS=1 pnpm exec ts
 - 运行时性能：`reports/runtime/latest.md`
 - HMR 性能：`reports/hmr/latest.md`
 - wevu 体积分析：`reports/size/wevu-analysis.md`
+- 全量验证：`reports/verification/latest.md`
+- 聚合数据：`reports/dashboard/latest.json`
+- ECharts 页面：`reports/dashboard/index.html`
 
 按机器归档的报告放在对应的 `reports/**/machines/<machine-id>/` 目录下。不同机器之间的结果只能作为趋势参考，直接比较应优先使用同一机器 ID 下的历史报告。
 
