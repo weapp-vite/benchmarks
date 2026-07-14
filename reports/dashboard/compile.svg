@@ -2,41 +2,47 @@
 <rect width="1120" height="760" x="0" y="0" fill="#ffffff"></rect>
 <text dominant-baseline="central" text-anchor="start" style="font-size:14px;font-family:sans-serif;font-weight:500;" y="7" transform="translate(24 110)" fill="#20242b">平均构建耗时</text>
 <text dominant-baseline="central" text-anchor="start" style="font-size:14px;font-family:sans-serif;font-weight:500;" y="7" transform="translate(24 430)" fill="#20242b">平均产物体积</text>
-<path d="M230.5 110L230.5 340" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr1-cls-34"></path>
-<path d="M430.5 110L430.5 340" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr1-cls-34"></path>
-<path d="M630.5 110L630.5 340" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr1-cls-34"></path>
-<path d="M830.5 110L830.5 340" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr1-cls-34"></path>
-<path d="M1030.5 110L1030.5 340" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr1-cls-34"></path>
-<path d="M230.5 430L230.5 660" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr1-cls-34"></path>
-<path d="M363.5 430L363.5 660" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr1-cls-34"></path>
-<path d="M496.5 430L496.5 660" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr1-cls-34"></path>
-<path d="M630.5 430L630.5 660" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr1-cls-34"></path>
-<path d="M763.5 430L763.5 660" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr1-cls-34"></path>
-<path d="M896.5 430L896.5 660" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr1-cls-34"></path>
-<path d="M1030.5 430L1030.5 660" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr1-cls-34"></path>
-<path d="M230.5 110L230.5 340" fill="none" pointer-events="visible" stroke="#d9dee8" stroke-linecap="round" class="zr1-cls-34"></path>
-<path d="M230.5 430L230.5 660" fill="none" pointer-events="visible" stroke="#d9dee8" stroke-linecap="round" class="zr1-cls-34"></path>
+<path d="M230.5 110L230.5 340" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr1-cls-35"></path>
+<path d="M344.5 110L344.5 340" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr1-cls-35"></path>
+<path d="M458.5 110L458.5 340" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr1-cls-35"></path>
+<path d="M573.5 110L573.5 340" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr1-cls-35"></path>
+<path d="M687.5 110L687.5 340" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr1-cls-35"></path>
+<path d="M801.5 110L801.5 340" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr1-cls-35"></path>
+<path d="M915.5 110L915.5 340" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr1-cls-35"></path>
+<path d="M1030.5 110L1030.5 340" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr1-cls-35"></path>
+<path d="M230.5 430L230.5 660" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr1-cls-35"></path>
+<path d="M363.5 430L363.5 660" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr1-cls-35"></path>
+<path d="M496.5 430L496.5 660" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr1-cls-35"></path>
+<path d="M630.5 430L630.5 660" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr1-cls-35"></path>
+<path d="M763.5 430L763.5 660" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr1-cls-35"></path>
+<path d="M896.5 430L896.5 660" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr1-cls-35"></path>
+<path d="M1030.5 430L1030.5 660" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr1-cls-35"></path>
+<path d="M230.5 110L230.5 340" fill="none" pointer-events="visible" stroke="#d9dee8" stroke-linecap="round" class="zr1-cls-35"></path>
+<path d="M230.5 430L230.5 660" fill="none" pointer-events="visible" stroke="#d9dee8" stroke-linecap="round" class="zr1-cls-35"></path>
 <text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Arial, sans-serif;" transform="translate(1045 340)" fill="#667085">毫秒</text>
 <text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Arial, sans-serif;" transform="translate(1045 660)" fill="#667085">KB</text>
 <text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(222 126.4286)" fill="#667085">weapp-vite 原生</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(222 159.2857)" fill="#667085">weapp-vite + wevu</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(222 192.1429)" fill="#667085">weapp-vite + wevu performance</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(222 159.2857)" fill="#667085">weapp-vite + wevu performance</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(222 192.1429)" fill="#667085">weapp-vite + wevu</text>
 <text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Arial, sans-serif;" transform="translate(222 225)" fill="#667085">mpx</text>
 <text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(222 257.8571)" fill="#667085">uni-app vite vue3</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(222 290.7143)" fill="#667085">uni-app x</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(222 323.5714)" fill="#667085">taro vue3</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(222 290.7143)" fill="#667085">taro vue3</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(222 323.5714)" fill="#667085">uni-app x</text>
 <text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(222 446.4286)" fill="#667085">weapp-vite 原生</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(222 479.2857)" fill="#667085">weapp-vite + wevu</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(222 512.1429)" fill="#667085">weapp-vite + wevu performance</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(222 479.2857)" fill="#667085">weapp-vite + wevu performance</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(222 512.1429)" fill="#667085">weapp-vite + wevu</text>
 <text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Arial, sans-serif;" transform="translate(222 545)" fill="#667085">mpx</text>
 <text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(222 577.8571)" fill="#667085">uni-app vite vue3</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(222 610.7143)" fill="#667085">uni-app x</text>
-<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(222 643.5714)" fill="#667085">taro vue3</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(222 610.7143)" fill="#667085">taro vue3</text>
+<text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(222 643.5714)" fill="#667085">uni-app x</text>
 <text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" y="6" transform="translate(230 348)" fill="#667085">0</text>
-<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" y="6" transform="translate(430 348)" fill="#667085">1,000</text>
-<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" y="6" transform="translate(630 348)" fill="#667085">2,000</text>
-<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" y="6" transform="translate(830 348)" fill="#667085">3,000</text>
-<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" y="6" transform="translate(1030 348)" fill="#667085">4,000</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" y="6" transform="translate(344.2857 348)" fill="#667085">500</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" y="6" transform="translate(458.5714 348)" fill="#667085">1,000</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" y="6" transform="translate(572.8571 348)" fill="#667085">1,500</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" y="6" transform="translate(687.1429 348)" fill="#667085">2,000</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" y="6" transform="translate(801.4286 348)" fill="#667085">2,500</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" y="6" transform="translate(915.7143 348)" fill="#667085">3,000</text>
+<text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" y="6" transform="translate(1030 348)" fill="#667085">3,500</text>
 <text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" y="6" transform="translate(230 668)" fill="#667085">0</text>
 <text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" y="6" transform="translate(363.3333 668)" fill="#667085">200</text>
 <text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" y="6" transform="translate(496.6667 668)" fill="#667085">400</text>
@@ -44,89 +50,89 @@
 <text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" y="6" transform="translate(763.3333 668)" fill="#667085">800</text>
 <text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" y="6" transform="translate(896.6667 668)" fill="#667085">1,000</text>
 <text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" y="6" transform="translate(1030 668)" fill="#667085">1,200</text>
-<path d="M230 115.1l182.6 0l0 22.7l-182.6 0Z" fill="#1769aa" ecmeta_series_index="0" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr1-cls-35 zr1-cls-36"></path>
-<path d="M230 148l201.2 0l0 22.7l-201.2 0Z" fill="#1769aa" ecmeta_series_index="0" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr1-cls-37 zr1-cls-36"></path>
-<path d="M230 180.8l201.8 0l0 22.7l-201.8 0Z" fill="#1769aa" ecmeta_series_index="0" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr1-cls-38 zr1-cls-36"></path>
-<path d="M230 213.7l360.6 0l0 22.7l-360.6 0Z" fill="#1769aa" ecmeta_series_index="0" ecmeta_data_index="3" ecmeta_ssr_type="chart" class="zr1-cls-39 zr1-cls-36"></path>
-<path d="M230 246.5l489.9 0l0 22.7l-489.9 0Z" fill="#1769aa" ecmeta_series_index="0" ecmeta_data_index="4" ecmeta_ssr_type="chart" class="zr1-cls-40 zr1-cls-36"></path>
-<path d="M230 279.4l560.8 0l0 22.7l-560.8 0Z" fill="#1769aa" ecmeta_series_index="0" ecmeta_data_index="5" ecmeta_ssr_type="chart" class="zr1-cls-41 zr1-cls-36"></path>
-<path d="M230 312.2l703.2 0l0 22.7l-703.2 0Z" fill="#1769aa" ecmeta_series_index="0" ecmeta_data_index="6" ecmeta_ssr_type="chart" class="zr1-cls-42 zr1-cls-36"></path>
-<path d="M230 435.1l5.8 0l0 22.7l-5.8 0Z" fill="#2a9d8f" ecmeta_series_index="1" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr1-cls-43 zr1-cls-44"></path>
-<path d="M230 468l132.6 0l0 22.7l-132.6 0Z" fill="#2a9d8f" ecmeta_series_index="1" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr1-cls-45 zr1-cls-44"></path>
-<path d="M230 500.8l133.2 0l0 22.7l-133.2 0Z" fill="#2a9d8f" ecmeta_series_index="1" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr1-cls-46 zr1-cls-44"></path>
-<path d="M230 533.7l758.4 0l0 22.7l-758.4 0Z" fill="#2a9d8f" ecmeta_series_index="1" ecmeta_data_index="3" ecmeta_ssr_type="chart" class="zr1-cls-47 zr1-cls-44"></path>
-<path d="M230 566.5l88.2 0l0 22.7l-88.2 0Z" fill="#2a9d8f" ecmeta_series_index="1" ecmeta_data_index="4" ecmeta_ssr_type="chart" class="zr1-cls-48 zr1-cls-44"></path>
-<path d="M230 599.4l66.6 0l0 22.7l-66.6 0Z" fill="#2a9d8f" ecmeta_series_index="1" ecmeta_data_index="5" ecmeta_ssr_type="chart" class="zr1-cls-49 zr1-cls-44"></path>
-<path d="M230 632.2l147.6 0l0 22.7l-147.6 0Z" fill="#2a9d8f" ecmeta_series_index="1" ecmeta_data_index="6" ecmeta_ssr_type="chart" class="zr1-cls-50 zr1-cls-44"></path>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(417.64 126.4286)" fill="#20242b">913.2 ms</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(436.2 159.2857)" fill="#20242b">1006 ms</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(436.82 192.1429)" fill="#20242b">1009.1 ms</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(595.64 225)" fill="#20242b">1803.2 ms</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(724.92 257.8571)" fill="#20242b">2449.6 ms</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(795.82 290.7143)" fill="#20242b">2804.1 ms</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(938.2 323.5714)" fill="#20242b">3516 ms</text>
+<path d="M230 115.1l211.5 0l0 22.7l-211.5 0Z" fill="#1769aa" ecmeta_series_index="0" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr1-cls-36 zr1-cls-37"></path>
+<path d="M230 148l236.6 0l0 22.7l-236.6 0Z" fill="#1769aa" ecmeta_series_index="0" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr1-cls-38 zr1-cls-37"></path>
+<path d="M230 180.8l250.6 0l0 22.7l-250.6 0Z" fill="#1769aa" ecmeta_series_index="0" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr1-cls-39 zr1-cls-37"></path>
+<path d="M230 213.7l394.4 0l0 22.7l-394.4 0Z" fill="#1769aa" ecmeta_series_index="0" ecmeta_data_index="3" ecmeta_ssr_type="chart" class="zr1-cls-40 zr1-cls-37"></path>
+<path d="M230 246.5l596.9 0l0 22.7l-596.9 0Z" fill="#1769aa" ecmeta_series_index="0" ecmeta_data_index="4" ecmeta_ssr_type="chart" class="zr1-cls-41 zr1-cls-37"></path>
+<path d="M230 279.4l648 0l0 22.7l-648 0Z" fill="#1769aa" ecmeta_series_index="0" ecmeta_data_index="5" ecmeta_ssr_type="chart" class="zr1-cls-42 zr1-cls-37"></path>
+<path d="M230 312.2l697.7 0l0 22.7l-697.7 0Z" fill="#1769aa" ecmeta_series_index="0" ecmeta_data_index="6" ecmeta_ssr_type="chart" class="zr1-cls-43 zr1-cls-37"></path>
+<path d="M230 435.1l5.8 0l0 22.7l-5.8 0Z" fill="#2a9d8f" ecmeta_series_index="1" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr1-cls-44 zr1-cls-45"></path>
+<path d="M230 468l133.2 0l0 22.7l-133.2 0Z" fill="#2a9d8f" ecmeta_series_index="1" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr1-cls-46 zr1-cls-45"></path>
+<path d="M230 500.8l132.6 0l0 22.7l-132.6 0Z" fill="#2a9d8f" ecmeta_series_index="1" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr1-cls-47 zr1-cls-45"></path>
+<path d="M230 533.7l758.4 0l0 22.7l-758.4 0Z" fill="#2a9d8f" ecmeta_series_index="1" ecmeta_data_index="3" ecmeta_ssr_type="chart" class="zr1-cls-48 zr1-cls-45"></path>
+<path d="M230 566.5l88.2 0l0 22.7l-88.2 0Z" fill="#2a9d8f" ecmeta_series_index="1" ecmeta_data_index="4" ecmeta_ssr_type="chart" class="zr1-cls-49 zr1-cls-45"></path>
+<path d="M230 599.4l147.6 0l0 22.7l-147.6 0Z" fill="#2a9d8f" ecmeta_series_index="1" ecmeta_data_index="5" ecmeta_ssr_type="chart" class="zr1-cls-50 zr1-cls-45"></path>
+<path d="M230 632.2l66.6 0l0 22.7l-66.6 0Z" fill="#2a9d8f" ecmeta_series_index="1" ecmeta_data_index="6" ecmeta_ssr_type="chart" class="zr1-cls-51 zr1-cls-45"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(446.5429 126.4286)" fill="#20242b">925.5 ms</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(471.64 159.2857)" fill="#20242b">1035.3 ms</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(485.5829 192.1429)" fill="#20242b">1096.3 ms</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(629.3771 225)" fill="#20242b">1725.4 ms</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(831.8686 257.8571)" fill="#20242b">2611.3 ms</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(882.9771 290.7143)" fill="#20242b">2834.9 ms</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(932.6686 323.5714)" fill="#20242b">3052.3 ms</text>
 <text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(240.8 446.4286)" fill="#20242b">8.7 KB</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(367.6 479.2857)" fill="#20242b">198.9 KB</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(368.2 512.1429)" fill="#20242b">199.8 KB</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(368.2 479.2857)" fill="#20242b">199.8 KB</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(367.6 512.1429)" fill="#20242b">198.9 KB</text>
 <text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(993.4 545)" fill="#20242b">1137.6 KB</text>
 <text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(323.2 577.8571)" fill="#20242b">132.3 KB</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(301.6 610.7143)" fill="#20242b">99.9 KB</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(382.6 643.5714)" fill="#20242b">221.4 KB</text>
-<path d="M-5 -5l250 0l0 50l-250 0Z" transform="translate(25 21)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#3c3c41" stroke-width="0" class="zr1-cls-34"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(382.6 610.7143)" fill="#20242b">221.4 KB</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(301.6 643.5714)" fill="#20242b">99.9 KB</text>
+<path d="M-5 -5l250 0l0 50l-250 0Z" transform="translate(25 21)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#3c3c41" stroke-width="0" class="zr1-cls-35"></path>
 <text dominant-baseline="central" text-anchor="start" style="font-size:18px;font-family:Arial, sans-serif;font-weight:500;" y="9" transform="translate(25 21)" fill="#20242b">编译性能</text>
 <text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Arial, sans-serif;font-weight:400;" y="34" transform="translate(25 21)" fill="#667085">仅完整样本参与排序；耗时和体积均越小越好</text>
 <style ><![CDATA[
-.zr1-cls-34:hover {
+.zr1-cls-35:hover {
 pointer-events:none;
 }
-.zr1-cls-35 {
+.zr1-cls-36 {
 animation:zr1-ani-0 0.35s cubic-bezier(0.65,0,0.35,1) both;
 }
-.zr1-cls-36:hover {
+.zr1-cls-37:hover {
 cursor:pointer;
 fill:rgba(25,115,187,1);
 }
-.zr1-cls-37 {
+.zr1-cls-38 {
 animation:zr1-ani-1 0.35s cubic-bezier(0.65,0,0.35,1) both;
 }
-.zr1-cls-38 {
+.zr1-cls-39 {
 animation:zr1-ani-2 0.35s cubic-bezier(0.65,0,0.35,1) both;
 }
-.zr1-cls-39 {
+.zr1-cls-40 {
 animation:zr1-ani-3 0.35s cubic-bezier(0.65,0,0.35,1) both;
 }
-.zr1-cls-40 {
+.zr1-cls-41 {
 animation:zr1-ani-4 0.35s cubic-bezier(0.65,0,0.35,1) both;
 }
-.zr1-cls-41 {
+.zr1-cls-42 {
 animation:zr1-ani-5 0.35s cubic-bezier(0.65,0,0.35,1) both;
 }
-.zr1-cls-42 {
+.zr1-cls-43 {
 animation:zr1-ani-6 0.35s cubic-bezier(0.65,0,0.35,1) both;
 }
-.zr1-cls-43 {
+.zr1-cls-44 {
 animation:zr1-ani-7 0.35s cubic-bezier(0.65,0,0.35,1) both;
 }
-.zr1-cls-44:hover {
+.zr1-cls-45:hover {
 cursor:pointer;
 fill:rgba(46,172,157,1);
 }
-.zr1-cls-45 {
+.zr1-cls-46 {
 animation:zr1-ani-8 0.35s cubic-bezier(0.65,0,0.35,1) both;
 }
-.zr1-cls-46 {
+.zr1-cls-47 {
 animation:zr1-ani-9 0.35s cubic-bezier(0.65,0,0.35,1) both;
 }
-.zr1-cls-47 {
+.zr1-cls-48 {
 animation:zr1-ani-10 0.35s cubic-bezier(0.65,0,0.35,1) both;
 }
-.zr1-cls-48 {
+.zr1-cls-49 {
 animation:zr1-ani-11 0.35s cubic-bezier(0.65,0,0.35,1) both;
 }
-.zr1-cls-49 {
+.zr1-cls-50 {
 animation:zr1-ani-12 0.35s cubic-bezier(0.65,0,0.35,1) both;
 }
-.zr1-cls-50 {
+.zr1-cls-51 {
 animation:zr1-ani-13 0.35s cubic-bezier(0.65,0,0.35,1) both;
 }
 @keyframes zr1-ani-0 {
@@ -134,7 +140,7 @@ animation:zr1-ani-13 0.35s cubic-bezier(0.65,0,0.35,1) both;
 d:path("M230 115.1l0 0l0 22.7l0 0Z");
 }
 100% {
-d:path("M230 115.1l182.6 0l0 22.7l-182.6 0Z");
+d:path("M230 115.1l211.5 0l0 22.7l-211.5 0Z");
 }
 }
 @keyframes zr1-ani-1 {
@@ -142,7 +148,7 @@ d:path("M230 115.1l182.6 0l0 22.7l-182.6 0Z");
 d:path("M230 148l0 0l0 22.7l0 0Z");
 }
 100% {
-d:path("M230 148l201.2 0l0 22.7l-201.2 0Z");
+d:path("M230 148l236.6 0l0 22.7l-236.6 0Z");
 }
 }
 @keyframes zr1-ani-2 {
@@ -150,7 +156,7 @@ d:path("M230 148l201.2 0l0 22.7l-201.2 0Z");
 d:path("M230 180.8l0 0l0 22.7l0 0Z");
 }
 100% {
-d:path("M230 180.8l201.8 0l0 22.7l-201.8 0Z");
+d:path("M230 180.8l250.6 0l0 22.7l-250.6 0Z");
 }
 }
 @keyframes zr1-ani-3 {
@@ -158,7 +164,7 @@ d:path("M230 180.8l201.8 0l0 22.7l-201.8 0Z");
 d:path("M230 213.7l0 0l0 22.7l0 0Z");
 }
 100% {
-d:path("M230 213.7l360.6 0l0 22.7l-360.6 0Z");
+d:path("M230 213.7l394.4 0l0 22.7l-394.4 0Z");
 }
 }
 @keyframes zr1-ani-4 {
@@ -166,7 +172,7 @@ d:path("M230 213.7l360.6 0l0 22.7l-360.6 0Z");
 d:path("M230 246.5l0 0l0 22.7l0 0Z");
 }
 100% {
-d:path("M230 246.5l489.9 0l0 22.7l-489.9 0Z");
+d:path("M230 246.5l596.9 0l0 22.7l-596.9 0Z");
 }
 }
 @keyframes zr1-ani-5 {
@@ -174,7 +180,7 @@ d:path("M230 246.5l489.9 0l0 22.7l-489.9 0Z");
 d:path("M230 279.4l0 0l0 22.7l0 0Z");
 }
 100% {
-d:path("M230 279.4l560.8 0l0 22.7l-560.8 0Z");
+d:path("M230 279.4l648 0l0 22.7l-648 0Z");
 }
 }
 @keyframes zr1-ani-6 {
@@ -182,7 +188,7 @@ d:path("M230 279.4l560.8 0l0 22.7l-560.8 0Z");
 d:path("M230 312.2l0 0l0 22.7l0 0Z");
 }
 100% {
-d:path("M230 312.2l703.2 0l0 22.7l-703.2 0Z");
+d:path("M230 312.2l697.7 0l0 22.7l-697.7 0Z");
 }
 }
 @keyframes zr1-ani-7 {
@@ -198,7 +204,7 @@ d:path("M230 435.1l5.8 0l0 22.7l-5.8 0Z");
 d:path("M230 468l0 0l0 22.7l0 0Z");
 }
 100% {
-d:path("M230 468l132.6 0l0 22.7l-132.6 0Z");
+d:path("M230 468l133.2 0l0 22.7l-133.2 0Z");
 }
 }
 @keyframes zr1-ani-9 {
@@ -206,7 +212,7 @@ d:path("M230 468l132.6 0l0 22.7l-132.6 0Z");
 d:path("M230 500.8l0 0l0 22.7l0 0Z");
 }
 100% {
-d:path("M230 500.8l133.2 0l0 22.7l-133.2 0Z");
+d:path("M230 500.8l132.6 0l0 22.7l-132.6 0Z");
 }
 }
 @keyframes zr1-ani-10 {
@@ -230,7 +236,7 @@ d:path("M230 566.5l88.2 0l0 22.7l-88.2 0Z");
 d:path("M230 599.4l0 0l0 22.7l0 0Z");
 }
 100% {
-d:path("M230 599.4l66.6 0l0 22.7l-66.6 0Z");
+d:path("M230 599.4l147.6 0l0 22.7l-147.6 0Z");
 }
 }
 @keyframes zr1-ani-13 {
@@ -238,7 +244,7 @@ d:path("M230 599.4l66.6 0l0 22.7l-66.6 0Z");
 d:path("M230 632.2l0 0l0 22.7l0 0Z");
 }
 100% {
-d:path("M230 632.2l147.6 0l0 22.7l-147.6 0Z");
+d:path("M230 632.2l66.6 0l0 22.7l-66.6 0Z");
 }
 }
 ]]>

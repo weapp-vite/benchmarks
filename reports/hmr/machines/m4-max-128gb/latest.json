@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-13T11:23:14.098Z",
+  "generatedAt": "2026-07-14T04:10:30.346Z",
   "iterations": 20,
   "environment": {
     "machineId": "m4-max-128gb",
@@ -11,8 +11,8 @@
     "memoryGB": 128,
     "node": "v24.18.0",
     "pnpm": "10.33.4",
-    "gitCommit": "e89e08dd979bff187d98def574d5dfef16011129",
-    "weappViteSubmodule": "566e5184b3a818155a8e7041b3e03ba1d44045de"
+    "gitCommit": "685851c2b7741651934192328126d3cd25d7fade",
+    "weappViteSubmodule": "26510329efcf36cbf934e566ebbc80f069151a22"
   },
   "samples": [
     {
@@ -26,8 +26,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 124.46645899999999,
-      "totalMs": 124.46645899999999
+      "wallMs": 189.77779099999998,
+      "totalMs": 189.77779099999998
     },
     {
       "scenario": "wevu-vue-script",
@@ -40,8 +40,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 120.67658400000005,
-      "totalMs": 120.67658400000005
+      "wallMs": 82.32766599999991,
+      "totalMs": 82.32766599999991
     },
     {
       "scenario": "wevu-vue-script",
@@ -54,8 +54,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 97.4546250000003,
-      "totalMs": 97.4546250000003
+      "wallMs": 91.05820800000015,
+      "totalMs": 91.05820800000015
     },
     {
       "scenario": "wevu-vue-script",
@@ -68,8 +68,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 109.64224999999988,
-      "totalMs": 109.64224999999988
+      "wallMs": 129.7316249999999,
+      "totalMs": 129.7316249999999
     },
     {
       "scenario": "wevu-vue-script",
@@ -82,8 +82,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 88.97524999999996,
-      "totalMs": 88.97524999999996
+      "wallMs": 90.87049999999999,
+      "totalMs": 90.87049999999999
     },
     {
       "scenario": "wevu-vue-script",
@@ -96,8 +96,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 97.95866700000033,
-      "totalMs": 97.95866700000033
+      "wallMs": 93.08529099999987,
+      "totalMs": 93.08529099999987
     },
     {
       "scenario": "wevu-vue-script",
@@ -110,8 +110,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 88.87287500000002,
-      "totalMs": 88.87287500000002
+      "wallMs": 91.31883299999981,
+      "totalMs": 91.31883299999981
     },
     {
       "scenario": "wevu-vue-script",
@@ -124,8 +124,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 86.9960000000001,
-      "totalMs": 86.9960000000001
+      "wallMs": 90.45949999999993,
+      "totalMs": 90.45949999999993
     },
     {
       "scenario": "wevu-vue-script",
@@ -138,8 +138,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 90.67200000000003,
-      "totalMs": 90.67200000000003
+      "wallMs": 92.833666,
+      "totalMs": 92.833666
     },
     {
       "scenario": "wevu-vue-script",
@@ -152,8 +152,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 99.29695800000036,
-      "totalMs": 99.29695800000036
+      "wallMs": 92.16737499999999,
+      "totalMs": 92.16737499999999
     },
     {
       "scenario": "wevu-vue-script",
@@ -166,8 +166,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 111.34695800000009,
-      "totalMs": 111.34695800000009
+      "wallMs": 87.03558399999974,
+      "totalMs": 87.03558399999974
     },
     {
       "scenario": "wevu-vue-script",
@@ -180,8 +180,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 108.02312500000016,
-      "totalMs": 108.02312500000016
+      "wallMs": 88.55208399999992,
+      "totalMs": 88.55208399999992
     },
     {
       "scenario": "wevu-vue-script",
@@ -194,8 +194,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 89.24533299999985,
-      "totalMs": 89.24533299999985
+      "wallMs": 99.69508300000007,
+      "totalMs": 99.69508300000007
     },
     {
       "scenario": "wevu-vue-script",
@@ -208,8 +208,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 88.5639170000004,
-      "totalMs": 88.5639170000004
+      "wallMs": 102.75508399999944,
+      "totalMs": 102.75508399999944
     },
     {
       "scenario": "wevu-vue-script",
@@ -222,8 +222,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 105.1064580000002,
-      "totalMs": 105.1064580000002
+      "wallMs": 102.36291600000004,
+      "totalMs": 102.36291600000004
     },
     {
       "scenario": "wevu-vue-script",
@@ -236,8 +236,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 87.47983299999942,
-      "totalMs": 87.47983299999942
+      "wallMs": 90.50095799999963,
+      "totalMs": 90.50095799999963
     },
     {
       "scenario": "wevu-vue-script",
@@ -250,8 +250,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 87.4917919999998,
-      "totalMs": 87.4917919999998
+      "wallMs": 80.36529200000041,
+      "totalMs": 80.36529200000041
     },
     {
       "scenario": "wevu-vue-script",
@@ -264,8 +264,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 111.73983299999963,
-      "totalMs": 111.73983299999963
+      "wallMs": 99.44262500000059,
+      "totalMs": 99.44262500000059
     },
     {
       "scenario": "wevu-vue-script",
@@ -278,8 +278,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 85.99499999999989,
-      "totalMs": 85.99499999999989
+      "wallMs": 102.34050000000025,
+      "totalMs": 102.34050000000025
     },
     {
       "scenario": "wevu-vue-script",
@@ -292,8 +292,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 86.83250000000044,
-      "totalMs": 86.83250000000044
+      "wallMs": 81.0664999999999,
+      "totalMs": 81.0664999999999
     },
     {
       "scenario": "wevu-vue-template",
@@ -306,8 +306,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 99.4819579999994,
-      "totalMs": 99.4819579999994
+      "wallMs": 75.41037500000039,
+      "totalMs": 75.41037500000039
     },
     {
       "scenario": "wevu-vue-template",
@@ -320,8 +320,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 87.27133299999969,
-      "totalMs": 87.27133299999969
+      "wallMs": 80.3993330000003,
+      "totalMs": 80.3993330000003
     },
     {
       "scenario": "wevu-vue-template",
@@ -334,8 +334,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 121.10408300000017,
-      "totalMs": 121.10408300000017
+      "wallMs": 90.90633399999933,
+      "totalMs": 90.90633399999933
     },
     {
       "scenario": "wevu-vue-template",
@@ -348,8 +348,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 87.8896249999998,
-      "totalMs": 87.8896249999998
+      "wallMs": 79.66062500000044,
+      "totalMs": 79.66062500000044
     },
     {
       "scenario": "wevu-vue-template",
@@ -362,8 +362,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 88.89483400000063,
-      "totalMs": 88.89483400000063
+      "wallMs": 88.47929099999965,
+      "totalMs": 88.47929099999965
     },
     {
       "scenario": "wevu-vue-template",
@@ -376,8 +376,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 84.77337499999976,
-      "totalMs": 84.77337499999976
+      "wallMs": 81.5284160000001,
+      "totalMs": 81.5284160000001
     },
     {
       "scenario": "wevu-vue-template",
@@ -390,8 +390,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 87.57924999999977,
-      "totalMs": 87.57924999999977
+      "wallMs": 79.32029199999943,
+      "totalMs": 79.32029199999943
     },
     {
       "scenario": "wevu-vue-template",
@@ -404,8 +404,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 77.99412499999926,
-      "totalMs": 77.99412499999926
+      "wallMs": 79.70916699999998,
+      "totalMs": 79.70916699999998
     },
     {
       "scenario": "wevu-vue-template",
@@ -418,8 +418,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 88.6963339999993,
-      "totalMs": 88.6963339999993
+      "wallMs": 80.97775000000001,
+      "totalMs": 80.97775000000001
     },
     {
       "scenario": "wevu-vue-template",
@@ -432,8 +432,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 88.30891599999995,
-      "totalMs": 88.30891599999995
+      "wallMs": 71.57049999999981,
+      "totalMs": 71.57049999999981
     },
     {
       "scenario": "wevu-vue-template",
@@ -446,8 +446,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 731.5677910000004,
-      "totalMs": 731.5677910000004
+      "wallMs": 105.36529100000007,
+      "totalMs": 105.36529100000007
     },
     {
       "scenario": "wevu-vue-template",
@@ -460,8 +460,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 87.69599999999991,
-      "totalMs": 87.69599999999991
+      "wallMs": 81.98012500000004,
+      "totalMs": 81.98012500000004
     },
     {
       "scenario": "wevu-vue-template",
@@ -474,8 +474,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 75.59433399999944,
-      "totalMs": 75.59433399999944
+      "wallMs": 79.64187499999935,
+      "totalMs": 79.64187499999935
     },
     {
       "scenario": "wevu-vue-template",
@@ -488,8 +488,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 162.53554199999962,
-      "totalMs": 162.53554199999962
+      "wallMs": 83.35420900000008,
+      "totalMs": 83.35420900000008
     },
     {
       "scenario": "wevu-vue-template",
@@ -502,8 +502,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 87.1976250000007,
-      "totalMs": 87.1976250000007
+      "wallMs": 89.08795800000007,
+      "totalMs": 89.08795800000007
     },
     {
       "scenario": "wevu-vue-template",
@@ -516,8 +516,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 87.83616699999948,
-      "totalMs": 87.83616699999948
+      "wallMs": 80.40512500000114,
+      "totalMs": 80.40512500000114
     },
     {
       "scenario": "wevu-vue-template",
@@ -530,8 +530,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 111.35850000000028,
-      "totalMs": 111.35850000000028
+      "wallMs": 80.11270800000057,
+      "totalMs": 80.11270800000057
     },
     {
       "scenario": "wevu-vue-template",
@@ -544,8 +544,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 871.0231249999997,
-      "totalMs": 871.0231249999997
+      "wallMs": 89.55125000000044,
+      "totalMs": 89.55125000000044
     },
     {
       "scenario": "wevu-vue-template",
@@ -558,8 +558,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 85.01029199999903,
-      "totalMs": 85.01029199999903
+      "wallMs": 81.7413749999996,
+      "totalMs": 81.7413749999996
     },
     {
       "scenario": "wevu-vue-template",
@@ -572,8 +572,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 120.54429199999868,
-      "totalMs": 120.54429199999868
+      "wallMs": 76.20495800000026,
+      "totalMs": 76.20495800000026
     },
     {
       "scenario": "wevu-vue-style",
@@ -586,8 +586,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 87.71487499999967,
-      "totalMs": 87.71487499999967
+      "wallMs": 57.07716700000128,
+      "totalMs": 57.07716700000128
     },
     {
       "scenario": "wevu-vue-style",
@@ -600,8 +600,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 75.81704200000058,
-      "totalMs": 75.81704200000058
+      "wallMs": 70.04900000000089,
+      "totalMs": 70.04900000000089
     },
     {
       "scenario": "wevu-vue-style",
@@ -614,8 +614,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 77.53708299999926,
-      "totalMs": 77.53708299999926
+      "wallMs": 78.35854199999994,
+      "totalMs": 78.35854199999994
     },
     {
       "scenario": "wevu-vue-style",
@@ -628,8 +628,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 74.35654199999954,
-      "totalMs": 74.35654199999954
+      "wallMs": 67.91045900000063,
+      "totalMs": 67.91045900000063
     },
     {
       "scenario": "wevu-vue-style",
@@ -642,8 +642,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 76.79612500000076,
-      "totalMs": 76.79612500000076
+      "wallMs": 76.42812500000036,
+      "totalMs": 76.42812500000036
     },
     {
       "scenario": "wevu-vue-style",
@@ -656,8 +656,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 76.41016599999966,
-      "totalMs": 76.41016599999966
+      "wallMs": 78.6543330000004,
+      "totalMs": 78.6543330000004
     },
     {
       "scenario": "wevu-vue-style",
@@ -670,8 +670,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 76.99504200000047,
-      "totalMs": 76.99504200000047
+      "wallMs": 67.5058339999996,
+      "totalMs": 67.5058339999996
     },
     {
       "scenario": "wevu-vue-style",
@@ -684,8 +684,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 76.86829099999886,
-      "totalMs": 76.86829099999886
+      "wallMs": 68.83341599999949,
+      "totalMs": 68.83341599999949
     },
     {
       "scenario": "wevu-vue-style",
@@ -698,8 +698,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 100.88137500000084,
-      "totalMs": 100.88137500000084
+      "wallMs": 86.20220800000061,
+      "totalMs": 86.20220800000061
     },
     {
       "scenario": "wevu-vue-style",
@@ -712,8 +712,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 86.58145800000057,
-      "totalMs": 86.58145800000057
+      "wallMs": 67.80199999999968,
+      "totalMs": 67.80199999999968
     },
     {
       "scenario": "wevu-vue-style",
@@ -726,8 +726,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 74.7177499999998,
-      "totalMs": 74.7177499999998
+      "wallMs": 67.09479199999987,
+      "totalMs": 67.09479199999987
     },
     {
       "scenario": "wevu-vue-style",
@@ -740,8 +740,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 75.1095830000013,
-      "totalMs": 75.1095830000013
+      "wallMs": 65.49766600000112,
+      "totalMs": 65.49766600000112
     },
     {
       "scenario": "wevu-vue-style",
@@ -754,8 +754,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 75.01887499999975,
-      "totalMs": 75.01887499999975
+      "wallMs": 116.00545799999963,
+      "totalMs": 116.00545799999963
     },
     {
       "scenario": "wevu-vue-style",
@@ -768,8 +768,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 75.59783299999981,
-      "totalMs": 75.59783299999981
+      "wallMs": 70.40825000000041,
+      "totalMs": 70.40825000000041
     },
     {
       "scenario": "wevu-vue-style",
@@ -782,8 +782,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 75.56683299999895,
-      "totalMs": 75.56683299999895
+      "wallMs": 67.94458400000076,
+      "totalMs": 67.94458400000076
     },
     {
       "scenario": "wevu-vue-style",
@@ -796,8 +796,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 76.38408299999901,
-      "totalMs": 76.38408299999901
+      "wallMs": 87.25995899999907,
+      "totalMs": 87.25995899999907
     },
     {
       "scenario": "wevu-vue-style",
@@ -810,8 +810,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 75.54908299999988,
-      "totalMs": 75.54908299999988
+      "wallMs": 68.75250000000051,
+      "totalMs": 68.75250000000051
     },
     {
       "scenario": "wevu-vue-style",
@@ -824,8 +824,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 74.9914579999986,
-      "totalMs": 74.9914579999986
+      "wallMs": 113.37049999999908,
+      "totalMs": 113.37049999999908
     },
     {
       "scenario": "wevu-vue-style",
@@ -838,8 +838,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 78.09116699999868,
-      "totalMs": 78.09116699999868
+      "wallMs": 67.88600000000042,
+      "totalMs": 67.88600000000042
     },
     {
       "scenario": "wevu-vue-style",
@@ -852,8 +852,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 75.6175830000011,
-      "totalMs": 75.6175830000011
+      "wallMs": 65.39820800000052,
+      "totalMs": 65.39820800000052
     },
     {
       "scenario": "wevu-vue-page-json",
@@ -866,8 +866,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 77.69375000000036,
-      "totalMs": 77.69375000000036
+      "wallMs": 76.4576249999991,
+      "totalMs": 76.4576249999991
     },
     {
       "scenario": "wevu-vue-page-json",
@@ -880,8 +880,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 110.98670799999854,
-      "totalMs": 110.98670799999854
+      "wallMs": 114.62779199999932,
+      "totalMs": 114.62779199999932
     },
     {
       "scenario": "wevu-vue-page-json",
@@ -894,8 +894,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 87.36575000000084,
-      "totalMs": 87.36575000000084
+      "wallMs": 83.24883299999965,
+      "totalMs": 83.24883299999965
     },
     {
       "scenario": "wevu-vue-page-json",
@@ -908,8 +908,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 86.38795799999934,
-      "totalMs": 86.38795799999934
+      "wallMs": 94.16412499999933,
+      "totalMs": 94.16412499999933
     },
     {
       "scenario": "wevu-vue-page-json",
@@ -922,8 +922,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 100.1467079999984,
-      "totalMs": 100.1467079999984
+      "wallMs": 78.92291599999953,
+      "totalMs": 78.92291599999953
     },
     {
       "scenario": "wevu-vue-page-json",
@@ -936,8 +936,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 88.8037089999998,
-      "totalMs": 88.8037089999998
+      "wallMs": 90.308500000001,
+      "totalMs": 90.308500000001
     },
     {
       "scenario": "wevu-vue-page-json",
@@ -950,8 +950,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 89.63212500000009,
-      "totalMs": 89.63212500000009
+      "wallMs": 90.50595799999974,
+      "totalMs": 90.50595799999974
     },
     {
       "scenario": "wevu-vue-page-json",
@@ -964,8 +964,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 84.011708,
-      "totalMs": 84.011708
+      "wallMs": 71.86595900000066,
+      "totalMs": 71.86595900000066
     },
     {
       "scenario": "wevu-vue-page-json",
@@ -978,8 +978,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 87.71720900000219,
-      "totalMs": 87.71720900000219
+      "wallMs": 79.97029199999997,
+      "totalMs": 79.97029199999997
     },
     {
       "scenario": "wevu-vue-page-json",
@@ -992,8 +992,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 86.88524999999936,
-      "totalMs": 86.88524999999936
+      "wallMs": 80.18062499999905,
+      "totalMs": 80.18062499999905
     },
     {
       "scenario": "wevu-vue-page-json",
@@ -1006,8 +1006,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 87.86212499999965,
-      "totalMs": 87.86212499999965
+      "wallMs": 78.37245799999982,
+      "totalMs": 78.37245799999982
     },
     {
       "scenario": "wevu-vue-page-json",
@@ -1020,8 +1020,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 100.3361670000013,
-      "totalMs": 100.3361670000013
+      "wallMs": 81.9242919999997,
+      "totalMs": 81.9242919999997
     },
     {
       "scenario": "wevu-vue-page-json",
@@ -1034,8 +1034,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 1932.3059169999979,
-      "totalMs": 1932.3059169999979
+      "wallMs": 91.33654200000092,
+      "totalMs": 91.33654200000092
     },
     {
       "scenario": "wevu-vue-page-json",
@@ -1048,8 +1048,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 305.9496250000011,
-      "totalMs": 305.9496250000011
+      "wallMs": 88.82691700000032,
+      "totalMs": 88.82691700000032
     },
     {
       "scenario": "wevu-vue-page-json",
@@ -1062,8 +1062,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 241.24841600000218,
-      "totalMs": 241.24841600000218
+      "wallMs": 76.68791700000111,
+      "totalMs": 76.68791700000111
     },
     {
       "scenario": "wevu-vue-page-json",
@@ -1076,8 +1076,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 1231.2172089999985,
-      "totalMs": 1231.2172089999985
+      "wallMs": 78.28395799999998,
+      "totalMs": 78.28395799999998
     },
     {
       "scenario": "wevu-vue-page-json",
@@ -1090,8 +1090,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 838.541957999998,
-      "totalMs": 838.541957999998
+      "wallMs": 80.40949999999975,
+      "totalMs": 80.40949999999975
     },
     {
       "scenario": "wevu-vue-page-json",
@@ -1104,8 +1104,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 362.7483339999999,
-      "totalMs": 362.7483339999999
+      "wallMs": 78.19916700000067,
+      "totalMs": 78.19916700000067
     },
     {
       "scenario": "wevu-vue-page-json",
@@ -1118,8 +1118,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 405.1698749999996,
-      "totalMs": 405.1698749999996
+      "wallMs": 80.3625839999986,
+      "totalMs": 80.3625839999986
     },
     {
       "scenario": "wevu-vue-page-json",
@@ -1132,8 +1132,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 353.2492920000004,
-      "totalMs": 353.2492920000004
+      "wallMs": 79.14679199999955,
+      "totalMs": 79.14679199999955
     },
     {
       "scenario": "wevu-performance-vue-script",
@@ -1146,8 +1146,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 1172.5708749999976,
-      "totalMs": 1172.5708749999976
+      "wallMs": 104.22575000000143,
+      "totalMs": 104.22575000000143
     },
     {
       "scenario": "wevu-performance-vue-script",
@@ -1160,8 +1160,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 416.81804199999897,
-      "totalMs": 416.81804199999897
+      "wallMs": 92.21687499999825,
+      "totalMs": 92.21687499999825
     },
     {
       "scenario": "wevu-performance-vue-script",
@@ -1174,8 +1174,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 242.48783300000287,
-      "totalMs": 242.48783300000287
+      "wallMs": 85.632916999999,
+      "totalMs": 85.632916999999
     },
     {
       "scenario": "wevu-performance-vue-script",
@@ -1188,8 +1188,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 302.02187499999854,
-      "totalMs": 302.02187499999854
+      "wallMs": 92.97908299999835,
+      "totalMs": 92.97908299999835
     },
     {
       "scenario": "wevu-performance-vue-script",
@@ -1202,8 +1202,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 153.3081659999989,
-      "totalMs": 153.3081659999989
+      "wallMs": 92.06983400000172,
+      "totalMs": 92.06983400000172
     },
     {
       "scenario": "wevu-performance-vue-script",
@@ -1216,8 +1216,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 306.06475000000137,
-      "totalMs": 306.06475000000137
+      "wallMs": 92.38104099999691,
+      "totalMs": 92.38104099999691
     },
     {
       "scenario": "wevu-performance-vue-script",
@@ -1230,8 +1230,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 142.29300000000148,
-      "totalMs": 142.29300000000148
+      "wallMs": 92.84833399999843,
+      "totalMs": 92.84833399999843
     },
     {
       "scenario": "wevu-performance-vue-script",
@@ -1244,8 +1244,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 98.54887499999677,
-      "totalMs": 98.54887499999677
+      "wallMs": 89.42004200000156,
+      "totalMs": 89.42004200000156
     },
     {
       "scenario": "wevu-performance-vue-script",
@@ -1258,8 +1258,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 89.21395800000028,
-      "totalMs": 89.21395800000028
+      "wallMs": 90.83379200000127,
+      "totalMs": 90.83379200000127
     },
     {
       "scenario": "wevu-performance-vue-script",
@@ -1272,8 +1272,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 99.55108400000245,
-      "totalMs": 99.55108400000245
+      "wallMs": 101.21220900000117,
+      "totalMs": 101.21220900000117
     },
     {
       "scenario": "wevu-performance-vue-script",
@@ -1286,8 +1286,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 98.4173329999976,
-      "totalMs": 98.4173329999976
+      "wallMs": 113.00595799999792,
+      "totalMs": 113.00595799999792
     },
     {
       "scenario": "wevu-performance-vue-script",
@@ -1300,8 +1300,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 88.50962499999878,
-      "totalMs": 88.50962499999878
+      "wallMs": 91.80758299999798,
+      "totalMs": 91.80758299999798
     },
     {
       "scenario": "wevu-performance-vue-script",
@@ -1314,8 +1314,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 98.51487500000076,
-      "totalMs": 98.51487500000076
+      "wallMs": 91.99662499999977,
+      "totalMs": 91.99662499999977
     },
     {
       "scenario": "wevu-performance-vue-script",
@@ -1328,8 +1328,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 111.09329100000105,
-      "totalMs": 111.09329100000105
+      "wallMs": 103.31704099999843,
+      "totalMs": 103.31704099999843
     },
     {
       "scenario": "wevu-performance-vue-script",
@@ -1342,8 +1342,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 101.43937499999811,
-      "totalMs": 101.43937499999811
+      "wallMs": 88.84600000000137,
+      "totalMs": 88.84600000000137
     },
     {
       "scenario": "wevu-performance-vue-script",
@@ -1356,8 +1356,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 287.72899999999936,
-      "totalMs": 287.72899999999936
+      "wallMs": 92.17379199999777,
+      "totalMs": 92.17379199999777
     },
     {
       "scenario": "wevu-performance-vue-script",
@@ -1370,8 +1370,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 965.2747920000002,
-      "totalMs": 965.2747920000002
+      "wallMs": 93.88874999999825,
+      "totalMs": 93.88874999999825
     },
     {
       "scenario": "wevu-performance-vue-script",
@@ -1384,8 +1384,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 110.92391700000007,
-      "totalMs": 110.92391700000007
+      "wallMs": 88.78087500000038,
+      "totalMs": 88.78087500000038
     },
     {
       "scenario": "wevu-performance-vue-script",
@@ -1398,8 +1398,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 163.12020800000028,
-      "totalMs": 163.12020800000028
+      "wallMs": 76.68970799999806,
+      "totalMs": 76.68970799999806
     },
     {
       "scenario": "wevu-performance-vue-script",
@@ -1412,8 +1412,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 90.36449999999968,
-      "totalMs": 90.36449999999968
+      "wallMs": 89.61062500000116,
+      "totalMs": 89.61062500000116
     },
     {
       "scenario": "wevu-performance-vue-template",
@@ -1426,8 +1426,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 87.00387500000215,
-      "totalMs": 87.00387500000215
+      "wallMs": 81.00579200000357,
+      "totalMs": 81.00579200000357
     },
     {
       "scenario": "wevu-performance-vue-template",
@@ -1440,8 +1440,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 88.02604199999769,
-      "totalMs": 88.02604199999769
+      "wallMs": 81.97741699999824,
+      "totalMs": 81.97741699999824
     },
     {
       "scenario": "wevu-performance-vue-template",
@@ -1454,8 +1454,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 139.56629100000282,
-      "totalMs": 139.56629100000282
+      "wallMs": 93.53670799999963,
+      "totalMs": 93.53670799999963
     },
     {
       "scenario": "wevu-performance-vue-template",
@@ -1468,8 +1468,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 89.3938330000019,
-      "totalMs": 89.3938330000019
+      "wallMs": 81.28254200000083,
+      "totalMs": 81.28254200000083
     },
     {
       "scenario": "wevu-performance-vue-template",
@@ -1482,8 +1482,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 109.34466599999723,
-      "totalMs": 109.34466599999723
+      "wallMs": 79.47429199999897,
+      "totalMs": 79.47429199999897
     },
     {
       "scenario": "wevu-performance-vue-template",
@@ -1496,8 +1496,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 152.81829200000357,
-      "totalMs": 152.81829200000357
+      "wallMs": 80.26374999999825,
+      "totalMs": 80.26374999999825
     },
     {
       "scenario": "wevu-performance-vue-template",
@@ -1510,8 +1510,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 99.92366600000241,
-      "totalMs": 99.92366600000241
+      "wallMs": 91.26924999999756,
+      "totalMs": 91.26924999999756
     },
     {
       "scenario": "wevu-performance-vue-template",
@@ -1524,8 +1524,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 110.77820899999642,
-      "totalMs": 110.77820899999642
+      "wallMs": 99.87362500000017,
+      "totalMs": 99.87362500000017
     },
     {
       "scenario": "wevu-performance-vue-template",
@@ -1538,8 +1538,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 85.35591700000077,
-      "totalMs": 85.35591700000077
+      "wallMs": 80.00574999999662,
+      "totalMs": 80.00574999999662
     },
     {
       "scenario": "wevu-performance-vue-template",
@@ -1552,8 +1552,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 95.55204200000298,
-      "totalMs": 95.55204200000298
+      "wallMs": 88.41120800000135,
+      "totalMs": 88.41120800000135
     },
     {
       "scenario": "wevu-performance-vue-template",
@@ -1566,8 +1566,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 132.87758300000132,
-      "totalMs": 132.87758300000132
+      "wallMs": 80.62233299999934,
+      "totalMs": 80.62233299999934
     },
     {
       "scenario": "wevu-performance-vue-template",
@@ -1580,8 +1580,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 144.70320899999933,
-      "totalMs": 144.70320899999933
+      "wallMs": 89.63312500000029,
+      "totalMs": 89.63312500000029
     },
     {
       "scenario": "wevu-performance-vue-template",
@@ -1594,8 +1594,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 86.98245799999859,
-      "totalMs": 86.98245799999859
+      "wallMs": 80.31979099999808,
+      "totalMs": 80.31979099999808
     },
     {
       "scenario": "wevu-performance-vue-template",
@@ -1608,8 +1608,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 101.90145899999334,
-      "totalMs": 101.90145899999334
+      "wallMs": 79.60654099999738,
+      "totalMs": 79.60654099999738
     },
     {
       "scenario": "wevu-performance-vue-template",
@@ -1622,8 +1622,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 166.10958299999766,
-      "totalMs": 166.10958299999766
+      "wallMs": 78.66666600000099,
+      "totalMs": 78.66666600000099
     },
     {
       "scenario": "wevu-performance-vue-template",
@@ -1636,8 +1636,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 98.58974999999919,
-      "totalMs": 98.58974999999919
+      "wallMs": 70.1249579999967,
+      "totalMs": 70.1249579999967
     },
     {
       "scenario": "wevu-performance-vue-template",
@@ -1650,8 +1650,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 554.6453750000001,
-      "totalMs": 554.6453750000001
+      "wallMs": 81.06025000000227,
+      "totalMs": 81.06025000000227
     },
     {
       "scenario": "wevu-performance-vue-template",
@@ -1664,8 +1664,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 1024.744375000002,
-      "totalMs": 1024.744375000002
+      "wallMs": 81.32266700000037,
+      "totalMs": 81.32266700000037
     },
     {
       "scenario": "wevu-performance-vue-template",
@@ -1678,8 +1678,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 175.17774999999529,
-      "totalMs": 175.17774999999529
+      "wallMs": 80.24674999999843,
+      "totalMs": 80.24674999999843
     },
     {
       "scenario": "wevu-performance-vue-template",
@@ -1692,8 +1692,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 143.47608300000138,
-      "totalMs": 143.47608300000138
+      "wallMs": 79.9822920000006,
+      "totalMs": 79.9822920000006
     },
     {
       "scenario": "wevu-performance-vue-style",
@@ -1706,8 +1706,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 109.1235419999939,
-      "totalMs": 109.1235419999939
+      "wallMs": 65.94366699999955,
+      "totalMs": 65.94366699999955
     },
     {
       "scenario": "wevu-performance-vue-style",
@@ -1720,8 +1720,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 87.1730000000025,
-      "totalMs": 87.1730000000025
+      "wallMs": 81.1538330000003,
+      "totalMs": 81.1538330000003
     },
     {
       "scenario": "wevu-performance-vue-style",
@@ -1734,8 +1734,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 141.86445800000365,
-      "totalMs": 141.86445800000365
+      "wallMs": 58.61083300000246,
+      "totalMs": 58.61083300000246
     },
     {
       "scenario": "wevu-performance-vue-style",
@@ -1748,8 +1748,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 76.28862500000105,
-      "totalMs": 76.28862500000105
+      "wallMs": 70.24320799999987,
+      "totalMs": 70.24320799999987
     },
     {
       "scenario": "wevu-performance-vue-style",
@@ -1762,8 +1762,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 87.1373750000057,
-      "totalMs": 87.1373750000057
+      "wallMs": 89.72795799999949,
+      "totalMs": 89.72795799999949
     },
     {
       "scenario": "wevu-performance-vue-style",
@@ -1776,8 +1776,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 87.20420800000284,
-      "totalMs": 87.20420800000284
+      "wallMs": 77.3715830000001,
+      "totalMs": 77.3715830000001
     },
     {
       "scenario": "wevu-performance-vue-style",
@@ -1790,8 +1790,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 98.77649999999994,
-      "totalMs": 98.77649999999994
+      "wallMs": 81.19499999999971,
+      "totalMs": 81.19499999999971
     },
     {
       "scenario": "wevu-performance-vue-style",
@@ -1804,8 +1804,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 87.80387499999779,
-      "totalMs": 87.80387499999779
+      "wallMs": 65.52200000000084,
+      "totalMs": 65.52200000000084
     },
     {
       "scenario": "wevu-performance-vue-style",
@@ -1818,8 +1818,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 350.6477089999971,
-      "totalMs": 350.6477089999971
+      "wallMs": 69.57874999999694,
+      "totalMs": 69.57874999999694
     },
     {
       "scenario": "wevu-performance-vue-style",
@@ -1832,8 +1832,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 441.05129199999647,
-      "totalMs": 441.05129199999647
+      "wallMs": 70.10749999999825,
+      "totalMs": 70.10749999999825
     },
     {
       "scenario": "wevu-performance-vue-style",
@@ -1846,8 +1846,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 87.62016700000095,
-      "totalMs": 87.62016700000095
+      "wallMs": 80.52141699999993,
+      "totalMs": 80.52141699999993
     },
     {
       "scenario": "wevu-performance-vue-style",
@@ -1860,8 +1860,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 78.78074999999808,
-      "totalMs": 78.78074999999808
+      "wallMs": 78.78033399999913,
+      "totalMs": 78.78033399999913
     },
     {
       "scenario": "wevu-performance-vue-style",
@@ -1874,8 +1874,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 77.72295799999847,
-      "totalMs": 77.72295799999847
+      "wallMs": 78.15250000000015,
+      "totalMs": 78.15250000000015
     },
     {
       "scenario": "wevu-performance-vue-style",
@@ -1888,8 +1888,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 906.5662920000032,
-      "totalMs": 906.5662920000032
+      "wallMs": 76.51174999999785,
+      "totalMs": 76.51174999999785
     },
     {
       "scenario": "wevu-performance-vue-style",
@@ -1902,8 +1902,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 74.3336249999993,
-      "totalMs": 74.3336249999993
+      "wallMs": 81.1035410000004,
+      "totalMs": 81.1035410000004
     },
     {
       "scenario": "wevu-performance-vue-style",
@@ -1916,8 +1916,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 85.40891700000066,
-      "totalMs": 85.40891700000066
+      "wallMs": 78.77649999999994,
+      "totalMs": 78.77649999999994
     },
     {
       "scenario": "wevu-performance-vue-style",
@@ -1930,8 +1930,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 444.1720419999983,
-      "totalMs": 444.1720419999983
+      "wallMs": 65.31424999999945,
+      "totalMs": 65.31424999999945
     },
     {
       "scenario": "wevu-performance-vue-style",
@@ -1944,8 +1944,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 75.42149999999674,
-      "totalMs": 75.42149999999674
+      "wallMs": 76.92737500000294,
+      "totalMs": 76.92737500000294
     },
     {
       "scenario": "wevu-performance-vue-style",
@@ -1958,8 +1958,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 75.03300000000309,
-      "totalMs": 75.03300000000309
+      "wallMs": 70.07404200000019,
+      "totalMs": 70.07404200000019
     },
     {
       "scenario": "wevu-performance-vue-style",
@@ -1972,8 +1972,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 78.56958399999712,
-      "totalMs": 78.56958399999712
+      "wallMs": 89.12425000000076,
+      "totalMs": 89.12425000000076
     },
     {
       "scenario": "wevu-performance-vue-page-json",
@@ -1986,8 +1986,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 76.09904100000131,
-      "totalMs": 76.09904100000131
+      "wallMs": 80.80100000000311,
+      "totalMs": 80.80100000000311
     },
     {
       "scenario": "wevu-performance-vue-page-json",
@@ -2000,8 +2000,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 359.32841599999665,
-      "totalMs": 359.32841599999665
+      "wallMs": 87.12024999999994,
+      "totalMs": 87.12024999999994
     },
     {
       "scenario": "wevu-performance-vue-page-json",
@@ -2014,8 +2014,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 87.77095800000097,
-      "totalMs": 87.77095800000097
+      "wallMs": 79.3128340000003,
+      "totalMs": 79.3128340000003
     },
     {
       "scenario": "wevu-performance-vue-page-json",
@@ -2028,8 +2028,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 88.91808299999684,
-      "totalMs": 88.91808299999684
+      "wallMs": 101.81875000000218,
+      "totalMs": 101.81875000000218
     },
     {
       "scenario": "wevu-performance-vue-page-json",
@@ -2042,8 +2042,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 85.86037499999657,
-      "totalMs": 85.86037499999657
+      "wallMs": 78.3313339999986,
+      "totalMs": 78.3313339999986
     },
     {
       "scenario": "wevu-performance-vue-page-json",
@@ -2056,8 +2056,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 88.23054199999751,
-      "totalMs": 88.23054199999751
+      "wallMs": 93.18304200000057,
+      "totalMs": 93.18304200000057
     },
     {
       "scenario": "wevu-performance-vue-page-json",
@@ -2070,8 +2070,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 87.75699999999779,
-      "totalMs": 87.75699999999779
+      "wallMs": 91.42983399999866,
+      "totalMs": 91.42983399999866
     },
     {
       "scenario": "wevu-performance-vue-page-json",
@@ -2084,8 +2084,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 87.10420800000429,
-      "totalMs": 87.10420800000429
+      "wallMs": 80.70466699999815,
+      "totalMs": 80.70466699999815
     },
     {
       "scenario": "wevu-performance-vue-page-json",
@@ -2098,8 +2098,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 124.59037499999977,
-      "totalMs": 124.59037499999977
+      "wallMs": 104.74329099999886,
+      "totalMs": 104.74329099999886
     },
     {
       "scenario": "wevu-performance-vue-page-json",
@@ -2112,8 +2112,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 87.74191699999938,
-      "totalMs": 87.74191699999938
+      "wallMs": 81.32337499999994,
+      "totalMs": 81.32337499999994
     },
     {
       "scenario": "wevu-performance-vue-page-json",
@@ -2126,8 +2126,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 98.34449999999924,
-      "totalMs": 98.34449999999924
+      "wallMs": 110.34845800000039,
+      "totalMs": 110.34845800000039
     },
     {
       "scenario": "wevu-performance-vue-page-json",
@@ -2140,8 +2140,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 86.21058400000038,
-      "totalMs": 86.21058400000038
+      "wallMs": 81.26204199999847,
+      "totalMs": 81.26204199999847
     },
     {
       "scenario": "wevu-performance-vue-page-json",
@@ -2154,8 +2154,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 86.12666700000409,
-      "totalMs": 86.12666700000409
+      "wallMs": 93.13433300000179,
+      "totalMs": 93.13433300000179
     },
     {
       "scenario": "wevu-performance-vue-page-json",
@@ -2168,8 +2168,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 86.97483300000022,
-      "totalMs": 86.97483300000022
+      "wallMs": 92.14524999999776,
+      "totalMs": 92.14524999999776
     },
     {
       "scenario": "wevu-performance-vue-page-json",
@@ -2182,8 +2182,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 85.26608300000225,
-      "totalMs": 85.26608300000225
+      "wallMs": 112.93816700000025,
+      "totalMs": 112.93816700000025
     },
     {
       "scenario": "wevu-performance-vue-page-json",
@@ -2196,8 +2196,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 86.98079100000177,
-      "totalMs": 86.98079100000177
+      "wallMs": 92.91845900000044,
+      "totalMs": 92.91845900000044
     },
     {
       "scenario": "wevu-performance-vue-page-json",
@@ -2210,8 +2210,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 86.70424999999523,
-      "totalMs": 86.70424999999523
+      "wallMs": 77.18254199999865,
+      "totalMs": 77.18254199999865
     },
     {
       "scenario": "wevu-performance-vue-page-json",
@@ -2224,8 +2224,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 86.11770799999795,
-      "totalMs": 86.11770799999795
+      "wallMs": 89.87033299999894,
+      "totalMs": 89.87033299999894
     },
     {
       "scenario": "wevu-performance-vue-page-json",
@@ -2238,8 +2238,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 844.5823339999988,
-      "totalMs": 844.5823339999988
+      "wallMs": 80.12337499999558,
+      "totalMs": 80.12337499999558
     },
     {
       "scenario": "wevu-performance-vue-page-json",
@@ -2252,8 +2252,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 172.66020800000115,
-      "totalMs": 172.66020800000115
+      "wallMs": 82.32829199999833,
+      "totalMs": 82.32829199999833
     },
     {
       "scenario": "native-js",
@@ -2266,8 +2266,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.js",
       "ok": true,
-      "wallMs": 56.219208000002254,
-      "totalMs": 56.219208000002254
+      "wallMs": 56.714459000002535,
+      "totalMs": 56.714459000002535
     },
     {
       "scenario": "native-js",
@@ -2280,8 +2280,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.js",
       "ok": true,
-      "wallMs": 45.13383299999987,
-      "totalMs": 45.13383299999987
+      "wallMs": 58.30591699999786,
+      "totalMs": 58.30591699999786
     },
     {
       "scenario": "native-js",
@@ -2294,8 +2294,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.js",
       "ok": true,
-      "wallMs": 43.94383299999754,
-      "totalMs": 43.94383299999754
+      "wallMs": 45.95320899999933,
+      "totalMs": 45.95320899999933
     },
     {
       "scenario": "native-js",
@@ -2308,8 +2308,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.js",
       "ok": true,
-      "wallMs": 42.91712499999994,
-      "totalMs": 42.91712499999994
+      "wallMs": 43.85962499999732,
+      "totalMs": 43.85962499999732
     },
     {
       "scenario": "native-js",
@@ -2322,8 +2322,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.js",
       "ok": true,
-      "wallMs": 43.49041700000089,
-      "totalMs": 43.49041700000089
+      "wallMs": 46.5404170000038,
+      "totalMs": 46.5404170000038
     },
     {
       "scenario": "native-js",
@@ -2336,8 +2336,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.js",
       "ok": true,
-      "wallMs": 43.80025000000023,
-      "totalMs": 43.80025000000023
+      "wallMs": 44.303916999997455,
+      "totalMs": 44.303916999997455
     },
     {
       "scenario": "native-js",
@@ -2350,8 +2350,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.js",
       "ok": true,
-      "wallMs": 211.13850000000093,
-      "totalMs": 211.13850000000093
+      "wallMs": 46.818749999998545,
+      "totalMs": 46.818749999998545
     },
     {
       "scenario": "native-js",
@@ -2364,8 +2364,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.js",
       "ok": true,
-      "wallMs": 682.645666999997,
-      "totalMs": 682.645666999997
+      "wallMs": 47.40600000000268,
+      "totalMs": 47.40600000000268
     },
     {
       "scenario": "native-js",
@@ -2378,8 +2378,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.js",
       "ok": true,
-      "wallMs": 604.861917000002,
-      "totalMs": 604.861917000002
+      "wallMs": 45.821750000002794,
+      "totalMs": 45.821750000002794
     },
     {
       "scenario": "native-js",
@@ -2392,8 +2392,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.js",
       "ok": true,
-      "wallMs": 43.36754199999996,
-      "totalMs": 43.36754199999996
+      "wallMs": 79.42700000000332,
+      "totalMs": 79.42700000000332
     },
     {
       "scenario": "native-js",
@@ -2406,8 +2406,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.js",
       "ok": true,
-      "wallMs": 44.78754199999821,
-      "totalMs": 44.78754199999821
+      "wallMs": 46.48058300000412,
+      "totalMs": 46.48058300000412
     },
     {
       "scenario": "native-js",
@@ -2420,8 +2420,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.js",
       "ok": true,
-      "wallMs": 54.63633299999492,
-      "totalMs": 54.63633299999492
+      "wallMs": 45.983790999998746,
+      "totalMs": 45.983790999998746
     },
     {
       "scenario": "native-js",
@@ -2434,8 +2434,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.js",
       "ok": true,
-      "wallMs": 44.2989579999994,
-      "totalMs": 44.2989579999994
+      "wallMs": 46.1428339999984,
+      "totalMs": 46.1428339999984
     },
     {
       "scenario": "native-js",
@@ -2448,8 +2448,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.js",
       "ok": true,
-      "wallMs": 55.23283299999457,
-      "totalMs": 55.23283299999457
+      "wallMs": 48.09750000000349,
+      "totalMs": 48.09750000000349
     },
     {
       "scenario": "native-js",
@@ -2462,8 +2462,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.js",
       "ok": true,
-      "wallMs": 41.73500000000058,
-      "totalMs": 41.73500000000058
+      "wallMs": 45.35808299999917,
+      "totalMs": 45.35808299999917
     },
     {
       "scenario": "native-js",
@@ -2476,8 +2476,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.js",
       "ok": true,
-      "wallMs": 88.03512500000215,
-      "totalMs": 88.03512500000215
+      "wallMs": 93.92029200000252,
+      "totalMs": 93.92029200000252
     },
     {
       "scenario": "native-js",
@@ -2490,8 +2490,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.js",
       "ok": true,
-      "wallMs": 44.70824999999604,
-      "totalMs": 44.70824999999604
+      "wallMs": 46.099749999993946,
+      "totalMs": 46.099749999993946
     },
     {
       "scenario": "native-js",
@@ -2504,8 +2504,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.js",
       "ok": true,
-      "wallMs": 42.65120800000295,
-      "totalMs": 42.65120800000295
+      "wallMs": 45.63600000000588,
+      "totalMs": 45.63600000000588
     },
     {
       "scenario": "native-js",
@@ -2518,8 +2518,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.js",
       "ok": true,
-      "wallMs": 44.30816700000287,
-      "totalMs": 44.30816700000287
+      "wallMs": 32.84179099999892,
+      "totalMs": 32.84179099999892
     },
     {
       "scenario": "native-js",
@@ -2532,8 +2532,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.js",
       "ok": true,
-      "wallMs": 43.29000000000087,
-      "totalMs": 43.29000000000087
+      "wallMs": 46.389374999998836,
+      "totalMs": 46.389374999998836
     },
     {
       "scenario": "native-wxml",
@@ -2546,8 +2546,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.wxml",
       "ok": true,
-      "wallMs": 43.27358299999469,
-      "totalMs": 43.27358299999469
+      "wallMs": 37.27037500000006,
+      "totalMs": 37.27037500000006
     },
     {
       "scenario": "native-wxml",
@@ -2560,8 +2560,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.wxml",
       "ok": true,
-      "wallMs": 45.38824999999633,
-      "totalMs": 45.38824999999633
+      "wallMs": 44.07108299999527,
+      "totalMs": 44.07108299999527
     },
     {
       "scenario": "native-wxml",
@@ -2574,8 +2574,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.wxml",
       "ok": true,
-      "wallMs": 43.08095900000626,
-      "totalMs": 43.08095900000626
+      "wallMs": 34.434000000001106,
+      "totalMs": 34.434000000001106
     },
     {
       "scenario": "native-wxml",
@@ -2588,8 +2588,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.wxml",
       "ok": true,
-      "wallMs": 67.00145799999882,
-      "totalMs": 67.00145799999882
+      "wallMs": 46.54333299999416,
+      "totalMs": 46.54333299999416
     },
     {
       "scenario": "native-wxml",
@@ -2602,8 +2602,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.wxml",
       "ok": true,
-      "wallMs": 44.50833299999795,
-      "totalMs": 44.50833299999795
+      "wallMs": 47.0668749999968,
+      "totalMs": 47.0668749999968
     },
     {
       "scenario": "native-wxml",
@@ -2616,8 +2616,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.wxml",
       "ok": true,
-      "wallMs": 64.36445900000399,
-      "totalMs": 64.36445900000399
+      "wallMs": 43.376209000001836,
+      "totalMs": 43.376209000001836
     },
     {
       "scenario": "native-wxml",
@@ -2630,8 +2630,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.wxml",
       "ok": true,
-      "wallMs": 33.14654200000223,
-      "totalMs": 33.14654200000223
+      "wallMs": 36.9739999999947,
+      "totalMs": 36.9739999999947
     },
     {
       "scenario": "native-wxml",
@@ -2644,8 +2644,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.wxml",
       "ok": true,
-      "wallMs": 43.470290999997815,
-      "totalMs": 43.470290999997815
+      "wallMs": 45.952291999994486,
+      "totalMs": 45.952291999994486
     },
     {
       "scenario": "native-wxml",
@@ -2658,8 +2658,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.wxml",
       "ok": true,
-      "wallMs": 89.43920900000376,
-      "totalMs": 89.43920900000376
+      "wallMs": 43.1441660000055,
+      "totalMs": 43.1441660000055
     },
     {
       "scenario": "native-wxml",
@@ -2672,8 +2672,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.wxml",
       "ok": true,
-      "wallMs": 43.47495899999922,
-      "totalMs": 43.47495899999922
+      "wallMs": 44.0179169999974,
+      "totalMs": 44.0179169999974
     },
     {
       "scenario": "native-wxml",
@@ -2686,8 +2686,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.wxml",
       "ok": true,
-      "wallMs": 43.85179100000096,
-      "totalMs": 43.85179100000096
+      "wallMs": 45.636415999993915,
+      "totalMs": 45.636415999993915
     },
     {
       "scenario": "native-wxml",
@@ -2700,8 +2700,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.wxml",
       "ok": true,
-      "wallMs": 42.86712499999703,
-      "totalMs": 42.86712499999703
+      "wallMs": 35.73229100000026,
+      "totalMs": 35.73229100000026
     },
     {
       "scenario": "native-wxml",
@@ -2714,8 +2714,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.wxml",
       "ok": true,
-      "wallMs": 43.49925000000076,
-      "totalMs": 43.49925000000076
+      "wallMs": 44.65129100000195,
+      "totalMs": 44.65129100000195
     },
     {
       "scenario": "native-wxml",
@@ -2728,8 +2728,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.wxml",
       "ok": true,
-      "wallMs": 44.354999999995925,
-      "totalMs": 44.354999999995925
+      "wallMs": 45.66599999999744,
+      "totalMs": 45.66599999999744
     },
     {
       "scenario": "native-wxml",
@@ -2742,8 +2742,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.wxml",
       "ok": true,
-      "wallMs": 56.415333000004466,
-      "totalMs": 56.415333000004466
+      "wallMs": 33.2300000000032,
+      "totalMs": 33.2300000000032
     },
     {
       "scenario": "native-wxml",
@@ -2756,8 +2756,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.wxml",
       "ok": true,
-      "wallMs": 43.39470900000015,
-      "totalMs": 43.39470900000015
+      "wallMs": 34.316791999997804,
+      "totalMs": 34.316791999997804
     },
     {
       "scenario": "native-wxml",
@@ -2770,8 +2770,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.wxml",
       "ok": true,
-      "wallMs": 44.34870800000499,
-      "totalMs": 44.34870800000499
+      "wallMs": 35.70929199999955,
+      "totalMs": 35.70929199999955
     },
     {
       "scenario": "native-wxml",
@@ -2784,8 +2784,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.wxml",
       "ok": true,
-      "wallMs": 43.85945899999933,
-      "totalMs": 43.85945899999933
+      "wallMs": 81.34537499999715,
+      "totalMs": 81.34537499999715
     },
     {
       "scenario": "native-wxml",
@@ -2798,8 +2798,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.wxml",
       "ok": true,
-      "wallMs": 33.03516600000148,
-      "totalMs": 33.03516600000148
+      "wallMs": 56.82312499999534,
+      "totalMs": 56.82312499999534
     },
     {
       "scenario": "native-wxml",
@@ -2812,8 +2812,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.wxml",
       "ok": true,
-      "wallMs": 55.789833000002545,
-      "totalMs": 55.789833000002545
+      "wallMs": 45.88645800000086,
+      "totalMs": 45.88645800000086
     },
     {
       "scenario": "native-wxss",
@@ -2826,8 +2826,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.wxss",
       "ok": true,
-      "wallMs": 44.6192499999961,
-      "totalMs": 44.6192499999961
+      "wallMs": 42.92716600000131,
+      "totalMs": 42.92716600000131
     },
     {
       "scenario": "native-wxss",
@@ -2840,8 +2840,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.wxss",
       "ok": true,
-      "wallMs": 76.13595900000655,
-      "totalMs": 76.13595900000655
+      "wallMs": 34.19579199999862,
+      "totalMs": 34.19579199999862
     },
     {
       "scenario": "native-wxss",
@@ -2854,8 +2854,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.wxss",
       "ok": true,
-      "wallMs": 44.03991700000188,
-      "totalMs": 44.03991700000188
+      "wallMs": 78.13916700000118,
+      "totalMs": 78.13916700000118
     },
     {
       "scenario": "native-wxss",
@@ -2868,8 +2868,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.wxss",
       "ok": true,
-      "wallMs": 44.06616699999722,
-      "totalMs": 44.06616699999722
+      "wallMs": 81.26091599999927,
+      "totalMs": 81.26091599999927
     },
     {
       "scenario": "native-wxss",
@@ -2882,8 +2882,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.wxss",
       "ok": true,
-      "wallMs": 43.332040999994206,
-      "totalMs": 43.332040999994206
+      "wallMs": 37.36750000000029,
+      "totalMs": 37.36750000000029
     },
     {
       "scenario": "native-wxss",
@@ -2896,8 +2896,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.wxss",
       "ok": true,
-      "wallMs": 45.258207999999286,
-      "totalMs": 45.258207999999286
+      "wallMs": 45.310082999996666,
+      "totalMs": 45.310082999996666
     },
     {
       "scenario": "native-wxss",
@@ -2910,8 +2910,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.wxss",
       "ok": true,
-      "wallMs": 44.04066700000112,
-      "totalMs": 44.04066700000112
+      "wallMs": 46.37041699999827,
+      "totalMs": 46.37041699999827
     },
     {
       "scenario": "native-wxss",
@@ -2924,8 +2924,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.wxss",
       "ok": true,
-      "wallMs": 75.23137500000303,
-      "totalMs": 75.23137500000303
+      "wallMs": 48.07283300000563,
+      "totalMs": 48.07283300000563
     },
     {
       "scenario": "native-wxss",
@@ -2938,8 +2938,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.wxss",
       "ok": true,
-      "wallMs": 43,
-      "totalMs": 43
+      "wallMs": 45.18266700000095,
+      "totalMs": 45.18266700000095
     },
     {
       "scenario": "native-wxss",
@@ -2952,8 +2952,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.wxss",
       "ok": true,
-      "wallMs": 32.941124999997555,
-      "totalMs": 32.941124999997555
+      "wallMs": 44.41487500000221,
+      "totalMs": 44.41487500000221
     },
     {
       "scenario": "native-wxss",
@@ -2966,8 +2966,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.wxss",
       "ok": true,
-      "wallMs": 76.61604200000147,
-      "totalMs": 76.61604200000147
+      "wallMs": 44.92004199999792,
+      "totalMs": 44.92004199999792
     },
     {
       "scenario": "native-wxss",
@@ -2980,8 +2980,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.wxss",
       "ok": true,
-      "wallMs": 44.69400000000314,
-      "totalMs": 44.69400000000314
+      "wallMs": 35.15854099999706,
+      "totalMs": 35.15854099999706
     },
     {
       "scenario": "native-wxss",
@@ -2994,8 +2994,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.wxss",
       "ok": true,
-      "wallMs": 44.27220800000214,
-      "totalMs": 44.27220800000214
+      "wallMs": 44.78520800000115,
+      "totalMs": 44.78520800000115
     },
     {
       "scenario": "native-wxss",
@@ -3008,8 +3008,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.wxss",
       "ok": true,
-      "wallMs": 44.43558299999859,
-      "totalMs": 44.43558299999859
+      "wallMs": 48.553834000005736,
+      "totalMs": 48.553834000005736
     },
     {
       "scenario": "native-wxss",
@@ -3022,8 +3022,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.wxss",
       "ok": true,
-      "wallMs": 33.72187500000291,
-      "totalMs": 33.72187500000291
+      "wallMs": 46.84541700000409,
+      "totalMs": 46.84541700000409
     },
     {
       "scenario": "native-wxss",
@@ -3036,8 +3036,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.wxss",
       "ok": true,
-      "wallMs": 42.12712499999907,
-      "totalMs": 42.12712499999907
+      "wallMs": 36.717124999995576,
+      "totalMs": 36.717124999995576
     },
     {
       "scenario": "native-wxss",
@@ -3050,8 +3050,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.wxss",
       "ok": true,
-      "wallMs": 44.31350000000384,
-      "totalMs": 44.31350000000384
+      "wallMs": 36.9855000000025,
+      "totalMs": 36.9855000000025
     },
     {
       "scenario": "native-wxss",
@@ -3064,8 +3064,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.wxss",
       "ok": true,
-      "wallMs": 43.30629200000112,
-      "totalMs": 43.30629200000112
+      "wallMs": 32.09429200000159,
+      "totalMs": 32.09429200000159
     },
     {
       "scenario": "native-wxss",
@@ -3078,8 +3078,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.wxss",
       "ok": true,
-      "wallMs": 43.50779099999636,
-      "totalMs": 43.50779099999636
+      "wallMs": 45.91966700000194,
+      "totalMs": 45.91966700000194
     },
     {
       "scenario": "native-wxss",
@@ -3092,8 +3092,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.wxss",
       "ok": true,
-      "wallMs": 32.55108299999847,
-      "totalMs": 32.55108299999847
+      "wallMs": 46.70087500000227,
+      "totalMs": 46.70087500000227
     },
     {
       "scenario": "native-json",
@@ -3106,8 +3106,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.json",
       "ok": true,
-      "wallMs": 45.9809580000001,
-      "totalMs": 45.9809580000001
+      "wallMs": 46.24183300000004,
+      "totalMs": 46.24183300000004
     },
     {
       "scenario": "native-json",
@@ -3120,8 +3120,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.json",
       "ok": true,
-      "wallMs": 42.44562500000029,
-      "totalMs": 42.44562500000029
+      "wallMs": 46.02541700000438,
+      "totalMs": 46.02541700000438
     },
     {
       "scenario": "native-json",
@@ -3134,8 +3134,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.json",
       "ok": true,
-      "wallMs": 43.84175000000687,
-      "totalMs": 43.84175000000687
+      "wallMs": 46.471417000000656,
+      "totalMs": 46.471417000000656
     },
     {
       "scenario": "native-json",
@@ -3148,8 +3148,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.json",
       "ok": true,
-      "wallMs": 43.707792000001064,
-      "totalMs": 43.707792000001064
+      "wallMs": 46.29475000000093,
+      "totalMs": 46.29475000000093
     },
     {
       "scenario": "native-json",
@@ -3162,8 +3162,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.json",
       "ok": true,
-      "wallMs": 33.816124999997555,
-      "totalMs": 33.816124999997555
+      "wallMs": 48.02204199999687,
+      "totalMs": 48.02204199999687
     },
     {
       "scenario": "native-json",
@@ -3176,8 +3176,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.json",
       "ok": true,
-      "wallMs": 42.58616600000096,
-      "totalMs": 42.58616600000096
+      "wallMs": 43.10754199999792,
+      "totalMs": 43.10754199999792
     },
     {
       "scenario": "native-json",
@@ -3190,8 +3190,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.json",
       "ok": true,
-      "wallMs": 44.76479099999415,
-      "totalMs": 44.76479099999415
+      "wallMs": 34.51691700000083,
+      "totalMs": 34.51691700000083
     },
     {
       "scenario": "native-json",
@@ -3204,8 +3204,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.json",
       "ok": true,
-      "wallMs": 43.59700000000157,
-      "totalMs": 43.59700000000157
+      "wallMs": 35.702666999997746,
+      "totalMs": 35.702666999997746
     },
     {
       "scenario": "native-json",
@@ -3218,8 +3218,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.json",
       "ok": true,
-      "wallMs": 75.80766600000061,
-      "totalMs": 75.80766600000061
+      "wallMs": 46.50200000000041,
+      "totalMs": 46.50200000000041
     },
     {
       "scenario": "native-json",
@@ -3232,8 +3232,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.json",
       "ok": true,
-      "wallMs": 44.86750000000029,
-      "totalMs": 44.86750000000029
+      "wallMs": 46.32308300000295,
+      "totalMs": 46.32308300000295
     },
     {
       "scenario": "native-json",
@@ -3246,8 +3246,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.json",
       "ok": true,
-      "wallMs": 44.491541999996116,
-      "totalMs": 44.491541999996116
+      "wallMs": 67.50649999999587,
+      "totalMs": 67.50649999999587
     },
     {
       "scenario": "native-json",
@@ -3260,8 +3260,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.json",
       "ok": true,
-      "wallMs": 43.829875000003085,
-      "totalMs": 43.829875000003085
+      "wallMs": 43.550875000000815,
+      "totalMs": 43.550875000000815
     },
     {
       "scenario": "native-json",
@@ -3274,8 +3274,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.json",
       "ok": true,
-      "wallMs": 44.80512499999895,
-      "totalMs": 44.80512499999895
+      "wallMs": 44.63408299999719,
+      "totalMs": 44.63408299999719
     },
     {
       "scenario": "native-json",
@@ -3288,8 +3288,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.json",
       "ok": true,
-      "wallMs": 45.47624999999971,
-      "totalMs": 45.47624999999971
+      "wallMs": 47.15795799999614,
+      "totalMs": 47.15795799999614
     },
     {
       "scenario": "native-json",
@@ -3302,8 +3302,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.json",
       "ok": true,
-      "wallMs": 46.606332999996084,
-      "totalMs": 46.606332999996084
+      "wallMs": 57.00037500000326,
+      "totalMs": 57.00037500000326
     },
     {
       "scenario": "native-json",
@@ -3316,8 +3316,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.json",
       "ok": true,
-      "wallMs": 44.75295799999731,
-      "totalMs": 44.75295799999731
+      "wallMs": 35.085666999999376,
+      "totalMs": 35.085666999999376
     },
     {
       "scenario": "native-json",
@@ -3330,8 +3330,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.json",
       "ok": true,
-      "wallMs": 31.402125000000524,
-      "totalMs": 31.402125000000524
+      "wallMs": 45.66874999999709,
+      "totalMs": 45.66874999999709
     },
     {
       "scenario": "native-json",
@@ -3344,8 +3344,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.json",
       "ok": true,
-      "wallMs": 44.42541699999856,
-      "totalMs": 44.42541699999856
+      "wallMs": 43.243875000000116,
+      "totalMs": 43.243875000000116
     },
     {
       "scenario": "native-json",
@@ -3358,8 +3358,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.json",
       "ok": true,
-      "wallMs": 54.94966700000077,
-      "totalMs": 54.94966700000077
+      "wallMs": 43.23287500000151,
+      "totalMs": 43.23287500000151
     },
     {
       "scenario": "native-json",
@@ -3372,8 +3372,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.json",
       "ok": true,
-      "wallMs": 47.86687499999971,
-      "totalMs": 47.86687499999971
+      "wallMs": 44.54033299999719,
+      "totalMs": 44.54033299999719
     },
     {
       "scenario": "uni-app-vite-vue3-script",
@@ -3386,8 +3386,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 1238.0166250000038,
-      "totalMs": 1238.0166250000038
+      "wallMs": 1103.9995000000054,
+      "totalMs": 1103.9995000000054
     },
     {
       "scenario": "uni-app-vite-vue3-script",
@@ -3400,8 +3400,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 359.7509999999893,
-      "totalMs": 359.7509999999893
+      "wallMs": 290.6041250000053,
+      "totalMs": 290.6041250000053
     },
     {
       "scenario": "uni-app-vite-vue3-script",
@@ -3414,8 +3414,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 336.6509170000063,
-      "totalMs": 336.6509170000063
+      "wallMs": 289.9575409999961,
+      "totalMs": 289.9575409999961
     },
     {
       "scenario": "uni-app-vite-vue3-script",
@@ -3428,8 +3428,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 258.51825000000827,
-      "totalMs": 258.51825000000827
+      "wallMs": 209.28241700000217,
+      "totalMs": 209.28241700000217
     },
     {
       "scenario": "uni-app-vite-vue3-script",
@@ -3442,8 +3442,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 287.6427079999994,
-      "totalMs": 287.6427079999994
+      "wallMs": 216.14808300000004,
+      "totalMs": 216.14808300000004
     },
     {
       "scenario": "uni-app-vite-vue3-script",
@@ -3456,8 +3456,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 197.75812499999302,
-      "totalMs": 197.75812499999302
+      "wallMs": 182.9308330000058,
+      "totalMs": 182.9308330000058
     },
     {
       "scenario": "uni-app-vite-vue3-script",
@@ -3470,8 +3470,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 197.27824999998847,
-      "totalMs": 197.27824999998847
+      "wallMs": 186.89387500000157,
+      "totalMs": 186.89387500000157
     },
     {
       "scenario": "uni-app-vite-vue3-script",
@@ -3484,8 +3484,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 210.6791249999951,
-      "totalMs": 210.6791249999951
+      "wallMs": 196.64962500000547,
+      "totalMs": 196.64962500000547
     },
     {
       "scenario": "uni-app-vite-vue3-script",
@@ -3498,8 +3498,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 234.3037089999998,
-      "totalMs": 234.3037089999998
+      "wallMs": 196.810083999997,
+      "totalMs": 196.810083999997
     },
     {
       "scenario": "uni-app-vite-vue3-script",
@@ -3512,8 +3512,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 290.4302500000049,
-      "totalMs": 290.4302500000049
+      "wallMs": 274.0633749999979,
+      "totalMs": 274.0633749999979
     },
     {
       "scenario": "uni-app-vite-vue3-script",
@@ -3526,8 +3526,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 198.74191700000665,
-      "totalMs": 198.74191700000665
+      "wallMs": 175.1490000000049,
+      "totalMs": 175.1490000000049
     },
     {
       "scenario": "uni-app-vite-vue3-script",
@@ -3540,8 +3540,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 219.6384160000016,
-      "totalMs": 219.6384160000016
+      "wallMs": 268.1556249999994,
+      "totalMs": 268.1556249999994
     },
     {
       "scenario": "uni-app-vite-vue3-script",
@@ -3554,8 +3554,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 210.79458400000294,
-      "totalMs": 210.79458400000294
+      "wallMs": 266.11708299999736,
+      "totalMs": 266.11708299999736
     },
     {
       "scenario": "uni-app-vite-vue3-script",
@@ -3568,8 +3568,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 245.13245900000038,
-      "totalMs": 245.13245900000038
+      "wallMs": 289.6042920000036,
+      "totalMs": 289.6042920000036
     },
     {
       "scenario": "uni-app-vite-vue3-script",
@@ -3582,8 +3582,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 309.56691700000374,
-      "totalMs": 309.56691700000374
+      "wallMs": 294.48425000000134,
+      "totalMs": 294.48425000000134
     },
     {
       "scenario": "uni-app-vite-vue3-script",
@@ -3596,8 +3596,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 283.45758300001035,
-      "totalMs": 283.45758300001035
+      "wallMs": 207.37816600000224,
+      "totalMs": 207.37816600000224
     },
     {
       "scenario": "uni-app-vite-vue3-script",
@@ -3610,8 +3610,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 231.12162499999977,
-      "totalMs": 231.12162499999977
+      "wallMs": 205.39554200000566,
+      "totalMs": 205.39554200000566
     },
     {
       "scenario": "uni-app-vite-vue3-script",
@@ -3624,8 +3624,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 526.5133330000099,
-      "totalMs": 526.5133330000099
+      "wallMs": 263.54212499999994,
+      "totalMs": 263.54212499999994
     },
     {
       "scenario": "uni-app-vite-vue3-script",
@@ -3638,8 +3638,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 187.77700000000186,
-      "totalMs": 187.77700000000186
+      "wallMs": 181.2947090000016,
+      "totalMs": 181.2947090000016
     },
     {
       "scenario": "uni-app-vite-vue3-script",
@@ -3652,8 +3652,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 276.95083400000294,
-      "totalMs": 276.95083400000294
+      "wallMs": 277.69970900000044,
+      "totalMs": 277.69970900000044
     },
     {
       "scenario": "uni-app-vite-vue3-template",
@@ -3666,8 +3666,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 307.1007079999981,
-      "totalMs": 307.1007079999981
+      "wallMs": 266.763374999995,
+      "totalMs": 266.763374999995
     },
     {
       "scenario": "uni-app-vite-vue3-template",
@@ -3680,8 +3680,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 287.64933400000155,
-      "totalMs": 287.64933400000155
+      "wallMs": 182.25858400000288,
+      "totalMs": 182.25858400000288
     },
     {
       "scenario": "uni-app-vite-vue3-template",
@@ -3694,8 +3694,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 186.4386669999949,
-      "totalMs": 186.4386669999949
+      "wallMs": 185.8735000000015,
+      "totalMs": 185.8735000000015
     },
     {
       "scenario": "uni-app-vite-vue3-template",
@@ -3708,8 +3708,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 187.25066700000025,
-      "totalMs": 187.25066700000025
+      "wallMs": 178.9275409999973,
+      "totalMs": 178.9275409999973
     },
     {
       "scenario": "uni-app-vite-vue3-template",
@@ -3722,8 +3722,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 240.95033300000068,
-      "totalMs": 240.95033300000068
+      "wallMs": 193.471000000005,
+      "totalMs": 193.471000000005
     },
     {
       "scenario": "uni-app-vite-vue3-template",
@@ -3736,8 +3736,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 195.6490829999966,
-      "totalMs": 195.6490829999966
+      "wallMs": 195.64220899999782,
+      "totalMs": 195.64220899999782
     },
     {
       "scenario": "uni-app-vite-vue3-template",
@@ -3750,8 +3750,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 243.96491599999717,
-      "totalMs": 243.96491599999717
+      "wallMs": 170.23262499999691,
+      "totalMs": 170.23262499999691
     },
     {
       "scenario": "uni-app-vite-vue3-template",
@@ -3764,8 +3764,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 264.95591600000625,
-      "totalMs": 264.95591600000625
+      "wallMs": 264.0941659999953,
+      "totalMs": 264.0941659999953
     },
     {
       "scenario": "uni-app-vite-vue3-template",
@@ -3778,8 +3778,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 219.05383299999812,
-      "totalMs": 219.05383299999812
+      "wallMs": 171.1527089999945,
+      "totalMs": 171.1527089999945
     },
     {
       "scenario": "uni-app-vite-vue3-template",
@@ -3792,8 +3792,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 178.98345799998788,
-      "totalMs": 178.98345799998788
+      "wallMs": 265.6453330000004,
+      "totalMs": 265.6453330000004
     },
     {
       "scenario": "uni-app-vite-vue3-template",
@@ -3806,8 +3806,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 302.72354199999245,
-      "totalMs": 302.72354199999245
+      "wallMs": 207.90404199999466,
+      "totalMs": 207.90404199999466
     },
     {
       "scenario": "uni-app-vite-vue3-template",
@@ -3820,8 +3820,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 313.19308399999863,
-      "totalMs": 313.19308399999863
+      "wallMs": 289.95379200000025,
+      "totalMs": 289.95379200000025
     },
     {
       "scenario": "uni-app-vite-vue3-template",
@@ -3834,8 +3834,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 276.01941700000316,
-      "totalMs": 276.01941700000316
+      "wallMs": 180.3857080000016,
+      "totalMs": 180.3857080000016
     },
     {
       "scenario": "uni-app-vite-vue3-template",
@@ -3848,8 +3848,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 268.1030000000028,
-      "totalMs": 268.1030000000028
+      "wallMs": 175.95441699999355,
+      "totalMs": 175.95441699999355
     },
     {
       "scenario": "uni-app-vite-vue3-template",
@@ -3862,8 +3862,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 209.80991700000595,
-      "totalMs": 209.80991700000595
+      "wallMs": 177.7219169999953,
+      "totalMs": 177.7219169999953
     },
     {
       "scenario": "uni-app-vite-vue3-template",
@@ -3876,8 +3876,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 774.3614579999994,
-      "totalMs": 774.3614579999994
+      "wallMs": 183.63562500000262,
+      "totalMs": 183.63562500000262
     },
     {
       "scenario": "uni-app-vite-vue3-template",
@@ -3890,8 +3890,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 186.25883299999987,
-      "totalMs": 186.25883299999987
+      "wallMs": 195.9248329999973,
+      "totalMs": 195.9248329999973
     },
     {
       "scenario": "uni-app-vite-vue3-template",
@@ -3904,8 +3904,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 200.05962500000896,
-      "totalMs": 200.05962500000896
+      "wallMs": 199.26024999999936,
+      "totalMs": 199.26024999999936
     },
     {
       "scenario": "uni-app-vite-vue3-template",
@@ -3918,8 +3918,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 187.40270799999416,
-      "totalMs": 187.40270799999416
+      "wallMs": 281.3600839999999,
+      "totalMs": 281.3600839999999
     },
     {
       "scenario": "uni-app-vite-vue3-template",
@@ -3932,8 +3932,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 190.94008299999405,
-      "totalMs": 190.94008299999405
+      "wallMs": 182.01574999999866,
+      "totalMs": 182.01574999999866
     },
     {
       "scenario": "uni-app-vite-vue3-style",
@@ -3946,8 +3946,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 276.17237499999464,
-      "totalMs": 276.17237499999464
+      "wallMs": 269.6740839999984,
+      "totalMs": 269.6740839999984
     },
     {
       "scenario": "uni-app-vite-vue3-style",
@@ -3960,8 +3960,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 210.2678339999984,
-      "totalMs": 210.2678339999984
+      "wallMs": 194.54887499999313,
+      "totalMs": 194.54887499999313
     },
     {
       "scenario": "uni-app-vite-vue3-style",
@@ -3974,8 +3974,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 200.35400000000664,
-      "totalMs": 200.35400000000664
+      "wallMs": 195.37941599999613,
+      "totalMs": 195.37941599999613
     },
     {
       "scenario": "uni-app-vite-vue3-style",
@@ -3988,8 +3988,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 199.04862500001036,
-      "totalMs": 199.04862500001036
+      "wallMs": 181.75170800000342,
+      "totalMs": 181.75170800000342
     },
     {
       "scenario": "uni-app-vite-vue3-style",
@@ -4002,8 +4002,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 189.34325000000536,
-      "totalMs": 189.34325000000536
+      "wallMs": 186.70604200000525,
+      "totalMs": 186.70604200000525
     },
     {
       "scenario": "uni-app-vite-vue3-style",
@@ -4016,8 +4016,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 275.26200000000244,
-      "totalMs": 275.26200000000244
+      "wallMs": 175.33083299999998,
+      "totalMs": 175.33083299999998
     },
     {
       "scenario": "uni-app-vite-vue3-style",
@@ -4030,8 +4030,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 178.19974999999977,
-      "totalMs": 178.19974999999977
+      "wallMs": 166.99387500000012,
+      "totalMs": 166.99387500000012
     },
     {
       "scenario": "uni-app-vite-vue3-style",
@@ -4044,8 +4044,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 196.96629199999734,
-      "totalMs": 196.96629199999734
+      "wallMs": 183.35512500000186,
+      "totalMs": 183.35512500000186
     },
     {
       "scenario": "uni-app-vite-vue3-style",
@@ -4058,8 +4058,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 264.6877910000039,
-      "totalMs": 264.6877910000039
+      "wallMs": 277.6592080000046,
+      "totalMs": 277.6592080000046
     },
     {
       "scenario": "uni-app-vite-vue3-style",
@@ -4072,8 +4072,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 781.4159160000127,
-      "totalMs": 781.4159160000127
+      "wallMs": 183.2265000000043,
+      "totalMs": 183.2265000000043
     },
     {
       "scenario": "uni-app-vite-vue3-style",
@@ -4086,8 +4086,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 184.87729200000467,
-      "totalMs": 184.87729200000467
+      "wallMs": 181.3300420000014,
+      "totalMs": 181.3300420000014
     },
     {
       "scenario": "uni-app-vite-vue3-style",
@@ -4100,8 +4100,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 184.66241699999955,
-      "totalMs": 184.66241699999955
+      "wallMs": 172.53612499999872,
+      "totalMs": 172.53612499999872
     },
     {
       "scenario": "uni-app-vite-vue3-style",
@@ -4114,8 +4114,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 238.38862500000687,
-      "totalMs": 238.38862500000687
+      "wallMs": 279.66629100000137,
+      "totalMs": 279.66629100000137
     },
     {
       "scenario": "uni-app-vite-vue3-style",
@@ -4128,8 +4128,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 847.1945839999971,
-      "totalMs": 847.1945839999971
+      "wallMs": 279.93133300000045,
+      "totalMs": 279.93133300000045
     },
     {
       "scenario": "uni-app-vite-vue3-style",
@@ -4142,8 +4142,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 276.6779169999936,
-      "totalMs": 276.6779169999936
+      "wallMs": 181.79362499999115,
+      "totalMs": 181.79362499999115
     },
     {
       "scenario": "uni-app-vite-vue3-style",
@@ -4156,8 +4156,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 198.6226250000036,
-      "totalMs": 198.6226250000036
+      "wallMs": 264.33699999999953,
+      "totalMs": 264.33699999999953
     },
     {
       "scenario": "uni-app-vite-vue3-style",
@@ -4170,8 +4170,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 187.39766599998984,
-      "totalMs": 187.39766599998984
+      "wallMs": 255.30166699999245,
+      "totalMs": 255.30166699999245
     },
     {
       "scenario": "uni-app-vite-vue3-style",
@@ -4184,8 +4184,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 185.40241699999024,
-      "totalMs": 185.40241699999024
+      "wallMs": 175.81054200000654,
+      "totalMs": 175.81054200000654
     },
     {
       "scenario": "uni-app-vite-vue3-style",
@@ -4198,8 +4198,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 199.969041999997,
-      "totalMs": 199.969041999997
+      "wallMs": 186.52483400001074,
+      "totalMs": 186.52483400001074
     },
     {
       "scenario": "uni-app-vite-vue3-style",
@@ -4212,8 +4212,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 207.5687920000055,
-      "totalMs": 207.5687920000055
+      "wallMs": 190.8303339999984,
+      "totalMs": 190.8303339999984
     },
     {
       "scenario": "uni-app-x-script",
@@ -4226,8 +4226,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 1286.7589169999992,
-      "totalMs": 1286.7589169999992
+      "wallMs": 1184.2154169999994,
+      "totalMs": 1184.2154169999994
     },
     {
       "scenario": "uni-app-x-script",
@@ -4240,8 +4240,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 403.2951250000042,
-      "totalMs": 403.2951250000042
+      "wallMs": 376.47545899999386,
+      "totalMs": 376.47545899999386
     },
     {
       "scenario": "uni-app-x-script",
@@ -4254,8 +4254,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 392.7027500000113,
-      "totalMs": 392.7027500000113
+      "wallMs": 284.8641249999928,
+      "totalMs": 284.8641249999928
     },
     {
       "scenario": "uni-app-x-script",
@@ -4268,8 +4268,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 306.1725000000006,
-      "totalMs": 306.1725000000006
+      "wallMs": 300.6528330000001,
+      "totalMs": 300.6528330000001
     },
     {
       "scenario": "uni-app-x-script",
@@ -4282,8 +4282,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 338.8774170000106,
-      "totalMs": 338.8774170000106
+      "wallMs": 312.7732079999987,
+      "totalMs": 312.7732079999987
     },
     {
       "scenario": "uni-app-x-script",
@@ -4296,8 +4296,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 915.1687079999974,
-      "totalMs": 915.1687079999974
+      "wallMs": 293.6480420000007,
+      "totalMs": 293.6480420000007
     },
     {
       "scenario": "uni-app-x-script",
@@ -4310,8 +4310,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 285.2416660000017,
-      "totalMs": 285.2416660000017
+      "wallMs": 293.11183300000266,
+      "totalMs": 293.11183300000266
     },
     {
       "scenario": "uni-app-x-script",
@@ -4324,8 +4324,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 307.70858299999963,
-      "totalMs": 307.70858299999963
+      "wallMs": 310.62445799999114,
+      "totalMs": 310.62445799999114
     },
     {
       "scenario": "uni-app-x-script",
@@ -4338,8 +4338,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 369.8116669999872,
-      "totalMs": 369.8116669999872
+      "wallMs": 325.5712080000085,
+      "totalMs": 325.5712080000085
     },
     {
       "scenario": "uni-app-x-script",
@@ -4352,8 +4352,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 416.66270899999654,
-      "totalMs": 416.66270899999654
+      "wallMs": 304.7034580000036,
+      "totalMs": 304.7034580000036
     },
     {
       "scenario": "uni-app-x-script",
@@ -4366,8 +4366,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 941.5649580000027,
-      "totalMs": 941.5649580000027
+      "wallMs": 305.2043749999866,
+      "totalMs": 305.2043749999866
     },
     {
       "scenario": "uni-app-x-script",
@@ -4380,8 +4380,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 309.6058340000018,
-      "totalMs": 309.6058340000018
+      "wallMs": 296.58429099999194,
+      "totalMs": 296.58429099999194
     },
     {
       "scenario": "uni-app-x-script",
@@ -4394,8 +4394,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 385.9648339999985,
-      "totalMs": 385.9648339999985
+      "wallMs": 304.1886669999949,
+      "totalMs": 304.1886669999949
     },
     {
       "scenario": "uni-app-x-script",
@@ -4408,8 +4408,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 575.8887919999979,
-      "totalMs": 575.8887919999979
+      "wallMs": 300.31866699999955,
+      "totalMs": 300.31866699999955
     },
     {
       "scenario": "uni-app-x-script",
@@ -4422,8 +4422,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 310.06816699999035,
-      "totalMs": 310.06816699999035
+      "wallMs": 298.41920799999207,
+      "totalMs": 298.41920799999207
     },
     {
       "scenario": "uni-app-x-script",
@@ -4436,8 +4436,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 376.7430000000022,
-      "totalMs": 376.7430000000022
+      "wallMs": 339.89662499999395,
+      "totalMs": 339.89662499999395
     },
     {
       "scenario": "uni-app-x-script",
@@ -4450,8 +4450,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 373.9347909999924,
-      "totalMs": 373.9347909999924
+      "wallMs": 307.82820899999933,
+      "totalMs": 307.82820899999933
     },
     {
       "scenario": "uni-app-x-script",
@@ -4464,8 +4464,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 314.424874999997,
-      "totalMs": 314.424874999997
+      "wallMs": 294.8929580000113,
+      "totalMs": 294.8929580000113
     },
     {
       "scenario": "uni-app-x-script",
@@ -4478,8 +4478,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 568.5608329999959,
-      "totalMs": 568.5608329999959
+      "wallMs": 280.27037500000733,
+      "totalMs": 280.27037500000733
     },
     {
       "scenario": "uni-app-x-script",
@@ -4492,8 +4492,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 340.6817080000037,
-      "totalMs": 340.6817080000037
+      "wallMs": 314.4005829999951,
+      "totalMs": 314.4005829999951
     },
     {
       "scenario": "uni-app-x-template",
@@ -4506,8 +4506,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 185.3263750000042,
-      "totalMs": 185.3263750000042
+      "wallMs": 198.82233400001132,
+      "totalMs": 198.82233400001132
     },
     {
       "scenario": "uni-app-x-template",
@@ -4520,8 +4520,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 205.32116700000188,
-      "totalMs": 205.32116700000188
+      "wallMs": 194.11716700000397,
+      "totalMs": 194.11716700000397
     },
     {
       "scenario": "uni-app-x-template",
@@ -4534,8 +4534,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 205.6722080000036,
-      "totalMs": 205.6722080000036
+      "wallMs": 196.4060829999944,
+      "totalMs": 196.4060829999944
     },
     {
       "scenario": "uni-app-x-template",
@@ -4548,8 +4548,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 198.89808300000732,
-      "totalMs": 198.89808300000732
+      "wallMs": 204.44320900000457,
+      "totalMs": 204.44320900000457
     },
     {
       "scenario": "uni-app-x-template",
@@ -4562,8 +4562,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 261.01166699999885,
-      "totalMs": 261.01166699999885
+      "wallMs": 213.73154199999408,
+      "totalMs": 213.73154199999408
     },
     {
       "scenario": "uni-app-x-template",
@@ -4576,8 +4576,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 198.55704200000037,
-      "totalMs": 198.55704200000037
+      "wallMs": 196.18770900000527,
+      "totalMs": 196.18770900000527
     },
     {
       "scenario": "uni-app-x-template",
@@ -4590,8 +4590,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 207.8341669999936,
-      "totalMs": 207.8341669999936
+      "wallMs": 204.51108299999032,
+      "totalMs": 204.51108299999032
     },
     {
       "scenario": "uni-app-x-template",
@@ -4604,8 +4604,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 220.60416600000462,
-      "totalMs": 220.60416600000462
+      "wallMs": 230.1945829999895,
+      "totalMs": 230.1945829999895
     },
     {
       "scenario": "uni-app-x-template",
@@ -4618,8 +4618,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 175.57783399999607,
-      "totalMs": 175.57783399999607
+      "wallMs": 184.02370900000096,
+      "totalMs": 184.02370900000096
     },
     {
       "scenario": "uni-app-x-template",
@@ -4632,8 +4632,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 213.64608299999963,
-      "totalMs": 213.64608299999963
+      "wallMs": 202.8274170000077,
+      "totalMs": 202.8274170000077
     },
     {
       "scenario": "uni-app-x-template",
@@ -4646,8 +4646,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 187.03499999998894,
-      "totalMs": 187.03499999998894
+      "wallMs": 195.41533300001174,
+      "totalMs": 195.41533300001174
     },
     {
       "scenario": "uni-app-x-template",
@@ -4660,8 +4660,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 195.7955409999995,
-      "totalMs": 195.7955409999995
+      "wallMs": 219.8880000000063,
+      "totalMs": 219.8880000000063
     },
     {
       "scenario": "uni-app-x-template",
@@ -4674,8 +4674,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 208.24175000000105,
-      "totalMs": 208.24175000000105
+      "wallMs": 195.84837499998685,
+      "totalMs": 195.84837499998685
     },
     {
       "scenario": "uni-app-x-template",
@@ -4688,8 +4688,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 214.5744160000031,
-      "totalMs": 214.5744160000031
+      "wallMs": 201.8512919999921,
+      "totalMs": 201.8512919999921
     },
     {
       "scenario": "uni-app-x-template",
@@ -4702,8 +4702,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 265.6936660000065,
-      "totalMs": 265.6936660000065
+      "wallMs": 196.1160419999942,
+      "totalMs": 196.1160419999942
     },
     {
       "scenario": "uni-app-x-template",
@@ -4716,8 +4716,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 183.4383749999979,
-      "totalMs": 183.4383749999979
+      "wallMs": 202.81658400000015,
+      "totalMs": 202.81658400000015
     },
     {
       "scenario": "uni-app-x-template",
@@ -4730,8 +4730,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 215.04912499999045,
-      "totalMs": 215.04912499999045
+      "wallMs": 195.6390829999873,
+      "totalMs": 195.6390829999873
     },
     {
       "scenario": "uni-app-x-template",
@@ -4744,8 +4744,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 211.46566699999676,
-      "totalMs": 211.46566699999676
+      "wallMs": 207.32683299999917,
+      "totalMs": 207.32683299999917
     },
     {
       "scenario": "uni-app-x-template",
@@ -4758,8 +4758,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 286.16279199998826,
-      "totalMs": 286.16279199998826
+      "wallMs": 199.5676669999957,
+      "totalMs": 199.5676669999957
     },
     {
       "scenario": "uni-app-x-template",
@@ -4772,8 +4772,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 230.95150000001013,
-      "totalMs": 230.95150000001013
+      "wallMs": 218.74658400000772,
+      "totalMs": 218.74658400000772
     },
     {
       "scenario": "uni-app-x-style",
@@ -4786,8 +4786,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 209.70662500000617,
-      "totalMs": 209.70662500000617
+      "wallMs": 220.26704099999915,
+      "totalMs": 220.26704099999915
     },
     {
       "scenario": "uni-app-x-style",
@@ -4800,8 +4800,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 200.78608299999905,
-      "totalMs": 200.78608299999905
+      "wallMs": 170.66737500000454,
+      "totalMs": 170.66737500000454
     },
     {
       "scenario": "uni-app-x-style",
@@ -4814,8 +4814,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 173.52775000000838,
-      "totalMs": 173.52775000000838
+      "wallMs": 207.90120799999568,
+      "totalMs": 207.90120799999568
     },
     {
       "scenario": "uni-app-x-style",
@@ -4828,8 +4828,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 206.95512500000768,
-      "totalMs": 206.95512500000768
+      "wallMs": 200.74270800000522,
+      "totalMs": 200.74270800000522
     },
     {
       "scenario": "uni-app-x-style",
@@ -4842,8 +4842,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 209.2836670000106,
-      "totalMs": 209.2836670000106
+      "wallMs": 199.92733299999963,
+      "totalMs": 199.92733299999963
     },
     {
       "scenario": "uni-app-x-style",
@@ -4856,8 +4856,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 189.62137500000244,
-      "totalMs": 189.62137500000244
+      "wallMs": 203.91866699999082,
+      "totalMs": 203.91866699999082
     },
     {
       "scenario": "uni-app-x-style",
@@ -4870,8 +4870,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 206.8578750000015,
-      "totalMs": 206.8578750000015
+      "wallMs": 197.2155000000057,
+      "totalMs": 197.2155000000057
     },
     {
       "scenario": "uni-app-x-style",
@@ -4884,8 +4884,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 211.27258299999812,
-      "totalMs": 211.27258299999812
+      "wallMs": 198.25129099999322,
+      "totalMs": 198.25129099999322
     },
     {
       "scenario": "uni-app-x-style",
@@ -4898,8 +4898,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 186.0799590000097,
-      "totalMs": 186.0799590000097
+      "wallMs": 215.37495800000033,
+      "totalMs": 215.37495800000033
     },
     {
       "scenario": "uni-app-x-style",
@@ -4912,8 +4912,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 246.18691699999908,
-      "totalMs": 246.18691699999908
+      "wallMs": 191.39225000000442,
+      "totalMs": 191.39225000000442
     },
     {
       "scenario": "uni-app-x-style",
@@ -4926,8 +4926,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 177.1926250000106,
-      "totalMs": 177.1926250000106
+      "wallMs": 205.7151659999945,
+      "totalMs": 205.7151659999945
     },
     {
       "scenario": "uni-app-x-style",
@@ -4940,8 +4940,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 199.64395900000818,
-      "totalMs": 199.64395900000818
+      "wallMs": 201.01524999999674,
+      "totalMs": 201.01524999999674
     },
     {
       "scenario": "uni-app-x-style",
@@ -4954,8 +4954,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 214.0337079999881,
-      "totalMs": 214.0337079999881
+      "wallMs": 199.4187499999971,
+      "totalMs": 199.4187499999971
     },
     {
       "scenario": "uni-app-x-style",
@@ -4968,8 +4968,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 196.52324999999837,
-      "totalMs": 196.52324999999837
+      "wallMs": 214.698166999995,
+      "totalMs": 214.698166999995
     },
     {
       "scenario": "uni-app-x-style",
@@ -4982,8 +4982,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 1270.2668339999946,
-      "totalMs": 1270.2668339999946
+      "wallMs": 194.88229100000171,
+      "totalMs": 194.88229100000171
     },
     {
       "scenario": "uni-app-x-style",
@@ -4996,8 +4996,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 204.4253330000065,
-      "totalMs": 204.4253330000065
+      "wallMs": 199.4204999999929,
+      "totalMs": 199.4204999999929
     },
     {
       "scenario": "uni-app-x-style",
@@ -5010,8 +5010,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 230.5026249999937,
-      "totalMs": 230.5026249999937
+      "wallMs": 196.6472919999942,
+      "totalMs": 196.6472919999942
     },
     {
       "scenario": "uni-app-x-style",
@@ -5024,8 +5024,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 176.10599999999977,
-      "totalMs": 176.10599999999977
+      "wallMs": 206.32099999999627,
+      "totalMs": 206.32099999999627
     },
     {
       "scenario": "uni-app-x-style",
@@ -5038,8 +5038,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 209.41841600000043,
-      "totalMs": 209.41841600000043
+      "wallMs": 207.7693750000035,
+      "totalMs": 207.7693750000035
     },
     {
       "scenario": "uni-app-x-style",
@@ -5052,8 +5052,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 208.4963749999879,
-      "totalMs": 208.4963749999879
+      "wallMs": 191.42225000000326,
+      "totalMs": 191.42225000000326
     },
     {
       "scenario": "taro-vue3-script",
@@ -5066,8 +5066,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 384.1492920000019,
-      "totalMs": 384.1492920000019
+      "wallMs": 343.1915000000008,
+      "totalMs": 343.1915000000008
     },
     {
       "scenario": "taro-vue3-script",
@@ -5080,8 +5080,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 363.84362499999406,
-      "totalMs": 363.84362499999406
+      "wallMs": 314.9066670000029,
+      "totalMs": 314.9066670000029
     },
     {
       "scenario": "taro-vue3-script",
@@ -5094,8 +5094,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 321.64400000000023,
-      "totalMs": 321.64400000000023
+      "wallMs": 334.2299999999959,
+      "totalMs": 334.2299999999959
     },
     {
       "scenario": "taro-vue3-script",
@@ -5108,8 +5108,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 329.5667919999978,
-      "totalMs": 329.5667919999978
+      "wallMs": 317.855040999988,
+      "totalMs": 317.855040999988
     },
     {
       "scenario": "taro-vue3-script",
@@ -5122,8 +5122,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 305.40470900000946,
-      "totalMs": 305.40470900000946
+      "wallMs": 289.3804999999993,
+      "totalMs": 289.3804999999993
     },
     {
       "scenario": "taro-vue3-script",
@@ -5136,8 +5136,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 348.8564999999944,
-      "totalMs": 348.8564999999944
+      "wallMs": 312.8917090000032,
+      "totalMs": 312.8917090000032
     },
     {
       "scenario": "taro-vue3-script",
@@ -5150,8 +5150,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 332.8537090000027,
-      "totalMs": 332.8537090000027
+      "wallMs": 317.13708299999416,
+      "totalMs": 317.13708299999416
     },
     {
       "scenario": "taro-vue3-script",
@@ -5164,8 +5164,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 332.13533299999835,
-      "totalMs": 332.13533299999835
+      "wallMs": 325.72637499999837,
+      "totalMs": 325.72637499999837
     },
     {
       "scenario": "taro-vue3-script",
@@ -5178,8 +5178,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 287.7597919999971,
-      "totalMs": 287.7597919999971
+      "wallMs": 348.8528329999972,
+      "totalMs": 348.8528329999972
     },
     {
       "scenario": "taro-vue3-script",
@@ -5192,8 +5192,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 344.78174999999464,
-      "totalMs": 344.78174999999464
+      "wallMs": 314.30529200000456,
+      "totalMs": 314.30529200000456
     },
     {
       "scenario": "taro-vue3-script",
@@ -5206,8 +5206,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 294.74524999999267,
-      "totalMs": 294.74524999999267
+      "wallMs": 304.6829579999903,
+      "totalMs": 304.6829579999903
     },
     {
       "scenario": "taro-vue3-script",
@@ -5220,8 +5220,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 308.5795829999988,
-      "totalMs": 308.5795829999988
+      "wallMs": 312.4952500000072,
+      "totalMs": 312.4952500000072
     },
     {
       "scenario": "taro-vue3-script",
@@ -5234,8 +5234,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 307.4282499999972,
-      "totalMs": 307.4282499999972
+      "wallMs": 308.2362920000014,
+      "totalMs": 308.2362920000014
     },
     {
       "scenario": "taro-vue3-script",
@@ -5248,8 +5248,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 352.38150000000314,
-      "totalMs": 352.38150000000314
+      "wallMs": 316.3022920000076,
+      "totalMs": 316.3022920000076
     },
     {
       "scenario": "taro-vue3-script",
@@ -5262,8 +5262,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 286.4270830000023,
-      "totalMs": 286.4270830000023
+      "wallMs": 309.60970799998904,
+      "totalMs": 309.60970799998904
     },
     {
       "scenario": "taro-vue3-script",
@@ -5276,8 +5276,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 331.3843329999945,
-      "totalMs": 331.3843329999945
+      "wallMs": 290.4070420000062,
+      "totalMs": 290.4070420000062
     },
     {
       "scenario": "taro-vue3-script",
@@ -5290,8 +5290,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 337.23558299998695,
-      "totalMs": 337.23558299998695
+      "wallMs": 323.21883399999933,
+      "totalMs": 323.21883399999933
     },
     {
       "scenario": "taro-vue3-script",
@@ -5304,8 +5304,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 326.706124999997,
-      "totalMs": 326.706124999997
+      "wallMs": 305.0349169999972,
+      "totalMs": 305.0349169999972
     },
     {
       "scenario": "taro-vue3-script",
@@ -5318,8 +5318,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 309.9874589999963,
-      "totalMs": 309.9874589999963
+      "wallMs": 302.6647499999963,
+      "totalMs": 302.6647499999963
     },
     {
       "scenario": "taro-vue3-script",
@@ -5332,8 +5332,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 317.2880829999922,
-      "totalMs": 317.2880829999922
+      "wallMs": 259.6398749999935,
+      "totalMs": 259.6398749999935
     },
     {
       "scenario": "taro-vue3-template",
@@ -5346,8 +5346,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 376.53712500000256,
-      "totalMs": 376.53712500000256
+      "wallMs": 309.6496659999975,
+      "totalMs": 309.6496659999975
     },
     {
       "scenario": "taro-vue3-template",
@@ -5360,8 +5360,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 334.3614169999928,
-      "totalMs": 334.3614169999928
+      "wallMs": 330.68220799999835,
+      "totalMs": 330.68220799999835
     },
     {
       "scenario": "taro-vue3-template",
@@ -5374,8 +5374,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 289.57895799999824,
-      "totalMs": 289.57895799999824
+      "wallMs": 300.78399999999965,
+      "totalMs": 300.78399999999965
     },
     {
       "scenario": "taro-vue3-template",
@@ -5388,8 +5388,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 317.21383400000923,
-      "totalMs": 317.21383400000923
+      "wallMs": 293.02579200000037,
+      "totalMs": 293.02579200000037
     },
     {
       "scenario": "taro-vue3-template",
@@ -5402,8 +5402,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 316.7486659999995,
-      "totalMs": 316.7486659999995
+      "wallMs": 320.0562920000084,
+      "totalMs": 320.0562920000084
     },
     {
       "scenario": "taro-vue3-template",
@@ -5416,8 +5416,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 330.1008750000037,
-      "totalMs": 330.1008750000037
+      "wallMs": 326.0335419999901,
+      "totalMs": 326.0335419999901
     },
     {
       "scenario": "taro-vue3-template",
@@ -5430,8 +5430,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 232.5669169999892,
-      "totalMs": 232.5669169999892
+      "wallMs": 341.19366699999955,
+      "totalMs": 341.19366699999955
     },
     {
       "scenario": "taro-vue3-template",
@@ -5444,8 +5444,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 307.5377500000177,
-      "totalMs": 307.5377500000177
+      "wallMs": 306.2246669999877,
+      "totalMs": 306.2246669999877
     },
     {
       "scenario": "taro-vue3-template",
@@ -5458,8 +5458,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 315.39508300001035,
-      "totalMs": 315.39508300001035
+      "wallMs": 303.48595800000476,
+      "totalMs": 303.48595800000476
     },
     {
       "scenario": "taro-vue3-template",
@@ -5472,8 +5472,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 331.39079199999105,
-      "totalMs": 331.39079199999105
+      "wallMs": 315.6824169999891,
+      "totalMs": 315.6824169999891
     },
     {
       "scenario": "taro-vue3-template",
@@ -5486,8 +5486,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 375.0115839999926,
-      "totalMs": 375.0115839999926
+      "wallMs": 357.13429200000246,
+      "totalMs": 357.13429200000246
     },
     {
       "scenario": "taro-vue3-template",
@@ -5500,8 +5500,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 284.56145900001866,
-      "totalMs": 284.56145900001866
+      "wallMs": 298.7340000000113,
+      "totalMs": 298.7340000000113
     },
     {
       "scenario": "taro-vue3-template",
@@ -5514,8 +5514,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 319.81129100002,
-      "totalMs": 319.81129100002
+      "wallMs": 349.5549159999937,
+      "totalMs": 349.5549159999937
     },
     {
       "scenario": "taro-vue3-template",
@@ -5528,8 +5528,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 307.96387499998673,
-      "totalMs": 307.96387499998673
+      "wallMs": 289.9961250000051,
+      "totalMs": 289.9961250000051
     },
     {
       "scenario": "taro-vue3-template",
@@ -5542,8 +5542,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 392.2649589999928,
-      "totalMs": 392.2649589999928
+      "wallMs": 311.94758300000103,
+      "totalMs": 311.94758300000103
     },
     {
       "scenario": "taro-vue3-template",
@@ -5556,8 +5556,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 327.83520800000406,
-      "totalMs": 327.83520800000406
+      "wallMs": 306.6907920000085,
+      "totalMs": 306.6907920000085
     },
     {
       "scenario": "taro-vue3-template",
@@ -5570,8 +5570,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 379.26720899998327,
-      "totalMs": 379.26720899998327
+      "wallMs": 328.9723329999979,
+      "totalMs": 328.9723329999979
     },
     {
       "scenario": "taro-vue3-template",
@@ -5584,8 +5584,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 430.40641699999105,
-      "totalMs": 430.40641699999105
+      "wallMs": 301.0368749999907,
+      "totalMs": 301.0368749999907
     },
     {
       "scenario": "taro-vue3-template",
@@ -5598,8 +5598,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 345.69845900000655,
-      "totalMs": 345.69845900000655
+      "wallMs": 296.57737500000803,
+      "totalMs": 296.57737500000803
     },
     {
       "scenario": "taro-vue3-template",
@@ -5612,8 +5612,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.vue",
       "ok": true,
-      "wallMs": 286.3827910000109,
-      "totalMs": 286.3827910000109
+      "wallMs": 308.01120799999626,
+      "totalMs": 308.01120799999626
     },
     {
       "scenario": "taro-vue3-style",
@@ -5626,8 +5626,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.css",
       "ok": true,
-      "wallMs": 307.41545900001074,
-      "totalMs": 307.41545900001074
+      "wallMs": 300.5029590000049,
+      "totalMs": 300.5029590000049
     },
     {
       "scenario": "taro-vue3-style",
@@ -5640,8 +5640,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.css",
       "ok": true,
-      "wallMs": 323.5519580000255,
-      "totalMs": 323.5519580000255
+      "wallMs": 300.4666670000006,
+      "totalMs": 300.4666670000006
     },
     {
       "scenario": "taro-vue3-style",
@@ -5654,8 +5654,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.css",
       "ok": true,
-      "wallMs": 317.68854199998896,
-      "totalMs": 317.68854199998896
+      "wallMs": 351.45666700000584,
+      "totalMs": 351.45666700000584
     },
     {
       "scenario": "taro-vue3-style",
@@ -5668,8 +5668,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.css",
       "ok": true,
-      "wallMs": 308.3621249999851,
-      "totalMs": 308.3621249999851
+      "wallMs": 261.39204200000677,
+      "totalMs": 261.39204200000677
     },
     {
       "scenario": "taro-vue3-style",
@@ -5682,8 +5682,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.css",
       "ok": true,
-      "wallMs": 233.6219170000113,
-      "totalMs": 233.6219170000113
+      "wallMs": 308.8724999999977,
+      "totalMs": 308.8724999999977
     },
     {
       "scenario": "taro-vue3-style",
@@ -5696,8 +5696,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.css",
       "ok": true,
-      "wallMs": 309.747000000003,
-      "totalMs": 309.747000000003
+      "wallMs": 290.03312500000175,
+      "totalMs": 290.03312500000175
     },
     {
       "scenario": "taro-vue3-style",
@@ -5710,8 +5710,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.css",
       "ok": true,
-      "wallMs": 306.1330420000013,
-      "totalMs": 306.1330420000013
+      "wallMs": 296.2412079999922,
+      "totalMs": 296.2412079999922
     },
     {
       "scenario": "taro-vue3-style",
@@ -5724,8 +5724,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.css",
       "ok": true,
-      "wallMs": 328.795541999978,
-      "totalMs": 328.795541999978
+      "wallMs": 306.4382920000062,
+      "totalMs": 306.4382920000062
     },
     {
       "scenario": "taro-vue3-style",
@@ -5738,8 +5738,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.css",
       "ok": true,
-      "wallMs": 409.4285830000008,
-      "totalMs": 409.4285830000008
+      "wallMs": 362.6847080000007,
+      "totalMs": 362.6847080000007
     },
     {
       "scenario": "taro-vue3-style",
@@ -5752,8 +5752,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.css",
       "ok": true,
-      "wallMs": 728.7970409999834,
-      "totalMs": 728.7970409999834
+      "wallMs": 316.4086249999964,
+      "totalMs": 316.4086249999964
     },
     {
       "scenario": "taro-vue3-style",
@@ -5766,8 +5766,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.css",
       "ok": true,
-      "wallMs": 306.74808400002075,
-      "totalMs": 306.74808400002075
+      "wallMs": 300.7612919999956,
+      "totalMs": 300.7612919999956
     },
     {
       "scenario": "taro-vue3-style",
@@ -5780,8 +5780,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.css",
       "ok": true,
-      "wallMs": 309.07520899997326,
-      "totalMs": 309.07520899997326
+      "wallMs": 296.1109170000127,
+      "totalMs": 296.1109170000127
     },
     {
       "scenario": "taro-vue3-style",
@@ -5794,8 +5794,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.css",
       "ok": true,
-      "wallMs": 321.73683300000266,
-      "totalMs": 321.73683300000266
+      "wallMs": 296.1758750000008,
+      "totalMs": 296.1758750000008
     },
     {
       "scenario": "taro-vue3-style",
@@ -5808,8 +5808,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.css",
       "ok": true,
-      "wallMs": 332.06025000000955,
-      "totalMs": 332.06025000000955
+      "wallMs": 309.33316600001126,
+      "totalMs": 309.33316600001126
     },
     {
       "scenario": "taro-vue3-style",
@@ -5822,8 +5822,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.css",
       "ok": true,
-      "wallMs": 299.29087500000605,
-      "totalMs": 299.29087500000605
+      "wallMs": 311.22554200000013,
+      "totalMs": 311.22554200000013
     },
     {
       "scenario": "taro-vue3-style",
@@ -5836,8 +5836,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.css",
       "ok": true,
-      "wallMs": 313.0512499999895,
-      "totalMs": 313.0512499999895
+      "wallMs": 296.53595800000767,
+      "totalMs": 296.53595800000767
     },
     {
       "scenario": "taro-vue3-style",
@@ -5850,8 +5850,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.css",
       "ok": true,
-      "wallMs": 311.8122920000169,
-      "totalMs": 311.8122920000169
+      "wallMs": 308.7475000000122,
+      "totalMs": 308.7475000000122
     },
     {
       "scenario": "taro-vue3-style",
@@ -5864,8 +5864,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.css",
       "ok": true,
-      "wallMs": 309.36920799998916,
-      "totalMs": 309.36920799998916
+      "wallMs": 240.43045800000255,
+      "totalMs": 240.43045800000255
     },
     {
       "scenario": "taro-vue3-style",
@@ -5878,8 +5878,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.css",
       "ok": true,
-      "wallMs": 379.93545800002175,
-      "totalMs": 379.93545800002175
+      "wallMs": 299.09204099999624,
+      "totalMs": 299.09204099999624
     },
     {
       "scenario": "taro-vue3-style",
@@ -5892,8 +5892,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index/index.css",
       "ok": true,
-      "wallMs": 336.4762079999782,
-      "totalMs": 336.4762079999782
+      "wallMs": 339.63712499999383,
+      "totalMs": 339.63712499999383
     },
     {
       "scenario": "mpx-template",
@@ -5906,8 +5906,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 206.98316600002,
-      "totalMs": 206.98316600002
+      "wallMs": 230.8205420000013,
+      "totalMs": 230.8205420000013
     },
     {
       "scenario": "mpx-template",
@@ -5920,8 +5920,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 161.253624999983,
-      "totalMs": 161.253624999983
+      "wallMs": 161.5164589999913,
+      "totalMs": 161.5164589999913
     },
     {
       "scenario": "mpx-template",
@@ -5934,8 +5934,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 154.9754580000008,
-      "totalMs": 154.9754580000008
+      "wallMs": 149.50041700000293,
+      "totalMs": 149.50041700000293
     },
     {
       "scenario": "mpx-template",
@@ -5948,8 +5948,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 188.04008299999987,
-      "totalMs": 188.04008299999987
+      "wallMs": 134.90979099999822,
+      "totalMs": 134.90979099999822
     },
     {
       "scenario": "mpx-template",
@@ -5962,8 +5962,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 133.2420839999977,
-      "totalMs": 133.2420839999977
+      "wallMs": 160.00274999999965,
+      "totalMs": 160.00274999999965
     },
     {
       "scenario": "mpx-template",
@@ -5976,8 +5976,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 186.17733400000725,
-      "totalMs": 186.17733400000725
+      "wallMs": 139.4226670000062,
+      "totalMs": 139.4226670000062
     },
     {
       "scenario": "mpx-template",
@@ -5990,8 +5990,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 234.50370800000383,
-      "totalMs": 234.50370800000383
+      "wallMs": 139.2682499999937,
+      "totalMs": 139.2682499999937
     },
     {
       "scenario": "mpx-template",
@@ -6004,8 +6004,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 154.56066700001247,
-      "totalMs": 154.56066700001247
+      "wallMs": 139.19908299999952,
+      "totalMs": 139.19908299999952
     },
     {
       "scenario": "mpx-template",
@@ -6018,8 +6018,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 129.73366599998553,
-      "totalMs": 129.73366599998553
+      "wallMs": 136.0571670000063,
+      "totalMs": 136.0571670000063
     },
     {
       "scenario": "mpx-template",
@@ -6032,8 +6032,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 131.62987500001327,
-      "totalMs": 131.62987500001327
+      "wallMs": 169.21566699999676,
+      "totalMs": 169.21566699999676
     },
     {
       "scenario": "mpx-template",
@@ -6046,8 +6046,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 164.43779200001154,
-      "totalMs": 164.43779200001154
+      "wallMs": 124.07708399998955,
+      "totalMs": 124.07708399998955
     },
     {
       "scenario": "mpx-template",
@@ -6060,8 +6060,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 162.02499999999418,
-      "totalMs": 162.02499999999418
+      "wallMs": 122.33991599999717,
+      "totalMs": 122.33991599999717
     },
     {
       "scenario": "mpx-template",
@@ -6074,8 +6074,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 131.78933299999335,
-      "totalMs": 131.78933299999335
+      "wallMs": 146.93004200000723,
+      "totalMs": 146.93004200000723
     },
     {
       "scenario": "mpx-template",
@@ -6088,8 +6088,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 164.03079199997592,
-      "totalMs": 164.03079199997592
+      "wallMs": 170.0870419999992,
+      "totalMs": 170.0870419999992
     },
     {
       "scenario": "mpx-template",
@@ -6102,8 +6102,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 131.5417080000043,
-      "totalMs": 131.5417080000043
+      "wallMs": 148.7455830000108,
+      "totalMs": 148.7455830000108
     },
     {
       "scenario": "mpx-template",
@@ -6116,8 +6116,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 156.32699999999022,
-      "totalMs": 156.32699999999022
+      "wallMs": 135.78508399998827,
+      "totalMs": 135.78508399998827
     },
     {
       "scenario": "mpx-template",
@@ -6130,8 +6130,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 130.45083299998078,
-      "totalMs": 130.45083299998078
+      "wallMs": 162.15649999999732,
+      "totalMs": 162.15649999999732
     },
     {
       "scenario": "mpx-template",
@@ -6144,8 +6144,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 197.6834160000144,
-      "totalMs": 197.6834160000144
+      "wallMs": 147.9820000000036,
+      "totalMs": 147.9820000000036
     },
     {
       "scenario": "mpx-template",
@@ -6158,8 +6158,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 184.45908299999428,
-      "totalMs": 184.45908299999428
+      "wallMs": 152.0190419999999,
+      "totalMs": 152.0190419999999
     },
     {
       "scenario": "mpx-template",
@@ -6172,8 +6172,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 204.0564580000064,
-      "totalMs": 204.0564580000064
+      "wallMs": 148.66729199999827,
+      "totalMs": 148.66729199999827
     },
     {
       "scenario": "mpx-script",
@@ -6186,8 +6186,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 291.2971660000039,
-      "totalMs": 291.2971660000039
+      "wallMs": 148.8373750000028,
+      "totalMs": 148.8373750000028
     },
     {
       "scenario": "mpx-script",
@@ -6200,8 +6200,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 212.90750000000116,
-      "totalMs": 212.90750000000116
+      "wallMs": 124.9206669999985,
+      "totalMs": 124.9206669999985
     },
     {
       "scenario": "mpx-script",
@@ -6214,8 +6214,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 188.04162499998347,
-      "totalMs": 188.04162499998347
+      "wallMs": 158.93204200000037,
+      "totalMs": 158.93204200000037
     },
     {
       "scenario": "mpx-script",
@@ -6228,8 +6228,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 227.1589999999851,
-      "totalMs": 227.1589999999851
+      "wallMs": 170.45716699998593,
+      "totalMs": 170.45716699998593
     },
     {
       "scenario": "mpx-script",
@@ -6242,8 +6242,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 232.29566600002,
-      "totalMs": 232.29566600002
+      "wallMs": 148.05166700002155,
+      "totalMs": 148.05166700002155
     },
     {
       "scenario": "mpx-script",
@@ -6256,8 +6256,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 155.21837499999674,
-      "totalMs": 155.21837499999674
+      "wallMs": 161.9833750000107,
+      "totalMs": 161.9833750000107
     },
     {
       "scenario": "mpx-script",
@@ -6270,8 +6270,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 174.59587499999907,
-      "totalMs": 174.59587499999907
+      "wallMs": 169.97320800001035,
+      "totalMs": 169.97320800001035
     },
     {
       "scenario": "mpx-script",
@@ -6284,8 +6284,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 143.60074999998324,
-      "totalMs": 143.60074999998324
+      "wallMs": 140.12724999999045,
+      "totalMs": 140.12724999999045
     },
     {
       "scenario": "mpx-script",
@@ -6298,8 +6298,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 129.83437500000582,
-      "totalMs": 129.83437500000582
+      "wallMs": 176.39795899999444,
+      "totalMs": 176.39795899999444
     },
     {
       "scenario": "mpx-script",
@@ -6312,8 +6312,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 165.47145899999305,
-      "totalMs": 165.47145899999305
+      "wallMs": 174.92679100000532,
+      "totalMs": 174.92679100000532
     },
     {
       "scenario": "mpx-script",
@@ -6326,8 +6326,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 154.6394169999985,
-      "totalMs": 154.6394169999985
+      "wallMs": 201.62270800000988,
+      "totalMs": 201.62270800000988
     },
     {
       "scenario": "mpx-script",
@@ -6340,8 +6340,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 155.04670799997984,
-      "totalMs": 155.04670799997984
+      "wallMs": 153.7437079999945,
+      "totalMs": 153.7437079999945
     },
     {
       "scenario": "mpx-script",
@@ -6354,8 +6354,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 188.33595800001058,
-      "totalMs": 188.33595800001058
+      "wallMs": 116.42908299999544,
+      "totalMs": 116.42908299999544
     },
     {
       "scenario": "mpx-script",
@@ -6368,8 +6368,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 130.6658330000064,
-      "totalMs": 130.6658330000064
+      "wallMs": 192.82683299999917,
+      "totalMs": 192.82683299999917
     },
     {
       "scenario": "mpx-script",
@@ -6382,8 +6382,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 121.99491700000362,
-      "totalMs": 121.99491700000362
+      "wallMs": 139.6449169999978,
+      "totalMs": 139.6449169999978
     },
     {
       "scenario": "mpx-script",
@@ -6396,8 +6396,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 154.1245409999974,
-      "totalMs": 154.1245409999974
+      "wallMs": 170.99145800000406,
+      "totalMs": 170.99145800000406
     },
     {
       "scenario": "mpx-script",
@@ -6410,8 +6410,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 119.04324999998789,
-      "totalMs": 119.04324999998789
+      "wallMs": 167.08554099997855,
+      "totalMs": 167.08554099997855
     },
     {
       "scenario": "mpx-script",
@@ -6424,8 +6424,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 146.67874999999185,
-      "totalMs": 146.67874999999185
+      "wallMs": 147.54216700000688,
+      "totalMs": 147.54216700000688
     },
     {
       "scenario": "mpx-script",
@@ -6438,8 +6438,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 177.07645900000352,
-      "totalMs": 177.07645900000352
+      "wallMs": 160.0994580000115,
+      "totalMs": 160.0994580000115
     },
     {
       "scenario": "mpx-script",
@@ -6452,8 +6452,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 145.04337500000838,
-      "totalMs": 145.04337500000838
+      "wallMs": 160.8857920000155,
+      "totalMs": 160.8857920000155
     },
     {
       "scenario": "mpx-style",
@@ -6466,8 +6466,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 138.7726669999829,
-      "totalMs": 138.7726669999829
+      "wallMs": 161.90837499999907,
+      "totalMs": 161.90837499999907
     },
     {
       "scenario": "mpx-style",
@@ -6480,8 +6480,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 131.3127079999831,
-      "totalMs": 131.3127079999831
+      "wallMs": 118.80420900002355,
+      "totalMs": 118.80420900002355
     },
     {
       "scenario": "mpx-style",
@@ -6494,8 +6494,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 174.57720900001004,
-      "totalMs": 174.57720900001004
+      "wallMs": 126.79220800002804,
+      "totalMs": 126.79220800002804
     },
     {
       "scenario": "mpx-style",
@@ -6508,8 +6508,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 155.35208299997612,
-      "totalMs": 155.35208299997612
+      "wallMs": 153.54200000001583,
+      "totalMs": 153.54200000001583
     },
     {
       "scenario": "mpx-style",
@@ -6522,8 +6522,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 130.58695799999987,
-      "totalMs": 130.58695799999987
+      "wallMs": 174.02316700000665,
+      "totalMs": 174.02316700000665
     },
     {
       "scenario": "mpx-style",
@@ -6536,8 +6536,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 143.16883300000336,
-      "totalMs": 143.16883300000336
+      "wallMs": 150.3713749999879,
+      "totalMs": 150.3713749999879
     },
     {
       "scenario": "mpx-style",
@@ -6550,8 +6550,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 244.74412499999744,
-      "totalMs": 244.74412499999744
+      "wallMs": 128.3524590000161,
+      "totalMs": 128.3524590000161
     },
     {
       "scenario": "mpx-style",
@@ -6564,8 +6564,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 134.05566700000782,
-      "totalMs": 134.05566700000782
+      "wallMs": 159.04541700001573,
+      "totalMs": 159.04541700001573
     },
     {
       "scenario": "mpx-style",
@@ -6578,8 +6578,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 156.097374999983,
-      "totalMs": 156.097374999983
+      "wallMs": 173.4189170000027,
+      "totalMs": 173.4189170000027
     },
     {
       "scenario": "mpx-style",
@@ -6592,8 +6592,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 165.29462499998044,
-      "totalMs": 165.29462499998044
+      "wallMs": 135.28658300000825,
+      "totalMs": 135.28658300000825
     },
     {
       "scenario": "mpx-style",
@@ -6606,8 +6606,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 155.33854100000462,
-      "totalMs": 155.33854100000462
+      "wallMs": 133.52758299998823,
+      "totalMs": 133.52758299998823
     },
     {
       "scenario": "mpx-style",
@@ -6620,8 +6620,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 153.1512090000033,
-      "totalMs": 153.1512090000033
+      "wallMs": 165.84962500000256,
+      "totalMs": 165.84962500000256
     },
     {
       "scenario": "mpx-style",
@@ -6634,8 +6634,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 142.50966700000572,
-      "totalMs": 142.50966700000572
+      "wallMs": 161.93329200000153,
+      "totalMs": 161.93329200000153
     },
     {
       "scenario": "mpx-style",
@@ -6648,8 +6648,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 206.25412500000675,
-      "totalMs": 206.25412500000675
+      "wallMs": 120.52170799998567,
+      "totalMs": 120.52170799998567
     },
     {
       "scenario": "mpx-style",
@@ -6662,8 +6662,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 188.04208400001517,
-      "totalMs": 188.04208400001517
+      "wallMs": 117.14112499999464,
+      "totalMs": 117.14112499999464
     },
     {
       "scenario": "mpx-style",
@@ -6676,8 +6676,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 190.91887500000303,
-      "totalMs": 190.91887500000303
+      "wallMs": 148.53854199999478,
+      "totalMs": 148.53854199999478
     },
     {
       "scenario": "mpx-style",
@@ -6690,8 +6690,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 141.77237500000047,
-      "totalMs": 141.77237500000047
+      "wallMs": 164.45237499999348,
+      "totalMs": 164.45237499999348
     },
     {
       "scenario": "mpx-style",
@@ -6704,8 +6704,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 176.45508400001563,
-      "totalMs": 176.45508400001563
+      "wallMs": 148.5434580000001,
+      "totalMs": 148.5434580000001
     },
     {
       "scenario": "mpx-style",
@@ -6718,8 +6718,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 185.2770840000012,
-      "totalMs": 185.2770840000012
+      "wallMs": 129.5207909999881,
+      "totalMs": 129.5207909999881
     },
     {
       "scenario": "mpx-style",
@@ -6732,8 +6732,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 176.17687500000466,
-      "totalMs": 176.17687500000466
+      "wallMs": 182.9810839999991,
+      "totalMs": 182.9810839999991
     },
     {
       "scenario": "mpx-page-json",
@@ -6746,8 +6746,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 249.03991600000882,
-      "totalMs": 249.03991600000882
+      "wallMs": 150.23995899999863,
+      "totalMs": 150.23995899999863
     },
     {
       "scenario": "mpx-page-json",
@@ -6760,8 +6760,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 134.34229199998663,
-      "totalMs": 134.34229199998663
+      "wallMs": 167.4577500000014,
+      "totalMs": 167.4577500000014
     },
     {
       "scenario": "mpx-page-json",
@@ -6774,8 +6774,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 156.1203749999986,
-      "totalMs": 156.1203749999986
+      "wallMs": 116.3772089999984,
+      "totalMs": 116.3772089999984
     },
     {
       "scenario": "mpx-page-json",
@@ -6788,8 +6788,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 287.51712500001304,
-      "totalMs": 287.51712500001304
+      "wallMs": 162.3274580000143,
+      "totalMs": 162.3274580000143
     },
     {
       "scenario": "mpx-page-json",
@@ -6802,8 +6802,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 131.58579199999804,
-      "totalMs": 131.58579199999804
+      "wallMs": 163.19416700000875,
+      "totalMs": 163.19416700000875
     },
     {
       "scenario": "mpx-page-json",
@@ -6816,8 +6816,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 155.4391670000041,
-      "totalMs": 155.4391670000041
+      "wallMs": 159.47345799999312,
+      "totalMs": 159.47345799999312
     },
     {
       "scenario": "mpx-page-json",
@@ -6830,8 +6830,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 151.354416999995,
-      "totalMs": 151.354416999995
+      "wallMs": 117.82979200000409,
+      "totalMs": 117.82979200000409
     },
     {
       "scenario": "mpx-page-json",
@@ -6844,8 +6844,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 130.33162499999162,
-      "totalMs": 130.33162499999162
+      "wallMs": 141.7244579999824,
+      "totalMs": 141.7244579999824
     },
     {
       "scenario": "mpx-page-json",
@@ -6858,8 +6858,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 118.65175000001909,
-      "totalMs": 118.65175000001909
+      "wallMs": 161.22362500001327,
+      "totalMs": 161.22362500001327
     },
     {
       "scenario": "mpx-page-json",
@@ -6872,8 +6872,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 153.14220900001237,
-      "totalMs": 153.14220900001237
+      "wallMs": 161.54516599999624,
+      "totalMs": 161.54516599999624
     },
     {
       "scenario": "mpx-page-json",
@@ -6886,8 +6886,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 142.47220899999957,
-      "totalMs": 142.47220899999957
+      "wallMs": 162.184957999998,
+      "totalMs": 162.184957999998
     },
     {
       "scenario": "mpx-page-json",
@@ -6900,8 +6900,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 164.70249999998487,
-      "totalMs": 164.70249999998487
+      "wallMs": 126.37491699997918,
+      "totalMs": 126.37491699997918
     },
     {
       "scenario": "mpx-page-json",
@@ -6914,8 +6914,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 154.09429200002342,
-      "totalMs": 154.09429200002342
+      "wallMs": 151.70833299998776,
+      "totalMs": 151.70833299998776
     },
     {
       "scenario": "mpx-page-json",
@@ -6928,8 +6928,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 131.33595800001058,
-      "totalMs": 131.33595800001058
+      "wallMs": 126.17004200001247,
+      "totalMs": 126.17004200001247
     },
     {
       "scenario": "mpx-page-json",
@@ -6942,8 +6942,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 141.05520800000522,
-      "totalMs": 141.05520800000522
+      "wallMs": 128.48929200001294,
+      "totalMs": 128.48929200001294
     },
     {
       "scenario": "mpx-page-json",
@@ -6956,8 +6956,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 143.3672920000099,
-      "totalMs": 143.3672920000099
+      "wallMs": 118.08074999999371,
+      "totalMs": 118.08074999999371
     },
     {
       "scenario": "mpx-page-json",
@@ -6970,8 +6970,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 120.54895899997791,
-      "totalMs": 120.54895899997791
+      "wallMs": 153.48770900000818,
+      "totalMs": 153.48770900000818
     },
     {
       "scenario": "mpx-page-json",
@@ -6984,8 +6984,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 153.05879199999617,
-      "totalMs": 153.05879199999617
+      "wallMs": 124.83579099999042,
+      "totalMs": 124.83579099999042
     },
     {
       "scenario": "mpx-page-json",
@@ -6998,8 +6998,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 163.71175000001676,
-      "totalMs": 163.71175000001676
+      "wallMs": 164.46562500001164,
+      "totalMs": 164.46562500001164
     },
     {
       "scenario": "mpx-page-json",
@@ -7012,8 +7012,8 @@
       "attempts": 1,
       "sourceFile": "src/pages/index.mpx",
       "ok": true,
-      "wallMs": 144.83024999999907,
-      "totalMs": 144.83024999999907
+      "wallMs": 125.89829199999804,
+      "totalMs": 125.89829199999804
     }
   ],
   "notes": [

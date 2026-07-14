@@ -1,23 +1,23 @@
 <svg role="img" aria-label="产物体积分析" width="1120" height="760" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 1120 760"><title>产物体积分析</title><desc>上图对比 raw、gzip 和 brotli，下图拆分 JavaScript 与 vendor JavaScript。</desc>
 <rect width="1120" height="760" x="0" y="0" fill="#ffffff"></rect>
-<path d="M230.5 115L230.5 345" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr4-cls-113"></path>
-<path d="M344.5 115L344.5 345" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr4-cls-113"></path>
-<path d="M458.5 115L458.5 345" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr4-cls-113"></path>
-<path d="M573.5 115L573.5 345" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr4-cls-113"></path>
-<path d="M687.5 115L687.5 345" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr4-cls-113"></path>
-<path d="M801.5 115L801.5 345" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr4-cls-113"></path>
-<path d="M915.5 115L915.5 345" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr4-cls-113"></path>
-<path d="M1030.5 115L1030.5 345" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr4-cls-113"></path>
-<path d="M230.5 435L230.5 665" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr4-cls-113"></path>
-<path d="M344.5 435L344.5 665" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr4-cls-113"></path>
-<path d="M458.5 435L458.5 665" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr4-cls-113"></path>
-<path d="M573.5 435L573.5 665" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr4-cls-113"></path>
-<path d="M687.5 435L687.5 665" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr4-cls-113"></path>
-<path d="M801.5 435L801.5 665" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr4-cls-113"></path>
-<path d="M915.5 435L915.5 665" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr4-cls-113"></path>
-<path d="M1030.5 435L1030.5 665" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr4-cls-113"></path>
-<path d="M230.5 115L230.5 345" fill="none" pointer-events="visible" stroke="#d9dee8" stroke-linecap="round" class="zr4-cls-113"></path>
-<path d="M230.5 435L230.5 665" fill="none" pointer-events="visible" stroke="#d9dee8" stroke-linecap="round" class="zr4-cls-113"></path>
+<path d="M230.5 115L230.5 345" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr4-cls-112"></path>
+<path d="M344.5 115L344.5 345" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr4-cls-112"></path>
+<path d="M458.5 115L458.5 345" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr4-cls-112"></path>
+<path d="M573.5 115L573.5 345" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr4-cls-112"></path>
+<path d="M687.5 115L687.5 345" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr4-cls-112"></path>
+<path d="M801.5 115L801.5 345" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr4-cls-112"></path>
+<path d="M915.5 115L915.5 345" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr4-cls-112"></path>
+<path d="M1030.5 115L1030.5 345" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr4-cls-112"></path>
+<path d="M230.5 435L230.5 665" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr4-cls-112"></path>
+<path d="M344.5 435L344.5 665" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr4-cls-112"></path>
+<path d="M458.5 435L458.5 665" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr4-cls-112"></path>
+<path d="M573.5 435L573.5 665" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr4-cls-112"></path>
+<path d="M687.5 435L687.5 665" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr4-cls-112"></path>
+<path d="M801.5 435L801.5 665" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr4-cls-112"></path>
+<path d="M915.5 435L915.5 665" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr4-cls-112"></path>
+<path d="M1030.5 435L1030.5 665" fill="none" pointer-events="visible" stroke="#d9dee8" class="zr4-cls-112"></path>
+<path d="M230.5 115L230.5 345" fill="none" pointer-events="visible" stroke="#d9dee8" stroke-linecap="round" class="zr4-cls-112"></path>
+<path d="M230.5 435L230.5 665" fill="none" pointer-events="visible" stroke="#d9dee8" stroke-linecap="round" class="zr4-cls-112"></path>
 <text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Arial, sans-serif;" transform="translate(1045 345)" fill="#667085">KB</text>
 <text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Arial, sans-serif;" transform="translate(1045 665)" fill="#667085">KB</text>
 <text dominant-baseline="central" text-anchor="end" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(222 143.75)" fill="#667085">weapp-vite 原生</text>
@@ -44,128 +44,128 @@
 <text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" y="6" transform="translate(801.4286 673)" fill="#667085">150</text>
 <text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" y="6" transform="translate(915.7143 673)" fill="#667085">180</text>
 <text dominant-baseline="central" text-anchor="middle" style="font-size:12px;font-family:Arial, sans-serif;" y="6" transform="translate(1030 673)" fill="#667085">210</text>
-<path d="M230 121.6l33.1 0l0 13.8l-33.1 0Z" fill="#1769aa" ecmeta_series_index="0" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr4-cls-114 zr4-cls-115"></path>
-<path d="M230 179.1l504 0l0 13.8l-504 0Z" fill="#1769aa" ecmeta_series_index="0" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr4-cls-116 zr4-cls-115"></path>
-<path d="M230 236.6l757.7 0l0 13.8l-757.7 0Z" fill="#1769aa" ecmeta_series_index="0" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr4-cls-117 zr4-cls-115"></path>
-<path d="M230 294.1l761.1 0l0 13.8l-761.1 0Z" fill="#1769aa" ecmeta_series_index="0" ecmeta_data_index="3" ecmeta_ssr_type="chart" class="zr4-cls-118 zr4-cls-115"></path>
-<path d="M230 136.8l12.6 0l0 13.8l-12.6 0Z" fill="#d1495b" ecmeta_series_index="1" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr4-cls-119 zr4-cls-120"></path>
-<path d="M230 194.3l179.8 0l0 13.8l-179.8 0Z" fill="#d1495b" ecmeta_series_index="1" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr4-cls-121 zr4-cls-120"></path>
-<path d="M230 251.8l190.9 0l0 13.8l-190.9 0Z" fill="#d1495b" ecmeta_series_index="1" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr4-cls-122 zr4-cls-120"></path>
-<path d="M230 309.3l192.4 0l0 13.8l-192.4 0Z" fill="#d1495b" ecmeta_series_index="1" ecmeta_data_index="3" ecmeta_ssr_type="chart" class="zr4-cls-123 zr4-cls-120"></path>
-<path d="M230 152.1l10.7 0l0 13.8l-10.7 0Z" fill="#2a9d8f" ecmeta_series_index="2" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr4-cls-124 zr4-cls-125"></path>
-<path d="M230 209.6l157.3 0l0 13.8l-157.3 0Z" fill="#2a9d8f" ecmeta_series_index="2" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr4-cls-126 zr4-cls-125"></path>
-<path d="M230 267.1l161.5 0l0 13.8l-161.5 0Z" fill="#2a9d8f" ecmeta_series_index="2" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr4-cls-127 zr4-cls-125"></path>
-<path d="M230 324.6l162.3 0l0 13.8l-162.3 0Z" fill="#2a9d8f" ecmeta_series_index="2" ecmeta_data_index="3" ecmeta_ssr_type="chart" class="zr4-cls-128 zr4-cls-125"></path>
-<path d="M230 442.8l24 0l0 20l-24 0Z" fill="#e09f3e" ecmeta_series_index="3" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr4-cls-129 zr4-cls-130"></path>
-<path d="M230 500.3l494.1 0l0 20l-494.1 0Z" fill="#e09f3e" ecmeta_series_index="3" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr4-cls-131 zr4-cls-130"></path>
-<path d="M230 557.8l748.6 0l0 20l-748.6 0Z" fill="#e09f3e" ecmeta_series_index="3" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr4-cls-132 zr4-cls-130"></path>
-<path d="M230 615.3l752 0l0 20l-752 0Z" fill="#e09f3e" ecmeta_series_index="3" ecmeta_data_index="3" ecmeta_ssr_type="chart" class="zr4-cls-133 zr4-cls-130"></path>
-<path d="M230 464.7l0 0l0 20l0 0Z" fill="#6d597a" ecmeta_series_index="4" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr4-cls-134"></path>
-<path d="M230 522.2l478.1 0l0 20l-478.1 0Z" fill="#6d597a" ecmeta_series_index="4" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr4-cls-135 zr4-cls-134"></path>
-<path d="M230 579.7l721.5 0l0 20l-721.5 0Z" fill="#6d597a" ecmeta_series_index="4" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr4-cls-136 zr4-cls-134"></path>
-<path d="M230 637.2l721.5 0l0 20l-721.5 0Z" fill="#6d597a" ecmeta_series_index="4" ecmeta_data_index="3" ecmeta_ssr_type="chart" class="zr4-cls-137 zr4-cls-134"></path>
-<path d="M-5 -5l183.4 0l0 24l-183.4 0Z" transform="translate(891.56 85)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#b7b9be" stroke-width="0" class="zr4-cls-113"></path>
-<path d="M-5 -5l173.6 0l0 24l-173.6 0Z" transform="translate(901.36 405)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#b7b9be" stroke-width="0" class="zr4-cls-113"></path>
-<path d="M3.5 0L21.5 0A3.5 3.5 0 0 1 25 3.5L25 10.5A3.5 3.5 0 0 1 21.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0Z" transform="translate(891.56 85)" fill="#1769aa" ecmeta_series_index="0" ecmeta_data_index="0" ecmeta_ssr_type="legend" ecmeta_silent="true" class="zr4-cls-113"></path>
+<path d="M230 121.6l33.1 0l0 13.8l-33.1 0Z" fill="#1769aa" ecmeta_series_index="0" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr4-cls-113 zr4-cls-114"></path>
+<path d="M230 179.1l504 0l0 13.8l-504 0Z" fill="#1769aa" ecmeta_series_index="0" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr4-cls-115 zr4-cls-114"></path>
+<path d="M230 236.6l757.7 0l0 13.8l-757.7 0Z" fill="#1769aa" ecmeta_series_index="0" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr4-cls-116 zr4-cls-114"></path>
+<path d="M230 294.1l761.1 0l0 13.8l-761.1 0Z" fill="#1769aa" ecmeta_series_index="0" ecmeta_data_index="3" ecmeta_ssr_type="chart" class="zr4-cls-117 zr4-cls-114"></path>
+<path d="M230 136.8l12.6 0l0 13.8l-12.6 0Z" fill="#d1495b" ecmeta_series_index="1" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr4-cls-118 zr4-cls-119"></path>
+<path d="M230 194.3l179.8 0l0 13.8l-179.8 0Z" fill="#d1495b" ecmeta_series_index="1" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr4-cls-120 zr4-cls-119"></path>
+<path d="M230 251.8l190.9 0l0 13.8l-190.9 0Z" fill="#d1495b" ecmeta_series_index="1" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr4-cls-121 zr4-cls-119"></path>
+<path d="M230 309.3l192.4 0l0 13.8l-192.4 0Z" fill="#d1495b" ecmeta_series_index="1" ecmeta_data_index="3" ecmeta_ssr_type="chart" class="zr4-cls-122 zr4-cls-119"></path>
+<path d="M230 152.1l10.7 0l0 13.8l-10.7 0Z" fill="#2a9d8f" ecmeta_series_index="2" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr4-cls-123 zr4-cls-124"></path>
+<path d="M230 209.6l157.3 0l0 13.8l-157.3 0Z" fill="#2a9d8f" ecmeta_series_index="2" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr4-cls-125 zr4-cls-124"></path>
+<path d="M230 267.1l161.5 0l0 13.8l-161.5 0Z" fill="#2a9d8f" ecmeta_series_index="2" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr4-cls-126 zr4-cls-124"></path>
+<path d="M230 324.6l162.7 0l0 13.8l-162.7 0Z" fill="#2a9d8f" ecmeta_series_index="2" ecmeta_data_index="3" ecmeta_ssr_type="chart" class="zr4-cls-127 zr4-cls-124"></path>
+<path d="M230 442.8l24 0l0 20l-24 0Z" fill="#e09f3e" ecmeta_series_index="3" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr4-cls-128 zr4-cls-129"></path>
+<path d="M230 500.3l494.1 0l0 20l-494.1 0Z" fill="#e09f3e" ecmeta_series_index="3" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr4-cls-130 zr4-cls-129"></path>
+<path d="M230 557.8l748.6 0l0 20l-748.6 0Z" fill="#e09f3e" ecmeta_series_index="3" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr4-cls-131 zr4-cls-129"></path>
+<path d="M230 615.3l752 0l0 20l-752 0Z" fill="#e09f3e" ecmeta_series_index="3" ecmeta_data_index="3" ecmeta_ssr_type="chart" class="zr4-cls-132 zr4-cls-129"></path>
+<path d="M230 464.7l0 0l0 20l0 0Z" fill="#6d597a" ecmeta_series_index="4" ecmeta_data_index="0" ecmeta_ssr_type="chart" class="zr4-cls-133"></path>
+<path d="M230 522.2l478.1 0l0 20l-478.1 0Z" fill="#6d597a" ecmeta_series_index="4" ecmeta_data_index="1" ecmeta_ssr_type="chart" class="zr4-cls-134 zr4-cls-133"></path>
+<path d="M230 579.7l721.5 0l0 20l-721.5 0Z" fill="#6d597a" ecmeta_series_index="4" ecmeta_data_index="2" ecmeta_ssr_type="chart" class="zr4-cls-135 zr4-cls-133"></path>
+<path d="M230 637.2l721.5 0l0 20l-721.5 0Z" fill="#6d597a" ecmeta_series_index="4" ecmeta_data_index="3" ecmeta_ssr_type="chart" class="zr4-cls-136 zr4-cls-133"></path>
+<path d="M-5 -5l183.4 0l0 24l-183.4 0Z" transform="translate(891.56 85)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#b7b9be" stroke-width="0" class="zr4-cls-112"></path>
+<path d="M-5 -5l173.6 0l0 24l-173.6 0Z" transform="translate(901.36 405)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#b7b9be" stroke-width="0" class="zr4-cls-112"></path>
+<path d="M3.5 0L21.5 0A3.5 3.5 0 0 1 25 3.5L25 10.5A3.5 3.5 0 0 1 21.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0Z" transform="translate(891.56 85)" fill="#1769aa" ecmeta_series_index="0" ecmeta_data_index="0" ecmeta_ssr_type="legend" ecmeta_silent="true" class="zr4-cls-112"></path>
 <text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Arial, sans-serif;" x="30" y="7" transform="translate(891.56 85)" fill="#667085">raw</text>
-<path d="M0 0l49.3 0l0 14l-49.3 0Z" transform="translate(891.56 85)" fill="none" pointer-events="visible" ecmeta_series_index="0" ecmeta_data_index="0" ecmeta_ssr_type="legend" class="zr4-cls-138"></path>
-<path d="M3.5 0L21.5 0A3.5 3.5 0 0 1 25 3.5L25 10.5A3.5 3.5 0 0 1 21.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0Z" transform="translate(948.88 85)" fill="#d1495b" ecmeta_series_index="1" ecmeta_data_index="1" ecmeta_ssr_type="legend" ecmeta_silent="true" class="zr4-cls-113"></path>
+<path d="M0 0l49.3 0l0 14l-49.3 0Z" transform="translate(891.56 85)" fill="none" pointer-events="visible" ecmeta_series_index="0" ecmeta_data_index="0" ecmeta_ssr_type="legend" class="zr4-cls-137"></path>
+<path d="M3.5 0L21.5 0A3.5 3.5 0 0 1 25 3.5L25 10.5A3.5 3.5 0 0 1 21.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0Z" transform="translate(948.88 85)" fill="#d1495b" ecmeta_series_index="1" ecmeta_data_index="1" ecmeta_ssr_type="legend" ecmeta_silent="true" class="zr4-cls-112"></path>
 <text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Arial, sans-serif;" x="30" y="7" transform="translate(948.88 85)" fill="#667085">gzip</text>
-<path d="M0 0l52.1 0l0 14l-52.1 0Z" transform="translate(948.88 85)" fill="none" pointer-events="visible" ecmeta_series_index="1" ecmeta_data_index="1" ecmeta_ssr_type="legend" class="zr4-cls-138"></path>
-<path d="M3.5 0L21.5 0A3.5 3.5 0 0 1 25 3.5L25 10.5A3.5 3.5 0 0 1 21.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0Z" transform="translate(1008.96 85)" fill="#2a9d8f" ecmeta_series_index="2" ecmeta_data_index="2" ecmeta_ssr_type="legend" ecmeta_silent="true" class="zr4-cls-113"></path>
+<path d="M0 0l52.1 0l0 14l-52.1 0Z" transform="translate(948.88 85)" fill="none" pointer-events="visible" ecmeta_series_index="1" ecmeta_data_index="1" ecmeta_ssr_type="legend" class="zr4-cls-137"></path>
+<path d="M3.5 0L21.5 0A3.5 3.5 0 0 1 25 3.5L25 10.5A3.5 3.5 0 0 1 21.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0Z" transform="translate(1008.96 85)" fill="#2a9d8f" ecmeta_series_index="2" ecmeta_data_index="2" ecmeta_ssr_type="legend" ecmeta_silent="true" class="zr4-cls-112"></path>
 <text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Arial, sans-serif;" x="30" y="7" transform="translate(1008.96 85)" fill="#667085">brotli</text>
-<path d="M0 0l56 0l0 14l-56 0Z" transform="translate(1008.96 85)" fill="none" pointer-events="visible" ecmeta_series_index="2" ecmeta_data_index="2" ecmeta_ssr_type="legend" class="zr4-cls-138"></path>
-<path d="M3.5 0L21.5 0A3.5 3.5 0 0 1 25 3.5L25 10.5A3.5 3.5 0 0 1 21.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0Z" transform="translate(901.36 405)" fill="#e09f3e" ecmeta_series_index="3" ecmeta_data_index="0" ecmeta_ssr_type="legend" ecmeta_silent="true" class="zr4-cls-113"></path>
+<path d="M0 0l56 0l0 14l-56 0Z" transform="translate(1008.96 85)" fill="none" pointer-events="visible" ecmeta_series_index="2" ecmeta_data_index="2" ecmeta_ssr_type="legend" class="zr4-cls-137"></path>
+<path d="M3.5 0L21.5 0A3.5 3.5 0 0 1 25 3.5L25 10.5A3.5 3.5 0 0 1 21.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0Z" transform="translate(901.36 405)" fill="#e09f3e" ecmeta_series_index="3" ecmeta_data_index="0" ecmeta_ssr_type="legend" ecmeta_silent="true" class="zr4-cls-112"></path>
 <text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" x="30" y="7" transform="translate(901.36 405)" fill="#667085">全部 JS</text>
-<path d="M0 0l71.4 0l0 14l-71.4 0Z" transform="translate(901.36 405)" fill="none" pointer-events="visible" ecmeta_series_index="3" ecmeta_data_index="0" ecmeta_ssr_type="legend" class="zr4-cls-138"></path>
-<path d="M3.5 0L21.5 0A3.5 3.5 0 0 1 25 3.5L25 10.5A3.5 3.5 0 0 1 21.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0Z" transform="translate(980.76 405)" fill="#6d597a" ecmeta_series_index="4" ecmeta_data_index="1" ecmeta_ssr_type="legend" ecmeta_silent="true" class="zr4-cls-113"></path>
+<path d="M0 0l71.4 0l0 14l-71.4 0Z" transform="translate(901.36 405)" fill="none" pointer-events="visible" ecmeta_series_index="3" ecmeta_data_index="0" ecmeta_ssr_type="legend" class="zr4-cls-137"></path>
+<path d="M3.5 0L21.5 0A3.5 3.5 0 0 1 25 3.5L25 10.5A3.5 3.5 0 0 1 21.5 14L3.5 14A3.5 3.5 0 0 1 0 10.5L0 3.5A3.5 3.5 0 0 1 3.5 0Z" transform="translate(980.76 405)" fill="#6d597a" ecmeta_series_index="4" ecmeta_data_index="1" ecmeta_ssr_type="legend" ecmeta_silent="true" class="zr4-cls-112"></path>
 <text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" x="30" y="7" transform="translate(980.76 405)" fill="#667085">vendor JS</text>
-<path d="M0 0l84.2 0l0 14l-84.2 0Z" transform="translate(980.76 405)" fill="none" pointer-events="visible" ecmeta_series_index="4" ecmeta_data_index="1" ecmeta_ssr_type="legend" class="zr4-cls-138"></path>
-<path d="M-5 -5l273.5 0l0 50l-273.5 0Z" transform="translate(25 21)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#3c3c41" stroke-width="0" class="zr4-cls-113"></path>
+<path d="M0 0l84.2 0l0 14l-84.2 0Z" transform="translate(980.76 405)" fill="none" pointer-events="visible" ecmeta_series_index="4" ecmeta_data_index="1" ecmeta_ssr_type="legend" class="zr4-cls-137"></path>
+<path d="M-5 -5l273.5 0l0 50l-273.5 0Z" transform="translate(25 21)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#3c3c41" stroke-width="0" class="zr4-cls-112"></path>
 <text dominant-baseline="central" text-anchor="start" style="font-size:18px;font-family:Arial, sans-serif;font-weight:500;" y="9" transform="translate(25 21)" fill="#20242b">产物体积分析</text>
 <text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Arial, sans-serif;font-weight:400;" xml:space="preserve" y="34" transform="translate(25 21)" fill="#667085">当前 size 专项覆盖四个项目；单位 KB，越小越好</text>
 <style ><![CDATA[
-.zr4-cls-113:hover {
+.zr4-cls-112:hover {
 pointer-events:none;
 }
-.zr4-cls-114 {
+.zr4-cls-113 {
 animation:zr4-ani-0 0.35s cubic-bezier(0.65,0,0.35,1) both;
 }
-.zr4-cls-115:hover {
+.zr4-cls-114:hover {
 cursor:pointer;
 fill:rgba(25,115,187,1);
 }
-.zr4-cls-116 {
+.zr4-cls-115 {
 animation:zr4-ani-1 0.35s cubic-bezier(0.65,0,0.35,1) both;
 }
-.zr4-cls-117 {
+.zr4-cls-116 {
 animation:zr4-ani-2 0.35s cubic-bezier(0.65,0,0.35,1) both;
 }
-.zr4-cls-118 {
+.zr4-cls-117 {
 animation:zr4-ani-3 0.35s cubic-bezier(0.65,0,0.35,1) both;
 }
-.zr4-cls-119 {
+.zr4-cls-118 {
 animation:zr4-ani-4 0.35s cubic-bezier(0.65,0,0.35,1) both;
 }
-.zr4-cls-120:hover {
+.zr4-cls-119:hover {
 cursor:pointer;
 fill:rgba(229,80,100,1);
 }
-.zr4-cls-121 {
+.zr4-cls-120 {
 animation:zr4-ani-5 0.35s cubic-bezier(0.65,0,0.35,1) both;
 }
-.zr4-cls-122 {
+.zr4-cls-121 {
 animation:zr4-ani-6 0.35s cubic-bezier(0.65,0,0.35,1) both;
 }
-.zr4-cls-123 {
+.zr4-cls-122 {
 animation:zr4-ani-7 0.35s cubic-bezier(0.65,0,0.35,1) both;
 }
-.zr4-cls-124 {
+.zr4-cls-123 {
 animation:zr4-ani-8 0.35s cubic-bezier(0.65,0,0.35,1) both;
 }
-.zr4-cls-125:hover {
+.zr4-cls-124:hover {
 cursor:pointer;
 fill:rgba(46,172,157,1);
 }
-.zr4-cls-126 {
+.zr4-cls-125 {
 animation:zr4-ani-9 0.35s cubic-bezier(0.65,0,0.35,1) both;
 }
-.zr4-cls-127 {
+.zr4-cls-126 {
 animation:zr4-ani-10 0.35s cubic-bezier(0.65,0,0.35,1) both;
 }
-.zr4-cls-128 {
+.zr4-cls-127 {
 animation:zr4-ani-11 0.35s cubic-bezier(0.65,0,0.35,1) both;
 }
-.zr4-cls-129 {
+.zr4-cls-128 {
 animation:zr4-ani-12 0.35s cubic-bezier(0.65,0,0.35,1) both;
 }
-.zr4-cls-130:hover {
+.zr4-cls-129:hover {
 cursor:pointer;
 fill:rgba(246,174,68,1);
 }
-.zr4-cls-131 {
+.zr4-cls-130 {
 animation:zr4-ani-13 0.35s cubic-bezier(0.65,0,0.35,1) both;
 }
-.zr4-cls-132 {
+.zr4-cls-131 {
 animation:zr4-ani-14 0.35s cubic-bezier(0.65,0,0.35,1) both;
 }
-.zr4-cls-133 {
+.zr4-cls-132 {
 animation:zr4-ani-15 0.35s cubic-bezier(0.65,0,0.35,1) both;
 }
-.zr4-cls-134:hover {
+.zr4-cls-133:hover {
 cursor:pointer;
 fill:rgba(119,97,134,1);
 }
-.zr4-cls-135 {
+.zr4-cls-134 {
 animation:zr4-ani-16 0.35s cubic-bezier(0.65,0,0.35,1) both;
 }
-.zr4-cls-136 {
+.zr4-cls-135 {
 animation:zr4-ani-17 0.35s cubic-bezier(0.65,0,0.35,1) both;
 }
-.zr4-cls-137 {
+.zr4-cls-136 {
 animation:zr4-ani-18 0.35s cubic-bezier(0.65,0,0.35,1) both;
 }
-.zr4-cls-138:hover {
+.zr4-cls-137:hover {
 cursor:pointer;
 fill:rgba(0,0,0,0);
 }
@@ -262,7 +262,7 @@ d:path("M230 267.1l161.5 0l0 13.8l-161.5 0Z");
 d:path("M230 324.6l0 0l0 13.8l0 0Z");
 }
 100% {
-d:path("M230 324.6l162.3 0l0 13.8l-162.3 0Z");
+d:path("M230 324.6l162.7 0l0 13.8l-162.7 0Z");
 }
 }
 @keyframes zr4-ani-12 {

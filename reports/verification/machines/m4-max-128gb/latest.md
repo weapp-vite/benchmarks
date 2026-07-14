@@ -1,24 +1,40 @@
 # 全量验证报告
 
-生成时间：2026-07-13T11:23:21.375Z
+生成时间：2026-07-14T04:10:37.425Z
 总体状态：失败
 
 | 检查                      | 状态 |   耗时 | 退出码 | 命令                                |
 | ------------------------- | ---- | -----: | -----: | ----------------------------------- |
-| 安装依赖                  | 通过 |   2.9s |      0 | `pnpm install --frozen-lockfile`    |
-| 构建                      | 通过 |   1.6s |      0 | `pnpm run build`                    |
+| 安装依赖                  | 失败 |   0.3s |      1 | `pnpm install --frozen-lockfile`    |
+| 构建                      | 通过 |  10.9s |      0 | `pnpm run build`                    |
 | 代码检查                  | 通过 |   3.2s |      0 | `pnpm run lint`                     |
-| 类型检查                  | 通过 |   2.4s |      0 | `pnpm run typecheck`                |
-| 类型 API 测试             | 通过 |   0.3s |      0 | `pnpm run tsd`                      |
-| 单元与集成测试            | 通过 |   1.2s |      0 | `pnpm run test`                     |
-| 依赖安全审计              | 失败 |   7.0s |      1 | `pnpm audit --audit-level=moderate` |
-| HBuilderX uni-app x smoke | 通过 |   4.3s |      0 | `pnpm run test:hbuilderx:uni-app-x` |
-| 编译基准                  | 通过 | 271.0s |      0 | `pnpm run bench:compile`            |
-| 运行时 IDE E2E 基准       | 通过 | 565.0s |      0 | `pnpm run bench:runtime`            |
-| HMR 基准                  | 通过 | 176.9s |      0 | `pnpm run bench:hmr`                |
-| wevu 体积分析             | 通过 |   4.3s |      0 | `pnpm run bench:size:wevu`          |
+| 类型检查                  | 通过 |   0.9s |      0 | `pnpm run typecheck`                |
+| 类型 API 测试             | 通过 |   0.4s |      0 | `pnpm run tsd`                      |
+| 单元与集成测试            | 通过 |   1.3s |      0 | `pnpm run test`                     |
+| 依赖安全审计              | 失败 |   1.7s |      1 | `pnpm audit --audit-level=moderate` |
+| HBuilderX uni-app x smoke | 通过 |   4.5s |      0 | `pnpm run test:hbuilderx:uni-app-x` |
+| 编译基准                  | 通过 | 266.6s |      0 | `pnpm run bench:compile`            |
+| 运行时 IDE E2E 基准       | 通过 | 407.4s |      0 | `pnpm run bench:runtime`            |
+| HMR 基准                  | 通过 | 150.2s |      0 | `pnpm run bench:hmr`                |
+| wevu 体积分析             | 通过 |   4.1s |      0 | `pnpm run bench:size:wevu`          |
 
 ## 失败摘要
+
+### 安装依赖
+
+```text
+Scope: all 10 workspace projects
+ ERR_PNPM_OUTDATED_LOCKFILE  Cannot install with "frozen-lockfile" because pnpm-lock.yaml is not up to date with <ROOT>/apps/mpx/package.json
+
+Note that in CI environments this setting is true by default. If you still need to run install in such cases, use "pnpm install --no-frozen-lockfile"
+
+  Failure reason:
+  specifiers in the lockfile don't match specifiers in package.json:
+* 1 dependencies are mismatched:
+  - postcss (lockfile: 8.5.19, manifest: 8.5.15)
+
+
+```
 
 ### 依赖安全审计
 

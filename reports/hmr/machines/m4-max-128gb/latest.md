@@ -1,6 +1,6 @@
 # HMR 基准报告
 
-生成时间：2026-07-13T11:23:14.098Z
+生成时间：2026-07-14T04:10:30.346Z
 采样次数：20 次，报告中的平均值由有效样本计算。
 
 ## 运行环境
@@ -10,13 +10,13 @@
 - CPU：Apple M4 Max；核心数：16；内存：128GB
 - Node：v24.18.0；pnpm：10.33.4
 - 微信开发者工具 CLI：-
-- Git commit：e89e08dd979bff187d98def574d5dfef16011129
-- weapp-vite submodule：566e5184b3a818155a8e7041b3e03ba1d44045de
+- Git commit：685851c2b7741651934192328126d3cd25d7fade
+- weapp-vite submodule：26510329efcf36cbf934e566ebbc80f069151a22
 
 ## 一眼结论
 
-- HMR 最快：weapp-vite 原生 / JSON 文件，平均 45.5ms。
-- HMR 最慢：uni-app x / Vue SFC script 区块，平均 476.0ms。
+- HMR 最快：weapp-vite 原生 / WXML 文件，平均 44.1ms。
+- HMR 最慢：uni-app x / Vue SFC script 区块，平均 351.4ms。
 - 所有 HMR 场景样本完整，均已纳入排名。
 - 场景覆盖：weapp-vite + wevu、weapp-vite + wevu performance、weapp-vite 原生、uni-app vite vue3、uni-app x、taro vue3、mpx。
 - 读数口径：所有框架统一使用源文件写入到目标小程序产物更新的墙钟耗时，内部阶段列没有统一可比数据时显示为 -。
@@ -26,566 +26,566 @@
 
 | 排名 | 场景                                                  | 项目                          | 类型     | 采集方式 | 平均 HMR | 相对最快 | 重试样本 | 外部等待 | 构建核心 | 转换 | 写入 | 产物发射 | 共享 chunk | 平均脏入口 | 平均输出文件 |
 | ---: | ----------------------------------------------------- | ----------------------------- | -------- | -------- | -------: | -------: | -------: | -------: | -------: | ---: | ---: | -------: | ---------: | ---------: | -----------: |
-|    1 | weapp-vite 原生 / JSON 文件                           | weapp-vite 原生               | 原生文件 | 产物变化 |   45.5ms |    1.00x |        0 |   45.5ms |        - |    - |    - |        - |          - |          - |            - |
-|    2 | weapp-vite 原生 / WXSS 文件                           | weapp-vite 原生               | 原生文件 | 产物变化 |   47.1ms |    1.04x |        0 |   47.1ms |        - |    - |    - |        - |          - |          - |            - |
-|    3 | weapp-vite 原生 / WXML 文件                           | weapp-vite 原生               | 原生文件 | 产物变化 |   48.4ms |    1.06x |        0 |   48.4ms |        - |    - |    - |        - |          - |          - |            - |
-|    4 | weapp-vite + wevu / Vue SFC style 区块                | weapp-vite + wevu             | Vue SFC  | 产物变化 |   78.3ms |    1.72x |        0 |   78.3ms |        - |    - |    - |        - |          - |          - |            - |
-|    5 | weapp-vite + wevu / Vue SFC script 区块               | weapp-vite + wevu             | Vue SFC  | 产物变化 |   98.3ms |    2.16x |        0 |   98.3ms |        - |    - |    - |        - |          - |          - |            - |
-|    6 | weapp-vite 原生 / JS 文件                             | weapp-vite 原生               | 原生文件 | 产物变化 |  116.1ms |    2.55x |        0 |  116.1ms |        - |    - |    - |        - |          - |          - |            - |
-|    7 | weapp-vite + wevu performance / Vue SFC 页面配置      | weapp-vite + wevu performance | Vue SFC  | 产物变化 |  144.7ms |    3.18x |        0 |  144.7ms |        - |    - |    - |        - |          - |          - |            - |
-|    8 | mpx / 页面配置                                        | mpx                           | Mpx SFC  | 产物变化 |  156.3ms |    3.44x |        0 |  156.3ms |        - |    - |    - |        - |          - |          - |            - |
-|    9 | mpx / style 区块                                      | mpx                           | Mpx SFC  | 产物变化 |  164.5ms |    3.62x |        0 |  164.5ms |        - |    - |    - |        - |          - |          - |            - |
-|   10 | mpx / template 区块                                   | mpx                           | Mpx SFC  | 产物变化 |  165.4ms |    3.63x |        0 |  165.4ms |        - |    - |    - |        - |          - |          - |            - |
-|   11 | weapp-vite + wevu / Vue SFC template 区块             | weapp-vite + wevu             | Vue SFC  | 产物变化 |  166.6ms |    3.66x |        0 |  166.6ms |        - |    - |    - |        - |          - |          - |            - |
-|   12 | mpx / script 区块                                     | mpx                           | Mpx SFC  | 产物变化 |  170.7ms |    3.75x |        0 |  170.7ms |        - |    - |    - |        - |          - |          - |            - |
-|   13 | weapp-vite + wevu performance / Vue SFC style 区块    | weapp-vite + wevu performance | Vue SFC  | 产物变化 |  177.5ms |    3.90x |        0 |  177.5ms |        - |    - |    - |        - |          - |          - |            - |
-|   14 | weapp-vite + wevu performance / Vue SFC template 区块 | weapp-vite + wevu performance | Vue SFC  | 产物变化 |  184.3ms |    4.05x |        0 |  184.3ms |        - |    - |    - |        - |          - |          - |            - |
-|   15 | uni-app x / Vue SFC template 区块                     | uni-app x                     | Vue SFC  | 产物变化 |  213.5ms |    4.69x |        0 |  213.5ms |        - |    - |    - |        - |          - |          - |            - |
-|   16 | uni-app x / Vue SFC style 区块                        | uni-app x                     | Vue SFC  | 产物变化 |  256.3ms |    5.63x |        0 |  256.3ms |        - |    - |    - |        - |          - |          - |            - |
-|   17 | weapp-vite + wevu performance / Vue SFC script 区块   | weapp-vite + wevu performance | Vue SFC  | 产物变化 |  256.9ms |    5.65x |        0 |  256.9ms |        - |    - |    - |        - |          - |          - |            - |
-|   18 | uni-app vite vue3 / Vue SFC template 区块             | uni-app vite vue3             | Vue SFC  | 产物变化 |  261.0ms |    5.74x |        0 |  261.0ms |        - |    - |    - |        - |          - |          - |            - |
-|   19 | uni-app vite vue3 / Vue SFC style 区块                | uni-app vite vue3             | Vue SFC  | 产物变化 |  274.1ms |    6.02x |        0 |  274.1ms |        - |    - |    - |        - |          - |          - |            - |
-|   20 | uni-app vite vue3 / Vue SFC script 区块               | uni-app vite vue3             | Vue SFC  | 产物变化 |  315.0ms |    6.92x |        0 |  315.0ms |        - |    - |    - |        - |          - |          - |            - |
-|   21 | taro vue3 / Vue SFC script 区块                       | taro vue3                     | Vue SFC  | 产物变化 |  326.2ms |    7.17x |        0 |  326.2ms |        - |    - |    - |        - |          - |          - |            - |
-|   22 | taro vue3 / Vue SFC template 区块                     | taro vue3                     | Vue SFC  | 产物变化 |  330.0ms |    7.25x |        0 |  330.0ms |        - |    - |    - |        - |          - |          - |            - |
-|   23 | weapp-vite + wevu / Vue SFC 页面配置                  | weapp-vite + wevu             | Vue SFC  | 产物变化 |  337.9ms |    7.43x |        0 |  337.9ms |        - |    - |    - |        - |          - |          - |            - |
-|   24 | taro vue3 / CSS 文件                                  | taro vue3                     | Vue SFC  | 产物变化 |  339.7ms |    7.46x |        0 |  339.7ms |        - |    - |    - |        - |          - |          - |            - |
-|   25 | uni-app x / Vue SFC script 区块                       | uni-app x                     | Vue SFC  | 产物变化 |  476.0ms |   10.46x |        0 |  476.0ms |        - |    - |    - |        - |          - |          - |            - |
+|    1 | weapp-vite 原生 / WXML 文件                           | weapp-vite 原生               | 原生文件 | 产物变化 |   44.1ms |    1.00x |        0 |   44.1ms |        - |    - |    - |        - |          - |          - |            - |
+|    2 | weapp-vite 原生 / JSON 文件                           | weapp-vite 原生               | 原生文件 | 产物变化 |   45.5ms |    1.03x |        0 |   45.5ms |        - |    - |    - |        - |          - |          - |            - |
+|    3 | weapp-vite 原生 / WXSS 文件                           | weapp-vite 原生               | 原生文件 | 产物变化 |   46.1ms |    1.05x |        0 |   46.1ms |        - |    - |    - |        - |          - |          - |            - |
+|    4 | weapp-vite 原生 / JS 文件                             | weapp-vite 原生               | 原生文件 | 产物变化 |   50.6ms |    1.15x |        0 |   50.6ms |        - |    - |    - |        - |          - |          - |            - |
+|    5 | weapp-vite + wevu performance / Vue SFC style 区块    | weapp-vite + wevu performance | Vue SFC  | 产物变化 |   75.2ms |    1.71x |        0 |   75.2ms |        - |    - |    - |        - |          - |          - |            - |
+|    6 | weapp-vite + wevu / Vue SFC style 区块                | weapp-vite + wevu             | Vue SFC  | 产物变化 |   75.4ms |    1.71x |        0 |   75.4ms |        - |    - |    - |        - |          - |          - |            - |
+|    7 | weapp-vite + wevu / Vue SFC template 区块             | weapp-vite + wevu             | Vue SFC  | 产物变化 |   82.8ms |    1.88x |        0 |   82.8ms |        - |    - |    - |        - |          - |          - |            - |
+|    8 | weapp-vite + wevu performance / Vue SFC template 区块 | weapp-vite + wevu performance | Vue SFC  | 产物变化 |   82.9ms |    1.88x |        0 |   82.9ms |        - |    - |    - |        - |          - |          - |            - |
+|    9 | weapp-vite + wevu / Vue SFC 页面配置                  | weapp-vite + wevu             | Vue SFC  | 产物变化 |   83.7ms |    1.90x |        0 |   83.7ms |        - |    - |    - |        - |          - |          - |            - |
+|   10 | weapp-vite + wevu performance / Vue SFC 页面配置      | weapp-vite + wevu performance | Vue SFC  | 产物变化 |   89.6ms |    2.03x |        0 |   89.6ms |        - |    - |    - |        - |          - |          - |            - |
+|   11 | weapp-vite + wevu performance / Vue SFC script 区块   | weapp-vite + wevu performance | Vue SFC  | 产物变化 |   93.2ms |    2.11x |        0 |   93.2ms |        - |    - |    - |        - |          - |          - |            - |
+|   12 | weapp-vite + wevu / Vue SFC script 区块               | weapp-vite + wevu             | Vue SFC  | 产物变化 |   98.9ms |    2.24x |        0 |   98.9ms |        - |    - |    - |        - |          - |          - |            - |
+|   13 | mpx / 页面配置                                        | mpx                           | Mpx SFC  | 产物变化 |  144.2ms |    3.27x |        0 |  144.2ms |        - |    - |    - |        - |          - |          - |            - |
+|   14 | mpx / style 区块                                      | mpx                           | Mpx SFC  | 产物变化 |  147.7ms |    3.35x |        0 |  147.7ms |        - |    - |    - |        - |          - |          - |            - |
+|   15 | mpx / template 区块                                   | mpx                           | Mpx SFC  | 产物变化 |  150.9ms |    3.42x |        0 |  150.9ms |        - |    - |    - |        - |          - |          - |            - |
+|   16 | mpx / script 区块                                     | mpx                           | Mpx SFC  | 产物变化 |  159.3ms |    3.61x |        0 |  159.3ms |        - |    - |    - |        - |          - |          - |            - |
+|   17 | uni-app x / Vue SFC style 区块                        | uni-app x                     | Vue SFC  | 产物变化 |  201.1ms |    4.56x |        0 |  201.1ms |        - |    - |    - |        - |          - |          - |            - |
+|   18 | uni-app x / Vue SFC template 区块                     | uni-app x                     | Vue SFC  | 产物变化 |  202.9ms |    4.60x |        0 |  202.9ms |        - |    - |    - |        - |          - |          - |            - |
+|   19 | uni-app vite vue3 / Vue SFC template 区块             | uni-app vite vue3             | Vue SFC  | 产物变化 |  207.4ms |    4.70x |        0 |  207.4ms |        - |    - |    - |        - |          - |          - |            - |
+|   20 | uni-app vite vue3 / Vue SFC style 区块                | uni-app vite vue3             | Vue SFC  | 产物变化 |  209.1ms |    4.74x |        0 |  209.1ms |        - |    - |    - |        - |          - |          - |            - |
+|   21 | uni-app vite vue3 / Vue SFC script 区块               | uni-app vite vue3             | Vue SFC  | 产物变化 |  278.8ms |    6.32x |        0 |  278.8ms |        - |    - |    - |        - |          - |          - |            - |
+|   22 | taro vue3 / CSS 文件                                  | taro vue3                     | Vue SFC  | 产物变化 |  304.6ms |    6.91x |        0 |  304.6ms |        - |    - |    - |        - |          - |          - |            - |
+|   23 | taro vue3 / Vue SFC script 区块                       | taro vue3                     | Vue SFC  | 产物变化 |  312.5ms |    7.09x |        0 |  312.5ms |        - |    - |    - |        - |          - |          - |            - |
+|   24 | taro vue3 / Vue SFC template 区块                     | taro vue3                     | Vue SFC  | 产物变化 |  314.8ms |    7.14x |        0 |  314.8ms |        - |    - |    - |        - |          - |          - |            - |
+|   25 | uni-app x / Vue SFC script 区块                       | uni-app x                     | Vue SFC  | 产物变化 |  351.4ms |    7.97x |        0 |  351.4ms |        - |    - |    - |        - |          - |          - |            - |
 
 ## 阶段均值
 
 | 场景                                                  | 采集方式 | HMR 总耗时 | 外部等待 | 构建核心 | 转换 | 写入 | 产物发射 | 共享 chunk | 脏入口 | 输出文件 | 源文件                       |
 | ----------------------------------------------------- | -------- | ---------: | -------: | -------: | ---: | ---: | -------: | ---------: | -----: | -------: | ---------------------------- |
-| weapp-vite + wevu / Vue SFC script 区块               | 产物变化 |     98.3ms |   98.3ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index/index.vue`  |
-| weapp-vite + wevu / Vue SFC template 区块             | 产物变化 |    166.6ms |  166.6ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index/index.vue`  |
-| weapp-vite + wevu / Vue SFC style 区块                | 产物变化 |     78.3ms |   78.3ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index/index.vue`  |
-| weapp-vite + wevu / Vue SFC 页面配置                  | 产物变化 |    337.9ms |  337.9ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index/index.vue`  |
-| weapp-vite + wevu performance / Vue SFC script 区块   | 产物变化 |    256.9ms |  256.9ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index/index.vue`  |
-| weapp-vite + wevu performance / Vue SFC template 区块 | 产物变化 |    184.3ms |  184.3ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index/index.vue`  |
-| weapp-vite + wevu performance / Vue SFC style 区块    | 产物变化 |    177.5ms |  177.5ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index/index.vue`  |
-| weapp-vite + wevu performance / Vue SFC 页面配置      | 产物变化 |    144.7ms |  144.7ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index/index.vue`  |
-| weapp-vite 原生 / JS 文件                             | 产物变化 |    116.1ms |  116.1ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index/index.js`   |
-| weapp-vite 原生 / WXML 文件                           | 产物变化 |     48.4ms |   48.4ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index/index.wxml` |
-| weapp-vite 原生 / WXSS 文件                           | 产物变化 |     47.1ms |   47.1ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index/index.wxss` |
+| weapp-vite + wevu / Vue SFC script 区块               | 产物变化 |     98.9ms |   98.9ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index/index.vue`  |
+| weapp-vite + wevu / Vue SFC template 区块             | 产物变化 |     82.8ms |   82.8ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index/index.vue`  |
+| weapp-vite + wevu / Vue SFC style 区块                | 产物变化 |     75.4ms |   75.4ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index/index.vue`  |
+| weapp-vite + wevu / Vue SFC 页面配置                  | 产物变化 |     83.7ms |   83.7ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index/index.vue`  |
+| weapp-vite + wevu performance / Vue SFC script 区块   | 产物变化 |     93.2ms |   93.2ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index/index.vue`  |
+| weapp-vite + wevu performance / Vue SFC template 区块 | 产物变化 |     82.9ms |   82.9ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index/index.vue`  |
+| weapp-vite + wevu performance / Vue SFC style 区块    | 产物变化 |     75.2ms |   75.2ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index/index.vue`  |
+| weapp-vite + wevu performance / Vue SFC 页面配置      | 产物变化 |     89.6ms |   89.6ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index/index.vue`  |
+| weapp-vite 原生 / JS 文件                             | 产物变化 |     50.6ms |   50.6ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index/index.js`   |
+| weapp-vite 原生 / WXML 文件                           | 产物变化 |     44.1ms |   44.1ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index/index.wxml` |
+| weapp-vite 原生 / WXSS 文件                           | 产物变化 |     46.1ms |   46.1ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index/index.wxss` |
 | weapp-vite 原生 / JSON 文件                           | 产物变化 |     45.5ms |   45.5ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index/index.json` |
-| uni-app vite vue3 / Vue SFC script 区块               | 产物变化 |    315.0ms |  315.0ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index/index.vue`  |
-| uni-app vite vue3 / Vue SFC template 区块             | 产物变化 |    261.0ms |  261.0ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index/index.vue`  |
-| uni-app vite vue3 / Vue SFC style 区块                | 产物变化 |    274.1ms |  274.1ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index/index.vue`  |
-| uni-app x / Vue SFC script 区块                       | 产物变化 |    476.0ms |  476.0ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index/index.vue`  |
-| uni-app x / Vue SFC template 区块                     | 产物变化 |    213.5ms |  213.5ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index/index.vue`  |
-| uni-app x / Vue SFC style 区块                        | 产物变化 |    256.3ms |  256.3ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index/index.vue`  |
-| taro vue3 / Vue SFC script 区块                       | 产物变化 |    326.2ms |  326.2ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index/index.vue`  |
-| taro vue3 / Vue SFC template 区块                     | 产物变化 |    330.0ms |  330.0ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index/index.vue`  |
-| taro vue3 / CSS 文件                                  | 产物变化 |    339.7ms |  339.7ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index/index.css`  |
-| mpx / template 区块                                   | 产物变化 |    165.4ms |  165.4ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index.mpx`        |
-| mpx / script 区块                                     | 产物变化 |    170.7ms |  170.7ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index.mpx`        |
-| mpx / style 区块                                      | 产物变化 |    164.5ms |  164.5ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index.mpx`        |
-| mpx / 页面配置                                        | 产物变化 |    156.3ms |  156.3ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index.mpx`        |
+| uni-app vite vue3 / Vue SFC script 区块               | 产物变化 |    278.8ms |  278.8ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index/index.vue`  |
+| uni-app vite vue3 / Vue SFC template 区块             | 产物变化 |    207.4ms |  207.4ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index/index.vue`  |
+| uni-app vite vue3 / Vue SFC style 区块                | 产物变化 |    209.1ms |  209.1ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index/index.vue`  |
+| uni-app x / Vue SFC script 区块                       | 产物变化 |    351.4ms |  351.4ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index/index.vue`  |
+| uni-app x / Vue SFC template 区块                     | 产物变化 |    202.9ms |  202.9ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index/index.vue`  |
+| uni-app x / Vue SFC style 区块                        | 产物变化 |    201.1ms |  201.1ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index/index.vue`  |
+| taro vue3 / Vue SFC script 区块                       | 产物变化 |    312.5ms |  312.5ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index/index.vue`  |
+| taro vue3 / Vue SFC template 区块                     | 产物变化 |    314.8ms |  314.8ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index/index.vue`  |
+| taro vue3 / CSS 文件                                  | 产物变化 |    304.6ms |  304.6ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index/index.css`  |
+| mpx / template 区块                                   | 产物变化 |    150.9ms |  150.9ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index.mpx`        |
+| mpx / script 区块                                     | 产物变化 |    159.3ms |  159.3ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index.mpx`        |
+| mpx / style 区块                                      | 产物变化 |    147.7ms |  147.7ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index.mpx`        |
+| mpx / 页面配置                                        | 产物变化 |    144.2ms |  144.2ms |        - |    - |    - |        - |          - |      - |        - | `src/pages/index.mpx`        |
 
 ## 原始明细
 
 | 场景                                                  | 轮次 | 尝试次数 | 通过 | 采集方式 | HMR 总耗时 | 外部等待 | 构建核心 | 转换 | 写入 | 产物发射 | 共享 chunk | 脏入口 | 输出文件 |
 | ----------------------------------------------------- | ---: | -------: | ---- | -------- | ---------: | -------: | -------: | ---: | ---: | -------: | ---------: | -----: | -------: |
-| weapp-vite + wevu / Vue SFC script 区块               |    1 |        1 | 是   | 产物变化 |    124.5ms |  124.5ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC script 区块               |    2 |        1 | 是   | 产物变化 |    120.7ms |  120.7ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC script 区块               |    3 |        1 | 是   | 产物变化 |     97.5ms |   97.5ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC script 区块               |    4 |        1 | 是   | 产物变化 |    109.6ms |  109.6ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC script 区块               |    5 |        1 | 是   | 产物变化 |     89.0ms |   89.0ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC script 区块               |    6 |        1 | 是   | 产物变化 |     98.0ms |   98.0ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC script 区块               |    7 |        1 | 是   | 产物变化 |     88.9ms |   88.9ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC script 区块               |    8 |        1 | 是   | 产物变化 |     87.0ms |   87.0ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC script 区块               |    9 |        1 | 是   | 产物变化 |     90.7ms |   90.7ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC script 区块               |   10 |        1 | 是   | 产物变化 |     99.3ms |   99.3ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC script 区块               |   11 |        1 | 是   | 产物变化 |    111.3ms |  111.3ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC script 区块               |   12 |        1 | 是   | 产物变化 |    108.0ms |  108.0ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC script 区块               |   13 |        1 | 是   | 产物变化 |     89.2ms |   89.2ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC script 区块               |   14 |        1 | 是   | 产物变化 |     88.6ms |   88.6ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC script 区块               |   15 |        1 | 是   | 产物变化 |    105.1ms |  105.1ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC script 区块               |   16 |        1 | 是   | 产物变化 |     87.5ms |   87.5ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC script 区块               |   17 |        1 | 是   | 产物变化 |     87.5ms |   87.5ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC script 区块               |   18 |        1 | 是   | 产物变化 |    111.7ms |  111.7ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC script 区块               |   19 |        1 | 是   | 产物变化 |     86.0ms |   86.0ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC script 区块               |   20 |        1 | 是   | 产物变化 |     86.8ms |   86.8ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC template 区块             |    1 |        1 | 是   | 产物变化 |     99.5ms |   99.5ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC template 区块             |    2 |        1 | 是   | 产物变化 |     87.3ms |   87.3ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC template 区块             |    3 |        1 | 是   | 产物变化 |    121.1ms |  121.1ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC template 区块             |    4 |        1 | 是   | 产物变化 |     87.9ms |   87.9ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC template 区块             |    5 |        1 | 是   | 产物变化 |     88.9ms |   88.9ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC template 区块             |    6 |        1 | 是   | 产物变化 |     84.8ms |   84.8ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC template 区块             |    7 |        1 | 是   | 产物变化 |     87.6ms |   87.6ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC template 区块             |    8 |        1 | 是   | 产物变化 |     78.0ms |   78.0ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC template 区块             |    9 |        1 | 是   | 产物变化 |     88.7ms |   88.7ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC template 区块             |   10 |        1 | 是   | 产物变化 |     88.3ms |   88.3ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC template 区块             |   11 |        1 | 是   | 产物变化 |    731.6ms |  731.6ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC template 区块             |   12 |        1 | 是   | 产物变化 |     87.7ms |   87.7ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC template 区块             |   13 |        1 | 是   | 产物变化 |     75.6ms |   75.6ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC template 区块             |   14 |        1 | 是   | 产物变化 |    162.5ms |  162.5ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC template 区块             |   15 |        1 | 是   | 产物变化 |     87.2ms |   87.2ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC template 区块             |   16 |        1 | 是   | 产物变化 |     87.8ms |   87.8ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC template 区块             |   17 |        1 | 是   | 产物变化 |    111.4ms |  111.4ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC template 区块             |   18 |        1 | 是   | 产物变化 |    871.0ms |  871.0ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC template 区块             |   19 |        1 | 是   | 产物变化 |     85.0ms |   85.0ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC template 区块             |   20 |        1 | 是   | 产物变化 |    120.5ms |  120.5ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC style 区块                |    1 |        1 | 是   | 产物变化 |     87.7ms |   87.7ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC style 区块                |    2 |        1 | 是   | 产物变化 |     75.8ms |   75.8ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC style 区块                |    3 |        1 | 是   | 产物变化 |     77.5ms |   77.5ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC style 区块                |    4 |        1 | 是   | 产物变化 |     74.4ms |   74.4ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC style 区块                |    5 |        1 | 是   | 产物变化 |     76.8ms |   76.8ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC style 区块                |    6 |        1 | 是   | 产物变化 |     76.4ms |   76.4ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC style 区块                |    7 |        1 | 是   | 产物变化 |     77.0ms |   77.0ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC style 区块                |    8 |        1 | 是   | 产物变化 |     76.9ms |   76.9ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC style 区块                |    9 |        1 | 是   | 产物变化 |    100.9ms |  100.9ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC style 区块                |   10 |        1 | 是   | 产物变化 |     86.6ms |   86.6ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC style 区块                |   11 |        1 | 是   | 产物变化 |     74.7ms |   74.7ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC style 区块                |   12 |        1 | 是   | 产物变化 |     75.1ms |   75.1ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC style 区块                |   13 |        1 | 是   | 产物变化 |     75.0ms |   75.0ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC style 区块                |   14 |        1 | 是   | 产物变化 |     75.6ms |   75.6ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC style 区块                |   15 |        1 | 是   | 产物变化 |     75.6ms |   75.6ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC style 区块                |   16 |        1 | 是   | 产物变化 |     76.4ms |   76.4ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC style 区块                |   17 |        1 | 是   | 产物变化 |     75.5ms |   75.5ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC style 区块                |   18 |        1 | 是   | 产物变化 |     75.0ms |   75.0ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC style 区块                |   19 |        1 | 是   | 产物变化 |     78.1ms |   78.1ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC style 区块                |   20 |        1 | 是   | 产物变化 |     75.6ms |   75.6ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC 页面配置                  |    1 |        1 | 是   | 产物变化 |     77.7ms |   77.7ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC 页面配置                  |    2 |        1 | 是   | 产物变化 |    111.0ms |  111.0ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC 页面配置                  |    3 |        1 | 是   | 产物变化 |     87.4ms |   87.4ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC 页面配置                  |    4 |        1 | 是   | 产物变化 |     86.4ms |   86.4ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC 页面配置                  |    5 |        1 | 是   | 产物变化 |    100.1ms |  100.1ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC 页面配置                  |    6 |        1 | 是   | 产物变化 |     88.8ms |   88.8ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC 页面配置                  |    7 |        1 | 是   | 产物变化 |     89.6ms |   89.6ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC 页面配置                  |    8 |        1 | 是   | 产物变化 |     84.0ms |   84.0ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC 页面配置                  |    9 |        1 | 是   | 产物变化 |     87.7ms |   87.7ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC 页面配置                  |   10 |        1 | 是   | 产物变化 |     86.9ms |   86.9ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC 页面配置                  |   11 |        1 | 是   | 产物变化 |     87.9ms |   87.9ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC 页面配置                  |   12 |        1 | 是   | 产物变化 |    100.3ms |  100.3ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC 页面配置                  |   13 |        1 | 是   | 产物变化 |   1932.3ms | 1932.3ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC 页面配置                  |   14 |        1 | 是   | 产物变化 |    305.9ms |  305.9ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC 页面配置                  |   15 |        1 | 是   | 产物变化 |    241.2ms |  241.2ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC 页面配置                  |   16 |        1 | 是   | 产物变化 |   1231.2ms | 1231.2ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC 页面配置                  |   17 |        1 | 是   | 产物变化 |    838.5ms |  838.5ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC 页面配置                  |   18 |        1 | 是   | 产物变化 |    362.7ms |  362.7ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC 页面配置                  |   19 |        1 | 是   | 产物变化 |    405.2ms |  405.2ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu / Vue SFC 页面配置                  |   20 |        1 | 是   | 产物变化 |    353.2ms |  353.2ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC script 区块   |    1 |        1 | 是   | 产物变化 |   1172.6ms | 1172.6ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC script 区块   |    2 |        1 | 是   | 产物变化 |    416.8ms |  416.8ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC script 区块   |    3 |        1 | 是   | 产物变化 |    242.5ms |  242.5ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC script 区块   |    4 |        1 | 是   | 产物变化 |    302.0ms |  302.0ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC script 区块   |    5 |        1 | 是   | 产物变化 |    153.3ms |  153.3ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC script 区块   |    6 |        1 | 是   | 产物变化 |    306.1ms |  306.1ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC script 区块   |    7 |        1 | 是   | 产物变化 |    142.3ms |  142.3ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC script 区块   |    8 |        1 | 是   | 产物变化 |     98.5ms |   98.5ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC script 区块   |    9 |        1 | 是   | 产物变化 |     89.2ms |   89.2ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC script 区块   |   10 |        1 | 是   | 产物变化 |     99.6ms |   99.6ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC script 区块   |   11 |        1 | 是   | 产物变化 |     98.4ms |   98.4ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC script 区块   |   12 |        1 | 是   | 产物变化 |     88.5ms |   88.5ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC script 区块   |   13 |        1 | 是   | 产物变化 |     98.5ms |   98.5ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC script 区块   |   14 |        1 | 是   | 产物变化 |    111.1ms |  111.1ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC script 区块   |   15 |        1 | 是   | 产物变化 |    101.4ms |  101.4ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC script 区块   |   16 |        1 | 是   | 产物变化 |    287.7ms |  287.7ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC script 区块   |   17 |        1 | 是   | 产物变化 |    965.3ms |  965.3ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC script 区块   |   18 |        1 | 是   | 产物变化 |    110.9ms |  110.9ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC script 区块   |   19 |        1 | 是   | 产物变化 |    163.1ms |  163.1ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC script 区块   |   20 |        1 | 是   | 产物变化 |     90.4ms |   90.4ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC template 区块 |    1 |        1 | 是   | 产物变化 |     87.0ms |   87.0ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC template 区块 |    2 |        1 | 是   | 产物变化 |     88.0ms |   88.0ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC template 区块 |    3 |        1 | 是   | 产物变化 |    139.6ms |  139.6ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC template 区块 |    4 |        1 | 是   | 产物变化 |     89.4ms |   89.4ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC template 区块 |    5 |        1 | 是   | 产物变化 |    109.3ms |  109.3ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC template 区块 |    6 |        1 | 是   | 产物变化 |    152.8ms |  152.8ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC template 区块 |    7 |        1 | 是   | 产物变化 |     99.9ms |   99.9ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC template 区块 |    8 |        1 | 是   | 产物变化 |    110.8ms |  110.8ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC template 区块 |    9 |        1 | 是   | 产物变化 |     85.4ms |   85.4ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC template 区块 |   10 |        1 | 是   | 产物变化 |     95.6ms |   95.6ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC template 区块 |   11 |        1 | 是   | 产物变化 |    132.9ms |  132.9ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC template 区块 |   12 |        1 | 是   | 产物变化 |    144.7ms |  144.7ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC template 区块 |   13 |        1 | 是   | 产物变化 |     87.0ms |   87.0ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC template 区块 |   14 |        1 | 是   | 产物变化 |    101.9ms |  101.9ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC template 区块 |   15 |        1 | 是   | 产物变化 |    166.1ms |  166.1ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC template 区块 |   16 |        1 | 是   | 产物变化 |     98.6ms |   98.6ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC template 区块 |   17 |        1 | 是   | 产物变化 |    554.6ms |  554.6ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC template 区块 |   18 |        1 | 是   | 产物变化 |   1024.7ms | 1024.7ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC template 区块 |   19 |        1 | 是   | 产物变化 |    175.2ms |  175.2ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC template 区块 |   20 |        1 | 是   | 产物变化 |    143.5ms |  143.5ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC style 区块    |    1 |        1 | 是   | 产物变化 |    109.1ms |  109.1ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC style 区块    |    2 |        1 | 是   | 产物变化 |     87.2ms |   87.2ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC style 区块    |    3 |        1 | 是   | 产物变化 |    141.9ms |  141.9ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC style 区块    |    4 |        1 | 是   | 产物变化 |     76.3ms |   76.3ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC style 区块    |    5 |        1 | 是   | 产物变化 |     87.1ms |   87.1ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC style 区块    |    6 |        1 | 是   | 产物变化 |     87.2ms |   87.2ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC style 区块    |    7 |        1 | 是   | 产物变化 |     98.8ms |   98.8ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC style 区块    |    8 |        1 | 是   | 产物变化 |     87.8ms |   87.8ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC style 区块    |    9 |        1 | 是   | 产物变化 |    350.6ms |  350.6ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC style 区块    |   10 |        1 | 是   | 产物变化 |    441.1ms |  441.1ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC style 区块    |   11 |        1 | 是   | 产物变化 |     87.6ms |   87.6ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC script 区块               |    1 |        1 | 是   | 产物变化 |    189.8ms |  189.8ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC script 区块               |    2 |        1 | 是   | 产物变化 |     82.3ms |   82.3ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC script 区块               |    3 |        1 | 是   | 产物变化 |     91.1ms |   91.1ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC script 区块               |    4 |        1 | 是   | 产物变化 |    129.7ms |  129.7ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC script 区块               |    5 |        1 | 是   | 产物变化 |     90.9ms |   90.9ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC script 区块               |    6 |        1 | 是   | 产物变化 |     93.1ms |   93.1ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC script 区块               |    7 |        1 | 是   | 产物变化 |     91.3ms |   91.3ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC script 区块               |    8 |        1 | 是   | 产物变化 |     90.5ms |   90.5ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC script 区块               |    9 |        1 | 是   | 产物变化 |     92.8ms |   92.8ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC script 区块               |   10 |        1 | 是   | 产物变化 |     92.2ms |   92.2ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC script 区块               |   11 |        1 | 是   | 产物变化 |     87.0ms |   87.0ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC script 区块               |   12 |        1 | 是   | 产物变化 |     88.6ms |   88.6ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC script 区块               |   13 |        1 | 是   | 产物变化 |     99.7ms |   99.7ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC script 区块               |   14 |        1 | 是   | 产物变化 |    102.8ms |  102.8ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC script 区块               |   15 |        1 | 是   | 产物变化 |    102.4ms |  102.4ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC script 区块               |   16 |        1 | 是   | 产物变化 |     90.5ms |   90.5ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC script 区块               |   17 |        1 | 是   | 产物变化 |     80.4ms |   80.4ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC script 区块               |   18 |        1 | 是   | 产物变化 |     99.4ms |   99.4ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC script 区块               |   19 |        1 | 是   | 产物变化 |    102.3ms |  102.3ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC script 区块               |   20 |        1 | 是   | 产物变化 |     81.1ms |   81.1ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC template 区块             |    1 |        1 | 是   | 产物变化 |     75.4ms |   75.4ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC template 区块             |    2 |        1 | 是   | 产物变化 |     80.4ms |   80.4ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC template 区块             |    3 |        1 | 是   | 产物变化 |     90.9ms |   90.9ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC template 区块             |    4 |        1 | 是   | 产物变化 |     79.7ms |   79.7ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC template 区块             |    5 |        1 | 是   | 产物变化 |     88.5ms |   88.5ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC template 区块             |    6 |        1 | 是   | 产物变化 |     81.5ms |   81.5ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC template 区块             |    7 |        1 | 是   | 产物变化 |     79.3ms |   79.3ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC template 区块             |    8 |        1 | 是   | 产物变化 |     79.7ms |   79.7ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC template 区块             |    9 |        1 | 是   | 产物变化 |     81.0ms |   81.0ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC template 区块             |   10 |        1 | 是   | 产物变化 |     71.6ms |   71.6ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC template 区块             |   11 |        1 | 是   | 产物变化 |    105.4ms |  105.4ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC template 区块             |   12 |        1 | 是   | 产物变化 |     82.0ms |   82.0ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC template 区块             |   13 |        1 | 是   | 产物变化 |     79.6ms |   79.6ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC template 区块             |   14 |        1 | 是   | 产物变化 |     83.4ms |   83.4ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC template 区块             |   15 |        1 | 是   | 产物变化 |     89.1ms |   89.1ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC template 区块             |   16 |        1 | 是   | 产物变化 |     80.4ms |   80.4ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC template 区块             |   17 |        1 | 是   | 产物变化 |     80.1ms |   80.1ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC template 区块             |   18 |        1 | 是   | 产物变化 |     89.6ms |   89.6ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC template 区块             |   19 |        1 | 是   | 产物变化 |     81.7ms |   81.7ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC template 区块             |   20 |        1 | 是   | 产物变化 |     76.2ms |   76.2ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC style 区块                |    1 |        1 | 是   | 产物变化 |     57.1ms |   57.1ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC style 区块                |    2 |        1 | 是   | 产物变化 |     70.0ms |   70.0ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC style 区块                |    3 |        1 | 是   | 产物变化 |     78.4ms |   78.4ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC style 区块                |    4 |        1 | 是   | 产物变化 |     67.9ms |   67.9ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC style 区块                |    5 |        1 | 是   | 产物变化 |     76.4ms |   76.4ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC style 区块                |    6 |        1 | 是   | 产物变化 |     78.7ms |   78.7ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC style 区块                |    7 |        1 | 是   | 产物变化 |     67.5ms |   67.5ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC style 区块                |    8 |        1 | 是   | 产物变化 |     68.8ms |   68.8ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC style 区块                |    9 |        1 | 是   | 产物变化 |     86.2ms |   86.2ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC style 区块                |   10 |        1 | 是   | 产物变化 |     67.8ms |   67.8ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC style 区块                |   11 |        1 | 是   | 产物变化 |     67.1ms |   67.1ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC style 区块                |   12 |        1 | 是   | 产物变化 |     65.5ms |   65.5ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC style 区块                |   13 |        1 | 是   | 产物变化 |    116.0ms |  116.0ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC style 区块                |   14 |        1 | 是   | 产物变化 |     70.4ms |   70.4ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC style 区块                |   15 |        1 | 是   | 产物变化 |     67.9ms |   67.9ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC style 区块                |   16 |        1 | 是   | 产物变化 |     87.3ms |   87.3ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC style 区块                |   17 |        1 | 是   | 产物变化 |     68.8ms |   68.8ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC style 区块                |   18 |        1 | 是   | 产物变化 |    113.4ms |  113.4ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC style 区块                |   19 |        1 | 是   | 产物变化 |     67.9ms |   67.9ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC style 区块                |   20 |        1 | 是   | 产物变化 |     65.4ms |   65.4ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC 页面配置                  |    1 |        1 | 是   | 产物变化 |     76.5ms |   76.5ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC 页面配置                  |    2 |        1 | 是   | 产物变化 |    114.6ms |  114.6ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC 页面配置                  |    3 |        1 | 是   | 产物变化 |     83.2ms |   83.2ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC 页面配置                  |    4 |        1 | 是   | 产物变化 |     94.2ms |   94.2ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC 页面配置                  |    5 |        1 | 是   | 产物变化 |     78.9ms |   78.9ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC 页面配置                  |    6 |        1 | 是   | 产物变化 |     90.3ms |   90.3ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC 页面配置                  |    7 |        1 | 是   | 产物变化 |     90.5ms |   90.5ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC 页面配置                  |    8 |        1 | 是   | 产物变化 |     71.9ms |   71.9ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC 页面配置                  |    9 |        1 | 是   | 产物变化 |     80.0ms |   80.0ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC 页面配置                  |   10 |        1 | 是   | 产物变化 |     80.2ms |   80.2ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC 页面配置                  |   11 |        1 | 是   | 产物变化 |     78.4ms |   78.4ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC 页面配置                  |   12 |        1 | 是   | 产物变化 |     81.9ms |   81.9ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC 页面配置                  |   13 |        1 | 是   | 产物变化 |     91.3ms |   91.3ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC 页面配置                  |   14 |        1 | 是   | 产物变化 |     88.8ms |   88.8ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC 页面配置                  |   15 |        1 | 是   | 产物变化 |     76.7ms |   76.7ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC 页面配置                  |   16 |        1 | 是   | 产物变化 |     78.3ms |   78.3ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC 页面配置                  |   17 |        1 | 是   | 产物变化 |     80.4ms |   80.4ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC 页面配置                  |   18 |        1 | 是   | 产物变化 |     78.2ms |   78.2ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC 页面配置                  |   19 |        1 | 是   | 产物变化 |     80.4ms |   80.4ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu / Vue SFC 页面配置                  |   20 |        1 | 是   | 产物变化 |     79.1ms |   79.1ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC script 区块   |    1 |        1 | 是   | 产物变化 |    104.2ms |  104.2ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC script 区块   |    2 |        1 | 是   | 产物变化 |     92.2ms |   92.2ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC script 区块   |    3 |        1 | 是   | 产物变化 |     85.6ms |   85.6ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC script 区块   |    4 |        1 | 是   | 产物变化 |     93.0ms |   93.0ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC script 区块   |    5 |        1 | 是   | 产物变化 |     92.1ms |   92.1ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC script 区块   |    6 |        1 | 是   | 产物变化 |     92.4ms |   92.4ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC script 区块   |    7 |        1 | 是   | 产物变化 |     92.8ms |   92.8ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC script 区块   |    8 |        1 | 是   | 产物变化 |     89.4ms |   89.4ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC script 区块   |    9 |        1 | 是   | 产物变化 |     90.8ms |   90.8ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC script 区块   |   10 |        1 | 是   | 产物变化 |    101.2ms |  101.2ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC script 区块   |   11 |        1 | 是   | 产物变化 |    113.0ms |  113.0ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC script 区块   |   12 |        1 | 是   | 产物变化 |     91.8ms |   91.8ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC script 区块   |   13 |        1 | 是   | 产物变化 |     92.0ms |   92.0ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC script 区块   |   14 |        1 | 是   | 产物变化 |    103.3ms |  103.3ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC script 区块   |   15 |        1 | 是   | 产物变化 |     88.8ms |   88.8ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC script 区块   |   16 |        1 | 是   | 产物变化 |     92.2ms |   92.2ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC script 区块   |   17 |        1 | 是   | 产物变化 |     93.9ms |   93.9ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC script 区块   |   18 |        1 | 是   | 产物变化 |     88.8ms |   88.8ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC script 区块   |   19 |        1 | 是   | 产物变化 |     76.7ms |   76.7ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC script 区块   |   20 |        1 | 是   | 产物变化 |     89.6ms |   89.6ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC template 区块 |    1 |        1 | 是   | 产物变化 |     81.0ms |   81.0ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC template 区块 |    2 |        1 | 是   | 产物变化 |     82.0ms |   82.0ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC template 区块 |    3 |        1 | 是   | 产物变化 |     93.5ms |   93.5ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC template 区块 |    4 |        1 | 是   | 产物变化 |     81.3ms |   81.3ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC template 区块 |    5 |        1 | 是   | 产物变化 |     79.5ms |   79.5ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC template 区块 |    6 |        1 | 是   | 产物变化 |     80.3ms |   80.3ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC template 区块 |    7 |        1 | 是   | 产物变化 |     91.3ms |   91.3ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC template 区块 |    8 |        1 | 是   | 产物变化 |     99.9ms |   99.9ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC template 区块 |    9 |        1 | 是   | 产物变化 |     80.0ms |   80.0ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC template 区块 |   10 |        1 | 是   | 产物变化 |     88.4ms |   88.4ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC template 区块 |   11 |        1 | 是   | 产物变化 |     80.6ms |   80.6ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC template 区块 |   12 |        1 | 是   | 产物变化 |     89.6ms |   89.6ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC template 区块 |   13 |        1 | 是   | 产物变化 |     80.3ms |   80.3ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC template 区块 |   14 |        1 | 是   | 产物变化 |     79.6ms |   79.6ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC template 区块 |   15 |        1 | 是   | 产物变化 |     78.7ms |   78.7ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC template 区块 |   16 |        1 | 是   | 产物变化 |     70.1ms |   70.1ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC template 区块 |   17 |        1 | 是   | 产物变化 |     81.1ms |   81.1ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC template 区块 |   18 |        1 | 是   | 产物变化 |     81.3ms |   81.3ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC template 区块 |   19 |        1 | 是   | 产物变化 |     80.2ms |   80.2ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC template 区块 |   20 |        1 | 是   | 产物变化 |     80.0ms |   80.0ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC style 区块    |    1 |        1 | 是   | 产物变化 |     65.9ms |   65.9ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC style 区块    |    2 |        1 | 是   | 产物变化 |     81.2ms |   81.2ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC style 区块    |    3 |        1 | 是   | 产物变化 |     58.6ms |   58.6ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC style 区块    |    4 |        1 | 是   | 产物变化 |     70.2ms |   70.2ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC style 区块    |    5 |        1 | 是   | 产物变化 |     89.7ms |   89.7ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC style 区块    |    6 |        1 | 是   | 产物变化 |     77.4ms |   77.4ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC style 区块    |    7 |        1 | 是   | 产物变化 |     81.2ms |   81.2ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC style 区块    |    8 |        1 | 是   | 产物变化 |     65.5ms |   65.5ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC style 区块    |    9 |        1 | 是   | 产物变化 |     69.6ms |   69.6ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC style 区块    |   10 |        1 | 是   | 产物变化 |     70.1ms |   70.1ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC style 区块    |   11 |        1 | 是   | 产物变化 |     80.5ms |   80.5ms |        - |    - |    - |        - |          - |        |          |
 | weapp-vite + wevu performance / Vue SFC style 区块    |   12 |        1 | 是   | 产物变化 |     78.8ms |   78.8ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC style 区块    |   13 |        1 | 是   | 产物变化 |     77.7ms |   77.7ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC style 区块    |   14 |        1 | 是   | 产物变化 |    906.6ms |  906.6ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC style 区块    |   15 |        1 | 是   | 产物变化 |     74.3ms |   74.3ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC style 区块    |   16 |        1 | 是   | 产物变化 |     85.4ms |   85.4ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC style 区块    |   17 |        1 | 是   | 产物变化 |    444.2ms |  444.2ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC style 区块    |   18 |        1 | 是   | 产物变化 |     75.4ms |   75.4ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC style 区块    |   19 |        1 | 是   | 产物变化 |     75.0ms |   75.0ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC style 区块    |   20 |        1 | 是   | 产物变化 |     78.6ms |   78.6ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC 页面配置      |    1 |        1 | 是   | 产物变化 |     76.1ms |   76.1ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC 页面配置      |    2 |        1 | 是   | 产物变化 |    359.3ms |  359.3ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC 页面配置      |    3 |        1 | 是   | 产物变化 |     87.8ms |   87.8ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC 页面配置      |    4 |        1 | 是   | 产物变化 |     88.9ms |   88.9ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC 页面配置      |    5 |        1 | 是   | 产物变化 |     85.9ms |   85.9ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC 页面配置      |    6 |        1 | 是   | 产物变化 |     88.2ms |   88.2ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC 页面配置      |    7 |        1 | 是   | 产物变化 |     87.8ms |   87.8ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC 页面配置      |    8 |        1 | 是   | 产物变化 |     87.1ms |   87.1ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC 页面配置      |    9 |        1 | 是   | 产物变化 |    124.6ms |  124.6ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC 页面配置      |   10 |        1 | 是   | 产物变化 |     87.7ms |   87.7ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC 页面配置      |   11 |        1 | 是   | 产物变化 |     98.3ms |   98.3ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC 页面配置      |   12 |        1 | 是   | 产物变化 |     86.2ms |   86.2ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC 页面配置      |   13 |        1 | 是   | 产物变化 |     86.1ms |   86.1ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC 页面配置      |   14 |        1 | 是   | 产物变化 |     87.0ms |   87.0ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC 页面配置      |   15 |        1 | 是   | 产物变化 |     85.3ms |   85.3ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC 页面配置      |   16 |        1 | 是   | 产物变化 |     87.0ms |   87.0ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC 页面配置      |   17 |        1 | 是   | 产物变化 |     86.7ms |   86.7ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC 页面配置      |   18 |        1 | 是   | 产物变化 |     86.1ms |   86.1ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC 页面配置      |   19 |        1 | 是   | 产物变化 |    844.6ms |  844.6ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite + wevu performance / Vue SFC 页面配置      |   20 |        1 | 是   | 产物变化 |    172.7ms |  172.7ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / JS 文件                             |    1 |        1 | 是   | 产物变化 |     56.2ms |   56.2ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / JS 文件                             |    2 |        1 | 是   | 产物变化 |     45.1ms |   45.1ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / JS 文件                             |    3 |        1 | 是   | 产物变化 |     43.9ms |   43.9ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / JS 文件                             |    4 |        1 | 是   | 产物变化 |     42.9ms |   42.9ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / JS 文件                             |    5 |        1 | 是   | 产物变化 |     43.5ms |   43.5ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / JS 文件                             |    6 |        1 | 是   | 产物变化 |     43.8ms |   43.8ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / JS 文件                             |    7 |        1 | 是   | 产物变化 |    211.1ms |  211.1ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / JS 文件                             |    8 |        1 | 是   | 产物变化 |    682.6ms |  682.6ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / JS 文件                             |    9 |        1 | 是   | 产物变化 |    604.9ms |  604.9ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / JS 文件                             |   10 |        1 | 是   | 产物变化 |     43.4ms |   43.4ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / JS 文件                             |   11 |        1 | 是   | 产物变化 |     44.8ms |   44.8ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / JS 文件                             |   12 |        1 | 是   | 产物变化 |     54.6ms |   54.6ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / JS 文件                             |   13 |        1 | 是   | 产物变化 |     44.3ms |   44.3ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / JS 文件                             |   14 |        1 | 是   | 产物变化 |     55.2ms |   55.2ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / JS 文件                             |   15 |        1 | 是   | 产物变化 |     41.7ms |   41.7ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / JS 文件                             |   16 |        1 | 是   | 产物变化 |     88.0ms |   88.0ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / JS 文件                             |   17 |        1 | 是   | 产物变化 |     44.7ms |   44.7ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / JS 文件                             |   18 |        1 | 是   | 产物变化 |     42.7ms |   42.7ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / JS 文件                             |   19 |        1 | 是   | 产物变化 |     44.3ms |   44.3ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / JS 文件                             |   20 |        1 | 是   | 产物变化 |     43.3ms |   43.3ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / WXML 文件                           |    1 |        1 | 是   | 产物变化 |     43.3ms |   43.3ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / WXML 文件                           |    2 |        1 | 是   | 产物变化 |     45.4ms |   45.4ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / WXML 文件                           |    3 |        1 | 是   | 产物变化 |     43.1ms |   43.1ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / WXML 文件                           |    4 |        1 | 是   | 产物变化 |     67.0ms |   67.0ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / WXML 文件                           |    5 |        1 | 是   | 产物变化 |     44.5ms |   44.5ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / WXML 文件                           |    6 |        1 | 是   | 产物变化 |     64.4ms |   64.4ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / WXML 文件                           |    7 |        1 | 是   | 产物变化 |     33.1ms |   33.1ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / WXML 文件                           |    8 |        1 | 是   | 产物变化 |     43.5ms |   43.5ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / WXML 文件                           |    9 |        1 | 是   | 产物变化 |     89.4ms |   89.4ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / WXML 文件                           |   10 |        1 | 是   | 产物变化 |     43.5ms |   43.5ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / WXML 文件                           |   11 |        1 | 是   | 产物变化 |     43.9ms |   43.9ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / WXML 文件                           |   12 |        1 | 是   | 产物变化 |     42.9ms |   42.9ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / WXML 文件                           |   13 |        1 | 是   | 产物变化 |     43.5ms |   43.5ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / WXML 文件                           |   14 |        1 | 是   | 产物变化 |     44.4ms |   44.4ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / WXML 文件                           |   15 |        1 | 是   | 产物变化 |     56.4ms |   56.4ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / WXML 文件                           |   16 |        1 | 是   | 产物变化 |     43.4ms |   43.4ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / WXML 文件                           |   17 |        1 | 是   | 产物变化 |     44.3ms |   44.3ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / WXML 文件                           |   18 |        1 | 是   | 产物变化 |     43.9ms |   43.9ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / WXML 文件                           |   19 |        1 | 是   | 产物变化 |     33.0ms |   33.0ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / WXML 文件                           |   20 |        1 | 是   | 产物变化 |     55.8ms |   55.8ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / WXSS 文件                           |    1 |        1 | 是   | 产物变化 |     44.6ms |   44.6ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / WXSS 文件                           |    2 |        1 | 是   | 产物变化 |     76.1ms |   76.1ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / WXSS 文件                           |    3 |        1 | 是   | 产物变化 |     44.0ms |   44.0ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / WXSS 文件                           |    4 |        1 | 是   | 产物变化 |     44.1ms |   44.1ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / WXSS 文件                           |    5 |        1 | 是   | 产物变化 |     43.3ms |   43.3ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC style 区块    |   13 |        1 | 是   | 产物变化 |     78.2ms |   78.2ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC style 区块    |   14 |        1 | 是   | 产物变化 |     76.5ms |   76.5ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC style 区块    |   15 |        1 | 是   | 产物变化 |     81.1ms |   81.1ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC style 区块    |   16 |        1 | 是   | 产物变化 |     78.8ms |   78.8ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC style 区块    |   17 |        1 | 是   | 产物变化 |     65.3ms |   65.3ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC style 区块    |   18 |        1 | 是   | 产物变化 |     76.9ms |   76.9ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC style 区块    |   19 |        1 | 是   | 产物变化 |     70.1ms |   70.1ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC style 区块    |   20 |        1 | 是   | 产物变化 |     89.1ms |   89.1ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC 页面配置      |    1 |        1 | 是   | 产物变化 |     80.8ms |   80.8ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC 页面配置      |    2 |        1 | 是   | 产物变化 |     87.1ms |   87.1ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC 页面配置      |    3 |        1 | 是   | 产物变化 |     79.3ms |   79.3ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC 页面配置      |    4 |        1 | 是   | 产物变化 |    101.8ms |  101.8ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC 页面配置      |    5 |        1 | 是   | 产物变化 |     78.3ms |   78.3ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC 页面配置      |    6 |        1 | 是   | 产物变化 |     93.2ms |   93.2ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC 页面配置      |    7 |        1 | 是   | 产物变化 |     91.4ms |   91.4ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC 页面配置      |    8 |        1 | 是   | 产物变化 |     80.7ms |   80.7ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC 页面配置      |    9 |        1 | 是   | 产物变化 |    104.7ms |  104.7ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC 页面配置      |   10 |        1 | 是   | 产物变化 |     81.3ms |   81.3ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC 页面配置      |   11 |        1 | 是   | 产物变化 |    110.3ms |  110.3ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC 页面配置      |   12 |        1 | 是   | 产物变化 |     81.3ms |   81.3ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC 页面配置      |   13 |        1 | 是   | 产物变化 |     93.1ms |   93.1ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC 页面配置      |   14 |        1 | 是   | 产物变化 |     92.1ms |   92.1ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC 页面配置      |   15 |        1 | 是   | 产物变化 |    112.9ms |  112.9ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC 页面配置      |   16 |        1 | 是   | 产物变化 |     92.9ms |   92.9ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC 页面配置      |   17 |        1 | 是   | 产物变化 |     77.2ms |   77.2ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC 页面配置      |   18 |        1 | 是   | 产物变化 |     89.9ms |   89.9ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC 页面配置      |   19 |        1 | 是   | 产物变化 |     80.1ms |   80.1ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite + wevu performance / Vue SFC 页面配置      |   20 |        1 | 是   | 产物变化 |     82.3ms |   82.3ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / JS 文件                             |    1 |        1 | 是   | 产物变化 |     56.7ms |   56.7ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / JS 文件                             |    2 |        1 | 是   | 产物变化 |     58.3ms |   58.3ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / JS 文件                             |    3 |        1 | 是   | 产物变化 |     46.0ms |   46.0ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / JS 文件                             |    4 |        1 | 是   | 产物变化 |     43.9ms |   43.9ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / JS 文件                             |    5 |        1 | 是   | 产物变化 |     46.5ms |   46.5ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / JS 文件                             |    6 |        1 | 是   | 产物变化 |     44.3ms |   44.3ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / JS 文件                             |    7 |        1 | 是   | 产物变化 |     46.8ms |   46.8ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / JS 文件                             |    8 |        1 | 是   | 产物变化 |     47.4ms |   47.4ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / JS 文件                             |    9 |        1 | 是   | 产物变化 |     45.8ms |   45.8ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / JS 文件                             |   10 |        1 | 是   | 产物变化 |     79.4ms |   79.4ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / JS 文件                             |   11 |        1 | 是   | 产物变化 |     46.5ms |   46.5ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / JS 文件                             |   12 |        1 | 是   | 产物变化 |     46.0ms |   46.0ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / JS 文件                             |   13 |        1 | 是   | 产物变化 |     46.1ms |   46.1ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / JS 文件                             |   14 |        1 | 是   | 产物变化 |     48.1ms |   48.1ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / JS 文件                             |   15 |        1 | 是   | 产物变化 |     45.4ms |   45.4ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / JS 文件                             |   16 |        1 | 是   | 产物变化 |     93.9ms |   93.9ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / JS 文件                             |   17 |        1 | 是   | 产物变化 |     46.1ms |   46.1ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / JS 文件                             |   18 |        1 | 是   | 产物变化 |     45.6ms |   45.6ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / JS 文件                             |   19 |        1 | 是   | 产物变化 |     32.8ms |   32.8ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / JS 文件                             |   20 |        1 | 是   | 产物变化 |     46.4ms |   46.4ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / WXML 文件                           |    1 |        1 | 是   | 产物变化 |     37.3ms |   37.3ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / WXML 文件                           |    2 |        1 | 是   | 产物变化 |     44.1ms |   44.1ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / WXML 文件                           |    3 |        1 | 是   | 产物变化 |     34.4ms |   34.4ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / WXML 文件                           |    4 |        1 | 是   | 产物变化 |     46.5ms |   46.5ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / WXML 文件                           |    5 |        1 | 是   | 产物变化 |     47.1ms |   47.1ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / WXML 文件                           |    6 |        1 | 是   | 产物变化 |     43.4ms |   43.4ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / WXML 文件                           |    7 |        1 | 是   | 产物变化 |     37.0ms |   37.0ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / WXML 文件                           |    8 |        1 | 是   | 产物变化 |     46.0ms |   46.0ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / WXML 文件                           |    9 |        1 | 是   | 产物变化 |     43.1ms |   43.1ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / WXML 文件                           |   10 |        1 | 是   | 产物变化 |     44.0ms |   44.0ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / WXML 文件                           |   11 |        1 | 是   | 产物变化 |     45.6ms |   45.6ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / WXML 文件                           |   12 |        1 | 是   | 产物变化 |     35.7ms |   35.7ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / WXML 文件                           |   13 |        1 | 是   | 产物变化 |     44.7ms |   44.7ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / WXML 文件                           |   14 |        1 | 是   | 产物变化 |     45.7ms |   45.7ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / WXML 文件                           |   15 |        1 | 是   | 产物变化 |     33.2ms |   33.2ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / WXML 文件                           |   16 |        1 | 是   | 产物变化 |     34.3ms |   34.3ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / WXML 文件                           |   17 |        1 | 是   | 产物变化 |     35.7ms |   35.7ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / WXML 文件                           |   18 |        1 | 是   | 产物变化 |     81.3ms |   81.3ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / WXML 文件                           |   19 |        1 | 是   | 产物变化 |     56.8ms |   56.8ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / WXML 文件                           |   20 |        1 | 是   | 产物变化 |     45.9ms |   45.9ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / WXSS 文件                           |    1 |        1 | 是   | 产物变化 |     42.9ms |   42.9ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / WXSS 文件                           |    2 |        1 | 是   | 产物变化 |     34.2ms |   34.2ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / WXSS 文件                           |    3 |        1 | 是   | 产物变化 |     78.1ms |   78.1ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / WXSS 文件                           |    4 |        1 | 是   | 产物变化 |     81.3ms |   81.3ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / WXSS 文件                           |    5 |        1 | 是   | 产物变化 |     37.4ms |   37.4ms |        - |    - |    - |        - |          - |        |          |
 | weapp-vite 原生 / WXSS 文件                           |    6 |        1 | 是   | 产物变化 |     45.3ms |   45.3ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / WXSS 文件                           |    7 |        1 | 是   | 产物变化 |     44.0ms |   44.0ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / WXSS 文件                           |    8 |        1 | 是   | 产物变化 |     75.2ms |   75.2ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / WXSS 文件                           |    9 |        1 | 是   | 产物变化 |     43.0ms |   43.0ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / WXSS 文件                           |   10 |        1 | 是   | 产物变化 |     32.9ms |   32.9ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / WXSS 文件                           |   11 |        1 | 是   | 产物变化 |     76.6ms |   76.6ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / WXSS 文件                           |   12 |        1 | 是   | 产物变化 |     44.7ms |   44.7ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / WXSS 文件                           |   13 |        1 | 是   | 产物变化 |     44.3ms |   44.3ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / WXSS 文件                           |   14 |        1 | 是   | 产物变化 |     44.4ms |   44.4ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / WXSS 文件                           |   15 |        1 | 是   | 产物变化 |     33.7ms |   33.7ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / WXSS 文件                           |   16 |        1 | 是   | 产物变化 |     42.1ms |   42.1ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / WXSS 文件                           |   17 |        1 | 是   | 产物变化 |     44.3ms |   44.3ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / WXSS 文件                           |   18 |        1 | 是   | 产物变化 |     43.3ms |   43.3ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / WXSS 文件                           |   19 |        1 | 是   | 产物变化 |     43.5ms |   43.5ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / WXSS 文件                           |   20 |        1 | 是   | 产物变化 |     32.6ms |   32.6ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / JSON 文件                           |    1 |        1 | 是   | 产物变化 |     46.0ms |   46.0ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / JSON 文件                           |    2 |        1 | 是   | 产物变化 |     42.4ms |   42.4ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / JSON 文件                           |    3 |        1 | 是   | 产物变化 |     43.8ms |   43.8ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / JSON 文件                           |    4 |        1 | 是   | 产物变化 |     43.7ms |   43.7ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / JSON 文件                           |    5 |        1 | 是   | 产物变化 |     33.8ms |   33.8ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / JSON 文件                           |    6 |        1 | 是   | 产物变化 |     42.6ms |   42.6ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / JSON 文件                           |    7 |        1 | 是   | 产物变化 |     44.8ms |   44.8ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / JSON 文件                           |    8 |        1 | 是   | 产物变化 |     43.6ms |   43.6ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / JSON 文件                           |    9 |        1 | 是   | 产物变化 |     75.8ms |   75.8ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / JSON 文件                           |   10 |        1 | 是   | 产物变化 |     44.9ms |   44.9ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / JSON 文件                           |   11 |        1 | 是   | 产物变化 |     44.5ms |   44.5ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / JSON 文件                           |   12 |        1 | 是   | 产物变化 |     43.8ms |   43.8ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / JSON 文件                           |   13 |        1 | 是   | 产物变化 |     44.8ms |   44.8ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / JSON 文件                           |   14 |        1 | 是   | 产物变化 |     45.5ms |   45.5ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / JSON 文件                           |   15 |        1 | 是   | 产物变化 |     46.6ms |   46.6ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / JSON 文件                           |   16 |        1 | 是   | 产物变化 |     44.8ms |   44.8ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / JSON 文件                           |   17 |        1 | 是   | 产物变化 |     31.4ms |   31.4ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / JSON 文件                           |   18 |        1 | 是   | 产物变化 |     44.4ms |   44.4ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / JSON 文件                           |   19 |        1 | 是   | 产物变化 |     54.9ms |   54.9ms |        - |    - |    - |        - |          - |        |          |
-| weapp-vite 原生 / JSON 文件                           |   20 |        1 | 是   | 产物变化 |     47.9ms |   47.9ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC script 区块               |    1 |        1 | 是   | 产物变化 |   1238.0ms | 1238.0ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC script 区块               |    2 |        1 | 是   | 产物变化 |    359.8ms |  359.8ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC script 区块               |    3 |        1 | 是   | 产物变化 |    336.7ms |  336.7ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC script 区块               |    4 |        1 | 是   | 产物变化 |    258.5ms |  258.5ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC script 区块               |    5 |        1 | 是   | 产物变化 |    287.6ms |  287.6ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC script 区块               |    6 |        1 | 是   | 产物变化 |    197.8ms |  197.8ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC script 区块               |    7 |        1 | 是   | 产物变化 |    197.3ms |  197.3ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC script 区块               |    8 |        1 | 是   | 产物变化 |    210.7ms |  210.7ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC script 区块               |    9 |        1 | 是   | 产物变化 |    234.3ms |  234.3ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC script 区块               |   10 |        1 | 是   | 产物变化 |    290.4ms |  290.4ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC script 区块               |   11 |        1 | 是   | 产物变化 |    198.7ms |  198.7ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC script 区块               |   12 |        1 | 是   | 产物变化 |    219.6ms |  219.6ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC script 区块               |   13 |        1 | 是   | 产物变化 |    210.8ms |  210.8ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC script 区块               |   14 |        1 | 是   | 产物变化 |    245.1ms |  245.1ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC script 区块               |   15 |        1 | 是   | 产物变化 |    309.6ms |  309.6ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC script 区块               |   16 |        1 | 是   | 产物变化 |    283.5ms |  283.5ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC script 区块               |   17 |        1 | 是   | 产物变化 |    231.1ms |  231.1ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC script 区块               |   18 |        1 | 是   | 产物变化 |    526.5ms |  526.5ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC script 区块               |   19 |        1 | 是   | 产物变化 |    187.8ms |  187.8ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC script 区块               |   20 |        1 | 是   | 产物变化 |    277.0ms |  277.0ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC template 区块             |    1 |        1 | 是   | 产物变化 |    307.1ms |  307.1ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC template 区块             |    2 |        1 | 是   | 产物变化 |    287.6ms |  287.6ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC template 区块             |    3 |        1 | 是   | 产物变化 |    186.4ms |  186.4ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC template 区块             |    4 |        1 | 是   | 产物变化 |    187.3ms |  187.3ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC template 区块             |    5 |        1 | 是   | 产物变化 |    241.0ms |  241.0ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / WXSS 文件                           |    7 |        1 | 是   | 产物变化 |     46.4ms |   46.4ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / WXSS 文件                           |    8 |        1 | 是   | 产物变化 |     48.1ms |   48.1ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / WXSS 文件                           |    9 |        1 | 是   | 产物变化 |     45.2ms |   45.2ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / WXSS 文件                           |   10 |        1 | 是   | 产物变化 |     44.4ms |   44.4ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / WXSS 文件                           |   11 |        1 | 是   | 产物变化 |     44.9ms |   44.9ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / WXSS 文件                           |   12 |        1 | 是   | 产物变化 |     35.2ms |   35.2ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / WXSS 文件                           |   13 |        1 | 是   | 产物变化 |     44.8ms |   44.8ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / WXSS 文件                           |   14 |        1 | 是   | 产物变化 |     48.6ms |   48.6ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / WXSS 文件                           |   15 |        1 | 是   | 产物变化 |     46.8ms |   46.8ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / WXSS 文件                           |   16 |        1 | 是   | 产物变化 |     36.7ms |   36.7ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / WXSS 文件                           |   17 |        1 | 是   | 产物变化 |     37.0ms |   37.0ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / WXSS 文件                           |   18 |        1 | 是   | 产物变化 |     32.1ms |   32.1ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / WXSS 文件                           |   19 |        1 | 是   | 产物变化 |     45.9ms |   45.9ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / WXSS 文件                           |   20 |        1 | 是   | 产物变化 |     46.7ms |   46.7ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / JSON 文件                           |    1 |        1 | 是   | 产物变化 |     46.2ms |   46.2ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / JSON 文件                           |    2 |        1 | 是   | 产物变化 |     46.0ms |   46.0ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / JSON 文件                           |    3 |        1 | 是   | 产物变化 |     46.5ms |   46.5ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / JSON 文件                           |    4 |        1 | 是   | 产物变化 |     46.3ms |   46.3ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / JSON 文件                           |    5 |        1 | 是   | 产物变化 |     48.0ms |   48.0ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / JSON 文件                           |    6 |        1 | 是   | 产物变化 |     43.1ms |   43.1ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / JSON 文件                           |    7 |        1 | 是   | 产物变化 |     34.5ms |   34.5ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / JSON 文件                           |    8 |        1 | 是   | 产物变化 |     35.7ms |   35.7ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / JSON 文件                           |    9 |        1 | 是   | 产物变化 |     46.5ms |   46.5ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / JSON 文件                           |   10 |        1 | 是   | 产物变化 |     46.3ms |   46.3ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / JSON 文件                           |   11 |        1 | 是   | 产物变化 |     67.5ms |   67.5ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / JSON 文件                           |   12 |        1 | 是   | 产物变化 |     43.6ms |   43.6ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / JSON 文件                           |   13 |        1 | 是   | 产物变化 |     44.6ms |   44.6ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / JSON 文件                           |   14 |        1 | 是   | 产物变化 |     47.2ms |   47.2ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / JSON 文件                           |   15 |        1 | 是   | 产物变化 |     57.0ms |   57.0ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / JSON 文件                           |   16 |        1 | 是   | 产物变化 |     35.1ms |   35.1ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / JSON 文件                           |   17 |        1 | 是   | 产物变化 |     45.7ms |   45.7ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / JSON 文件                           |   18 |        1 | 是   | 产物变化 |     43.2ms |   43.2ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / JSON 文件                           |   19 |        1 | 是   | 产物变化 |     43.2ms |   43.2ms |        - |    - |    - |        - |          - |        |          |
+| weapp-vite 原生 / JSON 文件                           |   20 |        1 | 是   | 产物变化 |     44.5ms |   44.5ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC script 区块               |    1 |        1 | 是   | 产物变化 |   1104.0ms | 1104.0ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC script 区块               |    2 |        1 | 是   | 产物变化 |    290.6ms |  290.6ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC script 区块               |    3 |        1 | 是   | 产物变化 |    290.0ms |  290.0ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC script 区块               |    4 |        1 | 是   | 产物变化 |    209.3ms |  209.3ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC script 区块               |    5 |        1 | 是   | 产物变化 |    216.1ms |  216.1ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC script 区块               |    6 |        1 | 是   | 产物变化 |    182.9ms |  182.9ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC script 区块               |    7 |        1 | 是   | 产物变化 |    186.9ms |  186.9ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC script 区块               |    8 |        1 | 是   | 产物变化 |    196.6ms |  196.6ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC script 区块               |    9 |        1 | 是   | 产物变化 |    196.8ms |  196.8ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC script 区块               |   10 |        1 | 是   | 产物变化 |    274.1ms |  274.1ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC script 区块               |   11 |        1 | 是   | 产物变化 |    175.1ms |  175.1ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC script 区块               |   12 |        1 | 是   | 产物变化 |    268.2ms |  268.2ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC script 区块               |   13 |        1 | 是   | 产物变化 |    266.1ms |  266.1ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC script 区块               |   14 |        1 | 是   | 产物变化 |    289.6ms |  289.6ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC script 区块               |   15 |        1 | 是   | 产物变化 |    294.5ms |  294.5ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC script 区块               |   16 |        1 | 是   | 产物变化 |    207.4ms |  207.4ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC script 区块               |   17 |        1 | 是   | 产物变化 |    205.4ms |  205.4ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC script 区块               |   18 |        1 | 是   | 产物变化 |    263.5ms |  263.5ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC script 区块               |   19 |        1 | 是   | 产物变化 |    181.3ms |  181.3ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC script 区块               |   20 |        1 | 是   | 产物变化 |    277.7ms |  277.7ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC template 区块             |    1 |        1 | 是   | 产物变化 |    266.8ms |  266.8ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC template 区块             |    2 |        1 | 是   | 产物变化 |    182.3ms |  182.3ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC template 区块             |    3 |        1 | 是   | 产物变化 |    185.9ms |  185.9ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC template 区块             |    4 |        1 | 是   | 产物变化 |    178.9ms |  178.9ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC template 区块             |    5 |        1 | 是   | 产物变化 |    193.5ms |  193.5ms |        - |    - |    - |        - |          - |        |          |
 | uni-app vite vue3 / Vue SFC template 区块             |    6 |        1 | 是   | 产物变化 |    195.6ms |  195.6ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC template 区块             |    7 |        1 | 是   | 产物变化 |    244.0ms |  244.0ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC template 区块             |    8 |        1 | 是   | 产物变化 |    265.0ms |  265.0ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC template 区块             |    9 |        1 | 是   | 产物变化 |    219.1ms |  219.1ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC template 区块             |   10 |        1 | 是   | 产物变化 |    179.0ms |  179.0ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC template 区块             |   11 |        1 | 是   | 产物变化 |    302.7ms |  302.7ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC template 区块             |   12 |        1 | 是   | 产物变化 |    313.2ms |  313.2ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC template 区块             |   13 |        1 | 是   | 产物变化 |    276.0ms |  276.0ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC template 区块             |   14 |        1 | 是   | 产物变化 |    268.1ms |  268.1ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC template 区块             |   15 |        1 | 是   | 产物变化 |    209.8ms |  209.8ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC template 区块             |   16 |        1 | 是   | 产物变化 |    774.4ms |  774.4ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC template 区块             |   17 |        1 | 是   | 产物变化 |    186.3ms |  186.3ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC template 区块             |   18 |        1 | 是   | 产物变化 |    200.1ms |  200.1ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC template 区块             |   19 |        1 | 是   | 产物变化 |    187.4ms |  187.4ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC template 区块             |   20 |        1 | 是   | 产物变化 |    190.9ms |  190.9ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC style 区块                |    1 |        1 | 是   | 产物变化 |    276.2ms |  276.2ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC style 区块                |    2 |        1 | 是   | 产物变化 |    210.3ms |  210.3ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC style 区块                |    3 |        1 | 是   | 产物变化 |    200.4ms |  200.4ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC style 区块                |    4 |        1 | 是   | 产物变化 |    199.0ms |  199.0ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC style 区块                |    5 |        1 | 是   | 产物变化 |    189.3ms |  189.3ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC style 区块                |    6 |        1 | 是   | 产物变化 |    275.3ms |  275.3ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC style 区块                |    7 |        1 | 是   | 产物变化 |    178.2ms |  178.2ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC style 区块                |    8 |        1 | 是   | 产物变化 |    197.0ms |  197.0ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC style 区块                |    9 |        1 | 是   | 产物变化 |    264.7ms |  264.7ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC style 区块                |   10 |        1 | 是   | 产物变化 |    781.4ms |  781.4ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC style 区块                |   11 |        1 | 是   | 产物变化 |    184.9ms |  184.9ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC style 区块                |   12 |        1 | 是   | 产物变化 |    184.7ms |  184.7ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC style 区块                |   13 |        1 | 是   | 产物变化 |    238.4ms |  238.4ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC style 区块                |   14 |        1 | 是   | 产物变化 |    847.2ms |  847.2ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC style 区块                |   15 |        1 | 是   | 产物变化 |    276.7ms |  276.7ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC style 区块                |   16 |        1 | 是   | 产物变化 |    198.6ms |  198.6ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC style 区块                |   17 |        1 | 是   | 产物变化 |    187.4ms |  187.4ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC style 区块                |   18 |        1 | 是   | 产物变化 |    185.4ms |  185.4ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC style 区块                |   19 |        1 | 是   | 产物变化 |    200.0ms |  200.0ms |        - |    - |    - |        - |          - |        |          |
-| uni-app vite vue3 / Vue SFC style 区块                |   20 |        1 | 是   | 产物变化 |    207.6ms |  207.6ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC script 区块                       |    1 |        1 | 是   | 产物变化 |   1286.8ms | 1286.8ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC script 区块                       |    2 |        1 | 是   | 产物变化 |    403.3ms |  403.3ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC script 区块                       |    3 |        1 | 是   | 产物变化 |    392.7ms |  392.7ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC script 区块                       |    4 |        1 | 是   | 产物变化 |    306.2ms |  306.2ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC script 区块                       |    5 |        1 | 是   | 产物变化 |    338.9ms |  338.9ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC script 区块                       |    6 |        1 | 是   | 产物变化 |    915.2ms |  915.2ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC script 区块                       |    7 |        1 | 是   | 产物变化 |    285.2ms |  285.2ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC script 区块                       |    8 |        1 | 是   | 产物变化 |    307.7ms |  307.7ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC script 区块                       |    9 |        1 | 是   | 产物变化 |    369.8ms |  369.8ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC script 区块                       |   10 |        1 | 是   | 产物变化 |    416.7ms |  416.7ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC script 区块                       |   11 |        1 | 是   | 产物变化 |    941.6ms |  941.6ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC script 区块                       |   12 |        1 | 是   | 产物变化 |    309.6ms |  309.6ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC script 区块                       |   13 |        1 | 是   | 产物变化 |    386.0ms |  386.0ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC script 区块                       |   14 |        1 | 是   | 产物变化 |    575.9ms |  575.9ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC script 区块                       |   15 |        1 | 是   | 产物变化 |    310.1ms |  310.1ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC script 区块                       |   16 |        1 | 是   | 产物变化 |    376.7ms |  376.7ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC script 区块                       |   17 |        1 | 是   | 产物变化 |    373.9ms |  373.9ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC script 区块                       |   18 |        1 | 是   | 产物变化 |    314.4ms |  314.4ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC script 区块                       |   19 |        1 | 是   | 产物变化 |    568.6ms |  568.6ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC script 区块                       |   20 |        1 | 是   | 产物变化 |    340.7ms |  340.7ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC template 区块                     |    1 |        1 | 是   | 产物变化 |    185.3ms |  185.3ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC template 区块                     |    2 |        1 | 是   | 产物变化 |    205.3ms |  205.3ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC template 区块                     |    3 |        1 | 是   | 产物变化 |    205.7ms |  205.7ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC template 区块                     |    4 |        1 | 是   | 产物变化 |    198.9ms |  198.9ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC template 区块                     |    5 |        1 | 是   | 产物变化 |    261.0ms |  261.0ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC template 区块                     |    6 |        1 | 是   | 产物变化 |    198.6ms |  198.6ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC template 区块                     |    7 |        1 | 是   | 产物变化 |    207.8ms |  207.8ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC template 区块                     |    8 |        1 | 是   | 产物变化 |    220.6ms |  220.6ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC template 区块                     |    9 |        1 | 是   | 产物变化 |    175.6ms |  175.6ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC template 区块                     |   10 |        1 | 是   | 产物变化 |    213.6ms |  213.6ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC template 区块                     |   11 |        1 | 是   | 产物变化 |    187.0ms |  187.0ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC template 区块                     |   12 |        1 | 是   | 产物变化 |    195.8ms |  195.8ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC template 区块                     |   13 |        1 | 是   | 产物变化 |    208.2ms |  208.2ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC template 区块                     |   14 |        1 | 是   | 产物变化 |    214.6ms |  214.6ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC template 区块                     |   15 |        1 | 是   | 产物变化 |    265.7ms |  265.7ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC template 区块                     |   16 |        1 | 是   | 产物变化 |    183.4ms |  183.4ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC template 区块                     |   17 |        1 | 是   | 产物变化 |    215.0ms |  215.0ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC template 区块                     |   18 |        1 | 是   | 产物变化 |    211.5ms |  211.5ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC template 区块                     |   19 |        1 | 是   | 产物变化 |    286.2ms |  286.2ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC template 区块                     |   20 |        1 | 是   | 产物变化 |    231.0ms |  231.0ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC style 区块                        |    1 |        1 | 是   | 产物变化 |    209.7ms |  209.7ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC style 区块                        |    2 |        1 | 是   | 产物变化 |    200.8ms |  200.8ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC style 区块                        |    3 |        1 | 是   | 产物变化 |    173.5ms |  173.5ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC style 区块                        |    4 |        1 | 是   | 产物变化 |    207.0ms |  207.0ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC style 区块                        |    5 |        1 | 是   | 产物变化 |    209.3ms |  209.3ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC style 区块                        |    6 |        1 | 是   | 产物变化 |    189.6ms |  189.6ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC style 区块                        |    7 |        1 | 是   | 产物变化 |    206.9ms |  206.9ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC style 区块                        |    8 |        1 | 是   | 产物变化 |    211.3ms |  211.3ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC style 区块                        |    9 |        1 | 是   | 产物变化 |    186.1ms |  186.1ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC style 区块                        |   10 |        1 | 是   | 产物变化 |    246.2ms |  246.2ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC style 区块                        |   11 |        1 | 是   | 产物变化 |    177.2ms |  177.2ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC style 区块                        |   12 |        1 | 是   | 产物变化 |    199.6ms |  199.6ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC style 区块                        |   13 |        1 | 是   | 产物变化 |    214.0ms |  214.0ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC style 区块                        |   14 |        1 | 是   | 产物变化 |    196.5ms |  196.5ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC style 区块                        |   15 |        1 | 是   | 产物变化 |   1270.3ms | 1270.3ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC style 区块                        |   16 |        1 | 是   | 产物变化 |    204.4ms |  204.4ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC style 区块                        |   17 |        1 | 是   | 产物变化 |    230.5ms |  230.5ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC style 区块                        |   18 |        1 | 是   | 产物变化 |    176.1ms |  176.1ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC style 区块                        |   19 |        1 | 是   | 产物变化 |    209.4ms |  209.4ms |        - |    - |    - |        - |          - |        |          |
-| uni-app x / Vue SFC style 区块                        |   20 |        1 | 是   | 产物变化 |    208.5ms |  208.5ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / Vue SFC script 区块                       |    1 |        1 | 是   | 产物变化 |    384.1ms |  384.1ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / Vue SFC script 区块                       |    2 |        1 | 是   | 产物变化 |    363.8ms |  363.8ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / Vue SFC script 区块                       |    3 |        1 | 是   | 产物变化 |    321.6ms |  321.6ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / Vue SFC script 区块                       |    4 |        1 | 是   | 产物变化 |    329.6ms |  329.6ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / Vue SFC script 区块                       |    5 |        1 | 是   | 产物变化 |    305.4ms |  305.4ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / Vue SFC script 区块                       |    6 |        1 | 是   | 产物变化 |    348.9ms |  348.9ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / Vue SFC script 区块                       |    7 |        1 | 是   | 产物变化 |    332.9ms |  332.9ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / Vue SFC script 区块                       |    8 |        1 | 是   | 产物变化 |    332.1ms |  332.1ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / Vue SFC script 区块                       |    9 |        1 | 是   | 产物变化 |    287.8ms |  287.8ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / Vue SFC script 区块                       |   10 |        1 | 是   | 产物变化 |    344.8ms |  344.8ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / Vue SFC script 区块                       |   11 |        1 | 是   | 产物变化 |    294.7ms |  294.7ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / Vue SFC script 区块                       |   12 |        1 | 是   | 产物变化 |    308.6ms |  308.6ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / Vue SFC script 区块                       |   13 |        1 | 是   | 产物变化 |    307.4ms |  307.4ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / Vue SFC script 区块                       |   14 |        1 | 是   | 产物变化 |    352.4ms |  352.4ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / Vue SFC script 区块                       |   15 |        1 | 是   | 产物变化 |    286.4ms |  286.4ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / Vue SFC script 区块                       |   16 |        1 | 是   | 产物变化 |    331.4ms |  331.4ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / Vue SFC script 区块                       |   17 |        1 | 是   | 产物变化 |    337.2ms |  337.2ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / Vue SFC script 区块                       |   18 |        1 | 是   | 产物变化 |    326.7ms |  326.7ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / Vue SFC script 区块                       |   19 |        1 | 是   | 产物变化 |    310.0ms |  310.0ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / Vue SFC script 区块                       |   20 |        1 | 是   | 产物变化 |    317.3ms |  317.3ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / Vue SFC template 区块                     |    1 |        1 | 是   | 产物变化 |    376.5ms |  376.5ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / Vue SFC template 区块                     |    2 |        1 | 是   | 产物变化 |    334.4ms |  334.4ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / Vue SFC template 区块                     |    3 |        1 | 是   | 产物变化 |    289.6ms |  289.6ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / Vue SFC template 区块                     |    4 |        1 | 是   | 产物变化 |    317.2ms |  317.2ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / Vue SFC template 区块                     |    5 |        1 | 是   | 产物变化 |    316.7ms |  316.7ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / Vue SFC template 区块                     |    6 |        1 | 是   | 产物变化 |    330.1ms |  330.1ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / Vue SFC template 区块                     |    7 |        1 | 是   | 产物变化 |    232.6ms |  232.6ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / Vue SFC template 区块                     |    8 |        1 | 是   | 产物变化 |    307.5ms |  307.5ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / Vue SFC template 区块                     |    9 |        1 | 是   | 产物变化 |    315.4ms |  315.4ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / Vue SFC template 区块                     |   10 |        1 | 是   | 产物变化 |    331.4ms |  331.4ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / Vue SFC template 区块                     |   11 |        1 | 是   | 产物变化 |    375.0ms |  375.0ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / Vue SFC template 区块                     |   12 |        1 | 是   | 产物变化 |    284.6ms |  284.6ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / Vue SFC template 区块                     |   13 |        1 | 是   | 产物变化 |    319.8ms |  319.8ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / Vue SFC template 区块                     |   14 |        1 | 是   | 产物变化 |    308.0ms |  308.0ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / Vue SFC template 区块                     |   15 |        1 | 是   | 产物变化 |    392.3ms |  392.3ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / Vue SFC template 区块                     |   16 |        1 | 是   | 产物变化 |    327.8ms |  327.8ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / Vue SFC template 区块                     |   17 |        1 | 是   | 产物变化 |    379.3ms |  379.3ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / Vue SFC template 区块                     |   18 |        1 | 是   | 产物变化 |    430.4ms |  430.4ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / Vue SFC template 区块                     |   19 |        1 | 是   | 产物变化 |    345.7ms |  345.7ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / Vue SFC template 区块                     |   20 |        1 | 是   | 产物变化 |    286.4ms |  286.4ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / CSS 文件                                  |    1 |        1 | 是   | 产物变化 |    307.4ms |  307.4ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / CSS 文件                                  |    2 |        1 | 是   | 产物变化 |    323.6ms |  323.6ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / CSS 文件                                  |    3 |        1 | 是   | 产物变化 |    317.7ms |  317.7ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / CSS 文件                                  |    4 |        1 | 是   | 产物变化 |    308.4ms |  308.4ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / CSS 文件                                  |    5 |        1 | 是   | 产物变化 |    233.6ms |  233.6ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / CSS 文件                                  |    6 |        1 | 是   | 产物变化 |    309.7ms |  309.7ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / CSS 文件                                  |    7 |        1 | 是   | 产物变化 |    306.1ms |  306.1ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / CSS 文件                                  |    8 |        1 | 是   | 产物变化 |    328.8ms |  328.8ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / CSS 文件                                  |    9 |        1 | 是   | 产物变化 |    409.4ms |  409.4ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / CSS 文件                                  |   10 |        1 | 是   | 产物变化 |    728.8ms |  728.8ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / CSS 文件                                  |   11 |        1 | 是   | 产物变化 |    306.7ms |  306.7ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / CSS 文件                                  |   12 |        1 | 是   | 产物变化 |    309.1ms |  309.1ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / CSS 文件                                  |   13 |        1 | 是   | 产物变化 |    321.7ms |  321.7ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / CSS 文件                                  |   14 |        1 | 是   | 产物变化 |    332.1ms |  332.1ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / CSS 文件                                  |   15 |        1 | 是   | 产物变化 |    299.3ms |  299.3ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / CSS 文件                                  |   16 |        1 | 是   | 产物变化 |    313.1ms |  313.1ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / CSS 文件                                  |   17 |        1 | 是   | 产物变化 |    311.8ms |  311.8ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / CSS 文件                                  |   18 |        1 | 是   | 产物变化 |    309.4ms |  309.4ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / CSS 文件                                  |   19 |        1 | 是   | 产物变化 |    379.9ms |  379.9ms |        - |    - |    - |        - |          - |        |          |
-| taro vue3 / CSS 文件                                  |   20 |        1 | 是   | 产物变化 |    336.5ms |  336.5ms |        - |    - |    - |        - |          - |        |          |
-| mpx / template 区块                                   |    1 |        1 | 是   | 产物变化 |    207.0ms |  207.0ms |        - |    - |    - |        - |          - |        |          |
-| mpx / template 区块                                   |    2 |        1 | 是   | 产物变化 |    161.3ms |  161.3ms |        - |    - |    - |        - |          - |        |          |
-| mpx / template 区块                                   |    3 |        1 | 是   | 产物变化 |    155.0ms |  155.0ms |        - |    - |    - |        - |          - |        |          |
-| mpx / template 区块                                   |    4 |        1 | 是   | 产物变化 |    188.0ms |  188.0ms |        - |    - |    - |        - |          - |        |          |
-| mpx / template 区块                                   |    5 |        1 | 是   | 产物变化 |    133.2ms |  133.2ms |        - |    - |    - |        - |          - |        |          |
-| mpx / template 区块                                   |    6 |        1 | 是   | 产物变化 |    186.2ms |  186.2ms |        - |    - |    - |        - |          - |        |          |
-| mpx / template 区块                                   |    7 |        1 | 是   | 产物变化 |    234.5ms |  234.5ms |        - |    - |    - |        - |          - |        |          |
-| mpx / template 区块                                   |    8 |        1 | 是   | 产物变化 |    154.6ms |  154.6ms |        - |    - |    - |        - |          - |        |          |
-| mpx / template 区块                                   |    9 |        1 | 是   | 产物变化 |    129.7ms |  129.7ms |        - |    - |    - |        - |          - |        |          |
-| mpx / template 区块                                   |   10 |        1 | 是   | 产物变化 |    131.6ms |  131.6ms |        - |    - |    - |        - |          - |        |          |
-| mpx / template 区块                                   |   11 |        1 | 是   | 产物变化 |    164.4ms |  164.4ms |        - |    - |    - |        - |          - |        |          |
-| mpx / template 区块                                   |   12 |        1 | 是   | 产物变化 |    162.0ms |  162.0ms |        - |    - |    - |        - |          - |        |          |
-| mpx / template 区块                                   |   13 |        1 | 是   | 产物变化 |    131.8ms |  131.8ms |        - |    - |    - |        - |          - |        |          |
-| mpx / template 区块                                   |   14 |        1 | 是   | 产物变化 |    164.0ms |  164.0ms |        - |    - |    - |        - |          - |        |          |
-| mpx / template 区块                                   |   15 |        1 | 是   | 产物变化 |    131.5ms |  131.5ms |        - |    - |    - |        - |          - |        |          |
-| mpx / template 区块                                   |   16 |        1 | 是   | 产物变化 |    156.3ms |  156.3ms |        - |    - |    - |        - |          - |        |          |
-| mpx / template 区块                                   |   17 |        1 | 是   | 产物变化 |    130.5ms |  130.5ms |        - |    - |    - |        - |          - |        |          |
-| mpx / template 区块                                   |   18 |        1 | 是   | 产物变化 |    197.7ms |  197.7ms |        - |    - |    - |        - |          - |        |          |
-| mpx / template 区块                                   |   19 |        1 | 是   | 产物变化 |    184.5ms |  184.5ms |        - |    - |    - |        - |          - |        |          |
-| mpx / template 区块                                   |   20 |        1 | 是   | 产物变化 |    204.1ms |  204.1ms |        - |    - |    - |        - |          - |        |          |
-| mpx / script 区块                                     |    1 |        1 | 是   | 产物变化 |    291.3ms |  291.3ms |        - |    - |    - |        - |          - |        |          |
-| mpx / script 区块                                     |    2 |        1 | 是   | 产物变化 |    212.9ms |  212.9ms |        - |    - |    - |        - |          - |        |          |
-| mpx / script 区块                                     |    3 |        1 | 是   | 产物变化 |    188.0ms |  188.0ms |        - |    - |    - |        - |          - |        |          |
-| mpx / script 区块                                     |    4 |        1 | 是   | 产物变化 |    227.2ms |  227.2ms |        - |    - |    - |        - |          - |        |          |
-| mpx / script 区块                                     |    5 |        1 | 是   | 产物变化 |    232.3ms |  232.3ms |        - |    - |    - |        - |          - |        |          |
-| mpx / script 区块                                     |    6 |        1 | 是   | 产物变化 |    155.2ms |  155.2ms |        - |    - |    - |        - |          - |        |          |
-| mpx / script 区块                                     |    7 |        1 | 是   | 产物变化 |    174.6ms |  174.6ms |        - |    - |    - |        - |          - |        |          |
-| mpx / script 区块                                     |    8 |        1 | 是   | 产物变化 |    143.6ms |  143.6ms |        - |    - |    - |        - |          - |        |          |
-| mpx / script 区块                                     |    9 |        1 | 是   | 产物变化 |    129.8ms |  129.8ms |        - |    - |    - |        - |          - |        |          |
-| mpx / script 区块                                     |   10 |        1 | 是   | 产物变化 |    165.5ms |  165.5ms |        - |    - |    - |        - |          - |        |          |
-| mpx / script 区块                                     |   11 |        1 | 是   | 产物变化 |    154.6ms |  154.6ms |        - |    - |    - |        - |          - |        |          |
-| mpx / script 区块                                     |   12 |        1 | 是   | 产物变化 |    155.0ms |  155.0ms |        - |    - |    - |        - |          - |        |          |
-| mpx / script 区块                                     |   13 |        1 | 是   | 产物变化 |    188.3ms |  188.3ms |        - |    - |    - |        - |          - |        |          |
-| mpx / script 区块                                     |   14 |        1 | 是   | 产物变化 |    130.7ms |  130.7ms |        - |    - |    - |        - |          - |        |          |
-| mpx / script 区块                                     |   15 |        1 | 是   | 产物变化 |    122.0ms |  122.0ms |        - |    - |    - |        - |          - |        |          |
-| mpx / script 区块                                     |   16 |        1 | 是   | 产物变化 |    154.1ms |  154.1ms |        - |    - |    - |        - |          - |        |          |
-| mpx / script 区块                                     |   17 |        1 | 是   | 产物变化 |    119.0ms |  119.0ms |        - |    - |    - |        - |          - |        |          |
-| mpx / script 区块                                     |   18 |        1 | 是   | 产物变化 |    146.7ms |  146.7ms |        - |    - |    - |        - |          - |        |          |
-| mpx / script 区块                                     |   19 |        1 | 是   | 产物变化 |    177.1ms |  177.1ms |        - |    - |    - |        - |          - |        |          |
-| mpx / script 区块                                     |   20 |        1 | 是   | 产物变化 |    145.0ms |  145.0ms |        - |    - |    - |        - |          - |        |          |
-| mpx / style 区块                                      |    1 |        1 | 是   | 产物变化 |    138.8ms |  138.8ms |        - |    - |    - |        - |          - |        |          |
-| mpx / style 区块                                      |    2 |        1 | 是   | 产物变化 |    131.3ms |  131.3ms |        - |    - |    - |        - |          - |        |          |
-| mpx / style 区块                                      |    3 |        1 | 是   | 产物变化 |    174.6ms |  174.6ms |        - |    - |    - |        - |          - |        |          |
-| mpx / style 区块                                      |    4 |        1 | 是   | 产物变化 |    155.4ms |  155.4ms |        - |    - |    - |        - |          - |        |          |
-| mpx / style 区块                                      |    5 |        1 | 是   | 产物变化 |    130.6ms |  130.6ms |        - |    - |    - |        - |          - |        |          |
-| mpx / style 区块                                      |    6 |        1 | 是   | 产物变化 |    143.2ms |  143.2ms |        - |    - |    - |        - |          - |        |          |
-| mpx / style 区块                                      |    7 |        1 | 是   | 产物变化 |    244.7ms |  244.7ms |        - |    - |    - |        - |          - |        |          |
-| mpx / style 区块                                      |    8 |        1 | 是   | 产物变化 |    134.1ms |  134.1ms |        - |    - |    - |        - |          - |        |          |
-| mpx / style 区块                                      |    9 |        1 | 是   | 产物变化 |    156.1ms |  156.1ms |        - |    - |    - |        - |          - |        |          |
-| mpx / style 区块                                      |   10 |        1 | 是   | 产物变化 |    165.3ms |  165.3ms |        - |    - |    - |        - |          - |        |          |
-| mpx / style 区块                                      |   11 |        1 | 是   | 产物变化 |    155.3ms |  155.3ms |        - |    - |    - |        - |          - |        |          |
-| mpx / style 区块                                      |   12 |        1 | 是   | 产物变化 |    153.2ms |  153.2ms |        - |    - |    - |        - |          - |        |          |
-| mpx / style 区块                                      |   13 |        1 | 是   | 产物变化 |    142.5ms |  142.5ms |        - |    - |    - |        - |          - |        |          |
-| mpx / style 区块                                      |   14 |        1 | 是   | 产物变化 |    206.3ms |  206.3ms |        - |    - |    - |        - |          - |        |          |
-| mpx / style 区块                                      |   15 |        1 | 是   | 产物变化 |    188.0ms |  188.0ms |        - |    - |    - |        - |          - |        |          |
-| mpx / style 区块                                      |   16 |        1 | 是   | 产物变化 |    190.9ms |  190.9ms |        - |    - |    - |        - |          - |        |          |
-| mpx / style 区块                                      |   17 |        1 | 是   | 产物变化 |    141.8ms |  141.8ms |        - |    - |    - |        - |          - |        |          |
-| mpx / style 区块                                      |   18 |        1 | 是   | 产物变化 |    176.5ms |  176.5ms |        - |    - |    - |        - |          - |        |          |
-| mpx / style 区块                                      |   19 |        1 | 是   | 产物变化 |    185.3ms |  185.3ms |        - |    - |    - |        - |          - |        |          |
-| mpx / style 区块                                      |   20 |        1 | 是   | 产物变化 |    176.2ms |  176.2ms |        - |    - |    - |        - |          - |        |          |
-| mpx / 页面配置                                        |    1 |        1 | 是   | 产物变化 |    249.0ms |  249.0ms |        - |    - |    - |        - |          - |        |          |
-| mpx / 页面配置                                        |    2 |        1 | 是   | 产物变化 |    134.3ms |  134.3ms |        - |    - |    - |        - |          - |        |          |
-| mpx / 页面配置                                        |    3 |        1 | 是   | 产物变化 |    156.1ms |  156.1ms |        - |    - |    - |        - |          - |        |          |
-| mpx / 页面配置                                        |    4 |        1 | 是   | 产物变化 |    287.5ms |  287.5ms |        - |    - |    - |        - |          - |        |          |
-| mpx / 页面配置                                        |    5 |        1 | 是   | 产物变化 |    131.6ms |  131.6ms |        - |    - |    - |        - |          - |        |          |
-| mpx / 页面配置                                        |    6 |        1 | 是   | 产物变化 |    155.4ms |  155.4ms |        - |    - |    - |        - |          - |        |          |
-| mpx / 页面配置                                        |    7 |        1 | 是   | 产物变化 |    151.4ms |  151.4ms |        - |    - |    - |        - |          - |        |          |
-| mpx / 页面配置                                        |    8 |        1 | 是   | 产物变化 |    130.3ms |  130.3ms |        - |    - |    - |        - |          - |        |          |
-| mpx / 页面配置                                        |    9 |        1 | 是   | 产物变化 |    118.7ms |  118.7ms |        - |    - |    - |        - |          - |        |          |
-| mpx / 页面配置                                        |   10 |        1 | 是   | 产物变化 |    153.1ms |  153.1ms |        - |    - |    - |        - |          - |        |          |
-| mpx / 页面配置                                        |   11 |        1 | 是   | 产物变化 |    142.5ms |  142.5ms |        - |    - |    - |        - |          - |        |          |
-| mpx / 页面配置                                        |   12 |        1 | 是   | 产物变化 |    164.7ms |  164.7ms |        - |    - |    - |        - |          - |        |          |
-| mpx / 页面配置                                        |   13 |        1 | 是   | 产物变化 |    154.1ms |  154.1ms |        - |    - |    - |        - |          - |        |          |
-| mpx / 页面配置                                        |   14 |        1 | 是   | 产物变化 |    131.3ms |  131.3ms |        - |    - |    - |        - |          - |        |          |
-| mpx / 页面配置                                        |   15 |        1 | 是   | 产物变化 |    141.1ms |  141.1ms |        - |    - |    - |        - |          - |        |          |
-| mpx / 页面配置                                        |   16 |        1 | 是   | 产物变化 |    143.4ms |  143.4ms |        - |    - |    - |        - |          - |        |          |
-| mpx / 页面配置                                        |   17 |        1 | 是   | 产物变化 |    120.5ms |  120.5ms |        - |    - |    - |        - |          - |        |          |
-| mpx / 页面配置                                        |   18 |        1 | 是   | 产物变化 |    153.1ms |  153.1ms |        - |    - |    - |        - |          - |        |          |
-| mpx / 页面配置                                        |   19 |        1 | 是   | 产物变化 |    163.7ms |  163.7ms |        - |    - |    - |        - |          - |        |          |
-| mpx / 页面配置                                        |   20 |        1 | 是   | 产物变化 |    144.8ms |  144.8ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC template 区块             |    7 |        1 | 是   | 产物变化 |    170.2ms |  170.2ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC template 区块             |    8 |        1 | 是   | 产物变化 |    264.1ms |  264.1ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC template 区块             |    9 |        1 | 是   | 产物变化 |    171.2ms |  171.2ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC template 区块             |   10 |        1 | 是   | 产物变化 |    265.6ms |  265.6ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC template 区块             |   11 |        1 | 是   | 产物变化 |    207.9ms |  207.9ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC template 区块             |   12 |        1 | 是   | 产物变化 |    290.0ms |  290.0ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC template 区块             |   13 |        1 | 是   | 产物变化 |    180.4ms |  180.4ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC template 区块             |   14 |        1 | 是   | 产物变化 |    176.0ms |  176.0ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC template 区块             |   15 |        1 | 是   | 产物变化 |    177.7ms |  177.7ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC template 区块             |   16 |        1 | 是   | 产物变化 |    183.6ms |  183.6ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC template 区块             |   17 |        1 | 是   | 产物变化 |    195.9ms |  195.9ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC template 区块             |   18 |        1 | 是   | 产物变化 |    199.3ms |  199.3ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC template 区块             |   19 |        1 | 是   | 产物变化 |    281.4ms |  281.4ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC template 区块             |   20 |        1 | 是   | 产物变化 |    182.0ms |  182.0ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC style 区块                |    1 |        1 | 是   | 产物变化 |    269.7ms |  269.7ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC style 区块                |    2 |        1 | 是   | 产物变化 |    194.5ms |  194.5ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC style 区块                |    3 |        1 | 是   | 产物变化 |    195.4ms |  195.4ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC style 区块                |    4 |        1 | 是   | 产物变化 |    181.8ms |  181.8ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC style 区块                |    5 |        1 | 是   | 产物变化 |    186.7ms |  186.7ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC style 区块                |    6 |        1 | 是   | 产物变化 |    175.3ms |  175.3ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC style 区块                |    7 |        1 | 是   | 产物变化 |    167.0ms |  167.0ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC style 区块                |    8 |        1 | 是   | 产物变化 |    183.4ms |  183.4ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC style 区块                |    9 |        1 | 是   | 产物变化 |    277.7ms |  277.7ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC style 区块                |   10 |        1 | 是   | 产物变化 |    183.2ms |  183.2ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC style 区块                |   11 |        1 | 是   | 产物变化 |    181.3ms |  181.3ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC style 区块                |   12 |        1 | 是   | 产物变化 |    172.5ms |  172.5ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC style 区块                |   13 |        1 | 是   | 产物变化 |    279.7ms |  279.7ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC style 区块                |   14 |        1 | 是   | 产物变化 |    279.9ms |  279.9ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC style 区块                |   15 |        1 | 是   | 产物变化 |    181.8ms |  181.8ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC style 区块                |   16 |        1 | 是   | 产物变化 |    264.3ms |  264.3ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC style 区块                |   17 |        1 | 是   | 产物变化 |    255.3ms |  255.3ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC style 区块                |   18 |        1 | 是   | 产物变化 |    175.8ms |  175.8ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC style 区块                |   19 |        1 | 是   | 产物变化 |    186.5ms |  186.5ms |        - |    - |    - |        - |          - |        |          |
+| uni-app vite vue3 / Vue SFC style 区块                |   20 |        1 | 是   | 产物变化 |    190.8ms |  190.8ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC script 区块                       |    1 |        1 | 是   | 产物变化 |   1184.2ms | 1184.2ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC script 区块                       |    2 |        1 | 是   | 产物变化 |    376.5ms |  376.5ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC script 区块                       |    3 |        1 | 是   | 产物变化 |    284.9ms |  284.9ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC script 区块                       |    4 |        1 | 是   | 产物变化 |    300.7ms |  300.7ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC script 区块                       |    5 |        1 | 是   | 产物变化 |    312.8ms |  312.8ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC script 区块                       |    6 |        1 | 是   | 产物变化 |    293.6ms |  293.6ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC script 区块                       |    7 |        1 | 是   | 产物变化 |    293.1ms |  293.1ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC script 区块                       |    8 |        1 | 是   | 产物变化 |    310.6ms |  310.6ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC script 区块                       |    9 |        1 | 是   | 产物变化 |    325.6ms |  325.6ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC script 区块                       |   10 |        1 | 是   | 产物变化 |    304.7ms |  304.7ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC script 区块                       |   11 |        1 | 是   | 产物变化 |    305.2ms |  305.2ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC script 区块                       |   12 |        1 | 是   | 产物变化 |    296.6ms |  296.6ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC script 区块                       |   13 |        1 | 是   | 产物变化 |    304.2ms |  304.2ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC script 区块                       |   14 |        1 | 是   | 产物变化 |    300.3ms |  300.3ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC script 区块                       |   15 |        1 | 是   | 产物变化 |    298.4ms |  298.4ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC script 区块                       |   16 |        1 | 是   | 产物变化 |    339.9ms |  339.9ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC script 区块                       |   17 |        1 | 是   | 产物变化 |    307.8ms |  307.8ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC script 区块                       |   18 |        1 | 是   | 产物变化 |    294.9ms |  294.9ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC script 区块                       |   19 |        1 | 是   | 产物变化 |    280.3ms |  280.3ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC script 区块                       |   20 |        1 | 是   | 产物变化 |    314.4ms |  314.4ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC template 区块                     |    1 |        1 | 是   | 产物变化 |    198.8ms |  198.8ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC template 区块                     |    2 |        1 | 是   | 产物变化 |    194.1ms |  194.1ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC template 区块                     |    3 |        1 | 是   | 产物变化 |    196.4ms |  196.4ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC template 区块                     |    4 |        1 | 是   | 产物变化 |    204.4ms |  204.4ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC template 区块                     |    5 |        1 | 是   | 产物变化 |    213.7ms |  213.7ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC template 区块                     |    6 |        1 | 是   | 产物变化 |    196.2ms |  196.2ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC template 区块                     |    7 |        1 | 是   | 产物变化 |    204.5ms |  204.5ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC template 区块                     |    8 |        1 | 是   | 产物变化 |    230.2ms |  230.2ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC template 区块                     |    9 |        1 | 是   | 产物变化 |    184.0ms |  184.0ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC template 区块                     |   10 |        1 | 是   | 产物变化 |    202.8ms |  202.8ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC template 区块                     |   11 |        1 | 是   | 产物变化 |    195.4ms |  195.4ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC template 区块                     |   12 |        1 | 是   | 产物变化 |    219.9ms |  219.9ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC template 区块                     |   13 |        1 | 是   | 产物变化 |    195.8ms |  195.8ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC template 区块                     |   14 |        1 | 是   | 产物变化 |    201.9ms |  201.9ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC template 区块                     |   15 |        1 | 是   | 产物变化 |    196.1ms |  196.1ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC template 区块                     |   16 |        1 | 是   | 产物变化 |    202.8ms |  202.8ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC template 区块                     |   17 |        1 | 是   | 产物变化 |    195.6ms |  195.6ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC template 区块                     |   18 |        1 | 是   | 产物变化 |    207.3ms |  207.3ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC template 区块                     |   19 |        1 | 是   | 产物变化 |    199.6ms |  199.6ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC template 区块                     |   20 |        1 | 是   | 产物变化 |    218.7ms |  218.7ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC style 区块                        |    1 |        1 | 是   | 产物变化 |    220.3ms |  220.3ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC style 区块                        |    2 |        1 | 是   | 产物变化 |    170.7ms |  170.7ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC style 区块                        |    3 |        1 | 是   | 产物变化 |    207.9ms |  207.9ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC style 区块                        |    4 |        1 | 是   | 产物变化 |    200.7ms |  200.7ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC style 区块                        |    5 |        1 | 是   | 产物变化 |    199.9ms |  199.9ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC style 区块                        |    6 |        1 | 是   | 产物变化 |    203.9ms |  203.9ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC style 区块                        |    7 |        1 | 是   | 产物变化 |    197.2ms |  197.2ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC style 区块                        |    8 |        1 | 是   | 产物变化 |    198.3ms |  198.3ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC style 区块                        |    9 |        1 | 是   | 产物变化 |    215.4ms |  215.4ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC style 区块                        |   10 |        1 | 是   | 产物变化 |    191.4ms |  191.4ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC style 区块                        |   11 |        1 | 是   | 产物变化 |    205.7ms |  205.7ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC style 区块                        |   12 |        1 | 是   | 产物变化 |    201.0ms |  201.0ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC style 区块                        |   13 |        1 | 是   | 产物变化 |    199.4ms |  199.4ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC style 区块                        |   14 |        1 | 是   | 产物变化 |    214.7ms |  214.7ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC style 区块                        |   15 |        1 | 是   | 产物变化 |    194.9ms |  194.9ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC style 区块                        |   16 |        1 | 是   | 产物变化 |    199.4ms |  199.4ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC style 区块                        |   17 |        1 | 是   | 产物变化 |    196.6ms |  196.6ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC style 区块                        |   18 |        1 | 是   | 产物变化 |    206.3ms |  206.3ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC style 区块                        |   19 |        1 | 是   | 产物变化 |    207.8ms |  207.8ms |        - |    - |    - |        - |          - |        |          |
+| uni-app x / Vue SFC style 区块                        |   20 |        1 | 是   | 产物变化 |    191.4ms |  191.4ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / Vue SFC script 区块                       |    1 |        1 | 是   | 产物变化 |    343.2ms |  343.2ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / Vue SFC script 区块                       |    2 |        1 | 是   | 产物变化 |    314.9ms |  314.9ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / Vue SFC script 区块                       |    3 |        1 | 是   | 产物变化 |    334.2ms |  334.2ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / Vue SFC script 区块                       |    4 |        1 | 是   | 产物变化 |    317.9ms |  317.9ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / Vue SFC script 区块                       |    5 |        1 | 是   | 产物变化 |    289.4ms |  289.4ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / Vue SFC script 区块                       |    6 |        1 | 是   | 产物变化 |    312.9ms |  312.9ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / Vue SFC script 区块                       |    7 |        1 | 是   | 产物变化 |    317.1ms |  317.1ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / Vue SFC script 区块                       |    8 |        1 | 是   | 产物变化 |    325.7ms |  325.7ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / Vue SFC script 区块                       |    9 |        1 | 是   | 产物变化 |    348.9ms |  348.9ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / Vue SFC script 区块                       |   10 |        1 | 是   | 产物变化 |    314.3ms |  314.3ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / Vue SFC script 区块                       |   11 |        1 | 是   | 产物变化 |    304.7ms |  304.7ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / Vue SFC script 区块                       |   12 |        1 | 是   | 产物变化 |    312.5ms |  312.5ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / Vue SFC script 区块                       |   13 |        1 | 是   | 产物变化 |    308.2ms |  308.2ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / Vue SFC script 区块                       |   14 |        1 | 是   | 产物变化 |    316.3ms |  316.3ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / Vue SFC script 区块                       |   15 |        1 | 是   | 产物变化 |    309.6ms |  309.6ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / Vue SFC script 区块                       |   16 |        1 | 是   | 产物变化 |    290.4ms |  290.4ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / Vue SFC script 区块                       |   17 |        1 | 是   | 产物变化 |    323.2ms |  323.2ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / Vue SFC script 区块                       |   18 |        1 | 是   | 产物变化 |    305.0ms |  305.0ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / Vue SFC script 区块                       |   19 |        1 | 是   | 产物变化 |    302.7ms |  302.7ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / Vue SFC script 区块                       |   20 |        1 | 是   | 产物变化 |    259.6ms |  259.6ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / Vue SFC template 区块                     |    1 |        1 | 是   | 产物变化 |    309.6ms |  309.6ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / Vue SFC template 区块                     |    2 |        1 | 是   | 产物变化 |    330.7ms |  330.7ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / Vue SFC template 区块                     |    3 |        1 | 是   | 产物变化 |    300.8ms |  300.8ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / Vue SFC template 区块                     |    4 |        1 | 是   | 产物变化 |    293.0ms |  293.0ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / Vue SFC template 区块                     |    5 |        1 | 是   | 产物变化 |    320.1ms |  320.1ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / Vue SFC template 区块                     |    6 |        1 | 是   | 产物变化 |    326.0ms |  326.0ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / Vue SFC template 区块                     |    7 |        1 | 是   | 产物变化 |    341.2ms |  341.2ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / Vue SFC template 区块                     |    8 |        1 | 是   | 产物变化 |    306.2ms |  306.2ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / Vue SFC template 区块                     |    9 |        1 | 是   | 产物变化 |    303.5ms |  303.5ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / Vue SFC template 区块                     |   10 |        1 | 是   | 产物变化 |    315.7ms |  315.7ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / Vue SFC template 区块                     |   11 |        1 | 是   | 产物变化 |    357.1ms |  357.1ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / Vue SFC template 区块                     |   12 |        1 | 是   | 产物变化 |    298.7ms |  298.7ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / Vue SFC template 区块                     |   13 |        1 | 是   | 产物变化 |    349.6ms |  349.6ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / Vue SFC template 区块                     |   14 |        1 | 是   | 产物变化 |    290.0ms |  290.0ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / Vue SFC template 区块                     |   15 |        1 | 是   | 产物变化 |    311.9ms |  311.9ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / Vue SFC template 区块                     |   16 |        1 | 是   | 产物变化 |    306.7ms |  306.7ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / Vue SFC template 区块                     |   17 |        1 | 是   | 产物变化 |    329.0ms |  329.0ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / Vue SFC template 区块                     |   18 |        1 | 是   | 产物变化 |    301.0ms |  301.0ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / Vue SFC template 区块                     |   19 |        1 | 是   | 产物变化 |    296.6ms |  296.6ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / Vue SFC template 区块                     |   20 |        1 | 是   | 产物变化 |    308.0ms |  308.0ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / CSS 文件                                  |    1 |        1 | 是   | 产物变化 |    300.5ms |  300.5ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / CSS 文件                                  |    2 |        1 | 是   | 产物变化 |    300.5ms |  300.5ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / CSS 文件                                  |    3 |        1 | 是   | 产物变化 |    351.5ms |  351.5ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / CSS 文件                                  |    4 |        1 | 是   | 产物变化 |    261.4ms |  261.4ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / CSS 文件                                  |    5 |        1 | 是   | 产物变化 |    308.9ms |  308.9ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / CSS 文件                                  |    6 |        1 | 是   | 产物变化 |    290.0ms |  290.0ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / CSS 文件                                  |    7 |        1 | 是   | 产物变化 |    296.2ms |  296.2ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / CSS 文件                                  |    8 |        1 | 是   | 产物变化 |    306.4ms |  306.4ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / CSS 文件                                  |    9 |        1 | 是   | 产物变化 |    362.7ms |  362.7ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / CSS 文件                                  |   10 |        1 | 是   | 产物变化 |    316.4ms |  316.4ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / CSS 文件                                  |   11 |        1 | 是   | 产物变化 |    300.8ms |  300.8ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / CSS 文件                                  |   12 |        1 | 是   | 产物变化 |    296.1ms |  296.1ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / CSS 文件                                  |   13 |        1 | 是   | 产物变化 |    296.2ms |  296.2ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / CSS 文件                                  |   14 |        1 | 是   | 产物变化 |    309.3ms |  309.3ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / CSS 文件                                  |   15 |        1 | 是   | 产物变化 |    311.2ms |  311.2ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / CSS 文件                                  |   16 |        1 | 是   | 产物变化 |    296.5ms |  296.5ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / CSS 文件                                  |   17 |        1 | 是   | 产物变化 |    308.7ms |  308.7ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / CSS 文件                                  |   18 |        1 | 是   | 产物变化 |    240.4ms |  240.4ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / CSS 文件                                  |   19 |        1 | 是   | 产物变化 |    299.1ms |  299.1ms |        - |    - |    - |        - |          - |        |          |
+| taro vue3 / CSS 文件                                  |   20 |        1 | 是   | 产物变化 |    339.6ms |  339.6ms |        - |    - |    - |        - |          - |        |          |
+| mpx / template 区块                                   |    1 |        1 | 是   | 产物变化 |    230.8ms |  230.8ms |        - |    - |    - |        - |          - |        |          |
+| mpx / template 区块                                   |    2 |        1 | 是   | 产物变化 |    161.5ms |  161.5ms |        - |    - |    - |        - |          - |        |          |
+| mpx / template 区块                                   |    3 |        1 | 是   | 产物变化 |    149.5ms |  149.5ms |        - |    - |    - |        - |          - |        |          |
+| mpx / template 区块                                   |    4 |        1 | 是   | 产物变化 |    134.9ms |  134.9ms |        - |    - |    - |        - |          - |        |          |
+| mpx / template 区块                                   |    5 |        1 | 是   | 产物变化 |    160.0ms |  160.0ms |        - |    - |    - |        - |          - |        |          |
+| mpx / template 区块                                   |    6 |        1 | 是   | 产物变化 |    139.4ms |  139.4ms |        - |    - |    - |        - |          - |        |          |
+| mpx / template 区块                                   |    7 |        1 | 是   | 产物变化 |    139.3ms |  139.3ms |        - |    - |    - |        - |          - |        |          |
+| mpx / template 区块                                   |    8 |        1 | 是   | 产物变化 |    139.2ms |  139.2ms |        - |    - |    - |        - |          - |        |          |
+| mpx / template 区块                                   |    9 |        1 | 是   | 产物变化 |    136.1ms |  136.1ms |        - |    - |    - |        - |          - |        |          |
+| mpx / template 区块                                   |   10 |        1 | 是   | 产物变化 |    169.2ms |  169.2ms |        - |    - |    - |        - |          - |        |          |
+| mpx / template 区块                                   |   11 |        1 | 是   | 产物变化 |    124.1ms |  124.1ms |        - |    - |    - |        - |          - |        |          |
+| mpx / template 区块                                   |   12 |        1 | 是   | 产物变化 |    122.3ms |  122.3ms |        - |    - |    - |        - |          - |        |          |
+| mpx / template 区块                                   |   13 |        1 | 是   | 产物变化 |    146.9ms |  146.9ms |        - |    - |    - |        - |          - |        |          |
+| mpx / template 区块                                   |   14 |        1 | 是   | 产物变化 |    170.1ms |  170.1ms |        - |    - |    - |        - |          - |        |          |
+| mpx / template 区块                                   |   15 |        1 | 是   | 产物变化 |    148.7ms |  148.7ms |        - |    - |    - |        - |          - |        |          |
+| mpx / template 区块                                   |   16 |        1 | 是   | 产物变化 |    135.8ms |  135.8ms |        - |    - |    - |        - |          - |        |          |
+| mpx / template 区块                                   |   17 |        1 | 是   | 产物变化 |    162.2ms |  162.2ms |        - |    - |    - |        - |          - |        |          |
+| mpx / template 区块                                   |   18 |        1 | 是   | 产物变化 |    148.0ms |  148.0ms |        - |    - |    - |        - |          - |        |          |
+| mpx / template 区块                                   |   19 |        1 | 是   | 产物变化 |    152.0ms |  152.0ms |        - |    - |    - |        - |          - |        |          |
+| mpx / template 区块                                   |   20 |        1 | 是   | 产物变化 |    148.7ms |  148.7ms |        - |    - |    - |        - |          - |        |          |
+| mpx / script 区块                                     |    1 |        1 | 是   | 产物变化 |    148.8ms |  148.8ms |        - |    - |    - |        - |          - |        |          |
+| mpx / script 区块                                     |    2 |        1 | 是   | 产物变化 |    124.9ms |  124.9ms |        - |    - |    - |        - |          - |        |          |
+| mpx / script 区块                                     |    3 |        1 | 是   | 产物变化 |    158.9ms |  158.9ms |        - |    - |    - |        - |          - |        |          |
+| mpx / script 区块                                     |    4 |        1 | 是   | 产物变化 |    170.5ms |  170.5ms |        - |    - |    - |        - |          - |        |          |
+| mpx / script 区块                                     |    5 |        1 | 是   | 产物变化 |    148.1ms |  148.1ms |        - |    - |    - |        - |          - |        |          |
+| mpx / script 区块                                     |    6 |        1 | 是   | 产物变化 |    162.0ms |  162.0ms |        - |    - |    - |        - |          - |        |          |
+| mpx / script 区块                                     |    7 |        1 | 是   | 产物变化 |    170.0ms |  170.0ms |        - |    - |    - |        - |          - |        |          |
+| mpx / script 区块                                     |    8 |        1 | 是   | 产物变化 |    140.1ms |  140.1ms |        - |    - |    - |        - |          - |        |          |
+| mpx / script 区块                                     |    9 |        1 | 是   | 产物变化 |    176.4ms |  176.4ms |        - |    - |    - |        - |          - |        |          |
+| mpx / script 区块                                     |   10 |        1 | 是   | 产物变化 |    174.9ms |  174.9ms |        - |    - |    - |        - |          - |        |          |
+| mpx / script 区块                                     |   11 |        1 | 是   | 产物变化 |    201.6ms |  201.6ms |        - |    - |    - |        - |          - |        |          |
+| mpx / script 区块                                     |   12 |        1 | 是   | 产物变化 |    153.7ms |  153.7ms |        - |    - |    - |        - |          - |        |          |
+| mpx / script 区块                                     |   13 |        1 | 是   | 产物变化 |    116.4ms |  116.4ms |        - |    - |    - |        - |          - |        |          |
+| mpx / script 区块                                     |   14 |        1 | 是   | 产物变化 |    192.8ms |  192.8ms |        - |    - |    - |        - |          - |        |          |
+| mpx / script 区块                                     |   15 |        1 | 是   | 产物变化 |    139.6ms |  139.6ms |        - |    - |    - |        - |          - |        |          |
+| mpx / script 区块                                     |   16 |        1 | 是   | 产物变化 |    171.0ms |  171.0ms |        - |    - |    - |        - |          - |        |          |
+| mpx / script 区块                                     |   17 |        1 | 是   | 产物变化 |    167.1ms |  167.1ms |        - |    - |    - |        - |          - |        |          |
+| mpx / script 区块                                     |   18 |        1 | 是   | 产物变化 |    147.5ms |  147.5ms |        - |    - |    - |        - |          - |        |          |
+| mpx / script 区块                                     |   19 |        1 | 是   | 产物变化 |    160.1ms |  160.1ms |        - |    - |    - |        - |          - |        |          |
+| mpx / script 区块                                     |   20 |        1 | 是   | 产物变化 |    160.9ms |  160.9ms |        - |    - |    - |        - |          - |        |          |
+| mpx / style 区块                                      |    1 |        1 | 是   | 产物变化 |    161.9ms |  161.9ms |        - |    - |    - |        - |          - |        |          |
+| mpx / style 区块                                      |    2 |        1 | 是   | 产物变化 |    118.8ms |  118.8ms |        - |    - |    - |        - |          - |        |          |
+| mpx / style 区块                                      |    3 |        1 | 是   | 产物变化 |    126.8ms |  126.8ms |        - |    - |    - |        - |          - |        |          |
+| mpx / style 区块                                      |    4 |        1 | 是   | 产物变化 |    153.5ms |  153.5ms |        - |    - |    - |        - |          - |        |          |
+| mpx / style 区块                                      |    5 |        1 | 是   | 产物变化 |    174.0ms |  174.0ms |        - |    - |    - |        - |          - |        |          |
+| mpx / style 区块                                      |    6 |        1 | 是   | 产物变化 |    150.4ms |  150.4ms |        - |    - |    - |        - |          - |        |          |
+| mpx / style 区块                                      |    7 |        1 | 是   | 产物变化 |    128.4ms |  128.4ms |        - |    - |    - |        - |          - |        |          |
+| mpx / style 区块                                      |    8 |        1 | 是   | 产物变化 |    159.0ms |  159.0ms |        - |    - |    - |        - |          - |        |          |
+| mpx / style 区块                                      |    9 |        1 | 是   | 产物变化 |    173.4ms |  173.4ms |        - |    - |    - |        - |          - |        |          |
+| mpx / style 区块                                      |   10 |        1 | 是   | 产物变化 |    135.3ms |  135.3ms |        - |    - |    - |        - |          - |        |          |
+| mpx / style 区块                                      |   11 |        1 | 是   | 产物变化 |    133.5ms |  133.5ms |        - |    - |    - |        - |          - |        |          |
+| mpx / style 区块                                      |   12 |        1 | 是   | 产物变化 |    165.8ms |  165.8ms |        - |    - |    - |        - |          - |        |          |
+| mpx / style 区块                                      |   13 |        1 | 是   | 产物变化 |    161.9ms |  161.9ms |        - |    - |    - |        - |          - |        |          |
+| mpx / style 区块                                      |   14 |        1 | 是   | 产物变化 |    120.5ms |  120.5ms |        - |    - |    - |        - |          - |        |          |
+| mpx / style 区块                                      |   15 |        1 | 是   | 产物变化 |    117.1ms |  117.1ms |        - |    - |    - |        - |          - |        |          |
+| mpx / style 区块                                      |   16 |        1 | 是   | 产物变化 |    148.5ms |  148.5ms |        - |    - |    - |        - |          - |        |          |
+| mpx / style 区块                                      |   17 |        1 | 是   | 产物变化 |    164.5ms |  164.5ms |        - |    - |    - |        - |          - |        |          |
+| mpx / style 区块                                      |   18 |        1 | 是   | 产物变化 |    148.5ms |  148.5ms |        - |    - |    - |        - |          - |        |          |
+| mpx / style 区块                                      |   19 |        1 | 是   | 产物变化 |    129.5ms |  129.5ms |        - |    - |    - |        - |          - |        |          |
+| mpx / style 区块                                      |   20 |        1 | 是   | 产物变化 |    183.0ms |  183.0ms |        - |    - |    - |        - |          - |        |          |
+| mpx / 页面配置                                        |    1 |        1 | 是   | 产物变化 |    150.2ms |  150.2ms |        - |    - |    - |        - |          - |        |          |
+| mpx / 页面配置                                        |    2 |        1 | 是   | 产物变化 |    167.5ms |  167.5ms |        - |    - |    - |        - |          - |        |          |
+| mpx / 页面配置                                        |    3 |        1 | 是   | 产物变化 |    116.4ms |  116.4ms |        - |    - |    - |        - |          - |        |          |
+| mpx / 页面配置                                        |    4 |        1 | 是   | 产物变化 |    162.3ms |  162.3ms |        - |    - |    - |        - |          - |        |          |
+| mpx / 页面配置                                        |    5 |        1 | 是   | 产物变化 |    163.2ms |  163.2ms |        - |    - |    - |        - |          - |        |          |
+| mpx / 页面配置                                        |    6 |        1 | 是   | 产物变化 |    159.5ms |  159.5ms |        - |    - |    - |        - |          - |        |          |
+| mpx / 页面配置                                        |    7 |        1 | 是   | 产物变化 |    117.8ms |  117.8ms |        - |    - |    - |        - |          - |        |          |
+| mpx / 页面配置                                        |    8 |        1 | 是   | 产物变化 |    141.7ms |  141.7ms |        - |    - |    - |        - |          - |        |          |
+| mpx / 页面配置                                        |    9 |        1 | 是   | 产物变化 |    161.2ms |  161.2ms |        - |    - |    - |        - |          - |        |          |
+| mpx / 页面配置                                        |   10 |        1 | 是   | 产物变化 |    161.5ms |  161.5ms |        - |    - |    - |        - |          - |        |          |
+| mpx / 页面配置                                        |   11 |        1 | 是   | 产物变化 |    162.2ms |  162.2ms |        - |    - |    - |        - |          - |        |          |
+| mpx / 页面配置                                        |   12 |        1 | 是   | 产物变化 |    126.4ms |  126.4ms |        - |    - |    - |        - |          - |        |          |
+| mpx / 页面配置                                        |   13 |        1 | 是   | 产物变化 |    151.7ms |  151.7ms |        - |    - |    - |        - |          - |        |          |
+| mpx / 页面配置                                        |   14 |        1 | 是   | 产物变化 |    126.2ms |  126.2ms |        - |    - |    - |        - |          - |        |          |
+| mpx / 页面配置                                        |   15 |        1 | 是   | 产物变化 |    128.5ms |  128.5ms |        - |    - |    - |        - |          - |        |          |
+| mpx / 页面配置                                        |   16 |        1 | 是   | 产物变化 |    118.1ms |  118.1ms |        - |    - |    - |        - |          - |        |          |
+| mpx / 页面配置                                        |   17 |        1 | 是   | 产物变化 |    153.5ms |  153.5ms |        - |    - |    - |        - |          - |        |          |
+| mpx / 页面配置                                        |   18 |        1 | 是   | 产物变化 |    124.8ms |  124.8ms |        - |    - |    - |        - |          - |        |          |
+| mpx / 页面配置                                        |   19 |        1 | 是   | 产物变化 |    164.5ms |  164.5ms |        - |    - |    - |        - |          - |        |          |
+| mpx / 页面配置                                        |   20 |        1 | 是   | 产物变化 |    125.9ms |  125.9ms |        - |    - |    - |        - |          - |        |          |
 
 说明：
 

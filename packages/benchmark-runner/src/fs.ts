@@ -15,9 +15,12 @@ const jsExtensions = new Set(['.js', '.mjs', '.cjs'])
 const templateExtensions = new Set(['.wxml', '.axml', '.ttml', '.swan'])
 const styleExtensions = new Set(['.wxss', '.css', '.acss', '.ttss'])
 const invisibleTerminalFormatting = /[\u200B-\u200D\u2060\uFEFF]/g
+const irregularTerminalWhitespace = /[\u00A0\u1680\u2000-\u200A\u202F\u205F\u3000]/g
 
 export function sanitizeTerminalOutput(value: string) {
-  return value.replace(invisibleTerminalFormatting, '')
+  return value
+    .replace(invisibleTerminalFormatting, '')
+    .replace(irregularTerminalWhitespace, ' ')
 }
 
 export function normalizeGeneratedText(value: string) {
