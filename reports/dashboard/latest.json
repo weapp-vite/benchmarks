@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-14T08:04:07.170Z",
+  "generatedAt": "2026-07-14T09:53:43.987Z",
   "sourceCommit": "026fe258b63b15a9b9d51c4635348ffeebc3dc41",
   "status": "partial",
   "errors": [],
@@ -199,7 +199,7 @@
           "styleBytes": 836
         },
         "previousValues": {
-          "buildMs": 1075.3,
+          "buildMs": 1096.3,
           "outputBytes": 203663,
           "jsBytes": 201209,
           "templateBytes": 1173,
@@ -220,7 +220,7 @@
           "styleBytes": 836
         },
         "previousValues": {
-          "buildMs": 1100,
+          "buildMs": 1035.3,
           "outputBytes": 204644,
           "jsBytes": 202154,
           "templateBytes": 1185,
@@ -241,7 +241,7 @@
           "styleBytes": 776
         },
         "previousValues": {
-          "buildMs": 999.3,
+          "buildMs": 925.5,
           "outputBytes": 8883,
           "jsBytes": 6477,
           "templateBytes": 1181,
@@ -262,7 +262,7 @@
           "styleBytes": 783
         },
         "previousValues": {
-          "buildMs": 2544.4,
+          "buildMs": 2611.3,
           "outputBytes": 135478,
           "jsBytes": 132776,
           "templateBytes": 896,
@@ -283,7 +283,7 @@
           "styleBytes": 3923
         },
         "previousValues": {
-          "buildMs": 2890.5,
+          "buildMs": 3052.3,
           "outputBytes": 102273,
           "jsBytes": 93398,
           "templateBytes": 1490,
@@ -304,9 +304,9 @@
           "styleBytes": 677
         },
         "previousValues": {
-          "buildMs": 1956,
-          "outputBytes": 1164888,
-          "jsBytes": 208698,
+          "buildMs": 1725.4,
+          "outputBytes": 1164882,
+          "jsBytes": 208692,
           "templateBytes": 977,
           "styleBytes": 677
         }
@@ -325,7 +325,7 @@
           "styleBytes": 621
         },
         "previousValues": {
-          "buildMs": 3799.8,
+          "buildMs": 2834.9,
           "outputBytes": 226763,
           "jsBytes": 168554,
           "templateBytes": 55839,
@@ -587,7 +587,7 @@
     ]
   },
   "hmr": {
-    "generatedAt": "2026-07-14T07:34:26.614Z",
+    "generatedAt": "2026-07-14T09:43:16.538Z",
     "iterations": 20,
     "environment": {
       "machineId": "m4-max-128gb",
@@ -599,7 +599,7 @@
       "memoryGB": 128,
       "node": "v24.18.0",
       "pnpm": "11.13.0",
-      "gitCommit": "026fe258b63b15a9b9d51c4635348ffeebc3dc41",
+      "gitCommit": "d739f29753a96f151f136064cfe12b65b432f557",
       "weappViteSubmodule": "26510329efcf36cbf934e566ebbc80f069151a22"
     },
     "projects": [
@@ -610,7 +610,7 @@
         "expectedSamples": 80,
         "complete": true,
         "values": {
-          "averageMs": 831.8,
+          "averageMs": 87.9,
           "scenarioCount": 4
         },
         "previousValues": {
@@ -625,7 +625,7 @@
         "expectedSamples": 80,
         "complete": true,
         "values": {
-          "averageMs": 549.8,
+          "averageMs": 86.4,
           "scenarioCount": 4
         },
         "previousValues": {
@@ -640,7 +640,7 @@
         "expectedSamples": 80,
         "complete": true,
         "values": {
-          "averageMs": 532,
+          "averageMs": 47.8,
           "scenarioCount": 4
         },
         "previousValues": {
@@ -655,7 +655,7 @@
         "expectedSamples": 60,
         "complete": true,
         "values": {
-          "averageMs": 1261.6,
+          "averageMs": 220.3,
           "scenarioCount": 3
         },
         "previousValues": {
@@ -670,7 +670,7 @@
         "expectedSamples": 60,
         "complete": true,
         "values": {
-          "averageMs": 1002.3,
+          "averageMs": 256.6,
           "scenarioCount": 3
         },
         "previousValues": {
@@ -685,7 +685,7 @@
         "expectedSamples": 60,
         "complete": true,
         "values": {
-          "averageMs": 943.1,
+          "averageMs": 308.5,
           "scenarioCount": 3
         },
         "previousValues": {
@@ -700,7 +700,7 @@
         "expectedSamples": 80,
         "complete": true,
         "values": {
-          "averageMs": 422.8,
+          "averageMs": 148.2,
           "scenarioCount": 4
         },
         "previousValues": {
@@ -718,7 +718,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 521.5
+        "valueMs": 97.1
       },
       {
         "id": "wevu-vue-template",
@@ -728,7 +728,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 1794.6
+        "valueMs": 87.2
       },
       {
         "id": "wevu-vue-style",
@@ -738,7 +738,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 484.5
+        "valueMs": 80.2
       },
       {
         "id": "wevu-vue-page-json",
@@ -748,7 +748,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 526.5
+        "valueMs": 86.9
       },
       {
         "id": "wevu-performance-vue-script",
@@ -758,7 +758,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 492.8
+        "valueMs": 96.1
       },
       {
         "id": "wevu-performance-vue-template",
@@ -768,7 +768,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 507.1
+        "valueMs": 86
       },
       {
         "id": "wevu-performance-vue-style",
@@ -778,7 +778,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 531.6
+        "valueMs": 77
       },
       {
         "id": "wevu-performance-vue-page-json",
@@ -788,7 +788,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 667.7
+        "valueMs": 86.6
       },
       {
         "id": "native-js",
@@ -798,7 +798,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 544.4
+        "valueMs": 51.4
       },
       {
         "id": "native-wxml",
@@ -808,7 +808,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 396.6
+        "valueMs": 47.8
       },
       {
         "id": "native-wxss",
@@ -818,7 +818,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 430.9
+        "valueMs": 45.2
       },
       {
         "id": "native-json",
@@ -828,7 +828,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 756
+        "valueMs": 46.9
       },
       {
         "id": "uni-app-vite-vue3-script",
@@ -838,7 +838,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 1827.8
+        "valueMs": 252.3
       },
       {
         "id": "uni-app-vite-vue3-template",
@@ -848,7 +848,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 1145.2
+        "valueMs": 199.4
       },
       {
         "id": "uni-app-vite-vue3-style",
@@ -858,7 +858,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 811.8
+        "valueMs": 209.2
       },
       {
         "id": "uni-app-x-script",
@@ -868,7 +868,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 1362.6
+        "valueMs": 359.8
       },
       {
         "id": "uni-app-x-template",
@@ -878,7 +878,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 722.1
+        "valueMs": 205.4
       },
       {
         "id": "uni-app-x-style",
@@ -888,7 +888,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 922.2
+        "valueMs": 204.7
       },
       {
         "id": "taro-vue3-script",
@@ -898,7 +898,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 905
+        "valueMs": 310
       },
       {
         "id": "taro-vue3-template",
@@ -908,7 +908,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 979.7
+        "valueMs": 309.9
       },
       {
         "id": "taro-vue3-style",
@@ -918,7 +918,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 944.7
+        "valueMs": 305.7
       },
       {
         "id": "mpx-template",
@@ -928,7 +928,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 576.3
+        "valueMs": 158.8
       },
       {
         "id": "mpx-script",
@@ -938,7 +938,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 415.3
+        "valueMs": 152.4
       },
       {
         "id": "mpx-style",
@@ -948,7 +948,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 387.9
+        "valueMs": 133.3
       },
       {
         "id": "mpx-page-json",
@@ -958,7 +958,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 311.5
+        "valueMs": 148.3
       }
     ]
   },

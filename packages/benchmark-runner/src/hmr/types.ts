@@ -44,6 +44,8 @@ export interface HmrSample {
   collector: HmrScenario['collector']
   iteration: number
   attempts?: number
+  attemptDurationsMs?: number[]
+  attemptTotalMs?: number
   sourceFile: string
   ok: boolean
   wallMs?: number

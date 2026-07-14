@@ -3,6 +3,7 @@ import type { RuntimeReport } from '../../runtime/types'
 import type { AnalysisOutput } from '../../size/types'
 import type { BenchmarkSection, DashboardReport, ProjectSummary } from '../types'
 import type { CompileReport, ReportInputs } from './types'
+import { isHealthyHmrScenario } from '../../hmr/statistics'
 
 function average(values: number[]) {
   return values.length
@@ -85,6 +86,7 @@ export function summarizeHmr(report: HmrReport): BenchmarkSection {
     const all = report.samples.filter(sample => sample.scenario === id)
     const samples = all.filter(sample => sample.ok && typeof sample.totalMs === 'number')
     const first = all[0]
+    const complete = isHealthyHmrScenario(all, report.iterations)
     const valueMs = round(average(samples.map(sample => sample.totalMs as number)))
     return {
       id,
@@ -93,8 +95,8 @@ export function summarizeHmr(report: HmrReport): BenchmarkSection {
       projectLabel: first?.projectLabel ?? 'unknown',
       sampleCount: samples.length,
       expectedSamples: report.iterations,
-      complete: samples.length === report.iterations,
-      ...(typeof valueMs === 'number' ? { valueMs } : {}),
+      complete,
+      ...(complete && typeof valueMs === 'number' ? { valueMs } : {}),
     }
   })
   const projects = [...new Set(scenarios.map(scenario => scenario.project))].map((id) => {
@@ -102,13 +104,18 @@ export function summarizeHmr(report: HmrReport): BenchmarkSection {
     const values = projectScenarios
       .map(scenario => scenario.valueMs)
       .filter((value): value is number => typeof value === 'number')
+    const complete = projectScenarios.every(scenario => scenario.complete)
+    const averageMs = complete ? round(average(values)) : undefined
     return {
       id,
       label: projectScenarios[0]?.projectLabel ?? id,
       sampleCount: projectScenarios.reduce((total, scenario) => total + scenario.sampleCount, 0),
       expectedSamples: projectScenarios.length * report.iterations,
-      complete: projectScenarios.every(scenario => scenario.complete),
-      values: { averageMs: round(average(values)) ?? 0, scenarioCount: projectScenarios.length },
+      complete,
+      values: {
+        ...(typeof averageMs === 'number' ? { averageMs } : {}),
+        scenarioCount: projectScenarios.length,
+      },
     }
   })
   return {

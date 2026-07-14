@@ -12,6 +12,8 @@ import {
   defaultRelaunchRetries,
   metricCount,
 } from './constants'
+import { closeDevtoolsProject } from './devtools-session'
+import { launchWithCleanup } from './launch'
 import { parseConsolePayload, waitForConsoleMetrics, waitForMetrics } from './metrics'
 
 function sleep(ms: number) {
@@ -64,31 +66,39 @@ async function launchProject(
 ) {
   const retries = Number(process.env['BENCH_RUNTIME_LAUNCH_RETRIES'] ?? defaultLaunchRetries)
   const timeout = Number(process.env['BENCH_RUNTIME_TIMEOUT'] ?? defaultLaunchTimeout)
-  let lastError: unknown
 
-  for (let attempt = 1; attempt <= retries; attempt += 1) {
-    try {
-      return await launcher.launch({
-        platform: 'wechat',
-        cliPath,
-        projectPath,
-        port,
-        timeout,
-        headless: process.env['BENCH_RUNTIME_HEADLESS'] === '1',
-        trustProject: true,
-      })
-    }
-    catch (error) {
-      lastError = error
-      process.stdout.write(`[runtime] ${project.label}: launch retry ${attempt}/${retries} failed\n`)
-      if (attempt >= retries) {
-        break
+  return launchWithCleanup({
+    retries,
+    launch: () => launcher.launch({
+      platform: 'wechat',
+      cliPath,
+      projectPath,
+      port,
+      timeout,
+      headless: process.env['BENCH_RUNTIME_HEADLESS'] === '1',
+      trustProject: true,
+    }),
+    cleanup: async ({ attempt }) => {
+      try {
+        await closeDevtoolsProject(cliPath, projectPath, port, {
+          timeoutMs: 30_000,
+          settleMs: 10_000,
+        })
       }
-      await sleep(2_000)
-    }
-  }
-
-  throw lastError
+      finally {
+        if (attempt < retries) {
+          await sleep(2_000)
+        }
+      }
+    },
+    onFailure: ({ attempt }) => {
+      process.stdout.write(`[runtime] ${project.label}: launch retry ${attempt}/${retries} failed\n`)
+    },
+    onCleanupFailure: (_context, error) => {
+      const message = error instanceof Error ? error.message : String(error)
+      process.stdout.write(`[runtime] ${project.label}: failed launch cleanup warning: ${message}\n`)
+    },
+  })
 }
 
 async function collectIteration(
@@ -206,5 +216,9 @@ export async function collectProjectSamples(
   }
   finally {
     await miniProgram?.close().catch(() => {})
+    await closeDevtoolsProject(cliPath, projectPath, port).catch((error) => {
+      const message = error instanceof Error ? error.message : String(error)
+      process.stdout.write(`[runtime] ${project.label}: final cleanup warning: ${message}\n`)
+    })
   }
 }

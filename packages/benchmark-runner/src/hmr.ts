@@ -14,6 +14,7 @@ import {
 import { startDevProcess } from './hmr/dev'
 import { writeHmrReport } from './hmr/report'
 import { hmrScenarios } from './hmr/scenarios/index'
+import { sampleWasRetried } from './hmr/statistics'
 import { repoRoot } from './projects'
 import { createMachineEnvironment } from './reports/environment'
 
@@ -57,9 +58,10 @@ function createFailedSample(options: {
   scenario: HmrScenario
   iteration: number
   attempts: number
+  attemptDurationsMs: number[]
   error: unknown
 }): HmrSample {
-  const { scenario, iteration, attempts, error } = options
+  const { scenario, iteration, attempts, attemptDurationsMs, error } = options
   return {
     scenario: scenario.id,
     label: scenario.label,
@@ -69,6 +71,8 @@ function createFailedSample(options: {
     collector: scenario.collector,
     iteration,
     attempts,
+    attemptDurationsMs,
+    attemptTotalMs: attemptDurationsMs.reduce((total, value) => total + value, 0),
     sourceFile: scenario.sourceFile,
     ok: false,
     error: normalizeError(error),
@@ -79,9 +83,10 @@ function createSampleFromArtifact(options: {
   scenario: HmrScenario
   iteration: number
   attempts: number
+  attemptDurationsMs: number[]
   wallMs: number
 }): HmrSample {
-  const { scenario, iteration, attempts, wallMs } = options
+  const { scenario, iteration, attempts, attemptDurationsMs, wallMs } = options
   return {
     scenario: scenario.id,
     label: scenario.label,
@@ -91,6 +96,8 @@ function createSampleFromArtifact(options: {
     collector: scenario.collector,
     iteration,
     attempts,
+    attemptDurationsMs,
+    attemptTotalMs: attemptDurationsMs.reduce((total, value) => total + value, 0),
     sourceFile: scenario.sourceFile,
     ok: true,
     wallMs,
@@ -139,6 +146,7 @@ async function runScenario(options: {
     for (let iteration = 1; iteration <= iterations; iteration += 1) {
       process.stdout.write(`[hmr] ${scenario.label}: iteration ${iteration}\n`)
       let lastError: unknown
+      const attemptDurationsMs: number[] = []
       for (let attempt = 1; attempt <= iterationAttempts; attempt += 1) {
         const marker = `${scenario.id}-${iteration}-${attempt}-${Date.now().toString(36)}`
         const nextSource = scenario.applyMarker(originalSource, marker)
@@ -147,16 +155,20 @@ async function runScenario(options: {
         try {
           await writeFile(sourcePath, nextSource, 'utf8')
           await waitForArtifactChange(beforeArtifacts, timeoutMs, pollIntervalMs, marker)
+          const wallMs = performance.now() - started
+          attemptDurationsMs.push(wallMs)
           samples.push(createSampleFromArtifact({
             scenario,
             iteration,
             attempts: attempt,
-            wallMs: performance.now() - started,
+            attemptDurationsMs,
+            wallMs,
           }))
           lastError = undefined
           break
         }
         catch (error) {
+          attemptDurationsMs.push(performance.now() - started)
           lastError = error
           if (attempt < iterationAttempts) {
             process.stdout.write(`[hmr] ${scenario.label}: iteration ${iteration} retry ${attempt + 1}\n`)
@@ -168,6 +180,7 @@ async function runScenario(options: {
           scenario,
           iteration,
           attempts: iterationAttempts,
+          attemptDurationsMs,
           error: lastError,
         }))
       }
@@ -267,9 +280,10 @@ async function runHmrBenchmark() {
       `HMR 等待超时默认是 ${defaultTimeoutMs}ms，可通过 BENCH_HMR_TIMEOUT 覆盖。`,
       `HMR 产物变化轮询间隔默认是 ${defaultArtifactChangePollIntervalMs}ms，可通过 BENCH_HMR_POLL_INTERVAL 覆盖。`,
       `HMR 单轮最多尝试 ${iterationAttempts} 次，重试会写入 attempts 字段；可通过 BENCH_HMR_ITERATION_ATTEMPTS 覆盖。`,
+      '任何重试都会把场景标记为降级并移出正式排名，命令也会返回失败，避免隐藏超时污染性能结论。',
     ],
   })
-  if (samples.some(sample => !sample.ok)) {
+  if (samples.some(sample => !sample.ok || sampleWasRetried(sample))) {
     process.exitCode = 1
   }
 }

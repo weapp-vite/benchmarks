@@ -57,6 +57,34 @@ describe('dashboard aggregation', () => {
     expect(report.compile?.projects.find(project => project.id === 'partial')?.complete).toBe(false)
   })
 
+  it('marks retried HMR scenarios incomplete', () => {
+    const hmr = {
+      generatedAt: '2026-07-13T00:00:00.000Z',
+      iterations: 2,
+      notes: [],
+      samples: [1, 2].map(iteration => ({
+        scenario: 'template',
+        label: 'Template',
+        group: 'vue-sfc' as const,
+        project: 'app',
+        projectLabel: 'App',
+        collector: 'artifact' as const,
+        iteration,
+        attempts: iteration === 2 ? 2 : 1,
+        sourceFile: 'src/page.vue',
+        ok: true,
+        totalMs: 100,
+      })),
+    }
+
+    const report = buildDashboardReport({ hmr })
+    expect(report.status).toBe('partial')
+    expect(report.hmr?.scenarios?.[0]?.complete).toBe(false)
+    expect(report.hmr?.scenarios?.[0]?.valueMs).toBeUndefined()
+    expect(report.hmr?.projects[0]?.complete).toBe(false)
+    expect(report.hmr?.projects[0]?.values['averageMs']).toBeUndefined()
+  })
+
   it('reports malformed and missing source reports instead of inventing zero values', async () => {
     const root = await mkdtemp(path.join(tmpdir(), 'benchmark-dashboard-'))
     temporaryRoots.push(root)
