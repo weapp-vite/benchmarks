@@ -1,86 +1,88 @@
 # wevu 体积分析
 
-生成时间：2026-07-14T07:34:33.607Z
+生成时间：2026-07-14T12:26:22.350Z
 
 ## 工具链环境
 
 - 工具链：weapp-vite 2651032 / Node 24.18.0（`weapp-vite-2651032-node24`）
 - 系统：macOS 26.5.1 (25F80)；架构：darwin/arm64
 - Node：v24.18.0；pnpm：11.13.0
-- Git commit：026fe258b63b15a9b9d51c4635348ffeebc3dc41
+- Git commit：82b2553795a40325f25052ca187e93001a2c47f8
 - weapp-vite submodule：26510329efcf36cbf934e566ebbc80f069151a22
 - 包版本：weapp-vite@6.18.3、wevu@6.18.3、@dcloudio/vite-plugin-uni@3.0.0-5010520260709002
 
 ## 结论
 
-- 当前差距主要来自 JS 固定运行时成本：weapp-vite + wevu 的 JS 为 196.5 KB，uni-app vite vue3 为 129.7 KB，差值 66.8 KB。
-- wevu 的 vendor JS 为 189.4 KB，uni-app 的 vendor JS 为 125.5 KB，vendor 差值 63.9 KB，这是最主要的大头。
-- 对比 weapp-vite 原生，wevu 增加的运行时税约 190.2 KB。业务页面 JS 本身只有 6.4 KB，不是主要问题。
-- performance preset 的体积没有变小，当前比普通 wevu 多 1.0 KB。它优化的是运行时 setData 策略和诊断配置，不是体积优化模式。
+- 本报告只统计生产构建后的 runtime allowlist 文件体积；页面业务代码、模板、样式、source map、license 和项目配置不计入。
+- weapp-vite + wevu runtime 体积为 189.4 KB，uni-app vite vue3 为 125.5 KB，差值 63.9 KB。
+- 对比 weapp-vite 原生，wevu 增加的运行时税约 189.4 KB。
+- performance preset 的 runtime 体积为 189.4 KB，相对普通 wevu 差值 0.0 KB。
 - 这不是“完全没有 tree shaking”。wevu 包声明了 `sideEffects: false`，但主入口 re-export 的小程序 renderer、生命周期 glue、layout/router/store 桥接和响应式辅助之间引用链较粗，最终仍会把完整运行时基座放进 vendor。
 
 ## 总览
 
-| 项目                          |   总体积 |    gzip |  brotli |       JS | vendor JS | 页面 JS | JS 占比 | 相对最小 |
-| ----------------------------- | -------: | ------: | ------: | -------: | --------: | ------: | ------: | -------: |
-| weapp-vite + wevu             | 198.9 KB | 50.1 KB | 42.4 KB | 196.5 KB |  189.4 KB |  6.4 KB |   98.8% |   22.93x |
-| weapp-vite + wevu performance | 199.8 KB | 50.5 KB | 42.7 KB | 197.4 KB |  189.4 KB |  6.9 KB |   98.8% |   23.04x |
-| weapp-vite 原生               |   8.7 KB |  3.3 KB |  2.8 KB |   6.3 KB |    0.0 KB |  6.3 KB |   72.9% |    1.00x |
-| uni-app vite vue3             | 132.3 KB | 47.2 KB | 41.3 KB | 129.7 KB |  125.5 KB |  2.5 KB |   98.0% |   15.25x |
+| 项目                          | runtime 体积 |
+| ----------------------------- | -----------: |
+| weapp-vite + wevu             |     189.4 KB |
+| weapp-vite + wevu performance |     189.4 KB |
+| weapp-vite 原生               |       0.0 KB |
+| uni-app vite vue3             |     125.5 KB |
+| uni-app x                     |      91.8 KB |
+| mpx                           |     169.4 KB |
+| taro vue3                     |     214.0 KB |
 
 ## 文件级大头
 
 ### weapp-vite + wevu
 
-| 文件                              |      raw |    gzip |  brotli | 类型     | 分组   |
-| --------------------------------- | -------: | ------: | ------: | -------- | ------ |
-| weapp-vendors/wevu-templateRef.js | 133.2 KB | 32.9 KB | 27.8 KB | js       | vendor |
-| weapp-vendors/wevu-watch.js       |  56.3 KB | 13.5 KB | 11.4 KB | js       | vendor |
-| pages/index/index.js              |   6.1 KB |  1.8 KB |  1.6 KB | js       | page   |
-| pages/index/index.wxml            |   1.0 KB |  0.4 KB |  0.3 KB | template | page   |
-| pages/index/index.wxss            |   0.6 KB |  0.4 KB |  0.3 KB | style    | page   |
-| app.js                            |   0.6 KB |  0.3 KB |  0.3 KB | js       | app    |
-| pages/detail/index.js             |   0.3 KB |  0.2 KB |  0.2 KB | js       | page   |
-| app.json                          |   0.3 KB |  0.2 KB |  0.2 KB | json     | app    |
+| 运行时文件                        |     体积 | 类型 | 分组   |
+| --------------------------------- | -------: | ---- | ------ |
+| weapp-vendors/wevu-templateRef.js | 133.2 KB | js   | vendor |
+| weapp-vendors/wevu-watch.js       |  56.3 KB | js   | vendor |
 
 ### weapp-vite + wevu performance
 
-| 文件                              |      raw |    gzip |  brotli | 类型     | 分组   |
-| --------------------------------- | -------: | ------: | ------: | -------- | ------ |
-| weapp-vendors/wevu-templateRef.js | 133.2 KB | 32.9 KB | 27.8 KB | js       | vendor |
-| weapp-vendors/wevu-watch.js       |  56.3 KB | 13.5 KB | 11.4 KB | js       | vendor |
-| pages/index/index.js              |   6.4 KB |  2.0 KB |  1.8 KB | js       | page   |
-| app.js                            |   1.1 KB |  0.4 KB |  0.3 KB | js       | app    |
-| pages/index/index.wxml            |   1.0 KB |  0.4 KB |  0.3 KB | template | page   |
-| pages/index/index.wxss            |   0.6 KB |  0.4 KB |  0.3 KB | style    | page   |
-| pages/detail/index.js             |   0.5 KB |  0.3 KB |  0.3 KB | js       | page   |
-| app.json                          |   0.3 KB |  0.2 KB |  0.2 KB | json     | app    |
+| 运行时文件                        |     体积 | 类型 | 分组   |
+| --------------------------------- | -------: | ---- | ------ |
+| weapp-vendors/wevu-templateRef.js | 133.2 KB | js   | vendor |
+| weapp-vendors/wevu-watch.js       |  56.3 KB | js   | vendor |
 
 ### weapp-vite 原生
 
-| 文件                    |    raw |   gzip | brotli | 类型     | 分组  |
-| ----------------------- | -----: | -----: | -----: | -------- | ----- |
-| pages/index/index.js    | 6.2 KB | 1.8 KB | 1.6 KB | js       | page  |
-| pages/index/index.wxml  | 1.0 KB | 0.3 KB | 0.3 KB | template | page  |
-| pages/index/index.wxss  | 0.6 KB | 0.3 KB | 0.2 KB | style    | page  |
-| app.json                | 0.3 KB | 0.2 KB | 0.2 KB | json     | app   |
-| pages/detail/index.wxml | 0.1 KB | 0.1 KB | 0.1 KB | template | page  |
-| pages/detail/index.wxss | 0.1 KB | 0.1 KB | 0.1 KB | style    | page  |
-| sitemap.json            | 0.1 KB | 0.1 KB | 0.1 KB | json     | asset |
-| app.wxss                | 0.1 KB | 0.1 KB | 0.1 KB | style    | app   |
+| 运行时文件 | 体积 | 类型 | 分组 |
+| ---------- | ---: | ---- | ---- |
 
 ### uni-app vite vue3
 
-| 文件                   |      raw |    gzip |  brotli | 类型     | 分组   |
-| ---------------------- | -------: | ------: | ------: | -------- | ------ |
-| common/vendor.js       | 125.5 KB | 43.7 KB | 38.5 KB | js       | vendor |
-| pages/index/index.js   |   2.4 KB |  0.9 KB |  0.8 KB | js       | page   |
-| shared/benchmark.js    |   1.3 KB |  0.6 KB |  0.6 KB | js       | shared |
-| pages/index/index.wxml |   0.8 KB |  0.3 KB |  0.2 KB | template | page   |
-| project.config.json    |   0.6 KB |  0.3 KB |  0.2 KB | json     | asset  |
-| pages/index/index.wxss |   0.5 KB |  0.3 KB |  0.2 KB | style    | page   |
-| app.js                 |   0.3 KB |  0.2 KB |  0.2 KB | js       | app    |
-| app.json               |   0.2 KB |  0.2 KB |  0.1 KB | json     | app    |
+| 运行时文件       |     体积 | 类型 | 分组   |
+| ---------------- | -------: | ---- | ------ |
+| common/vendor.js | 125.5 KB | js   | vendor |
+
+### uni-app x
+
+| 运行时文件         |    体积 | 类型  | 分组   |
+| ------------------ | ------: | ----- | ------ |
+| common/vendor.js   | 86.5 KB | js    | vendor |
+| uvue.wxss          |  2.9 KB | style | asset  |
+| common/uniView.wxs |  2.4 KB | asset | vendor |
+
+### mpx
+
+| 运行时文件 |     体积 | 类型 | 分组  |
+| ---------- | -------: | ---- | ----- |
+| bundle.js  | 169.4 KB | js   | asset |
+
+### taro vue3
+
+| 运行时文件 |     体积 | 类型     | 分组  |
+| ---------- | -------: | -------- | ----- |
+| taro.js    | 158.4 KB | js       | asset |
+| base.wxml  |  54.2 KB | template | asset |
+| utils.wxs  |   1.0 KB | asset    | asset |
+| comp.wxml  |   0.1 KB | template | asset |
+| common.js  |   0.1 KB | js       | asset |
+| comp.json  |   0.1 KB | json     | asset |
+| comp.js    |   0.1 KB | js       | asset |
 
 ## wevu 源包入口
 

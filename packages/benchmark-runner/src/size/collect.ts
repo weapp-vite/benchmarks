@@ -94,6 +94,10 @@ function emptyTotals(): SizeTotals {
     pageJsBytes: 0,
     appJsBytes: 0,
     sharedJsBytes: 0,
+    runtimeFiles: 0,
+    runtimeBytes: 0,
+    runtimeGzipBytes: 0,
+    runtimeBrotliBytes: 0,
   }
 }
 
@@ -129,6 +133,12 @@ function addFileToTotals(total: SizeTotals, file: ProjectSize['files'][number]) 
   else {
     total.assetBytes += file.bytes
   }
+  if (file.runtime) {
+    total.runtimeFiles += 1
+    total.runtimeBytes += file.bytes
+    total.runtimeGzipBytes += file.gzipBytes
+    total.runtimeBrotliBytes += file.brotliBytes
+  }
 }
 
 export async function analyzeProject(project: ProjectInput): Promise<ProjectSize> {
@@ -145,10 +155,15 @@ export async function analyzeProject(project: ProjectInput): Promise<ProjectSize
       brotliBytes: brotliCompressSync(content).byteLength,
       type: typeOfFile(relativePath),
       bucket: bucketOfFile(relativePath),
+      runtime: project.runtimeFiles.includes(relativePath),
     })
   }
   if (files.length === 0) {
     throw new Error(`size output directory has no files: ${absoluteOutputDir}`)
+  }
+  const missingRuntimeFiles = project.runtimeFiles.filter(runtimeFile => !files.some(file => file.path === runtimeFile))
+  if (missingRuntimeFiles.length > 0) {
+    throw new Error(`runtime files are missing for ${project.id}: ${missingRuntimeFiles.join(', ')}`)
   }
 
   const totals = files.reduce((total, file) => {

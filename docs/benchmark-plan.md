@@ -109,7 +109,7 @@ pnpm report:refresh
 pnpm report:dashboard
 ```
 
-`pnpm bench:size:wevu` 会先重建体积分析依赖的四个生产产物，再执行统计，避免 HMR 的 dev 输出清理生产目录后得到陈旧或缺失结果。
+`pnpm bench:size:wevu` 会先重建全部编译基准项目，再执行 runtime allowlist 统计。体积报告只使用生产构建后的 allowlist 文件实际大小，排除页面业务代码、source map、license 和项目配置，避免 HMR 的 dev 输出清理生产目录后得到陈旧或缺失结果。
 
 ## uni-app x HBuilderX 检查
 

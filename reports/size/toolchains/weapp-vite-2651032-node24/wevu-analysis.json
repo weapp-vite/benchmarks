@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-14T07:34:33.607Z",
+  "generatedAt": "2026-07-14T12:26:22.350Z",
   "toolchain": {
     "toolchainId": "weapp-vite-2651032-node24",
     "toolchainLabel": "weapp-vite 2651032 / Node 24.18.0",
@@ -7,7 +7,7 @@
     "arch": "darwin/arm64",
     "node": "v24.18.0",
     "pnpm": "11.13.0",
-    "gitCommit": "026fe258b63b15a9b9d51c4635348ffeebc3dc41",
+    "gitCommit": "82b2553795a40325f25052ca187e93001a2c47f8",
     "weappViteSubmodule": "26510329efcf36cbf934e566ebbc80f069151a22",
     "packages": {
       "weapp-vite": "6.18.3",
@@ -27,7 +27,8 @@
           "gzipBytes": 277,
           "brotliBytes": 256,
           "type": "js",
-          "bucket": "app"
+          "bucket": "app",
+          "runtime": false
         },
         {
           "path": "app.json",
@@ -35,7 +36,8 @@
           "gzipBytes": 193,
           "brotliBytes": 167,
           "type": "json",
-          "bucket": "app"
+          "bucket": "app",
+          "runtime": false
         },
         {
           "path": "app.wxss",
@@ -43,7 +45,8 @@
           "gzipBytes": 82,
           "brotliBytes": 66,
           "type": "style",
-          "bucket": "app"
+          "bucket": "app",
+          "runtime": false
         },
         {
           "path": "pages/detail/index.js",
@@ -51,7 +54,8 @@
           "gzipBytes": 244,
           "brotliBytes": 214,
           "type": "js",
-          "bucket": "page"
+          "bucket": "page",
+          "runtime": false
         },
         {
           "path": "pages/detail/index.json",
@@ -59,7 +63,8 @@
           "gzipBytes": 60,
           "brotliBytes": 44,
           "type": "json",
-          "bucket": "page"
+          "bucket": "page",
+          "runtime": false
         },
         {
           "path": "pages/detail/index.wxml",
@@ -67,7 +72,8 @@
           "gzipBytes": 108,
           "brotliBytes": 82,
           "type": "template",
-          "bucket": "page"
+          "bucket": "page",
+          "runtime": false
         },
         {
           "path": "pages/detail/index.wxss",
@@ -75,7 +81,8 @@
           "gzipBytes": 115,
           "brotliBytes": 91,
           "type": "style",
-          "bucket": "page"
+          "bucket": "page",
+          "runtime": false
         },
         {
           "path": "pages/index/index.js",
@@ -83,7 +90,8 @@
           "gzipBytes": 1891,
           "brotliBytes": 1689,
           "type": "js",
-          "bucket": "page"
+          "bucket": "page",
+          "runtime": false
         },
         {
           "path": "pages/index/index.json",
@@ -91,7 +99,8 @@
           "gzipBytes": 69,
           "brotliBytes": 53,
           "type": "json",
-          "bucket": "page"
+          "bucket": "page",
+          "runtime": false
         },
         {
           "path": "pages/index/index.wxml",
@@ -99,7 +108,8 @@
           "gzipBytes": 370,
           "brotliBytes": 325,
           "type": "template",
-          "bucket": "page"
+          "bucket": "page",
+          "runtime": false
         },
         {
           "path": "pages/index/index.wxss",
@@ -107,7 +117,8 @@
           "gzipBytes": 370,
           "brotliBytes": 276,
           "type": "style",
-          "bucket": "page"
+          "bucket": "page",
+          "runtime": false
         },
         {
           "path": "sitemap.json",
@@ -115,7 +126,8 @@
           "gzipBytes": 80,
           "brotliBytes": 61,
           "type": "json",
-          "bucket": "asset"
+          "bucket": "asset",
+          "runtime": false
         },
         {
           "path": "weapp-vendors/wevu-templateRef.js",
@@ -123,7 +135,8 @@
           "gzipBytes": 33658,
           "brotliBytes": 28422,
           "type": "js",
-          "bucket": "vendor"
+          "bucket": "vendor",
+          "runtime": true
         },
         {
           "path": "weapp-vendors/wevu-watch.js",
@@ -131,7 +144,8 @@
           "gzipBytes": 13798,
           "brotliBytes": 11668,
           "type": "js",
-          "bucket": "vendor"
+          "bucket": "vendor",
+          "runtime": true
         }
       ],
       "totals": {
@@ -147,7 +161,11 @@
         "vendorJsBytes": 193974,
         "pageJsBytes": 6602,
         "appJsBytes": 633,
-        "sharedJsBytes": 0
+        "sharedJsBytes": 0,
+        "runtimeFiles": 2,
+        "runtimeBytes": 193974,
+        "runtimeGzipBytes": 47456,
+        "runtimeBrotliBytes": 40090
       }
     },
     {
@@ -161,7 +179,8 @@
           "gzipBytes": 402,
           "brotliBytes": 334,
           "type": "js",
-          "bucket": "app"
+          "bucket": "app",
+          "runtime": false
         },
         {
           "path": "app.json",
@@ -169,7 +188,8 @@
           "gzipBytes": 201,
           "brotliBytes": 156,
           "type": "json",
-          "bucket": "app"
+          "bucket": "app",
+          "runtime": false
         },
         {
           "path": "app.wxss",
@@ -177,7 +197,8 @@
           "gzipBytes": 82,
           "brotliBytes": 66,
           "type": "style",
-          "bucket": "app"
+          "bucket": "app",
+          "runtime": false
         },
         {
           "path": "pages/detail/index.js",
@@ -185,7 +206,8 @@
           "gzipBytes": 334,
           "brotliBytes": 302,
           "type": "js",
-          "bucket": "page"
+          "bucket": "page",
+          "runtime": false
         },
         {
           "path": "pages/detail/index.json",
@@ -193,7 +215,8 @@
           "gzipBytes": 60,
           "brotliBytes": 44,
           "type": "json",
-          "bucket": "page"
+          "bucket": "page",
+          "runtime": false
         },
         {
           "path": "pages/detail/index.wxml",
@@ -201,7 +224,8 @@
           "gzipBytes": 108,
           "brotliBytes": 82,
           "type": "template",
-          "bucket": "page"
+          "bucket": "page",
+          "runtime": false
         },
         {
           "path": "pages/detail/index.wxss",
@@ -209,7 +233,8 @@
           "gzipBytes": 115,
           "brotliBytes": 91,
           "type": "style",
-          "bucket": "page"
+          "bucket": "page",
+          "runtime": false
         },
         {
           "path": "pages/index/index.js",
@@ -217,7 +242,8 @@
           "gzipBytes": 2032,
           "brotliBytes": 1797,
           "type": "js",
-          "bucket": "page"
+          "bucket": "page",
+          "runtime": false
         },
         {
           "path": "pages/index/index.json",
@@ -225,7 +251,8 @@
           "gzipBytes": 81,
           "brotliBytes": 57,
           "type": "json",
-          "bucket": "page"
+          "bucket": "page",
+          "runtime": false
         },
         {
           "path": "pages/index/index.wxml",
@@ -233,7 +260,8 @@
           "gzipBytes": 378,
           "brotliBytes": 333,
           "type": "template",
-          "bucket": "page"
+          "bucket": "page",
+          "runtime": false
         },
         {
           "path": "pages/index/index.wxss",
@@ -241,7 +269,8 @@
           "gzipBytes": 370,
           "brotliBytes": 276,
           "type": "style",
-          "bucket": "page"
+          "bucket": "page",
+          "runtime": false
         },
         {
           "path": "sitemap.json",
@@ -249,7 +278,8 @@
           "gzipBytes": 80,
           "brotliBytes": 61,
           "type": "json",
-          "bucket": "asset"
+          "bucket": "asset",
+          "runtime": false
         },
         {
           "path": "weapp-vendors/wevu-templateRef.js",
@@ -257,7 +287,8 @@
           "gzipBytes": 33658,
           "brotliBytes": 28422,
           "type": "js",
-          "bucket": "vendor"
+          "bucket": "vendor",
+          "runtime": true
         },
         {
           "path": "weapp-vendors/wevu-watch.js",
@@ -265,7 +296,8 @@
           "gzipBytes": 13798,
           "brotliBytes": 11668,
           "type": "js",
-          "bucket": "vendor"
+          "bucket": "vendor",
+          "runtime": true
         }
       ],
       "totals": {
@@ -281,7 +313,11 @@
         "vendorJsBytes": 193974,
         "pageJsBytes": 7057,
         "appJsBytes": 1123,
-        "sharedJsBytes": 0
+        "sharedJsBytes": 0,
+        "runtimeFiles": 2,
+        "runtimeBytes": 193974,
+        "runtimeGzipBytes": 47456,
+        "runtimeBrotliBytes": 40090
       }
     },
     {
@@ -295,7 +331,8 @@
           "gzipBytes": 59,
           "brotliBytes": 45,
           "type": "js",
-          "bucket": "app"
+          "bucket": "app",
+          "runtime": false
         },
         {
           "path": "app.json",
@@ -303,7 +340,8 @@
           "gzipBytes": 194,
           "brotliBytes": 154,
           "type": "json",
-          "bucket": "app"
+          "bucket": "app",
+          "runtime": false
         },
         {
           "path": "app.wxss",
@@ -311,7 +349,8 @@
           "gzipBytes": 88,
           "brotliBytes": 67,
           "type": "style",
-          "bucket": "app"
+          "bucket": "app",
+          "runtime": false
         },
         {
           "path": "pages/detail/index.js",
@@ -319,7 +358,8 @@
           "gzipBytes": 75,
           "brotliBytes": 59,
           "type": "js",
-          "bucket": "page"
+          "bucket": "page",
+          "runtime": false
         },
         {
           "path": "pages/detail/index.json",
@@ -327,7 +367,8 @@
           "gzipBytes": 60,
           "brotliBytes": 44,
           "type": "json",
-          "bucket": "page"
+          "bucket": "page",
+          "runtime": false
         },
         {
           "path": "pages/detail/index.wxml",
@@ -335,7 +376,8 @@
           "gzipBytes": 109,
           "brotliBytes": 78,
           "type": "template",
-          "bucket": "page"
+          "bucket": "page",
+          "runtime": false
         },
         {
           "path": "pages/detail/index.wxss",
@@ -343,7 +385,8 @@
           "gzipBytes": 103,
           "brotliBytes": 69,
           "type": "style",
-          "bucket": "page"
+          "bucket": "page",
+          "runtime": false
         },
         {
           "path": "pages/index/index.js",
@@ -351,7 +394,8 @@
           "gzipBytes": 1852,
           "brotliBytes": 1653,
           "type": "js",
-          "bucket": "page"
+          "bucket": "page",
+          "runtime": false
         },
         {
           "path": "pages/index/index.json",
@@ -359,7 +403,8 @@
           "gzipBytes": 71,
           "brotliBytes": 55,
           "type": "json",
-          "bucket": "page"
+          "bucket": "page",
+          "runtime": false
         },
         {
           "path": "pages/index/index.wxml",
@@ -367,7 +412,8 @@
           "gzipBytes": 355,
           "brotliBytes": 299,
           "type": "template",
-          "bucket": "page"
+          "bucket": "page",
+          "runtime": false
         },
         {
           "path": "pages/index/index.wxss",
@@ -375,7 +421,8 @@
           "gzipBytes": 332,
           "brotliBytes": 247,
           "type": "style",
-          "bucket": "page"
+          "bucket": "page",
+          "runtime": false
         },
         {
           "path": "sitemap.json",
@@ -383,7 +430,8 @@
           "gzipBytes": 80,
           "brotliBytes": 61,
           "type": "json",
-          "bucket": "asset"
+          "bucket": "asset",
+          "runtime": false
         }
       ],
       "totals": {
@@ -399,7 +447,11 @@
         "vendorJsBytes": 0,
         "pageJsBytes": 6434,
         "appJsBytes": 43,
-        "sharedJsBytes": 0
+        "sharedJsBytes": 0,
+        "runtimeFiles": 0,
+        "runtimeBytes": 0,
+        "runtimeGzipBytes": 0,
+        "runtimeBrotliBytes": 0
       }
     },
     {
@@ -413,7 +465,8 @@
           "gzipBytes": 27,
           "brotliBytes": 11,
           "type": "template",
-          "bucket": "app"
+          "bucket": "app",
+          "runtime": false
         },
         {
           "path": "app.js",
@@ -421,7 +474,8 @@
           "gzipBytes": 225,
           "brotliBytes": 183,
           "type": "js",
-          "bucket": "app"
+          "bucket": "app",
+          "runtime": false
         },
         {
           "path": "app.json",
@@ -429,7 +483,8 @@
           "gzipBytes": 169,
           "brotliBytes": 130,
           "type": "json",
-          "bucket": "app"
+          "bucket": "app",
+          "runtime": false
         },
         {
           "path": "app.wxss",
@@ -437,7 +492,8 @@
           "gzipBytes": 163,
           "brotliBytes": 116,
           "type": "style",
-          "bucket": "app"
+          "bucket": "app",
+          "runtime": false
         },
         {
           "path": "common/vendor.js",
@@ -445,7 +501,8 @@
           "gzipBytes": 44704,
           "brotliBytes": 39380,
           "type": "js",
-          "bucket": "vendor"
+          "bucket": "vendor",
+          "runtime": true
         },
         {
           "path": "pages/detail/index.js",
@@ -453,7 +510,8 @@
           "gzipBytes": 135,
           "brotliBytes": 109,
           "type": "js",
-          "bucket": "page"
+          "bucket": "page",
+          "runtime": false
         },
         {
           "path": "pages/detail/index.json",
@@ -461,7 +519,8 @@
           "gzipBytes": 83,
           "brotliBytes": 69,
           "type": "json",
-          "bucket": "page"
+          "bucket": "page",
+          "runtime": false
         },
         {
           "path": "pages/detail/index.wxml",
@@ -469,7 +528,8 @@
           "gzipBytes": 108,
           "brotliBytes": 82,
           "type": "template",
-          "bucket": "page"
+          "bucket": "page",
+          "runtime": false
         },
         {
           "path": "pages/detail/index.wxss",
@@ -477,7 +537,8 @@
           "gzipBytes": 90,
           "brotliBytes": 49,
           "type": "style",
-          "bucket": "page"
+          "bucket": "page",
+          "runtime": false
         },
         {
           "path": "pages/index/index.js",
@@ -485,7 +546,8 @@
           "gzipBytes": 958,
           "brotliBytes": 839,
           "type": "js",
-          "bucket": "page"
+          "bucket": "page",
+          "runtime": false
         },
         {
           "path": "pages/index/index.json",
@@ -493,7 +555,8 @@
           "gzipBytes": 89,
           "brotliBytes": 75,
           "type": "json",
-          "bucket": "page"
+          "bucket": "page",
+          "runtime": false
         },
         {
           "path": "pages/index/index.wxml",
@@ -501,7 +564,8 @@
           "gzipBytes": 275,
           "brotliBytes": 236,
           "type": "template",
-          "bucket": "page"
+          "bucket": "page",
+          "runtime": false
         },
         {
           "path": "pages/index/index.wxss",
@@ -509,7 +573,8 @@
           "gzipBytes": 297,
           "brotliBytes": 214,
           "type": "style",
-          "bucket": "page"
+          "bucket": "page",
+          "runtime": false
         },
         {
           "path": "project.config.json",
@@ -517,7 +582,8 @@
           "gzipBytes": 337,
           "brotliBytes": 248,
           "type": "json",
-          "bucket": "asset"
+          "bucket": "asset",
+          "runtime": false
         },
         {
           "path": "shared/benchmark.js",
@@ -525,7 +591,8 @@
           "gzipBytes": 655,
           "brotliBytes": 590,
           "type": "js",
-          "bucket": "shared"
+          "bucket": "shared",
+          "runtime": false
         }
       ],
       "totals": {
@@ -541,7 +608,584 @@
         "vendorJsBytes": 128533,
         "pageJsBytes": 2608,
         "appJsBytes": 282,
-        "sharedJsBytes": 1353
+        "sharedJsBytes": 1353,
+        "runtimeFiles": 1,
+        "runtimeBytes": 128533,
+        "runtimeGzipBytes": 44704,
+        "runtimeBrotliBytes": 39380
+      }
+    },
+    {
+      "id": "uni-app-x",
+      "label": "uni-app x",
+      "outputDir": "apps/uni-app-x/dist/build/mp-weixin",
+      "files": [
+        {
+          "path": "App.wxml",
+          "bytes": 7,
+          "gzipBytes": 27,
+          "brotliBytes": 11,
+          "type": "template",
+          "bucket": "app",
+          "runtime": false
+        },
+        {
+          "path": "app.js",
+          "bytes": 282,
+          "gzipBytes": 225,
+          "brotliBytes": 183,
+          "type": "js",
+          "bucket": "app",
+          "runtime": false
+        },
+        {
+          "path": "app.json",
+          "bytes": 233,
+          "gzipBytes": 169,
+          "brotliBytes": 130,
+          "type": "json",
+          "bucket": "app",
+          "runtime": false
+        },
+        {
+          "path": "app.wxss",
+          "bytes": 299,
+          "gzipBytes": 173,
+          "brotliBytes": 127,
+          "type": "style",
+          "bucket": "app",
+          "runtime": false
+        },
+        {
+          "path": "common/uniView.wxs",
+          "bytes": 2450,
+          "gzipBytes": 793,
+          "brotliBytes": 681,
+          "type": "asset",
+          "bucket": "vendor",
+          "runtime": true
+        },
+        {
+          "path": "common/vendor.js",
+          "bytes": 88598,
+          "gzipBytes": 32361,
+          "brotliBytes": 28902,
+          "type": "js",
+          "bucket": "vendor",
+          "runtime": true
+        },
+        {
+          "path": "pages/detail/index.js",
+          "bytes": 248,
+          "gzipBytes": 209,
+          "brotliBytes": 178,
+          "type": "js",
+          "bucket": "page",
+          "runtime": false
+        },
+        {
+          "path": "pages/detail/index.json",
+          "bytes": 65,
+          "gzipBytes": 83,
+          "brotliBytes": 69,
+          "type": "json",
+          "bucket": "page",
+          "runtime": false
+        },
+        {
+          "path": "pages/detail/index.wxml",
+          "bytes": 420,
+          "gzipBytes": 286,
+          "brotliBytes": 243,
+          "type": "template",
+          "bucket": "page",
+          "runtime": false
+        },
+        {
+          "path": "pages/detail/index.wxss",
+          "bytes": 148,
+          "gzipBytes": 144,
+          "brotliBytes": 106,
+          "type": "style",
+          "bucket": "page",
+          "runtime": false
+        },
+        {
+          "path": "pages/index/index.js",
+          "bytes": 2661,
+          "gzipBytes": 1061,
+          "brotliBytes": 938,
+          "type": "js",
+          "bucket": "page",
+          "runtime": false
+        },
+        {
+          "path": "pages/index/index.json",
+          "bytes": 68,
+          "gzipBytes": 86,
+          "brotliBytes": 72,
+          "type": "json",
+          "bucket": "page",
+          "runtime": false
+        },
+        {
+          "path": "pages/index/index.wxml",
+          "bytes": 1063,
+          "gzipBytes": 446,
+          "brotliBytes": 371,
+          "type": "template",
+          "bucket": "page",
+          "runtime": false
+        },
+        {
+          "path": "pages/index/index.wxss",
+          "bytes": 543,
+          "gzipBytes": 343,
+          "brotliBytes": 256,
+          "type": "style",
+          "bucket": "page",
+          "runtime": false
+        },
+        {
+          "path": "project.config.json",
+          "bytes": 646,
+          "gzipBytes": 331,
+          "brotliBytes": 240,
+          "type": "json",
+          "bucket": "asset",
+          "runtime": false
+        },
+        {
+          "path": "shared/benchmark.js",
+          "bytes": 1609,
+          "gzipBytes": 809,
+          "brotliBytes": 715,
+          "type": "js",
+          "bucket": "shared",
+          "runtime": false
+        },
+        {
+          "path": "uvue.wxss",
+          "bytes": 2933,
+          "gzipBytes": 1078,
+          "brotliBytes": 853,
+          "type": "style",
+          "bucket": "asset",
+          "runtime": true
+        }
+      ],
+      "totals": {
+        "files": 17,
+        "bytes": 102273,
+        "gzipBytes": 38624,
+        "brotliBytes": 34075,
+        "jsBytes": 93398,
+        "templateBytes": 1490,
+        "styleBytes": 3923,
+        "jsonBytes": 1012,
+        "assetBytes": 2450,
+        "vendorJsBytes": 88598,
+        "pageJsBytes": 2909,
+        "appJsBytes": 282,
+        "sharedJsBytes": 1609,
+        "runtimeFiles": 3,
+        "runtimeBytes": 93981,
+        "runtimeGzipBytes": 34232,
+        "runtimeBrotliBytes": 30436
+      }
+    },
+    {
+      "id": "mpx",
+      "label": "mpx",
+      "outputDir": "apps/mpx/dist/wx",
+      "files": [
+        {
+          "path": "app.js",
+          "bytes": 14156,
+          "gzipBytes": 4267,
+          "brotliBytes": 3565,
+          "type": "js",
+          "bucket": "app",
+          "runtime": false
+        },
+        {
+          "path": "app.js.map",
+          "bytes": 47961,
+          "gzipBytes": 11733,
+          "brotliBytes": 9626,
+          "type": "asset",
+          "bucket": "asset",
+          "runtime": false
+        },
+        {
+          "path": "app.json",
+          "bytes": 156,
+          "gzipBytes": 135,
+          "brotliBytes": 104,
+          "type": "json",
+          "bucket": "app",
+          "runtime": false
+        },
+        {
+          "path": "app.wxss",
+          "bytes": 38,
+          "gzipBytes": 58,
+          "brotliBytes": 42,
+          "type": "style",
+          "bucket": "app",
+          "runtime": false
+        },
+        {
+          "path": "bundle.js",
+          "bytes": 173425,
+          "gzipBytes": 54779,
+          "brotliBytes": 47267,
+          "type": "js",
+          "bucket": "asset",
+          "runtime": true
+        },
+        {
+          "path": "bundle.js.map",
+          "bytes": 818317,
+          "gzipBytes": 189031,
+          "brotliBytes": 157013,
+          "type": "asset",
+          "bucket": "asset",
+          "runtime": false
+        },
+        {
+          "path": "pages/detail.js",
+          "bytes": 594,
+          "gzipBytes": 348,
+          "brotliBytes": 331,
+          "type": "js",
+          "bucket": "page",
+          "runtime": false
+        },
+        {
+          "path": "pages/detail.js.map",
+          "bytes": 1797,
+          "gzipBytes": 715,
+          "brotliBytes": 635,
+          "type": "asset",
+          "bucket": "page",
+          "runtime": false
+        },
+        {
+          "path": "pages/detail.json",
+          "bytes": 56,
+          "gzipBytes": 76,
+          "brotliBytes": 53,
+          "type": "json",
+          "bucket": "page",
+          "runtime": false
+        },
+        {
+          "path": "pages/detail.wxml",
+          "bytes": 117,
+          "gzipBytes": 106,
+          "brotliBytes": 82,
+          "type": "template",
+          "bucket": "page",
+          "runtime": false
+        },
+        {
+          "path": "pages/detail.wxss",
+          "bytes": 79,
+          "gzipBytes": 89,
+          "brotliBytes": 55,
+          "type": "style",
+          "bucket": "page",
+          "runtime": false
+        },
+        {
+          "path": "pages/index.js",
+          "bytes": 20523,
+          "gzipBytes": 6603,
+          "brotliBytes": 5767,
+          "type": "js",
+          "bucket": "page",
+          "runtime": false
+        },
+        {
+          "path": "pages/index.js.LICENSE.txt",
+          "bytes": 163,
+          "gzipBytes": 156,
+          "brotliBytes": 119,
+          "type": "asset",
+          "bucket": "page",
+          "runtime": false
+        },
+        {
+          "path": "pages/index.js.map",
+          "bytes": 85720,
+          "gzipBytes": 18144,
+          "brotliBytes": 16167,
+          "type": "asset",
+          "bucket": "page",
+          "runtime": false
+        },
+        {
+          "path": "pages/index.json",
+          "bytes": 53,
+          "gzipBytes": 73,
+          "brotliBytes": 53,
+          "type": "json",
+          "bucket": "page",
+          "runtime": false
+        },
+        {
+          "path": "pages/index.wxml",
+          "bytes": 860,
+          "gzipBytes": 318,
+          "brotliBytes": 264,
+          "type": "template",
+          "bucket": "page",
+          "runtime": false
+        },
+        {
+          "path": "pages/index.wxss",
+          "bytes": 560,
+          "gzipBytes": 315,
+          "brotliBytes": 224,
+          "type": "style",
+          "bucket": "page",
+          "runtime": false
+        },
+        {
+          "path": "project.config.json",
+          "bytes": 313,
+          "gzipBytes": 204,
+          "brotliBytes": 170,
+          "type": "json",
+          "bucket": "asset",
+          "runtime": false
+        }
+      ],
+      "totals": {
+        "files": 18,
+        "bytes": 1164888,
+        "gzipBytes": 287150,
+        "brotliBytes": 241537,
+        "jsBytes": 208698,
+        "templateBytes": 977,
+        "styleBytes": 677,
+        "jsonBytes": 578,
+        "assetBytes": 953958,
+        "vendorJsBytes": 0,
+        "pageJsBytes": 21117,
+        "appJsBytes": 14156,
+        "sharedJsBytes": 0,
+        "runtimeFiles": 1,
+        "runtimeBytes": 173425,
+        "runtimeGzipBytes": 54779,
+        "runtimeBrotliBytes": 47267
+      }
+    },
+    {
+      "id": "taro-vue3",
+      "label": "taro vue3",
+      "outputDir": "apps/taro-vue3/dist",
+      "files": [
+        {
+          "path": "app-origin.wxss",
+          "bytes": 39,
+          "gzipBytes": 59,
+          "brotliBytes": 40,
+          "type": "style",
+          "bucket": "asset",
+          "runtime": false
+        },
+        {
+          "path": "app.js",
+          "bytes": 403,
+          "gzipBytes": 307,
+          "brotliBytes": 250,
+          "type": "js",
+          "bucket": "app",
+          "runtime": false
+        },
+        {
+          "path": "app.json",
+          "bytes": 217,
+          "gzipBytes": 158,
+          "brotliBytes": 126,
+          "type": "json",
+          "bucket": "app",
+          "runtime": false
+        },
+        {
+          "path": "app.wxss",
+          "bytes": 27,
+          "gzipBytes": 47,
+          "brotliBytes": 31,
+          "type": "style",
+          "bucket": "app",
+          "runtime": false
+        },
+        {
+          "path": "base.wxml",
+          "bytes": 55539,
+          "gzipBytes": 2221,
+          "brotliBytes": 1671,
+          "type": "template",
+          "bucket": "asset",
+          "runtime": true
+        },
+        {
+          "path": "common.js",
+          "bytes": 111,
+          "gzipBytes": 113,
+          "brotliBytes": 96,
+          "type": "js",
+          "bucket": "asset",
+          "runtime": true
+        },
+        {
+          "path": "comp.js",
+          "bytes": 89,
+          "gzipBytes": 99,
+          "brotliBytes": 86,
+          "type": "js",
+          "bucket": "asset",
+          "runtime": true
+        },
+        {
+          "path": "comp.json",
+          "bytes": 108,
+          "gzipBytes": 106,
+          "brotliBytes": 85,
+          "type": "json",
+          "bucket": "asset",
+          "runtime": true
+        },
+        {
+          "path": "comp.wxml",
+          "bytes": 140,
+          "gzipBytes": 135,
+          "brotliBytes": 112,
+          "type": "template",
+          "bucket": "asset",
+          "runtime": true
+        },
+        {
+          "path": "pages/detail/index.js",
+          "bytes": 502,
+          "gzipBytes": 339,
+          "brotliBytes": 284,
+          "type": "js",
+          "bucket": "page",
+          "runtime": false
+        },
+        {
+          "path": "pages/detail/index.json",
+          "bytes": 93,
+          "gzipBytes": 103,
+          "brotliBytes": 90,
+          "type": "json",
+          "bucket": "page",
+          "runtime": false
+        },
+        {
+          "path": "pages/detail/index.wxml",
+          "bytes": 80,
+          "gzipBytes": 95,
+          "brotliBytes": 78,
+          "type": "template",
+          "bucket": "page",
+          "runtime": false
+        },
+        {
+          "path": "pages/detail/index.wxss",
+          "bytes": 80,
+          "gzipBytes": 91,
+          "brotliBytes": 49,
+          "type": "style",
+          "bucket": "page",
+          "runtime": false
+        },
+        {
+          "path": "pages/index/index.js",
+          "bytes": 5292,
+          "gzipBytes": 1963,
+          "brotliBytes": 1791,
+          "type": "js",
+          "bucket": "page",
+          "runtime": false
+        },
+        {
+          "path": "pages/index/index.json",
+          "bytes": 96,
+          "gzipBytes": 106,
+          "brotliBytes": 89,
+          "type": "json",
+          "bucket": "page",
+          "runtime": false
+        },
+        {
+          "path": "pages/index/index.wxml",
+          "bytes": 80,
+          "gzipBytes": 95,
+          "brotliBytes": 78,
+          "type": "template",
+          "bucket": "page",
+          "runtime": false
+        },
+        {
+          "path": "pages/index/index.wxss",
+          "bytes": 475,
+          "gzipBytes": 300,
+          "brotliBytes": 217,
+          "type": "style",
+          "bucket": "page",
+          "runtime": false
+        },
+        {
+          "path": "project.config.json",
+          "bytes": 238,
+          "gzipBytes": 175,
+          "brotliBytes": 148,
+          "type": "json",
+          "bucket": "asset",
+          "runtime": false
+        },
+        {
+          "path": "taro.js",
+          "bytes": 162157,
+          "gzipBytes": 58311,
+          "brotliBytes": 51720,
+          "type": "js",
+          "bucket": "asset",
+          "runtime": true
+        },
+        {
+          "path": "utils.wxs",
+          "bytes": 997,
+          "gzipBytes": 409,
+          "brotliBytes": 346,
+          "type": "asset",
+          "bucket": "asset",
+          "runtime": true
+        }
+      ],
+      "totals": {
+        "files": 20,
+        "bytes": 226763,
+        "gzipBytes": 65232,
+        "brotliBytes": 57387,
+        "jsBytes": 168554,
+        "templateBytes": 55839,
+        "styleBytes": 621,
+        "jsonBytes": 752,
+        "assetBytes": 997,
+        "vendorJsBytes": 0,
+        "pageJsBytes": 5794,
+        "appJsBytes": 403,
+        "sharedJsBytes": 0,
+        "runtimeFiles": 7,
+        "runtimeBytes": 219141,
+        "runtimeGzipBytes": 61394,
+        "runtimeBrotliBytes": 54116
       }
     }
   ],

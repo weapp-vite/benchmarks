@@ -8,7 +8,7 @@
 | 架构                 | darwin/arm64                             |
 | Node                 | v24.18.0                                 |
 | pnpm                 | 11.13.0                                  |
-| Git commit           | 026fe258b63b15a9b9d51c4635348ffeebc3dc41 |
+| Git commit           | 82b2553795a40325f25052ca187e93001a2c47f8 |
 | weapp-vite submodule | 26510329efcf36cbf934e566ebbc80f069151a22 |
 
 ## 包版本

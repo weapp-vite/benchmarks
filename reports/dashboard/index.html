@@ -204,9 +204,9 @@
       <h1>小程序框架基准测试</h1>
       <div class="meta">
         <span><strong>部分完成</strong></span>
-        <span>生成时间 2026-07-14T09:53:43.987Z</span>
+        <span>生成时间 2026-07-14T12:35:42.869Z</span>
         <span>机器 Apple M4 Max 128GB</span>
-        <span>Commit <code>026fe258b63b</code></span>
+        <span>Commit <code>82b2553795a4</code></span>
       </div>
     </header>
     <nav role="tablist" aria-label="报告视图">
@@ -289,59 +289,59 @@
             <tbody>
               <tr>
                 <th scope="row">weapp-vite + wevu</th>
-                <td>1065.1 ms</td>
+                <td>1137.7 ms</td>
                 <td>198.9 KB</td>
                 <td>20/20</td>
                 <td>完整</td>
-                <td>-2.8%</td>
+                <td>+6.8%</td>
               </tr>
               <tr>
                 <th scope="row">weapp-vite + wevu performance</th>
-                <td>1067.6 ms</td>
+                <td>1165.9 ms</td>
                 <td>199.8 KB</td>
                 <td>20/20</td>
                 <td>完整</td>
-                <td>+3.1%</td>
+                <td>+9.2%</td>
               </tr>
               <tr>
                 <th scope="row">weapp-vite 原生</th>
-                <td>936.2 ms</td>
+                <td>1021.9 ms</td>
                 <td>8.7 KB</td>
                 <td>20/20</td>
                 <td>完整</td>
-                <td>+1.2%</td>
+                <td>+9.2%</td>
               </tr>
               <tr>
                 <th scope="row">uni-app vite vue3</th>
-                <td>2562.7 ms</td>
+                <td>2553.9 ms</td>
                 <td>132.3 KB</td>
                 <td>20/20</td>
                 <td>完整</td>
-                <td>-1.9%</td>
+                <td>-0.3%</td>
               </tr>
               <tr>
                 <th scope="row">uni-app x</th>
-                <td>3169.2 ms</td>
+                <td>2877.5 ms</td>
                 <td>99.9 KB</td>
                 <td>20/20</td>
                 <td>完整</td>
-                <td>+3.8%</td>
+                <td>-9.2%</td>
               </tr>
               <tr>
                 <th scope="row">mpx</th>
-                <td>2041.8 ms</td>
+                <td>1721.3 ms</td>
                 <td>1137.6 KB</td>
                 <td>20/20</td>
                 <td>完整</td>
-                <td>+18.3%</td>
+                <td>-15.7%</td>
               </tr>
               <tr>
                 <th scope="row">taro vue3</th>
-                <td>4075.1 ms</td>
+                <td>3436.7 ms</td>
                 <td>221.4 KB</td>
                 <td>20/20</td>
                 <td>完整</td>
-                <td>+43.7%</td>
+                <td>-15.7%</td>
               </tr>
             </tbody>
           </table>
@@ -513,21 +513,19 @@
           id="chart-size"
           class="chart"
           role="img"
-          aria-label="上图对比 raw、gzip 和 brotli，下图拆分 JavaScript 与 vendor JavaScript。"
+          aria-label="只统计生产构建后的框架运行时 allowlist 文件；页面业务代码、source map 和配置文件不计入。"
         ></div>
 
         <div class="table-wrap">
           <div class="table-heading">
-            <h2>体积结果</h2>
+            <h2>运行时包结果</h2>
             <a href="/benchmarks/reports/size/wevu-analysis.md">详细报告</a>
           </div>
           <table>
             <thead>
               <tr>
                 <th scope="col">项目</th>
-                <th scope="col">raw</th>
-                <th scope="col">gzip</th>
-                <th scope="col">brotli</th>
+                <th scope="col">runtime 体积</th>
                 <th scope="col">样本</th>
                 <th scope="col">状态</th>
                 <th scope="col">较上次</th>
@@ -536,39 +534,52 @@
             <tbody>
               <tr>
                 <th scope="row">weapp-vite + wevu</th>
-                <td>198.9 KB</td>
-                <td>50.1 KB</td>
-                <td>42.4 KB</td>
+                <td>189.4 KB</td>
                 <td>1/1</td>
                 <td>完整</td>
-                <td>0.0%</td>
+                <td>-</td>
               </tr>
               <tr>
                 <th scope="row">weapp-vite + wevu performance</th>
-                <td>199.8 KB</td>
-                <td>50.5 KB</td>
-                <td>42.7 KB</td>
+                <td>189.4 KB</td>
                 <td>1/1</td>
                 <td>完整</td>
-                <td>0.0%</td>
+                <td>-</td>
               </tr>
               <tr>
                 <th scope="row">weapp-vite 原生</th>
-                <td>8.7 KB</td>
-                <td>3.3 KB</td>
-                <td>2.8 KB</td>
+                <td>0.0 KB</td>
                 <td>1/1</td>
                 <td>完整</td>
-                <td>0.0%</td>
+                <td>-</td>
               </tr>
               <tr>
                 <th scope="row">uni-app vite vue3</th>
-                <td>132.3 KB</td>
-                <td>47.2 KB</td>
-                <td>41.3 KB</td>
+                <td>125.5 KB</td>
                 <td>1/1</td>
                 <td>完整</td>
-                <td>0.0%</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <th scope="row">uni-app x</th>
+                <td>91.8 KB</td>
+                <td>1/1</td>
+                <td>完整</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <th scope="row">mpx</th>
+                <td>169.4 KB</td>
+                <td>1/1</td>
+                <td>完整</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <th scope="row">taro vue3</th>
+                <td>214.0 KB</td>
+                <td>1/1</td>
+                <td>完整</td>
+                <td>-</td>
               </tr>
             </tbody>
           </table>
@@ -713,7 +724,7 @@
                 splitLine: { lineStyle: { color: '#d9dee8' } },
                 nameTextStyle: { color: '#667085' },
                 type: 'category',
-                data: ['编译耗时', '运行时总耗时', 'HMR 平均耗时', '产物体积'],
+                data: ['编译耗时', '运行时总耗时', 'HMR 平均耗时', '运行时体积'],
                 splitArea: { show: true, areaStyle: { color: ['#ffffff'] } },
               },
               yAxis: {
@@ -751,31 +762,34 @@
                   name: '性能指数',
                   type: 'heatmap',
                   data: [
-                    [0, 0, 87.9],
+                    [0, 0, 89.8],
                     [1, 0, 81.8],
                     [2, 0, 54.4],
-                    [3, 0, 4.4],
-                    [0, 1, 87.7],
+                    [3, 0, 0],
+                    [0, 1, 87.6],
                     [1, 1, 100],
                     [2, 1, 55.3],
-                    [3, 1, 4.3],
+                    [3, 1, 0],
                     [0, 2, 100],
                     [1, 2, 6.3],
                     [2, 2, 100],
                     [3, 2, 100],
-                    [0, 3, 36.5],
+                    [0, 3, 40],
                     [1, 3, 70.4],
                     [2, 3, 21.7],
-                    [3, 3, 6.6],
-                    [0, 4, 29.5],
+                    [3, 3, 0],
+                    [0, 4, 35.5],
                     [1, 4, 77.9],
                     [2, 4, 18.6],
-                    [0, 5, 45.9],
+                    [3, 4, 0],
+                    [0, 5, 59.4],
                     [1, 5, 6.4],
                     [2, 5, 32.3],
-                    [0, 6, 23],
+                    [3, 5, 0],
+                    [0, 6, 29.7],
                     [1, 6, 10.4],
                     [2, 6, 15.5],
+                    [3, 6, 0],
                     [1, 7, 43.1],
                   ],
                   label: {
@@ -793,9 +807,6 @@
                   name: '未参与',
                   type: 'scatter',
                   data: [
-                    [3, 4],
-                    [3, 5],
-                    [3, 6],
                     [0, 7],
                     [2, 7],
                     [3, 7],
@@ -942,7 +953,7 @@
                   type: 'bar',
                   xAxisIndex: 0,
                   yAxisIndex: 0,
-                  data: [936.2, 1065.1, 1067.6, 2041.8, 2562.7, 3169.2, 4075.1],
+                  data: [1021.9, 1137.7, 1165.9, 1721.3, 2553.9, 2877.5, 3436.7],
                   label: {
                     show: true,
                     position: 'right',
@@ -1256,8 +1267,8 @@
           },
           {
             id: 'size',
-            title: '产物体积分析',
-            description: '上图对比 raw、gzip 和 brotli，下图拆分 JavaScript 与 vendor JavaScript。',
+            title: '运行时包体积',
+            description: '只统计生产构建后的框架运行时 allowlist 文件；页面业务代码、source map 和配置文件不计入。',
             width: 1120,
             height: 760,
             option: {
@@ -1270,8 +1281,8 @@
                 fontSize: 12,
               },
               title: {
-                text: '产物体积分析',
-                subtext: '当前 size 专项覆盖四个项目；单位 KB，越小越好',
+                text: '运行时包体积',
+                subtext: '生产构建后的 runtime 实际体积；单位 KB，越小越好',
                 left: 20,
                 top: 16,
                 textStyle: { color: '#20242b', fontSize: 18, fontWeight: 500 },
@@ -1288,105 +1299,45 @@
                 textStyle: { color: '#20242b' },
               },
               aria: { enabled: true },
-              legend: [
-                {
-                  data: ['raw', 'gzip', 'brotli'],
-                  top: 80,
-                  right: 50,
-                  textStyle: { color: '#667085' },
-                },
-                {
-                  data: ['全部 JS', 'vendor JS'],
-                  top: 400,
-                  right: 50,
-                  textStyle: { color: '#667085' },
-                },
-              ],
-              grid: [
-                { left: 230, right: 90, top: 115, height: 230 },
-                { left: 230, right: 90, top: 435, height: 230 },
-              ],
-              xAxis: [
-                {
-                  axisLine: { lineStyle: { color: '#d9dee8' } },
-                  axisTick: { lineStyle: { color: '#d9dee8' } },
-                  axisLabel: { color: '#667085' },
-                  splitLine: { lineStyle: { color: '#d9dee8' } },
-                  nameTextStyle: { color: '#667085' },
-                  type: 'value',
-                  name: 'KB',
-                  gridIndex: 0,
-                },
-                {
-                  axisLine: { lineStyle: { color: '#d9dee8' } },
-                  axisTick: { lineStyle: { color: '#d9dee8' } },
-                  axisLabel: { color: '#667085' },
-                  splitLine: { lineStyle: { color: '#d9dee8' } },
-                  nameTextStyle: { color: '#667085' },
-                  type: 'value',
-                  name: 'KB',
-                  gridIndex: 1,
-                },
-              ],
-              yAxis: [
-                {
-                  axisLine: { lineStyle: { color: '#d9dee8' } },
-                  axisTick: { lineStyle: { color: '#d9dee8' } },
-                  axisLabel: { color: '#667085' },
-                  splitLine: { lineStyle: { color: '#d9dee8' } },
-                  nameTextStyle: { color: '#667085' },
-                  type: 'category',
-                  data: ['weapp-vite 原生', 'uni-app vite vue3', 'weapp-vite + wevu', 'weapp-vite + wevu performance'],
-                  inverse: true,
-                  gridIndex: 0,
-                },
-                {
-                  axisLine: { lineStyle: { color: '#d9dee8' } },
-                  axisTick: { lineStyle: { color: '#d9dee8' } },
-                  axisLabel: { color: '#667085' },
-                  splitLine: { lineStyle: { color: '#d9dee8' } },
-                  nameTextStyle: { color: '#667085' },
-                  type: 'category',
-                  data: ['weapp-vite 原生', 'uni-app vite vue3', 'weapp-vite + wevu', 'weapp-vite + wevu performance'],
-                  inverse: true,
-                  gridIndex: 1,
-                },
-              ],
+              grid: { left: 230, right: 90, top: 115, bottom: 70 },
+              xAxis: {
+                axisLine: { lineStyle: { color: '#d9dee8' } },
+                axisTick: { lineStyle: { color: '#d9dee8' } },
+                axisLabel: { color: '#667085' },
+                splitLine: { lineStyle: { color: '#d9dee8' } },
+                nameTextStyle: { color: '#667085' },
+                type: 'value',
+                name: 'KB',
+              },
+              yAxis: {
+                axisLine: { lineStyle: { color: '#d9dee8' } },
+                axisTick: { lineStyle: { color: '#d9dee8' } },
+                axisLabel: { color: '#667085' },
+                splitLine: { lineStyle: { color: '#d9dee8' } },
+                nameTextStyle: { color: '#667085' },
+                type: 'category',
+                data: [
+                  'weapp-vite 原生',
+                  'uni-app x',
+                  'uni-app vite vue3',
+                  'mpx',
+                  'weapp-vite + wevu',
+                  'weapp-vite + wevu performance',
+                  'taro vue3',
+                ],
+                inverse: true,
+              },
               series: [
                 {
-                  name: 'raw',
+                  name: '运行时体积',
                   type: 'bar',
-                  xAxisIndex: 0,
-                  yAxisIndex: 0,
-                  data: [8.7, 132.3, 198.9, 199.8],
-                },
-                {
-                  name: 'gzip',
-                  type: 'bar',
-                  xAxisIndex: 0,
-                  yAxisIndex: 0,
-                  data: [3.3, 47.2, 50.1, 50.5],
-                },
-                {
-                  name: 'brotli',
-                  type: 'bar',
-                  xAxisIndex: 0,
-                  yAxisIndex: 0,
-                  data: [2.8, 41.3, 42.4, 42.7],
-                },
-                {
-                  name: '全部 JS',
-                  type: 'bar',
-                  xAxisIndex: 1,
-                  yAxisIndex: 1,
-                  data: [6.3, 129.7, 196.5, 197.4],
-                },
-                {
-                  name: 'vendor JS',
-                  type: 'bar',
-                  xAxisIndex: 1,
-                  yAxisIndex: 1,
-                  data: [0, 125.5, 189.4, 189.4],
+                  data: [0, 91.8, 125.5, 169.4, 189.4, 189.4, 214],
+                  label: {
+                    show: true,
+                    position: 'right',
+                    color: '#20242b',
+                    formatter: '{@value} KB',
+                  },
                 },
               ],
             },
@@ -1435,7 +1386,7 @@
                 splitLine: { lineStyle: { color: '#3a404b' } },
                 nameTextStyle: { color: '#aab2c0' },
                 type: 'category',
-                data: ['编译耗时', '运行时总耗时', 'HMR 平均耗时', '产物体积'],
+                data: ['编译耗时', '运行时总耗时', 'HMR 平均耗时', '运行时体积'],
                 splitArea: { show: true, areaStyle: { color: ['#17191d'] } },
               },
               yAxis: {
@@ -1473,31 +1424,34 @@
                   name: '性能指数',
                   type: 'heatmap',
                   data: [
-                    [0, 0, 87.9],
+                    [0, 0, 89.8],
                     [1, 0, 81.8],
                     [2, 0, 54.4],
-                    [3, 0, 4.4],
-                    [0, 1, 87.7],
+                    [3, 0, 0],
+                    [0, 1, 87.6],
                     [1, 1, 100],
                     [2, 1, 55.3],
-                    [3, 1, 4.3],
+                    [3, 1, 0],
                     [0, 2, 100],
                     [1, 2, 6.3],
                     [2, 2, 100],
                     [3, 2, 100],
-                    [0, 3, 36.5],
+                    [0, 3, 40],
                     [1, 3, 70.4],
                     [2, 3, 21.7],
-                    [3, 3, 6.6],
-                    [0, 4, 29.5],
+                    [3, 3, 0],
+                    [0, 4, 35.5],
                     [1, 4, 77.9],
                     [2, 4, 18.6],
-                    [0, 5, 45.9],
+                    [3, 4, 0],
+                    [0, 5, 59.4],
                     [1, 5, 6.4],
                     [2, 5, 32.3],
-                    [0, 6, 23],
+                    [3, 5, 0],
+                    [0, 6, 29.7],
                     [1, 6, 10.4],
                     [2, 6, 15.5],
+                    [3, 6, 0],
                     [1, 7, 43.1],
                   ],
                   label: {
@@ -1515,9 +1469,6 @@
                   name: '未参与',
                   type: 'scatter',
                   data: [
-                    [3, 4],
-                    [3, 5],
-                    [3, 6],
                     [0, 7],
                     [2, 7],
                     [3, 7],
@@ -1664,7 +1615,7 @@
                   type: 'bar',
                   xAxisIndex: 0,
                   yAxisIndex: 0,
-                  data: [936.2, 1065.1, 1067.6, 2041.8, 2562.7, 3169.2, 4075.1],
+                  data: [1021.9, 1137.7, 1165.9, 1721.3, 2553.9, 2877.5, 3436.7],
                   label: {
                     show: true,
                     position: 'right',
@@ -1978,8 +1929,8 @@
           },
           {
             id: 'size',
-            title: '产物体积分析',
-            description: '上图对比 raw、gzip 和 brotli，下图拆分 JavaScript 与 vendor JavaScript。',
+            title: '运行时包体积',
+            description: '只统计生产构建后的框架运行时 allowlist 文件；页面业务代码、source map 和配置文件不计入。',
             width: 1120,
             height: 760,
             option: {
@@ -1992,8 +1943,8 @@
                 fontSize: 12,
               },
               title: {
-                text: '产物体积分析',
-                subtext: '当前 size 专项覆盖四个项目；单位 KB，越小越好',
+                text: '运行时包体积',
+                subtext: '生产构建后的 runtime 实际体积；单位 KB，越小越好',
                 left: 20,
                 top: 16,
                 textStyle: { color: '#f2f4f7', fontSize: 18, fontWeight: 500 },
@@ -2010,105 +1961,45 @@
                 textStyle: { color: '#f2f4f7' },
               },
               aria: { enabled: true },
-              legend: [
-                {
-                  data: ['raw', 'gzip', 'brotli'],
-                  top: 80,
-                  right: 50,
-                  textStyle: { color: '#aab2c0' },
-                },
-                {
-                  data: ['全部 JS', 'vendor JS'],
-                  top: 400,
-                  right: 50,
-                  textStyle: { color: '#aab2c0' },
-                },
-              ],
-              grid: [
-                { left: 230, right: 90, top: 115, height: 230 },
-                { left: 230, right: 90, top: 435, height: 230 },
-              ],
-              xAxis: [
-                {
-                  axisLine: { lineStyle: { color: '#3a404b' } },
-                  axisTick: { lineStyle: { color: '#3a404b' } },
-                  axisLabel: { color: '#aab2c0' },
-                  splitLine: { lineStyle: { color: '#3a404b' } },
-                  nameTextStyle: { color: '#aab2c0' },
-                  type: 'value',
-                  name: 'KB',
-                  gridIndex: 0,
-                },
-                {
-                  axisLine: { lineStyle: { color: '#3a404b' } },
-                  axisTick: { lineStyle: { color: '#3a404b' } },
-                  axisLabel: { color: '#aab2c0' },
-                  splitLine: { lineStyle: { color: '#3a404b' } },
-                  nameTextStyle: { color: '#aab2c0' },
-                  type: 'value',
-                  name: 'KB',
-                  gridIndex: 1,
-                },
-              ],
-              yAxis: [
-                {
-                  axisLine: { lineStyle: { color: '#3a404b' } },
-                  axisTick: { lineStyle: { color: '#3a404b' } },
-                  axisLabel: { color: '#aab2c0' },
-                  splitLine: { lineStyle: { color: '#3a404b' } },
-                  nameTextStyle: { color: '#aab2c0' },
-                  type: 'category',
-                  data: ['weapp-vite 原生', 'uni-app vite vue3', 'weapp-vite + wevu', 'weapp-vite + wevu performance'],
-                  inverse: true,
-                  gridIndex: 0,
-                },
-                {
-                  axisLine: { lineStyle: { color: '#3a404b' } },
-                  axisTick: { lineStyle: { color: '#3a404b' } },
-                  axisLabel: { color: '#aab2c0' },
-                  splitLine: { lineStyle: { color: '#3a404b' } },
-                  nameTextStyle: { color: '#aab2c0' },
-                  type: 'category',
-                  data: ['weapp-vite 原生', 'uni-app vite vue3', 'weapp-vite + wevu', 'weapp-vite + wevu performance'],
-                  inverse: true,
-                  gridIndex: 1,
-                },
-              ],
+              grid: { left: 230, right: 90, top: 115, bottom: 70 },
+              xAxis: {
+                axisLine: { lineStyle: { color: '#3a404b' } },
+                axisTick: { lineStyle: { color: '#3a404b' } },
+                axisLabel: { color: '#aab2c0' },
+                splitLine: { lineStyle: { color: '#3a404b' } },
+                nameTextStyle: { color: '#aab2c0' },
+                type: 'value',
+                name: 'KB',
+              },
+              yAxis: {
+                axisLine: { lineStyle: { color: '#3a404b' } },
+                axisTick: { lineStyle: { color: '#3a404b' } },
+                axisLabel: { color: '#aab2c0' },
+                splitLine: { lineStyle: { color: '#3a404b' } },
+                nameTextStyle: { color: '#aab2c0' },
+                type: 'category',
+                data: [
+                  'weapp-vite 原生',
+                  'uni-app x',
+                  'uni-app vite vue3',
+                  'mpx',
+                  'weapp-vite + wevu',
+                  'weapp-vite + wevu performance',
+                  'taro vue3',
+                ],
+                inverse: true,
+              },
               series: [
                 {
-                  name: 'raw',
+                  name: '运行时体积',
                   type: 'bar',
-                  xAxisIndex: 0,
-                  yAxisIndex: 0,
-                  data: [8.7, 132.3, 198.9, 199.8],
-                },
-                {
-                  name: 'gzip',
-                  type: 'bar',
-                  xAxisIndex: 0,
-                  yAxisIndex: 0,
-                  data: [3.3, 47.2, 50.1, 50.5],
-                },
-                {
-                  name: 'brotli',
-                  type: 'bar',
-                  xAxisIndex: 0,
-                  yAxisIndex: 0,
-                  data: [2.8, 41.3, 42.4, 42.7],
-                },
-                {
-                  name: '全部 JS',
-                  type: 'bar',
-                  xAxisIndex: 1,
-                  yAxisIndex: 1,
-                  data: [6.3, 129.7, 196.5, 197.4],
-                },
-                {
-                  name: 'vendor JS',
-                  type: 'bar',
-                  xAxisIndex: 1,
-                  yAxisIndex: 1,
-                  data: [0, 125.5, 189.4, 189.4],
+                  data: [0, 91.8, 125.5, 169.4, 189.4, 189.4, 214],
+                  label: {
+                    show: true,
+                    position: 'right',
+                    color: '#f2f4f7',
+                    formatter: '{@value} KB',
+                  },
                 },
               ],
             },

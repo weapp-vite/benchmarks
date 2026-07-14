@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-14T09:53:43.987Z",
-  "sourceCommit": "026fe258b63b15a9b9d51c4635348ffeebc3dc41",
+  "generatedAt": "2026-07-14T12:35:42.869Z",
+  "sourceCommit": "82b2553795a40325f25052ca187e93001a2c47f8",
   "status": "partial",
   "errors": [],
   "verification": {
@@ -169,7 +169,7 @@
     ]
   },
   "compile": {
-    "generatedAt": "2026-07-14T06:47:33.966Z",
+    "generatedAt": "2026-07-14T11:17:23.310Z",
     "iterations": 20,
     "environment": {
       "machineId": "m4-max-128gb",
@@ -181,7 +181,7 @@
       "memoryGB": 128,
       "node": "v24.18.0",
       "pnpm": "11.13.0",
-      "gitCommit": "026fe258b63b15a9b9d51c4635348ffeebc3dc41",
+      "gitCommit": "82b2553795a40325f25052ca187e93001a2c47f8",
       "weappViteSubmodule": "26510329efcf36cbf934e566ebbc80f069151a22"
     },
     "projects": [
@@ -192,14 +192,14 @@
         "expectedSamples": 20,
         "complete": true,
         "values": {
-          "buildMs": 1065.1,
+          "buildMs": 1137.7,
           "outputBytes": 203663,
           "jsBytes": 201209,
           "templateBytes": 1173,
           "styleBytes": 836
         },
         "previousValues": {
-          "buildMs": 1096.3,
+          "buildMs": 1065.1,
           "outputBytes": 203663,
           "jsBytes": 201209,
           "templateBytes": 1173,
@@ -213,14 +213,14 @@
         "expectedSamples": 20,
         "complete": true,
         "values": {
-          "buildMs": 1067.6,
+          "buildMs": 1165.9,
           "outputBytes": 204644,
           "jsBytes": 202154,
           "templateBytes": 1185,
           "styleBytes": 836
         },
         "previousValues": {
-          "buildMs": 1035.3,
+          "buildMs": 1067.6,
           "outputBytes": 204644,
           "jsBytes": 202154,
           "templateBytes": 1185,
@@ -234,14 +234,14 @@
         "expectedSamples": 20,
         "complete": true,
         "values": {
-          "buildMs": 936.2,
+          "buildMs": 1021.9,
           "outputBytes": 8883,
           "jsBytes": 6477,
           "templateBytes": 1181,
           "styleBytes": 776
         },
         "previousValues": {
-          "buildMs": 925.5,
+          "buildMs": 936.2,
           "outputBytes": 8883,
           "jsBytes": 6477,
           "templateBytes": 1181,
@@ -255,14 +255,14 @@
         "expectedSamples": 20,
         "complete": true,
         "values": {
-          "buildMs": 2562.7,
+          "buildMs": 2553.9,
           "outputBytes": 135478,
           "jsBytes": 132776,
           "templateBytes": 896,
           "styleBytes": 783
         },
         "previousValues": {
-          "buildMs": 2611.3,
+          "buildMs": 2562.7,
           "outputBytes": 135478,
           "jsBytes": 132776,
           "templateBytes": 896,
@@ -276,14 +276,14 @@
         "expectedSamples": 20,
         "complete": true,
         "values": {
-          "buildMs": 3169.2,
+          "buildMs": 2877.5,
           "outputBytes": 102273,
           "jsBytes": 93398,
           "templateBytes": 1490,
           "styleBytes": 3923
         },
         "previousValues": {
-          "buildMs": 3052.3,
+          "buildMs": 3169.2,
           "outputBytes": 102273,
           "jsBytes": 93398,
           "templateBytes": 1490,
@@ -297,16 +297,16 @@
         "expectedSamples": 20,
         "complete": true,
         "values": {
-          "buildMs": 2041.8,
+          "buildMs": 1721.3,
           "outputBytes": 1164888,
           "jsBytes": 208698,
           "templateBytes": 977,
           "styleBytes": 677
         },
         "previousValues": {
-          "buildMs": 1725.4,
-          "outputBytes": 1164882,
-          "jsBytes": 208692,
+          "buildMs": 2041.8,
+          "outputBytes": 1164888,
+          "jsBytes": 208698,
           "templateBytes": 977,
           "styleBytes": 677
         }
@@ -318,14 +318,14 @@
         "expectedSamples": 20,
         "complete": true,
         "values": {
-          "buildMs": 4075.1,
+          "buildMs": 3436.7,
           "outputBytes": 226763,
           "jsBytes": 168554,
           "templateBytes": 55839,
           "styleBytes": 621
         },
         "previousValues": {
-          "buildMs": 2834.9,
+          "buildMs": 4075.1,
           "outputBytes": 226763,
           "jsBytes": 168554,
           "templateBytes": 55839,
@@ -963,7 +963,7 @@
     ]
   },
   "size": {
-    "generatedAt": "2026-07-14T07:34:33.607Z",
+    "generatedAt": "2026-07-14T12:26:22.350Z",
     "toolchain": {
       "toolchainId": "weapp-vite-2651032-node24",
       "toolchainLabel": "weapp-vite 2651032 / Node 24.18.0",
@@ -971,7 +971,7 @@
       "arch": "darwin/arm64",
       "node": "v24.18.0",
       "pnpm": "11.13.0",
-      "gitCommit": "026fe258b63b15a9b9d51c4635348ffeebc3dc41",
+      "gitCommit": "82b2553795a40325f25052ca187e93001a2c47f8",
       "weappViteSubmodule": "26510329efcf36cbf934e566ebbc80f069151a22",
       "packages": {
         "weapp-vite": "6.18.3",
@@ -991,14 +991,11 @@
           "gzipBytes": 51315,
           "brotliBytes": 43414,
           "jsBytes": 201209,
-          "vendorJsBytes": 193974
-        },
-        "previousValues": {
-          "bytes": 203663,
-          "gzipBytes": 51315,
-          "brotliBytes": 43414,
-          "jsBytes": 201209,
-          "vendorJsBytes": 193974
+          "vendorJsBytes": 193974,
+          "runtimeFiles": 2,
+          "runtimeBytes": 193974,
+          "runtimeGzipBytes": 47456,
+          "runtimeBrotliBytes": 40090
         }
       },
       {
@@ -1012,14 +1009,11 @@
           "gzipBytes": 51699,
           "brotliBytes": 43689,
           "jsBytes": 202154,
-          "vendorJsBytes": 193974
-        },
-        "previousValues": {
-          "bytes": 204644,
-          "gzipBytes": 51699,
-          "brotliBytes": 43689,
-          "jsBytes": 202154,
-          "vendorJsBytes": 193974
+          "vendorJsBytes": 193974,
+          "runtimeFiles": 2,
+          "runtimeBytes": 193974,
+          "runtimeGzipBytes": 47456,
+          "runtimeBrotliBytes": 40090
         }
       },
       {
@@ -1033,14 +1027,11 @@
           "gzipBytes": 3378,
           "brotliBytes": 2831,
           "jsBytes": 6477,
-          "vendorJsBytes": 0
-        },
-        "previousValues": {
-          "bytes": 8883,
-          "gzipBytes": 3378,
-          "brotliBytes": 2831,
-          "jsBytes": 6477,
-          "vendorJsBytes": 0
+          "vendorJsBytes": 0,
+          "runtimeFiles": 0,
+          "runtimeBytes": 0,
+          "runtimeGzipBytes": 0,
+          "runtimeBrotliBytes": 0
         }
       },
       {
@@ -1054,14 +1045,65 @@
           "gzipBytes": 48315,
           "brotliBytes": 42331,
           "jsBytes": 132776,
-          "vendorJsBytes": 128533
-        },
-        "previousValues": {
-          "bytes": 135478,
-          "gzipBytes": 48315,
-          "brotliBytes": 42331,
-          "jsBytes": 132776,
-          "vendorJsBytes": 128533
+          "vendorJsBytes": 128533,
+          "runtimeFiles": 1,
+          "runtimeBytes": 128533,
+          "runtimeGzipBytes": 44704,
+          "runtimeBrotliBytes": 39380
+        }
+      },
+      {
+        "id": "uni-app-x",
+        "label": "uni-app x",
+        "sampleCount": 1,
+        "expectedSamples": 1,
+        "complete": true,
+        "values": {
+          "bytes": 102273,
+          "gzipBytes": 38624,
+          "brotliBytes": 34075,
+          "jsBytes": 93398,
+          "vendorJsBytes": 88598,
+          "runtimeFiles": 3,
+          "runtimeBytes": 93981,
+          "runtimeGzipBytes": 34232,
+          "runtimeBrotliBytes": 30436
+        }
+      },
+      {
+        "id": "mpx",
+        "label": "mpx",
+        "sampleCount": 1,
+        "expectedSamples": 1,
+        "complete": true,
+        "values": {
+          "bytes": 1164888,
+          "gzipBytes": 287150,
+          "brotliBytes": 241537,
+          "jsBytes": 208698,
+          "vendorJsBytes": 0,
+          "runtimeFiles": 1,
+          "runtimeBytes": 173425,
+          "runtimeGzipBytes": 54779,
+          "runtimeBrotliBytes": 47267
+        }
+      },
+      {
+        "id": "taro-vue3",
+        "label": "taro vue3",
+        "sampleCount": 1,
+        "expectedSamples": 1,
+        "complete": true,
+        "values": {
+          "bytes": 226763,
+          "gzipBytes": 65232,
+          "brotliBytes": 57387,
+          "jsBytes": 168554,
+          "vendorJsBytes": 0,
+          "runtimeFiles": 7,
+          "runtimeBytes": 219141,
+          "runtimeGzipBytes": 61394,
+          "runtimeBrotliBytes": 54116
         }
       }
     ]

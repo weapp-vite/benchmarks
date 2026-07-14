@@ -1,28 +1,21 @@
 import type { AnalysisOutput, ProjectSize, WevuPackageInfo } from './types'
 import { toolchainEnvironmentLines } from '../reports/environment'
-import { formatGap, formatKb, formatPercent, rows } from './format'
+import { formatKb, rows } from './format'
 
 function topFiles(project: ProjectSize, count = 8) {
-  return [...project.files]
+  return project.files
+    .filter(file => file.runtime)
     .sort((left, right) => right.bytes - left.bytes)
     .slice(0, count)
 }
 
 function projectTable(projects: ProjectSize[]) {
-  const smallest = Math.min(...projects.map(project => project.totals.bytes))
   return [
-    '| 项目 | 总体积 | gzip | brotli | JS | vendor JS | 页面 JS | JS 占比 | 相对最小 |',
-    '| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | ---: |',
+    '| 项目 | runtime 体积 |',
+    '| --- | ---: |',
     ...rows(projects.map(project => [
       project.label,
-      formatKb(project.totals.bytes),
-      formatKb(project.totals.gzipBytes),
-      formatKb(project.totals.brotliBytes),
-      formatKb(project.totals.jsBytes),
-      formatKb(project.totals.vendorJsBytes),
-      formatKb(project.totals.pageJsBytes),
-      formatPercent(project.totals.jsBytes, project.totals.bytes),
-      formatGap(smallest, project.totals.bytes),
+      formatKb(project.totals.runtimeBytes),
     ])),
   ]
 }
@@ -31,13 +24,11 @@ function topFileTable(project: ProjectSize) {
   return [
     `### ${project.label}`,
     '',
-    '| 文件 | raw | gzip | brotli | 类型 | 分组 |',
-    '| --- | ---: | ---: | ---: | --- | --- |',
+    '| 运行时文件 | 体积 | 类型 | 分组 |',
+    '| --- | ---: | --- | --- |',
     ...rows(topFiles(project).map(file => [
       file.path,
       formatKb(file.bytes),
-      formatKb(file.gzipBytes),
-      formatKb(file.brotliBytes),
       file.type,
       file.bucket,
     ])),
@@ -74,10 +65,8 @@ export function generateReport(output: AnalysisOutput) {
   const wevuPerformance = findProject(output.projects, 'weapp-vite-wevu-performance')
   const native = findProject(output.projects, 'weapp-vite-native')
   const uni = findProject(output.projects, 'uni-app-vite-vue3')
-  const wevuVendorDelta = wevu.totals.vendorJsBytes - uni.totals.vendorJsBytes
-  const wevuJsDelta = wevu.totals.jsBytes - uni.totals.jsBytes
-  const runtimeTax = wevu.totals.jsBytes - native.totals.jsBytes
-  const performanceDelta = wevuPerformance.totals.bytes - wevu.totals.bytes
+  const wevuRuntimeDelta = wevu.totals.runtimeBytes - uni.totals.runtimeBytes
+  const runtimeTax = wevu.totals.runtimeBytes - native.totals.runtimeBytes
 
   return [
     '# wevu 体积分析',
@@ -88,10 +77,10 @@ export function generateReport(output: AnalysisOutput) {
     '',
     '## 结论',
     '',
-    `- 当前差距主要来自 JS 固定运行时成本：${wevu.label} 的 JS 为 ${formatKb(wevu.totals.jsBytes)}，${uni.label} 为 ${formatKb(uni.totals.jsBytes)}，差值 ${formatKb(wevuJsDelta)}。`,
-    `- wevu 的 vendor JS 为 ${formatKb(wevu.totals.vendorJsBytes)}，uni-app 的 vendor JS 为 ${formatKb(uni.totals.vendorJsBytes)}，vendor 差值 ${formatKb(wevuVendorDelta)}，这是最主要的大头。`,
-    `- 对比 ${native.label}，wevu 增加的运行时税约 ${formatKb(runtimeTax)}。业务页面 JS 本身只有 ${formatKb(wevu.totals.pageJsBytes)}，不是主要问题。`,
-    `- performance preset 的体积没有变小，当前比普通 wevu 多 ${formatKb(performanceDelta)}。它优化的是运行时 setData 策略和诊断配置，不是体积优化模式。`,
+    '- 本报告只统计生产构建后的 runtime allowlist 文件体积；页面业务代码、模板、样式、source map、license 和项目配置不计入。',
+    `- ${wevu.label} runtime 体积为 ${formatKb(wevu.totals.runtimeBytes)}，${uni.label} 为 ${formatKb(uni.totals.runtimeBytes)}，差值 ${formatKb(wevuRuntimeDelta)}。`,
+    `- 对比 ${native.label}，wevu 增加的运行时税约 ${formatKb(runtimeTax)}。`,
+    `- performance preset 的 runtime 体积为 ${formatKb(wevuPerformance.totals.runtimeBytes)}，相对普通 wevu 差值 ${formatKb(wevuPerformance.totals.runtimeBytes - wevu.totals.runtimeBytes)}。`,
     '- 这不是“完全没有 tree shaking”。wevu 包声明了 `sideEffects: false`，但主入口 re-export 的小程序 renderer、生命周期 glue、layout/router/store 桥接和响应式辅助之间引用链较粗，最终仍会把完整运行时基座放进 vendor。',
     '',
     '## 总览',

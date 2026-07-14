@@ -91,7 +91,7 @@ export function renderDashboardHtml(options: {
     ${chart.id === 'compile' ? projectTable('编译结果', report.compile?.projects ?? [], [['buildMs', '平均耗时'], ['outputBytes', '平均体积']], '/benchmarks/reports/compile/latest.md') : ''}
     ${chart.id === 'runtime' ? projectTable('运行时结果', report.runtime?.projects ?? [], [['totalMs', '八场景合计']], '/benchmarks/reports/runtime/latest.md') : ''}
     ${chart.id === 'hmr' ? projectTable('HMR 结果', report.hmr?.projects ?? [], [['averageMs', '场景平均']], '/benchmarks/reports/hmr/latest.md') : ''}
-    ${chart.id === 'size' ? projectTable('体积结果', report.size?.projects ?? [], [['bytes', 'raw'], ['gzipBytes', 'gzip'], ['brotliBytes', 'brotli']], '/benchmarks/reports/size/wevu-analysis.md') : ''}
+    ${chart.id === 'size' ? projectTable('运行时包结果', report.size?.projects ?? [], [['runtimeBytes', 'runtime 体积']], '/benchmarks/reports/size/wevu-analysis.md') : ''}
   </section>`).join('\n')
   const environment = report.runtime?.environment ?? report.compile?.environment ?? report.hmr?.environment
   const statusLabel = report.status === 'complete' ? '全部完成' : '部分完成'

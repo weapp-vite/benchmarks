@@ -55,40 +55,26 @@ export function compileChart(report: DashboardReport, palette: ChartPalette): Da
 
 export function sizeChart(report: DashboardReport, palette: ChartPalette): DashboardChart {
   const projects = [...(report.size?.projects ?? [])]
-    .sort((left, right) => projectValue(left, 'bytes') - projectValue(right, 'bytes'))
+    .sort((left, right) => projectValue(left, 'runtimeBytes') - projectValue(right, 'runtimeBytes'))
   const labels = projects.map(project => project.label)
   const kb = (value: number) => Math.round(value / 1024 * 10) / 10
   return {
     id: 'size',
-    title: '产物体积分析',
-    description: '上图对比 raw、gzip 和 brotli，下图拆分 JavaScript 与 vendor JavaScript。',
+    title: '运行时包体积',
+    description: '只统计生产构建后的框架运行时 allowlist 文件；页面业务代码、source map 和配置文件不计入。',
     width: 1120,
     height: 760,
     option: {
-      ...baseOption(palette, '产物体积分析', '当前 size 专项覆盖四个项目；单位 KB，越小越好'),
-      legend: [
-        { data: ['raw', 'gzip', 'brotli'], top: 80, right: 50, textStyle: { color: palette.muted } },
-        { data: ['全部 JS', 'vendor JS'], top: 400, right: 50, textStyle: { color: palette.muted } },
-      ],
-      grid: [
-        { left: 230, right: 90, top: 115, height: 230 },
-        { left: 230, right: 90, top: 435, height: 230 },
-      ],
-      xAxis: [
-        { ...axis(palette), type: 'value', name: 'KB', gridIndex: 0 },
-        { ...axis(palette), type: 'value', name: 'KB', gridIndex: 1 },
-      ],
-      yAxis: [
-        { ...axis(palette), type: 'category', data: labels, inverse: true, gridIndex: 0 },
-        { ...axis(palette), type: 'category', data: labels, inverse: true, gridIndex: 1 },
-      ],
-      series: [
-        { name: 'raw', type: 'bar', xAxisIndex: 0, yAxisIndex: 0, data: projects.map(project => kb(projectValue(project, 'bytes'))) },
-        { name: 'gzip', type: 'bar', xAxisIndex: 0, yAxisIndex: 0, data: projects.map(project => kb(projectValue(project, 'gzipBytes'))) },
-        { name: 'brotli', type: 'bar', xAxisIndex: 0, yAxisIndex: 0, data: projects.map(project => kb(projectValue(project, 'brotliBytes'))) },
-        { name: '全部 JS', type: 'bar', xAxisIndex: 1, yAxisIndex: 1, data: projects.map(project => kb(projectValue(project, 'jsBytes'))) },
-        { name: 'vendor JS', type: 'bar', xAxisIndex: 1, yAxisIndex: 1, data: projects.map(project => kb(projectValue(project, 'vendorJsBytes'))) },
-      ],
+      ...baseOption(palette, '运行时包体积', '生产构建后的 runtime 实际体积；单位 KB，越小越好'),
+      grid: { left: 230, right: 90, top: 115, bottom: 70 },
+      xAxis: { ...axis(palette), type: 'value', name: 'KB' },
+      yAxis: { ...axis(palette), type: 'category', data: labels, inverse: true },
+      series: [{
+        name: '运行时体积',
+        type: 'bar',
+        data: projects.map(project => kb(projectValue(project, 'runtimeBytes'))),
+        label: { show: true, position: 'right', color: palette.foreground, formatter: '{@value} KB' },
+      }],
     },
   }
 }

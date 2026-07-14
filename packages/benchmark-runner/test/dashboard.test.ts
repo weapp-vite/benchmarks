@@ -7,6 +7,7 @@ import {
   loadDashboardReport,
   lowerIsBetterIndex,
   summarizeCompile,
+  summarizeSize,
 } from '../src/dashboard/data'
 
 const temporaryRoots: string[] = []
@@ -49,6 +50,40 @@ describe('dashboard aggregation', () => {
     expect(lowerIsBetterIndex(50, 50)).toBe(100)
     expect(lowerIsBetterIndex(100, 50)).toBe(50)
     expect(lowerIsBetterIndex(undefined, 50)).toBeUndefined()
+    expect(lowerIsBetterIndex(0, 0)).toBe(100)
+  })
+
+  it('exposes runtime size separately from total output size', () => {
+    const section = summarizeSize({
+      generatedAt: '2026-07-13T00:00:00.000Z',
+      projects: [{
+        id: 'app',
+        label: 'App',
+        outputDir: 'dist',
+        files: [],
+        totals: {
+          files: 1,
+          bytes: 1000,
+          gzipBytes: 500,
+          brotliBytes: 400,
+          jsBytes: 900,
+          templateBytes: 0,
+          styleBytes: 0,
+          jsonBytes: 0,
+          assetBytes: 100,
+          vendorJsBytes: 900,
+          pageJsBytes: 0,
+          appJsBytes: 0,
+          sharedJsBytes: 0,
+          runtimeFiles: 1,
+          runtimeBytes: 900,
+          runtimeGzipBytes: 300,
+          runtimeBrotliBytes: 250,
+        },
+      }],
+      wevuPackage: null,
+    })
+    expect(section.projects[0]?.values).toMatchObject({ runtimeBytes: 900, runtimeFiles: 1 })
   })
 
   it('marks the dashboard partial when sections or samples are incomplete', () => {

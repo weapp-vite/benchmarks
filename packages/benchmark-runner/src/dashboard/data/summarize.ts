@@ -143,6 +143,10 @@ export function summarizeSize(report: AnalysisOutput): BenchmarkSection {
         brotliBytes: project.totals.brotliBytes,
         jsBytes: project.totals.jsBytes,
         vendorJsBytes: project.totals.vendorJsBytes,
+        runtimeFiles: project.totals.runtimeFiles,
+        runtimeBytes: project.totals.runtimeBytes,
+        runtimeGzipBytes: project.totals.runtimeGzipBytes,
+        runtimeBrotliBytes: project.totals.runtimeBrotliBytes,
       },
     })),
   }
@@ -180,5 +184,14 @@ export function buildDashboardReport(inputs: ReportInputs): DashboardReport {
 }
 
 export function lowerIsBetterIndex(value: number | undefined, best: number | undefined) {
-  return value && best ? Math.round((best / value) * 1000) / 10 : undefined
+  if (value === undefined || best === undefined) {
+    return undefined
+  }
+  if (best === 0) {
+    return value === 0 ? 100 : 0
+  }
+  if (value === 0) {
+    return 100
+  }
+  return Math.round((best / value) * 1000) / 10
 }

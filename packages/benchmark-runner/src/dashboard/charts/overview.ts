@@ -7,13 +7,13 @@ export function overviewChart(report: DashboardReport, palette: ChartPalette): D
     { key: 'compile', label: '编译耗时', metric: 'buildMs' },
     { key: 'runtime', label: '运行时总耗时', metric: 'totalMs' },
     { key: 'hmr', label: 'HMR 平均耗时', metric: 'averageMs' },
-    { key: 'size', label: '产物体积', metric: 'bytes' },
+    { key: 'size', label: '运行时体积', metric: 'runtimeBytes' },
   ] as const
   const projects = projectOrder(report)
   const bestByDimension = dimensions.map(dimension => Math.min(
     ...projects
       .map(project => completeValue(report, dimension.key, project.id, dimension.metric))
-      .filter((value): value is number => typeof value === 'number' && value > 0),
+      .filter((value): value is number => typeof value === 'number' && (dimension.key === 'size' ? value >= 0 : value > 0)),
   ))
   const cells = projects.flatMap((project, projectIndex) => dimensions.map((dimension, dimensionIndex) => {
     const value = completeValue(report, dimension.key, project.id, dimension.metric)

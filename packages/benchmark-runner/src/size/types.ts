@@ -5,6 +5,7 @@ export interface ProjectInput {
   label: string
   appDir: string
   outputDir: string
+  runtimeFiles: string[]
 }
 
 export interface FileSize {
@@ -14,6 +15,7 @@ export interface FileSize {
   brotliBytes: number
   type: FileType
   bucket: FileBucket
+  runtime: boolean
 }
 
 export interface ProjectSize {
@@ -38,6 +40,10 @@ export interface SizeTotals {
   pageJsBytes: number
   appJsBytes: number
   sharedJsBytes: number
+  runtimeFiles: number
+  runtimeBytes: number
+  runtimeGzipBytes: number
+  runtimeBrotliBytes: number
 }
 
 export interface WevuPackageInfo {

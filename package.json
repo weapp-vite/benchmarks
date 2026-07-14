@@ -21,7 +21,7 @@
     "bench:compile": "pnpm --filter @benchmarks/runner bench:compile",
     "bench:hmr": "pnpm --filter @benchmarks/runner bench:hmr",
     "bench:runtime": "pnpm --filter @benchmarks/runner bench:runtime",
-    "bench:size:wevu": "pnpm --filter @benchmarks/weapp-vite-wevu --filter @benchmarks/weapp-vite-wevu-performance --filter @benchmarks/weapp-vite-native --filter @benchmarks/uni-app-vite-vue3 run build && pnpm --filter @benchmarks/runner bench:size:wevu",
+    "bench:size:wevu": "pnpm run build && pnpm --filter @benchmarks/runner bench:size:wevu",
     "report:dashboard": "pnpm --filter @benchmarks/runner report:dashboard",
     "report:refresh": "pnpm --filter @benchmarks/runner report:refresh",
     "dev": "turbo run dev --parallel",
