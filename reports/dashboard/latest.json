@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-07-14T04:10:37.626Z",
-  "sourceCommit": "685851c2b7741651934192328126d3cd25d7fade",
+  "generatedAt": "2026-07-14T08:04:07.170Z",
+  "sourceCommit": "026fe258b63b15a9b9d51c4635348ffeebc3dc41",
   "status": "partial",
   "errors": [],
   "verification": {
     "schemaVersion": 1,
-    "generatedAt": "2026-07-14T04:10:37.425Z",
+    "generatedAt": "2026-07-14T07:34:33.907Z",
     "environment": {
       "machineId": "m4-max-128gb",
       "machineLabel": "Apple M4 Max 128GB",
@@ -16,8 +16,8 @@
       "cpuCores": 16,
       "memoryGB": 128,
       "node": "v24.18.0",
-      "pnpm": "10.33.4",
-      "gitCommit": "685851c2b7741651934192328126d3cd25d7fade",
+      "pnpm": "11.13.0",
+      "gitCommit": "026fe258b63b15a9b9d51c4635348ffeebc3dc41",
       "weappViteSubmodule": "26510329efcf36cbf934e566ebbc80f069151a22"
     },
     "overallStatus": "failed",
@@ -26,150 +26,150 @@
         "id": "install",
         "label": "安装依赖",
         "command": "pnpm install --frozen-lockfile",
-        "startedAt": "2026-07-14T03:56:25.875Z",
-        "finishedAt": "2026-07-14T03:56:26.197Z",
-        "durationMs": 321,
-        "status": "failed",
-        "exitCode": 1,
-        "stdoutTail": "Scope: all 10 workspace projects\n ERR_PNPM_OUTDATED_LOCKFILE  Cannot install with \"frozen-lockfile\" because pnpm-lock.yaml is not up to date with <ROOT>/apps/mpx/package.json\n\nNote that in CI environments this setting is true by default. If you still need to run install in such cases, use \"pnpm install --no-frozen-lockfile\"\n\n  Failure reason:\n  specifiers in the lockfile don't match specifiers in package.json:\n* 1 dependencies are mismatched:\n  - postcss (lockfile: 8.5.19, manifest: 8.5.15)\n\n",
+        "startedAt": "2026-07-14T06:42:14.691Z",
+        "finishedAt": "2026-07-14T06:42:14.927Z",
+        "durationMs": 235,
+        "status": "passed",
+        "exitCode": 0,
+        "stdoutTail": "Scope: all 10 workspace projects\nAlready up to date\nDone in 187ms using pnpm v11.13.0\n",
         "stderrTail": ""
       },
       {
         "id": "build",
         "label": "构建",
         "command": "pnpm run build",
-        "startedAt": "2026-07-14T03:56:26.197Z",
-        "finishedAt": "2026-07-14T03:56:37.098Z",
-        "durationMs": 10901,
+        "startedAt": "2026-07-14T06:42:14.927Z",
+        "finishedAt": "2026-07-14T06:42:15.419Z",
+        "durationMs": 491,
         "status": "passed",
         "exitCode": 0,
-        "stdoutTail": "uni-app-x:build: Compiling...\n@benchmarks/uni-app-vite-vue3:build: Compiler version: 5.15（vue3）\n@benchmarks/uni-app-vite-vue3:build: Compiling...\n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/uni-app-vite-vue3:build: \n@benchmarks/uni-app-vite-vue3:build: 已开启 uni统计 2.0\n@benchmarks/uni-app-vite-vue3:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/weapp-vite-wevu:build: [info] 目标平台：weapp\n@benchmarks/weapp-vite-native:build: [info] 目标平台：weapp\n@benchmarks/weapp-vite-wevu:build: [success] 已清空 dist/ 目录\n@benchmarks/weapp-vite-native:build: [success] 已清空 dist/ 目录\n@benchmarks/weapp-vite-wevu-performance:build: [info] 目标平台：weapp\n@benchmarks/weapp-vite-wevu-performance:build: [success] 已清空 dist/ 目录\n@benchmarks/taro-vue3:build: vite v4.5.14 building for production...\n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/taro-vue3:build: transforming...\n@benchmarks/weapp-vite-native:build: [success] 小程序构建完成，耗时：634ms\n@benchmarks/weapp-vite-native:build: [success] 主包/分包体积报告：\n@benchmarks/weapp-vite-native:build: [info] 主包：8.67 KB\n@benchmarks/weapp-vite-native:build: [success] 开发服务已就绪：\n@benchmarks/weapp-vite-native:build: [info] 小程序：执行 pnpm run open，或手动导入 project.config.json\n@benchmarks/weapp-vite-native:build: [info] UI：未启用\n@benchmarks/weapp-vite-native:build: [info] 提示：手动打开对应平台开发者工具，导入根目录（project.config.json 文件所在目录）\n@benchmarks/weapp-vite-wevu:build: [success] 小程序构建完成，耗时：859ms\n@benchmarks/weapp-vite-wevu:build: [success] 主包/分包体积报告：\n@benchmarks/weapp-vite-wevu:build: [info] 主包：199 KB\n@benchmarks/weapp-vite-wevu:build: [success] 开发服务已就绪：\n@benchmarks/weapp-vite-wevu:build: [info] 小程序：执行 pnpm run open，或手动导入 project.config.json\n@benchmarks/weapp-vite-wevu:build: [info] UI：未启用\n@benchmarks/weapp-vite-wevu:build: [info] 提示：手动打开对应平台开发者工具，导入根目录（project.config.json 文件所在目录）\n@benchmarks/weapp-vite-wevu-performance:build: [success] 小程序构建完成，耗时：861ms\n@benchmarks/weapp-vite-wevu-performance:build: [success] 主包/分包体积报告：\n@benchmarks/weapp-vite-wevu-performance:build: [info] 主包：200 KB\n@benchmarks/weapp-vite-wevu-performance:build: [success] 开发服务已就绪：\n@benchmarks/weapp-vite-wevu-performance:build: [info] 小程序：执行 pnpm run open，或手动导入 project.config.json\n@benchmarks/weapp-vite-wevu-performance:build: [info] UI：未启用\n@benchmarks/weapp-vite-wevu-performance:build: [info] 提示：手动打开对应平台开发者工具，导入根目录（project.config.json 文件所在目录）\n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/taro-vue3:build: ✓ 98 modules transformed.\n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/taro-vue3:build: rendering chunks...\n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/uni-app-vite-vue3:build: DONE  Build complete.\n@benchmarks/uni-app-vite-vue3:build: Run method: open Weixin Mini Program Devtools, import dist/build/mp-weixin run.\n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/taro-vue3:build: computing gzip size...\n@benchmarks/taro-vue3:build: dist/app.wxss                   0.03 kB\n@benchmarks/taro-vue3:build: dist/app-origin.wxss            0.04 kB\n@benchmarks/taro-vue3:build: dist/pages/detail/index.wxss    0.08 kB\n@benchmarks/taro-vue3:build: dist/pages/index/index.wxml     0.08 kB\n@benchmarks/taro-vue3:build: dist/pages/detail/index.wxml    0.08 kB\n@benchmarks/taro-vue3:build: dist/pages/detail/index.json    0.09 kB │ gzip:  0.10 kB\n@benchmarks/taro-vue3:build: dist/pages/index/index.json     0.10 kB │ gzip:  0.11 kB\n@benchmarks/taro-vue3:build: dist/comp.json                  0.11 kB │ gzip:  0.11 kB\n@benchmarks/taro-vue3:build: dist/comp.wxml                  0.14 kB\n@benchmarks/taro-vue3:build: dist/app.json                   0.22 kB │ gzip:  0.16 kB\n@benchmarks/taro-vue3:build: dist/pages/index/index.wxss     0.48 kB\n@benchmarks/taro-vue3:build: dist/utils.wxs                  1.00 kB\n@benchmarks/taro-vue3:build: dist/base.wxml                 55.54 kB\n@benchmarks/taro-vue3:build: dist/comp.js                    0.09 kB │ gzip:  0.10 kB\n@benchmarks/taro-vue3:build: dist/common.js                  0.11 kB │ gzip:  0.11 kB\n@benchmarks/taro-vue3:build: dist/app.js                     0.40 kB │ gzip:  0.31 kB\n@benchmarks/taro-vue3:build: dist/pages/detail/index.js      0.50 kB │ gzip:  0.34 kB\n@benchmarks/taro-vue3:build: dist/pages/index/index.js       5.29 kB │ gzip:  1.96 kB\n@benchmarks/taro-vue3:build: dist/taro.js                  162.16 kB │ gzip: 58.31 kB\n@benchmarks/taro-vue3:build: ✓ built in 2.85s\n@benchmarks/uni-app-x:build: DONE  Build complete.\n@benchmarks/uni-app-x:build: Run method: open Weixin Mini Program Devtools, import dist/build/mp-weixin run.\n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G✔ wx-production\n@benchmarks/mpx:build:   Compiled successfully\n@benchmarks/mpx:build:   assets by status 2.18 KiB [compared for emit]\n@benchmarks/mpx:build:     assets by path pages/ 1.68 KiB\n@benchmarks/mpx:build:       assets by chunk 1.44 KiB (auxiliary name: pages/index) 3 assets\n@benchmarks/mpx:build:       assets by chunk 252 bytes (auxiliary name: pages/detail) 3 assets\n@benchmarks/mpx:build:     assets by path *.json 469 bytes\n@benchmarks/mpx:build:       asset project.config.json 313 bytes [compared for emit] [from: static/wx/project.config.json] [copied]\n@benchmarks/mpx:build:       asset app.json 156 bytes [compared for emit] (auxiliary name: app)\n@benchmarks/mpx:build:     asset app.wxss 38 bytes [compared for emit] (auxiliary name: app)\n@benchmarks/mpx:build:   assets by status 204 KiB [emitted]\n@benchmarks/mpx:build:     assets by path *.js 183 KiB\n@benchmarks/mpx:build:       asset bundle.js 169 KiB [emitted] [minimized] (name: bundle) (id hint: main) 1 related asset\n@benchmarks/mpx:build:       asset app.js 13.8 KiB [emitted] [minimized] (name: app) 1 related asset\n@benchmarks/mpx:build:     assets by path pages/*.js 20.6 KiB\n@benchmarks/mpx:build:       asset pages/index.js 20 KiB [emitted] [minimized] (name: pages/index) 2 related assets\n@benchmarks/mpx:build:       asset pages/detail.js 593 bytes [emitted] [minimized] (name: pages/detail) 1 related asset\n@benchmarks/mpx:build:   wx-production (webpack 5.108.4) compiled successfully in 5770 ms\n@benchmarks/mpx:build: \n\n Tasks:    8 successful, 8 total\nCached:    0 cached, 8 total\n  Time:    10.55s \n\n",
-        "stderrTail": ""
+        "stdoutTail": "fig.json 文件所在目录）\n@benchmarks/weapp-vite-wevu-performance:build: cache hit, replaying logs b6ca2b2aeace4d4b\n@benchmarks/weapp-vite-wevu-performance:build: $ wv build\n@benchmarks/weapp-vite-wevu-performance:build: [info] 目标平台：weapp\n@benchmarks/weapp-vite-wevu-performance:build: [success] 已清空 dist/ 目录\n@benchmarks/weapp-vite-wevu-performance:build: [success] 小程序构建完成，耗时：452ms\n@benchmarks/weapp-vite-wevu-performance:build: [success] 主包/分包体积报告：\n@benchmarks/weapp-vite-wevu-performance:build: [info] 主包：200 KB\n@benchmarks/weapp-vite-wevu-performance:build: [success] 开发服务已就绪：\n@benchmarks/weapp-vite-wevu-performance:build: [info] 小程序：执行 pnpm run open，或手动导入 project.config.json\n@benchmarks/weapp-vite-wevu-performance:build: [info] UI：未启用\n@benchmarks/weapp-vite-wevu-performance:build: [info] 提示：手动打开对应平台开发者工具，导入根目录（project.config.json 文件所在目录）\n@benchmarks/uni-app-vite-vue3:build: cache hit, replaying logs 878a32160ebd58d7\n@benchmarks/uni-app-vite-vue3:build: $ pnpm run build:mp-weixin\n@benchmarks/uni-app-vite-vue3:build: $ uni build -p mp-weixin\n@benchmarks/uni-app-vite-vue3:build: Compiler version: 5.15（vue3）\n@benchmarks/uni-app-vite-vue3:build: Compiling...\n@benchmarks/uni-app-vite-vue3:build: \n@benchmarks/uni-app-vite-vue3:build: 已开启 uni统计 2.0\n@benchmarks/uni-app-vite-vue3:build: \n@benchmarks/uni-app-vite-vue3:build: DONE  Build complete.\n@benchmarks/uni-app-vite-vue3:build: Run method: open Weixin Mini Program Devtools, import dist/build/mp-weixin run.\n@benchmarks/taro-vue3:build: cache hit, replaying logs af927a4051b57f10\n@benchmarks/taro-vue3:build: $ pnpm run build:weapp\n@benchmarks/taro-vue3:build: $ taro build --type weapp\n@benchmarks/taro-vue3:build: 👽 Taro v4.2.0\n@benchmarks/taro-vue3:build: \n@benchmarks/taro-vue3:build: vite v4.5.14 building for production...\n@benchmarks/taro-vue3:build: transforming...\n@benchmarks/taro-vue3:build: ✓ 98 modules transformed.\n@benchmarks/taro-vue3:build: rendering chunks...\n@benchmarks/taro-vue3:build: computing gzip size...\n@benchmarks/taro-vue3:build: dist/app.wxss                   0.03 kB\n@benchmarks/taro-vue3:build: dist/app-origin.wxss            0.04 kB\n@benchmarks/taro-vue3:build: dist/pages/detail/index.wxss    0.08 kB\n@benchmarks/taro-vue3:build: dist/pages/index/index.wxml     0.08 kB\n@benchmarks/taro-vue3:build: dist/pages/detail/index.wxml    0.08 kB\n@benchmarks/taro-vue3:build: dist/pages/detail/index.json    0.09 kB │ gzip:  0.10 kB\n@benchmarks/taro-vue3:build: dist/pages/index/index.json     0.10 kB │ gzip:  0.11 kB\n@benchmarks/taro-vue3:build: dist/comp.json                  0.11 kB │ gzip:  0.11 kB\n@benchmarks/taro-vue3:build: dist/comp.wxml                  0.14 kB\n@benchmarks/taro-vue3:build: dist/app.json                   0.22 kB │ gzip:  0.16 kB\n@benchmarks/taro-vue3:build: dist/pages/index/index.wxss     0.48 kB\n@benchmarks/taro-vue3:build: dist/utils.wxs                  1.00 kB\n@benchmarks/taro-vue3:build: dist/base.wxml                 55.54 kB\n@benchmarks/taro-vue3:build: dist/comp.js                    0.09 kB │ gzip:  0.10 kB\n@benchmarks/taro-vue3:build: dist/common.js                  0.11 kB │ gzip:  0.11 kB\n@benchmarks/taro-vue3:build: dist/app.js                     0.40 kB │ gzip:  0.31 kB\n@benchmarks/taro-vue3:build: dist/pages/detail/index.js      0.50 kB │ gzip:  0.34 kB\n@benchmarks/taro-vue3:build: dist/pages/index/index.js       5.29 kB │ gzip:  1.96 kB\n@benchmarks/taro-vue3:build: dist/taro.js                  162.16 kB │ gzip: 58.31 kB\n@benchmarks/taro-vue3:build: ✓ built in 3.91s\n@benchmarks/mpx:build: cache hit, replaying logs 1e9b488ec41e9969\n@benchmarks/mpx:build: $ mpx-cli-service build\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \n@benchmarks/mpx:build: [info] Compiling Wx-production\n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G\n@benchmarks/mpx:build: \n@benchmarks/mpx:build: \u001b[2K\u001b[1A\u001b[2K\u001b[1A\u001b[2K\u001b[G✔ wx-production\n@benchmarks/mpx:build:   Compiled successfully\n@benchmarks/mpx:build:   assets by path pages/ 22.3 KiB\n@benchmarks/mpx:build:     assets by chunk 1.44 KiB (auxiliary name: pages/index) 3 assets\n@benchmarks/mpx:build:     assets by chunk 252 bytes (auxiliary name: pages/detail)\n@benchmarks/mpx:build:       asset pages/detail.wxml 117 bytes [compared for emit] (auxiliary name: pages/detail)\n@benchmarks/mpx:build:       + 2 assets\n@benchmarks/mpx:build:     assets by status 20.6 KiB [emitted]\n@benchmarks/mpx:build:       asset pages/index.js 20 KiB [emitted] [minimized] (name: pages/index) 2 related assets\n@benchmarks/mpx:build:       asset pages/detail.js 594 bytes [emitted] [compared for emit] [minimized] (name: pages/detail) 1 related asset\n@benchmarks/mpx:build:   assets by path *.js 183 KiB\n@benchmarks/mpx:build:     asset bundle.js 169 KiB [emitted] [compared for emit] [minimized] (name: bundle) (id hint: main) 1 related asset\n@benchmarks/mpx:build:     asset app.js 13.8 KiB [emitted] [compared for emit] [minimized] (name: app) 1 related asset\n@benchmarks/mpx:build:   assets by path *.json 469 bytes\n@benchmarks/mpx:build:     asset project.config.json 313 bytes [compared for emit] [from: static/wx/project.config.json] [copied]\n@benchmarks/mpx:build:     asset app.json 156 bytes [compared for emit] (auxiliary name: app)\n@benchmarks/mpx:build:   asset app.wxss 38 bytes [compared for emit] (auxiliary name: app)\n@benchmarks/mpx:build:   wx-production (webpack 5.108.4) compiled successfully in 4474 ms\n@benchmarks/mpx:build: \n@benchmarks/uni-app-x:build: cache hit, replaying logs 9f45b87744fa97ce\n@benchmarks/uni-app-x:build: $ pnpm run build:mp-weixin\n@benchmarks/uni-app-x:build: $ uni build -p mp-weixin\n@benchmarks/uni-app-x:build: Compiler version: 5.15（uni-app x）\n@benchmarks/uni-app-x:build: Style isolation version: 1.0\n@benchmarks/uni-app-x:build: Compiling...\n@benchmarks/uni-app-x:build: DONE  Build complete.\n@benchmarks/uni-app-x:build: Run method: open Weixin Mini Program Devtools, import dist/build/mp-weixin run.\n\n Tasks:    8 successful, 8 total\nCached:    8 cached, 8 total\n  Time:    171ms >>> FULL TURBO\n\n",
+        "stderrTail": "$ turbo run build\n"
       },
       {
         "id": "lint",
         "label": "代码检查",
         "command": "pnpm run lint",
-        "startedAt": "2026-07-14T03:56:37.098Z",
-        "finishedAt": "2026-07-14T03:56:40.345Z",
-        "durationMs": 3247,
+        "startedAt": "2026-07-14T06:42:15.419Z",
+        "finishedAt": "2026-07-14T06:42:18.417Z",
+        "durationMs": 2998,
         "status": "passed",
         "exitCode": 0,
-        "stdoutTail": "\n> benchmarks@0.0.0 lint /Users/icebreaker/Projects/github/benchmarks\n> turbo run lint\n\n\n   • Packages in scope: @benchmarks/mpx, @benchmarks/runner, @benchmarks/taro-vue3, @benchmarks/uni-app-vite-vue3, @benchmarks/uni-app-x, @benchmarks/vue-mini-core, @benchmarks/weapp-vite-native, @benchmarks/weapp-vite-wevu, @benchmarks/weapp-vite-wevu-performance\n   • Running lint in 9 packages\n   • Remote caching disabled\n\n@benchmarks/weapp-vite-wevu-performance:lint: cache miss, executing 09e43eb4a05aff69\n@benchmarks/weapp-vite-wevu:lint: cache miss, executing 87de26a9a45175e3\n@benchmarks/vue-mini-core:lint: cache hit, replaying logs 49e9e561457b3c55\n@benchmarks/vue-mini-core:lint: \n@benchmarks/vue-mini-core:lint: > @benchmarks/vue-mini-core@0.0.0 lint /Users/icebreaker/Projects/github/benchmarks/apps/vue-mini-core\n@benchmarks/vue-mini-core:lint: > eslint .\n@benchmarks/vue-mini-core:lint: \n@benchmarks/uni-app-x:lint: cache hit, replaying logs 546ea38739ec6ae9\n@benchmarks/uni-app-x:lint: \n@benchmarks/uni-app-x:lint: > @benchmarks/uni-app-x@0.0.0 lint /Users/icebreaker/Projects/github/benchmarks/apps/uni-app-x\n@benchmarks/uni-app-x:lint: > eslint .\n@benchmarks/uni-app-x:lint: \n@benchmarks/runner:lint: cache hit, replaying logs 132b287581e1139c\n@benchmarks/taro-vue3:lint: cache hit, replaying logs 69355516da9b08ec\n@benchmarks/uni-app-vite-vue3:lint: cache hit, replaying logs 2ffa11d5565af955\n@benchmarks/runner:lint: \n@benchmarks/runner:lint: > @benchmarks/runner@0.0.0 lint /Users/icebreaker/Projects/github/benchmarks/packages/benchmark-runner\n@benchmarks/runner:lint: > eslint .\n@benchmarks/runner:lint: \n@benchmarks/weapp-vite-native:lint: cache hit, replaying logs bec0335898ebaa1b\n@benchmarks/taro-vue3:lint: \n@benchmarks/taro-vue3:lint: > @benchmarks/taro-vue3@0.0.0 lint /Users/icebreaker/Projects/github/benchmarks/apps/taro-vue3\n@benchmarks/taro-vue3:lint: > node ../../node_modules/eslint/bin/eslint.js .\n@benchmarks/taro-vue3:lint: \n@benchmarks/uni-app-vite-vue3:lint: \n@benchmarks/uni-app-vite-vue3:lint: > @benchmarks/uni-app-vite-vue3@0.0.0 lint /Users/icebreaker/Projects/github/benchmarks/apps/uni-app-vite-vue3\n@benchmarks/uni-app-vite-vue3:lint: > eslint .\n@benchmarks/uni-app-vite-vue3:lint: \n@benchmarks/weapp-vite-native:lint: \n@benchmarks/weapp-vite-native:lint: > @benchmarks/weapp-vite-native@0.0.0 lint /Users/icebreaker/Projects/github/benchmarks/apps/weapp-vite-native\n@benchmarks/weapp-vite-native:lint: > eslint . --ignore-pattern .weapp-vite\n@benchmarks/weapp-vite-native:lint: \n@benchmarks/weapp-vite-wevu-performance:lint: \n@benchmarks/weapp-vite-wevu-performance:lint: > @benchmarks/weapp-vite-wevu-performance@0.0.0 lint /Users/icebreaker/Projects/github/benchmarks/apps/weapp-vite-wevu-performance\n@benchmarks/weapp-vite-wevu-performance:lint: > eslint . --ignore-pattern .weapp-vite\n@benchmarks/weapp-vite-wevu-performance:lint: \n@benchmarks/weapp-vite-wevu:lint: \n@benchmarks/weapp-vite-wevu:lint: > @benchmarks/weapp-vite-wevu@0.0.0 lint /Users/icebreaker/Projects/github/benchmarks/apps/weapp-vite-wevu\n@benchmarks/weapp-vite-wevu:lint: > eslint . --ignore-pattern .weapp-vite\n@benchmarks/weapp-vite-wevu:lint: \n\n Tasks:    8 successful, 8 total\nCached:    6 cached, 8 total\n  Time:    2.994s \n\n",
-        "stderrTail": ""
+        "stdoutTail": "\n   • Packages in scope: @benchmarks/mpx, @benchmarks/runner, @benchmarks/taro-vue3, @benchmarks/uni-app-vite-vue3, @benchmarks/uni-app-x, @benchmarks/vue-mini-core, @benchmarks/weapp-vite-native, @benchmarks/weapp-vite-wevu, @benchmarks/weapp-vite-wevu-performance\n   • Running lint in 9 packages\n   • Remote caching disabled\n\n@benchmarks/taro-vue3:lint: cache hit, replaying logs dfe87cc61cb605e7\n@benchmarks/weapp-vite-wevu:lint: cache hit, replaying logs 142344e0619187df\n@benchmarks/weapp-vite-native:lint: cache hit, replaying logs 704d1f2d2b3b2b6b\n@benchmarks/taro-vue3:lint: $ node ../../node_modules/eslint/bin/eslint.js .\n@benchmarks/vue-mini-core:lint: cache miss, executing bdebeedfb44b3a30\n@benchmarks/weapp-vite-native:lint: $ eslint . --ignore-pattern .weapp-vite\n@benchmarks/weapp-vite-wevu:lint: $ eslint . --ignore-pattern .weapp-vite\n@benchmarks/uni-app-x:lint: cache hit, replaying logs 31cde1d9ce423cde\n@benchmarks/uni-app-vite-vue3:lint: cache hit, replaying logs 0dfc42de18c77964\n@benchmarks/uni-app-x:lint: $ eslint .\n@benchmarks/runner:lint: cache hit, replaying logs fa93b5610782040c\n@benchmarks/uni-app-vite-vue3:lint: $ eslint .\n@benchmarks/weapp-vite-wevu-performance:lint: cache hit, replaying logs ebe5762601cdf06a\n@benchmarks/runner:lint: $ eslint .\n@benchmarks/weapp-vite-wevu-performance:lint: $ eslint . --ignore-pattern .weapp-vite\n@benchmarks/vue-mini-core:lint: $ eslint .\n\n Tasks:    8 successful, 8 total\nCached:    7 cached, 8 total\n  Time:    2.719s \n\n",
+        "stderrTail": "$ turbo run lint\n"
       },
       {
         "id": "typecheck",
         "label": "类型检查",
         "command": "pnpm run typecheck",
-        "startedAt": "2026-07-14T03:56:40.345Z",
-        "finishedAt": "2026-07-14T03:56:41.219Z",
-        "durationMs": 874,
+        "startedAt": "2026-07-14T06:42:18.417Z",
+        "finishedAt": "2026-07-14T06:42:19.957Z",
+        "durationMs": 1541,
         "status": "passed",
         "exitCode": 0,
-        "stdoutTail": "\n> benchmarks@0.0.0 typecheck /Users/icebreaker/Projects/github/benchmarks\n> turbo run typecheck && tsc -p e2e/ide/tsconfig.json\n\n\n   • Packages in scope: @benchmarks/mpx, @benchmarks/runner, @benchmarks/taro-vue3, @benchmarks/uni-app-vite-vue3, @benchmarks/uni-app-x, @benchmarks/vue-mini-core, @benchmarks/weapp-vite-native, @benchmarks/weapp-vite-wevu, @benchmarks/weapp-vite-wevu-performance\n   • Running typecheck in 9 packages\n   • Remote caching disabled\n\n@benchmarks/weapp-vite-wevu-performance:typecheck: cache hit, replaying logs 6e774fec73e268cb\n@benchmarks/vue-mini-core:typecheck: cache hit, replaying logs 8adc9b1a6f604724\n@benchmarks/taro-vue3:typecheck: cache hit, replaying logs 5c1ac2435e82358b\n@benchmarks/runner:typecheck: cache hit, replaying logs 0ffe847367674f55\n@benchmarks/weapp-vite-wevu:typecheck: cache hit, replaying logs 8a7e18e452359c4a\n@benchmarks/weapp-vite-wevu-performance:typecheck: \n@benchmarks/weapp-vite-wevu-performance:typecheck: > @benchmarks/weapp-vite-wevu-performance@0.0.0 typecheck /Users/icebreaker/Projects/github/benchmarks/apps/weapp-vite-wevu-performance\n@benchmarks/weapp-vite-wevu-performance:typecheck: > vue-tsc --noEmit -p .weapp-vite/tsconfig.app.json\n@benchmarks/weapp-vite-wevu-performance:typecheck: \n@benchmarks/uni-app-vite-vue3:typecheck: cache hit, replaying logs 936ed08bca66c4dd\n@benchmarks/uni-app-x:typecheck: cache hit, replaying logs 2d2a0e36147beb09\n@benchmarks/runner:typecheck: \n@benchmarks/runner:typecheck: > @benchmarks/runner@0.0.0 typecheck /Users/icebreaker/Projects/github/benchmarks/packages/benchmark-runner\n@benchmarks/runner:typecheck: > tsc -p tsconfig.json\n@benchmarks/runner:typecheck: \n@benchmarks/weapp-vite-native:typecheck: cache hit, replaying logs 1c4275ed66ee8357\n@benchmarks/vue-mini-core:typecheck: \n@benchmarks/vue-mini-core:typecheck: > @benchmarks/vue-mini-core@0.0.0 typecheck /Users/icebreaker/Projects/github/benchmarks/apps/vue-mini-core\n@benchmarks/vue-mini-core:typecheck: > tsc -p tsconfig.json\n@benchmarks/vue-mini-core:typecheck: \n@benchmarks/taro-vue3:typecheck: \n@benchmarks/taro-vue3:typecheck: > @benchmarks/taro-vue3@0.0.0 typecheck /Users/icebreaker/Projects/github/benchmarks/apps/taro-vue3\n@benchmarks/taro-vue3:typecheck: > vue-tsc --noEmit -p tsconfig.json\n@benchmarks/taro-vue3:typecheck: \n@benchmarks/mpx:typecheck: cache hit, replaying logs a9a3f21eac072e28\n@benchmarks/uni-app-x:typecheck: \n@benchmarks/uni-app-x:typecheck: > @benchmarks/uni-app-x@0.0.0 typecheck /Users/icebreaker/Projects/github/benchmarks/apps/uni-app-x\n@benchmarks/uni-app-x:typecheck: > vue-tsc --noEmit -p tsconfig.json\n@benchmarks/uni-app-x:typecheck: \n@benchmarks/weapp-vite-wevu:typecheck: \n@benchmarks/weapp-vite-wevu:typecheck: > @benchmarks/weapp-vite-wevu@0.0.0 typecheck /Users/icebreaker/Projects/github/benchmarks/apps/weapp-vite-wevu\n@benchmarks/weapp-vite-wevu:typecheck: > vue-tsc --noEmit -p .weapp-vite/tsconfig.app.json\n@benchmarks/weapp-vite-wevu:typecheck: \n@benchmarks/weapp-vite-native:typecheck: \n@benchmarks/weapp-vite-native:typecheck: > @benchmarks/weapp-vite-native@0.0.0 typecheck /Users/icebreaker/Projects/github/benchmarks/apps/weapp-vite-native\n@benchmarks/weapp-vite-native:typecheck: > tsc -p tsconfig.json\n@benchmarks/weapp-vite-native:typecheck: \n@benchmarks/uni-app-vite-vue3:typecheck: \n@benchmarks/uni-app-vite-vue3:typecheck: > @benchmarks/uni-app-vite-vue3@0.0.0 typecheck /Users/icebreaker/Projects/github/benchmarks/apps/uni-app-vite-vue3\n@benchmarks/uni-app-vite-vue3:typecheck: > vue-tsc --noEmit -p tsconfig.json\n@benchmarks/uni-app-vite-vue3:typecheck: \n@benchmarks/mpx:typecheck: \n@benchmarks/mpx:typecheck: > @benchmarks/mpx@0.0.0 typecheck /Users/icebreaker/Projects/github/benchmarks/apps/mpx\n@benchmarks/mpx:typecheck: > tsc -p tsconfig.typecheck.json\n@benchmarks/mpx:typecheck: \n\n Tasks:    9 successful, 9 total\nCached:    9 cached, 9 total\n  Time:    148ms >>> FULL TURBO\n\n",
-        "stderrTail": ""
+        "stdoutTail": "\n   • Packages in scope: @benchmarks/mpx, @benchmarks/runner, @benchmarks/taro-vue3, @benchmarks/uni-app-vite-vue3, @benchmarks/uni-app-x, @benchmarks/vue-mini-core, @benchmarks/weapp-vite-native, @benchmarks/weapp-vite-wevu, @benchmarks/weapp-vite-wevu-performance\n   • Running typecheck in 9 packages\n   • Remote caching disabled\n\n@benchmarks/vue-mini-core:typecheck: cache miss, executing 00ebff093055f9c5\n@benchmarks/weapp-vite-native:typecheck: cache hit, replaying logs e0794a0c95b4c489\n@benchmarks/weapp-vite-wevu-performance:typecheck: cache hit, replaying logs aa8964383d3fe996\n@benchmarks/mpx:typecheck: cache hit, replaying logs 14128aa486720fce\n@benchmarks/uni-app-vite-vue3:typecheck: cache hit, replaying logs 7420348c823abd79\n@benchmarks/taro-vue3:typecheck: cache hit, replaying logs 02795e53f3a31c9e\n@benchmarks/weapp-vite-native:typecheck: $ tsc -p tsconfig.json\n@benchmarks/runner:typecheck: cache hit, replaying logs 9df8f53077be5a81\n@benchmarks/weapp-vite-wevu-performance:typecheck: $ vue-tsc --noEmit -p .weapp-vite/tsconfig.app.json\n@benchmarks/mpx:typecheck: $ tsc -p tsconfig.typecheck.json\n@benchmarks/uni-app-x:typecheck: cache hit, replaying logs 0c8915a625044151\n@benchmarks/uni-app-vite-vue3:typecheck: $ vue-tsc --noEmit -p tsconfig.json\n@benchmarks/runner:typecheck: $ tsc -p tsconfig.json\n@benchmarks/taro-vue3:typecheck: $ vue-tsc --noEmit -p tsconfig.json\n@benchmarks/weapp-vite-wevu:typecheck: cache hit, replaying logs b678d184a04bf5d9\n@benchmarks/uni-app-x:typecheck: $ vue-tsc --noEmit -p tsconfig.json\n@benchmarks/weapp-vite-wevu:typecheck: $ vue-tsc --noEmit -p .weapp-vite/tsconfig.app.json\n@benchmarks/vue-mini-core:typecheck: $ tsc -p tsconfig.json\n\n Tasks:    9 successful, 9 total\nCached:    8 cached, 9 total\n  Time:    862ms \n\n",
+        "stderrTail": "$ turbo run typecheck && tsc -p e2e/ide/tsconfig.json\n"
       },
       {
         "id": "tsd",
         "label": "类型 API 测试",
         "command": "pnpm run tsd",
-        "startedAt": "2026-07-14T03:56:41.219Z",
-        "finishedAt": "2026-07-14T03:56:41.620Z",
+        "startedAt": "2026-07-14T06:42:19.957Z",
+        "finishedAt": "2026-07-14T06:42:20.358Z",
         "durationMs": 401,
         "status": "passed",
         "exitCode": 0,
-        "stdoutTail": "\n> benchmarks@0.0.0 tsd /Users/icebreaker/Projects/github/benchmarks\n> turbo run tsd\n\n\n   • Packages in scope: @benchmarks/mpx, @benchmarks/runner, @benchmarks/taro-vue3, @benchmarks/uni-app-vite-vue3, @benchmarks/uni-app-x, @benchmarks/vue-mini-core, @benchmarks/weapp-vite-native, @benchmarks/weapp-vite-wevu, @benchmarks/weapp-vite-wevu-performance\n   • Running tsd in 9 packages\n   • Remote caching disabled\n\n\n Tasks:    0 successful, 0 total\nCached:    0 cached, 0 total\n  Time:    178ms \n\n",
-        "stderrTail": " WARNING  No tasks were executed as part of this run.\n"
+        "stdoutTail": "\n   • Packages in scope: @benchmarks/mpx, @benchmarks/runner, @benchmarks/taro-vue3, @benchmarks/uni-app-vite-vue3, @benchmarks/uni-app-x, @benchmarks/vue-mini-core, @benchmarks/weapp-vite-native, @benchmarks/weapp-vite-wevu, @benchmarks/weapp-vite-wevu-performance\n   • Running tsd in 9 packages\n   • Remote caching disabled\n\n\n Tasks:    0 successful, 0 total\nCached:    0 cached, 0 total\n  Time:    125ms \n\n",
+        "stderrTail": "$ turbo run tsd\n WARNING  No tasks were executed as part of this run.\n"
       },
       {
         "id": "test",
         "label": "单元与集成测试",
         "command": "pnpm run test",
-        "startedAt": "2026-07-14T03:56:41.620Z",
-        "finishedAt": "2026-07-14T03:56:42.915Z",
-        "durationMs": 1295,
+        "startedAt": "2026-07-14T06:42:20.358Z",
+        "finishedAt": "2026-07-14T06:42:20.748Z",
+        "durationMs": 390,
         "status": "passed",
         "exitCode": 0,
-        "stdoutTail": "\n> benchmarks@0.0.0 test /Users/icebreaker/Projects/github/benchmarks\n> turbo run test\n\n\n   • Packages in scope: @benchmarks/mpx, @benchmarks/runner, @benchmarks/taro-vue3, @benchmarks/uni-app-vite-vue3, @benchmarks/uni-app-x, @benchmarks/vue-mini-core, @benchmarks/weapp-vite-native, @benchmarks/weapp-vite-wevu, @benchmarks/weapp-vite-wevu-performance\n   • Running test in 9 packages\n   • Remote caching disabled\n\n@benchmarks/runner:test: cache miss, executing 6d9a4fde19952212\n@benchmarks/runner:test: \n@benchmarks/runner:test: > @benchmarks/runner@0.0.0 test /Users/icebreaker/Projects/github/benchmarks/packages/benchmark-runner\n@benchmarks/runner:test: > vitest run\n@benchmarks/runner:test: \n@benchmarks/runner:test: \n@benchmarks/runner:test:  RUN  v4.1.10 /Users/icebreaker/Projects/github/benchmarks/packages/benchmark-runner\n@benchmarks/runner:test: \n@benchmarks/runner:test:  ✓ test/fs.test.ts (2 tests) 1ms\n@benchmarks/runner:test:  ✓ test/hmr-scenarios.test.ts (1 test) 1ms\n@benchmarks/runner:test:  ✓ test/dashboard.test.ts (5 tests) 11ms\n@benchmarks/runner:test:  ✓ test/hmr-artifacts.test.ts (1 test) 50ms\n@benchmarks/runner:test: \n@benchmarks/runner:test:  Test Files  4 passed (4)\n@benchmarks/runner:test:       Tests  9 passed (9)\n@benchmarks/runner:test:    Start at  11:56:42\n@benchmarks/runner:test:    Duration  166ms (transform 106ms, setup 0ms, import 140ms, tests 64ms, environment 0ms)\n@benchmarks/runner:test: \n\n Tasks:    1 successful, 1 total\nCached:    0 cached, 1 total\n  Time:    1.056s \n\n",
-        "stderrTail": " WARNING  no output files found for task @benchmarks/runner#test. Please check your `outputs` key in `turbo.json`\n"
+        "stdoutTail": "\n   • Packages in scope: @benchmarks/mpx, @benchmarks/runner, @benchmarks/taro-vue3, @benchmarks/uni-app-vite-vue3, @benchmarks/uni-app-x, @benchmarks/vue-mini-core, @benchmarks/weapp-vite-native, @benchmarks/weapp-vite-wevu, @benchmarks/weapp-vite-wevu-performance\n   • Running test in 9 packages\n   • Remote caching disabled\n\n@benchmarks/runner:test: cache hit, replaying logs 05e2e7421811468e\n@benchmarks/runner:test: $ vitest run\n@benchmarks/runner:test: \n@benchmarks/runner:test:  RUN  v4.1.10 /Users/icebreaker/Projects/github/benchmarks/packages/benchmark-runner\n@benchmarks/runner:test: \n@benchmarks/runner:test:  ✓ test/fs.test.ts (3 tests) 2ms\n@benchmarks/runner:test:  ✓ test/hmr-scenarios.test.ts (1 test) 2ms\n@benchmarks/runner:test:  ✓ test/dashboard.test.ts (5 tests) 10ms\n@benchmarks/runner:test:  ✓ test/hmr-artifacts.test.ts (1 test) 37ms\n@benchmarks/runner:test: \n@benchmarks/runner:test:  Test Files  4 passed (4)\n@benchmarks/runner:test:       Tests  10 passed (10)\n@benchmarks/runner:test:    Start at  13:04:23\n@benchmarks/runner:test:    Duration  143ms (transform 98ms, setup 0ms, import 130ms, tests 49ms, environment 0ms)\n@benchmarks/runner:test: \n\n Tasks:    1 successful, 1 total\nCached:    1 cached, 1 total\n  Time:    127ms >>> FULL TURBO\n\n",
+        "stderrTail": "$ turbo run test\n"
       },
       {
         "id": "audit",
         "label": "依赖安全审计",
         "command": "pnpm audit --audit-level=moderate",
-        "startedAt": "2026-07-14T03:56:42.915Z",
-        "finishedAt": "2026-07-14T03:56:44.617Z",
-        "durationMs": 1702,
+        "startedAt": "2026-07-14T06:42:20.748Z",
+        "finishedAt": "2026-07-14T06:42:31.391Z",
+        "durationMs": 10643,
         "status": "failed",
         "exitCode": 1,
-        "stdoutTail": "─────┼────────────────────────────────────────────────────────┤\n│ More info           │ https://github.com/advisories/GHSA-xxjr-mmjv-4gpg      │\n└─────────────────────┴────────────────────────────────────────────────────────┘\n┌─────────────────────┬────────────────────────────────────────────────────────┐\n│ moderate            │ joi has an uncaught RangeError on deeply nested input  │\n│                     │ through recursive `link()` schemas                     │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ Package             │ joi                                                    │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ Vulnerable versions │ <17.13.4                                               │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ Patched versions    │ >=17.13.4                                              │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ Paths               │ apps__mpx>@mpxjs/mpx-cli-service>@vue/cli-shared-      │\n│                     │ utils>joi                                              │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ More info           │ https://github.com/advisories/GHSA-q7cg-457f-vx79      │\n└─────────────────────┴────────────────────────────────────────────────────────┘\n┌─────────────────────┬────────────────────────────────────────────────────────┐\n│ moderate            │ launch-editor: NTLMv2 hash disclosure via UNC path     │\n│                     │ handling on Windows                                    │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ Package             │ vite                                                   │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ Vulnerable versions │ <=6.4.2                                                │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ Patched versions    │ >=6.4.3                                                │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ Paths               │ apps__uni-app-vite-vue3>vite                           │\n│                     │                                                        │\n│                     │ apps__taro-vue3>vite                                   │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ More info           │ https://github.com/advisories/GHSA-v6wh-96g9-6wx3      │\n└─────────────────────┴────────────────────────────────────────────────────────┘\n┌─────────────────────┬────────────────────────────────────────────────────────┐\n│ moderate            │ webpack-dev-server vulnerable to HMR WebSocket         │\n│                     │ interception via permissive user proxies               │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ Package             │ webpack-dev-server                                     │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ Vulnerable versions │ <5.2.5                                                 │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ Patched versions    │ >=5.2.5                                                │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ Paths               │ apps__mpx>@mpxjs/vue-cli-plugin-mpx>webpack-dev-server │\n│                     │                                                        │\n│                     │ apps__mpx>@vue/cli-service>webpack-dev-server          │\n│                     │                                                        │\n│                     │ apps__taro-vue3>@tarojs/taro>webpack-dev-server        │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ More info           │ https://github.com/advisories/GHSA-mx8g-39q3-5c79      │\n└─────────────────────┴────────────────────────────────────────────────────────┘\n┌─────────────────────┬────────────────────────────────────────────────────────┐\n│ moderate            │ http-proxy-middleware `router` host+path substring     │\n│                     │ matching allows Host-header-driven backend routing     │\n│                     │ bypass                                                 │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ Package             │ http-proxy-middleware                                  │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ Vulnerable versions │ >=0.16.0 <2.0.10                                       │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ Patched versions    │ >=2.0.10                                               │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ Paths               │ apps__mpx>@mpxjs/vue-cli-plugin-mpx>webpack-dev-       │\n│                     │ server>http-proxy-middleware                           │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ More info           │ https://github.com/advisories/GHSA-64mm-vxmg-q3vj      │\n└─────────────────────┴────────────────────────────────────────────────────────┘\n┌─────────────────────┬────────────────────────────────────────────────────────┐\n│ moderate            │ JS-YAML: Quadratic-complexity DoS in merge key         │\n│                     │ handling via repeated aliases                          │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ Package             │ js-yaml                                                │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ Vulnerable versions │ <3.15.0                                                │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ Patched versions    │ >=3.15.0                                               │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ Paths               │ .>@changesets/cli>@manypkg/get-packages>read-yaml-     │\n│                     │ file>js-yaml                                           │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ More info           │ https://github.com/advisories/GHSA-h67p-54hq-rp68      │\n└─────────────────────┴────────────────────────────────────────────────────────┘\n┌─────────────────────┬────────────────────────────────────────────────────────┐\n│ moderate            │ JS-YAML: Quadratic-complexity DoS in merge key         │\n│                     │ handling via repeated aliases                          │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ Package             │ js-yaml                                                │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ Vulnerable versions │ >=4.0.0 <=4.1.1                                        │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ Patched versions    │ >=4.2.0                                                │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ Paths               │ .>@changesets/cli>@changesets/read>@changesets/        │\n│                     │ parse>js-yaml                                          │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ More info           │ https://github.com/advisories/GHSA-h67p-54hq-rp68      │\n└─────────────────────┴────────────────────────────────────────────────────────┘\n85 vulnerabilities found\nSeverity: 11 low | 51 moderate | 21 high | 2 critical\n",
+        "stdoutTail": "──────┬────────────────────────────────────────────────────────┐\n│ moderate            │ webpack-dev-server vulnerable to HMR WebSocket         │\n│                     │ interception via permissive user proxies               │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ Package             │ webpack-dev-server                                     │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ Vulnerable versions │ <5.2.5                                                 │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ Patched versions    │ >=5.2.5                                                │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ Paths               │ apps__mpx>@mpxjs/mpx-cli-service>@vue/cli-             │\n│                     │ service>webpack-dev-server                             │\n│                     │                                                        │\n│                     │ apps__mpx>@mpxjs/vue-cli-plugin-mpx>webpack-dev-server │\n│                     │                                                        │\n│                     │ apps__mpx>@vue/cli-service>webpack-dev-server          │\n│                     │                                                        │\n│                     │ ... Found 5 paths, run `pnpm why webpack-dev-server`   │\n│                     │ for more information                                   │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ More info           │ https://github.com/advisories/GHSA-mx8g-39q3-5c79      │\n└─────────────────────┴────────────────────────────────────────────────────────┘\n┌─────────────────────┬────────────────────────────────────────────────────────┐\n│ moderate            │ http-proxy-middleware `router` host+path substring     │\n│                     │ matching allows Host-header-driven backend routing     │\n│                     │ bypass                                                 │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ Package             │ http-proxy-middleware                                  │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ Vulnerable versions │ >=0.16.0 <2.0.10                                       │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ Patched versions    │ >=2.0.10                                               │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ Paths               │ apps__mpx>@mpxjs/mpx-cli-service>@vue/cli-             │\n│                     │ service>webpack-dev-server>http-proxy-middleware       │\n│                     │                                                        │\n│                     │ apps__mpx>@mpxjs/vue-cli-plugin-mpx>webpack-dev-       │\n│                     │ server>http-proxy-middleware                           │\n│                     │                                                        │\n│                     │ apps__mpx>@vue/cli-service>webpack-dev-server>http-    │\n│                     │ proxy-middleware                                       │\n│                     │                                                        │\n│                     │ ... Found 5 paths, run `pnpm why                       │\n│                     │ http-proxy-middleware` for more information            │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ More info           │ https://github.com/advisories/GHSA-64mm-vxmg-q3vj      │\n└─────────────────────┴────────────────────────────────────────────────────────┘\n┌─────────────────────┬────────────────────────────────────────────────────────┐\n│ moderate            │ JS-YAML: Quadratic-complexity DoS in merge key         │\n│                     │ handling via repeated aliases                          │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ Package             │ js-yaml                                                │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ Vulnerable versions │ <3.15.0                                                │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ Patched versions    │ >=3.15.0                                               │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ Paths               │ .>@changesets/cli>@changesets/apply-release-           │\n│                     │ plan>@changesets/config>@changesets/get-dependents-    │\n│                     │ graph>@manypkg/get-packages>read-yaml-file>js-yaml     │\n│                     │                                                        │\n│                     │ .>@changesets/cli>@changesets/apply-release-           │\n│                     │ plan>@changesets/config>@changesets/should-skip-       │\n│                     │ package>@manypkg/get-packages>read-yaml-file>js-yaml   │\n│                     │                                                        │\n│                     │ .>@changesets/cli>@changesets/apply-release-           │\n│                     │ plan>@changesets/config>@manypkg/get-packages>read-    │\n│                     │ yaml-file>js-yaml                                      │\n│                     │                                                        │\n│                     │ ... Found 27 paths, run `pnpm why js-yaml` for more    │\n│                     │ information                                            │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ More info           │ https://github.com/advisories/GHSA-h67p-54hq-rp68      │\n└─────────────────────┴────────────────────────────────────────────────────────┘\n┌─────────────────────┬────────────────────────────────────────────────────────┐\n│ moderate            │ JS-YAML: Quadratic-complexity DoS in merge key         │\n│                     │ handling via repeated aliases                          │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ Package             │ js-yaml                                                │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ Vulnerable versions │ >=4.0.0 <=4.1.1                                        │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ Patched versions    │ >=4.1.2                                                │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ Paths               │ .>@changesets/cli>@changesets/get-release-             │\n│                     │ plan>@changesets/read>@changesets/parse>js-yaml        │\n│                     │                                                        │\n│                     │ .>@changesets/cli>@changesets/read>@changesets/        │\n│                     │ parse>js-yaml                                          │\n│                     │                                                        │\n│                     │ apps__taro-vue3>@tarojs/cli>@tarojs/plugin-            │\n│                     │ doctor>eslint>@eslint/eslintrc>js-yaml                 │\n│                     │                                                        │\n│                     │ ... Found 5 paths, run `pnpm why js-yaml` for more     │\n│                     │ information                                            │\n├─────────────────────┼────────────────────────────────────────────────────────┤\n│ More info           │ https://github.com/advisories/GHSA-h67p-54hq-rp68      │\n└─────────────────────┴────────────────────────────────────────────────────────┘\n63 vulnerabilities found\nSeverity: 8 low | 35 moderate | 18 high | 2 critical\n",
         "stderrTail": ""
       },
       {
         "id": "hbuilderx",
         "label": "HBuilderX uni-app x smoke",
         "command": "pnpm run test:hbuilderx:uni-app-x",
-        "startedAt": "2026-07-14T03:56:44.617Z",
-        "finishedAt": "2026-07-14T03:56:49.120Z",
-        "durationMs": 4503,
+        "startedAt": "2026-07-14T06:42:31.391Z",
+        "finishedAt": "2026-07-14T06:42:34.783Z",
+        "durationMs": 3391,
         "status": "passed",
         "exitCode": 0,
-        "stdoutTail": "\n> benchmarks@0.0.0 test:hbuilderx:uni-app-x /Users/icebreaker/Projects/github/benchmarks\n> pnpm --filter @benchmarks/uni-app-x test:hbuilderx:mp-weixin\n\n\n> @benchmarks/uni-app-x@0.0.0 test:hbuilderx:mp-weixin /Users/icebreaker/Projects/github/benchmarks/apps/uni-app-x\n> hbuilderx project open --path $PWD && uni-launch mp-weixin --compile true --project uni-app-x\n\n项目导入成功\n\n11:56:46.267 HBuilderX Version: 5.15\n11:56:46.311 项目 uni-app-x 开始编译\n11:56:46.999 请注意运行模式下，因日志输出、sourcemap 以及未压缩源码等原因，性能和包体积，均不及发行模式。若要正式发布，请点击发行菜单或使用 cli 发布命令进行发布\n11:56:47.000 编译器版本：5.15（uni-app x）\n11:56:47.000 当前样式隔离策略：1.0。详见：https://doc.dcloud.net.cn/uni-app-x/css/common/style-isolation.html\n11:56:47.000 正在编译中...\n11:56:47.646 uni-app 有新版本发布，请执行 `npx @dcloudio/uvm@latest alpha` 更新，更新日志详见：https://download1.dcloud.net.cn/hbuilderx/changelog/5.21.2026071110-alpha.html\n11:56:47.835 当前工程2个页面，正在编译App...\r11:56:47.843 当前工程2个页面，正在编译App...\r11:56:47.864 当前工程2个页面，正在编译pages/index/index...\r11:56:47.882 当前工程2个页面，正在编译pages/detail/index...\r11:56:47.892 当前工程2个页面，正在编译pages/detail/index...\r11:56:47.899 当前工程2个页面，正在编译pages/index/index... \r11:56:47.899 当前工程2个页面，正在编译pages/index/index... \r11:56:49.094 项目 uni-app-x 编译成功。 前端运行日志，请另行在小程序开发工具的控制台查看。如需在 HBuilderX 查看日志输出，可开启运行日志回显，详情：https://uniapp.dcloud.net.cn/tutorial/run/mp-log.html\n11:56:49.095 ready in 2578ms.\n11:56:49.095 \u001b[31m已停止运行...\u001b[39m\n\n",
-        "stderrTail": ""
+        "stdoutTail": "项目导入成功\n\n14:42:32.164 HBuilderX Version: 5.15\n14:42:32.224 项目 uni-app-x 开始编译\n14:42:32.795 请注意运行模式下，因日志输出、sourcemap 以及未压缩源码等原因，性能和包体积，均不及发行模式。若要正式发布，请点击发行菜单或使用 cli 发布命令进行发布\n14:42:32.796 编译器版本：5.15（uni-app x）\n14:42:32.796 当前样式隔离策略：1.0。详见：https://doc.dcloud.net.cn/uni-app-x/css/common/style-isolation.html\n14:42:32.796 正在编译中...\n14:42:33.361 uni-app 有新版本发布，请执行 `npx @dcloudio/uvm@latest alpha` 更新，更新日志详见：https://download1.dcloud.net.cn/hbuilderx/changelog/5.21.2026071110-alpha.html\n14:42:33.518 当前工程2个页面，正在编译App...\r14:42:33.525 当前工程2个页面，正在编译App...\r14:42:33.547 当前工程2个页面，正在编译pages/index/index...\r14:42:33.570 当前工程2个页面，正在编译pages/detail/index...\r14:42:33.577 当前工程2个页面，正在编译pages/detail/index...\r14:42:33.581 当前工程2个页面，正在编译pages/index/index... \r14:42:33.582 当前工程2个页面，正在编译pages/index/index... \r14:42:34.756 项目 uni-app-x 编译成功。 前端运行日志，请另行在小程序开发工具的控制台查看。如需在 HBuilderX 查看日志输出，可开启运行日志回显，详情：https://uniapp.dcloud.net.cn/tutorial/run/mp-log.html\n14:42:34.757 ready in 2338ms.\n14:42:34.757 \u001b[31m已停止运行...\u001b[39m\n\n",
+        "stderrTail": "$ pnpm --filter @benchmarks/uni-app-x test:hbuilderx:mp-weixin\n$ hbuilderx project open --path $PWD && uni-launch mp-weixin --compile true --project uni-app-x\n"
       },
       {
         "id": "compile",
         "label": "编译基准",
         "command": "pnpm run bench:compile",
-        "startedAt": "2026-07-14T03:56:49.120Z",
-        "finishedAt": "2026-07-14T04:01:15.702Z",
-        "durationMs": 266584,
+        "startedAt": "2026-07-14T06:42:34.783Z",
+        "finishedAt": "2026-07-14T06:47:34.258Z",
+        "durationMs": 299473,
         "status": "passed",
         "exitCode": 0,
-        "stdoutTail": "\n> benchmarks@0.0.0 bench:compile /Users/icebreaker/Projects/github/benchmarks\n> pnpm --filter @benchmarks/runner bench:compile\n\n\n> @benchmarks/runner@0.0.0 bench:compile /Users/icebreaker/Projects/github/benchmarks/packages/benchmark-runner\n> tsx src/compile.ts\n\n",
-        "stderrTail": ""
+        "stdoutTail": "",
+        "stderrTail": "$ pnpm --filter @benchmarks/runner bench:compile\n$ tsx src/compile.ts\n"
       },
       {
         "id": "runtime",
         "label": "运行时 IDE E2E 基准",
         "command": "pnpm run bench:runtime",
-        "startedAt": "2026-07-14T04:01:15.702Z",
-        "finishedAt": "2026-07-14T04:08:03.101Z",
-        "durationMs": 407403,
-        "status": "passed",
-        "exitCode": 0,
-        "stdoutTail": "\n> benchmarks@0.0.0 bench:runtime /Users/icebreaker/Projects/github/benchmarks\n> pnpm --filter @benchmarks/runner bench:runtime\n\n\n> @benchmarks/runner@0.0.0 bench:runtime /Users/icebreaker/Projects/github/benchmarks/packages/benchmark-runner\n> tsx src/runtime.ts\n\n[runtime] weapp-vite + wevu: launch /Users/icebreaker/Projects/github/benchmarks/apps/weapp-vite-wevu\n[runtime] weapp-vite + wevu: iteration 1\n[runtime] weapp-vite + wevu: iteration 2\n[runtime] weapp-vite + wevu: iteration 3\n[runtime] weapp-vite + wevu: iteration 4\n[runtime] weapp-vite + wevu: iteration 5\n[runtime] weapp-vite + wevu: iteration 6\n[runtime] weapp-vite + wevu: iteration 7\n[runtime] weapp-vite + wevu: iteration 8\n[runtime] weapp-vite + wevu: iteration 9\n[runtime] weapp-vite + wevu: iteration 10\n[runtime] weapp-vite + wevu: iteration 11\n[runtime] weapp-vite + wevu: iteration 12\n[runtime] weapp-vite + wevu: iteration 13\n[runtime] weapp-vite + wevu: iteration 14\n[runtime] weapp-vite + wevu: iteration 15\n[runtime] weapp-vite + wevu: iteration 16\n[runtime] weapp-vite + wevu: iteration 17\n[runtime] weapp-vite + wevu: iteration 18\n[runtime] weapp-vite + wevu: iteration 19\n[runtime] weapp-vite + wevu: iteration 20\n[runtime] weapp-vite + wevu performance: launch /Users/icebreaker/Projects/github/benchmarks/apps/weapp-vite-wevu-performance\n[runtime] weapp-vite + wevu performance: iteration 1\n[runtime] weapp-vite + wevu performance: iteration 2\n[runtime] weapp-vite + wevu performance: iteration 3\n[runtime] weapp-vite + wevu performance: iteration 4\n[runtime] weapp-vite + wevu performance: iteration 5\n[runtime] weapp-vite + wevu performance: iteration 6\n[runtime] weapp-vite + wevu performance: iteration 7\n[runtime] weapp-vite + wevu performance: iteration 8\n[runtime] weapp-vite + wevu performance: iteration 9\n[runtime] weapp-vite + wevu performance: iteration 10\n[runtime] weapp-vite + wevu performance: iteration 11\n[runtime] weapp-vite + wevu performance: iteration 12\n[runtime] weapp-vite + wevu performance: iteration 13\n[runtime] weapp-vite + wevu performance: iteration 14\n[runtime] weapp-vite + wevu performance: iteration 15\n[runtime] weapp-vite + wevu performance: iteration 16\n[runtime] weapp-vite + wevu performance: iteration 17\n[runtime] weapp-vite + wevu performance: iteration 18\n[runtime] weapp-vite + wevu performance: iteration 19\n[runtime] weapp-vite + wevu performance: iteration 20\n[runtime] weapp-vite 原生: launch /Users/icebreaker/Projects/github/benchmarks/apps/weapp-vite-native\n[runtime] weapp-vite 原生: iteration 1\n[runtime] weapp-vite 原生: iteration 2\n[runtime] weapp-vite 原生: iteration 3\n[runtime] weapp-vite 原生: iteration 4\n[runtime] weapp-vite 原生: iteration 5\n[runtime] weapp-vite 原生: iteration 6\n[runtime] weapp-vite 原生: iteration 7\n[runtime] weapp-vite 原生: iteration 8\n[runtime] weapp-vite 原生: iteration 9\n[runtime] weapp-vite 原生: iteration 10\n[runtime] weapp-vite 原生: iteration 11\n[runtime] weapp-vite 原生: iteration 12\n[runtime] weapp-vite 原生: iteration 13\n[runtime] weapp-vite 原生: iteration 14\n[runtime] weapp-vite 原生: iteration 15\n[runtime] weapp-vite 原生: iteration 16\n[runtime] weapp-vite 原生: iteration 17\n[runtime] weapp-vite 原生: iteration 18\n[runtime] weapp-vite 原生: iteration 19\n[runtime] weapp-vite 原生: iteration 20\n[runtime] uni-app vite vue3: launch /Users/icebreaker/Projects/github/benchmarks/apps/uni-app-vite-vue3/dist/build/mp-weixin\n[runtime] uni-app vite vue3: iteration 1\n[runtime] uni-app vite vue3: iteration 2\n[runtime] uni-app vite vue3: iteration 3\n[runtime] uni-app vite vue3: iteration 4\n[runtime] uni-app vite vue3: iteration 5\n[runtime] uni-app vite vue3: iteration 6\n[runtime] uni-app vite vue3: iteration 7\n[runtime] uni-app vite vue3: iteration 8\n[runtime] uni-app vite vue3: iteration 9\n[runtime] uni-app vite vue3: iteration 10\n[runtime] uni-app vite vue3: iteration 11\n[runtime] uni-app vite vue3: iteration 12\n[runtime] uni-app vite vue3: iteration 13\n[runtime] uni-app vite vue3: iteration 14\n[runtime] uni-app vite vue3: iteration 15\n[runtime] uni-app vite vue3: iteration 16\n[runtime] uni-app vite vue3: iteration 17\n[runtime] uni-app vite vue3: iteration 18\n[runtime] uni-app vite vue3: iteration 19\n[runtime] uni-app vite vue3: iteration 20\n[runtime] uni-app x: launch /Users/icebreaker/Projects/github/benchmarks/apps/uni-app-x/dist/build/mp-weixin\n[runtime] uni-app x: iteration 1\n[runtime] uni-app x: iteration 2\n[runtime] uni-app x: iteration 3\n[runtime] uni-app x: iteration 4\n[runtime] uni-app x: iteration 5\n[runtime] uni-app x: iteration 6\n[runtime] uni-app x: iteration 7\n[runtime] uni-app x: iteration 8\n[runtime] uni-app x: iteration 9\n[runtime] uni-app x: iteration 10\n[runtime] uni-app x: iteration 11\n[runtime] uni-app x: iteration 12\n[runtime] uni-app x: iteration 13\n[runtime] uni-app x: iteration 14\n[runtime] uni-app x: iteration 15\n[runtime] uni-app x: iteration 16\n[runtime] uni-app x: iteration 17\n[runtime] uni-app x: iteration 18\n[runtime] uni-app x: iteration 19\n[runtime] uni-app x: iteration 20\n[runtime] mpx: launch /Users/icebreaker/Projects/github/benchmarks/apps/mpx/dist/wx\n[runtime] mpx: iteration 1\n[runtime] mpx: iteration 2\n[runtime] mpx: iteration 3\n[runtime] mpx: iteration 4\n[runtime] mpx: iteration 5\n[runtime] mpx: iteration 6\n[runtime] mpx: iteration 7\n[runtime] mpx: iteration 8\n[runtime] mpx: iteration 9\n[runtime] mpx: iteration 10\n[runtime] mpx: iteration 11\n[runtime] mpx: iteration 12\n[runtime] mpx: iteration 13\n[runtime] mpx: iteration 14\n[runtime] mpx: iteration 15\n[runtime] mpx: iteration 16\n[runtime] mpx: iteration 17\n[runtime] mpx: iteration 18\n[runtime] mpx: iteration 19\n[runtime] mpx: iteration 20\n[runtime] taro vue3: launch /Users/icebreaker/Projects/github/benchmarks/apps/taro-vue3\n[runtime] taro vue3: iteration 1\n[runtime] taro vue3: iteration 2\n[runtime] taro vue3: iteration 3\n[runtime] taro vue3: iteration 4\n[runtime] taro vue3: iteration 5\n[runtime] taro vue3: iteration 6\n[runtime] taro vue3: iteration 7\n[runtime] taro vue3: iteration 8\n[runtime] taro vue3: iteration 9\n[runtime] taro vue3: iteration 10\n[runtime] taro vue3: iteration 11\n[runtime] taro vue3: iteration 12\n[runtime] taro vue3: iteration 13\n[runtime] taro vue3: iteration 14\n[runtime] taro vue3: iteration 15\n[runtime] taro vue3: iteration 16\n[runtime] taro vue3: iteration 17\n[runtime] taro vue3: iteration 18\n[runtime] taro vue3: iteration 19\n[runtime] taro vue3: iteration 20\n[runtime] @vue-mini/core: launch /Users/icebreaker/Projects/github/benchmarks/apps/vue-mini-core\n[runtime] @vue-mini/core: build npm\n\n{\n  \"cost\": 1406,\n  \"warnings\": []\n}\n[runtime] @vue-mini/core: iteration 1\n[runtime] @vue-mini/core: iteration 2\n[runtime] @vue-mini/core: iteration 3\n[runtime] @vue-mini/core: iteration 4\n[runtime] @vue-mini/core: iteration 5\n[runtime] @vue-mini/core: iteration 6\n[runtime] @vue-mini/core: iteration 7\n[runtime] @vue-mini/core: iteration 8\n[runtime] @vue-mini/core: iteration 9\n[runtime] @vue-mini/core: iteration 10\n[runtime] @vue-mini/core: iteration 11\n[runtime] @vue-mini/core: iteration 12\n[runtime] @vue-mini/core: iteration 13\n[runtime] @vue-mini/core: iteration 14\n[runtime] @vue-mini/core: iteration 15\n[runtime] @vue-mini/core: iteration 16\n[runtime] @vue-mini/core: iteration 17\n[runtime] @vue-mini/core: iteration 18\n[runtime] @vue-mini/core: iteration 19\n[runtime] @vue-mini/core: iteration 20\n",
-        "stderrTail": "- initialize\n\n✔ IDE server has started, listening on http://127.0.0.1:15820\n- preparing\n- Fetching AppID () permissions\n✔ Using AppID: wxb3d842a4a7e3440d\n✔ build-npm\n"
+        "startedAt": "2026-07-14T06:47:34.258Z",
+        "finishedAt": "2026-07-14T06:58:03.991Z",
+        "durationMs": 629728,
+        "status": "failed",
+        "exitCode": 1,
+        "stdoutTail": "[runtime] weapp-vite + wevu: launch /Users/icebreaker/Projects/github/benchmarks/apps/weapp-vite-wevu\n[runtime] weapp-vite + wevu: iteration 1\n[runtime] weapp-vite + wevu: iteration 2\n[runtime] weapp-vite + wevu: iteration 3\n[runtime] weapp-vite + wevu: iteration 4\n[runtime] weapp-vite + wevu: iteration 5\n[runtime] weapp-vite + wevu: iteration 6\n[runtime] weapp-vite + wevu: iteration 7\n[runtime] weapp-vite + wevu: iteration 8\n[runtime] weapp-vite + wevu: iteration 9\n[runtime] weapp-vite + wevu: iteration 10\n[runtime] weapp-vite + wevu: iteration 11\n[runtime] weapp-vite + wevu: iteration 12\n[runtime] weapp-vite + wevu: iteration 13\n[runtime] weapp-vite + wevu: iteration 14\n[runtime] weapp-vite + wevu: iteration 15\n[runtime] weapp-vite + wevu: iteration 16\n[runtime] weapp-vite + wevu: iteration 17\n[runtime] weapp-vite + wevu: iteration 18\n[runtime] weapp-vite + wevu: iteration 19\n[runtime] weapp-vite + wevu: iteration 20\n[runtime] weapp-vite + wevu performance: launch /Users/icebreaker/Projects/github/benchmarks/apps/weapp-vite-wevu-performance\n[runtime] weapp-vite + wevu performance: iteration 1\n[runtime] weapp-vite + wevu performance: iteration 2\n[runtime] weapp-vite + wevu performance: iteration 3\n[runtime] weapp-vite + wevu performance: iteration 4\n[runtime] weapp-vite + wevu performance: iteration 5\n[runtime] weapp-vite + wevu performance: iteration 6\n[runtime] weapp-vite + wevu performance: iteration 7\n[runtime] weapp-vite + wevu performance: iteration 8\n[runtime] weapp-vite + wevu performance: iteration 9\n[runtime] weapp-vite + wevu performance: iteration 10\n[runtime] weapp-vite + wevu performance: iteration 11\n[runtime] weapp-vite + wevu performance: iteration 12\n[runtime] weapp-vite + wevu performance: iteration 13\n[runtime] weapp-vite + wevu performance: iteration 14\n[runtime] weapp-vite + wevu performance: iteration 15\n[runtime] weapp-vite + wevu performance: iteration 16\n[runtime] weapp-vite + wevu performance: iteration 17\n[runtime] weapp-vite + wevu performance: iteration 18\n[runtime] weapp-vite + wevu performance: iteration 19\n[runtime] weapp-vite + wevu performance: iteration 20\n[runtime] weapp-vite 原生: launch /Users/icebreaker/Projects/github/benchmarks/apps/weapp-vite-native\n[runtime] weapp-vite 原生: iteration 1\n[runtime] weapp-vite 原生: iteration 2\n[runtime] weapp-vite 原生: iteration 3\n[runtime] weapp-vite 原生: iteration 4\n[runtime] weapp-vite 原生: iteration 5\n[runtime] weapp-vite 原生: iteration 6\n[runtime] weapp-vite 原生: iteration 7\n[runtime] weapp-vite 原生: iteration 8\n[runtime] weapp-vite 原生: iteration 9\n[runtime] weapp-vite 原生: iteration 10\n[runtime] weapp-vite 原生: iteration 11\n[runtime] weapp-vite 原生: iteration 12\n[runtime] weapp-vite 原生: iteration 13\n[runtime] weapp-vite 原生: iteration 14\n[runtime] weapp-vite 原生: iteration 15\n[runtime] weapp-vite 原生: iteration 16\n[runtime] weapp-vite 原生: iteration 17\n[runtime] weapp-vite 原生: iteration 18\n[runtime] weapp-vite 原生: iteration 19\n[runtime] weapp-vite 原生: iteration 20\n[runtime] uni-app vite vue3: launch /Users/icebreaker/Projects/github/benchmarks/apps/uni-app-vite-vue3/dist/build/mp-weixin\n[runtime] uni-app vite vue3: iteration 1\n[runtime] uni-app vite vue3: iteration 2\n[runtime] uni-app vite vue3: iteration 3\n[runtime] uni-app vite vue3: iteration 4\n[runtime] uni-app vite vue3: iteration 5\n[runtime] uni-app vite vue3: iteration 6\n[runtime] uni-app vite vue3: iteration 7\n[runtime] uni-app vite vue3: iteration 8\n[runtime] uni-app vite vue3: iteration 9\n[runtime] uni-app vite vue3: iteration 10\n[runtime] uni-app vite vue3: iteration 11\n[runtime] uni-app vite vue3: iteration 12\n[runtime] uni-app vite vue3: iteration 13\n[runtime] uni-app vite vue3: iteration 14\n[runtime] uni-app vite vue3: iteration 15\n[runtime] uni-app vite vue3: iteration 16\n[runtime] uni-app vite vue3: iteration 17\n[runtime] uni-app vite vue3: iteration 18\n[runtime] uni-app vite vue3: iteration 19\n[runtime] uni-app vite vue3: iteration 20\n[runtime] uni-app x: launch /Users/icebreaker/Projects/github/benchmarks/apps/uni-app-x/dist/build/mp-weixin\n[runtime] uni-app x: iteration 1\n[runtime] uni-app x: iteration 2\n[runtime] uni-app x: iteration 3\n[runtime] uni-app x: iteration 4\n[runtime] uni-app x: iteration 5\n[runtime] uni-app x: iteration 6\n[runtime] uni-app x: iteration 7\n[runtime] uni-app x: iteration 8\n[runtime] uni-app x: iteration 9\n[runtime] uni-app x: iteration 10\n[runtime] uni-app x: iteration 11\n[runtime] uni-app x: iteration 12\n[runtime] uni-app x: iteration 13\n[runtime] uni-app x: iteration 14\n[runtime] uni-app x: iteration 15\n[runtime] uni-app x: iteration 16\n[runtime] uni-app x: iteration 17\n[runtime] uni-app x: iteration 18\n[runtime] uni-app x: iteration 19\n[runtime] uni-app x: iteration 20\n[runtime] mpx: launch /Users/icebreaker/Projects/github/benchmarks/apps/mpx/dist/wx\n[runtime] mpx: iteration 1\n[runtime] mpx: iteration 2\n[runtime] mpx: iteration 3\n[runtime] mpx: iteration 4\n[runtime] mpx: iteration 5\n[runtime] mpx: iteration 6\n[runtime] mpx: iteration 7\n[runtime] mpx: iteration 8\n[runtime] mpx: iteration 9\n[runtime] mpx: iteration 10\n[runtime] mpx: iteration 11\n[runtime] mpx: iteration 12\n[runtime] mpx: iteration 13\n[runtime] mpx: iteration 14\n[runtime] mpx: iteration 15\n[runtime] mpx: iteration 16\n[runtime] mpx: iteration 17\n[runtime] mpx: iteration 18\n[runtime] mpx: iteration 19\n[runtime] mpx: iteration 20\n[runtime] taro vue3: launch /Users/icebreaker/Projects/github/benchmarks/apps/taro-vue3\n[runtime] taro vue3: iteration 1\n[runtime] taro vue3: iteration 2\n[runtime] taro vue3: iteration 3\n[runtime] taro vue3: iteration 4\n[runtime] taro vue3: iteration 5\n[runtime] taro vue3: iteration 6\n[runtime] taro vue3: iteration 7\n[runtime] taro vue3: iteration 8\n[runtime] taro vue3: iteration 9\n[runtime] taro vue3: iteration 10\n[runtime] taro vue3: iteration 11\n[runtime] taro vue3: iteration 12\n[runtime] taro vue3: iteration 13\n[runtime] taro vue3: iteration 14\n[runtime] taro vue3: iteration 15\n[runtime] taro vue3: iteration 16\n[runtime] taro vue3: iteration 17\n[runtime] taro vue3: iteration 18\n[runtime] taro vue3: iteration 19\n[runtime] taro vue3: iteration 20\n[runtime] @vue-mini/core: launch /Users/icebreaker/Projects/github/benchmarks/apps/vue-mini-core\n[runtime] @vue-mini/core: build npm\n\n{\n  \"cost\": 1100,\n  \"warnings\": []\n}\n[runtime] @vue-mini/core: launch retry 1/3 failed\n[runtime] @vue-mini/core: launch retry 2/3 failed\n[runtime] @vue-mini/core: launch retry 3/3 failed\n/Users/icebreaker/Projects/github/benchmarks/packages/benchmark-runner:\n[ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL] @benchmarks/runner@0.0.0 bench:runtime: `tsx src/runtime.ts`\nExit status 1\n[ELIFECYCLE] Command failed with exit code 1.\n",
+        "stderrTail": "$ pnpm --filter @benchmarks/runner bench:runtime\n$ tsx src/runtime.ts\n- initialize\n\n✔ IDE server has started, listening on http://127.0.0.1:44321\n- preparing\n- Fetching AppID () permissions\n✔ Using AppID: wxb3d842a4a7e3440d\n✔ build-npm\n"
       },
       {
         "id": "hmr",
         "label": "HMR 基准",
         "command": "pnpm run bench:hmr",
-        "startedAt": "2026-07-14T04:08:03.101Z",
-        "finishedAt": "2026-07-14T04:10:33.309Z",
-        "durationMs": 150209,
+        "startedAt": "2026-07-14T06:58:03.991Z",
+        "finishedAt": "2026-07-14T07:34:29.573Z",
+        "durationMs": 2185565,
         "status": "passed",
         "exitCode": 0,
         "stdoutTail": " / Vue SFC script 区块: iteration 15\n[hmr] uni-app x / Vue SFC script 区块: iteration 16\n[hmr] uni-app x / Vue SFC script 区块: iteration 17\n[hmr] uni-app x / Vue SFC script 区块: iteration 18\n[hmr] uni-app x / Vue SFC script 区块: iteration 19\n[hmr] uni-app x / Vue SFC script 区块: iteration 20\n[hmr] uni-app x / Vue SFC template 区块: iteration 1\n[hmr] uni-app x / Vue SFC template 区块: iteration 2\n[hmr] uni-app x / Vue SFC template 区块: iteration 3\n[hmr] uni-app x / Vue SFC template 区块: iteration 4\n[hmr] uni-app x / Vue SFC template 区块: iteration 5\n[hmr] uni-app x / Vue SFC template 区块: iteration 6\n[hmr] uni-app x / Vue SFC template 区块: iteration 7\n[hmr] uni-app x / Vue SFC template 区块: iteration 8\n[hmr] uni-app x / Vue SFC template 区块: iteration 9\n[hmr] uni-app x / Vue SFC template 区块: iteration 10\n[hmr] uni-app x / Vue SFC template 区块: iteration 11\n[hmr] uni-app x / Vue SFC template 区块: iteration 12\n[hmr] uni-app x / Vue SFC template 区块: iteration 13\n[hmr] uni-app x / Vue SFC template 区块: iteration 14\n[hmr] uni-app x / Vue SFC template 区块: iteration 15\n[hmr] uni-app x / Vue SFC template 区块: iteration 16\n[hmr] uni-app x / Vue SFC template 区块: iteration 17\n[hmr] uni-app x / Vue SFC template 区块: iteration 18\n[hmr] uni-app x / Vue SFC template 区块: iteration 19\n[hmr] uni-app x / Vue SFC template 区块: iteration 20\n[hmr] uni-app x / Vue SFC style 区块: iteration 1\n[hmr] uni-app x / Vue SFC style 区块: iteration 2\n[hmr] uni-app x / Vue SFC style 区块: iteration 3\n[hmr] uni-app x / Vue SFC style 区块: iteration 4\n[hmr] uni-app x / Vue SFC style 区块: iteration 5\n[hmr] uni-app x / Vue SFC style 区块: iteration 6\n[hmr] uni-app x / Vue SFC style 区块: iteration 7\n[hmr] uni-app x / Vue SFC style 区块: iteration 8\n[hmr] uni-app x / Vue SFC style 区块: iteration 9\n[hmr] uni-app x / Vue SFC style 区块: iteration 10\n[hmr] uni-app x / Vue SFC style 区块: iteration 11\n[hmr] uni-app x / Vue SFC style 区块: iteration 12\n[hmr] uni-app x / Vue SFC style 区块: iteration 13\n[hmr] uni-app x / Vue SFC style 区块: iteration 14\n[hmr] uni-app x / Vue SFC style 区块: iteration 15\n[hmr] uni-app x / Vue SFC style 区块: iteration 16\n[hmr] uni-app x / Vue SFC style 区块: iteration 17\n[hmr] uni-app x / Vue SFC style 区块: iteration 18\n[hmr] uni-app x / Vue SFC style 区块: iteration 19\n[hmr] uni-app x / Vue SFC style 区块: iteration 20\n[hmr] taro vue3: launch /Users/icebreaker/Projects/github/benchmarks/apps/taro-vue3\n[hmr] taro vue3 / Vue SFC script 区块: iteration 1\n[hmr] taro vue3 / Vue SFC script 区块: iteration 2\n[hmr] taro vue3 / Vue SFC script 区块: iteration 3\n[hmr] taro vue3 / Vue SFC script 区块: iteration 4\n[hmr] taro vue3 / Vue SFC script 区块: iteration 5\n[hmr] taro vue3 / Vue SFC script 区块: iteration 6\n[hmr] taro vue3 / Vue SFC script 区块: iteration 7\n[hmr] taro vue3 / Vue SFC script 区块: iteration 8\n[hmr] taro vue3 / Vue SFC script 区块: iteration 9\n[hmr] taro vue3 / Vue SFC script 区块: iteration 10\n[hmr] taro vue3 / Vue SFC script 区块: iteration 11\n[hmr] taro vue3 / Vue SFC script 区块: iteration 12\n[hmr] taro vue3 / Vue SFC script 区块: iteration 13\n[hmr] taro vue3 / Vue SFC script 区块: iteration 14\n[hmr] taro vue3 / Vue SFC script 区块: iteration 15\n[hmr] taro vue3 / Vue SFC script 区块: iteration 16\n[hmr] taro vue3 / Vue SFC script 区块: iteration 17\n[hmr] taro vue3 / Vue SFC script 区块: iteration 18\n[hmr] taro vue3 / Vue SFC script 区块: iteration 19\n[hmr] taro vue3 / Vue SFC script 区块: iteration 20\n[hmr] taro vue3 / Vue SFC template 区块: iteration 1\n[hmr] taro vue3 / Vue SFC template 区块: iteration 2\n[hmr] taro vue3 / Vue SFC template 区块: iteration 3\n[hmr] taro vue3 / Vue SFC template 区块: iteration 4\n[hmr] taro vue3 / Vue SFC template 区块: iteration 5\n[hmr] taro vue3 / Vue SFC template 区块: iteration 6\n[hmr] taro vue3 / Vue SFC template 区块: iteration 7\n[hmr] taro vue3 / Vue SFC template 区块: iteration 8\n[hmr] taro vue3 / Vue SFC template 区块: iteration 9\n[hmr] taro vue3 / Vue SFC template 区块: iteration 10\n[hmr] taro vue3 / Vue SFC template 区块: iteration 11\n[hmr] taro vue3 / Vue SFC template 区块: iteration 12\n[hmr] taro vue3 / Vue SFC template 区块: iteration 13\n[hmr] taro vue3 / Vue SFC template 区块: iteration 14\n[hmr] taro vue3 / Vue SFC template 区块: iteration 15\n[hmr] taro vue3 / Vue SFC template 区块: iteration 16\n[hmr] taro vue3 / Vue SFC template 区块: iteration 17\n[hmr] taro vue3 / Vue SFC template 区块: iteration 18\n[hmr] taro vue3 / Vue SFC template 区块: iteration 19\n[hmr] taro vue3 / Vue SFC template 区块: iteration 20\n[hmr] taro vue3 / CSS 文件: iteration 1\n[hmr] taro vue3 / CSS 文件: iteration 2\n[hmr] taro vue3 / CSS 文件: iteration 3\n[hmr] taro vue3 / CSS 文件: iteration 4\n[hmr] taro vue3 / CSS 文件: iteration 5\n[hmr] taro vue3 / CSS 文件: iteration 6\n[hmr] taro vue3 / CSS 文件: iteration 7\n[hmr] taro vue3 / CSS 文件: iteration 8\n[hmr] taro vue3 / CSS 文件: iteration 9\n[hmr] taro vue3 / CSS 文件: iteration 10\n[hmr] taro vue3 / CSS 文件: iteration 11\n[hmr] taro vue3 / CSS 文件: iteration 12\n[hmr] taro vue3 / CSS 文件: iteration 13\n[hmr] taro vue3 / CSS 文件: iteration 14\n[hmr] taro vue3 / CSS 文件: iteration 15\n[hmr] taro vue3 / CSS 文件: iteration 16\n[hmr] taro vue3 / CSS 文件: iteration 17\n[hmr] taro vue3 / CSS 文件: iteration 18\n[hmr] taro vue3 / CSS 文件: iteration 19\n[hmr] taro vue3 / CSS 文件: iteration 20\n[hmr] mpx: launch /Users/icebreaker/Projects/github/benchmarks/apps/mpx\n[hmr] mpx / template 区块: iteration 1\n[hmr] mpx / template 区块: iteration 2\n[hmr] mpx / template 区块: iteration 3\n[hmr] mpx / template 区块: iteration 4\n[hmr] mpx / template 区块: iteration 5\n[hmr] mpx / template 区块: iteration 6\n[hmr] mpx / template 区块: iteration 7\n[hmr] mpx / template 区块: iteration 8\n[hmr] mpx / template 区块: iteration 9\n[hmr] mpx / template 区块: iteration 10\n[hmr] mpx / template 区块: iteration 11\n[hmr] mpx / template 区块: iteration 12\n[hmr] mpx / template 区块: iteration 13\n[hmr] mpx / template 区块: iteration 14\n[hmr] mpx / template 区块: iteration 15\n[hmr] mpx / template 区块: iteration 16\n[hmr] mpx / template 区块: iteration 17\n[hmr] mpx / template 区块: iteration 18\n[hmr] mpx / template 区块: iteration 19\n[hmr] mpx / template 区块: iteration 20\n[hmr] mpx / script 区块: iteration 1\n[hmr] mpx / script 区块: iteration 2\n[hmr] mpx / script 区块: iteration 3\n[hmr] mpx / script 区块: iteration 4\n[hmr] mpx / script 区块: iteration 5\n[hmr] mpx / script 区块: iteration 6\n[hmr] mpx / script 区块: iteration 7\n[hmr] mpx / script 区块: iteration 8\n[hmr] mpx / script 区块: iteration 9\n[hmr] mpx / script 区块: iteration 10\n[hmr] mpx / script 区块: iteration 11\n[hmr] mpx / script 区块: iteration 12\n[hmr] mpx / script 区块: iteration 13\n[hmr] mpx / script 区块: iteration 14\n[hmr] mpx / script 区块: iteration 15\n[hmr] mpx / script 区块: iteration 16\n[hmr] mpx / script 区块: iteration 17\n[hmr] mpx / script 区块: iteration 18\n[hmr] mpx / script 区块: iteration 19\n[hmr] mpx / script 区块: iteration 20\n[hmr] mpx / style 区块: iteration 1\n[hmr] mpx / style 区块: iteration 2\n[hmr] mpx / style 区块: iteration 3\n[hmr] mpx / style 区块: iteration 4\n[hmr] mpx / style 区块: iteration 5\n[hmr] mpx / style 区块: iteration 6\n[hmr] mpx / style 区块: iteration 7\n[hmr] mpx / style 区块: iteration 8\n[hmr] mpx / style 区块: iteration 9\n[hmr] mpx / style 区块: iteration 10\n[hmr] mpx / style 区块: iteration 11\n[hmr] mpx / style 区块: iteration 12\n[hmr] mpx / style 区块: iteration 13\n[hmr] mpx / style 区块: iteration 14\n[hmr] mpx / style 区块: iteration 15\n[hmr] mpx / style 区块: iteration 16\n[hmr] mpx / style 区块: iteration 17\n[hmr] mpx / style 区块: iteration 18\n[hmr] mpx / style 区块: iteration 19\n[hmr] mpx / style 区块: iteration 20\n[hmr] mpx / 页面配置: iteration 1\n[hmr] mpx / 页面配置: iteration 2\n[hmr] mpx / 页面配置: iteration 3\n[hmr] mpx / 页面配置: iteration 4\n[hmr] mpx / 页面配置: iteration 5\n[hmr] mpx / 页面配置: iteration 6\n[hmr] mpx / 页面配置: iteration 7\n[hmr] mpx / 页面配置: iteration 8\n[hmr] mpx / 页面配置: iteration 9\n[hmr] mpx / 页面配置: iteration 10\n[hmr] mpx / 页面配置: iteration 11\n[hmr] mpx / 页面配置: iteration 12\n[hmr] mpx / 页面配置: iteration 13\n[hmr] mpx / 页面配置: iteration 14\n[hmr] mpx / 页面配置: iteration 15\n[hmr] mpx / 页面配置: iteration 16\n[hmr] mpx / 页面配置: iteration 17\n[hmr] mpx / 页面配置: iteration 18\n[hmr] mpx / 页面配置: iteration 19\n[hmr] mpx / 页面配置: iteration 20\n",
-        "stderrTail": ""
+        "stderrTail": "$ pnpm --filter @benchmarks/runner bench:hmr\n$ tsx src/hmr.ts\n"
       },
       {
         "id": "size",
         "label": "wevu 体积分析",
         "command": "pnpm run bench:size:wevu",
-        "startedAt": "2026-07-14T04:10:33.310Z",
-        "finishedAt": "2026-07-14T04:10:37.425Z",
-        "durationMs": 4116,
+        "startedAt": "2026-07-14T07:34:29.573Z",
+        "finishedAt": "2026-07-14T07:34:33.907Z",
+        "durationMs": 4333,
         "status": "passed",
         "exitCode": 0,
-        "stdoutTail": "\n> benchmarks@0.0.0 bench:size:wevu /Users/icebreaker/Projects/github/benchmarks\n> pnpm --filter @benchmarks/weapp-vite-wevu --filter @benchmarks/weapp-vite-wevu-performance --filter @benchmarks/weapp-vite-native --filter @benchmarks/uni-app-vite-vue3 run build && pnpm --filter @benchmarks/runner bench:size:wevu\n\nScope: 4 of 10 workspace projects\napps/weapp-vite-wevu build$ wv build\napps/weapp-vite-wevu-performance build$ wv build\napps/weapp-vite-native build$ wv build\napps/uni-app-vite-vue3 build$ pnpm run build:mp-weixin\napps/uni-app-vite-vue3 build: > @benchmarks/uni-app-vite-vue3@0.0.0 build:mp-weixin /Users/icebreaker/Projects/github/benchmarks/apps/uni-app-vite-vue3\napps/uni-app-vite-vue3 build: > uni build -p mp-weixin\napps/uni-app-vite-vue3 build: Compiler version: 5.15（vue3）\napps/uni-app-vite-vue3 build: Compiling...\napps/uni-app-vite-vue3 build: 已开启 uni统计 2.0\napps/weapp-vite-native build: [info] 目标平台：weapp\napps/weapp-vite-native build: [success] 已清空 dist/ 目录\napps/weapp-vite-wevu-performance build: [info] 目标平台：weapp\napps/weapp-vite-wevu build: [info] 目标平台：weapp\napps/weapp-vite-wevu-performance build: [success] 已清空 dist/ 目录\napps/weapp-vite-wevu build: [success] 已清空 dist/ 目录\napps/weapp-vite-native build: [success] 小程序构建完成，耗时：144ms\napps/weapp-vite-native build: [success] 主包/分包体积报告：\napps/weapp-vite-native build: [info] 主包：8.67 KB\napps/weapp-vite-native build: [success] 开发服务已就绪：\napps/weapp-vite-native build: [info] 小程序：执行 pnpm run open，或手动导入 project.config.json\napps/weapp-vite-native build: [info] UI：未启用\napps/weapp-vite-native build: [info] 提示：手动打开对应平台开发者工具，导入根目录（project.config.json 文件所在目录）\napps/weapp-vite-native build: Done\napps/weapp-vite-wevu build: [success] 小程序构建完成，耗时：260ms\napps/weapp-vite-wevu build: [success] 主包/分包体积报告：\napps/weapp-vite-wevu build: [info] 主包：199 KB\napps/weapp-vite-wevu build: [success] 开发服务已就绪：\napps/weapp-vite-wevu build: [info] 小程序：执行 pnpm run open，或手动导入 project.config.json\napps/weapp-vite-wevu build: [info] UI：未启用\napps/weapp-vite-wevu build: [info] 提示：手动打开对应平台开发者工具，导入根目录（project.config.json 文件所在目录）\napps/weapp-vite-wevu-performance build: [success] 小程序构建完成，耗时：263ms\napps/weapp-vite-wevu-performance build: [success] 主包/分包体积报告：\napps/weapp-vite-wevu-performance build: [info] 主包：200 KB\napps/weapp-vite-wevu-performance build: [success] 开发服务已就绪：\napps/weapp-vite-wevu-performance build: [info] 小程序：执行 pnpm run open，或手动导入 project.config.json\napps/weapp-vite-wevu-performance build: [info] UI：未启用\napps/weapp-vite-wevu-performance build: [info] 提示：手动打开对应平台开发者工具，导入根目录（project.config.json 文件所在目录）\napps/weapp-vite-wevu build: Done\napps/weapp-vite-wevu-performance build: Done\napps/uni-app-vite-vue3 build: DONE  Build complete.\napps/uni-app-vite-vue3 build: Run method: open Weixin Mini Program Devtools, import dist/build/mp-weixin run.\napps/uni-app-vite-vue3 build: Done\n\n> @benchmarks/runner@0.0.0 bench:size:wevu /Users/icebreaker/Projects/github/benchmarks/packages/benchmark-runner\n> tsx src/size/wevu.ts\n\n",
-        "stderrTail": ""
+        "stdoutTail": "Scope: 4 of 10 workspace projects\napps/weapp-vite-wevu-performance build$ wv build\napps/weapp-vite-native build$ wv build\napps/uni-app-vite-vue3 build$ pnpm run build:mp-weixin\napps/weapp-vite-wevu build$ wv build\napps/uni-app-vite-vue3 build: $ uni build -p mp-weixin\napps/uni-app-vite-vue3 build: Compiler version: 5.15（vue3）\napps/uni-app-vite-vue3 build: Compiling...\napps/uni-app-vite-vue3 build: 已开启 uni统计 2.0\napps/weapp-vite-native build: [info] 目标平台：weapp\napps/weapp-vite-wevu-performance build: [info] 目标平台：weapp\napps/weapp-vite-wevu build: [info] 目标平台：weapp\napps/weapp-vite-native build: [success] 已清空 dist/ 目录\napps/weapp-vite-wevu build: [success] 已清空 dist/ 目录\napps/weapp-vite-wevu-performance build: [success] 已清空 dist/ 目录\napps/weapp-vite-native build: [success] 小程序构建完成，耗时：136ms\napps/weapp-vite-native build: [success] 主包/分包体积报告：\napps/weapp-vite-native build: [info] 主包：8.67 KB\napps/weapp-vite-native build: [success] 开发服务已就绪：\napps/weapp-vite-native build: [info] 小程序：执行 pnpm run open，或手动导入 project.config.json\napps/weapp-vite-native build: [info] UI：未启用\napps/weapp-vite-native build: [info] 提示：手动打开对应平台开发者工具，导入根目录（project.config.json 文件所在目录）\napps/weapp-vite-native build: Done\napps/weapp-vite-wevu build: [success] 小程序构建完成，耗时：239ms\napps/weapp-vite-wevu build: [success] 主包/分包体积报告：\napps/weapp-vite-wevu build: [info] 主包：199 KB\napps/weapp-vite-wevu build: [success] 开发服务已就绪：\napps/weapp-vite-wevu build: [info] 小程序：执行 pnpm run open，或手动导入 project.config.json\napps/weapp-vite-wevu build: [info] UI：未启用\napps/weapp-vite-wevu build: [info] 提示：手动打开对应平台开发者工具，导入根目录（project.config.json 文件所在目录）\napps/weapp-vite-wevu-performance build: [success] 小程序构建完成，耗时：242ms\napps/weapp-vite-wevu-performance build: [success] 主包/分包体积报告：\napps/weapp-vite-wevu-performance build: [info] 主包：200 KB\napps/weapp-vite-wevu-performance build: [success] 开发服务已就绪：\napps/weapp-vite-wevu-performance build: [info] 小程序：执行 pnpm run open，或手动导入 project.config.json\napps/weapp-vite-wevu-performance build: [info] UI：未启用\napps/weapp-vite-wevu-performance build: [info] 提示：手动打开对应平台开发者工具，导入根目录（project.config.json 文件所在目录）\napps/weapp-vite-wevu build: Done\napps/weapp-vite-wevu-performance build: Done\napps/uni-app-vite-vue3 build: DONE  Build complete.\napps/uni-app-vite-vue3 build: Run method: open Weixin Mini Program Devtools, import dist/build/mp-weixin run.\napps/uni-app-vite-vue3 build: Done\n",
+        "stderrTail": "$ pnpm --filter @benchmarks/weapp-vite-wevu --filter @benchmarks/weapp-vite-wevu-performance --filter @benchmarks/weapp-vite-native --filter @benchmarks/uni-app-vite-vue3 run build && pnpm --filter @benchmarks/runner bench:size:wevu\n$ tsx src/size/wevu.ts\n"
       }
     ]
   },
   "compile": {
-    "generatedAt": "2026-07-14T04:01:15.475Z",
+    "generatedAt": "2026-07-14T06:47:33.966Z",
     "iterations": 20,
     "environment": {
       "machineId": "m4-max-128gb",
@@ -180,8 +180,8 @@
       "cpuCores": 16,
       "memoryGB": 128,
       "node": "v24.18.0",
-      "pnpm": "10.33.4",
-      "gitCommit": "685851c2b7741651934192328126d3cd25d7fade",
+      "pnpm": "11.13.0",
+      "gitCommit": "026fe258b63b15a9b9d51c4635348ffeebc3dc41",
       "weappViteSubmodule": "26510329efcf36cbf934e566ebbc80f069151a22"
     },
     "projects": [
@@ -192,14 +192,14 @@
         "expectedSamples": 20,
         "complete": true,
         "values": {
-          "buildMs": 1096.3,
+          "buildMs": 1065.1,
           "outputBytes": 203663,
           "jsBytes": 201209,
           "templateBytes": 1173,
           "styleBytes": 836
         },
         "previousValues": {
-          "buildMs": 1006,
+          "buildMs": 1075.3,
           "outputBytes": 203663,
           "jsBytes": 201209,
           "templateBytes": 1173,
@@ -213,14 +213,14 @@
         "expectedSamples": 20,
         "complete": true,
         "values": {
-          "buildMs": 1035.3,
+          "buildMs": 1067.6,
           "outputBytes": 204644,
           "jsBytes": 202154,
           "templateBytes": 1185,
           "styleBytes": 836
         },
         "previousValues": {
-          "buildMs": 1009.1,
+          "buildMs": 1100,
           "outputBytes": 204644,
           "jsBytes": 202154,
           "templateBytes": 1185,
@@ -234,14 +234,14 @@
         "expectedSamples": 20,
         "complete": true,
         "values": {
-          "buildMs": 925.5,
+          "buildMs": 936.2,
           "outputBytes": 8883,
           "jsBytes": 6477,
           "templateBytes": 1181,
           "styleBytes": 776
         },
         "previousValues": {
-          "buildMs": 913.2,
+          "buildMs": 999.3,
           "outputBytes": 8883,
           "jsBytes": 6477,
           "templateBytes": 1181,
@@ -255,14 +255,14 @@
         "expectedSamples": 20,
         "complete": true,
         "values": {
-          "buildMs": 2611.3,
+          "buildMs": 2562.7,
           "outputBytes": 135478,
           "jsBytes": 132776,
           "templateBytes": 896,
           "styleBytes": 783
         },
         "previousValues": {
-          "buildMs": 2449.6,
+          "buildMs": 2544.4,
           "outputBytes": 135478,
           "jsBytes": 132776,
           "templateBytes": 896,
@@ -276,14 +276,14 @@
         "expectedSamples": 20,
         "complete": true,
         "values": {
-          "buildMs": 3052.3,
+          "buildMs": 3169.2,
           "outputBytes": 102273,
           "jsBytes": 93398,
           "templateBytes": 1490,
           "styleBytes": 3923
         },
         "previousValues": {
-          "buildMs": 2804.1,
+          "buildMs": 2890.5,
           "outputBytes": 102273,
           "jsBytes": 93398,
           "templateBytes": 1490,
@@ -297,14 +297,14 @@
         "expectedSamples": 20,
         "complete": true,
         "values": {
-          "buildMs": 1725.4,
-          "outputBytes": 1164882,
-          "jsBytes": 208692,
+          "buildMs": 2041.8,
+          "outputBytes": 1164888,
+          "jsBytes": 208698,
           "templateBytes": 977,
           "styleBytes": 677
         },
         "previousValues": {
-          "buildMs": 1803.2,
+          "buildMs": 1956,
           "outputBytes": 1164888,
           "jsBytes": 208698,
           "templateBytes": 977,
@@ -318,14 +318,14 @@
         "expectedSamples": 20,
         "complete": true,
         "values": {
-          "buildMs": 2834.9,
+          "buildMs": 4075.1,
           "outputBytes": 226763,
           "jsBytes": 168554,
           "templateBytes": 55839,
           "styleBytes": 621
         },
         "previousValues": {
-          "buildMs": 3516,
+          "buildMs": 3799.8,
           "outputBytes": 226763,
           "jsBytes": 168554,
           "templateBytes": 55839,
@@ -335,7 +335,7 @@
     ]
   },
   "runtime": {
-    "generatedAt": "2026-07-14T04:08:03.065Z",
+    "generatedAt": "2026-07-14T06:39:51.614Z",
     "iterations": 20,
     "environment": {
       "machineId": "m4-max-128gb",
@@ -346,9 +346,9 @@
       "cpuCores": 16,
       "memoryGB": 128,
       "node": "v24.18.0",
-      "pnpm": "10.33.4",
+      "pnpm": "11.13.0",
       "wechatDevtools": "/Applications/wechatwebdevtools.app/Contents/MacOS/cli",
-      "gitCommit": "685851c2b7741651934192328126d3cd25d7fade",
+      "gitCommit": "026fe258b63b15a9b9d51c4635348ffeebc3dc41",
       "weappViteSubmodule": "26510329efcf36cbf934e566ebbc80f069151a22"
     },
     "projects": [
@@ -359,6 +359,17 @@
         "expectedSamples": 20,
         "complete": true,
         "values": {
+          "initial-render": 10.8,
+          "append-batch": 22.2,
+          "update-every-5th": 51.5,
+          "sort-score-desc": 36,
+          "filter-active-high-score": 24.1,
+          "group-aggregate-render": 27.2,
+          "window-slice-middle": 25.2,
+          "replace-dataset": 14.1,
+          "totalMs": 211.1
+        },
+        "previousValues": {
           "initial-render": 10.5,
           "append-batch": 22.3,
           "update-every-5th": 49.1,
@@ -368,17 +379,6 @@
           "window-slice-middle": 24.3,
           "replace-dataset": 13.9,
           "totalMs": 201.6
-        },
-        "previousValues": {
-          "initial-render": 11,
-          "append-batch": 23.8,
-          "update-every-5th": 54.4,
-          "sort-score-desc": 33.2,
-          "filter-active-high-score": 25.5,
-          "group-aggregate-render": 27.9,
-          "window-slice-middle": 24.6,
-          "replace-dataset": 14.5,
-          "totalMs": 214.9
         }
       },
       {
@@ -388,6 +388,17 @@
         "expectedSamples": 20,
         "complete": true,
         "values": {
+          "initial-render": 7.2,
+          "append-batch": 16.8,
+          "update-every-5th": 40.9,
+          "sort-score-desc": 29.2,
+          "filter-active-high-score": 20,
+          "group-aggregate-render": 17.7,
+          "window-slice-middle": 29.8,
+          "replace-dataset": 11,
+          "totalMs": 172.6
+        },
+        "previousValues": {
           "initial-render": 7.5,
           "append-batch": 16.6,
           "update-every-5th": 40.5,
@@ -397,17 +408,6 @@
           "window-slice-middle": 29.6,
           "replace-dataset": 11.4,
           "totalMs": 172.9
-        },
-        "previousValues": {
-          "initial-render": 7.4,
-          "append-batch": 16.5,
-          "update-every-5th": 40.4,
-          "sort-score-desc": 30,
-          "filter-active-high-score": 19.2,
-          "group-aggregate-render": 17.4,
-          "window-slice-middle": 30.7,
-          "replace-dataset": 11.6,
-          "totalMs": 173.2
         }
       },
       {
@@ -417,6 +417,17 @@
         "expectedSamples": 20,
         "complete": true,
         "values": {
+          "initial-render": 192.4,
+          "append-batch": 151.3,
+          "update-every-5th": 142.4,
+          "sort-score-desc": 534.1,
+          "filter-active-high-score": 709,
+          "group-aggregate-render": 130.8,
+          "window-slice-middle": 274.6,
+          "replace-dataset": 598,
+          "totalMs": 2732.6
+        },
+        "previousValues": {
           "initial-render": 152.1,
           "append-batch": 130.3,
           "update-every-5th": 142.6,
@@ -426,17 +437,6 @@
           "window-slice-middle": 150.2,
           "replace-dataset": 347.1,
           "totalMs": 1976.1
-        },
-        "previousValues": {
-          "initial-render": 144.4,
-          "append-batch": 115.9,
-          "update-every-5th": 126.9,
-          "sort-score-desc": 266.4,
-          "filter-active-high-score": 348.7,
-          "group-aggregate-render": 112.7,
-          "window-slice-middle": 117.5,
-          "replace-dataset": 237.4,
-          "totalMs": 1469.9
         }
       },
       {
@@ -446,6 +446,17 @@
         "expectedSamples": 20,
         "complete": true,
         "values": {
+          "initial-render": 15.4,
+          "append-batch": 14.5,
+          "update-every-5th": 36.7,
+          "sort-score-desc": 81.4,
+          "filter-active-high-score": 29.2,
+          "group-aggregate-render": 25.1,
+          "window-slice-middle": 19.8,
+          "replace-dataset": 23,
+          "totalMs": 245.1
+        },
+        "previousValues": {
           "initial-render": 13.5,
           "append-batch": 13.5,
           "update-every-5th": 34.2,
@@ -455,17 +466,6 @@
           "window-slice-middle": 16.2,
           "replace-dataset": 20.9,
           "totalMs": 216.7
-        },
-        "previousValues": {
-          "initial-render": 13.2,
-          "append-batch": 13.4,
-          "update-every-5th": 32.4,
-          "sort-score-desc": 71.7,
-          "filter-active-high-score": 25,
-          "group-aggregate-render": 20.9,
-          "window-slice-middle": 16.3,
-          "replace-dataset": 19.7,
-          "totalMs": 212.6
         }
       },
       {
@@ -475,6 +475,17 @@
         "expectedSamples": 20,
         "complete": true,
         "values": {
+          "initial-render": 14.4,
+          "append-batch": 13.5,
+          "update-every-5th": 31.7,
+          "sort-score-desc": 75.4,
+          "filter-active-high-score": 25.9,
+          "group-aggregate-render": 22.1,
+          "window-slice-middle": 17.6,
+          "replace-dataset": 21,
+          "totalMs": 221.6
+        },
+        "previousValues": {
           "initial-render": 13.5,
           "append-batch": 13.1,
           "update-every-5th": 31,
@@ -484,17 +495,6 @@
           "window-slice-middle": 16.6,
           "replace-dataset": 20.5,
           "totalMs": 210.7
-        },
-        "previousValues": {
-          "initial-render": 13.7,
-          "append-batch": 13.2,
-          "update-every-5th": 31.5,
-          "sort-score-desc": 71.3,
-          "filter-active-high-score": 24.6,
-          "group-aggregate-render": 22.2,
-          "window-slice-middle": 17.2,
-          "replace-dataset": 21.6,
-          "totalMs": 215.3
         }
       },
       {
@@ -504,6 +504,17 @@
         "expectedSamples": 20,
         "complete": true,
         "values": {
+          "initial-render": 259.2,
+          "append-batch": 140,
+          "update-every-5th": 145.4,
+          "sort-score-desc": 571.9,
+          "filter-active-high-score": 681.6,
+          "group-aggregate-render": 77.2,
+          "window-slice-middle": 254.7,
+          "replace-dataset": 570.9,
+          "totalMs": 2700.9
+        },
+        "previousValues": {
           "initial-render": 260.7,
           "append-batch": 135.7,
           "update-every-5th": 140.2,
@@ -513,17 +524,6 @@
           "window-slice-middle": 237.9,
           "replace-dataset": 527.6,
           "totalMs": 2352
-        },
-        "previousValues": {
-          "initial-render": 252.7,
-          "append-batch": 111.7,
-          "update-every-5th": 121.3,
-          "sort-score-desc": 261.6,
-          "filter-active-high-score": 320,
-          "group-aggregate-render": 68.3,
-          "window-slice-middle": 102.8,
-          "replace-dataset": 221.9,
-          "totalMs": 1460.3
         }
       },
       {
@@ -533,6 +533,17 @@
         "expectedSamples": 20,
         "complete": true,
         "values": {
+          "initial-render": 69.4,
+          "append-batch": 80.3,
+          "update-every-5th": 197.7,
+          "sort-score-desc": 700.7,
+          "filter-active-high-score": 365.9,
+          "group-aggregate-render": 21.1,
+          "window-slice-middle": 97.8,
+          "replace-dataset": 132.9,
+          "totalMs": 1665.8
+        },
+        "previousValues": {
           "initial-render": 68.8,
           "append-batch": 76.7,
           "update-every-5th": 190.2,
@@ -542,17 +553,6 @@
           "window-slice-middle": 92.6,
           "replace-dataset": 130.3,
           "totalMs": 1633.6
-        },
-        "previousValues": {
-          "initial-render": 76.6,
-          "append-batch": 86.9,
-          "update-every-5th": 217.4,
-          "sort-score-desc": 749.1,
-          "filter-active-high-score": 377.4,
-          "group-aggregate-render": 21.8,
-          "window-slice-middle": 96.3,
-          "replace-dataset": 134.4,
-          "totalMs": 1759.9
         }
       },
       {
@@ -562,6 +562,17 @@
         "expectedSamples": 20,
         "complete": true,
         "values": {
+          "initial-render": 29.6,
+          "append-batch": 61.6,
+          "update-every-5th": 117.8,
+          "sort-score-desc": 63.4,
+          "filter-active-high-score": 47.8,
+          "group-aggregate-render": 16.4,
+          "window-slice-middle": 24.1,
+          "replace-dataset": 39.5,
+          "totalMs": 400.2
+        },
+        "previousValues": {
           "initial-render": 26.4,
           "append-batch": 56.8,
           "update-every-5th": 101.4,
@@ -571,23 +582,12 @@
           "window-slice-middle": 21.5,
           "replace-dataset": 34.5,
           "totalMs": 350
-        },
-        "previousValues": {
-          "initial-render": 27.1,
-          "append-batch": 55.8,
-          "update-every-5th": 103.8,
-          "sort-score-desc": 56.8,
-          "filter-active-high-score": 42.8,
-          "group-aggregate-render": 14.6,
-          "window-slice-middle": 22,
-          "replace-dataset": 34.7,
-          "totalMs": 357.6
         }
       }
     ]
   },
   "hmr": {
-    "generatedAt": "2026-07-14T04:10:30.346Z",
+    "generatedAt": "2026-07-14T07:34:26.614Z",
     "iterations": 20,
     "environment": {
       "machineId": "m4-max-128gb",
@@ -598,8 +598,8 @@
       "cpuCores": 16,
       "memoryGB": 128,
       "node": "v24.18.0",
-      "pnpm": "10.33.4",
-      "gitCommit": "685851c2b7741651934192328126d3cd25d7fade",
+      "pnpm": "11.13.0",
+      "gitCommit": "026fe258b63b15a9b9d51c4635348ffeebc3dc41",
       "weappViteSubmodule": "26510329efcf36cbf934e566ebbc80f069151a22"
     },
     "projects": [
@@ -610,11 +610,11 @@
         "expectedSamples": 80,
         "complete": true,
         "values": {
-          "averageMs": 85.2,
+          "averageMs": 831.8,
           "scenarioCount": 4
         },
         "previousValues": {
-          "averageMs": 170.3,
+          "averageMs": 85.2,
           "scenarioCount": 4
         }
       },
@@ -625,11 +625,11 @@
         "expectedSamples": 80,
         "complete": true,
         "values": {
-          "averageMs": 85.2,
+          "averageMs": 549.8,
           "scenarioCount": 4
         },
         "previousValues": {
-          "averageMs": 190.9,
+          "averageMs": 85.2,
           "scenarioCount": 4
         }
       },
@@ -640,11 +640,11 @@
         "expectedSamples": 80,
         "complete": true,
         "values": {
-          "averageMs": 46.6,
+          "averageMs": 532,
           "scenarioCount": 4
         },
         "previousValues": {
-          "averageMs": 64.3,
+          "averageMs": 46.6,
           "scenarioCount": 4
         }
       },
@@ -655,11 +655,11 @@
         "expectedSamples": 60,
         "complete": true,
         "values": {
-          "averageMs": 231.8,
+          "averageMs": 1261.6,
           "scenarioCount": 3
         },
         "previousValues": {
-          "averageMs": 283.4,
+          "averageMs": 231.8,
           "scenarioCount": 3
         }
       },
@@ -670,11 +670,11 @@
         "expectedSamples": 60,
         "complete": true,
         "values": {
-          "averageMs": 251.8,
+          "averageMs": 1002.3,
           "scenarioCount": 3
         },
         "previousValues": {
-          "averageMs": 315.3,
+          "averageMs": 251.8,
           "scenarioCount": 3
         }
       },
@@ -685,11 +685,11 @@
         "expectedSamples": 60,
         "complete": true,
         "values": {
-          "averageMs": 310.6,
+          "averageMs": 943.1,
           "scenarioCount": 3
         },
         "previousValues": {
-          "averageMs": 332,
+          "averageMs": 310.6,
           "scenarioCount": 3
         }
       },
@@ -700,11 +700,11 @@
         "expectedSamples": 80,
         "complete": true,
         "values": {
-          "averageMs": 150.5,
+          "averageMs": 422.8,
           "scenarioCount": 4
         },
         "previousValues": {
-          "averageMs": 164.2,
+          "averageMs": 150.5,
           "scenarioCount": 4
         }
       }
@@ -718,7 +718,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 98.9
+        "valueMs": 521.5
       },
       {
         "id": "wevu-vue-template",
@@ -728,7 +728,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 82.8
+        "valueMs": 1794.6
       },
       {
         "id": "wevu-vue-style",
@@ -738,7 +738,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 75.4
+        "valueMs": 484.5
       },
       {
         "id": "wevu-vue-page-json",
@@ -748,7 +748,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 83.7
+        "valueMs": 526.5
       },
       {
         "id": "wevu-performance-vue-script",
@@ -758,7 +758,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 93.2
+        "valueMs": 492.8
       },
       {
         "id": "wevu-performance-vue-template",
@@ -768,7 +768,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 82.9
+        "valueMs": 507.1
       },
       {
         "id": "wevu-performance-vue-style",
@@ -778,7 +778,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 75.2
+        "valueMs": 531.6
       },
       {
         "id": "wevu-performance-vue-page-json",
@@ -788,7 +788,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 89.6
+        "valueMs": 667.7
       },
       {
         "id": "native-js",
@@ -798,7 +798,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 50.6
+        "valueMs": 544.4
       },
       {
         "id": "native-wxml",
@@ -808,7 +808,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 44.1
+        "valueMs": 396.6
       },
       {
         "id": "native-wxss",
@@ -818,7 +818,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 46.1
+        "valueMs": 430.9
       },
       {
         "id": "native-json",
@@ -828,7 +828,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 45.5
+        "valueMs": 756
       },
       {
         "id": "uni-app-vite-vue3-script",
@@ -838,7 +838,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 278.8
+        "valueMs": 1827.8
       },
       {
         "id": "uni-app-vite-vue3-template",
@@ -848,7 +848,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 207.4
+        "valueMs": 1145.2
       },
       {
         "id": "uni-app-vite-vue3-style",
@@ -858,7 +858,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 209.1
+        "valueMs": 811.8
       },
       {
         "id": "uni-app-x-script",
@@ -868,7 +868,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 351.4
+        "valueMs": 1362.6
       },
       {
         "id": "uni-app-x-template",
@@ -878,7 +878,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 202.9
+        "valueMs": 722.1
       },
       {
         "id": "uni-app-x-style",
@@ -888,7 +888,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 201.1
+        "valueMs": 922.2
       },
       {
         "id": "taro-vue3-script",
@@ -898,7 +898,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 312.5
+        "valueMs": 905
       },
       {
         "id": "taro-vue3-template",
@@ -908,7 +908,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 314.8
+        "valueMs": 979.7
       },
       {
         "id": "taro-vue3-style",
@@ -918,7 +918,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 304.6
+        "valueMs": 944.7
       },
       {
         "id": "mpx-template",
@@ -928,7 +928,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 150.9
+        "valueMs": 576.3
       },
       {
         "id": "mpx-script",
@@ -938,7 +938,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 159.3
+        "valueMs": 415.3
       },
       {
         "id": "mpx-style",
@@ -948,7 +948,7 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 147.7
+        "valueMs": 387.9
       },
       {
         "id": "mpx-page-json",
@@ -958,20 +958,20 @@
         "sampleCount": 20,
         "expectedSamples": 20,
         "complete": true,
-        "valueMs": 144.2
+        "valueMs": 311.5
       }
     ]
   },
   "size": {
-    "generatedAt": "2026-07-14T04:10:37.178Z",
+    "generatedAt": "2026-07-14T07:34:33.607Z",
     "toolchain": {
       "toolchainId": "weapp-vite-2651032-node24",
       "toolchainLabel": "weapp-vite 2651032 / Node 24.18.0",
       "os": "macOS 26.5.1 (25F80)",
       "arch": "darwin/arm64",
       "node": "v24.18.0",
-      "pnpm": "10.33.4",
-      "gitCommit": "685851c2b7741651934192328126d3cd25d7fade",
+      "pnpm": "11.13.0",
+      "gitCommit": "026fe258b63b15a9b9d51c4635348ffeebc3dc41",
       "weappViteSubmodule": "26510329efcf36cbf934e566ebbc80f069151a22",
       "packages": {
         "weapp-vite": "6.18.3",
@@ -992,6 +992,13 @@
           "brotliBytes": 43414,
           "jsBytes": 201209,
           "vendorJsBytes": 193974
+        },
+        "previousValues": {
+          "bytes": 203663,
+          "gzipBytes": 51315,
+          "brotliBytes": 43414,
+          "jsBytes": 201209,
+          "vendorJsBytes": 193974
         }
       },
       {
@@ -1001,6 +1008,13 @@
         "expectedSamples": 1,
         "complete": true,
         "values": {
+          "bytes": 204644,
+          "gzipBytes": 51699,
+          "brotliBytes": 43689,
+          "jsBytes": 202154,
+          "vendorJsBytes": 193974
+        },
+        "previousValues": {
           "bytes": 204644,
           "gzipBytes": 51699,
           "brotliBytes": 43689,
@@ -1020,6 +1034,13 @@
           "brotliBytes": 2831,
           "jsBytes": 6477,
           "vendorJsBytes": 0
+        },
+        "previousValues": {
+          "bytes": 8883,
+          "gzipBytes": 3378,
+          "brotliBytes": 2831,
+          "jsBytes": 6477,
+          "vendorJsBytes": 0
         }
       },
       {
@@ -1029,6 +1050,13 @@
         "expectedSamples": 1,
         "complete": true,
         "values": {
+          "bytes": 135478,
+          "gzipBytes": 48315,
+          "brotliBytes": 42331,
+          "jsBytes": 132776,
+          "vendorJsBytes": 128533
+        },
+        "previousValues": {
           "bytes": 135478,
           "gzipBytes": 48315,
           "brotliBytes": 42331,

@@ -38,8 +38,8 @@
 
 ## 环境要求
 
-- Node.js 20 或更高版本
-- pnpm 10.x
+- Node.js 22.13 或更高版本
+- pnpm 11.x
 - 微信开发者工具，并确保 CLI 可用
 - HBuilderX，用于运行 uni-app x 的 CLI 构建和 `uni-launch` 测试
 - 运行 IDE 自动化采集前，需要在微信开发者工具中登录

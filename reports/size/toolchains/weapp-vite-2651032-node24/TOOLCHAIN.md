@@ -7,8 +7,8 @@
 | 系统                 | macOS 26.5.1 (25F80)                     |
 | 架构                 | darwin/arm64                             |
 | Node                 | v24.18.0                                 |
-| pnpm                 | 10.33.4                                  |
-| Git commit           | 685851c2b7741651934192328126d3cd25d7fade |
+| pnpm                 | 11.13.0                                  |
+| Git commit           | 026fe258b63b15a9b9d51c4635348ffeebc3dc41 |
 | weapp-vite submodule | 26510329efcf36cbf934e566ebbc80f069151a22 |
 
 ## 包版本

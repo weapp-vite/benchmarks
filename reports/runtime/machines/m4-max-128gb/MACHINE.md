@@ -10,7 +10,7 @@
 | 核心数             | 16                                                     |
 | 内存               | 128GB                                                  |
 | Node               | v24.18.0                                               |
-| pnpm               | 10.33.4                                                |
+| pnpm               | 11.13.0                                                |
 | 微信开发者工具 CLI | /Applications/wechatwebdevtools.app/Contents/MacOS/cli |
 
 这个目录下的 runtime 报告只和同一机器 ID 的历史结果直接比较；跨机器结果只能作为趋势参考。

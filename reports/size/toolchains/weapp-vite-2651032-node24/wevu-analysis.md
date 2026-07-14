@@ -1,13 +1,13 @@
 # wevu 体积分析
 
-生成时间：2026-07-14T04:10:37.178Z
+生成时间：2026-07-14T07:34:33.607Z
 
 ## 工具链环境
 
 - 工具链：weapp-vite 2651032 / Node 24.18.0（`weapp-vite-2651032-node24`）
 - 系统：macOS 26.5.1 (25F80)；架构：darwin/arm64
-- Node：v24.18.0；pnpm：10.33.4
-- Git commit：685851c2b7741651934192328126d3cd25d7fade
+- Node：v24.18.0；pnpm：11.13.0
+- Git commit：026fe258b63b15a9b9d51c4635348ffeebc3dc41
 - weapp-vite submodule：26510329efcf36cbf934e566ebbc80f069151a22
 - 包版本：weapp-vite@6.18.3、wevu@6.18.3、@dcloudio/vite-plugin-uni@3.0.0-5010520260709002
 

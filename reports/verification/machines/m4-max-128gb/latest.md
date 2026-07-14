@@ -1,79 +1,29 @@
 # 全量验证报告
 
-生成时间：2026-07-14T04:10:37.425Z
+生成时间：2026-07-14T07:34:33.907Z
 总体状态：失败
 
-| 检查                      | 状态 |   耗时 | 退出码 | 命令                                |
-| ------------------------- | ---- | -----: | -----: | ----------------------------------- |
-| 安装依赖                  | 失败 |   0.3s |      1 | `pnpm install --frozen-lockfile`    |
-| 构建                      | 通过 |  10.9s |      0 | `pnpm run build`                    |
-| 代码检查                  | 通过 |   3.2s |      0 | `pnpm run lint`                     |
-| 类型检查                  | 通过 |   0.9s |      0 | `pnpm run typecheck`                |
-| 类型 API 测试             | 通过 |   0.4s |      0 | `pnpm run tsd`                      |
-| 单元与集成测试            | 通过 |   1.3s |      0 | `pnpm run test`                     |
-| 依赖安全审计              | 失败 |   1.7s |      1 | `pnpm audit --audit-level=moderate` |
-| HBuilderX uni-app x smoke | 通过 |   4.5s |      0 | `pnpm run test:hbuilderx:uni-app-x` |
-| 编译基准                  | 通过 | 266.6s |      0 | `pnpm run bench:compile`            |
-| 运行时 IDE E2E 基准       | 通过 | 407.4s |      0 | `pnpm run bench:runtime`            |
-| HMR 基准                  | 通过 | 150.2s |      0 | `pnpm run bench:hmr`                |
-| wevu 体积分析             | 通过 |   4.1s |      0 | `pnpm run bench:size:wevu`          |
+| 检查                      | 状态 |    耗时 | 退出码 | 命令                                |
+| ------------------------- | ---- | ------: | -----: | ----------------------------------- |
+| 安装依赖                  | 通过 |    0.2s |      0 | `pnpm install --frozen-lockfile`    |
+| 构建                      | 通过 |    0.5s |      0 | `pnpm run build`                    |
+| 代码检查                  | 通过 |    3.0s |      0 | `pnpm run lint`                     |
+| 类型检查                  | 通过 |    1.5s |      0 | `pnpm run typecheck`                |
+| 类型 API 测试             | 通过 |    0.4s |      0 | `pnpm run tsd`                      |
+| 单元与集成测试            | 通过 |    0.4s |      0 | `pnpm run test`                     |
+| 依赖安全审计              | 失败 |   10.6s |      1 | `pnpm audit --audit-level=moderate` |
+| HBuilderX uni-app x smoke | 通过 |    3.4s |      0 | `pnpm run test:hbuilderx:uni-app-x` |
+| 编译基准                  | 通过 |  299.5s |      0 | `pnpm run bench:compile`            |
+| 运行时 IDE E2E 基准       | 失败 |  629.7s |      1 | `pnpm run bench:runtime`            |
+| HMR 基准                  | 通过 | 2185.6s |      0 | `pnpm run bench:hmr`                |
+| wevu 体积分析             | 通过 |    4.3s |      0 | `pnpm run bench:size:wevu`          |
 
 ## 失败摘要
-
-### 安装依赖
-
-```text
-Scope: all 10 workspace projects
- ERR_PNPM_OUTDATED_LOCKFILE  Cannot install with "frozen-lockfile" because pnpm-lock.yaml is not up to date with <ROOT>/apps/mpx/package.json
-
-Note that in CI environments this setting is true by default. If you still need to run install in such cases, use "pnpm install --no-frozen-lockfile"
-
-  Failure reason:
-  specifiers in the lockfile don't match specifiers in package.json:
-* 1 dependencies are mismatched:
-  - postcss (lockfile: 8.5.19, manifest: 8.5.15)
-
-
-```
 
 ### 依赖安全审计
 
 ```text
-─────┼────────────────────────────────────────────────────────┤
-│ More info           │ https://github.com/advisories/GHSA-xxjr-mmjv-4gpg      │
-└─────────────────────┴────────────────────────────────────────────────────────┘
-┌─────────────────────┬────────────────────────────────────────────────────────┐
-│ moderate            │ joi has an uncaught RangeError on deeply nested input  │
-│                     │ through recursive `link()` schemas                     │
-├─────────────────────┼────────────────────────────────────────────────────────┤
-│ Package             │ joi                                                    │
-├─────────────────────┼────────────────────────────────────────────────────────┤
-│ Vulnerable versions │ <17.13.4                                               │
-├─────────────────────┼────────────────────────────────────────────────────────┤
-│ Patched versions    │ >=17.13.4                                              │
-├─────────────────────┼────────────────────────────────────────────────────────┤
-│ Paths               │ apps__mpx>@mpxjs/mpx-cli-service>@vue/cli-shared-      │
-│                     │ utils>joi                                              │
-├─────────────────────┼────────────────────────────────────────────────────────┤
-│ More info           │ https://github.com/advisories/GHSA-q7cg-457f-vx79      │
-└─────────────────────┴────────────────────────────────────────────────────────┘
-┌─────────────────────┬────────────────────────────────────────────────────────┐
-│ moderate            │ launch-editor: NTLMv2 hash disclosure via UNC path     │
-│                     │ handling on Windows                                    │
-├─────────────────────┼────────────────────────────────────────────────────────┤
-│ Package             │ vite                                                   │
-├─────────────────────┼────────────────────────────────────────────────────────┤
-│ Vulnerable versions │ <=6.4.2                                                │
-├─────────────────────┼────────────────────────────────────────────────────────┤
-│ Patched versions    │ >=6.4.3                                                │
-├─────────────────────┼────────────────────────────────────────────────────────┤
-│ Paths               │ apps__uni-app-vite-vue3>vite                           │
-│                     │                                                        │
-│                     │ apps__taro-vue3>vite                                   │
-├─────────────────────┼────────────────────────────────────────────────────────┤
-│ More info           │ https://github.com/advisories/GHSA-v6wh-96g9-6wx3      │
-└─────────────────────┴────────────────────────────────────────────────────────┘
-┌─────────────────────┬────────────────────────────────────────────────────────┐
+──────┬────────────────────────────────────────────────────────┐
 │ moderate            │ webpack-dev-server vulnerable to HMR WebSocket         │
 │                     │ interception via permissive user proxies               │
 ├─────────────────────┼────────────────────────────────────────────────────────┤
@@ -83,11 +33,15 @@ Note that in CI environments this setting is true by default. If you still need 
 ├─────────────────────┼────────────────────────────────────────────────────────┤
 │ Patched versions    │ >=5.2.5                                                │
 ├─────────────────────┼────────────────────────────────────────────────────────┤
-│ Paths               │ apps__mpx>@mpxjs/vue-cli-plugin-mpx>webpack-dev-server │
+│ Paths               │ apps__mpx>@mpxjs/mpx-cli-service>@vue/cli-             │
+│                     │ service>webpack-dev-server                             │
+│                     │                                                        │
+│                     │ apps__mpx>@mpxjs/vue-cli-plugin-mpx>webpack-dev-server │
 │                     │                                                        │
 │                     │ apps__mpx>@vue/cli-service>webpack-dev-server          │
 │                     │                                                        │
-│                     │ apps__taro-vue3>@tarojs/taro>webpack-dev-server        │
+│                     │ ... Found 5 paths, run `pnpm why webpack-dev-server`   │
+│                     │ for more information                                   │
 ├─────────────────────┼────────────────────────────────────────────────────────┤
 │ More info           │ https://github.com/advisories/GHSA-mx8g-39q3-5c79      │
 └─────────────────────┴────────────────────────────────────────────────────────┘
@@ -102,8 +56,17 @@ Note that in CI environments this setting is true by default. If you still need 
 ├─────────────────────┼────────────────────────────────────────────────────────┤
 │ Patched versions    │ >=2.0.10                                               │
 ├─────────────────────┼────────────────────────────────────────────────────────┤
-│ Paths               │ apps__mpx>@mpxjs/vue-cli-plugin-mpx>webpack-dev-       │
+│ Paths               │ apps__mpx>@mpxjs/mpx-cli-service>@vue/cli-             │
+│                     │ service>webpack-dev-server>http-proxy-middleware       │
+│                     │                                                        │
+│                     │ apps__mpx>@mpxjs/vue-cli-plugin-mpx>webpack-dev-       │
 │                     │ server>http-proxy-middleware                           │
+│                     │                                                        │
+│                     │ apps__mpx>@vue/cli-service>webpack-dev-server>http-    │
+│                     │ proxy-middleware                                       │
+│                     │                                                        │
+│                     │ ... Found 5 paths, run `pnpm why                       │
+│                     │ http-proxy-middleware` for more information            │
 ├─────────────────────┼────────────────────────────────────────────────────────┤
 │ More info           │ https://github.com/advisories/GHSA-64mm-vxmg-q3vj      │
 └─────────────────────┴────────────────────────────────────────────────────────┘
@@ -117,8 +80,20 @@ Note that in CI environments this setting is true by default. If you still need 
 ├─────────────────────┼────────────────────────────────────────────────────────┤
 │ Patched versions    │ >=3.15.0                                               │
 ├─────────────────────┼────────────────────────────────────────────────────────┤
-│ Paths               │ .>@changesets/cli>@manypkg/get-packages>read-yaml-     │
-│                     │ file>js-yaml                                           │
+│ Paths               │ .>@changesets/cli>@changesets/apply-release-           │
+│                     │ plan>@changesets/config>@changesets/get-dependents-    │
+│                     │ graph>@manypkg/get-packages>read-yaml-file>js-yaml     │
+│                     │                                                        │
+│                     │ .>@changesets/cli>@changesets/apply-release-           │
+│                     │ plan>@changesets/config>@changesets/should-skip-       │
+│                     │ package>@manypkg/get-packages>read-yaml-file>js-yaml   │
+│                     │                                                        │
+│                     │ .>@changesets/cli>@changesets/apply-release-           │
+│                     │ plan>@changesets/config>@manypkg/get-packages>read-    │
+│                     │ yaml-file>js-yaml                                      │
+│                     │                                                        │
+│                     │ ... Found 27 paths, run `pnpm why js-yaml` for more    │
+│                     │ information                                            │
 ├─────────────────────┼────────────────────────────────────────────────────────┤
 │ More info           │ https://github.com/advisories/GHSA-h67p-54hq-rp68      │
 └─────────────────────┴────────────────────────────────────────────────────────┘
@@ -130,14 +105,38 @@ Note that in CI environments this setting is true by default. If you still need 
 ├─────────────────────┼────────────────────────────────────────────────────────┤
 │ Vulnerable versions │ >=4.0.0 <=4.1.1                                        │
 ├─────────────────────┼────────────────────────────────────────────────────────┤
-│ Patched versions    │ >=4.2.0                                                │
+│ Patched versions    │ >=4.1.2                                                │
 ├─────────────────────┼────────────────────────────────────────────────────────┤
-│ Paths               │ .>@changesets/cli>@changesets/read>@changesets/        │
+│ Paths               │ .>@changesets/cli>@changesets/get-release-             │
+│                     │ plan>@changesets/read>@changesets/parse>js-yaml        │
+│                     │                                                        │
+│                     │ .>@changesets/cli>@changesets/read>@changesets/        │
 │                     │ parse>js-yaml                                          │
+│                     │                                                        │
+│                     │ apps__taro-vue3>@tarojs/cli>@tarojs/plugin-            │
+│                     │ doctor>eslint>@eslint/eslintrc>js-yaml                 │
+│                     │                                                        │
+│                     │ ... Found 5 paths, run `pnpm why js-yaml` for more     │
+│                     │ information                                            │
 ├─────────────────────┼────────────────────────────────────────────────────────┤
 │ More info           │ https://github.com/advisories/GHSA-h67p-54hq-rp68      │
 └─────────────────────┴────────────────────────────────────────────────────────┘
-85 vulnerabilities found
-Severity: 11 low | 51 moderate | 21 high | 2 critical
+63 vulnerabilities found
+Severity: 8 low | 35 moderate | 18 high | 2 critical
+
+```
+
+### 运行时 IDE E2E 基准
+
+```text
+$ pnpm --filter @benchmarks/runner bench:runtime
+$ tsx src/runtime.ts
+- initialize
+
+✔ IDE server has started, listening on http://127.0.0.1:44321
+- preparing
+- Fetching AppID () permissions
+✔ Using AppID: wxb3d842a4a7e3440d
+✔ build-npm
 
 ```

@@ -4,8 +4,24 @@ packages:
   - templates/*
   - '!**/test/**'
 
-onlyBuiltDependencies:
-  - '@tailwindcss/oxide'
-  - esbuild
-  - sharp
-  - workerd
+# Benchmark projects intentionally validate same-day framework releases.
+minimumReleaseAge: 0
+
+overrides:
+  '@achrinza/node-ipc': npm:node-ipc-compat@1.0.0
+  postcss: 8.5.15
+
+allowBuilds:
+  '@dcloudio/hbuilderx-cli': false
+  '@parcel/watcher': false
+  '@swc/core': false
+  '@tailwindcss/oxide': true
+  '@tarojs/binding': false
+  '@tarojs/cli': false
+  core-js: false
+  core-js-pure: false
+  esbuild: true
+  msgpackr-extract: false
+  sharp: true
+  vue-demi: false
+  workerd: true

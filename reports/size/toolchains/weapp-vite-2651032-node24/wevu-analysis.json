@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-07-14T04:10:37.178Z",
+  "generatedAt": "2026-07-14T07:34:33.607Z",
   "toolchain": {
     "toolchainId": "weapp-vite-2651032-node24",
     "toolchainLabel": "weapp-vite 2651032 / Node 24.18.0",
     "os": "macOS 26.5.1 (25F80)",
     "arch": "darwin/arm64",
     "node": "v24.18.0",
-    "pnpm": "10.33.4",
-    "gitCommit": "685851c2b7741651934192328126d3cd25d7fade",
+    "pnpm": "11.13.0",
+    "gitCommit": "026fe258b63b15a9b9d51c4635348ffeebc3dc41",
     "weappViteSubmodule": "26510329efcf36cbf934e566ebbc80f069151a22",
     "packages": {
       "weapp-vite": "6.18.3",
