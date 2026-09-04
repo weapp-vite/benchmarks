@@ -25,3 +25,7 @@ allowBuilds:
   sharp: true
   vue-demi: false
   workerd: true
+
+versioning:
+  changelog:
+    storage: repository

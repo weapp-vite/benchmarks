@@ -11,7 +11,7 @@
     "postinstall": "wv prepare"
   },
   "devDependencies": {
-    "miniprogram-api-typings": "^5.0.0",
+    "miniprogram-api-typings": "^5.2.3",
     "typescript": "^6.0.3",
     "weapp-vite": "6.18.3"
   }

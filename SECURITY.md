@@ -1,21 +1,17 @@
 # Security Policy
 
-## Supported Versions
+## Supported versions
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+This repository contains benchmark fixtures and automation rather than a
+versioned runtime package. Security fixes are applied to the `main` branch.
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+## Reporting a vulnerability
 
-## Reporting a Vulnerability
+Do not open a public issue for a suspected vulnerability. Use GitHub private
+vulnerability reporting:
 
-Use this section to tell people how to report a vulnerability.
+https://github.com/weapp-vite/benchmarks/security/advisories/new
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+Include the affected workflow or fixture, environment, impact, reproduction
+steps, and any suggested mitigation. Vulnerabilities in an upstream framework
+should also be reported to that framework's maintainers.

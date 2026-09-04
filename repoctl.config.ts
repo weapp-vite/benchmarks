@@ -21,9 +21,12 @@ export default {
     },
     eslint: {
       ignores: ['**/fixtures/**'],
+      vue: true,
     },
     stylelint: {
-      rules: {},
+      rules: {
+        'media-feature-range-notation': 'prefix',
+      },
     },
     lintStaged: {
       monorepoCommand: 'pnpm exec repo',
