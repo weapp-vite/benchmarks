@@ -6,6 +6,7 @@ export interface ProjectInput {
   appDir: string
   outputDir: string
   runtimeFiles: string[]
+  runtimeFilePattern?: RegExp
 }
 
 export interface FileSize {

@@ -38,6 +38,7 @@
     },
     "test": {
       "dependsOn": [
+        "build",
         "^test"
       ],
       "inputs": [

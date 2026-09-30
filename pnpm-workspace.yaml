@@ -9,7 +9,7 @@ minimumReleaseAge: 0
 
 overrides:
   '@achrinza/node-ipc': npm:node-ipc-compat@1.0.0
-  postcss: 8.5.15
+  postcss: 8.5.28
 
 allowBuilds:
   '@dcloudio/hbuilderx-cli': false
