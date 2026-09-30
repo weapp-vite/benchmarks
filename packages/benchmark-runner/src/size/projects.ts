@@ -6,14 +6,16 @@ export const sizeProjects: ProjectInput[] = [
     label: 'weapp-vite + wevu',
     appDir: 'apps/weapp-vite-wevu',
     outputDir: 'dist',
-    runtimeFiles: ['weapp-vendors/wevu-templateRef.js', 'weapp-vendors/wevu-watch.js'],
+    runtimeFiles: [],
+    runtimeFilePattern: /^weapp-vendors\/wevu-[^/]+\.js$/,
   },
   {
     id: 'weapp-vite-wevu-performance',
     label: 'weapp-vite + wevu performance',
     appDir: 'apps/weapp-vite-wevu-performance',
     outputDir: 'dist',
-    runtimeFiles: ['weapp-vendors/wevu-templateRef.js', 'weapp-vendors/wevu-watch.js'],
+    runtimeFiles: [],
+    runtimeFilePattern: /^weapp-vendors\/wevu-[^/]+\.js$/,
   },
   {
     id: 'weapp-vite-native',

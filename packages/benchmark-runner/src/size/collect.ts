@@ -142,7 +142,7 @@ function addFileToTotals(total: SizeTotals, file: ProjectSize['files'][number]) 
 }
 
 export async function analyzeProject(project: ProjectInput): Promise<ProjectSize> {
-  const absoluteOutputDir = path.join(repoRoot, project.appDir, project.outputDir)
+  const absoluteOutputDir = path.resolve(repoRoot, project.appDir, project.outputDir)
   const files: ProjectSize['files'] = []
 
   for (const file of await listFiles(absoluteOutputDir)) {
@@ -155,7 +155,7 @@ export async function analyzeProject(project: ProjectInput): Promise<ProjectSize
       brotliBytes: brotliCompressSync(content).byteLength,
       type: typeOfFile(relativePath),
       bucket: bucketOfFile(relativePath),
-      runtime: project.runtimeFiles.includes(relativePath),
+      runtime: project.runtimeFiles.includes(relativePath) || Boolean(project.runtimeFilePattern?.test(relativePath)),
     })
   }
   if (files.length === 0) {
@@ -164,6 +164,10 @@ export async function analyzeProject(project: ProjectInput): Promise<ProjectSize
   const missingRuntimeFiles = project.runtimeFiles.filter(runtimeFile => !files.some(file => file.path === runtimeFile))
   if (missingRuntimeFiles.length > 0) {
     throw new Error(`runtime files are missing for ${project.id}: ${missingRuntimeFiles.join(', ')}`)
+  }
+
+  if (project.runtimeFilePattern && !files.some(file => file.runtime)) {
+    throw new Error(`no runtime files matched for ${project.id}: ${project.runtimeFilePattern}`)
   }
 
   const totals = files.reduce((total, file) => {

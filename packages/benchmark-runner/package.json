@@ -20,13 +20,13 @@
     "pathe": "^2.0.3"
   },
   "devDependencies": {
-    "@types/node": "^25.9.5",
-    "@weapp-vite/miniprogram-automator": "1.2.7",
+    "@types/node": "^26.6.3",
+    "@weapp-vite/miniprogram-automator": "1.2.23",
     "echarts": "6.1.0",
-    "prettier": "3.9.5",
-    "tsdown": "0.22.7",
-    "tsx": "^4.23.13",
+    "prettier": "3.9.9",
+    "tsdown": "0.23.0",
+    "tsx": "^4.23.15",
     "typescript": "^6.0.3",
-    "vitest": "~5.0.0"
+    "vitest": "~5.0.3"
   }
 }

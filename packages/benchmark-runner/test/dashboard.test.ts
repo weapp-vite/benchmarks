@@ -134,6 +134,41 @@ describe('dashboard aggregation', () => {
     expect(report.errors.some(error => error.includes('runtime/latest.json'))).toBe(true)
   })
 
+  it.each([
+    ['2026-09-01T00:00:00.000Z', false],
+    ['2026-10-01T00:00:30.000Z', true],
+    ['2026-10-02T00:00:00.000Z', false],
+  ])('only includes reports produced by this verification run (%s)', async (generatedAt, included) => {
+    const root = await mkdtemp(path.join(tmpdir(), 'benchmark-dashboard-'))
+    temporaryRoots.push(root)
+    await mkdir(path.join(root, 'reports/compile'), { recursive: true })
+    await writeFile(path.join(root, 'reports/compile/latest.json'), JSON.stringify({
+      ...compileReport(),
+      generatedAt,
+    }))
+
+    const report = await loadDashboardReport(root, {
+      schemaVersion: 1,
+      generatedAt: '2026-10-01T00:01:00.000Z',
+      overallStatus: 'failed',
+      steps: [{
+        id: 'compile',
+        label: 'Compile',
+        command: 'pnpm bench:compile',
+        startedAt: '2026-10-01T00:00:00.000Z',
+        finishedAt: '2026-10-01T00:01:00.000Z',
+        durationMs: 60_000,
+        status: 'failed',
+        exitCode: 1,
+        stdoutTail: '',
+        stderrTail: 'Build failed',
+      }],
+    })
+
+    expect(Boolean(report.compile)).toBe(included)
+    expect(report.errors.some(error => error.includes('current verification step'))).toBe(!included)
+  })
+
   it('skips newer archives with a different sample matrix when selecting history', async () => {
     const root = await mkdtemp(path.join(tmpdir(), 'benchmark-dashboard-'))
     temporaryRoots.push(root)

@@ -38,8 +38,8 @@
 
 ## 环境要求
 
-- Node.js 22.13 或更高版本
-- pnpm 11.x
+- Node.js 22.18+（22.x）、24.11+（24.x）或 26+
+- pnpm 12.8.1
 - 微信开发者工具，并确保 CLI 可用
 - HBuilderX，用于运行 uni-app x 的 CLI 构建和 `uni-launch` 测试
 - 运行 IDE 自动化采集前，需要在微信开发者工具中登录
@@ -138,7 +138,7 @@ pnpm bench:hmr
 pnpm bench:size:wevu
 ```
 
-体积命令会先重建 wevu、performance preset、原生和 uni-app 四个输入项目，因此可以在 HMR 或其他会清理 `dist/` 的任务之后独立执行。
+体积命令会先强制生产构建全部七个输入项目，绕过 Turbo 缓存，清理 HMR 生成的临时 chunk，避免旧文件混入统计；可以在 HMR 或其他会清理 `dist/` 的任务之后独立执行。
 
 重新执行完整验证、HBuilderX smoke、四类基准测试并刷新所有图表：
 

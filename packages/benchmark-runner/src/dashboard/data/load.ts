@@ -83,10 +83,24 @@ function machineRunsDir(root: string, section: string, environment: MachineEnvir
 export async function loadDashboardReport(root: string, verification?: VerificationReport) {
   const errors: string[] = []
   const reportsRoot = path.join(root, 'reports')
-  const compile = await readOptional<CompileReport>(path.join(reportsRoot, 'compile/latest.json'), errors)
-  const runtime = await readOptional<RuntimeReport>(path.join(reportsRoot, 'runtime/latest.json'), errors)
-  const hmr = await readOptional<HmrReport>(path.join(reportsRoot, 'hmr/latest.json'), errors)
-  const size = await readOptional<AnalysisOutput>(path.join(reportsRoot, 'size/wevu-analysis.json'), errors)
+
+  async function readCurrent<T extends { generatedAt: string }>(stepId: string, file: string) {
+    const report = await readOptional<T>(path.join(reportsRoot, file), errors)
+    const step = verification?.steps.find(item => item.id === stepId)
+    if (report && step) {
+      const generatedAt = Date.parse(report.generatedAt)
+      if (!(generatedAt >= Date.parse(step.startedAt) && generatedAt <= Date.parse(step.finishedAt))) {
+        errors.push(`${file}: report was not generated during the current verification step`)
+        return undefined
+      }
+    }
+    return report
+  }
+
+  const compile = await readCurrent<CompileReport>('compile', 'compile/latest.json')
+  const runtime = await readCurrent<RuntimeReport>('runtime', 'runtime/latest.json')
+  const hmr = await readCurrent<HmrReport>('hmr', 'hmr/latest.json')
+  const size = await readCurrent<AnalysisOutput>('size', 'size/wevu-analysis.json')
   const storedVerification = verification ?? await readOptional<VerificationReport>(
     path.join(reportsRoot, 'verification/latest.json'),
     [],

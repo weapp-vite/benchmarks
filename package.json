@@ -3,7 +3,7 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
-  "packageManager": "pnpm@11.25.0",
+  "packageManager": "pnpm@12.8.1",
   "author": "ice breaker <hi@sonofmagic.top>",
   "repository": {
     "type": "git",
@@ -13,7 +13,7 @@
     "url": "https://github.com/weapp-vite/benchmarks/issues"
   },
   "engines": {
-    "node": ">=22.13.0"
+    "node": "^22.18.0 || ^24.11.0 || >=26.0.0"
   },
   "scripts": {
     "build": "turbo run build",
@@ -21,7 +21,7 @@
     "bench:compile": "pnpm --filter @benchmarks/runner bench:compile",
     "bench:hmr": "pnpm --filter @benchmarks/runner bench:hmr",
     "bench:runtime": "pnpm --filter @benchmarks/runner bench:runtime",
-    "bench:size:wevu": "pnpm run build && pnpm --filter @benchmarks/runner bench:size:wevu",
+    "bench:size:wevu": "pnpm exec turbo run build --force && pnpm --filter @benchmarks/runner bench:size:wevu",
     "report:dashboard": "pnpm --filter @benchmarks/runner report:dashboard",
     "report:refresh": "pnpm --filter @benchmarks/runner report:refresh",
     "dev": "turbo run dev --parallel",
@@ -58,32 +58,32 @@
     "--------": "----------------"
   },
   "devDependencies": {
-    "@commitlint/cli": "^21.2.2",
-    "@types/node": "^25.9.5",
+    "@commitlint/cli": "^21.2.3",
+    "@types/node": "^26.6.3",
     "@types/semver": "^7.8.0",
-    "@vitest/coverage-v8": "~5.0.0",
+    "@vitest/coverage-v8": "~5.0.3",
     "ci-info": "^4.4.0",
     "cross-env": "^10.1.0",
     "defu": "^6.1.7",
     "es-toolkit": "^1.52.0",
-    "eslint": "^10.9.1",
+    "eslint": "^10.11.0",
     "husky": "^9.1.7",
-    "lint-staged": "^17.4.1",
+    "lint-staged": "^17.6.0",
     "only-allow": "^1.2.2",
     "pathe": "^2.0.3",
-    "pkg-types": "^2.3.2",
-    "repoctl": "^5.4.7",
-    "stylelint": "^17.14.1",
+    "pkg-types": "^2.3.3",
+    "repoctl": "^5.5.10",
+    "stylelint": "^17.15.0",
     "tailwindcss": "^4.3.3",
     "tsd": "^0.33.0",
-    "tsdown": "0.22.7",
+    "tsdown": "0.23.0",
     "tslib": "^2.8.1",
-    "tsx": "^4.23.13",
-    "turbo": "^2.10.12",
-    "type-fest": "^5.9.0",
+    "tsx": "^4.23.15",
+    "turbo": "^2.11.5",
+    "type-fest": "^5.10.0",
     "typescript": "^6.0.3",
-    "vitest": "~5.0.0",
-    "yaml": "^2.9.0"
+    "vitest": "~5.0.3",
+    "yaml": "^2.9.1"
   },
   "publishConfig": {
     "access": "public",

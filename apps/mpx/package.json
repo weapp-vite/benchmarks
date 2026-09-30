@@ -35,15 +35,15 @@
     "@mpxjs/vue-cli-plugin-mpx-typescript": "^2.2.32",
     "@mpxjs/webpack-plugin": "^2.11.1",
     "@vue/cli-service": "~5.0.9",
-    "autoprefixer": "^10.5.4",
+    "autoprefixer": "^10.6.1",
     "eslint": "^9.39.5",
     "miniprogram-api-typings": "^5.2.3",
-    "postcss": "8.5.19",
+    "postcss": "8.5.28",
     "process": "^0.11.10",
     "stylus": "^0.64.0",
     "stylus-loader": "^9.0.0",
     "typescript": "^6.0.3",
-    "webpack": "^5.110.3"
+    "webpack": "^5.111.1"
   },
   "browserslist": [
     "ios >= 8",

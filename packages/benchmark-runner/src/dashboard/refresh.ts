@@ -39,7 +39,7 @@ async function runStep(id: string, label: string, args: readonly string[]): Prom
   let stderr = ''
   const child = spawn('pnpm', [...args], {
     cwd: repoRoot,
-    env: { ...process.env, CI: '1', FORCE_COLOR: '0' },
+    env: { ...process.env, CI: '1', FORCE_COLOR: '0', BENCH_RUNTIME_REQUIRED: '1' },
     stdio: ['ignore', 'pipe', 'pipe'],
   })
   child.stdout.setEncoding('utf8')
