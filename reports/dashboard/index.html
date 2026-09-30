@@ -461,14 +461,14 @@
 
         <div class="table-wrap">
           <div class="table-heading">
-            <h2>运行时包结果</h2>
+            <h2>选定运行时文件结果</h2>
             <a href="/benchmarks/reports/size/wevu-analysis.md">详细报告</a>
           </div>
           <table>
             <thead>
               <tr>
                 <th scope="col">项目</th>
-                <th scope="col">runtime 体积</th>
+                <th scope="col">选定文件体积</th>
                 <th scope="col">样本</th>
                 <th scope="col">状态</th>
                 <th scope="col">较上次</th>
@@ -1145,8 +1145,8 @@
                 fontSize: 12,
               },
               title: {
-                text: '运行时包体积',
-                subtext: '生产构建后的 runtime 实际体积；单位 KB，越小越好',
+                text: '选定运行时文件体积',
+                subtext: '按文件规则统计，可能含模板/样式或混合代码；单位 KB',
                 left: 20,
                 top: 16,
                 textStyle: { color: '#20242b', fontSize: 18, fontWeight: 500 },
@@ -1728,8 +1728,8 @@
                 fontSize: 12,
               },
               title: {
-                text: '运行时包体积',
-                subtext: '生产构建后的 runtime 实际体积；单位 KB，越小越好',
+                text: '选定运行时文件体积',
+                subtext: '按文件规则统计，可能含模板/样式或混合代码；单位 KB',
                 left: 20,
                 top: 16,
                 textStyle: { color: '#f2f4f7', fontSize: 18, fontWeight: 500 },

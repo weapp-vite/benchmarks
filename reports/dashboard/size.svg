@@ -35,9 +35,9 @@
 <text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(781.24 484.6429)" fill="#20242b">170.7 KB</text>
 <text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(822.84 566.7857)" fill="#20242b">183.7 KB</text>
 <text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Arial, sans-serif;" xml:space="preserve" transform="translate(929.08 648.9286)" fill="#20242b">216.9 KB</text>
-<path d="M-5 -5l292.2 0l0 50l-292.2 0Z" transform="translate(25 21)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#3c3c41" stroke-width="0" class="zr4-cls-78"></path>
-<text dominant-baseline="central" text-anchor="start" style="font-size:18px;font-family:Arial, sans-serif;font-weight:500;" y="9" transform="translate(25 21)" fill="#20242b">运行时包体积</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Arial, sans-serif;font-weight:400;" xml:space="preserve" y="34" transform="translate(25 21)" fill="#667085">生产构建后的 runtime 实际体积；单位 KB，越小越好</text>
+<path d="M-5 -5l308.8 0l0 50l-308.8 0Z" transform="translate(25 21)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#3c3c41" stroke-width="0" class="zr4-cls-78"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-size:18px;font-family:Arial, sans-serif;font-weight:500;" y="9" transform="translate(25 21)" fill="#20242b">选定运行时文件体积</text>
+<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Arial, sans-serif;font-weight:400;" xml:space="preserve" y="34" transform="translate(25 21)" fill="#667085">按文件规则统计，可能含模板/样式或混合代码；单位 KB</text>
 <style ><![CDATA[
 .zr4-cls-78:hover {
 pointer-events:none;
