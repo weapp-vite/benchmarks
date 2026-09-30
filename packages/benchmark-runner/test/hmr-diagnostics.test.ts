@@ -5,6 +5,7 @@ import path from 'pathe'
 import { afterEach, describe, expect, it } from 'vitest'
 import { waitForArtifacts } from '../src/hmr/artifacts'
 import { startDevProcess } from '../src/hmr/dev'
+import { settledOutput } from '../src/hmr/diagnostics/output'
 import { correlateProfile } from '../src/hmr/diagnostics/profile'
 import { validateReplay } from '../src/hmr/diagnostics/replay'
 import { diagnosticLines } from '../src/hmr/diagnostics/report'
@@ -110,5 +111,21 @@ describe('HMR evidence', () => {
     report.diagnostics.edits[0]!.marker = 'unsafe\'injection'
     expect(() => validateReplay(report, provenance.inputs, [scenario])).toThrow('Invalid replay')
     expect(diagnosticLines(undefined).join('\n')).toContain('未执行')
+  })
+  it('waits for sidecar replacement and measures bytes from the verified output snapshot', async () => {
+    const root = await mkdtemp(path.join(tmpdir(), 'benchmark-hmr-publish-'))
+    roots.push(root)
+    await writeFile(path.join(root, 'page.js'), 'marker')
+    await writeFile(path.join(root, 'page.json'), 'old')
+    const publication = new Promise<void>((resolve, reject) => {
+      setTimeout(() => {
+        writeFile(path.join(root, 'page.json'), 'final-sidecar').then(resolve, reject)
+      }, 30)
+    })
+    const snapshot = await settledOutput(root, new AbortController().signal)
+    await publication
+    expect(snapshot.bytes.get('page.json')).toBe(13)
+    expect(snapshot.manifest.files.map(file => file.path)).toEqual(['page.js', 'page.json'])
+    await expect(settledOutput(path.join(root, 'missing'), new AbortController().signal, 30)).rejects.toThrow('did not settle')
   })
 })

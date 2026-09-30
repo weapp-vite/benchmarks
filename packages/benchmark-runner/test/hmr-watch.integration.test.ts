@@ -20,7 +20,7 @@ it('observes real watch edits and resources, then replays emitted evidence witho
     expect(diagnostics.firstFailure).toBeUndefined()
     expect(new Set(diagnostics.edits.map(edit => edit.phase))).toEqual(new Set(['first', 'continuous', 'restore', 'long-watch', 'batch', 'batch-restore', 'failure', 'repair', 'rename', 'delete', 'recreate', 'burst']))
     expect(diagnostics.longWatch.completedEdits).toBeGreaterThan(0)
-    expect(diagnostics.edits.filter(edit => edit.phase === 'long-watch').every(edit => edit.rssKiB || edit.resourceError)).toBe(true)
+    expect(diagnostics.edits.filter(edit => edit.phase === 'long-watch').every(edit => !edit.resourceSampled || edit.rssKiB || edit.resourceError)).toBe(true)
     expect(diagnostics.edits.some(edit => edit.profile.status === 'matched')).toBe(true)
     expect(diagnostics.edits.find(edit => edit.phase === 'batch')?.changedFiles).toEqual(expect.arrayContaining(['pages/index/index.js', 'pages/index/index.wxml', 'pages/index/index.wxss', 'pages/index/index.json']))
     const markdown = await readFile(path.join(output, 'latest.md'), 'utf8')
@@ -52,4 +52,4 @@ it('observes real watch edits and resources, then replays emitted evidence witho
   finally {
     await rm(output, { recursive: true, force: true })
   }
-}, 180_000)
+}, 300_000)

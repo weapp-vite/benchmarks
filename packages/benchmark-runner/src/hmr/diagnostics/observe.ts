@@ -1,11 +1,11 @@
 import type { HmrScenario } from '../types'
 import type { DiagnosticEdit } from './types'
-import { readFile } from 'node:fs/promises'
 import { performance } from 'node:perf_hooks'
 import path from 'pathe'
-import { compareOutputs, outputManifest } from '../../artifacts/manifest'
+import { compareOutputs } from '../../artifacts/manifest'
 import { snapshotArtifacts, waitForArtifactChange } from '../artifacts'
 import { resolveOutputFiles } from '../runner/scenario'
+import { settledOutput } from './output'
 import { collectProfile, profileFile, profileLines } from './profile'
 import { ownedRss } from './resources'
 
@@ -22,16 +22,19 @@ export async function observeEdit(options: {
   pollIntervalMs: number
   signal: AbortSignal
   pid: number | undefined
+  observeResources?: boolean
 }): Promise<DiagnosticEdit> {
+  const preparationStarted = performance.now()
   const { root, scenario, marker, signal } = options
   const appDir = path.join(root, scenario.appDir)
   const outputDir = path.join(appDir, 'dist')
   const targets = await snapshotArtifacts(resolveOutputFiles(scenario, root))
-  const before = await outputManifest(outputDir)
+  const before = await settledOutput(outputDir, signal)
   const profile = profileFile(appDir)
   const beforeProfiles = (await profileLines(profile)).length
   const startedAt = new Date().toISOString()
   const started = performance.now()
+  const preparationMs = started - preparationStarted
   let error: string | undefined
   try {
     signal.throwIfAborted()
@@ -60,17 +63,16 @@ export async function observeEdit(options: {
   let changedBytes: number | undefined
   let removedFiles: string[] | undefined
   try {
-    const after = await outputManifest(outputDir)
-    const diff = compareOutputs(before, after)
+    const after = await settledOutput(outputDir, signal)
+    const diff = compareOutputs(before.manifest, after.manifest)
     changedFiles = [...diff.added, ...diff.changed]
     removedFiles = diff.removed
-    changedBytes = (await Promise.all(changedFiles.map(async file => (await readFile(path.join(outputDir, file))).byteLength)))
-      .reduce((total, bytes) => total + bytes, 0)
+    changedBytes = changedFiles.reduce((total, file) => total + after.bytes.get(file)!, 0)
   }
   catch (caught) {
     error ??= `Output observation failed: ${caught instanceof Error ? caught.message : String(caught)}`
   }
-  const resources = await ownedRss(options.pid)
+  const resources = options.observeResources ? await ownedRss(options.pid) : {}
   return {
     id: options.id,
     scenario: scenario.id,
@@ -86,7 +88,9 @@ export async function observeEdit(options: {
     ...(changedBytes === undefined ? {} : { changedBytes }),
     ...(removedFiles ? { removedFiles } : {}),
     ...resources,
-    observationMs: performance.now() - observationStarted,
+    resourceSampled: Boolean(options.observeResources),
+    preparationMs,
+    observationMs: performance.now() - observationStarted + preparationMs,
     profile: evidence,
   }
 }

@@ -22,6 +22,8 @@ export interface DiagnosticEdit {
   removedFiles?: string[]
   rssKiB?: number
   resourceError?: string
+  resourceSampled?: boolean
+  preparationMs?: number
   observationMs: number
   profile: ProfileEvidence
 }

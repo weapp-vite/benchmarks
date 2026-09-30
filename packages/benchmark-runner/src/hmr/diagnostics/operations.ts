@@ -40,7 +40,10 @@ export async function diagnosticOperation(options: {
   if (phase === 'failure') {
     const invalid = scenario.sourceFile.endsWith('.js') || scenario.sourceFile.endsWith('.ts')
       ? `${original}\nconst __benchBroken = ;\n`
-      : `${original}\n<script>const __benchBroken = ;</script>\n`
+      : original.replace('</script>', '\nconst __benchBroken = ;\n</script>')
+    if (invalid === original) {
+      throw new Error('No script block available for the compile-error probe')
+    }
     return {
       operation: () => writeFile(file, invalid),
       outcome: () => dev.waitForOutput(/error|failed|编译失败|错误|unexpected/i, 'expected compile error', timeoutMs, logs),

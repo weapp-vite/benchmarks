@@ -2,6 +2,7 @@ import type { HmrScenario } from '../types'
 import type { DiagnosticEdit, HmrDiagnostics } from './types'
 import { readFile, rm, writeFile } from 'node:fs/promises'
 import { performance } from 'node:perf_hooks'
+import process from 'node:process'
 import { setTimeout } from 'node:timers/promises'
 import path from 'pathe'
 import { launchWatchProject } from '../runner/watch'
@@ -24,12 +25,21 @@ export async function runDiagnosticProject(options: {
   let dev: Awaited<ReturnType<typeof launchWatchProject>> | undefined
   const failures: string[] = []
   let ordinal = 0
+  let lastResourceAt = -Infinity
   const lastMarkers = new Map<string, string>()
   const longWatch: HmrDiagnostics['longWatch'] = { requestedMs: longWatchMs, elapsedMs: 0, completedEdits: 0 }
   async function perform(scenario: HmrScenario, phase: DiagnosticEdit['phase'], replay?: DiagnosticEdit) {
     ordinal += 1
     const id = replay?.id ?? `${runId}-${scenario.id}-${phase}-${ordinal}`
     const marker = replay?.marker ?? (phase === 'restore' || phase === 'batch-restore' ? lastMarkers.get(scenario.id) ?? id : id)
+    const observeResources = ordinal === 1 || phase === 'restore' || phase === 'batch-restore'
+      || (phase === 'long-watch' && performance.now() - lastResourceAt >= 5000)
+    if (observeResources) {
+      lastResourceAt = performance.now()
+    }
+    if (phase !== 'long-watch') {
+      process.stdout.write(`[hmr:diagnostic] ${scenario.project}: ${phase} (${id})\n`)
+    }
     let edit: DiagnosticEdit
     try {
       if (!dev) {
@@ -38,7 +48,7 @@ export async function runDiagnosticProject(options: {
       const operation = phase === 'batch' || phase === 'batch-restore'
         ? batchOperation({ root, scenarios, originals, marker, restore: phase === 'batch-restore', timeoutMs, signal: dev.signal })
         : await diagnosticOperation({ root, scenario, original: originals.get(scenario.id)!, phase, marker, timeoutMs, dev })
-      edit = await observeEdit({ root, id, scenario, phase, marker, timeoutMs, pollIntervalMs, signal: dev.signal, pid: dev.pid, ...operation })
+      edit = await observeEdit({ root, id, scenario, phase, marker, timeoutMs, pollIntervalMs, signal: dev.signal, pid: dev.pid, observeResources, ...operation })
     }
     catch (error) {
       edit = { id, scenario: scenario.id, project: scenario.project, phase, marker, startedAt: new Date().toISOString(), ok: false, error: String(error), observationMs: 0, profile: { status: 'missing', reason: 'Edit observation failed before profile collection', events: [], readMs: 0 } }
@@ -71,6 +81,7 @@ export async function runDiagnosticProject(options: {
         }
       }
       const primary = scenarios[0]!
+      lastResourceAt = -Infinity
       const started = performance.now()
       while (performance.now() - started < longWatchMs) {
         if (!await perform(primary, 'long-watch')) {
