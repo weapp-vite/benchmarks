@@ -17,9 +17,9 @@ async function exists(file: string) {
 }
 
 export async function resolveWechatCliPath() {
-  const fromEnv = process.env['WECHAT_DEVTOOLS_CLI']
-  if (fromEnv && await exists(fromEnv)) {
-    return fromEnv
+  const fromEnv = process.env['WEAPP_VITE_E2E_DEVTOOLS_CLI_PATH'] ?? process.env['WECHAT_DEVTOOLS_CLI']
+  if (fromEnv) {
+    return await exists(fromEnv) ? fromEnv : undefined
   }
 
   for (const candidate of commonWechatCliPaths) {

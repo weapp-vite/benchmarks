@@ -55,7 +55,8 @@
     "pr:rc": "repo release pre enter rc",
     "pr:next": "repo release pre enter next",
     "pr:exit": "repo release pre exit",
-    "--------": "----------------"
+    "--------": "----------------",
+    "e2e:ide:consistency": "tsx e2e/ide/runtime-consistency.ts"
   },
   "devDependencies": {
     "@commitlint/cli": "^21.2.3",

@@ -95,6 +95,7 @@ createPage({
       })
     },
     async runBenchmark() {
+      const runtimeToken = this.options?.benchToken ?? ''
       this.metrics = []
       this.groups = []
       let start = now()
@@ -169,6 +170,7 @@ createPage({
 
       this.setData({ __metrics: this.metrics })
       console.log('BENCHMARK_RUNTIME', {
+    token: runtimeToken,
         framework: 'mpx',
         metrics: this.metrics,
       })

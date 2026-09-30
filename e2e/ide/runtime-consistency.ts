@@ -1,7 +1,7 @@
 import process from 'node:process'
-import { runRuntimeBenchmark } from './runtime/run'
+import { runConsistency } from '../../packages/benchmark-runner/src/runtime/consistency/run'
 
-runRuntimeBenchmark().catch((error: unknown) => {
+runConsistency().catch((error: unknown) => {
   process.stderr.write(`${error instanceof Error ? error.stack : String(error)}\n`)
   process.exitCode = 1
 })

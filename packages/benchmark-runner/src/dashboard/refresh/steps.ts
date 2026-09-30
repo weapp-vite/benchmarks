@@ -8,6 +8,7 @@ export const steps = [
   ['audit', '依赖安全审计', ['audit', '--audit-level=moderate']],
   ['hbuilderx', 'HBuilderX uni-app x smoke', ['run', 'test:hbuilderx:uni-app-x']],
   ['compile', '编译基准', ['run', 'bench:compile']],
+  ['runtime-consistency', '真实 IDE 更新一致性', ['run', 'e2e:ide:consistency']],
   ['runtime', '运行时 IDE E2E 基准', ['run', 'bench:runtime']],
   ['hmr', 'HMR 基准', ['run', 'bench:hmr']],
   ['size', 'wevu 体积分析', ['run', 'bench:size:wevu']],

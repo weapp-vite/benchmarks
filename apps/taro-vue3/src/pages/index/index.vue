@@ -52,6 +52,8 @@ function recordGroups(name: string, start: number, list: BenchmarkGroup[]) {
 }
 
 async function runBenchmark() {
+  const runtimePages = Taro.getCurrentPages()
+  const runtimeToken = runtimePages[runtimePages.length - 1]?.['options']?.benchToken ?? ''
   metrics.value = []
   groups.value = []
   let start = now()
@@ -119,6 +121,7 @@ async function runBenchmark() {
 
   // eslint-disable-next-line no-console
   console.log('BENCHMARK_RUNTIME', {
+    token: runtimeToken,
     framework: 'taro-vue3',
     metrics: metrics.value,
   })

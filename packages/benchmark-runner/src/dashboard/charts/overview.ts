@@ -5,7 +5,7 @@ import { axis, baseOption, completeValue, projectOrder } from './shared'
 export function overviewChart(report: DashboardReport, palette: ChartPalette): DashboardChart {
   const dimensions = [
     { key: 'compile', label: '编译耗时', metric: 'buildMs' },
-    { key: 'runtime', label: '运行时总耗时', metric: 'totalMs' },
+    { key: 'runtime', label: '运行时视图观察', metric: 'totalMs' },
     { key: 'hmr', label: 'HMR 平均耗时', metric: 'averageMs' },
     { key: 'size', label: '运行时体积', metric: 'runtimeBytes' },
   ] as const

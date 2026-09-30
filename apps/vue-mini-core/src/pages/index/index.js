@@ -55,6 +55,8 @@ definePage(() => {
   }
 
   async function runBenchmark() {
+    const runtimePages = getCurrentPages()
+    const runtimeToken = runtimePages[runtimePages.length - 1]?.options?.benchToken ?? ''
     metrics.value = []
     groups.value = []
     let start = now()
@@ -125,6 +127,7 @@ definePage(() => {
 
     // eslint-disable-next-line no-console
     console.log('BENCHMARK_RUNTIME', {
+      token: runtimeToken,
       framework: 'vue-mini-core',
       metrics: metrics.value,
     })

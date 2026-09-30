@@ -1,16 +1,7 @@
 import type { ChartPalette, DashboardChart, DashboardReport } from '../types'
 import { axis, baseOption, projectValue } from './shared'
 
-const runtimeLabels: Record<string, string> = {
-  'initial-render': '初始渲染',
-  'append-batch': '追加列表',
-  'update-every-5th': '批量更新',
-  'sort-score-desc': '全量排序',
-  'filter-active-high-score': '过滤切换',
-  'group-aggregate-render': '分组聚合',
-  'window-slice-middle': '窗口切片',
-  'replace-dataset': '整表替换',
-}
+const runtimeLabels: Record<string, string> = { totalMs: 'reLaunch → 已确认视图' }
 
 export function runtimeChart(report: DashboardReport, palette: ChartPalette): DashboardChart {
   const projects = [...(report.runtime?.projects ?? [])]
@@ -27,12 +18,12 @@ export function runtimeChart(report: DashboardReport, palette: ChartPalette): Da
   const numeric = data.map(item => item[2]).filter((value): value is number => typeof value === 'number')
   return {
     id: 'runtime',
-    title: '运行时场景耗时',
-    description: '八个真实 IDE E2E 场景的平均累计耗时，单位为毫秒。',
+    title: '运行时视图观察',
+    description: '从 reLaunch 请求到七项 IDE 视图断言通过的平均外部耗时，包含 RPC 和轮询；内部 tick 耗时不混合排名。',
     width: 1280,
     height: Math.max(560, 240 + projects.length * 50),
     option: {
-      ...baseOption(palette, '运行时场景耗时', '微信开发者工具 IDE E2E；数值越小越好'),
+      ...baseOption(palette, '运行时视图观察', '微信开发者工具 IDE E2E；数值越小越好'),
       grid: { left: 220, right: 90, top: 115, bottom: 110 },
       xAxis: {
         ...axis(palette),

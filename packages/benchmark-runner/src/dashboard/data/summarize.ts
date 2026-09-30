@@ -6,6 +6,7 @@ import type { CompileReport, ReportInputs } from './types'
 import { isHealthyHmrScenario } from '../../hmr/statistics'
 import { aggregationError } from '../../reports/provenance/accept'
 import { comparableProvenance, provenanceError } from '../../reports/provenance/validate'
+import { isVerifiedRuntimeSample } from '../../runtime/observe/boundary'
 
 function average(values: number[]) {
   return values.length
@@ -56,17 +57,13 @@ export function summarizeCompile(report: CompileReport): BenchmarkSection {
 
 export function summarizeRuntime(report: RuntimeReport): BenchmarkSection {
   const ids = [...new Set(report.samples.map(sample => sample.project))]
-  const metricNames = [...new Set(report.samples.flatMap(sample => sample.metrics.map(metric => metric.name)))]
   const projects = ids.map((id) => {
     const all = report.samples.filter(sample => sample.project === id)
-    const samples = all.filter(sample => sample.ok)
+    const samples = all.filter(isVerifiedRuntimeSample)
     const values: Record<string, number> = {}
-    for (const metricName of metricNames) {
-      values[metricName] = round(average(samples
-        .map(sample => sample.metrics.find(metric => metric.name === metricName)?.durationMs)
-        .filter((value): value is number => typeof value === 'number'))) ?? 0
+    if (samples.length === report.iterations && all.length === report.iterations) {
+      values['totalMs'] = round(average(samples.map(sample => sample.observation!.durationMs)))!
     }
-    values['totalMs'] = round(Object.values(values).reduce((total, value) => total + value, 0)) ?? 0
     return {
       id,
       label: all[0]?.label ?? id,
