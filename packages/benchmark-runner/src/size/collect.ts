@@ -142,7 +142,7 @@ function addFileToTotals(total: SizeTotals, file: ProjectSize['files'][number]) 
 }
 
 export async function analyzeProject(project: ProjectInput): Promise<ProjectSize> {
-  const absoluteOutputDir = path.join(repoRoot, project.appDir, project.outputDir)
+  const absoluteOutputDir = path.resolve(repoRoot, project.appDir, project.outputDir)
   const files: ProjectSize['files'] = []
 
   for (const file of await listFiles(absoluteOutputDir)) {

@@ -166,6 +166,8 @@ overrides:
   '@achrinza/node-ipc': npm:node-ipc-compat@1.0.0
   postcss: 8.5.28
 
+pnpmfileChecksum: sha256-p2QS7ry/KMbTR10FdiumI91ahWrZi0SNt+a9pp/MoPE=
+
 importers:
 
   .:
@@ -2653,7 +2655,7 @@ packages:
     engines: {node: '>=10'}
     cpu: [x64]
     os: [linux]
-    libc: [gnu]
+    libc: [glibc]
 
   '@dcloudio/uts-linux-x64-musl@3.0.0-5020620260917001':
     resolution: {integrity: sha512-TwTliXBSo0sD7M3mFB69MEUs9zS8R4j94sEP7m7s1GeR4EAmtDDBhYIPZqDp3e8AAlGdZtfLs5b6hEHDRN9zrQ==}

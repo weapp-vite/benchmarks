@@ -20,13 +20,13 @@ async function fixture(files: Record<string, string>) {
     await mkdir(path.dirname(target), { recursive: true })
     await writeFile(target, content)
   }
-  return path.relative(repoRoot, root)
+  return root
 }
 
 const wevuProject = sizeProjects.find(project => project.id === 'weapp-vite-wevu')!
 
 describe('runtime artifact size', () => {
-  it('counts emitted wevu chunks without relying on their split names', async () => {
+  it.each(['absolute', 'relative'])('counts emitted wevu chunks with an %s app path', async (pathKind) => {
     const appDir = await fixture({
       'weapp-vendors/wevu-runtime.js': 'runtime',
       'weapp-vendors/wevu-reactivity.js': 'reactivity',
@@ -35,7 +35,10 @@ describe('runtime artifact size', () => {
       'weapp-vendors/wevu-runtime.js.map': 'source map',
       'pages/index.js': 'page code',
     })
-    const result = await analyzeProject({ ...wevuProject, appDir })
+    const result = await analyzeProject({
+      ...wevuProject,
+      appDir: pathKind === 'relative' ? path.relative(repoRoot, appDir) : appDir,
+    })
 
     expect(result.totals.runtimeFiles).toBe(3)
     expect(result.totals.runtimeBytes).toBe(23)

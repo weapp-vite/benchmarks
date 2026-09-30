@@ -49,3 +49,10 @@
 - 体积：适配 wevu 7 的拆包变化，按实际 wevu vendor 文件识别 runtime，并强制生产构建避免 Turbo 缓存恢复后残留 HMR chunk；缺失 runtime 仍视为错误。
 
 已运行完整 `pnpm report:refresh`。修复体积采集后重跑构建、lint、类型检查、tsd 入口、23 项单元测试和体积统计，将真实重跑结果合并到最终验证报告；保留原编译、HMR 样本及 IDE 阻塞记录。
+
+## PR 跨平台 CI 修复
+
+首轮 CI 的 macOS Node 22/24 通过，Windows 和 Linux 分别暴露路径及原生依赖元数据问题：
+
+- Windows runner 仓库在 D 盘、临时目录在 C 盘，跨盘相对路径会变成绝对路径。体积采集改用 resolve 解析应用和产物目录，测试覆盖绝对路径与仓库相对路径，共 24 项单元测试。
+- 该批次 `@dcloudio/uts-linux-x64-gnu` 的 npm 元数据将 libc 写为 `gnu`，pnpm 需要 `glibc` 才会安装它。`.pnpmfile.cjs` 仅修正该包的精确版本元数据，锁文件同步，不改变编译器版本或原生二进制。
