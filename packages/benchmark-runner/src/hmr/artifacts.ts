@@ -1,9 +1,10 @@
 import { readFile, stat } from 'node:fs/promises'
+import { setTimeout } from 'node:timers/promises'
 
 export const defaultArtifactChangePollIntervalMs = 10
 
-function sleep(ms: number) {
-  return new Promise(resolve => setTimeout(resolve, ms))
+function sleep(ms: number, signal?: AbortSignal) {
+  return setTimeout(ms, undefined, { signal })
 }
 
 interface ArtifactState {
@@ -55,15 +56,16 @@ function hasChanged(before: ArtifactState, after: ArtifactState) {
   return typeof after.content === 'string' && after.content !== before.content
 }
 
-export async function waitForArtifacts(files: string[], timeoutMs: number) {
+export async function waitForArtifacts(files: string[], timeoutMs: number, signal?: AbortSignal) {
   const started = Date.now()
   while (Date.now() - started < timeoutMs) {
+    signal?.throwIfAborted()
     const states = await snapshotArtifacts(files)
     const missing = states.filter(state => !state.exists)
     if (missing.length === 0) {
       return states
     }
-    await sleep(200)
+    await sleep(200, signal)
   }
   throw new Error(`等待 HMR 初始产物超时：${files.join('、')}`)
 }
@@ -73,10 +75,12 @@ export async function waitForArtifactChange(
   timeoutMs: number,
   pollIntervalMs = defaultArtifactChangePollIntervalMs,
   expectedContent?: string,
+  signal?: AbortSignal,
 ) {
   const started = Date.now()
   const files = before.map(state => state.file)
   while (Date.now() - started < timeoutMs) {
+    signal?.throwIfAborted()
     const after = await snapshotArtifacts(files)
     const changed = after.find((state, index) => {
       const previous = before[index]
@@ -86,7 +90,7 @@ export async function waitForArtifactChange(
     if (changed) {
       return changed
     }
-    await sleep(pollIntervalMs)
+    await sleep(pollIntervalMs, signal)
   }
   throw new Error(`等待 HMR 产物更新超时：${files.join('、')}`)
 }
