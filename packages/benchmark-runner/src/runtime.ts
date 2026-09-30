@@ -5,6 +5,7 @@ import process from 'node:process'
 import path from 'pathe'
 import { ensureDir } from './fs'
 import { repoRoot, runtimeProjects } from './projects'
+import { startReportRun } from './reports/provenance/run'
 import {
   defaultIterationRetries,
   defaultIterations,
@@ -52,6 +53,7 @@ async function runRuntimeBenchmark() {
   }
 
   const iterations = Number(process.env['BENCH_RUNTIME_ITERATIONS'] ?? defaultIterations)
+  const run = await startReportRun('runtime', { iterations, projects: runtimeProjects, mode: runtimeMode(), completion: 'framework-next-tick' })
   const cliPath = await resolveWechatCliPath()
   const notes: string[] = [
     '运行时数据由 e2e/ide/runtime-benchmark.ts 通过微信开发者工具真实 IDE 自动化采集。',
@@ -68,6 +70,7 @@ async function runRuntimeBenchmark() {
   if (!cliPath) {
     const environment = await createRuntimeEnvironment()
     await writeReport(reportDir, {
+      provenance: await run.finish(),
       generatedAt: new Date().toISOString(),
       mode: 'ide-e2e',
       iterations,
@@ -97,6 +100,7 @@ async function runRuntimeBenchmark() {
   const environment = await createRuntimeEnvironment({ wechatDevtools: cliPath })
 
   await writeReport(reportDir, {
+    provenance: await run.finish(),
     generatedAt: new Date().toISOString(),
     mode: 'ide-e2e',
     iterations,

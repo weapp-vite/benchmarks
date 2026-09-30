@@ -5,17 +5,21 @@ import { ensureDir } from '../fs'
 import { repoRoot } from '../projects'
 import { writeToolchainReport } from '../reports/archive'
 import { createToolchainEnvironment } from '../reports/environment'
+import { startReportRun } from '../reports/provenance/run'
 import { analyzeProject, analyzeWevuPackage } from './collect'
 import { sizeProjects } from './projects'
 import { generateReport } from './report'
 
 async function main() {
+  const run = await startReportRun('size', { projects: sizeProjects.map(({ runtimeFilePattern, ...project }) => ({ ...project, runtimeFilePattern: runtimeFilePattern?.source })) })
   const analyzedProjects = await Promise.all(sizeProjects.map(project => analyzeProject(project)))
+  const wevuPackage = await analyzeWevuPackage()
   const output: AnalysisOutput = {
+    provenance: await run.finish(),
     generatedAt: new Date().toISOString(),
-    toolchain: await createToolchainEnvironment(),
+    toolchain: await createToolchainEnvironment(run.inputs),
     projects: analyzedProjects,
-    wevuPackage: await analyzeWevuPackage(),
+    wevuPackage,
   }
   const reportDir = path.join(repoRoot, 'reports/size')
   await ensureDir(reportDir)

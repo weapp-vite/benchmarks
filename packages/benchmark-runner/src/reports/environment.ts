@@ -1,3 +1,4 @@
+import type { InputSnapshot } from './provenance/types'
 import { execFile } from 'node:child_process'
 import { readFile } from 'node:fs/promises'
 import os from 'node:os'
@@ -122,17 +123,16 @@ export async function createMachineEnvironment(options: {
     memoryGB,
     node: process.version,
     pnpm: pnpm ?? 'unknown',
-    ...(options.wechatDevtools ? { wechatDevtools: options.wechatDevtools } : {}),
+    ...(options.wechatDevtools ? { wechatDevtools: path.basename(options.wechatDevtools) } : {}),
     ...(gitCommit ? { gitCommit } : {}),
     ...(weappViteSubmodule ? { weappViteSubmodule } : {}),
   }
 }
 
-export async function createToolchainEnvironment(): Promise<ToolchainEnvironment> {
+export async function createToolchainEnvironment(inputs: InputSnapshot): Promise<ToolchainEnvironment> {
   const pnpm = await run('pnpm', ['--version'])
   const gitCommit = await readGitCommit()
   const weappViteSubmodule = await readWeappViteSubmoduleCommit()
-  const shortSubmodule = weappViteSubmodule?.slice(0, 7) ?? 'unknown'
   const packages = Object.fromEntries(
     (await Promise.all([
       ['weapp-vite', readPackageVersion(path.join(repoRoot, 'apps/weapp-vite-wevu/node_modules/weapp-vite/package.json'))],
@@ -143,11 +143,11 @@ export async function createToolchainEnvironment(): Promise<ToolchainEnvironment
       .filter((entry): entry is readonly [string, string] => typeof entry[1] === 'string'),
   )
   const toolchainId = slugify(process.env['BENCH_TOOLCHAIN_ID'] ?? '')
-    || `weapp-vite-${shortSubmodule}-node${process.versions.node.split('.')[0]}`
+    || `weapp-vite-${packages['weapp-vite'] ?? 'unknown'}-${inputs.fingerprint.slice(0, 12)}-node${process.versions.node.split('.')[0]}`
 
   return {
     toolchainId,
-    toolchainLabel: process.env['BENCH_TOOLCHAIN_LABEL'] ?? `weapp-vite ${shortSubmodule} / Node ${process.versions.node}`,
+    toolchainLabel: process.env['BENCH_TOOLCHAIN_LABEL'] ?? `weapp-vite ${packages['weapp-vite'] ?? 'unknown'} / Node ${process.versions.node}`,
     os: await readOsLabel(),
     arch: `${process.platform}/${process.arch}`,
     node: process.version,

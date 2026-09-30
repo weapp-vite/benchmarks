@@ -4,6 +4,8 @@ import type { AnalysisOutput } from '../../size/types'
 import type { BenchmarkSection, DashboardReport, ProjectSummary } from '../types'
 import type { CompileReport, ReportInputs } from './types'
 import { isHealthyHmrScenario } from '../../hmr/statistics'
+import { aggregationError } from '../../reports/provenance/accept'
+import { comparableProvenance, provenanceError } from '../../reports/provenance/validate'
 
 function average(values: number[]) {
   return values.length
@@ -45,6 +47,7 @@ export function summarizeCompile(report: CompileReport): BenchmarkSection {
   })
   return {
     generatedAt: report.generatedAt,
+    ...(report.provenance ? { provenance: report.provenance } : {}),
     iterations: report.iterations,
     ...(report.environment ? { environment: report.environment } : {}),
     projects,
@@ -75,6 +78,7 @@ export function summarizeRuntime(report: RuntimeReport): BenchmarkSection {
   })
   return {
     generatedAt: report.generatedAt,
+    ...(report.provenance ? { provenance: report.provenance } : {}),
     iterations: report.iterations,
     ...(report.environment ? { environment: report.environment } : {}),
     projects,
@@ -120,6 +124,7 @@ export function summarizeHmr(report: HmrReport): BenchmarkSection {
   })
   return {
     generatedAt: report.generatedAt,
+    ...(report.provenance ? { provenance: report.provenance } : {}),
     iterations: report.iterations,
     ...(report.environment ? { environment: report.environment } : {}),
     projects,
@@ -130,6 +135,7 @@ export function summarizeHmr(report: HmrReport): BenchmarkSection {
 export function summarizeSize(report: AnalysisOutput): BenchmarkSection {
   return {
     generatedAt: report.generatedAt,
+    ...(report.provenance ? { provenance: report.provenance } : {}),
     ...(report.toolchain ? { toolchain: report.toolchain } : {}),
     projects: report.projects.map(project => ({
       id: project.id,
@@ -153,15 +159,34 @@ export function summarizeSize(report: AnalysisOutput): BenchmarkSection {
 }
 
 function withPrevious(current: BenchmarkSection, previous: BenchmarkSection | undefined): BenchmarkSection {
-  return previous ? { ...current, projects: attachPrevious(current.projects, previous.projects) } : current
+  return previous && comparableProvenance(current, previous) ? { ...current, projects: attachPrevious(current.projects, previous.projects) } : current
 }
 
 export function buildDashboardReport(inputs: ReportInputs): DashboardReport {
-  const compile = inputs.compile ? summarizeCompile(inputs.compile) : undefined
-  const runtime = inputs.runtime ? summarizeRuntime(inputs.runtime) : undefined
-  const hmr = inputs.hmr ? summarizeHmr(inputs.hmr) : undefined
-  const size = inputs.size ? summarizeSize(inputs.size) : undefined
-  const errors = inputs.errors ?? []
+  const errors = [...(inputs.errors ?? [])]
+  function accepted<T extends { generatedAt: string }>(name: string, report: T | undefined) {
+    if (!report) {
+      return undefined
+    }
+    const rejection = aggregationError(report, name, inputs.verification)
+    if (rejection) {
+      errors.push(`${name}: ${rejection}`)
+      return undefined
+    }
+    const warning = provenanceError(report)
+    if (warning) {
+      errors.push(`${name}: ${warning}`)
+    }
+    return report
+  }
+  const rawCompile = accepted('compile', inputs.compile)
+  const rawRuntime = accepted('runtime', inputs.runtime)
+  const rawHmr = accepted('hmr', inputs.hmr)
+  const rawSize = accepted('size', inputs.size)
+  const compile = rawCompile ? summarizeCompile(rawCompile) : undefined
+  const runtime = rawRuntime ? summarizeRuntime(rawRuntime) : undefined
+  const hmr = rawHmr ? summarizeHmr(rawHmr) : undefined
+  const size = rawSize ? summarizeSize(rawSize) : undefined
   const sourceCommit = compile?.environment?.gitCommit
     ?? runtime?.environment?.gitCommit
     ?? hmr?.environment?.gitCommit

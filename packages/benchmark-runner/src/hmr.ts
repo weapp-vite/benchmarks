@@ -17,6 +17,7 @@ import { hmrScenarios } from './hmr/scenarios/index'
 import { sampleWasRetried } from './hmr/statistics'
 import { repoRoot } from './projects'
 import { createMachineEnvironment } from './reports/environment'
+import { startReportRun } from './reports/provenance/run'
 
 const defaultTimeoutMs = 90_000
 const defaultIterationAttempts = 2
@@ -254,8 +255,10 @@ async function runHmrBenchmark() {
   const reportDir = path.join(repoRoot, 'reports/hmr')
   await ensureDir(reportDir)
 
+  const selected = selectedScenarios()
+  const run = await startReportRun('hmr', { iterations, timeoutMs, pollIntervalMs, iterationAttempts, scenarios: selected.map(({ applyMarker: _applyMarker, readyPattern, ...scenario }) => ({ ...scenario, readyPattern: readyPattern?.source })) })
   const samples: HmrSample[] = []
-  for (const scenarios of groupByProject(selectedScenarios())) {
+  for (const scenarios of groupByProject(selected)) {
     samples.push(...await runProjectScenarios({
       scenarios,
       iterations,
@@ -266,6 +269,7 @@ async function runHmrBenchmark() {
   }
 
   await writeHmrReport(reportDir, {
+    provenance: await run.finish(),
     generatedAt: new Date().toISOString(),
     iterations,
     environment: await createMachineEnvironment(),

@@ -154,7 +154,10 @@ export function renderDashboardHtml(options: {
       <span>生成时间 ${escapeHtml(report.generatedAt)}</span>
       <span>机器 ${escapeHtml(environment?.machineLabel ?? '未记录')}</span>
       <span>Commit <code>${escapeHtml(report.sourceCommit?.slice(0, 12) ?? 'unknown')}</code></span>
+      <span>Run ID <code>${escapeHtml(report.verification?.provenance?.runId ?? '历史报告未记录')}</code></span>
+      <span>输入指纹 <code>${escapeHtml(report.verification?.provenance?.inputs.fingerprint.slice(0, 12) ?? '未记录')}</code></span>
     </div>
+    ${report.errors.map(error => `<p class="caption">${escapeHtml(error)}</p>`).join('\n')}
   </header>
   <nav role="tablist" aria-label="报告视图">
     ${tabs.map(([id, label], index) => `<button id="tab-${id}" class="tab" type="button" role="tab" aria-controls="panel-${id}" aria-selected="${index === 0}">${label}</button>`).join('')}

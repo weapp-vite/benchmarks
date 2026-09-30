@@ -1,4 +1,5 @@
 import type { MachineEnvironment } from '../reports/environment'
+import type { ReportProvenance } from '../reports/provenance/types'
 
 export interface HmrProfileSample {
   timestamp?: string
@@ -65,6 +66,7 @@ export interface HmrSample {
 }
 
 export interface HmrReport {
+  provenance?: ReportProvenance
   generatedAt: string
   iterations: number
   environment?: MachineEnvironment

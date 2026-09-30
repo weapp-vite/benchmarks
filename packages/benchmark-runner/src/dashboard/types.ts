@@ -1,4 +1,5 @@
 import type { MachineEnvironment, ToolchainEnvironment } from '../reports/environment'
+import type { ReportProvenance } from '../reports/provenance/types'
 
 export type ReportStatus = 'failed' | 'passed' | 'skipped'
 
@@ -16,11 +17,20 @@ export interface VerificationStep {
 }
 
 export interface VerificationReport {
+  provenance?: ReportProvenance
   schemaVersion: 1
   generatedAt: string
   environment?: MachineEnvironment
   overallStatus: Exclude<ReportStatus, 'skipped'>
   steps: VerificationStep[]
+  revisions?: Array<{
+    recordedAt: string
+    section: string
+    previousStep: VerificationStep
+    execution: ReportProvenance
+    previous: { runId: string, generatedAt: string }
+    replacement: { runId: string, generatedAt: string }
+  }>
 }
 
 export interface ProjectSummary {
@@ -45,6 +55,7 @@ export interface ScenarioSummary {
 }
 
 export interface BenchmarkSection {
+  provenance?: ReportProvenance
   generatedAt: string
   iterations?: number
   environment?: MachineEnvironment

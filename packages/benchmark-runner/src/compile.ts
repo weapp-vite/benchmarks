@@ -7,6 +7,7 @@ import { ensureDir, removeDir, sanitizeTerminalOutput, summarizeDir } from './fs
 import { compileProjects, repoRoot } from './projects'
 import { writeMachineReport } from './reports/archive'
 import { createMachineEnvironment, machineEnvironmentLines } from './reports/environment'
+import { startReportRun } from './reports/provenance/run'
 
 interface CompileSample {
   project: string
@@ -86,6 +87,7 @@ async function runCommand(command: string, cwd: string) {
 
 async function runCompileBenchmark() {
   const iterations = Number(process.env['BENCH_ITERATIONS'] ?? defaultTimingIterations)
+  const run = await startReportRun('compile', { iterations, projects: compileProjects, cachePolicy: 'remove-output-only', nodeEnv: 'production' })
   const samples: CompileSample[] = []
 
   for (const project of compileProjects) {
@@ -113,9 +115,11 @@ async function runCompileBenchmark() {
 
   const reportDir = path.join(repoRoot, 'reports/compile')
   await ensureDir(reportDir)
+  const provenance = await run.finish()
   const generatedAt = new Date().toISOString()
   const report = {
     generatedAt,
+    provenance,
     iterations,
     environment: await createMachineEnvironment(),
     samples,

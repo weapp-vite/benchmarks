@@ -1,5 +1,6 @@
 import type { HmrReport } from '../../hmr/types'
 import type { MachineEnvironment } from '../../reports/environment'
+import type { ReportProvenance } from '../../reports/provenance/types'
 import type { RuntimeReport } from '../../runtime/types'
 import type { AnalysisOutput } from '../../size/types'
 import type { VerificationReport } from '../types'
@@ -18,6 +19,7 @@ export interface CompileSample {
 }
 
 export interface CompileReport {
+  provenance?: ReportProvenance
   generatedAt: string
   iterations: number
   environment?: MachineEnvironment

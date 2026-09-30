@@ -25,6 +25,13 @@ export async function writeVerificationReport(reportDir: string, report: Verific
     '',
   ]
   const failed = report.steps.filter(step => step.status === 'failed')
+  if (report.revisions?.length) {
+    lines.push('## 独立重跑记录', '', '| 步骤 | 原 Run ID | 替换 Run ID | 原采样时间 | 新采样时间 | 原状态 |', '| --- | --- | --- | --- | --- | --- |')
+    for (const revision of report.revisions) {
+      lines.push(`| ${revision.section} | ${revision.previous.runId} | ${revision.replacement.runId} | ${revision.previous.generatedAt} | ${revision.replacement.generatedAt} | ${statusLabel(revision.previousStep.status)} |`)
+    }
+    lines.push('', '原步骤与新命令执行证据保存在 JSON revisions 中；原始采样时间未改写。', '')
+  }
   if (failed.length) {
     lines.push('## 失败摘要', '')
     for (const step of failed) {

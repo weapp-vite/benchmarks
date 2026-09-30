@@ -10,6 +10,8 @@ import {
   summarizeSize,
 } from '../src/dashboard/data'
 
+import { evidence, put, verification } from './fixtures/provenance'
+
 const temporaryRoots: string[] = []
 
 afterEach(async () => {
@@ -188,6 +190,7 @@ describe('dashboard aggregation', () => {
     }
     const report = (generatedAt: string, iterations: number, durations: number[]) => ({
       generatedAt,
+      provenance: evidence('compile', generatedAt.replace(/[^a-z0-9]/gi, ''), generatedAt),
       iterations,
       environment,
       samples: durations.map(durationMs => ({
@@ -204,6 +207,7 @@ describe('dashboard aggregation', () => {
       writeFile(path.join(runsDir, '2026-07-13T01-00-00-000Z.json'), JSON.stringify(report('2026-07-13T01:00:00.000Z', 2, [80, 100])), 'utf8'),
     ])
 
+    await put(root, 'reports/verification/latest.json', verification('20260713T020000000Z', '2026-07-13T02:00:00.000Z'))
     const dashboard = await loadDashboardReport(root)
 
     expect(dashboard.compile?.projects[0]?.previousValues?.['buildMs']).toBe(90)
