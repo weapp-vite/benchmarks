@@ -36,4 +36,5 @@ it('builds every provider and both presets from equivalent inputs and fails clos
   await expect(verifyStressInputs(repoRoot, differentLocalEnv)).rejects.toThrow('otherInputs differ')
   const after = await captureInputs(repoRoot)
   expect(after.fingerprint).toBe(inputs.fingerprint)
-}, 240_000)
+// Sixteen uncached builds plus generated lint/type checks; each command is independently bounded.
+}, 420_000)
