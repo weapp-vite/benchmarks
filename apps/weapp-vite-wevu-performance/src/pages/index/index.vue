@@ -1,8 +1,9 @@
 <script setup lang="ts">
+import type { BenchmarkGroup, BenchmarkItem, RuntimeMetric } from '../../shared/benchmark'
 import { computed, nextTick, onMounted, ref } from 'wevu'
 import {
   batchCount,
-  type BenchmarkGroup,
+
   checksum,
   createItems,
   filterActiveHighScore,
@@ -15,12 +16,11 @@ import {
   sortByScoreThenId,
   stressCycles,
   updateEveryNth,
-  type BenchmarkItem,
-  type RuntimeMetric,
+
 } from '../../shared/benchmark'
 
 definePageJson({
-  navigationBarTitleText: 'weapp-vite wevu performance',
+  navigationBarTitleText: 'weapp-vite wevu',
 })
 
 const items = ref<BenchmarkItem[]>(createItems())
@@ -124,7 +124,7 @@ async function runBenchmark() {
 
   // eslint-disable-next-line no-console
   console.log('BENCHMARK_RUNTIME', {
-    framework: 'weapp-vite-wevu-performance',
+    framework: 'weapp-vite-wevu',
     metrics: metrics.value,
   })
 }
@@ -144,7 +144,7 @@ onMounted(() => {
   <view class="page">
     <view class="toolbar">
       <view class="title">
-        weapp-vite + wevu performance
+        weapp-vite + wevu
       </view>
       <view class="summary">
         {{ summary }}
@@ -175,7 +175,9 @@ onMounted(() => {
         class="row"
         @tap="goDetail(item)"
       >
-        <text class="row__title">{{ item.title }}</text>
+        <text class="row__title">
+          {{ item.title }}
+        </text>
         <text>g{{ item.group }}</text>
         <text>{{ item.score }}</text>
       </view>

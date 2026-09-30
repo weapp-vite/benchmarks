@@ -119,6 +119,7 @@ export function startDevProcess(options: {
   }
 
   return {
+    completion: closed,
     waitFor,
     waitForOutput,
     getOutput: () => output.join(''),

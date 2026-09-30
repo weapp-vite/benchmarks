@@ -15,7 +15,7 @@ describe('size report evidence', () => {
 
     expect(report).toContain('wevu 版本：9.0.0-test')
     expect(report).toContain(`\`sideEffects\`：\`${JSON.stringify(sideEffects) ?? '未记录'}\``)
-    expect(report).toContain('没有模块图或引用链证据')
+    expect(report).toContain('独立 Provider 的模块贡献不能用于归因真实 SFC 压力应用')
     expect(report).not.toContain('完整运行时基座')
     expect(report).not.toContain('wevu-src.js')
     expect(report).not.toContain('wevu-ref.js')

@@ -11,6 +11,13 @@ overrides:
   '@achrinza/node-ipc': npm:node-ipc-compat@1.0.0
   postcss: 8.5.28
 
+# This DCloud release requires estree-walker from CommonJS without declaring it.
+# A scoped dependency extension prevents accidental resolution to the ESM-only v3.
+packageExtensions:
+  '@dcloudio/uni-mp-vite@3.0.0-5020620260917001':
+    dependencies:
+      estree-walker: 2.0.2
+
 allowBuilds:
   '@dcloudio/hbuilderx-cli': false
   '@parcel/watcher': false

@@ -14,7 +14,7 @@ export async function put(root: string, file: string, value: string | object) {
 
 export async function inputFixture() {
   const root = await mkdtemp(path.join(tmpdir(), 'benchmark-provenance-'))
-  await put(root, '.gitignore', 'node_modules/\nreports/\ndist/\n.env*\n')
+  await put(root, '.gitignore', 'node_modules/\nreports/\ndist/\n.env*\nproject.private.config.json\n')
   await put(root, 'package.json', { name: 'fixture', version: '1.0.0', private: true })
   await put(root, 'pnpm-lock.yaml', 'lockfileVersion: 9.0\n')
   await put(root, 'packages/benchmark-runner/package.json', { name: 'runner', version: '1.0.0' })

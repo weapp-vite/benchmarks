@@ -1,6 +1,7 @@
 import type { OutputManifest } from '../artifacts/manifest'
 import type { ToolchainEnvironment } from '../reports/environment'
 import type { ReportProvenance } from '../reports/provenance/types'
+import type { CapabilityMatrix } from './capabilities/types'
 
 export interface ProjectInput {
   id: string
@@ -61,6 +62,7 @@ export interface WevuPackageInfo {
 }
 
 export interface AnalysisOutput {
+  capabilities?: CapabilityMatrix
   artifacts?: Array<{ project: string, inputFingerprint: string, manifest: OutputManifest }>
   provenance?: ReportProvenance
   generatedAt: string

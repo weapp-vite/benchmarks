@@ -56,3 +56,8 @@
 
 - Windows runner 仓库在 D 盘、临时目录在 C 盘，跨盘相对路径会变成绝对路径。体积采集改用 resolve 解析应用和产物目录，测试覆盖绝对路径与仓库相对路径，共 24 项单元测试。
 - 该批次 `@dcloudio/uts-linux-x64-gnu` 的 npm 元数据将 libc 写为 `gnu`，pnpm 需要 `glibc` 才会安装它。`.pnpmfile.cjs` 仅修正该包的精确版本元数据，锁文件同步，不改变编译器版本或原生二进制。
+
+## 能力矩阵新增依赖与安装修复
+
+- runner 显式声明 `esbuild@0.28.2`，用于消费已安装 wevu 的 Provider 阶梯，并保存 metafile 模块贡献。避免依赖偶然提升的间接 esbuild。
+- `@dcloudio/uni-mp-vite@3.0.0-5020620260917001/dist/plugins/independentMain.js` 调用 CommonJS `require('estree-walker')`，但该批次 package.json 未声明依赖。新安装布局会提升 ESM-only 的 3.x，导致 `ERR_PACKAGE_PATH_NOT_EXPORTED`。对该精确批次用 `packageExtensions` 补 `estree-walker@2.0.2`，保持与同批次 DCloud 编译器的依赖兼容；不全局覆盖其他工具使用的 3.x。七框架生产集成和 frozen-lockfile 安装验证这条修复。

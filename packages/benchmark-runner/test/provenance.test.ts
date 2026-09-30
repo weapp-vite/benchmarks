@@ -34,6 +34,9 @@ describe('report input provenance', () => {
     ['apps/app/vite.config.ts', 'export default { mode: "test" }'],
     ['apps/app/src/page.vue', '<template><view>changed</view></template>'],
     ['.env.local', 'PRIVATE_TOKEN=never-emit-this'],
+    ['apps/app/project.private.config.json', '{"setting":{"compileHotReLoad":true}}'],
+    ['eslint.config.js', 'export default []'],
+    ['stylelint.config.js', 'export default {}'],
     ['apps/app/node_modules/weapp-vite/package.json', { name: 'weapp-vite', version: '7.4.1' }],
   ])('changes the fingerprint without changing HEAD when %s changes', async (file, value) => {
     const root = await fixture()

@@ -11,5 +11,7 @@ export default defineConfig({
   },
   test: {
     include: ['test/**/*.test.ts'],
+    // Real compiler/watch integration suites must not compete for the same CI CPU.
+    fileParallelism: false,
   },
 })
