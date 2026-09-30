@@ -9,7 +9,7 @@ import { hash, stableJson } from './hash'
 
 const exec = promisify(execFile)
 const inputRoots = ['apps/', 'packages/benchmark-runner/', 'e2e/']
-const rootFiles = new Set(['package.json', 'pnpm-lock.yaml', 'pnpm-workspace.yaml', '.pnpmfile.cjs', '.npmrc', 'tsconfig.json', 'turbo.json'])
+const rootFiles = new Set(['package.json', 'pnpm-lock.yaml', 'pnpm-workspace.yaml', '.pnpmfile.cjs', '.npmrc', 'tsconfig.json', 'turbo.json', 'eslint.config.js', 'stylelint.config.js'])
 const excluded = /(?:^|\/)(?:node_modules|dist|unpackage|\.weapp-vite|\.turbo|coverage|reports)(?:\/|$)|\.tsbuildinfo$/
 const hiddenEnvironment = /^(?:BENCH_|WECHAT_|WEAPP_|VITE_|UNI_|TARO_|MPX_|NODE_OPTIONS$|NODE_ENV$|CI$|TZ$)/
 const operationalEnvironment = /^(?:BENCH_RUN_ID|BENCH_INPUT_FINGERPRINT|BENCH_REPLACE_|BENCH_REPORT_|BENCH_HMR_|BENCH_RUNTIME_REQUIRED|BENCH_MACHINE_|BENCH_TOOLCHAIN_)/
@@ -93,10 +93,10 @@ export async function captureInputs(root: string, env: NodeJS.ProcessEnv = proce
   const listed = (await git(root, ['ls-files', '-z', '--cached', '--others', '--exclude-standard']))
     .split('\0')
     .filter(Boolean)
-  // Vite loads local env files even when Git ignores them. Hash content, never values.
+  // Vite and the IDE load ignored local inputs too. Hash content, never values.
   const dirs = ['.', ...listed.filter(file => /^(?:apps|packages)\/[^/]+\/package\.json$/.test(file)).map(file => path.dirname(file))]
   const localEnv = (await Promise.all(dirs.map(async dir => (await readdir(path.join(root, dir)))
-    .filter(file => file === '.env' || file.startsWith('.env.'))
+    .filter(file => file === '.env' || file.startsWith('.env.') || file === 'project.private.config.json')
     .map(file => path.join(dir, file))))).flat()
   listed.push(...localEnv)
   const paths = [...new Set(listed)].filter(file => !excluded.test(file)

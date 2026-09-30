@@ -4,7 +4,7 @@ import autoRoutes from 'weapp-vite/auto-routes'
 defineAppJson({
   pages: autoRoutes.pages,
   window: {
-    navigationBarTitleText: 'weapp-vite wevu performance',
+    navigationBarTitleText: 'weapp-vite wevu',
     navigationBarBackgroundColor: '#1f2937',
     navigationBarTextStyle: 'white',
   },

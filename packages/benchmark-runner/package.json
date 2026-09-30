@@ -23,6 +23,7 @@
     "@types/node": "^26.6.3",
     "@weapp-vite/miniprogram-automator": "1.2.23",
     "echarts": "6.1.0",
+    "esbuild": "0.28.2",
     "prettier": "3.9.9",
     "tsdown": "0.23.0",
     "tsx": "^4.23.15",

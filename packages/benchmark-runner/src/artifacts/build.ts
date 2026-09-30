@@ -1,9 +1,9 @@
 import { spawn } from 'node:child_process'
 import process from 'node:process'
 
-export async function runBuild(cwd: string, script: string, args: string[] = []) {
+export async function runWorkspaceCommand(cwd: string, args: string[]) {
   const command = process.platform === 'win32' ? 'pnpm.cmd' : 'pnpm'
-  const child = spawn(command, ['run', script, ...args], {
+  const child = spawn(command, args, {
     cwd,
     env: { ...process.env, NODE_ENV: 'production', CI: '1', FORCE_COLOR: '0' },
     shell: process.platform === 'win32',
@@ -20,7 +20,11 @@ export async function runBuild(cwd: string, script: string, args: string[] = [])
     child.once('close', resolve)
   })
   if (code !== 0) {
-    throw new Error(`Production build failed (${code}):\n${output}`)
+    throw new Error(`Workspace command ${args.join(' ')} failed (${code}):\n${output}`)
   }
   return output
+}
+
+export function runBuild(cwd: string, script: string, args: string[] = []) {
+  return runWorkspaceCommand(cwd, ['run', script, ...args])
 }

@@ -1,5 +1,6 @@
 import type { AnalysisOutput, ProjectSize, WevuPackageInfo } from './types'
 import { toolchainEnvironmentLines } from '../reports/environment'
+import { capabilityReport } from './capabilities/report'
 import { formatKb, rows } from './format'
 
 function selectedFiles(project: ProjectSize) {
@@ -96,16 +97,17 @@ export function generateReport(output: AnalysisOutput) {
           '',
         ]
       : []),
+    ...capabilityReport(output.capabilities),
     '## wevu 源包入口',
     '',
     ...wevuPackageTable(output.wevuPackage),
     '',
     '## 证据范围与后续验证',
     '',
-    '- 当前只有文件级体积和包元数据，没有模块图或引用链证据，无法据此判断 tree shaking 是否有效、具体能力是否冗余或哪个模块导致差值。',
+    '- 跨框架压力应用仅有文件级体积和包元数据；独立 Provider 的模块贡献不能用于归因真实 SFC 压力应用的差值。',
     '- sideEffects 是采集时的包声明，不直接证明最终产物的裁剪结果；源包入口的压缩体积也不等于消费应用的运行时体积。',
     '- performance preset 的文件体积差异仅表示构建成本；运行时延迟、setData 次数/字节和内存收益需要同版本、同场景的独立运行时验证。',
-    '- 后续可用最小能力阶梯与模块级分析定位成本，分别验证原始包体和宿主行为；这些是研究方向，不是本报告已确认的原因。',
+    '- 能力矩阵验证构建成本；宿主行为与性能收益仍需独立 IDE 证据，未测量项保持未测量。',
     '',
     '## 复跑命令',
     '',
