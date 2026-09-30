@@ -1,0 +1,1 @@
+{ "pages": ["pages/home/index", "pages/detail/index"], "window": { "navigationBarTitleText": "Artifact fixture" } }

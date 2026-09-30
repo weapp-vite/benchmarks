@@ -117,6 +117,8 @@ export async function captureInputs(root: string, env: NodeJS.ProcessEnv = proce
   }
   // Values can contain IDE paths or credentials. Record a digest only.
   const environmentHash = hash(stableJson({
+    // Some compilers derive module IDs from paths; record location without disclosing it.
+    workspace: hash(await realpath(root)),
     node: process.version,
     platform: process.platform,
     arch: process.arch,

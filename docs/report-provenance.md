@@ -6,7 +6,7 @@
 
 采样前读取实际安装的工作区直接依赖，并沿 weapp-vite/wevu/uni 编译器消费路径解析相关 compiler/runtime 版本。声明必需但未安装的依赖会直接报错。参考子模块 SHA 单独记录，不代表消费的 npm 版本。
 
-输入指纹包括 lockfile、应用代码/配置、runner、E2E 文件和实际包版本，以及 Node、平台、架构、pnpm user-agent 与 BENCH/WECHAT/Node/CI/TZ 环境设置的摘要。忽略构建目录、报告、缓存和受管 TypeScript 产物；Git 忽略的根目录/工作区 `.env*` 仍参与摘要。环境值与 `.env` 内容不会写入 provenance，只有文件相对路径和 SHA-256。
+输入指纹包括 lockfile、应用代码/配置、runner、E2E 文件和实际包版本，以及源工作区位置摘要、Node、平台、架构、pnpm user-agent 与 BENCH/WECHAT/Node/CI/TZ 环境设置的摘要。忽略构建目录、报告、缓存和受管 TypeScript 产物；Git 忽略的根目录/工作区 `.env*` 仍参与摘要。环境值与 `.env` 内容不会写入 provenance，只有文件相对路径和 SHA-256。
 
 报告同时保存 HEAD、Git dirty、inputDirty、runner 源码摘要、测量参数和实际采集区间。因此未提交的锁文件、配置和场景修改可以区分。存在本地 `.env*` 时，inputDirty 保守标为 true。指纹不是对外部网络服务或任意读取仓库之外文件的插件的快照；额外外部输入需要先纳入受控配置，不能据此宣称完全可复现。
 
