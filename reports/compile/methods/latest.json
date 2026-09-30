@@ -1,0 +1,6364 @@
+{
+  "generatedAt": "2026-09-30T22:58:49.584Z",
+  "provenance": {
+    "schemaVersion": 1,
+    "runId": "ed3908e7-8aa6-4d06-aa98-40f13f793f2b",
+    "section": "compile-methods",
+    "startedAt": "2026-09-30T22:52:03.316Z",
+    "finishedAt": "2026-09-30T22:58:49.583Z",
+    "inputs": {
+      "fingerprint": "a6f9c5f6e3cc8d530ef240ed85fe650ef4862057fb40230bfe7d24d864e42a48",
+      "lockfileHash": "8a5d8760666f2a66454271ee0768f65317f03f0c39b8cfdbedf7d898a549fec9",
+      "files": [
+        {
+          "path": ".pnpmfile.cjs",
+          "sha256": "a76412eebcbf28c6d3475d05762ba623dd5a856ad98b448db7e6bda69fcca0f1"
+        },
+        {
+          "path": "apps/mpx/babel.config.json",
+          "sha256": "5e6e2e570129f13f1a169e1ab20ad60100d9d9880875a741d85d381a3042ea14"
+        },
+        {
+          "path": "apps/mpx/eslint.config.mjs",
+          "sha256": "b1d47f4f322cfc55ffb04cde380bd4ef11712dcaf0e0bf1b5f8d7ce079ebe7b5"
+        },
+        {
+          "path": "apps/mpx/mpx.config.js",
+          "sha256": "49e0de8b361733f03057350d3cbb580ddb33ff8440ab27c26a85ac5001ee96b7"
+        },
+        {
+          "path": "apps/mpx/package.json",
+          "sha256": "590ec0d21003a30e5563aa4c3bdfccdba306f1daf6742d3519c2a25bbe49cff0"
+        },
+        {
+          "path": "apps/mpx/postcss.config.js",
+          "sha256": "e173725fa1433ecac9d969632584b5c7ec2433266b26e9316d9697731b1da9ed"
+        },
+        {
+          "path": "apps/mpx/src/app.mpx",
+          "sha256": "2fe0de3bfa87bd6d51a9162b36e1e30ed04660ccdf24d158171e606af0a767f3"
+        },
+        {
+          "path": "apps/mpx/src/pages/detail.mpx",
+          "sha256": "f74b29908a00cf128555a487a415a076684a155148804cc6439e8082c565556e"
+        },
+        {
+          "path": "apps/mpx/src/pages/index.mpx",
+          "sha256": "b0100c879af2afe53fc5d178654198a5b6e098270f0e04b692fee122fa07e706"
+        },
+        {
+          "path": "apps/mpx/src/shared/benchmark.ts",
+          "sha256": "3c4dd41b36399e3a2863891fcae954297d54d8a938a2152c911493d721e979e6"
+        },
+        {
+          "path": "apps/mpx/src/types.d.ts",
+          "sha256": "b1187de6784fbf090f743edec6b7eb8013f68d63d39095ae8f0cbc24bf8d8335"
+        },
+        {
+          "path": "apps/mpx/static/wx/project.config.json",
+          "sha256": "15ddd430f1d2a01d42d9c6c2fadbd464f0afa5d31e0edf02f33515c58a7ceb84"
+        },
+        {
+          "path": "apps/mpx/tsconfig.json",
+          "sha256": "4c02a636a3ac4fd81405619cee23cb982f149067840ca5d02053c90bd171fd0d"
+        },
+        {
+          "path": "apps/mpx/tsconfig.typecheck.json",
+          "sha256": "677b035f5f0a22c52b2464dd376119c21fe036d87c23c7a4a26341ae232607be"
+        },
+        {
+          "path": "apps/taro-vue3/config/index.ts",
+          "sha256": "b9c29011318cf695fa79ac6bc730f1e7d73c6a2d75bd309c8f6298932a38a8eb"
+        },
+        {
+          "path": "apps/taro-vue3/package.json",
+          "sha256": "369b69979044c100823fcc41a4e6ecc4344117e4597be7ba5de6b36eb69d3ce7"
+        },
+        {
+          "path": "apps/taro-vue3/project.config.json",
+          "sha256": "506258f0c79164708ed60d43bd14e0d650869c4ccc7ff763f0afe86446bfcd3b"
+        },
+        {
+          "path": "apps/taro-vue3/src/app.config.ts",
+          "sha256": "c0fdee746dcd1d713909c48a8781bf8f1c25c2ac5b82f5369077fe7830dc462c"
+        },
+        {
+          "path": "apps/taro-vue3/src/app.css",
+          "sha256": "73e92d45a2d186b36d4c0c8e21c2ad32f8efd082bf185e95f5fd52658c828677"
+        },
+        {
+          "path": "apps/taro-vue3/src/app.ts",
+          "sha256": "a0066307a54f39b44a046601b2050f0b1336dcad0036a2aecf70e1f39d9425f2"
+        },
+        {
+          "path": "apps/taro-vue3/src/pages/detail/index.config.ts",
+          "sha256": "c9240c5b8dad5833d747304e400fb2f134d3c44f881c3de11460df42862b94ed"
+        },
+        {
+          "path": "apps/taro-vue3/src/pages/detail/index.vue",
+          "sha256": "b618fbd79da7be6695a88afdb1803b39ae971ec1ec666e82151b13a39f7a013b"
+        },
+        {
+          "path": "apps/taro-vue3/src/pages/index/index.config.ts",
+          "sha256": "be5c6672a1d6d85d87a4bc92b9b185ade7431dbb29d8b6972ff161818ef811f4"
+        },
+        {
+          "path": "apps/taro-vue3/src/pages/index/index.css",
+          "sha256": "219c06c7e799d1a1b6d8a9ab118e78ee329a436be72bb9b2d08611ba1636df89"
+        },
+        {
+          "path": "apps/taro-vue3/src/pages/index/index.vue",
+          "sha256": "002789c27efb287b842cda4ad9686b9f191086c26325bb6dc81e446d8a0116ee"
+        },
+        {
+          "path": "apps/taro-vue3/src/shared/benchmark.ts",
+          "sha256": "3c4dd41b36399e3a2863891fcae954297d54d8a938a2152c911493d721e979e6"
+        },
+        {
+          "path": "apps/taro-vue3/src/types.d.ts",
+          "sha256": "ccfc86914e457fcf4348a14cb5d58aaf76bbd50ba136a3246df2e6de493037bb"
+        },
+        {
+          "path": "apps/taro-vue3/tsconfig.json",
+          "sha256": "acb2093f5c0197715c4c3d301ed1c69e799f41c0100e37dfc4d69e16dcf20930"
+        },
+        {
+          "path": "apps/uni-app-vite-vue3/index.html",
+          "sha256": "810ae6af08fb56eeb17dc111a4601c41293ec9cb8e968b4d1fa177d6c269c46d"
+        },
+        {
+          "path": "apps/uni-app-vite-vue3/package.json",
+          "sha256": "d1c25494c735e1c50310bae7d3cdd8bfbd05b8b6a968e237f4c38fa0aa8f3448"
+        },
+        {
+          "path": "apps/uni-app-vite-vue3/src/App.vue",
+          "sha256": "71a64314311ee04d54127f1232776b8abd8761ccafb097f7cf68845344e7809b"
+        },
+        {
+          "path": "apps/uni-app-vite-vue3/src/main.ts",
+          "sha256": "f2fad2d08c1391f9e97056e8e250566bfbab71519ef20b829886303984e2ef0b"
+        },
+        {
+          "path": "apps/uni-app-vite-vue3/src/manifest.json",
+          "sha256": "7de5373fcdebd17614291910fa1059ff24e80a49f7393accb5e29fa359ed52e6"
+        },
+        {
+          "path": "apps/uni-app-vite-vue3/src/pages.json",
+          "sha256": "dbe91ffb3cd4f7b459f17006c89711c8f499b07e42cb51b62c09d537cd68f20a"
+        },
+        {
+          "path": "apps/uni-app-vite-vue3/src/pages/detail/index.vue",
+          "sha256": "7fcdb74672b3bd97ee9b6aaf26bbd0e47b49c467dac2aa3b0f7aef85c10c8943"
+        },
+        {
+          "path": "apps/uni-app-vite-vue3/src/pages/index/index.vue",
+          "sha256": "4a164264a80e80871314c1f79182bf8497361a9eba574531adf6b505dc974e3b"
+        },
+        {
+          "path": "apps/uni-app-vite-vue3/src/shared/benchmark.ts",
+          "sha256": "3c4dd41b36399e3a2863891fcae954297d54d8a938a2152c911493d721e979e6"
+        },
+        {
+          "path": "apps/uni-app-vite-vue3/tsconfig.json",
+          "sha256": "f11779aa26b4623736e127491497cae6213a54839066b279e33d7e628a09bf6d"
+        },
+        {
+          "path": "apps/uni-app-vite-vue3/vite.config.ts",
+          "sha256": "1695d9a2e0392acf5b8da8772d559c6a063e910a9c386a0f93da30ff2f090a7a"
+        },
+        {
+          "path": "apps/uni-app-x/index.html",
+          "sha256": "810ae6af08fb56eeb17dc111a4601c41293ec9cb8e968b4d1fa177d6c269c46d"
+        },
+        {
+          "path": "apps/uni-app-x/package.json",
+          "sha256": "45c380d78b2864e2b80ded0957354ba2f0f888228a11f8566e9c2c2ca6ca38be"
+        },
+        {
+          "path": "apps/uni-app-x/src/App.vue",
+          "sha256": "71a64314311ee04d54127f1232776b8abd8761ccafb097f7cf68845344e7809b"
+        },
+        {
+          "path": "apps/uni-app-x/src/main.ts",
+          "sha256": "f2fad2d08c1391f9e97056e8e250566bfbab71519ef20b829886303984e2ef0b"
+        },
+        {
+          "path": "apps/uni-app-x/src/manifest.json",
+          "sha256": "f407c477603be009d03f0285f5e7883a1e65606168f820f3a6a398526dee887f"
+        },
+        {
+          "path": "apps/uni-app-x/src/pages.json",
+          "sha256": "29e71237eabfaa73288a9da7d3c7953bbc685dfa89546b681474a91bbc2f8882"
+        },
+        {
+          "path": "apps/uni-app-x/src/pages/detail/index.vue",
+          "sha256": "7fcdb74672b3bd97ee9b6aaf26bbd0e47b49c467dac2aa3b0f7aef85c10c8943"
+        },
+        {
+          "path": "apps/uni-app-x/src/pages/index/index.vue",
+          "sha256": "46b8e4fa0726d0e8456b7e1f04672da42155c8181a9b048d37816cb2963b98dc"
+        },
+        {
+          "path": "apps/uni-app-x/src/shared/benchmark.ts",
+          "sha256": "3c4dd41b36399e3a2863891fcae954297d54d8a938a2152c911493d721e979e6"
+        },
+        {
+          "path": "apps/uni-app-x/tsconfig.json",
+          "sha256": "33a695ffaa77e162e1bcbd60bbf01b07eb90758db3ec22c9dcc8df895e7e6ed6"
+        },
+        {
+          "path": "apps/uni-app-x/vite.config.ts",
+          "sha256": "1695d9a2e0392acf5b8da8772d559c6a063e910a9c386a0f93da30ff2f090a7a"
+        },
+        {
+          "path": "apps/vue-mini-core/package.json",
+          "sha256": "64628102135d7c2359563a313debafab1f239fb02b63b696f3cf07058c41b9a9"
+        },
+        {
+          "path": "apps/vue-mini-core/project.config.json",
+          "sha256": "67ac4b81523e97b7ea7f3ae3153b08c59d4d1e574ae14a91dd822dcfa9cf0dab"
+        },
+        {
+          "path": "apps/vue-mini-core/src/app.js",
+          "sha256": "db96efe1849aabd926fcb673bcf48c366fba3dda199696e1841668d274d264c7"
+        },
+        {
+          "path": "apps/vue-mini-core/src/app.json",
+          "sha256": "7f2bc3d626fde422caeb7a752ca2855d8a2b1382b481b40a0543d7fcd5be4447"
+        },
+        {
+          "path": "apps/vue-mini-core/src/app.wxss",
+          "sha256": "53a4a6200d314fbf73e0c9cdf97c49e4170f27185e14b1a6495189a96a76910d"
+        },
+        {
+          "path": "apps/vue-mini-core/src/pages/detail/index.js",
+          "sha256": "b4e6551a97ea15d112f840e16a4ae06019b252cbc2a3aef03facd893881698b4"
+        },
+        {
+          "path": "apps/vue-mini-core/src/pages/detail/index.json",
+          "sha256": "a21170fabf6e3446266f3bc998a72a075904c21806f0e8f1ffec277d178bc8ab"
+        },
+        {
+          "path": "apps/vue-mini-core/src/pages/detail/index.wxml",
+          "sha256": "9d10cf38943a588df5547634e0d32bbcd0aff8cd026fdf81966aad3f96a92cf6"
+        },
+        {
+          "path": "apps/vue-mini-core/src/pages/detail/index.wxss",
+          "sha256": "43cd4a7a3322c52202eaeb3be58fca324162b5bb6b46ace1b6e3fff75ba0dc27"
+        },
+        {
+          "path": "apps/vue-mini-core/src/pages/index/index.js",
+          "sha256": "084e5f51a2179414439824af6e80f556747d8a080ffdc698db9e3de0aa0efa2d"
+        },
+        {
+          "path": "apps/vue-mini-core/src/pages/index/index.json",
+          "sha256": "a8e62654d5ffbc5d92bfd450d86df61b1d8a2304e7ffd3de42823ce191b10a09"
+        },
+        {
+          "path": "apps/vue-mini-core/src/pages/index/index.wxml",
+          "sha256": "f8f8eb660d63771267e9d854adb532729c388cc26a49b46b86797bc55fad8bb2"
+        },
+        {
+          "path": "apps/vue-mini-core/src/pages/index/index.wxss",
+          "sha256": "fcadbcd066203ceebc892ffd155863b6d83cb9ba0f0ae5a8451d1266c699a12b"
+        },
+        {
+          "path": "apps/vue-mini-core/src/shared/benchmark.js",
+          "sha256": "ddb8058663b60f12485e82cb0037b46da32f1096d74c55d75f61dd9dec6ef416"
+        },
+        {
+          "path": "apps/vue-mini-core/src/sitemap.json",
+          "sha256": "3552173b6e45a4127d0377edd9262bbbac300490f9af3dca75f22029f0b120be"
+        },
+        {
+          "path": "apps/vue-mini-core/tsconfig.json",
+          "sha256": "eff35b6aeb38f3794075736a362060eb14f837f49003c6d9cf7891e5f9560775"
+        },
+        {
+          "path": "apps/weapp-vite-native/package.json",
+          "sha256": "f4dc1713bc75bcd96175ae69e39c63eebdd75c72330f74a9b95ad8c4831e2b76"
+        },
+        {
+          "path": "apps/weapp-vite-native/project.config.json",
+          "sha256": "8e2c07f323f7b0a95e47b9caf90f5479ab4cbaf4df88a970be690bc37a8cb457"
+        },
+        {
+          "path": "apps/weapp-vite-native/src/app.js",
+          "sha256": "10fda6dbb35816a62a842ab05302b4150bfe044040adf6bc9290abc2b40d3489"
+        },
+        {
+          "path": "apps/weapp-vite-native/src/app.json",
+          "sha256": "f74bb50d3a51404402786a790ef30c6fcf931c92433f2195025ba188623baad4"
+        },
+        {
+          "path": "apps/weapp-vite-native/src/app.wxss",
+          "sha256": "7376ba5bd2fc818e23e3aefdc41ea3f5886b899565322473c27161fb0cc45510"
+        },
+        {
+          "path": "apps/weapp-vite-native/src/pages/detail/index.js",
+          "sha256": "5e35374a5f329510f8a200b5f351013c470e103b110da67f46f4e617f5183025"
+        },
+        {
+          "path": "apps/weapp-vite-native/src/pages/detail/index.json",
+          "sha256": "a21170fabf6e3446266f3bc998a72a075904c21806f0e8f1ffec277d178bc8ab"
+        },
+        {
+          "path": "apps/weapp-vite-native/src/pages/detail/index.wxml",
+          "sha256": "9d10cf38943a588df5547634e0d32bbcd0aff8cd026fdf81966aad3f96a92cf6"
+        },
+        {
+          "path": "apps/weapp-vite-native/src/pages/detail/index.wxss",
+          "sha256": "43cd4a7a3322c52202eaeb3be58fca324162b5bb6b46ace1b6e3fff75ba0dc27"
+        },
+        {
+          "path": "apps/weapp-vite-native/src/pages/index/index.js",
+          "sha256": "8cde458dcf45828b8e17ad063c063daa5ee7afc9359b52701cbeb433560e76f1"
+        },
+        {
+          "path": "apps/weapp-vite-native/src/pages/index/index.json",
+          "sha256": "3c7c3791fc63685942a7d92f61f3a1d4e87c47db36838e1fb5836f29fc5f0a06"
+        },
+        {
+          "path": "apps/weapp-vite-native/src/pages/index/index.wxml",
+          "sha256": "0daf6c9440842b117d4c5b48aa080a2c3725b74df28a4e3a5f8d0bf45300d11a"
+        },
+        {
+          "path": "apps/weapp-vite-native/src/pages/index/index.wxss",
+          "sha256": "fcadbcd066203ceebc892ffd155863b6d83cb9ba0f0ae5a8451d1266c699a12b"
+        },
+        {
+          "path": "apps/weapp-vite-native/src/shared/benchmark.js",
+          "sha256": "ddb8058663b60f12485e82cb0037b46da32f1096d74c55d75f61dd9dec6ef416"
+        },
+        {
+          "path": "apps/weapp-vite-native/src/sitemap.json",
+          "sha256": "3552173b6e45a4127d0377edd9262bbbac300490f9af3dca75f22029f0b120be"
+        },
+        {
+          "path": "apps/weapp-vite-native/tsconfig.json",
+          "sha256": "327b379a9821613c8a0c73951ff3f76eb0c4425506fd23b3688d2759f57e4e70"
+        },
+        {
+          "path": "apps/weapp-vite-native/weapp-vite.config.ts",
+          "sha256": "88b89405d41ea74e2b812a8d05b3fb4e0fd3fc388dcbf3b2d6b5878202ceb150"
+        },
+        {
+          "path": "apps/weapp-vite-wevu-performance/package.json",
+          "sha256": "c1f4d6615d54bbae96682de84fb511a0a7a1034ecbfa64fb191c049b3afe31ef"
+        },
+        {
+          "path": "apps/weapp-vite-wevu-performance/project.config.json",
+          "sha256": "a21ce5b955c14103e720df7ad26e53710210cdc61737a91a6f1d2668464dfb82"
+        },
+        {
+          "path": "apps/weapp-vite-wevu-performance/src/app.vue",
+          "sha256": "aff11269582bbe3d683681b5dcc665eb782e63a2110142ca63315c8a9d9cdd8f"
+        },
+        {
+          "path": "apps/weapp-vite-wevu-performance/src/pages/detail/index.vue",
+          "sha256": "845d17dea62ed38a26330758d218fc3b104d0ecb58851af3f6ce18f33d0551e1"
+        },
+        {
+          "path": "apps/weapp-vite-wevu-performance/src/pages/index/index.vue",
+          "sha256": "f370ffdf8a6726477b0620558d92c1b8c44e5a2b23c0866bb5eda692f1cc01f4"
+        },
+        {
+          "path": "apps/weapp-vite-wevu-performance/src/shared/benchmark.ts",
+          "sha256": "3c4dd41b36399e3a2863891fcae954297d54d8a938a2152c911493d721e979e6"
+        },
+        {
+          "path": "apps/weapp-vite-wevu-performance/src/sitemap.json",
+          "sha256": "3552173b6e45a4127d0377edd9262bbbac300490f9af3dca75f22029f0b120be"
+        },
+        {
+          "path": "apps/weapp-vite-wevu-performance/tsconfig.json",
+          "sha256": "ff0049a298783f2941775350af2fb10fefff1db0579c94c3e9ef7bb7a525f2c0"
+        },
+        {
+          "path": "apps/weapp-vite-wevu-performance/weapp-vite.config.ts",
+          "sha256": "0bd6ae381cb7fe6a6ecea5c177a4411033b66ecaa0678c7ddd008d7feaf9de0c"
+        },
+        {
+          "path": "apps/weapp-vite-wevu/package.json",
+          "sha256": "e08149827e8539a8d6e4ece369c5bdf610aa63498b64adc1b686875e31c1e792"
+        },
+        {
+          "path": "apps/weapp-vite-wevu/project.config.json",
+          "sha256": "a21ce5b955c14103e720df7ad26e53710210cdc61737a91a6f1d2668464dfb82"
+        },
+        {
+          "path": "apps/weapp-vite-wevu/src/app.vue",
+          "sha256": "aff11269582bbe3d683681b5dcc665eb782e63a2110142ca63315c8a9d9cdd8f"
+        },
+        {
+          "path": "apps/weapp-vite-wevu/src/pages/detail/index.vue",
+          "sha256": "845d17dea62ed38a26330758d218fc3b104d0ecb58851af3f6ce18f33d0551e1"
+        },
+        {
+          "path": "apps/weapp-vite-wevu/src/pages/index/index.vue",
+          "sha256": "f370ffdf8a6726477b0620558d92c1b8c44e5a2b23c0866bb5eda692f1cc01f4"
+        },
+        {
+          "path": "apps/weapp-vite-wevu/src/shared/benchmark.ts",
+          "sha256": "3c4dd41b36399e3a2863891fcae954297d54d8a938a2152c911493d721e979e6"
+        },
+        {
+          "path": "apps/weapp-vite-wevu/src/sitemap.json",
+          "sha256": "3552173b6e45a4127d0377edd9262bbbac300490f9af3dca75f22029f0b120be"
+        },
+        {
+          "path": "apps/weapp-vite-wevu/tsconfig.json",
+          "sha256": "ff0049a298783f2941775350af2fb10fefff1db0579c94c3e9ef7bb7a525f2c0"
+        },
+        {
+          "path": "apps/weapp-vite-wevu/weapp-vite.config.ts",
+          "sha256": "a2041de7ca41d09c8a3c7e453f33c212de47a52393791fff9cdb15664fbb6164"
+        },
+        {
+          "path": "e2e/ide/runtime-benchmark.ts",
+          "sha256": "f9a02162f90925d985b09cf31600bf4c561938125b1ba8d51ac8d6b66b753380"
+        },
+        {
+          "path": "e2e/ide/runtime-consistency.ts",
+          "sha256": "45e1794376d8791181094789dae65d5ce1e3229452206f5055ee81e0cba3c0a6"
+        },
+        {
+          "path": "e2e/ide/tsconfig.json",
+          "sha256": "fa1033f215cf7c4cfa4b27dd8aa8671ee21a3b2f18936283cdc251cca3a31f51"
+        },
+        {
+          "path": "eslint.config.js",
+          "sha256": "b5ad5126677987b9a476862ab6231c9e8349faed8aba21f4a4ae83ebc89e9283"
+        },
+        {
+          "path": "package.json",
+          "sha256": "b5f26e180a24c784a77cf8dd7dfc2b2e6d9400a8e158336bdb6d96fac7f4ec28"
+        },
+        {
+          "path": "packages/benchmark-runner/package.json",
+          "sha256": "72f528f193cb39f01491514de4a7b59753c6f0d4ce5c86237585f5951deafd7c"
+        },
+        {
+          "path": "packages/benchmark-runner/src/artifacts/build.ts",
+          "sha256": "fe1b41641d8afec67a534848f6b32a9bff5b622382cf5bf5115e3906e7bb549c"
+        },
+        {
+          "path": "packages/benchmark-runner/src/artifacts/manifest.ts",
+          "sha256": "9d3364a6e2b5be55961cb0969b1dc5d9cdf06d289f6dd37f8b87e9265af86045"
+        },
+        {
+          "path": "packages/benchmark-runner/src/artifacts/production.ts",
+          "sha256": "a9671d6d7e0a51736b7e3d7769f656e35acb38901cc3f7f8d3547767c58021e7"
+        },
+        {
+          "path": "packages/benchmark-runner/src/artifacts/references.ts",
+          "sha256": "e0fccf2f59881ca71c8cec2e8941d381f78cd4586e95fad403929e32457069fc"
+        },
+        {
+          "path": "packages/benchmark-runner/src/artifacts/workspace.ts",
+          "sha256": "44346586f41503ababcde0e25668dd6f8835d0203370e387f537b04341b2f2b5"
+        },
+        {
+          "path": "packages/benchmark-runner/src/compile.ts",
+          "sha256": "96cc2e94fa7c854c7285742591d7be9e9bd36065fbe69073255eddfe3449a6a9"
+        },
+        {
+          "path": "packages/benchmark-runner/src/compile/methods.ts",
+          "sha256": "870e040714d830670c48b711835e5071ededcea22a4545ab8d7c4c0f0fd56bd6"
+        },
+        {
+          "path": "packages/benchmark-runner/src/compile/methods/execute.ts",
+          "sha256": "0eed8ffdbeed83c342b0a937d8f9fda0f97c8e5e968f3b447cf2a94c4a129d5f"
+        },
+        {
+          "path": "packages/benchmark-runner/src/compile/methods/fixture.ts",
+          "sha256": "578f212f900139a509c8b20741fe8b0fe3545d9bc29e176a2fd9fa919d83b345"
+        },
+        {
+          "path": "packages/benchmark-runner/src/compile/methods/run.ts",
+          "sha256": "97ffb6314ea4f1da1a1c232094112f6a282d08103612970e91d97ecf2c062849"
+        },
+        {
+          "path": "packages/benchmark-runner/src/compile/methods/schedule.ts",
+          "sha256": "0158c0bc4c5d25853a4491b4de4397346c4730c831af819159531c3ab7c26378"
+        },
+        {
+          "path": "packages/benchmark-runner/src/compile/methods/statistics.ts",
+          "sha256": "2347eb5077fcec9cd78ae0e85cb54bcda5e1af99ea7522d641b74467ef5eeb7e"
+        },
+        {
+          "path": "packages/benchmark-runner/src/constants.ts",
+          "sha256": "2472595874884efa74a419b395ac9babb6d68cb2ac79d106b47d93393cd1c4a2"
+        },
+        {
+          "path": "packages/benchmark-runner/src/dashboard/charts/bars.ts",
+          "sha256": "15b03868881a99124821e49609925979956c4f778dedac27ca23764f88a80026"
+        },
+        {
+          "path": "packages/benchmark-runner/src/dashboard/charts/heatmaps.ts",
+          "sha256": "3126dc4ee8385e2e05f340d5dc215e00838aff388d6866458cad06a764a77d87"
+        },
+        {
+          "path": "packages/benchmark-runner/src/dashboard/charts/index.ts",
+          "sha256": "6232af852f4fd8feddf256b570b93785436b0aeb65215f5ecead6a775f712c36"
+        },
+        {
+          "path": "packages/benchmark-runner/src/dashboard/charts/overview.ts",
+          "sha256": "c5fe6c0c6270923d11c9a75b6bb71a357a49de75c92ba654928fc2c53a62ceb5"
+        },
+        {
+          "path": "packages/benchmark-runner/src/dashboard/charts/shared.ts",
+          "sha256": "2b1af9619d51e903bc317e68f83f78a7c2ef45a112cfbf32a7cd75507de23b33"
+        },
+        {
+          "path": "packages/benchmark-runner/src/dashboard/data/index.ts",
+          "sha256": "bde2de5541a9dc87cb5843758d3ea624a878d9762d7cbe7ac4a93d5a11440296"
+        },
+        {
+          "path": "packages/benchmark-runner/src/dashboard/data/load.ts",
+          "sha256": "a99b8d28f8e7781816507872026b39bc3051d71553e563143b3279c215ca3a44"
+        },
+        {
+          "path": "packages/benchmark-runner/src/dashboard/data/summarize.ts",
+          "sha256": "4cb87224777a37f4b2abdc2201bfcc65f7c99399805ea44e4a6e41171d583ea0"
+        },
+        {
+          "path": "packages/benchmark-runner/src/dashboard/data/types.ts",
+          "sha256": "a4ba13238090e15b97d79f05d7c8ec175173902916e3e6c28631494c1fa89f0f"
+        },
+        {
+          "path": "packages/benchmark-runner/src/dashboard/generate.ts",
+          "sha256": "a91b464d2553130acf08529a72a236f38a269d4a1e7c04ca2b36116e5f470a8a"
+        },
+        {
+          "path": "packages/benchmark-runner/src/dashboard/html.ts",
+          "sha256": "7ca102e1faa23bc9d408feb278125d72dcf04c35cd2eed2c9bc397f065815e80"
+        },
+        {
+          "path": "packages/benchmark-runner/src/dashboard/refresh.ts",
+          "sha256": "5d1af1a79e767feb8a1952929c510989aeee1151536dc82c02e88a14e5440920"
+        },
+        {
+          "path": "packages/benchmark-runner/src/dashboard/refresh/execute.ts",
+          "sha256": "7abc7ef8abfee3c5c94f57af75634163940baae00c35f1877b77dc8d9f241b18"
+        },
+        {
+          "path": "packages/benchmark-runner/src/dashboard/refresh/steps.ts",
+          "sha256": "62222d2159da9198ff2362a54f60975366cb869896235ce8b9e4c4f863fcc21d"
+        },
+        {
+          "path": "packages/benchmark-runner/src/dashboard/svg.ts",
+          "sha256": "04676ce5d64b9e2bcca53d5852a627c72699eea8c37291ee340118a4339cdb91"
+        },
+        {
+          "path": "packages/benchmark-runner/src/dashboard/types.ts",
+          "sha256": "16aca3abb4d568dd06f3029738c6462e9e386d6a57ec95836902416638d70751"
+        },
+        {
+          "path": "packages/benchmark-runner/src/dashboard/verification.ts",
+          "sha256": "c692fc1852faae1c464d3d678c7ca14b910cbfd529671255a85527bf2b92b6d3"
+        },
+        {
+          "path": "packages/benchmark-runner/src/fs.ts",
+          "sha256": "de4e9e8225523b8f518d358ae85342e77c8f6edf50280537d07f70d20d960e10"
+        },
+        {
+          "path": "packages/benchmark-runner/src/hmr.ts",
+          "sha256": "61360319117661985297596b00d73b937adea0fbce5b64804dbc7d9b88081111"
+        },
+        {
+          "path": "packages/benchmark-runner/src/hmr/artifacts.ts",
+          "sha256": "4e4526d569225c1957be47f67a015f4be455dab275212323be4effceecdc6403"
+        },
+        {
+          "path": "packages/benchmark-runner/src/hmr/dev.ts",
+          "sha256": "cdc9b606c97433c8fa49e843b9eb1ce2c5f7c31eb9c84d51e2c613ed5add5d59"
+        },
+        {
+          "path": "packages/benchmark-runner/src/hmr/diagnostics/batch.ts",
+          "sha256": "c683921ddface7059bbbff7c74a85f98750fce0aead6bcc3dbe699d92257805b"
+        },
+        {
+          "path": "packages/benchmark-runner/src/hmr/diagnostics/observe.ts",
+          "sha256": "c82fcae69bf28650dd4736281fc399d7986ebe29c4ef0b2950d0d3b7c362d1b0"
+        },
+        {
+          "path": "packages/benchmark-runner/src/hmr/diagnostics/operations.ts",
+          "sha256": "9484dc56adeb2a81278b29bf2fb5d277260ec022935a8954ef60a58f67872a04"
+        },
+        {
+          "path": "packages/benchmark-runner/src/hmr/diagnostics/output.ts",
+          "sha256": "8488020eaf633470c7e21bf489b4097676c92d32e442a43067b545da5e4fa9c4"
+        },
+        {
+          "path": "packages/benchmark-runner/src/hmr/diagnostics/profile.ts",
+          "sha256": "98ee97ff86b65699fec2a8f043684a4c4877a0d35a91ab5832e237f63061ced0"
+        },
+        {
+          "path": "packages/benchmark-runner/src/hmr/diagnostics/project.ts",
+          "sha256": "0c2746ee626bf73bc45bcc4de77e178c670d27c431883299a7db431ebfff6c89"
+        },
+        {
+          "path": "packages/benchmark-runner/src/hmr/diagnostics/replay.ts",
+          "sha256": "2a84ebb625012b197d7f9e6814ee9b151a27430246ff36452f9e2ffb2b5db3bf"
+        },
+        {
+          "path": "packages/benchmark-runner/src/hmr/diagnostics/report.ts",
+          "sha256": "a57f0e764bde0082e7fde1be1a63e3773d90af6528437972e1f6432241c60aa7"
+        },
+        {
+          "path": "packages/benchmark-runner/src/hmr/diagnostics/resources.ts",
+          "sha256": "8f416ce2c4b494ef05ecd43cf30f05e793fe63c8d014ac1a10b3feecf528d3ae"
+        },
+        {
+          "path": "packages/benchmark-runner/src/hmr/diagnostics/types.ts",
+          "sha256": "0a12939e1cf5ec29a6d353a0573234e8fc35d913ac0db17343767ce55074d092"
+        },
+        {
+          "path": "packages/benchmark-runner/src/hmr/profile.ts",
+          "sha256": "9bb089c6e142d191daf0b9afbf3706e734340fb75c0382c9b2796dc47700cd24"
+        },
+        {
+          "path": "packages/benchmark-runner/src/hmr/report.ts",
+          "sha256": "43f407f4a3212e827ae2784a8693c3945f793456b92bac2e1be48a28bfbf1714"
+        },
+        {
+          "path": "packages/benchmark-runner/src/hmr/runner/index.ts",
+          "sha256": "a6b78b84f788a1508b05f8eeff2048baf2411aced47047ac9d881a22e51a336c"
+        },
+        {
+          "path": "packages/benchmark-runner/src/hmr/runner/project.ts",
+          "sha256": "17b66714aadd2eff897bec47a473d03c535bf8ad2c30f492e28c9adfabb6939c"
+        },
+        {
+          "path": "packages/benchmark-runner/src/hmr/runner/samples.ts",
+          "sha256": "d64fcbd3acf8dff19fad6fd9593a8802d82e876d637faf10f7606fcd543982b4"
+        },
+        {
+          "path": "packages/benchmark-runner/src/hmr/runner/scenario.ts",
+          "sha256": "55ca83b8045918441469aac87433299e0d89c2e37879523cb8b6cb7bd8323247"
+        },
+        {
+          "path": "packages/benchmark-runner/src/hmr/runner/watch.ts",
+          "sha256": "deb0c1f2c700d7030eefae1ddb1285751fe5c46f6b121dc9c02e545e2b5a8cde"
+        },
+        {
+          "path": "packages/benchmark-runner/src/hmr/scenarios/frameworks.ts",
+          "sha256": "1d26cb1fcb56572b2998f8a265670766273c15accf84f240d8e02eb1b7939f14"
+        },
+        {
+          "path": "packages/benchmark-runner/src/hmr/scenarios/index.ts",
+          "sha256": "8315d6d81af2fada61d3510491c35905291307174a2e2e405d032d1856748af8"
+        },
+        {
+          "path": "packages/benchmark-runner/src/hmr/scenarios/shared.ts",
+          "sha256": "daf4a3906d4901cbec50f8907a0dd9836500c1bb6ac78eff2300a72c8bcdbe91"
+        },
+        {
+          "path": "packages/benchmark-runner/src/hmr/scenarios/weapp-vite.ts",
+          "sha256": "786e41c88fd599eecb4274aacfb6f4f203710d5afc94e94336001d876835817d"
+        },
+        {
+          "path": "packages/benchmark-runner/src/hmr/statistics.ts",
+          "sha256": "7d9f97088ab702becf41d6ccc9b5802fee12a347c665f703c1123d7352b7a6a0"
+        },
+        {
+          "path": "packages/benchmark-runner/src/hmr/types.ts",
+          "sha256": "9a02a2e600ee242c22e18adc8e57f07ca4f678172c28b604bfbb80692841e578"
+        },
+        {
+          "path": "packages/benchmark-runner/src/projects.ts",
+          "sha256": "8019812bd3801763f31474cd7cc480425d48a547ef55ebd914f525ea57ded747"
+        },
+        {
+          "path": "packages/benchmark-runner/src/runtime.ts",
+          "sha256": "ae7e7ea7aa651cd2fad35f7a4828afd2d0a4e69b8060be3cd682dc580ac9410e"
+        },
+        {
+          "path": "packages/benchmark-runner/src/runtime/collect.ts",
+          "sha256": "225adef606660a068e235d5db5192b7ad833d316b78e804ed10ed1f5e4867a62"
+        },
+        {
+          "path": "packages/benchmark-runner/src/runtime/consistency/fixture.ts",
+          "sha256": "c88c3e3580ec6d74e7ddf1dcbd26d93d2435650569d370351b871f3be41c6371"
+        },
+        {
+          "path": "packages/benchmark-runner/src/runtime/consistency/observe.ts",
+          "sha256": "8cfc69c6558b22cb963e56a1fbf7e0d42d2babc1af7b7e1ab90bed2720873de3"
+        },
+        {
+          "path": "packages/benchmark-runner/src/runtime/consistency/prepare.ts",
+          "sha256": "291c2afcfe96c58b078ea5ea893f1405b163c0718194b9fb57a138c9b95dfffc"
+        },
+        {
+          "path": "packages/benchmark-runner/src/runtime/consistency/run.ts",
+          "sha256": "e598a0db1609a554ce13850b5c4235c8818761c2d48fb91b9ad950aefcada5d5"
+        },
+        {
+          "path": "packages/benchmark-runner/src/runtime/consistency/worker.ts",
+          "sha256": "e4ed9f4345ca5c1d7d08d0862bf08e3115491281fe44c28c7ecbbea2418088f5"
+        },
+        {
+          "path": "packages/benchmark-runner/src/runtime/constants.ts",
+          "sha256": "1f85a59a2a64d8ce142c782d5ffb2e1d72d2608c0e13e1ff2862266012e0794a"
+        },
+        {
+          "path": "packages/benchmark-runner/src/runtime/devtools-session.ts",
+          "sha256": "5aa6d64d8f1c552b77d3d2cbb6ca3b99af30db683cc4486e7ca0d5502dacf10e"
+        },
+        {
+          "path": "packages/benchmark-runner/src/runtime/devtools.ts",
+          "sha256": "d326969911119aaf4d519ecad35781fe71fa780604b46eb11edb9f81cdc05481"
+        },
+        {
+          "path": "packages/benchmark-runner/src/runtime/environment.ts",
+          "sha256": "72029a7b6df34c77e297875bf18915533ea51bb7e9bb1cb13f34bc292958a3fa"
+        },
+        {
+          "path": "packages/benchmark-runner/src/runtime/launch.ts",
+          "sha256": "0b0036a3c3f456ae4821deb83efc387b88aecee8e1384a4d6d9030a552590e32"
+        },
+        {
+          "path": "packages/benchmark-runner/src/runtime/metrics.ts",
+          "sha256": "89140c151734996d0992b7b895cf31e391cf775286eff7809f964371892231ba"
+        },
+        {
+          "path": "packages/benchmark-runner/src/runtime/observe/boundary.ts",
+          "sha256": "28fe7b98d571b2b7962c93dceee7b1372d99dde34108b0872f4857198e358368"
+        },
+        {
+          "path": "packages/benchmark-runner/src/runtime/observe/expected.ts",
+          "sha256": "76165fc3677b95f349297b27d7e3d4aeba8db5b26eb7b7df4f8c9de76f58a4e9"
+        },
+        {
+          "path": "packages/benchmark-runner/src/runtime/observe/view.ts",
+          "sha256": "e5ca09791b6ee70f09e315d65856a972e3c41a5601d0b26d7de7dc192987d758"
+        },
+        {
+          "path": "packages/benchmark-runner/src/runtime/report.ts",
+          "sha256": "b1685f5f7b38611b49335e1110f8c7c8be132e614a4dff89e788e74656740d94"
+        },
+        {
+          "path": "packages/benchmark-runner/src/runtime/report/plan.ts",
+          "sha256": "98efb67f20969ee2f09d34b12ad9d3f10419fd9586ef4bc5261437b8ff2f4797"
+        },
+        {
+          "path": "packages/benchmark-runner/src/runtime/report/scenarios.ts",
+          "sha256": "70eb6f8df7d08d34b9c676b9d4e7bcf93fdc62a61361e75b8e7aee5a23e7b08d"
+        },
+        {
+          "path": "packages/benchmark-runner/src/runtime/report/write.ts",
+          "sha256": "6fd2ba2832297b42d7b4103a4d06d8a90c8f422aefa00e7ba51f99bc1bb5d54f"
+        },
+        {
+          "path": "packages/benchmark-runner/src/runtime/run.ts",
+          "sha256": "d53ba7d2273a3f4733680d514e04abd6355d597428340b366c85a284f70f0bfd"
+        },
+        {
+          "path": "packages/benchmark-runner/src/runtime/session/command.ts",
+          "sha256": "b61759356db53d9f784d258fb61fd04d9fef39b1f40d90bb99b73cf54d90ed46"
+        },
+        {
+          "path": "packages/benchmark-runner/src/runtime/session/deadline.ts",
+          "sha256": "ad551d1ff7912d0a2c0442a36b9085872b92ed06b5500d83b51a66c2cd1240ec"
+        },
+        {
+          "path": "packages/benchmark-runner/src/runtime/session/desktop.ts",
+          "sha256": "a1b2c7df785cc0d80ecfa50132c15992b43c0edfd48d1e34ccfc14d2d77198b2"
+        },
+        {
+          "path": "packages/benchmark-runner/src/runtime/session/npm.ts",
+          "sha256": "9da645b3ef99539f684d289060953fbfa7a62298e309aaffec5d58c1da6dce53"
+        },
+        {
+          "path": "packages/benchmark-runner/src/runtime/session/owned.ts",
+          "sha256": "a1363d9dbe045729b57405958b2214ea495cb08ec176c747a1aeae709ef67f84"
+        },
+        {
+          "path": "packages/benchmark-runner/src/runtime/session/ownership.ts",
+          "sha256": "3e612f9468b393f35b4a63edc8c9d3a115efaee5cedb59ed5d8040acaa3067fe"
+        },
+        {
+          "path": "packages/benchmark-runner/src/runtime/session/preflight.ts",
+          "sha256": "056d5de872af936c51fbad89a108d1b048ba369059385079b01117858c7b3a0f"
+        },
+        {
+          "path": "packages/benchmark-runner/src/runtime/session/process.ts",
+          "sha256": "bd079547faad3fb25ec928275c3a51184a87570657d47c52fc1d6ecb08a267b6"
+        },
+        {
+          "path": "packages/benchmark-runner/src/runtime/session/supervise.ts",
+          "sha256": "98a8db8afc7f39b41fe1fb83d523df10bdbbe6604519ed0f89089d93313b15a0"
+        },
+        {
+          "path": "packages/benchmark-runner/src/runtime/session/version.ts",
+          "sha256": "ff3ac483c2c051ac92ceeadc97dc27e4759bc6ea32e2c0a868f5bde90d1d7679"
+        },
+        {
+          "path": "packages/benchmark-runner/src/runtime/session/worker.ts",
+          "sha256": "66feb9f56c09dfc3cf2f909436b5d7f1ca10ce4f1351d5d2bc58bd044454dc2d"
+        },
+        {
+          "path": "packages/benchmark-runner/src/runtime/types.ts",
+          "sha256": "f3d9f93cf398f57d58f231b3f70c352a3292c34a27d7c53827fad1a375c97e46"
+        },
+        {
+          "path": "packages/benchmark-runner/src/scenario.ts",
+          "sha256": "3c4dd41b36399e3a2863891fcae954297d54d8a938a2152c911493d721e979e6"
+        },
+        {
+          "path": "packages/benchmark-runner/src/size/capabilities/application.ts",
+          "sha256": "142fefb818f257b65413ec80baad7763b780b961e88d7684e49a143f22f3b99d"
+        },
+        {
+          "path": "packages/benchmark-runner/src/size/capabilities/budgets.ts",
+          "sha256": "982e5e755504a30de402a42d979822ee044de4f456f3ce11cbcea17214be3fe9"
+        },
+        {
+          "path": "packages/benchmark-runner/src/size/capabilities/equivalence.ts",
+          "sha256": "298e7ddacdf1b4f32ce5a0dc0f12ef4792e84d1315517b5b0c1bc86544781fa5"
+        },
+        {
+          "path": "packages/benchmark-runner/src/size/capabilities/fixtures.ts",
+          "sha256": "3c5ff221cc500f8ab125d12899e17943287bdfc6eb5e173165dfef077d0a833f"
+        },
+        {
+          "path": "packages/benchmark-runner/src/size/capabilities/index.ts",
+          "sha256": "dff698e1dc538ff847e9bacc513410ffe189ffb2602545b58a586a2aa506c65e"
+        },
+        {
+          "path": "packages/benchmark-runner/src/size/capabilities/provider.ts",
+          "sha256": "4dc36473bb9becb084b36b718660e6f70dbd693bd260c96b90ae74f79b977622"
+        },
+        {
+          "path": "packages/benchmark-runner/src/size/capabilities/report.ts",
+          "sha256": "3d1f4c156c84e43952ee60e7983568b4ea2f50a1d743c50c755a4145d582fb13"
+        },
+        {
+          "path": "packages/benchmark-runner/src/size/capabilities/tiers.ts",
+          "sha256": "770babf377c4c9ed7b64ee45871ff2fd97b9fccfb91d5c64b1a9a74475ce61e2"
+        },
+        {
+          "path": "packages/benchmark-runner/src/size/capabilities/types.ts",
+          "sha256": "c0b4c03412a0ce4d00d9c3b2f6ab193638d393206381f9ee1d526948c2e65985"
+        },
+        {
+          "path": "packages/benchmark-runner/src/size/capabilities/validate.ts",
+          "sha256": "166f0c04f3405af259d55a5f8940484178e7c618d7924d8eca42f75304813b78"
+        },
+        {
+          "path": "packages/benchmark-runner/src/size/collect.ts",
+          "sha256": "26bafda8bfdbbf07efc0dbfe8bbafe7660da719571bd42e7d067b2d624209b89"
+        },
+        {
+          "path": "packages/benchmark-runner/src/size/format.ts",
+          "sha256": "d7bc236f2e7edc1a98decb86591920a3a529f7b407f28fac46f6e7c14d451126"
+        },
+        {
+          "path": "packages/benchmark-runner/src/size/projects.ts",
+          "sha256": "376cff3464eb9c562cfc21c40507debd565f953e7294d4782a77114be563e6a6"
+        },
+        {
+          "path": "packages/benchmark-runner/src/size/report.ts",
+          "sha256": "6e61f7456da5e4b8ae1dda24b12e9a01bdde2cae31ec1ddf777d4a38d40c13a4"
+        },
+        {
+          "path": "packages/benchmark-runner/src/size/types.ts",
+          "sha256": "d76f88c2db2cd8f454da2289c3cce49761ce8c34c3196c45d3384c0f6fbb994e"
+        },
+        {
+          "path": "packages/benchmark-runner/src/size/wevu.ts",
+          "sha256": "6ee32b80ba069b06005ce0c84cba2f83b1251b920f42f07708a4966934ba2300"
+        },
+        {
+          "path": "packages/benchmark-runner/test/artifacts.integration.test.ts",
+          "sha256": "0e39628aeeaf97e360d3f201372521067cba1441418de7af8b88c22ac2d81b4f"
+        },
+        {
+          "path": "packages/benchmark-runner/test/artifacts.test.ts",
+          "sha256": "3bd4b09d05357d820ca80aa408bbc9da87cf03bd0319eeebe7767d433248c32c"
+        },
+        {
+          "path": "packages/benchmark-runner/test/capabilities.integration.test.ts",
+          "sha256": "11c96b05f053654cee652cee0dbfb959b7f4c2f091bb2cdf2a5a89200ea484c5"
+        },
+        {
+          "path": "packages/benchmark-runner/test/capabilities.test.ts",
+          "sha256": "cca5bd1907897dac3980e804c5fd08d30ec0c996f46a7e778bbb1d40066ea468"
+        },
+        {
+          "path": "packages/benchmark-runner/test/compile-methods.integration.test.ts",
+          "sha256": "abdf2640c521d6b1f883d7ab311cf1cbb25284b52b92ad37c3b45670108269a4"
+        },
+        {
+          "path": "packages/benchmark-runner/test/compile-methods.test.ts",
+          "sha256": "0a2091e73b3a78aec59b205ffe79cbda9a1eaba679795c92333af51145889258"
+        },
+        {
+          "path": "packages/benchmark-runner/test/dashboard.test.ts",
+          "sha256": "3377823e6d2b3ae53eaf6617bae95fa49c542a2e9fbd328c5bb9a6b23ced3a2d"
+        },
+        {
+          "path": "packages/benchmark-runner/test/environment-git.test.ts",
+          "sha256": "44250cdd669177fa6d821378a7eff5bfb6078ebcf42c079aec81926916e5cef7"
+        },
+        {
+          "path": "packages/benchmark-runner/test/fixtures/artifacts/src/app.js",
+          "sha256": "e02968a9cfe0dc409ba2e1a8ce3341edc1fd8a30effb90ebe185239f31037ca5"
+        },
+        {
+          "path": "packages/benchmark-runner/test/fixtures/artifacts/src/app.json",
+          "sha256": "543278d7ddf0a7774fb54a49b534c0769490bb27ed52b59f05f8d3f3c971367b"
+        },
+        {
+          "path": "packages/benchmark-runner/test/fixtures/artifacts/src/components/badge/index.js",
+          "sha256": "49f01899a6eb3da67417c9a3d09b4fbf0a81c886475e2fb364584e9785ff30f8"
+        },
+        {
+          "path": "packages/benchmark-runner/test/fixtures/artifacts/src/components/badge/index.json",
+          "sha256": "e7b657f5a4b032a68e9e084639b3a5564ce552896d269c3f8c4463bf7a7fa3b5"
+        },
+        {
+          "path": "packages/benchmark-runner/test/fixtures/artifacts/src/components/badge/index.wxml",
+          "sha256": "150ab4db84fb27f9369b5582cad0b3e85643c5fc26da5fee28f438dc3dfe6a35"
+        },
+        {
+          "path": "packages/benchmark-runner/test/fixtures/artifacts/src/pages/detail/index.js",
+          "sha256": "afb0bbb3cb4f4fb98fba4c45563aaa8a088e2e1173dff65733fe6851930e331d"
+        },
+        {
+          "path": "packages/benchmark-runner/test/fixtures/artifacts/src/pages/detail/index.json",
+          "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+        },
+        {
+          "path": "packages/benchmark-runner/test/fixtures/artifacts/src/pages/detail/index.wxml",
+          "sha256": "150ab4db84fb27f9369b5582cad0b3e85643c5fc26da5fee28f438dc3dfe6a35"
+        },
+        {
+          "path": "packages/benchmark-runner/test/fixtures/artifacts/src/pages/home/index.js",
+          "sha256": "afb0bbb3cb4f4fb98fba4c45563aaa8a088e2e1173dff65733fe6851930e331d"
+        },
+        {
+          "path": "packages/benchmark-runner/test/fixtures/artifacts/src/pages/home/index.json",
+          "sha256": "2121df9bb8be60948aa37812204b21c31c01398109a82a408d5942269b0e49bd"
+        },
+        {
+          "path": "packages/benchmark-runner/test/fixtures/artifacts/src/pages/home/index.wxml",
+          "sha256": "501526b6813dc7e9ebe5e566a9e84ad869be935dae70c60a55f51106f8c9f83b"
+        },
+        {
+          "path": "packages/benchmark-runner/test/fixtures/artifacts/src/shared/label.js",
+          "sha256": "510c5a1ece0f28bf0fa917ebcfe134691d7adc64e46a5fe88cf43ee2f0bb33ea"
+        },
+        {
+          "path": "packages/benchmark-runner/test/fixtures/artifacts/weapp-vite.config.js",
+          "sha256": "9c1f33d6acd0b12ec898ed54af3b4091a2baab73274bd03f7a3988edd18849de"
+        },
+        {
+          "path": "packages/benchmark-runner/test/fixtures/provenance.ts",
+          "sha256": "7453ff7fcad46caa0eda19091c5790fb384750bfd511e4c7bca1bdf459f40e54"
+        },
+        {
+          "path": "packages/benchmark-runner/test/fs.test.ts",
+          "sha256": "b401d11a4c6be4a613da892f970b92f42795050fe849df448c28c2256ad14cf7"
+        },
+        {
+          "path": "packages/benchmark-runner/test/hmr-artifacts.test.ts",
+          "sha256": "d637157cddd8d34b79f4edaae222bdb3f9865713894f8d93dde16356b6e47b74"
+        },
+        {
+          "path": "packages/benchmark-runner/test/hmr-diagnostics.test.ts",
+          "sha256": "a4c4af58f7602a4f501c2ef7e85c9f126fe8b60f0581ccccbf6cfb97f0cdda82"
+        },
+        {
+          "path": "packages/benchmark-runner/test/hmr-report.test.ts",
+          "sha256": "820254a7c958db902ea053764c7bf423b709d2fb852519175d19b352f5b898c7"
+        },
+        {
+          "path": "packages/benchmark-runner/test/hmr-scenarios.test.ts",
+          "sha256": "1ce81065dff6fafae4a0aae6f9171f3510fd5f699d5287d656d9521410a9d94c"
+        },
+        {
+          "path": "packages/benchmark-runner/test/hmr-watch.integration.test.ts",
+          "sha256": "941b323aede586448b2beb03fd7c2d2f54f13b1905046cd2b6e133b5df75779f"
+        },
+        {
+          "path": "packages/benchmark-runner/test/production.integration.test.ts",
+          "sha256": "99f0808fa6b9ef8833f9e218bf8212017908a844d5f7b579f53f661c4f69bde6"
+        },
+        {
+          "path": "packages/benchmark-runner/test/provenance-aggregation.test.ts",
+          "sha256": "f9631e36def74f7ef0ade7e37e0f1027c7b18700c33a0e7c2a7fd03371750b7e"
+        },
+        {
+          "path": "packages/benchmark-runner/test/provenance.test.ts",
+          "sha256": "d14bc001b93b077c94c5e3ed146528ec314f0648fc8212e6d6a5d44af07228ee"
+        },
+        {
+          "path": "packages/benchmark-runner/test/runtime-boundaries.test.ts",
+          "sha256": "18faa07caa7c6404c397365e0b158bb8377edd6a4bc3337cec0c7821ac5a2a46"
+        },
+        {
+          "path": "packages/benchmark-runner/test/runtime-launch.test.ts",
+          "sha256": "d1386d3d01901f335fa7831ccbf7ad9642f7e1bd095f979b39775b97bb8343e3"
+        },
+        {
+          "path": "packages/benchmark-runner/test/runtime-session.integration.test.ts",
+          "sha256": "7ca90d0dc4fde9761624adf4db128d0cb1ff58c7cd074eb83894ce86c4cea399"
+        },
+        {
+          "path": "packages/benchmark-runner/test/size-report.test.ts",
+          "sha256": "58bed4a3b2923d92a1b257fc0ea40c393163d1b9c4a91ec4c03e1fa79241d9fe"
+        },
+        {
+          "path": "packages/benchmark-runner/test/size.test.ts",
+          "sha256": "67646603c697176b219deb5efbc44e78ec00338a5e3c4e291f386d47ed1bbdd9"
+        },
+        {
+          "path": "packages/benchmark-runner/tsconfig.json",
+          "sha256": "50cf7d97778525f88aa598a80e9dec08d70afaf713ee12ebed08e17898ee2698"
+        },
+        {
+          "path": "packages/benchmark-runner/tsdown.config.ts",
+          "sha256": "c47061f409dd7f2a0feca40d6380ba019bf1ccd9df4177c6a5b2e4c47af5f0f1"
+        },
+        {
+          "path": "packages/benchmark-runner/vitest.config.ts",
+          "sha256": "72a6e59ee0720faf803fa73a10d6b98f3dfc5cc435fa3bb9b6c19aee4d04d6fd"
+        },
+        {
+          "path": "pnpm-lock.yaml",
+          "sha256": "8a5d8760666f2a66454271ee0768f65317f03f0c39b8cfdbedf7d898a549fec9"
+        },
+        {
+          "path": "pnpm-workspace.yaml",
+          "sha256": "7d3373687cf5a505656995c6725a453ee066f43cdf69570d2504466c03b8b763"
+        },
+        {
+          "path": "stylelint.config.js",
+          "sha256": "b918c271f34da7989c333696a198dd1e9ed8d66ace60f99a5a2a6a662d65d3d3"
+        },
+        {
+          "path": "tsconfig.json",
+          "sha256": "898bcdbd58b889f6cd5a9ffe99e3b1b746b356579761ce60e1fd2e6ad36192a6"
+        },
+        {
+          "path": "turbo.json",
+          "sha256": "5bd166670374e8727fb98104db72160022cf402865dbb627c15c5efa5d050bf7"
+        }
+      ],
+      "packages": [
+        {
+          "consumer": "apps/mpx",
+          "name": "@babel/core",
+          "version": "7.29.7"
+        },
+        {
+          "consumer": "apps/mpx",
+          "name": "@babel/plugin-transform-runtime",
+          "version": "7.29.7"
+        },
+        {
+          "consumer": "apps/mpx",
+          "name": "@babel/preset-env",
+          "version": "7.29.7"
+        },
+        {
+          "consumer": "apps/mpx",
+          "name": "@babel/runtime-corejs3",
+          "version": "7.29.7"
+        },
+        {
+          "consumer": "apps/mpx",
+          "name": "@mpxjs/api-proxy",
+          "version": "2.11.1"
+        },
+        {
+          "consumer": "apps/mpx",
+          "name": "@mpxjs/babel-plugin-inject-page-events",
+          "version": "2.10.21"
+        },
+        {
+          "consumer": "apps/mpx",
+          "name": "@mpxjs/core",
+          "version": "2.11.1"
+        },
+        {
+          "consumer": "apps/mpx",
+          "name": "@mpxjs/eslint-config",
+          "version": "2.0.14"
+        },
+        {
+          "consumer": "apps/mpx",
+          "name": "@mpxjs/fetch",
+          "version": "2.11.1"
+        },
+        {
+          "consumer": "apps/mpx",
+          "name": "@mpxjs/mpx-cli-service",
+          "version": "2.2.32"
+        },
+        {
+          "consumer": "apps/mpx",
+          "name": "@mpxjs/pinia",
+          "version": "2.11.0"
+        },
+        {
+          "consumer": "apps/mpx",
+          "name": "@mpxjs/size-report",
+          "version": "2.11.0"
+        },
+        {
+          "consumer": "apps/mpx",
+          "name": "@mpxjs/store",
+          "version": "2.11.0"
+        },
+        {
+          "consumer": "apps/mpx",
+          "name": "@mpxjs/utils",
+          "version": "2.11.0"
+        },
+        {
+          "consumer": "apps/mpx",
+          "name": "@mpxjs/vue-cli-plugin-mpx",
+          "version": "2.2.32"
+        },
+        {
+          "consumer": "apps/mpx",
+          "name": "@mpxjs/vue-cli-plugin-mpx-eslint",
+          "version": "2.2.32"
+        },
+        {
+          "consumer": "apps/mpx",
+          "name": "@mpxjs/vue-cli-plugin-mpx-typescript",
+          "version": "2.2.32"
+        },
+        {
+          "consumer": "apps/mpx",
+          "name": "@mpxjs/webpack-plugin",
+          "version": "2.11.1"
+        },
+        {
+          "consumer": "apps/mpx",
+          "name": "@vue/cli-service",
+          "version": "5.0.9"
+        },
+        {
+          "consumer": "apps/mpx",
+          "name": "autoprefixer",
+          "version": "10.6.1"
+        },
+        {
+          "consumer": "apps/mpx",
+          "name": "eslint",
+          "version": "9.39.5"
+        },
+        {
+          "consumer": "apps/mpx",
+          "name": "miniprogram-api-typings",
+          "version": "5.2.3"
+        },
+        {
+          "consumer": "apps/mpx",
+          "name": "pinia",
+          "version": "2.3.1"
+        },
+        {
+          "consumer": "apps/mpx",
+          "name": "postcss",
+          "version": "8.5.28"
+        },
+        {
+          "consumer": "apps/mpx",
+          "name": "process",
+          "version": "0.11.10"
+        },
+        {
+          "consumer": "apps/mpx",
+          "name": "stylus",
+          "version": "0.64.0"
+        },
+        {
+          "consumer": "apps/mpx",
+          "name": "stylus-loader",
+          "version": "9.0.0"
+        },
+        {
+          "consumer": "apps/mpx",
+          "name": "typescript",
+          "version": "6.0.3"
+        },
+        {
+          "consumer": "apps/mpx",
+          "name": "vue",
+          "version": "2.7.16"
+        },
+        {
+          "consumer": "apps/mpx",
+          "name": "vue-demi",
+          "version": "0.14.10"
+        },
+        {
+          "consumer": "apps/mpx",
+          "name": "vue-i18n",
+          "version": "8.28.2"
+        },
+        {
+          "consumer": "apps/mpx",
+          "name": "vue-i18n-bridge",
+          "version": "9.14.1"
+        },
+        {
+          "consumer": "apps/mpx",
+          "name": "vue-router",
+          "version": "3.6.5"
+        },
+        {
+          "consumer": "apps/mpx",
+          "name": "webpack",
+          "version": "5.111.1"
+        },
+        {
+          "consumer": "apps/taro-vue3",
+          "name": "@tarojs/cli",
+          "version": "4.3.0"
+        },
+        {
+          "consumer": "apps/taro-vue3",
+          "name": "@tarojs/components",
+          "version": "4.3.0"
+        },
+        {
+          "consumer": "apps/taro-vue3",
+          "name": "@tarojs/helper",
+          "version": "4.3.0"
+        },
+        {
+          "consumer": "apps/taro-vue3",
+          "name": "@tarojs/plugin-framework-vue3",
+          "version": "4.3.0"
+        },
+        {
+          "consumer": "apps/taro-vue3",
+          "name": "@tarojs/plugin-platform-weapp",
+          "version": "4.3.0"
+        },
+        {
+          "consumer": "apps/taro-vue3",
+          "name": "@tarojs/runtime",
+          "version": "4.3.0"
+        },
+        {
+          "consumer": "apps/taro-vue3",
+          "name": "@tarojs/shared",
+          "version": "4.3.0"
+        },
+        {
+          "consumer": "apps/taro-vue3",
+          "name": "@tarojs/taro",
+          "version": "4.3.0"
+        },
+        {
+          "consumer": "apps/taro-vue3",
+          "name": "@tarojs/vite-runner",
+          "version": "4.3.0"
+        },
+        {
+          "consumer": "apps/taro-vue3",
+          "name": "@vitejs/plugin-vue",
+          "version": "4.6.2"
+        },
+        {
+          "consumer": "apps/taro-vue3",
+          "name": "@vitejs/plugin-vue-jsx",
+          "version": "3.1.0"
+        },
+        {
+          "consumer": "apps/taro-vue3",
+          "name": "@vue/compiler-sfc",
+          "version": "3.5.43"
+        },
+        {
+          "consumer": "apps/taro-vue3",
+          "name": "typescript",
+          "version": "6.0.3"
+        },
+        {
+          "consumer": "apps/taro-vue3",
+          "name": "vite",
+          "version": "4.5.14"
+        },
+        {
+          "consumer": "apps/taro-vue3",
+          "name": "vue",
+          "version": "3.5.43"
+        },
+        {
+          "consumer": "apps/taro-vue3",
+          "name": "vue-tsc",
+          "version": "3.3.11"
+        },
+        {
+          "consumer": "apps/uni-app-vite-vue3",
+          "name": "@dcloudio/types",
+          "version": "3.4.31"
+        },
+        {
+          "consumer": "apps/uni-app-vite-vue3",
+          "name": "@dcloudio/uni-app",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-vite-vue3",
+          "name": "@dcloudio/uni-app-harmony",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-vite-vue3",
+          "name": "@dcloudio/uni-app-plus",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-vite-vue3",
+          "name": "@dcloudio/uni-automator",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-vite-vue3",
+          "name": "@dcloudio/uni-cli-shared",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-vite-vue3",
+          "name": "@dcloudio/uni-components",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-vite-vue3",
+          "name": "@dcloudio/uni-h5",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-vite-vue3",
+          "name": "@dcloudio/uni-mp-alipay",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-vite-vue3",
+          "name": "@dcloudio/uni-mp-baidu",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-vite-vue3",
+          "name": "@dcloudio/uni-mp-harmony",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-vite-vue3",
+          "name": "@dcloudio/uni-mp-jd",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-vite-vue3",
+          "name": "@dcloudio/uni-mp-kuaishou",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-vite-vue3",
+          "name": "@dcloudio/uni-mp-lark",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-vite-vue3",
+          "name": "@dcloudio/uni-mp-qq",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-vite-vue3",
+          "name": "@dcloudio/uni-mp-toutiao",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-vite-vue3",
+          "name": "@dcloudio/uni-mp-vue",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-vite-vue3",
+          "name": "@dcloudio/uni-mp-weixin",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-vite-vue3",
+          "name": "@dcloudio/uni-mp-xhs",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-vite-vue3",
+          "name": "@dcloudio/uni-quickapp-webview",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-vite-vue3",
+          "name": "@dcloudio/uni-stacktracey",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-vite-vue3",
+          "name": "@dcloudio/vite-plugin-uni",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-vite-vue3",
+          "name": "@vue/runtime-core",
+          "version": "3.4.21"
+        },
+        {
+          "consumer": "apps/uni-app-vite-vue3",
+          "name": "postcss",
+          "version": "8.5.28"
+        },
+        {
+          "consumer": "apps/uni-app-vite-vue3",
+          "name": "rollup",
+          "version": "4.63.5"
+        },
+        {
+          "consumer": "apps/uni-app-vite-vue3",
+          "name": "typescript",
+          "version": "6.0.3"
+        },
+        {
+          "consumer": "apps/uni-app-vite-vue3",
+          "name": "vite",
+          "version": "5.2.8"
+        },
+        {
+          "consumer": "apps/uni-app-vite-vue3",
+          "name": "vue",
+          "version": "3.4.21"
+        },
+        {
+          "consumer": "apps/uni-app-vite-vue3",
+          "name": "vue-i18n",
+          "version": "9.14.5"
+        },
+        {
+          "consumer": "apps/uni-app-vite-vue3",
+          "name": "vue-tsc",
+          "version": "3.3.11"
+        },
+        {
+          "consumer": "apps/uni-app-x",
+          "name": "@dcloudio/hbuilderx-cli",
+          "version": "1.2.0"
+        },
+        {
+          "consumer": "apps/uni-app-x",
+          "name": "@dcloudio/types",
+          "version": "3.4.31"
+        },
+        {
+          "consumer": "apps/uni-app-x",
+          "name": "@dcloudio/uni-app",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-x",
+          "name": "@dcloudio/uni-app-harmony",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-x",
+          "name": "@dcloudio/uni-app-plus",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-x",
+          "name": "@dcloudio/uni-app-x",
+          "version": "0.7.132"
+        },
+        {
+          "consumer": "apps/uni-app-x",
+          "name": "@dcloudio/uni-automator",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-x",
+          "name": "@dcloudio/uni-cli-shared",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-x",
+          "name": "@dcloudio/uni-components",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-x",
+          "name": "@dcloudio/uni-h5",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-x",
+          "name": "@dcloudio/uni-mp-alipay",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-x",
+          "name": "@dcloudio/uni-mp-baidu",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-x",
+          "name": "@dcloudio/uni-mp-harmony",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-x",
+          "name": "@dcloudio/uni-mp-jd",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-x",
+          "name": "@dcloudio/uni-mp-kuaishou",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-x",
+          "name": "@dcloudio/uni-mp-lark",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-x",
+          "name": "@dcloudio/uni-mp-qq",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-x",
+          "name": "@dcloudio/uni-mp-toutiao",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-x",
+          "name": "@dcloudio/uni-mp-vue",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-x",
+          "name": "@dcloudio/uni-mp-weixin",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-x",
+          "name": "@dcloudio/uni-mp-xhs",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-x",
+          "name": "@dcloudio/uni-quickapp-webview",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-x",
+          "name": "@dcloudio/uni-shared",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-x",
+          "name": "@dcloudio/uni-stacktracey",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-x",
+          "name": "@dcloudio/uni-uts-v1",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-x > @dcloudio/uni-uts-v1",
+          "name": "@dcloudio/uts",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-x > @dcloudio/uni-uts-v1",
+          "name": "@dcloudio/uni-app-x",
+          "version": "0.7.132"
+        },
+        {
+          "consumer": "apps/uni-app-x",
+          "name": "@dcloudio/uts",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-x",
+          "name": "@dcloudio/vite-plugin-uni",
+          "version": "3.0.0-5020620260917001"
+        },
+        {
+          "consumer": "apps/uni-app-x",
+          "name": "@vue/runtime-core",
+          "version": "3.4.21"
+        },
+        {
+          "consumer": "apps/uni-app-x",
+          "name": "postcss",
+          "version": "8.5.28"
+        },
+        {
+          "consumer": "apps/uni-app-x",
+          "name": "rollup",
+          "version": "4.63.5"
+        },
+        {
+          "consumer": "apps/uni-app-x",
+          "name": "typescript",
+          "version": "6.0.3"
+        },
+        {
+          "consumer": "apps/uni-app-x",
+          "name": "vite",
+          "version": "5.2.8"
+        },
+        {
+          "consumer": "apps/uni-app-x",
+          "name": "vue",
+          "version": "3.4.21"
+        },
+        {
+          "consumer": "apps/uni-app-x",
+          "name": "vue-i18n",
+          "version": "9.14.5"
+        },
+        {
+          "consumer": "apps/uni-app-x",
+          "name": "vue-tsc",
+          "version": "3.3.11"
+        },
+        {
+          "consumer": "apps/vue-mini-core",
+          "name": "@vue-mini/core",
+          "version": "1.2.16"
+        },
+        {
+          "consumer": "apps/vue-mini-core",
+          "name": "typescript",
+          "version": "6.0.3"
+        },
+        {
+          "consumer": "apps/weapp-vite-native",
+          "name": "miniprogram-api-typings",
+          "version": "5.2.3"
+        },
+        {
+          "consumer": "apps/weapp-vite-native",
+          "name": "typescript",
+          "version": "6.0.3"
+        },
+        {
+          "consumer": "apps/weapp-vite-native",
+          "name": "weapp-vite",
+          "version": "7.4.0"
+        },
+        {
+          "consumer": "apps/weapp-vite-native > weapp-vite",
+          "name": "vite",
+          "version": "8.3.1"
+        },
+        {
+          "consumer": "apps/weapp-vite-native > weapp-vite",
+          "name": "vue",
+          "version": "3.5.43"
+        },
+        {
+          "consumer": "apps/weapp-vite-native > weapp-vite",
+          "name": "wevu",
+          "version": "7.4.0"
+        },
+        {
+          "consumer": "apps/weapp-vite-wevu-performance",
+          "name": "miniprogram-api-typings",
+          "version": "5.2.3"
+        },
+        {
+          "consumer": "apps/weapp-vite-wevu-performance",
+          "name": "typescript",
+          "version": "6.0.3"
+        },
+        {
+          "consumer": "apps/weapp-vite-wevu-performance",
+          "name": "vue-tsc",
+          "version": "3.3.11"
+        },
+        {
+          "consumer": "apps/weapp-vite-wevu-performance",
+          "name": "weapp-vite",
+          "version": "7.4.0"
+        },
+        {
+          "consumer": "apps/weapp-vite-wevu-performance > weapp-vite",
+          "name": "vite",
+          "version": "8.3.1"
+        },
+        {
+          "consumer": "apps/weapp-vite-wevu-performance > weapp-vite",
+          "name": "vue",
+          "version": "3.5.43"
+        },
+        {
+          "consumer": "apps/weapp-vite-wevu-performance > weapp-vite",
+          "name": "wevu",
+          "version": "7.4.0"
+        },
+        {
+          "consumer": "apps/weapp-vite-wevu-performance",
+          "name": "wevu",
+          "version": "7.4.0"
+        },
+        {
+          "consumer": "apps/weapp-vite-wevu-performance > wevu",
+          "name": "vue",
+          "version": "3.5.43"
+        },
+        {
+          "consumer": "apps/weapp-vite-wevu-performance > wevu",
+          "name": "@wevu/compiler",
+          "version": "7.4.0"
+        },
+        {
+          "consumer": "apps/weapp-vite-wevu",
+          "name": "miniprogram-api-typings",
+          "version": "5.2.3"
+        },
+        {
+          "consumer": "apps/weapp-vite-wevu",
+          "name": "typescript",
+          "version": "6.0.3"
+        },
+        {
+          "consumer": "apps/weapp-vite-wevu",
+          "name": "vue-tsc",
+          "version": "3.3.11"
+        },
+        {
+          "consumer": "apps/weapp-vite-wevu",
+          "name": "weapp-vite",
+          "version": "7.4.0"
+        },
+        {
+          "consumer": "apps/weapp-vite-wevu > weapp-vite",
+          "name": "vite",
+          "version": "8.3.1"
+        },
+        {
+          "consumer": "apps/weapp-vite-wevu > weapp-vite",
+          "name": "vue",
+          "version": "3.5.43"
+        },
+        {
+          "consumer": "apps/weapp-vite-wevu > weapp-vite",
+          "name": "wevu",
+          "version": "7.4.0"
+        },
+        {
+          "consumer": "apps/weapp-vite-wevu",
+          "name": "wevu",
+          "version": "7.4.0"
+        },
+        {
+          "consumer": "apps/weapp-vite-wevu > wevu",
+          "name": "vue",
+          "version": "3.5.43"
+        },
+        {
+          "consumer": "apps/weapp-vite-wevu > wevu",
+          "name": "@wevu/compiler",
+          "version": "7.4.0"
+        },
+        {
+          "consumer": ".",
+          "name": "@commitlint/cli",
+          "version": "21.2.3"
+        },
+        {
+          "consumer": ".",
+          "name": "@types/node",
+          "version": "26.6.3"
+        },
+        {
+          "consumer": ".",
+          "name": "@types/semver",
+          "version": "7.8.0"
+        },
+        {
+          "consumer": ".",
+          "name": "@vitest/coverage-v8",
+          "version": "5.0.3"
+        },
+        {
+          "consumer": ".",
+          "name": "ci-info",
+          "version": "4.4.0"
+        },
+        {
+          "consumer": ".",
+          "name": "cross-env",
+          "version": "10.1.0"
+        },
+        {
+          "consumer": ".",
+          "name": "defu",
+          "version": "6.1.7"
+        },
+        {
+          "consumer": ".",
+          "name": "es-toolkit",
+          "version": "1.52.0"
+        },
+        {
+          "consumer": ".",
+          "name": "eslint",
+          "version": "10.11.0"
+        },
+        {
+          "consumer": ".",
+          "name": "husky",
+          "version": "9.1.7"
+        },
+        {
+          "consumer": ".",
+          "name": "lint-staged",
+          "version": "17.6.0"
+        },
+        {
+          "consumer": ".",
+          "name": "only-allow",
+          "version": "1.2.2"
+        },
+        {
+          "consumer": ".",
+          "name": "pathe",
+          "version": "2.0.3"
+        },
+        {
+          "consumer": ".",
+          "name": "pkg-types",
+          "version": "2.3.3"
+        },
+        {
+          "consumer": ".",
+          "name": "repoctl",
+          "version": "5.5.10"
+        },
+        {
+          "consumer": ".",
+          "name": "stylelint",
+          "version": "17.15.0"
+        },
+        {
+          "consumer": ".",
+          "name": "tailwindcss",
+          "version": "4.3.3"
+        },
+        {
+          "consumer": ".",
+          "name": "tsd",
+          "version": "0.33.0"
+        },
+        {
+          "consumer": ".",
+          "name": "tsdown",
+          "version": "0.23.0"
+        },
+        {
+          "consumer": ".",
+          "name": "tslib",
+          "version": "2.8.1"
+        },
+        {
+          "consumer": ".",
+          "name": "tsx",
+          "version": "4.23.15"
+        },
+        {
+          "consumer": ".",
+          "name": "turbo",
+          "version": "2.11.5"
+        },
+        {
+          "consumer": ".",
+          "name": "type-fest",
+          "version": "5.10.0"
+        },
+        {
+          "consumer": ".",
+          "name": "typescript",
+          "version": "6.0.3"
+        },
+        {
+          "consumer": ".",
+          "name": "vitest",
+          "version": "5.0.3"
+        },
+        {
+          "consumer": ".",
+          "name": "yaml",
+          "version": "2.9.1"
+        },
+        {
+          "consumer": "packages/benchmark-runner",
+          "name": "@types/node",
+          "version": "26.6.3"
+        },
+        {
+          "consumer": "packages/benchmark-runner",
+          "name": "@weapp-vite/miniprogram-automator",
+          "version": "1.2.23"
+        },
+        {
+          "consumer": "packages/benchmark-runner",
+          "name": "echarts",
+          "version": "6.1.0"
+        },
+        {
+          "consumer": "packages/benchmark-runner",
+          "name": "esbuild",
+          "version": "0.28.2"
+        },
+        {
+          "consumer": "packages/benchmark-runner",
+          "name": "pathe",
+          "version": "2.0.3"
+        },
+        {
+          "consumer": "packages/benchmark-runner",
+          "name": "prettier",
+          "version": "3.9.9"
+        },
+        {
+          "consumer": "packages/benchmark-runner",
+          "name": "tsdown",
+          "version": "0.23.0"
+        },
+        {
+          "consumer": "packages/benchmark-runner",
+          "name": "tsx",
+          "version": "4.23.15"
+        },
+        {
+          "consumer": "packages/benchmark-runner",
+          "name": "typescript",
+          "version": "6.0.3"
+        },
+        {
+          "consumer": "packages/benchmark-runner",
+          "name": "vitest",
+          "version": "5.0.3"
+        }
+      ],
+      "runner": {
+        "version": "0.0.0",
+        "sourceHash": "8465f9de41f2c3b17f21457f7b4e25bb54d5e53920795eae29ad4cac3456f227"
+      },
+      "git": {
+        "commit": "1923b5d2f69cd5842dfe74e7d9bd8fb44b6d81d2",
+        "dirty": false,
+        "inputDirty": false
+      },
+      "referenceSubmodule": "eb9995e74fc4f760d265972b9148417cd40aab63",
+      "environmentHash": "206259fcbc2cdc529528a2cc67612de55524008fc1d970f1c9a0acaa93af99b2"
+    },
+    "method": {
+      "fingerprint": "127d36f3439ad73db5217f62616e0b40b2fad3df9f4c1fd1c3777a9481340681",
+      "settings": {
+        "schemaVersion": 1,
+        "seed": 20261001,
+        "batches": 3,
+        "iterations": 5,
+        "scales": [
+          "small",
+          "medium",
+          "large"
+        ],
+        "frameworks": [
+          "native",
+          "wevu"
+        ],
+        "scalesDefinition": {
+          "small": {
+            "pages": 4,
+            "components": 4,
+            "shared": 4
+          },
+          "medium": {
+            "pages": 24,
+            "components": 12,
+            "shared": 12
+          },
+          "large": {
+            "pages": 80,
+            "components": 32,
+            "shared": 32
+          }
+        },
+        "lifecycle": "one new Node CLI build process per sample; no Turbo cache",
+        "cache": {
+          "reset": "remove owned dist, .bench-cache, .weapp-vite before each sample",
+          "primed": "reset then one recorded unmeasured build immediately before measured build; retain outputs/tool state"
+        },
+        "uncontrolled": [
+          "OS file/page cache",
+          "CPU temperature/frequency",
+          "background workload",
+          "pnpm package store"
+        ],
+        "incremental": "separate existing HMR report; never merged with full-build readings",
+        "order": "seeded xorshift32 Fisher-Yates shuffle of all cells in each batch/round",
+        "retries": 0
+      }
+    },
+    "inputStable": true,
+    "endingFingerprint": "a6f9c5f6e3cc8d530ef240ed85fe650ef4862057fb40230bfe7d24d864e42a48"
+  },
+  "environment": {
+    "machineId": "m4-max-128gb",
+    "machineLabel": "Apple M4 Max 128GB",
+    "os": "macOS 27.0 (26A428)",
+    "arch": "darwin/arm64",
+    "cpu": "Apple M4 Max",
+    "cpuCores": 16,
+    "memoryGB": 128,
+    "node": "v24.18.0",
+    "pnpm": "12.8.1",
+    "gitCommit": "1923b5d2f69cd5842dfe74e7d9bd8fb44b6d81d2",
+    "weappViteSubmodule": "eb9995e74fc4f760d265972b9148417cd40aab63"
+  },
+  "method": {
+    "schemaVersion": 1,
+    "seed": 20261001,
+    "batches": 3,
+    "iterations": 5,
+    "scales": [
+      "small",
+      "medium",
+      "large"
+    ],
+    "frameworks": [
+      "native",
+      "wevu"
+    ],
+    "scalesDefinition": {
+      "small": {
+        "pages": 4,
+        "components": 4,
+        "shared": 4
+      },
+      "medium": {
+        "pages": 24,
+        "components": 12,
+        "shared": 12
+      },
+      "large": {
+        "pages": 80,
+        "components": 32,
+        "shared": 32
+      }
+    },
+    "lifecycle": "one new Node CLI build process per sample; no Turbo cache",
+    "cache": {
+      "reset": "remove owned dist, .bench-cache, .weapp-vite before each sample",
+      "primed": "reset then one recorded unmeasured build immediately before measured build; retain outputs/tool state"
+    },
+    "uncontrolled": [
+      "OS file/page cache",
+      "CPU temperature/frequency",
+      "background workload",
+      "pnpm package store"
+    ],
+    "incremental": "separate existing HMR report; never merged with full-build readings",
+    "order": "seeded xorshift32 Fisher-Yates shuffle of all cells in each batch/round",
+    "retries": 0
+  },
+  "schedule": [
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 1,
+      "ordinal": 1
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 1,
+      "ordinal": 2
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 1,
+      "ordinal": 3
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 1,
+      "ordinal": 4
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 1,
+      "ordinal": 5
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 1,
+      "ordinal": 6
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 1,
+      "ordinal": 7
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 1,
+      "ordinal": 8
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 1,
+      "ordinal": 9
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 1,
+      "ordinal": 10
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 1,
+      "ordinal": 11
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 1,
+      "ordinal": 12
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 2,
+      "ordinal": 13
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 2,
+      "ordinal": 14
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 2,
+      "ordinal": 15
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 2,
+      "ordinal": 16
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 2,
+      "ordinal": 17
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 2,
+      "ordinal": 18
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 2,
+      "ordinal": 19
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 2,
+      "ordinal": 20
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 2,
+      "ordinal": 21
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 2,
+      "ordinal": 22
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 2,
+      "ordinal": 23
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 2,
+      "ordinal": 24
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 3,
+      "ordinal": 25
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 3,
+      "ordinal": 26
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 3,
+      "ordinal": 27
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 3,
+      "ordinal": 28
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 3,
+      "ordinal": 29
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 3,
+      "ordinal": 30
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 3,
+      "ordinal": 31
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 3,
+      "ordinal": 32
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 3,
+      "ordinal": 33
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 3,
+      "ordinal": 34
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 3,
+      "ordinal": 35
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 3,
+      "ordinal": 36
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 4,
+      "ordinal": 37
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 4,
+      "ordinal": 38
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 4,
+      "ordinal": 39
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 4,
+      "ordinal": 40
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 4,
+      "ordinal": 41
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 4,
+      "ordinal": 42
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 4,
+      "ordinal": 43
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 4,
+      "ordinal": 44
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 4,
+      "ordinal": 45
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 4,
+      "ordinal": 46
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 4,
+      "ordinal": 47
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 4,
+      "ordinal": 48
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 5,
+      "ordinal": 49
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 5,
+      "ordinal": 50
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 5,
+      "ordinal": 51
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 5,
+      "ordinal": 52
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 5,
+      "ordinal": 53
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 5,
+      "ordinal": 54
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 5,
+      "ordinal": 55
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 5,
+      "ordinal": 56
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 5,
+      "ordinal": 57
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 5,
+      "ordinal": 58
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 5,
+      "ordinal": 59
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 5,
+      "ordinal": 60
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 1,
+      "ordinal": 61
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 1,
+      "ordinal": 62
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 1,
+      "ordinal": 63
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 1,
+      "ordinal": 64
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 1,
+      "ordinal": 65
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 1,
+      "ordinal": 66
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 1,
+      "ordinal": 67
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 1,
+      "ordinal": 68
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 1,
+      "ordinal": 69
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 1,
+      "ordinal": 70
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 1,
+      "ordinal": 71
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 1,
+      "ordinal": 72
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 2,
+      "ordinal": 73
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 2,
+      "ordinal": 74
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 2,
+      "ordinal": 75
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 2,
+      "ordinal": 76
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 2,
+      "ordinal": 77
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 2,
+      "ordinal": 78
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 2,
+      "ordinal": 79
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 2,
+      "ordinal": 80
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 2,
+      "ordinal": 81
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 2,
+      "ordinal": 82
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 2,
+      "ordinal": 83
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 2,
+      "ordinal": 84
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 3,
+      "ordinal": 85
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 3,
+      "ordinal": 86
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 3,
+      "ordinal": 87
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 3,
+      "ordinal": 88
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 3,
+      "ordinal": 89
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 3,
+      "ordinal": 90
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 3,
+      "ordinal": 91
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 3,
+      "ordinal": 92
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 3,
+      "ordinal": 93
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 3,
+      "ordinal": 94
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 3,
+      "ordinal": 95
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 3,
+      "ordinal": 96
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 4,
+      "ordinal": 97
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 4,
+      "ordinal": 98
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 4,
+      "ordinal": 99
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 4,
+      "ordinal": 100
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 4,
+      "ordinal": 101
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 4,
+      "ordinal": 102
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 4,
+      "ordinal": 103
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 4,
+      "ordinal": 104
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 4,
+      "ordinal": 105
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 4,
+      "ordinal": 106
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 4,
+      "ordinal": 107
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 4,
+      "ordinal": 108
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 5,
+      "ordinal": 109
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 5,
+      "ordinal": 110
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 5,
+      "ordinal": 111
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 5,
+      "ordinal": 112
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 5,
+      "ordinal": 113
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 5,
+      "ordinal": 114
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 5,
+      "ordinal": 115
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 5,
+      "ordinal": 116
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 5,
+      "ordinal": 117
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 5,
+      "ordinal": 118
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 5,
+      "ordinal": 119
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 5,
+      "ordinal": 120
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 1,
+      "ordinal": 121
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 1,
+      "ordinal": 122
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 1,
+      "ordinal": 123
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 1,
+      "ordinal": 124
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 1,
+      "ordinal": 125
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 1,
+      "ordinal": 126
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 1,
+      "ordinal": 127
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 1,
+      "ordinal": 128
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 1,
+      "ordinal": 129
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 1,
+      "ordinal": 130
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 1,
+      "ordinal": 131
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 1,
+      "ordinal": 132
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 2,
+      "ordinal": 133
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 2,
+      "ordinal": 134
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 2,
+      "ordinal": 135
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 2,
+      "ordinal": 136
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 2,
+      "ordinal": 137
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 2,
+      "ordinal": 138
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 2,
+      "ordinal": 139
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 2,
+      "ordinal": 140
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 2,
+      "ordinal": 141
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 2,
+      "ordinal": 142
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 2,
+      "ordinal": 143
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 2,
+      "ordinal": 144
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 3,
+      "ordinal": 145
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 3,
+      "ordinal": 146
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 3,
+      "ordinal": 147
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 3,
+      "ordinal": 148
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 3,
+      "ordinal": 149
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 3,
+      "ordinal": 150
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 3,
+      "ordinal": 151
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 3,
+      "ordinal": 152
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 3,
+      "ordinal": 153
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 3,
+      "ordinal": 154
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 3,
+      "ordinal": 155
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 3,
+      "ordinal": 156
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 4,
+      "ordinal": 157
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 4,
+      "ordinal": 158
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 4,
+      "ordinal": 159
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 4,
+      "ordinal": 160
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 4,
+      "ordinal": 161
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 4,
+      "ordinal": 162
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 4,
+      "ordinal": 163
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 4,
+      "ordinal": 164
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 4,
+      "ordinal": 165
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 4,
+      "ordinal": 166
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 4,
+      "ordinal": 167
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 4,
+      "ordinal": 168
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 5,
+      "ordinal": 169
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 5,
+      "ordinal": 170
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 5,
+      "ordinal": 171
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 5,
+      "ordinal": 172
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 5,
+      "ordinal": 173
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 5,
+      "ordinal": 174
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 5,
+      "ordinal": 175
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 5,
+      "ordinal": 176
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 5,
+      "ordinal": 177
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 5,
+      "ordinal": 178
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 5,
+      "ordinal": 179
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 5,
+      "ordinal": 180
+    }
+  ],
+  "preparations": [
+    {
+      "key": "native/small",
+      "ok": true,
+      "durationMs": 842.5641249999999,
+      "sourceHash": "9e7d1d5fa99e1c385602969035d48062783f3b1495b0f0de2fb25404d99fc9df",
+      "dimensions": {
+        "pages": 4,
+        "components": 4,
+        "shared": 4
+      }
+    },
+    {
+      "key": "native/medium",
+      "ok": true,
+      "durationMs": 1078.5060000000003,
+      "sourceHash": "6efa38b3dd88fdd28b69a5f8994a44d65e8fa10a5b416186525b82f20aa52e32",
+      "dimensions": {
+        "pages": 24,
+        "components": 12,
+        "shared": 12
+      }
+    },
+    {
+      "key": "native/large",
+      "ok": true,
+      "durationMs": 1739.3509169999998,
+      "sourceHash": "f29bdd548aeba62f34a8f6778071bf6ffd3f8791c10c642bb91d237816af8fe7",
+      "dimensions": {
+        "pages": 80,
+        "components": 32,
+        "shared": 32
+      }
+    },
+    {
+      "key": "wevu/small",
+      "ok": true,
+      "durationMs": 1019.0024169999997,
+      "sourceHash": "1dc433e9ed4964cbf78913bd8b649e2664a7c0940f0c24c053f01e7d75e4d12a",
+      "dimensions": {
+        "pages": 4,
+        "components": 4,
+        "shared": 4
+      }
+    },
+    {
+      "key": "wevu/medium",
+      "ok": true,
+      "durationMs": 1270.1487909999996,
+      "sourceHash": "bc8a9f132c1e158cf4a3384e8278efe190976a98fe4f188559349a2139ee17fe",
+      "dimensions": {
+        "pages": 24,
+        "components": 12,
+        "shared": 12
+      }
+    },
+    {
+      "key": "wevu/large",
+      "ok": true,
+      "durationMs": 1886.9940000000024,
+      "sourceHash": "a0e2b3213eb7a8bfcf54eb161422921bdeedb7bea7f2222f519b0004fc10c104",
+      "dimensions": {
+        "pages": 80,
+        "components": 32,
+        "shared": 32
+      }
+    }
+  ],
+  "samples": [
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 1,
+      "ordinal": 1,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "bc8a9f132c1e158cf4a3384e8278efe190976a98fe4f188559349a2139ee17fe",
+      "primingMs": 1264.7377080000006,
+      "durationMs": 1260.8474170000009,
+      "outputHash": "48a5fca9ddcc4e6fe3bfb8cb60311b28da571ed76d5052bf924bd1567b99e15c",
+      "outputBytes": 215729
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 1,
+      "ordinal": 2,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "a0e2b3213eb7a8bfcf54eb161422921bdeedb7bea7f2222f519b0004fc10c104",
+      "primingMs": 1882.0997080000016,
+      "durationMs": 1984.3448750000025,
+      "outputHash": "8cfd1f44326150990e19fb5fd049eabf299c6324a72a8b606966be71d8208e80",
+      "outputBytes": 296526
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 1,
+      "ordinal": 3,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "1dc433e9ed4964cbf78913bd8b649e2664a7c0940f0c24c053f01e7d75e4d12a",
+      "primingMs": 1049.2959999999948,
+      "durationMs": 1010.4559169999993,
+      "outputHash": "173b070c5eac0b2bbc51c8ffab16a91acba060aa1c6c94b4cc4f7b4fca434804",
+      "outputBytes": 185275
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 1,
+      "ordinal": 4,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "bc8a9f132c1e158cf4a3384e8278efe190976a98fe4f188559349a2139ee17fe",
+      "durationMs": 1279.4594169999982,
+      "outputHash": "48a5fca9ddcc4e6fe3bfb8cb60311b28da571ed76d5052bf924bd1567b99e15c",
+      "outputBytes": 215729
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 1,
+      "ordinal": 5,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "6efa38b3dd88fdd28b69a5f8994a44d65e8fa10a5b416186525b82f20aa52e32",
+      "durationMs": 1091.2229159999988,
+      "outputHash": "bd15952a05610c69b49b7209386d3b984dd1564882da48d82c7688c0ccaef431",
+      "outputBytes": 17549
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 1,
+      "ordinal": 6,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "f29bdd548aeba62f34a8f6778071bf6ffd3f8791c10c642bb91d237816af8fe7",
+      "durationMs": 1740.8429160000014,
+      "outputHash": "496744e8a15ce0034cdc98c06603b9c8bd096b798b2744248915f736d8efbc98",
+      "outputBytes": 52178
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 1,
+      "ordinal": 7,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "f29bdd548aeba62f34a8f6778071bf6ffd3f8791c10c642bb91d237816af8fe7",
+      "primingMs": 1734.896166999999,
+      "durationMs": 1747.7256249999991,
+      "outputHash": "496744e8a15ce0034cdc98c06603b9c8bd096b798b2744248915f736d8efbc98",
+      "outputBytes": 52178
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 1,
+      "ordinal": 8,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "1dc433e9ed4964cbf78913bd8b649e2664a7c0940f0c24c053f01e7d75e4d12a",
+      "durationMs": 1020.7262499999997,
+      "outputHash": "173b070c5eac0b2bbc51c8ffab16a91acba060aa1c6c94b4cc4f7b4fca434804",
+      "outputBytes": 185275
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 1,
+      "ordinal": 9,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "6efa38b3dd88fdd28b69a5f8994a44d65e8fa10a5b416186525b82f20aa52e32",
+      "primingMs": 1091.408000000003,
+      "durationMs": 1077.3811659999992,
+      "outputHash": "bd15952a05610c69b49b7209386d3b984dd1564882da48d82c7688c0ccaef431",
+      "outputBytes": 17549
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 1,
+      "ordinal": 10,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "9e7d1d5fa99e1c385602969035d48062783f3b1495b0f0de2fb25404d99fc9df",
+      "durationMs": 839.8489580000023,
+      "outputHash": "c39231475e8b5c9da4af2622781866dfc254179241db4d0cd217cfbefc3a434f",
+      "outputBytes": 4655
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 1,
+      "ordinal": 11,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "a0e2b3213eb7a8bfcf54eb161422921bdeedb7bea7f2222f519b0004fc10c104",
+      "durationMs": 1879.0334589999984,
+      "outputHash": "8cfd1f44326150990e19fb5fd049eabf299c6324a72a8b606966be71d8208e80",
+      "outputBytes": 296526
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 1,
+      "ordinal": 12,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "9e7d1d5fa99e1c385602969035d48062783f3b1495b0f0de2fb25404d99fc9df",
+      "primingMs": 848.7218339999963,
+      "durationMs": 823.4084999999977,
+      "outputHash": "c39231475e8b5c9da4af2622781866dfc254179241db4d0cd217cfbefc3a434f",
+      "outputBytes": 4655
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 2,
+      "ordinal": 13,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "bc8a9f132c1e158cf4a3384e8278efe190976a98fe4f188559349a2139ee17fe",
+      "primingMs": 1258.572791999999,
+      "durationMs": 1266.5093750000015,
+      "outputHash": "48a5fca9ddcc4e6fe3bfb8cb60311b28da571ed76d5052bf924bd1567b99e15c",
+      "outputBytes": 215729
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 2,
+      "ordinal": 14,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "f29bdd548aeba62f34a8f6778071bf6ffd3f8791c10c642bb91d237816af8fe7",
+      "durationMs": 1754.8835409999956,
+      "outputHash": "496744e8a15ce0034cdc98c06603b9c8bd096b798b2744248915f736d8efbc98",
+      "outputBytes": 52178
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 2,
+      "ordinal": 15,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "9e7d1d5fa99e1c385602969035d48062783f3b1495b0f0de2fb25404d99fc9df",
+      "primingMs": 843.4680000000008,
+      "durationMs": 829.9644589999953,
+      "outputHash": "c39231475e8b5c9da4af2622781866dfc254179241db4d0cd217cfbefc3a434f",
+      "outputBytes": 4655
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 2,
+      "ordinal": 16,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "9e7d1d5fa99e1c385602969035d48062783f3b1495b0f0de2fb25404d99fc9df",
+      "durationMs": 844.1460000000006,
+      "outputHash": "c39231475e8b5c9da4af2622781866dfc254179241db4d0cd217cfbefc3a434f",
+      "outputBytes": 4655
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 2,
+      "ordinal": 17,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "a0e2b3213eb7a8bfcf54eb161422921bdeedb7bea7f2222f519b0004fc10c104",
+      "primingMs": 1889.1911660000042,
+      "durationMs": 1876.2911250000034,
+      "outputHash": "8cfd1f44326150990e19fb5fd049eabf299c6324a72a8b606966be71d8208e80",
+      "outputBytes": 296526
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 2,
+      "ordinal": 18,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "6efa38b3dd88fdd28b69a5f8994a44d65e8fa10a5b416186525b82f20aa52e32",
+      "primingMs": 1086.727457999994,
+      "durationMs": 1078.3866249999992,
+      "outputHash": "bd15952a05610c69b49b7209386d3b984dd1564882da48d82c7688c0ccaef431",
+      "outputBytes": 17549
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 2,
+      "ordinal": 19,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "bc8a9f132c1e158cf4a3384e8278efe190976a98fe4f188559349a2139ee17fe",
+      "durationMs": 1254.275250000006,
+      "outputHash": "48a5fca9ddcc4e6fe3bfb8cb60311b28da571ed76d5052bf924bd1567b99e15c",
+      "outputBytes": 215729
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 2,
+      "ordinal": 20,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "a0e2b3213eb7a8bfcf54eb161422921bdeedb7bea7f2222f519b0004fc10c104",
+      "durationMs": 1865.971583000006,
+      "outputHash": "8cfd1f44326150990e19fb5fd049eabf299c6324a72a8b606966be71d8208e80",
+      "outputBytes": 296526
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 2,
+      "ordinal": 21,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "f29bdd548aeba62f34a8f6778071bf6ffd3f8791c10c642bb91d237816af8fe7",
+      "primingMs": 1750.8192909999925,
+      "durationMs": 1736.671583000003,
+      "outputHash": "496744e8a15ce0034cdc98c06603b9c8bd096b798b2744248915f736d8efbc98",
+      "outputBytes": 52178
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 2,
+      "ordinal": 22,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "1dc433e9ed4964cbf78913bd8b649e2664a7c0940f0c24c053f01e7d75e4d12a",
+      "primingMs": 1010.8080420000042,
+      "durationMs": 1014.2474590000056,
+      "outputHash": "173b070c5eac0b2bbc51c8ffab16a91acba060aa1c6c94b4cc4f7b4fca434804",
+      "outputBytes": 185275
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 2,
+      "ordinal": 23,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "1dc433e9ed4964cbf78913bd8b649e2664a7c0940f0c24c053f01e7d75e4d12a",
+      "durationMs": 1028.4817500000063,
+      "outputHash": "173b070c5eac0b2bbc51c8ffab16a91acba060aa1c6c94b4cc4f7b4fca434804",
+      "outputBytes": 185275
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 2,
+      "ordinal": 24,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "6efa38b3dd88fdd28b69a5f8994a44d65e8fa10a5b416186525b82f20aa52e32",
+      "durationMs": 1092.7386669999978,
+      "outputHash": "bd15952a05610c69b49b7209386d3b984dd1564882da48d82c7688c0ccaef431",
+      "outputBytes": 17549
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 3,
+      "ordinal": 25,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "9e7d1d5fa99e1c385602969035d48062783f3b1495b0f0de2fb25404d99fc9df",
+      "primingMs": 849.2365830000053,
+      "durationMs": 840.9488330000022,
+      "outputHash": "c39231475e8b5c9da4af2622781866dfc254179241db4d0cd217cfbefc3a434f",
+      "outputBytes": 4655
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 3,
+      "ordinal": 26,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "f29bdd548aeba62f34a8f6778071bf6ffd3f8791c10c642bb91d237816af8fe7",
+      "primingMs": 1742.3620419999934,
+      "durationMs": 1757.793125000011,
+      "outputHash": "496744e8a15ce0034cdc98c06603b9c8bd096b798b2744248915f736d8efbc98",
+      "outputBytes": 52178
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 3,
+      "ordinal": 27,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "a0e2b3213eb7a8bfcf54eb161422921bdeedb7bea7f2222f519b0004fc10c104",
+      "durationMs": 1859.851416000005,
+      "outputHash": "8cfd1f44326150990e19fb5fd049eabf299c6324a72a8b606966be71d8208e80",
+      "outputBytes": 296526
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 3,
+      "ordinal": 28,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "a0e2b3213eb7a8bfcf54eb161422921bdeedb7bea7f2222f519b0004fc10c104",
+      "primingMs": 1878.8665410000103,
+      "durationMs": 1881.408958999993,
+      "outputHash": "8cfd1f44326150990e19fb5fd049eabf299c6324a72a8b606966be71d8208e80",
+      "outputBytes": 296526
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 3,
+      "ordinal": 29,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "bc8a9f132c1e158cf4a3384e8278efe190976a98fe4f188559349a2139ee17fe",
+      "primingMs": 1257.6128750000062,
+      "durationMs": 1260.0556249999936,
+      "outputHash": "48a5fca9ddcc4e6fe3bfb8cb60311b28da571ed76d5052bf924bd1567b99e15c",
+      "outputBytes": 215729
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 3,
+      "ordinal": 30,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "6efa38b3dd88fdd28b69a5f8994a44d65e8fa10a5b416186525b82f20aa52e32",
+      "durationMs": 1088.5584999999992,
+      "outputHash": "bd15952a05610c69b49b7209386d3b984dd1564882da48d82c7688c0ccaef431",
+      "outputBytes": 17549
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 3,
+      "ordinal": 31,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "1dc433e9ed4964cbf78913bd8b649e2664a7c0940f0c24c053f01e7d75e4d12a",
+      "durationMs": 1012.9614580000052,
+      "outputHash": "173b070c5eac0b2bbc51c8ffab16a91acba060aa1c6c94b4cc4f7b4fca434804",
+      "outputBytes": 185275
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 3,
+      "ordinal": 32,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "f29bdd548aeba62f34a8f6778071bf6ffd3f8791c10c642bb91d237816af8fe7",
+      "durationMs": 1731.149207999988,
+      "outputHash": "496744e8a15ce0034cdc98c06603b9c8bd096b798b2744248915f736d8efbc98",
+      "outputBytes": 52178
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 3,
+      "ordinal": 33,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "1dc433e9ed4964cbf78913bd8b649e2664a7c0940f0c24c053f01e7d75e4d12a",
+      "primingMs": 1015.4461670000019,
+      "durationMs": 1010.0371250000026,
+      "outputHash": "173b070c5eac0b2bbc51c8ffab16a91acba060aa1c6c94b4cc4f7b4fca434804",
+      "outputBytes": 185275
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 3,
+      "ordinal": 34,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "9e7d1d5fa99e1c385602969035d48062783f3b1495b0f0de2fb25404d99fc9df",
+      "durationMs": 845.4449170000007,
+      "outputHash": "c39231475e8b5c9da4af2622781866dfc254179241db4d0cd217cfbefc3a434f",
+      "outputBytes": 4655
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 3,
+      "ordinal": 35,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "6efa38b3dd88fdd28b69a5f8994a44d65e8fa10a5b416186525b82f20aa52e32",
+      "primingMs": 1096.8191660000011,
+      "durationMs": 1099.935042000012,
+      "outputHash": "bd15952a05610c69b49b7209386d3b984dd1564882da48d82c7688c0ccaef431",
+      "outputBytes": 17549
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 3,
+      "ordinal": 36,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "bc8a9f132c1e158cf4a3384e8278efe190976a98fe4f188559349a2139ee17fe",
+      "durationMs": 1279.7369999999937,
+      "outputHash": "48a5fca9ddcc4e6fe3bfb8cb60311b28da571ed76d5052bf924bd1567b99e15c",
+      "outputBytes": 215729
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 4,
+      "ordinal": 37,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "6efa38b3dd88fdd28b69a5f8994a44d65e8fa10a5b416186525b82f20aa52e32",
+      "durationMs": 1095.7328750000015,
+      "outputHash": "bd15952a05610c69b49b7209386d3b984dd1564882da48d82c7688c0ccaef431",
+      "outputBytes": 17549
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 4,
+      "ordinal": 38,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "1dc433e9ed4964cbf78913bd8b649e2664a7c0940f0c24c053f01e7d75e4d12a",
+      "durationMs": 1026.8352500000037,
+      "outputHash": "173b070c5eac0b2bbc51c8ffab16a91acba060aa1c6c94b4cc4f7b4fca434804",
+      "outputBytes": 185275
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 4,
+      "ordinal": 39,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "a0e2b3213eb7a8bfcf54eb161422921bdeedb7bea7f2222f519b0004fc10c104",
+      "primingMs": 1888.330415999997,
+      "durationMs": 1915.596166000003,
+      "outputHash": "8cfd1f44326150990e19fb5fd049eabf299c6324a72a8b606966be71d8208e80",
+      "outputBytes": 296526
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 4,
+      "ordinal": 40,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "bc8a9f132c1e158cf4a3384e8278efe190976a98fe4f188559349a2139ee17fe",
+      "durationMs": 1300.0192919999972,
+      "outputHash": "48a5fca9ddcc4e6fe3bfb8cb60311b28da571ed76d5052bf924bd1567b99e15c",
+      "outputBytes": 215729
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 4,
+      "ordinal": 41,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "6efa38b3dd88fdd28b69a5f8994a44d65e8fa10a5b416186525b82f20aa52e32",
+      "primingMs": 1097.7567080000008,
+      "durationMs": 1087.409083999999,
+      "outputHash": "bd15952a05610c69b49b7209386d3b984dd1564882da48d82c7688c0ccaef431",
+      "outputBytes": 17549
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 4,
+      "ordinal": 42,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "9e7d1d5fa99e1c385602969035d48062783f3b1495b0f0de2fb25404d99fc9df",
+      "primingMs": 840.900999999998,
+      "durationMs": 838.8815420000028,
+      "outputHash": "c39231475e8b5c9da4af2622781866dfc254179241db4d0cd217cfbefc3a434f",
+      "outputBytes": 4655
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 4,
+      "ordinal": 43,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "1dc433e9ed4964cbf78913bd8b649e2664a7c0940f0c24c053f01e7d75e4d12a",
+      "primingMs": 1015.0028330000059,
+      "durationMs": 1009.671708000009,
+      "outputHash": "173b070c5eac0b2bbc51c8ffab16a91acba060aa1c6c94b4cc4f7b4fca434804",
+      "outputBytes": 185275
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 4,
+      "ordinal": 44,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "9e7d1d5fa99e1c385602969035d48062783f3b1495b0f0de2fb25404d99fc9df",
+      "durationMs": 845.8091669999994,
+      "outputHash": "c39231475e8b5c9da4af2622781866dfc254179241db4d0cd217cfbefc3a434f",
+      "outputBytes": 4655
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 4,
+      "ordinal": 45,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "f29bdd548aeba62f34a8f6778071bf6ffd3f8791c10c642bb91d237816af8fe7",
+      "durationMs": 1760.6212499999965,
+      "outputHash": "496744e8a15ce0034cdc98c06603b9c8bd096b798b2744248915f736d8efbc98",
+      "outputBytes": 52178
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 4,
+      "ordinal": 46,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "bc8a9f132c1e158cf4a3384e8278efe190976a98fe4f188559349a2139ee17fe",
+      "primingMs": 1275.3285830000095,
+      "durationMs": 1272.941082999998,
+      "outputHash": "48a5fca9ddcc4e6fe3bfb8cb60311b28da571ed76d5052bf924bd1567b99e15c",
+      "outputBytes": 215729
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 4,
+      "ordinal": 47,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "f29bdd548aeba62f34a8f6778071bf6ffd3f8791c10c642bb91d237816af8fe7",
+      "primingMs": 1738.9970420000027,
+      "durationMs": 1750.0847919999942,
+      "outputHash": "496744e8a15ce0034cdc98c06603b9c8bd096b798b2744248915f736d8efbc98",
+      "outputBytes": 52178
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 4,
+      "ordinal": 48,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "a0e2b3213eb7a8bfcf54eb161422921bdeedb7bea7f2222f519b0004fc10c104",
+      "durationMs": 1860.6534170000086,
+      "outputHash": "8cfd1f44326150990e19fb5fd049eabf299c6324a72a8b606966be71d8208e80",
+      "outputBytes": 296526
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 5,
+      "ordinal": 49,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "1dc433e9ed4964cbf78913bd8b649e2664a7c0940f0c24c053f01e7d75e4d12a",
+      "durationMs": 1000.8497910000006,
+      "outputHash": "173b070c5eac0b2bbc51c8ffab16a91acba060aa1c6c94b4cc4f7b4fca434804",
+      "outputBytes": 185275
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 5,
+      "ordinal": 50,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "6efa38b3dd88fdd28b69a5f8994a44d65e8fa10a5b416186525b82f20aa52e32",
+      "durationMs": 1084.364791999993,
+      "outputHash": "bd15952a05610c69b49b7209386d3b984dd1564882da48d82c7688c0ccaef431",
+      "outputBytes": 17549
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 5,
+      "ordinal": 51,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "bc8a9f132c1e158cf4a3384e8278efe190976a98fe4f188559349a2139ee17fe",
+      "durationMs": 1253.868374999991,
+      "outputHash": "48a5fca9ddcc4e6fe3bfb8cb60311b28da571ed76d5052bf924bd1567b99e15c",
+      "outputBytes": 215729
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 5,
+      "ordinal": 52,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "6efa38b3dd88fdd28b69a5f8994a44d65e8fa10a5b416186525b82f20aa52e32",
+      "primingMs": 1088.0242089999956,
+      "durationMs": 1096.172791000019,
+      "outputHash": "bd15952a05610c69b49b7209386d3b984dd1564882da48d82c7688c0ccaef431",
+      "outputBytes": 17549
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 5,
+      "ordinal": 53,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "bc8a9f132c1e158cf4a3384e8278efe190976a98fe4f188559349a2139ee17fe",
+      "primingMs": 1247.2835419999901,
+      "durationMs": 1254.9597920000087,
+      "outputHash": "48a5fca9ddcc4e6fe3bfb8cb60311b28da571ed76d5052bf924bd1567b99e15c",
+      "outputBytes": 215729
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 5,
+      "ordinal": 54,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "f29bdd548aeba62f34a8f6778071bf6ffd3f8791c10c642bb91d237816af8fe7",
+      "durationMs": 1720.4570829999866,
+      "outputHash": "496744e8a15ce0034cdc98c06603b9c8bd096b798b2744248915f736d8efbc98",
+      "outputBytes": 52178
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 5,
+      "ordinal": 55,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "1dc433e9ed4964cbf78913bd8b649e2664a7c0940f0c24c053f01e7d75e4d12a",
+      "primingMs": 1012.4364169999899,
+      "durationMs": 997.1109170000127,
+      "outputHash": "173b070c5eac0b2bbc51c8ffab16a91acba060aa1c6c94b4cc4f7b4fca434804",
+      "outputBytes": 185275
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 5,
+      "ordinal": 56,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "a0e2b3213eb7a8bfcf54eb161422921bdeedb7bea7f2222f519b0004fc10c104",
+      "durationMs": 1858.634791999997,
+      "outputHash": "8cfd1f44326150990e19fb5fd049eabf299c6324a72a8b606966be71d8208e80",
+      "outputBytes": 296526
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 5,
+      "ordinal": 57,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "a0e2b3213eb7a8bfcf54eb161422921bdeedb7bea7f2222f519b0004fc10c104",
+      "primingMs": 1855.6285829999833,
+      "durationMs": 1878.3557919999876,
+      "outputHash": "8cfd1f44326150990e19fb5fd049eabf299c6324a72a8b606966be71d8208e80",
+      "outputBytes": 296526
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 1,
+      "iteration": 5,
+      "ordinal": 58,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "9e7d1d5fa99e1c385602969035d48062783f3b1495b0f0de2fb25404d99fc9df",
+      "durationMs": 837.5284579999861,
+      "outputHash": "c39231475e8b5c9da4af2622781866dfc254179241db4d0cd217cfbefc3a434f",
+      "outputBytes": 4655
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 5,
+      "ordinal": 59,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "9e7d1d5fa99e1c385602969035d48062783f3b1495b0f0de2fb25404d99fc9df",
+      "primingMs": 836.3429170000018,
+      "durationMs": 828.2047920000041,
+      "outputHash": "c39231475e8b5c9da4af2622781866dfc254179241db4d0cd217cfbefc3a434f",
+      "outputBytes": 4655
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 1,
+      "iteration": 5,
+      "ordinal": 60,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "f29bdd548aeba62f34a8f6778071bf6ffd3f8791c10c642bb91d237816af8fe7",
+      "primingMs": 1726.0407500000147,
+      "durationMs": 1741.102125000005,
+      "outputHash": "496744e8a15ce0034cdc98c06603b9c8bd096b798b2744248915f736d8efbc98",
+      "outputBytes": 52178
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 1,
+      "ordinal": 61,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "a0e2b3213eb7a8bfcf54eb161422921bdeedb7bea7f2222f519b0004fc10c104",
+      "primingMs": 1861.5771660000028,
+      "durationMs": 1866.074082999985,
+      "outputHash": "8cfd1f44326150990e19fb5fd049eabf299c6324a72a8b606966be71d8208e80",
+      "outputBytes": 296526
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 1,
+      "ordinal": 62,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "a0e2b3213eb7a8bfcf54eb161422921bdeedb7bea7f2222f519b0004fc10c104",
+      "durationMs": 1871.5636249999807,
+      "outputHash": "8cfd1f44326150990e19fb5fd049eabf299c6324a72a8b606966be71d8208e80",
+      "outputBytes": 296526
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 1,
+      "ordinal": 63,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "bc8a9f132c1e158cf4a3384e8278efe190976a98fe4f188559349a2139ee17fe",
+      "primingMs": 1261.7582499999844,
+      "durationMs": 1246.7519589999865,
+      "outputHash": "48a5fca9ddcc4e6fe3bfb8cb60311b28da571ed76d5052bf924bd1567b99e15c",
+      "outputBytes": 215729
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 1,
+      "ordinal": 64,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "f29bdd548aeba62f34a8f6778071bf6ffd3f8791c10c642bb91d237816af8fe7",
+      "durationMs": 1738.5314999999828,
+      "outputHash": "496744e8a15ce0034cdc98c06603b9c8bd096b798b2744248915f736d8efbc98",
+      "outputBytes": 52178
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 1,
+      "ordinal": 65,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "bc8a9f132c1e158cf4a3384e8278efe190976a98fe4f188559349a2139ee17fe",
+      "durationMs": 1260.6694169999973,
+      "outputHash": "48a5fca9ddcc4e6fe3bfb8cb60311b28da571ed76d5052bf924bd1567b99e15c",
+      "outputBytes": 215729
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 1,
+      "ordinal": 66,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "f29bdd548aeba62f34a8f6778071bf6ffd3f8791c10c642bb91d237816af8fe7",
+      "primingMs": 1781.7481250000128,
+      "durationMs": 1739.1887920000008,
+      "outputHash": "496744e8a15ce0034cdc98c06603b9c8bd096b798b2744248915f736d8efbc98",
+      "outputBytes": 52178
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 1,
+      "ordinal": 67,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "6efa38b3dd88fdd28b69a5f8994a44d65e8fa10a5b416186525b82f20aa52e32",
+      "primingMs": 1086.5129580000066,
+      "durationMs": 1075.252542000002,
+      "outputHash": "bd15952a05610c69b49b7209386d3b984dd1564882da48d82c7688c0ccaef431",
+      "outputBytes": 17549
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 1,
+      "ordinal": 68,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "1dc433e9ed4964cbf78913bd8b649e2664a7c0940f0c24c053f01e7d75e4d12a",
+      "durationMs": 1004.5617090000014,
+      "outputHash": "173b070c5eac0b2bbc51c8ffab16a91acba060aa1c6c94b4cc4f7b4fca434804",
+      "outputBytes": 185275
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 1,
+      "ordinal": 69,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "1dc433e9ed4964cbf78913bd8b649e2664a7c0940f0c24c053f01e7d75e4d12a",
+      "primingMs": 1012.0508340000233,
+      "durationMs": 1000.1196250000212,
+      "outputHash": "173b070c5eac0b2bbc51c8ffab16a91acba060aa1c6c94b4cc4f7b4fca434804",
+      "outputBytes": 185275
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 1,
+      "ordinal": 70,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "9e7d1d5fa99e1c385602969035d48062783f3b1495b0f0de2fb25404d99fc9df",
+      "durationMs": 835.9669159999758,
+      "outputHash": "c39231475e8b5c9da4af2622781866dfc254179241db4d0cd217cfbefc3a434f",
+      "outputBytes": 4655
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 1,
+      "ordinal": 71,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "6efa38b3dd88fdd28b69a5f8994a44d65e8fa10a5b416186525b82f20aa52e32",
+      "durationMs": 1081.9321659999841,
+      "outputHash": "bd15952a05610c69b49b7209386d3b984dd1564882da48d82c7688c0ccaef431",
+      "outputBytes": 17549
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 1,
+      "ordinal": 72,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "9e7d1d5fa99e1c385602969035d48062783f3b1495b0f0de2fb25404d99fc9df",
+      "primingMs": 832.7824580000015,
+      "durationMs": 830.3183330000029,
+      "outputHash": "c39231475e8b5c9da4af2622781866dfc254179241db4d0cd217cfbefc3a434f",
+      "outputBytes": 4655
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 2,
+      "ordinal": 73,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "1dc433e9ed4964cbf78913bd8b649e2664a7c0940f0c24c053f01e7d75e4d12a",
+      "durationMs": 1013.0790419999976,
+      "outputHash": "173b070c5eac0b2bbc51c8ffab16a91acba060aa1c6c94b4cc4f7b4fca434804",
+      "outputBytes": 185275
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 2,
+      "ordinal": 74,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "a0e2b3213eb7a8bfcf54eb161422921bdeedb7bea7f2222f519b0004fc10c104",
+      "primingMs": 1889.2076669999806,
+      "durationMs": 1905.9240409999911,
+      "outputHash": "8cfd1f44326150990e19fb5fd049eabf299c6324a72a8b606966be71d8208e80",
+      "outputBytes": 296526
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 2,
+      "ordinal": 75,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "1dc433e9ed4964cbf78913bd8b649e2664a7c0940f0c24c053f01e7d75e4d12a",
+      "primingMs": 1003.4202079999959,
+      "durationMs": 990.4375419999997,
+      "outputHash": "173b070c5eac0b2bbc51c8ffab16a91acba060aa1c6c94b4cc4f7b4fca434804",
+      "outputBytes": 185275
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 2,
+      "ordinal": 76,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "a0e2b3213eb7a8bfcf54eb161422921bdeedb7bea7f2222f519b0004fc10c104",
+      "durationMs": 1867.3441659999953,
+      "outputHash": "8cfd1f44326150990e19fb5fd049eabf299c6324a72a8b606966be71d8208e80",
+      "outputBytes": 296526
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 2,
+      "ordinal": 77,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "bc8a9f132c1e158cf4a3384e8278efe190976a98fe4f188559349a2139ee17fe",
+      "primingMs": 1277.7568749999919,
+      "durationMs": 1251.4140000000189,
+      "outputHash": "48a5fca9ddcc4e6fe3bfb8cb60311b28da571ed76d5052bf924bd1567b99e15c",
+      "outputBytes": 215729
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 2,
+      "ordinal": 78,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "f29bdd548aeba62f34a8f6778071bf6ffd3f8791c10c642bb91d237816af8fe7",
+      "durationMs": 1724.3156249999884,
+      "outputHash": "496744e8a15ce0034cdc98c06603b9c8bd096b798b2744248915f736d8efbc98",
+      "outputBytes": 52178
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 2,
+      "ordinal": 79,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "6efa38b3dd88fdd28b69a5f8994a44d65e8fa10a5b416186525b82f20aa52e32",
+      "primingMs": 1073.0821249999863,
+      "durationMs": 1086.5645419999782,
+      "outputHash": "bd15952a05610c69b49b7209386d3b984dd1564882da48d82c7688c0ccaef431",
+      "outputBytes": 17549
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 2,
+      "ordinal": 80,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "bc8a9f132c1e158cf4a3384e8278efe190976a98fe4f188559349a2139ee17fe",
+      "durationMs": 1253.1826669999864,
+      "outputHash": "48a5fca9ddcc4e6fe3bfb8cb60311b28da571ed76d5052bf924bd1567b99e15c",
+      "outputBytes": 215729
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 2,
+      "ordinal": 81,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "9e7d1d5fa99e1c385602969035d48062783f3b1495b0f0de2fb25404d99fc9df",
+      "primingMs": 829.4669579999754,
+      "durationMs": 823.7117919999873,
+      "outputHash": "c39231475e8b5c9da4af2622781866dfc254179241db4d0cd217cfbefc3a434f",
+      "outputBytes": 4655
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 2,
+      "ordinal": 82,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "9e7d1d5fa99e1c385602969035d48062783f3b1495b0f0de2fb25404d99fc9df",
+      "durationMs": 837.6897079999908,
+      "outputHash": "c39231475e8b5c9da4af2622781866dfc254179241db4d0cd217cfbefc3a434f",
+      "outputBytes": 4655
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 2,
+      "ordinal": 83,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "6efa38b3dd88fdd28b69a5f8994a44d65e8fa10a5b416186525b82f20aa52e32",
+      "durationMs": 1080.1186250000028,
+      "outputHash": "bd15952a05610c69b49b7209386d3b984dd1564882da48d82c7688c0ccaef431",
+      "outputBytes": 17549
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 2,
+      "ordinal": 84,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "f29bdd548aeba62f34a8f6778071bf6ffd3f8791c10c642bb91d237816af8fe7",
+      "primingMs": 1734.3738330000197,
+      "durationMs": 1746.5760829999927,
+      "outputHash": "496744e8a15ce0034cdc98c06603b9c8bd096b798b2744248915f736d8efbc98",
+      "outputBytes": 52178
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 3,
+      "ordinal": 85,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "9e7d1d5fa99e1c385602969035d48062783f3b1495b0f0de2fb25404d99fc9df",
+      "durationMs": 836.1958330000052,
+      "outputHash": "c39231475e8b5c9da4af2622781866dfc254179241db4d0cd217cfbefc3a434f",
+      "outputBytes": 4655
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 3,
+      "ordinal": 86,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "6efa38b3dd88fdd28b69a5f8994a44d65e8fa10a5b416186525b82f20aa52e32",
+      "durationMs": 1080.1437089999963,
+      "outputHash": "bd15952a05610c69b49b7209386d3b984dd1564882da48d82c7688c0ccaef431",
+      "outputBytes": 17549
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 3,
+      "ordinal": 87,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "bc8a9f132c1e158cf4a3384e8278efe190976a98fe4f188559349a2139ee17fe",
+      "primingMs": 1251.8325000000186,
+      "durationMs": 1246.3574999999837,
+      "outputHash": "48a5fca9ddcc4e6fe3bfb8cb60311b28da571ed76d5052bf924bd1567b99e15c",
+      "outputBytes": 215729
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 3,
+      "ordinal": 88,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "f29bdd548aeba62f34a8f6778071bf6ffd3f8791c10c642bb91d237816af8fe7",
+      "durationMs": 1753.265417000017,
+      "outputHash": "496744e8a15ce0034cdc98c06603b9c8bd096b798b2744248915f736d8efbc98",
+      "outputBytes": 52178
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 3,
+      "ordinal": 89,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "bc8a9f132c1e158cf4a3384e8278efe190976a98fe4f188559349a2139ee17fe",
+      "durationMs": 1253.020292000001,
+      "outputHash": "48a5fca9ddcc4e6fe3bfb8cb60311b28da571ed76d5052bf924bd1567b99e15c",
+      "outputBytes": 215729
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 3,
+      "ordinal": 90,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "1dc433e9ed4964cbf78913bd8b649e2664a7c0940f0c24c053f01e7d75e4d12a",
+      "durationMs": 1004.7140000000072,
+      "outputHash": "173b070c5eac0b2bbc51c8ffab16a91acba060aa1c6c94b4cc4f7b4fca434804",
+      "outputBytes": 185275
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 3,
+      "ordinal": 91,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "f29bdd548aeba62f34a8f6778071bf6ffd3f8791c10c642bb91d237816af8fe7",
+      "primingMs": 1711.5301249999902,
+      "durationMs": 1731.0251250000147,
+      "outputHash": "496744e8a15ce0034cdc98c06603b9c8bd096b798b2744248915f736d8efbc98",
+      "outputBytes": 52178
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 3,
+      "ordinal": 92,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "a0e2b3213eb7a8bfcf54eb161422921bdeedb7bea7f2222f519b0004fc10c104",
+      "durationMs": 1850.7054159999825,
+      "outputHash": "8cfd1f44326150990e19fb5fd049eabf299c6324a72a8b606966be71d8208e80",
+      "outputBytes": 296526
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 3,
+      "ordinal": 93,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "a0e2b3213eb7a8bfcf54eb161422921bdeedb7bea7f2222f519b0004fc10c104",
+      "primingMs": 2434.226624999981,
+      "durationMs": 2374.0602499999804,
+      "outputHash": "8cfd1f44326150990e19fb5fd049eabf299c6324a72a8b606966be71d8208e80",
+      "outputBytes": 296526
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 3,
+      "ordinal": 94,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "1dc433e9ed4964cbf78913bd8b649e2664a7c0940f0c24c053f01e7d75e4d12a",
+      "primingMs": 1090.340333,
+      "durationMs": 1081.10816600002,
+      "outputHash": "173b070c5eac0b2bbc51c8ffab16a91acba060aa1c6c94b4cc4f7b4fca434804",
+      "outputBytes": 185275
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 3,
+      "ordinal": 95,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "9e7d1d5fa99e1c385602969035d48062783f3b1495b0f0de2fb25404d99fc9df",
+      "primingMs": 885.2767920000188,
+      "durationMs": 877.1183329999913,
+      "outputHash": "c39231475e8b5c9da4af2622781866dfc254179241db4d0cd217cfbefc3a434f",
+      "outputBytes": 4655
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 3,
+      "ordinal": 96,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "6efa38b3dd88fdd28b69a5f8994a44d65e8fa10a5b416186525b82f20aa52e32",
+      "primingMs": 1121.7313330000034,
+      "durationMs": 1123.572125000006,
+      "outputHash": "bd15952a05610c69b49b7209386d3b984dd1564882da48d82c7688c0ccaef431",
+      "outputBytes": 17549
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 4,
+      "ordinal": 97,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "9e7d1d5fa99e1c385602969035d48062783f3b1495b0f0de2fb25404d99fc9df",
+      "primingMs": 872.4776249999995,
+      "durationMs": 877.8833750000049,
+      "outputHash": "c39231475e8b5c9da4af2622781866dfc254179241db4d0cd217cfbefc3a434f",
+      "outputBytes": 4655
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 4,
+      "ordinal": 98,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "6efa38b3dd88fdd28b69a5f8994a44d65e8fa10a5b416186525b82f20aa52e32",
+      "durationMs": 1155.3182910000032,
+      "outputHash": "bd15952a05610c69b49b7209386d3b984dd1564882da48d82c7688c0ccaef431",
+      "outputBytes": 17549
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 4,
+      "ordinal": 99,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "9e7d1d5fa99e1c385602969035d48062783f3b1495b0f0de2fb25404d99fc9df",
+      "durationMs": 899.4378330000036,
+      "outputHash": "c39231475e8b5c9da4af2622781866dfc254179241db4d0cd217cfbefc3a434f",
+      "outputBytes": 4655
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 4,
+      "ordinal": 100,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "a0e2b3213eb7a8bfcf54eb161422921bdeedb7bea7f2222f519b0004fc10c104",
+      "primingMs": 1914.862832999992,
+      "durationMs": 1941.445040999999,
+      "outputHash": "8cfd1f44326150990e19fb5fd049eabf299c6324a72a8b606966be71d8208e80",
+      "outputBytes": 296526
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 4,
+      "ordinal": 101,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "a0e2b3213eb7a8bfcf54eb161422921bdeedb7bea7f2222f519b0004fc10c104",
+      "durationMs": 1914.4736669999838,
+      "outputHash": "8cfd1f44326150990e19fb5fd049eabf299c6324a72a8b606966be71d8208e80",
+      "outputBytes": 296526
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 4,
+      "ordinal": 102,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "1dc433e9ed4964cbf78913bd8b649e2664a7c0940f0c24c053f01e7d75e4d12a",
+      "primingMs": 1047.5747499999998,
+      "durationMs": 1077.1382910000102,
+      "outputHash": "173b070c5eac0b2bbc51c8ffab16a91acba060aa1c6c94b4cc4f7b4fca434804",
+      "outputBytes": 185275
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 4,
+      "ordinal": 103,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "1dc433e9ed4964cbf78913bd8b649e2664a7c0940f0c24c053f01e7d75e4d12a",
+      "durationMs": 1073.9832080000197,
+      "outputHash": "173b070c5eac0b2bbc51c8ffab16a91acba060aa1c6c94b4cc4f7b4fca434804",
+      "outputBytes": 185275
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 4,
+      "ordinal": 104,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "f29bdd548aeba62f34a8f6778071bf6ffd3f8791c10c642bb91d237816af8fe7",
+      "durationMs": 1864.9765829999815,
+      "outputHash": "496744e8a15ce0034cdc98c06603b9c8bd096b798b2744248915f736d8efbc98",
+      "outputBytes": 52178
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 4,
+      "ordinal": 105,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "f29bdd548aeba62f34a8f6778071bf6ffd3f8791c10c642bb91d237816af8fe7",
+      "primingMs": 1772.5838330000115,
+      "durationMs": 1795.16287499998,
+      "outputHash": "496744e8a15ce0034cdc98c06603b9c8bd096b798b2744248915f736d8efbc98",
+      "outputBytes": 52178
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 4,
+      "ordinal": 106,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "bc8a9f132c1e158cf4a3384e8278efe190976a98fe4f188559349a2139ee17fe",
+      "durationMs": 1298.2745839999989,
+      "outputHash": "48a5fca9ddcc4e6fe3bfb8cb60311b28da571ed76d5052bf924bd1567b99e15c",
+      "outputBytes": 215729
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 4,
+      "ordinal": 107,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "6efa38b3dd88fdd28b69a5f8994a44d65e8fa10a5b416186525b82f20aa52e32",
+      "primingMs": 1119.269083000021,
+      "durationMs": 1118.0500000000175,
+      "outputHash": "bd15952a05610c69b49b7209386d3b984dd1564882da48d82c7688c0ccaef431",
+      "outputBytes": 17549
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 4,
+      "ordinal": 108,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "bc8a9f132c1e158cf4a3384e8278efe190976a98fe4f188559349a2139ee17fe",
+      "primingMs": 1295.4896250000165,
+      "durationMs": 1307.379042000015,
+      "outputHash": "48a5fca9ddcc4e6fe3bfb8cb60311b28da571ed76d5052bf924bd1567b99e15c",
+      "outputBytes": 215729
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 5,
+      "ordinal": 109,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "bc8a9f132c1e158cf4a3384e8278efe190976a98fe4f188559349a2139ee17fe",
+      "primingMs": 1300.3456249999872,
+      "durationMs": 1302.205042000016,
+      "outputHash": "48a5fca9ddcc4e6fe3bfb8cb60311b28da571ed76d5052bf924bd1567b99e15c",
+      "outputBytes": 215729
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 5,
+      "ordinal": 110,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "1dc433e9ed4964cbf78913bd8b649e2664a7c0940f0c24c053f01e7d75e4d12a",
+      "durationMs": 1049.3423339999863,
+      "outputHash": "173b070c5eac0b2bbc51c8ffab16a91acba060aa1c6c94b4cc4f7b4fca434804",
+      "outputBytes": 185275
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 5,
+      "ordinal": 111,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "9e7d1d5fa99e1c385602969035d48062783f3b1495b0f0de2fb25404d99fc9df",
+      "durationMs": 865.212332999974,
+      "outputHash": "c39231475e8b5c9da4af2622781866dfc254179241db4d0cd217cfbefc3a434f",
+      "outputBytes": 4655
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 5,
+      "ordinal": 112,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "6efa38b3dd88fdd28b69a5f8994a44d65e8fa10a5b416186525b82f20aa52e32",
+      "primingMs": 1105.3670409999904,
+      "durationMs": 1110.6217499999912,
+      "outputHash": "bd15952a05610c69b49b7209386d3b984dd1564882da48d82c7688c0ccaef431",
+      "outputBytes": 17549
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 5,
+      "ordinal": 113,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "9e7d1d5fa99e1c385602969035d48062783f3b1495b0f0de2fb25404d99fc9df",
+      "primingMs": 864.0677080000169,
+      "durationMs": 875.0846249999886,
+      "outputHash": "c39231475e8b5c9da4af2622781866dfc254179241db4d0cd217cfbefc3a434f",
+      "outputBytes": 4655
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 5,
+      "ordinal": 114,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "f29bdd548aeba62f34a8f6778071bf6ffd3f8791c10c642bb91d237816af8fe7",
+      "durationMs": 1797.3294170000008,
+      "outputHash": "496744e8a15ce0034cdc98c06603b9c8bd096b798b2744248915f736d8efbc98",
+      "outputBytes": 52178
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 5,
+      "ordinal": 115,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "1dc433e9ed4964cbf78913bd8b649e2664a7c0940f0c24c053f01e7d75e4d12a",
+      "primingMs": 1042.5670839999802,
+      "durationMs": 1040.2379580000415,
+      "outputHash": "173b070c5eac0b2bbc51c8ffab16a91acba060aa1c6c94b4cc4f7b4fca434804",
+      "outputBytes": 185275
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 5,
+      "ordinal": 116,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "a0e2b3213eb7a8bfcf54eb161422921bdeedb7bea7f2222f519b0004fc10c104",
+      "primingMs": 1922.849041999958,
+      "durationMs": 2005.971292000031,
+      "outputHash": "8cfd1f44326150990e19fb5fd049eabf299c6324a72a8b606966be71d8208e80",
+      "outputBytes": 296526
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 5,
+      "ordinal": 117,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "a0e2b3213eb7a8bfcf54eb161422921bdeedb7bea7f2222f519b0004fc10c104",
+      "durationMs": 1924.257500000007,
+      "outputHash": "8cfd1f44326150990e19fb5fd049eabf299c6324a72a8b606966be71d8208e80",
+      "outputBytes": 296526
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 5,
+      "ordinal": 118,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "6efa38b3dd88fdd28b69a5f8994a44d65e8fa10a5b416186525b82f20aa52e32",
+      "durationMs": 1117.0242500000168,
+      "outputHash": "bd15952a05610c69b49b7209386d3b984dd1564882da48d82c7688c0ccaef431",
+      "outputBytes": 17549
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 2,
+      "iteration": 5,
+      "ordinal": 119,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "bc8a9f132c1e158cf4a3384e8278efe190976a98fe4f188559349a2139ee17fe",
+      "durationMs": 1291.0385000000242,
+      "outputHash": "48a5fca9ddcc4e6fe3bfb8cb60311b28da571ed76d5052bf924bd1567b99e15c",
+      "outputBytes": 215729
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 2,
+      "iteration": 5,
+      "ordinal": 120,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "f29bdd548aeba62f34a8f6778071bf6ffd3f8791c10c642bb91d237816af8fe7",
+      "primingMs": 1789.6701250000042,
+      "durationMs": 1901.2083330000169,
+      "outputHash": "496744e8a15ce0034cdc98c06603b9c8bd096b798b2744248915f736d8efbc98",
+      "outputBytes": 52178
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 1,
+      "ordinal": 121,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "9e7d1d5fa99e1c385602969035d48062783f3b1495b0f0de2fb25404d99fc9df",
+      "durationMs": 908.6134160000365,
+      "outputHash": "c39231475e8b5c9da4af2622781866dfc254179241db4d0cd217cfbefc3a434f",
+      "outputBytes": 4655
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 1,
+      "ordinal": 122,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "6efa38b3dd88fdd28b69a5f8994a44d65e8fa10a5b416186525b82f20aa52e32",
+      "primingMs": 1140.6386250000214,
+      "durationMs": 1123.1962080000085,
+      "outputHash": "bd15952a05610c69b49b7209386d3b984dd1564882da48d82c7688c0ccaef431",
+      "outputBytes": 17549
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 1,
+      "ordinal": 123,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "f29bdd548aeba62f34a8f6778071bf6ffd3f8791c10c642bb91d237816af8fe7",
+      "durationMs": 1783.9472079999978,
+      "outputHash": "496744e8a15ce0034cdc98c06603b9c8bd096b798b2744248915f736d8efbc98",
+      "outputBytes": 52178
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 1,
+      "ordinal": 124,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "bc8a9f132c1e158cf4a3384e8278efe190976a98fe4f188559349a2139ee17fe",
+      "primingMs": 1309.5764999999665,
+      "durationMs": 1310.3147499999614,
+      "outputHash": "48a5fca9ddcc4e6fe3bfb8cb60311b28da571ed76d5052bf924bd1567b99e15c",
+      "outputBytes": 215729
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 1,
+      "ordinal": 125,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "a0e2b3213eb7a8bfcf54eb161422921bdeedb7bea7f2222f519b0004fc10c104",
+      "durationMs": 1916.9835829999647,
+      "outputHash": "8cfd1f44326150990e19fb5fd049eabf299c6324a72a8b606966be71d8208e80",
+      "outputBytes": 296526
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 1,
+      "ordinal": 126,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "f29bdd548aeba62f34a8f6778071bf6ffd3f8791c10c642bb91d237816af8fe7",
+      "primingMs": 1786.4330419999897,
+      "durationMs": 1800.3065829999978,
+      "outputHash": "496744e8a15ce0034cdc98c06603b9c8bd096b798b2744248915f736d8efbc98",
+      "outputBytes": 52178
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 1,
+      "ordinal": 127,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "bc8a9f132c1e158cf4a3384e8278efe190976a98fe4f188559349a2139ee17fe",
+      "durationMs": 1297.348249999981,
+      "outputHash": "48a5fca9ddcc4e6fe3bfb8cb60311b28da571ed76d5052bf924bd1567b99e15c",
+      "outputBytes": 215729
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 1,
+      "ordinal": 128,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "1dc433e9ed4964cbf78913bd8b649e2664a7c0940f0c24c053f01e7d75e4d12a",
+      "durationMs": 1038.1257079999777,
+      "outputHash": "173b070c5eac0b2bbc51c8ffab16a91acba060aa1c6c94b4cc4f7b4fca434804",
+      "outputBytes": 185275
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 1,
+      "ordinal": 129,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "6efa38b3dd88fdd28b69a5f8994a44d65e8fa10a5b416186525b82f20aa52e32",
+      "durationMs": 1115.91525000002,
+      "outputHash": "bd15952a05610c69b49b7209386d3b984dd1564882da48d82c7688c0ccaef431",
+      "outputBytes": 17549
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 1,
+      "ordinal": 130,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "a0e2b3213eb7a8bfcf54eb161422921bdeedb7bea7f2222f519b0004fc10c104",
+      "primingMs": 1945.9523749999935,
+      "durationMs": 2061.885874999978,
+      "outputHash": "8cfd1f44326150990e19fb5fd049eabf299c6324a72a8b606966be71d8208e80",
+      "outputBytes": 296526
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 1,
+      "ordinal": 131,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "1dc433e9ed4964cbf78913bd8b649e2664a7c0940f0c24c053f01e7d75e4d12a",
+      "primingMs": 1057.7634170000092,
+      "durationMs": 1120.7323750000214,
+      "outputHash": "173b070c5eac0b2bbc51c8ffab16a91acba060aa1c6c94b4cc4f7b4fca434804",
+      "outputBytes": 185275
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 1,
+      "ordinal": 132,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "9e7d1d5fa99e1c385602969035d48062783f3b1495b0f0de2fb25404d99fc9df",
+      "primingMs": 889.0557910000207,
+      "durationMs": 869.3440420000115,
+      "outputHash": "c39231475e8b5c9da4af2622781866dfc254179241db4d0cd217cfbefc3a434f",
+      "outputBytes": 4655
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 2,
+      "ordinal": 133,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "a0e2b3213eb7a8bfcf54eb161422921bdeedb7bea7f2222f519b0004fc10c104",
+      "primingMs": 1953.4009589999914,
+      "durationMs": 1960.7094159999979,
+      "outputHash": "8cfd1f44326150990e19fb5fd049eabf299c6324a72a8b606966be71d8208e80",
+      "outputBytes": 296526
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 2,
+      "ordinal": 134,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "6efa38b3dd88fdd28b69a5f8994a44d65e8fa10a5b416186525b82f20aa52e32",
+      "primingMs": 1109.3052089999546,
+      "durationMs": 1132.611499999999,
+      "outputHash": "bd15952a05610c69b49b7209386d3b984dd1564882da48d82c7688c0ccaef431",
+      "outputBytes": 17549
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 2,
+      "ordinal": 135,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "bc8a9f132c1e158cf4a3384e8278efe190976a98fe4f188559349a2139ee17fe",
+      "primingMs": 1310.898041999957,
+      "durationMs": 1302.8540420000209,
+      "outputHash": "48a5fca9ddcc4e6fe3bfb8cb60311b28da571ed76d5052bf924bd1567b99e15c",
+      "outputBytes": 215729
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 2,
+      "ordinal": 136,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "9e7d1d5fa99e1c385602969035d48062783f3b1495b0f0de2fb25404d99fc9df",
+      "primingMs": 869.1632499999832,
+      "durationMs": 863.2027919999673,
+      "outputHash": "c39231475e8b5c9da4af2622781866dfc254179241db4d0cd217cfbefc3a434f",
+      "outputBytes": 4655
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 2,
+      "ordinal": 137,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "9e7d1d5fa99e1c385602969035d48062783f3b1495b0f0de2fb25404d99fc9df",
+      "durationMs": 868.2322079999722,
+      "outputHash": "c39231475e8b5c9da4af2622781866dfc254179241db4d0cd217cfbefc3a434f",
+      "outputBytes": 4655
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 2,
+      "ordinal": 138,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "f29bdd548aeba62f34a8f6778071bf6ffd3f8791c10c642bb91d237816af8fe7",
+      "durationMs": 1782.923542000004,
+      "outputHash": "496744e8a15ce0034cdc98c06603b9c8bd096b798b2744248915f736d8efbc98",
+      "outputBytes": 52178
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 2,
+      "ordinal": 139,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "a0e2b3213eb7a8bfcf54eb161422921bdeedb7bea7f2222f519b0004fc10c104",
+      "durationMs": 1948.681917000038,
+      "outputHash": "8cfd1f44326150990e19fb5fd049eabf299c6324a72a8b606966be71d8208e80",
+      "outputBytes": 296526
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 2,
+      "ordinal": 140,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "f29bdd548aeba62f34a8f6778071bf6ffd3f8791c10c642bb91d237816af8fe7",
+      "primingMs": 1796.3175829999964,
+      "durationMs": 1804.4477919999626,
+      "outputHash": "496744e8a15ce0034cdc98c06603b9c8bd096b798b2744248915f736d8efbc98",
+      "outputBytes": 52178
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 2,
+      "ordinal": 141,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "6efa38b3dd88fdd28b69a5f8994a44d65e8fa10a5b416186525b82f20aa52e32",
+      "durationMs": 1114.4314580000355,
+      "outputHash": "bd15952a05610c69b49b7209386d3b984dd1564882da48d82c7688c0ccaef431",
+      "outputBytes": 17549
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 2,
+      "ordinal": 142,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "1dc433e9ed4964cbf78913bd8b649e2664a7c0940f0c24c053f01e7d75e4d12a",
+      "primingMs": 1038.3139579999843,
+      "durationMs": 1036.1989999999641,
+      "outputHash": "173b070c5eac0b2bbc51c8ffab16a91acba060aa1c6c94b4cc4f7b4fca434804",
+      "outputBytes": 185275
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 2,
+      "ordinal": 143,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "bc8a9f132c1e158cf4a3384e8278efe190976a98fe4f188559349a2139ee17fe",
+      "durationMs": 1296.048958999978,
+      "outputHash": "48a5fca9ddcc4e6fe3bfb8cb60311b28da571ed76d5052bf924bd1567b99e15c",
+      "outputBytes": 215729
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 2,
+      "ordinal": 144,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "1dc433e9ed4964cbf78913bd8b649e2664a7c0940f0c24c053f01e7d75e4d12a",
+      "durationMs": 1035.9138340000063,
+      "outputHash": "173b070c5eac0b2bbc51c8ffab16a91acba060aa1c6c94b4cc4f7b4fca434804",
+      "outputBytes": 185275
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 3,
+      "ordinal": 145,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "bc8a9f132c1e158cf4a3384e8278efe190976a98fe4f188559349a2139ee17fe",
+      "durationMs": 1301.4106669999892,
+      "outputHash": "48a5fca9ddcc4e6fe3bfb8cb60311b28da571ed76d5052bf924bd1567b99e15c",
+      "outputBytes": 215729
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 3,
+      "ordinal": 146,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "1dc433e9ed4964cbf78913bd8b649e2664a7c0940f0c24c053f01e7d75e4d12a",
+      "primingMs": 1057.0425410000025,
+      "durationMs": 1050.6439590000082,
+      "outputHash": "173b070c5eac0b2bbc51c8ffab16a91acba060aa1c6c94b4cc4f7b4fca434804",
+      "outputBytes": 185275
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 3,
+      "ordinal": 147,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "f29bdd548aeba62f34a8f6778071bf6ffd3f8791c10c642bb91d237816af8fe7",
+      "primingMs": 1783.1145830000169,
+      "durationMs": 1787.3553750000428,
+      "outputHash": "496744e8a15ce0034cdc98c06603b9c8bd096b798b2744248915f736d8efbc98",
+      "outputBytes": 52178
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 3,
+      "ordinal": 148,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "1dc433e9ed4964cbf78913bd8b649e2664a7c0940f0c24c053f01e7d75e4d12a",
+      "durationMs": 1048.7237090000417,
+      "outputHash": "173b070c5eac0b2bbc51c8ffab16a91acba060aa1c6c94b4cc4f7b4fca434804",
+      "outputBytes": 185275
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 3,
+      "ordinal": 149,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "bc8a9f132c1e158cf4a3384e8278efe190976a98fe4f188559349a2139ee17fe",
+      "primingMs": 1306.5143749999697,
+      "durationMs": 1299.3046249999898,
+      "outputHash": "48a5fca9ddcc4e6fe3bfb8cb60311b28da571ed76d5052bf924bd1567b99e15c",
+      "outputBytes": 215729
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 3,
+      "ordinal": 150,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "6efa38b3dd88fdd28b69a5f8994a44d65e8fa10a5b416186525b82f20aa52e32",
+      "primingMs": 1125.8138329999638,
+      "durationMs": 1123.5720420000143,
+      "outputHash": "bd15952a05610c69b49b7209386d3b984dd1564882da48d82c7688c0ccaef431",
+      "outputBytes": 17549
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 3,
+      "ordinal": 151,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "6efa38b3dd88fdd28b69a5f8994a44d65e8fa10a5b416186525b82f20aa52e32",
+      "durationMs": 1133.6800419999636,
+      "outputHash": "bd15952a05610c69b49b7209386d3b984dd1564882da48d82c7688c0ccaef431",
+      "outputBytes": 17549
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 3,
+      "ordinal": 152,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "a0e2b3213eb7a8bfcf54eb161422921bdeedb7bea7f2222f519b0004fc10c104",
+      "durationMs": 1943.9654580000206,
+      "outputHash": "8cfd1f44326150990e19fb5fd049eabf299c6324a72a8b606966be71d8208e80",
+      "outputBytes": 296526
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 3,
+      "ordinal": 153,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "f29bdd548aeba62f34a8f6778071bf6ffd3f8791c10c642bb91d237816af8fe7",
+      "durationMs": 1776.946958000015,
+      "outputHash": "496744e8a15ce0034cdc98c06603b9c8bd096b798b2744248915f736d8efbc98",
+      "outputBytes": 52178
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 3,
+      "ordinal": 154,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "a0e2b3213eb7a8bfcf54eb161422921bdeedb7bea7f2222f519b0004fc10c104",
+      "primingMs": 1934.5117500000051,
+      "durationMs": 1945.6047499999986,
+      "outputHash": "8cfd1f44326150990e19fb5fd049eabf299c6324a72a8b606966be71d8208e80",
+      "outputBytes": 296526
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 3,
+      "ordinal": 155,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "9e7d1d5fa99e1c385602969035d48062783f3b1495b0f0de2fb25404d99fc9df",
+      "primingMs": 861.9144160000142,
+      "durationMs": 871.5880420000176,
+      "outputHash": "c39231475e8b5c9da4af2622781866dfc254179241db4d0cd217cfbefc3a434f",
+      "outputBytes": 4655
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 3,
+      "ordinal": 156,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "9e7d1d5fa99e1c385602969035d48062783f3b1495b0f0de2fb25404d99fc9df",
+      "durationMs": 868.7531249999884,
+      "outputHash": "c39231475e8b5c9da4af2622781866dfc254179241db4d0cd217cfbefc3a434f",
+      "outputBytes": 4655
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 4,
+      "ordinal": 157,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "6efa38b3dd88fdd28b69a5f8994a44d65e8fa10a5b416186525b82f20aa52e32",
+      "primingMs": 1120.1632079999545,
+      "durationMs": 1112.9613750000135,
+      "outputHash": "bd15952a05610c69b49b7209386d3b984dd1564882da48d82c7688c0ccaef431",
+      "outputBytes": 17549
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 4,
+      "ordinal": 158,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "a0e2b3213eb7a8bfcf54eb161422921bdeedb7bea7f2222f519b0004fc10c104",
+      "durationMs": 1962.005458999949,
+      "outputHash": "8cfd1f44326150990e19fb5fd049eabf299c6324a72a8b606966be71d8208e80",
+      "outputBytes": 296526
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 4,
+      "ordinal": 159,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "1dc433e9ed4964cbf78913bd8b649e2664a7c0940f0c24c053f01e7d75e4d12a",
+      "primingMs": 1121.3115000000107,
+      "durationMs": 1080.0926669999608,
+      "outputHash": "173b070c5eac0b2bbc51c8ffab16a91acba060aa1c6c94b4cc4f7b4fca434804",
+      "outputBytes": 185275
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 4,
+      "ordinal": 160,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "a0e2b3213eb7a8bfcf54eb161422921bdeedb7bea7f2222f519b0004fc10c104",
+      "primingMs": 2021.584375000035,
+      "durationMs": 2151.8180840000277,
+      "outputHash": "8cfd1f44326150990e19fb5fd049eabf299c6324a72a8b606966be71d8208e80",
+      "outputBytes": 296526
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 4,
+      "ordinal": 161,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "1dc433e9ed4964cbf78913bd8b649e2664a7c0940f0c24c053f01e7d75e4d12a",
+      "durationMs": 1133.5559999999823,
+      "outputHash": "173b070c5eac0b2bbc51c8ffab16a91acba060aa1c6c94b4cc4f7b4fca434804",
+      "outputBytes": 185275
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 4,
+      "ordinal": 162,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "f29bdd548aeba62f34a8f6778071bf6ffd3f8791c10c642bb91d237816af8fe7",
+      "primingMs": 1806.3575420000125,
+      "durationMs": 1780.9287079999922,
+      "outputHash": "496744e8a15ce0034cdc98c06603b9c8bd096b798b2744248915f736d8efbc98",
+      "outputBytes": 52178
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 4,
+      "ordinal": 163,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "9e7d1d5fa99e1c385602969035d48062783f3b1495b0f0de2fb25404d99fc9df",
+      "durationMs": 870.2835419999901,
+      "outputHash": "c39231475e8b5c9da4af2622781866dfc254179241db4d0cd217cfbefc3a434f",
+      "outputBytes": 4655
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 4,
+      "ordinal": 164,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "bc8a9f132c1e158cf4a3384e8278efe190976a98fe4f188559349a2139ee17fe",
+      "durationMs": 1315.9572500000359,
+      "outputHash": "48a5fca9ddcc4e6fe3bfb8cb60311b28da571ed76d5052bf924bd1567b99e15c",
+      "outputBytes": 215729
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 4,
+      "ordinal": 165,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "f29bdd548aeba62f34a8f6778071bf6ffd3f8791c10c642bb91d237816af8fe7",
+      "durationMs": 1797.7139159999788,
+      "outputHash": "496744e8a15ce0034cdc98c06603b9c8bd096b798b2744248915f736d8efbc98",
+      "outputBytes": 52178
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 4,
+      "ordinal": 166,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "6efa38b3dd88fdd28b69a5f8994a44d65e8fa10a5b416186525b82f20aa52e32",
+      "durationMs": 1124.4057909999974,
+      "outputHash": "bd15952a05610c69b49b7209386d3b984dd1564882da48d82c7688c0ccaef431",
+      "outputBytes": 17549
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 4,
+      "ordinal": 167,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "bc8a9f132c1e158cf4a3384e8278efe190976a98fe4f188559349a2139ee17fe",
+      "primingMs": 1311.0275409999886,
+      "durationMs": 1303.2382499999949,
+      "outputHash": "48a5fca9ddcc4e6fe3bfb8cb60311b28da571ed76d5052bf924bd1567b99e15c",
+      "outputBytes": 215729
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 4,
+      "ordinal": 168,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "9e7d1d5fa99e1c385602969035d48062783f3b1495b0f0de2fb25404d99fc9df",
+      "primingMs": 868.4779589999816,
+      "durationMs": 868.4526249999763,
+      "outputHash": "c39231475e8b5c9da4af2622781866dfc254179241db4d0cd217cfbefc3a434f",
+      "outputBytes": 4655
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 5,
+      "ordinal": 169,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "f29bdd548aeba62f34a8f6778071bf6ffd3f8791c10c642bb91d237816af8fe7",
+      "primingMs": 1774.6861660000286,
+      "durationMs": 1795.5651669999934,
+      "outputHash": "496744e8a15ce0034cdc98c06603b9c8bd096b798b2744248915f736d8efbc98",
+      "outputBytes": 52178
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 5,
+      "ordinal": 170,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "9e7d1d5fa99e1c385602969035d48062783f3b1495b0f0de2fb25404d99fc9df",
+      "durationMs": 859.2723750000005,
+      "outputHash": "c39231475e8b5c9da4af2622781866dfc254179241db4d0cd217cfbefc3a434f",
+      "outputBytes": 4655
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 5,
+      "ordinal": 171,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "6efa38b3dd88fdd28b69a5f8994a44d65e8fa10a5b416186525b82f20aa52e32",
+      "durationMs": 1131.2828330000048,
+      "outputHash": "bd15952a05610c69b49b7209386d3b984dd1564882da48d82c7688c0ccaef431",
+      "outputBytes": 17549
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 5,
+      "ordinal": 172,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "bc8a9f132c1e158cf4a3384e8278efe190976a98fe4f188559349a2139ee17fe",
+      "durationMs": 1467.8269579999615,
+      "outputHash": "48a5fca9ddcc4e6fe3bfb8cb60311b28da571ed76d5052bf924bd1567b99e15c",
+      "outputBytes": 215729
+    },
+    {
+      "framework": "wevu",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 5,
+      "ordinal": 173,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "bc8a9f132c1e158cf4a3384e8278efe190976a98fe4f188559349a2139ee17fe",
+      "primingMs": 1496.9585409999709,
+      "durationMs": 1374.6237499999697,
+      "outputHash": "48a5fca9ddcc4e6fe3bfb8cb60311b28da571ed76d5052bf924bd1567b99e15c",
+      "outputBytes": 215729
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 5,
+      "ordinal": 174,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "1dc433e9ed4964cbf78913bd8b649e2664a7c0940f0c24c053f01e7d75e4d12a",
+      "durationMs": 1124.1624999999767,
+      "outputHash": "173b070c5eac0b2bbc51c8ffab16a91acba060aa1c6c94b4cc4f7b4fca434804",
+      "outputBytes": 185275
+    },
+    {
+      "framework": "native",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 5,
+      "ordinal": 175,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "f29bdd548aeba62f34a8f6778071bf6ffd3f8791c10c642bb91d237816af8fe7",
+      "durationMs": 1981.8488329999964,
+      "outputHash": "496744e8a15ce0034cdc98c06603b9c8bd096b798b2744248915f736d8efbc98",
+      "outputBytes": 52178
+    },
+    {
+      "framework": "native",
+      "scale": "medium",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 5,
+      "ordinal": 176,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "6efa38b3dd88fdd28b69a5f8994a44d65e8fa10a5b416186525b82f20aa52e32",
+      "primingMs": 1240.6722919999738,
+      "durationMs": 1261.5014160000137,
+      "outputHash": "bd15952a05610c69b49b7209386d3b984dd1564882da48d82c7688c0ccaef431",
+      "outputBytes": 17549
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 5,
+      "ordinal": 177,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "a0e2b3213eb7a8bfcf54eb161422921bdeedb7bea7f2222f519b0004fc10c104",
+      "primingMs": 2063.4000839999644,
+      "durationMs": 2121.0869999999995,
+      "outputHash": "8cfd1f44326150990e19fb5fd049eabf299c6324a72a8b606966be71d8208e80",
+      "outputBytes": 296526
+    },
+    {
+      "framework": "wevu",
+      "scale": "large",
+      "cache": "reset-tool-state",
+      "batch": 3,
+      "iteration": 5,
+      "ordinal": 178,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "a0e2b3213eb7a8bfcf54eb161422921bdeedb7bea7f2222f519b0004fc10c104",
+      "durationMs": 2022.2649160000146,
+      "outputHash": "8cfd1f44326150990e19fb5fd049eabf299c6324a72a8b606966be71d8208e80",
+      "outputBytes": 296526
+    },
+    {
+      "framework": "native",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 5,
+      "ordinal": 179,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "9e7d1d5fa99e1c385602969035d48062783f3b1495b0f0de2fb25404d99fc9df",
+      "primingMs": 894.9393330000457,
+      "durationMs": 897.5974169999827,
+      "outputHash": "c39231475e8b5c9da4af2622781866dfc254179241db4d0cd217cfbefc3a434f",
+      "outputBytes": 4655
+    },
+    {
+      "framework": "wevu",
+      "scale": "small",
+      "cache": "primed-tool-state",
+      "batch": 3,
+      "iteration": 5,
+      "ordinal": 180,
+      "ok": true,
+      "attempts": 1,
+      "sourceHash": "1dc433e9ed4964cbf78913bd8b649e2664a7c0940f0c24c053f01e7d75e4d12a",
+      "primingMs": 1059.1906249999884,
+      "durationMs": 1038.2602080000215,
+      "outputHash": "173b070c5eac0b2bbc51c8ffab16a91acba060aa1c6c94b4cc4f7b4fca434804",
+      "outputBytes": 185275
+    }
+  ],
+  "summaries": [
+    {
+      "id": "wevu/medium/primed-tool-state",
+      "complete": true,
+      "expected": 15,
+      "accepted": 15,
+      "meanMs": 1283.9837501333307,
+      "medianMs": 1272.941082999998,
+      "p95Ms": 1374.6237499999697,
+      "maxMs": 1374.6237499999697,
+      "deviationMs": 33.655210871507634,
+      "coefficientOfVariation": 0.026211555144691534
+    },
+    {
+      "id": "wevu/large/primed-tool-state",
+      "complete": true,
+      "expected": 15,
+      "accepted": 15,
+      "meanMs": 1991.3717832666653,
+      "medianMs": 1945.6047499999986,
+      "p95Ms": 2374.0602499999804,
+      "maxMs": 2374.0602499999804,
+      "deviationMs": 133.32479809253184,
+      "coefficientOfVariation": 0.06695123392469916
+    },
+    {
+      "id": "wevu/small/primed-tool-state",
+      "complete": true,
+      "expected": 15,
+      "accepted": 15,
+      "meanMs": 1037.0995278000066,
+      "medianMs": 1036.1989999999641,
+      "p95Ms": 1120.7323750000214,
+      "maxMs": 1120.7323750000214,
+      "deviationMs": 36.91330974608263,
+      "coefficientOfVariation": 0.035592832468438806
+    },
+    {
+      "id": "wevu/medium/reset-tool-state",
+      "complete": true,
+      "expected": 15,
+      "accepted": 15,
+      "meanMs": 1293.4757918666626,
+      "medianMs": 1291.0385000000242,
+      "p95Ms": 1467.8269579999615,
+      "maxMs": 1467.8269579999615,
+      "deviationMs": 50.91639904825434,
+      "coefficientOfVariation": 0.039364013898377646
+    },
+    {
+      "id": "native/medium/reset-tool-state",
+      "complete": true,
+      "expected": 15,
+      "accepted": 15,
+      "meanMs": 1105.7913443333343,
+      "medianMs": 1095.7328750000015,
+      "p95Ms": 1155.3182910000032,
+      "maxMs": 1155.3182910000032,
+      "deviationMs": 22.592531499391583,
+      "coefficientOfVariation": 0.020431098158949956
+    },
+    {
+      "id": "native/large/reset-tool-state",
+      "complete": true,
+      "expected": 15,
+      "accepted": 15,
+      "meanMs": 1780.6501997999953,
+      "medianMs": 1760.6212499999965,
+      "p95Ms": 1981.8488329999964,
+      "maxMs": 1981.8488329999964,
+      "deviationMs": 64.6073795310944,
+      "coefficientOfVariation": 0.03628302714275446
+    },
+    {
+      "id": "native/large/primed-tool-state",
+      "complete": true,
+      "expected": 15,
+      "accepted": 15,
+      "meanMs": 1774.3428055333338,
+      "medianMs": 1757.793125000011,
+      "p95Ms": 1901.2083330000169,
+      "maxMs": 1901.2083330000169,
+      "deviationMs": 42.22949466429618,
+      "coefficientOfVariation": 0.023800076587569444
+    },
+    {
+      "id": "wevu/small/reset-tool-state",
+      "complete": true,
+      "expected": 15,
+      "accepted": 15,
+      "meanMs": 1041.067769533334,
+      "medianMs": 1028.4817500000063,
+      "p95Ms": 1133.5559999999823,
+      "maxMs": 1133.5559999999823,
+      "deviationMs": 39.4329743957943,
+      "coefficientOfVariation": 0.037877432718400654
+    },
+    {
+      "id": "native/medium/primed-tool-state",
+      "complete": true,
+      "expected": 15,
+      "accepted": 15,
+      "meanMs": 1113.812547200005,
+      "medianMs": 1110.6217499999912,
+      "p95Ms": 1261.5014160000137,
+      "maxMs": 1261.5014160000137,
+      "deviationMs": 43.57772578975531,
+      "coefficientOfVariation": 0.039124829307502995
+    },
+    {
+      "id": "native/small/reset-tool-state",
+      "complete": true,
+      "expected": 15,
+      "accepted": 15,
+      "meanMs": 857.4956525999951,
+      "medianMs": 845.8091669999994,
+      "p95Ms": 908.6134160000365,
+      "maxMs": 908.6134160000365,
+      "deviationMs": 22.09065699628916,
+      "coefficientOfVariation": 0.025761829729758427
+    },
+    {
+      "id": "wevu/large/reset-tool-state",
+      "complete": true,
+      "expected": 15,
+      "accepted": 15,
+      "meanMs": 1903.0926915999967,
+      "medianMs": 1879.0334589999984,
+      "p95Ms": 2022.2649160000146,
+      "maxMs": 2022.2649160000146,
+      "deviationMs": 48.175249691409135,
+      "coefficientOfVariation": 0.025314189846899426
+    },
+    {
+      "id": "native/small/primed-tool-state",
+      "complete": true,
+      "expected": 15,
+      "accepted": 15,
+      "meanMs": 854.3806334666622,
+      "medianMs": 863.2027919999673,
+      "p95Ms": 897.5974169999827,
+      "maxMs": 897.5974169999827,
+      "deviationMs": 23.58301925619959,
+      "coefficientOfVariation": 0.02760247404076932
+    }
+  ],
+  "coverage": {
+    "machineProfile": "workstation",
+    "profileSource": "operator-declared; inspect captured hardware before accepting coverage",
+    "projectScales": [
+      "small",
+      "medium",
+      "large"
+    ],
+    "frameworks": [
+      "native",
+      "wevu"
+    ],
+    "ordinaryDeveloperMachine": "not-verified",
+    "realDevice": "not-run",
+    "timingFromHostedCI": false
+  }
+}
