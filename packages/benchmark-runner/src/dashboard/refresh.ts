@@ -1,94 +1,68 @@
+import type { ProvenancedReport } from '../reports/provenance/types'
 import type { VerificationReport, VerificationStep } from './types'
-import { spawn } from 'node:child_process'
 import process from 'node:process'
 import path from 'pathe'
-import { sanitizeTerminalOutput } from '../fs'
+import { readJson } from '../fs'
 import { repoRoot } from '../projects'
 import { createMachineEnvironment } from '../reports/environment'
+import { aggregationError } from '../reports/provenance/accept'
+import { replaceVerificationSection } from '../reports/provenance/revision'
+import { startReportRun } from '../reports/provenance/run'
 import { generateDashboard } from './generate'
+import { runStep } from './refresh/execute'
+import { steps } from './refresh/steps'
 import { writeVerificationReport } from './verification'
 
-const tailLimit = 8_000
-
-const steps = [
-  ['install', '安装依赖', ['install', '--frozen-lockfile']],
-  ['build', '构建', ['run', 'build']],
-  ['lint', '代码检查', ['run', 'lint']],
-  ['typecheck', '类型检查', ['run', 'typecheck']],
-  ['tsd', '类型 API 测试', ['run', 'tsd']],
-  ['test', '单元与集成测试', ['run', 'test']],
-  ['audit', '依赖安全审计', ['audit', '--audit-level=moderate']],
-  ['hbuilderx', 'HBuilderX uni-app x smoke', ['run', 'test:hbuilderx:uni-app-x']],
-  ['compile', '编译基准', ['run', 'bench:compile']],
-  ['runtime', '运行时 IDE E2E 基准', ['run', 'bench:runtime']],
-  ['hmr', 'HMR 基准', ['run', 'bench:hmr']],
-  ['size', 'wevu 体积分析', ['run', 'bench:size:wevu']],
-] as const
-
-function tail(value: string) {
-  const sanitized = sanitizeTerminalOutput(value)
-  return sanitized.length > tailLimit ? sanitized.slice(-tailLimit) : sanitized
-}
-
-async function runStep(id: string, label: string, args: readonly string[]): Promise<VerificationStep> {
-  const startedAt = new Date().toISOString()
-  const started = performance.now()
-  const command = `pnpm ${args.join(' ')}`
-  process.stdout.write(`\n[full-report] ${label}: ${command}\n`)
-  let stdout = ''
-  let stderr = ''
-  const child = spawn('pnpm', [...args], {
-    cwd: repoRoot,
-    env: { ...process.env, CI: '1', FORCE_COLOR: '0', BENCH_RUNTIME_REQUIRED: '1' },
-    stdio: ['ignore', 'pipe', 'pipe'],
-  })
-  child.stdout.setEncoding('utf8')
-  child.stderr.setEncoding('utf8')
-  child.stdout.on('data', (chunk: string) => {
-    stdout += chunk
-    process.stdout.write(chunk)
-  })
-  child.stderr.on('data', (chunk: string) => {
-    stderr += chunk
-    process.stderr.write(chunk)
-  })
-  const exitCode = await new Promise<number | null>(resolve => child.on('close', resolve))
-  const semanticFailure = id === 'hbuilderx'
-    && /不是 uni-app 项目|编译失败|build failed with errors/i.test(`${stdout}\n${stderr}`)
-  if (semanticFailure) {
-    stderr += '\nHBuilderX reported a semantic failure despite returning exit code 0.\n'
-  }
-  return {
-    id,
-    label,
-    command,
-    startedAt,
-    finishedAt: new Date().toISOString(),
-    durationMs: Math.round(performance.now() - started),
-    status: exitCode === 0 && !semanticFailure ? 'passed' : 'failed',
-    exitCode,
-    stdoutTail: tail(stdout),
-    stderrTail: tail(stderr),
-  }
-}
-
 async function main() {
-  const results: VerificationStep[] = []
-  for (const [id, label, args] of steps) {
-    results.push(await runStep(id, label, args))
+  const env = { ...process.env, CI: '1', BENCH_RUNTIME_REQUIRED: '1' }
+  const args = process.argv.slice(2).filter(value => value !== '--')
+  const section = args[0] === '--section' ? args[1] : undefined
+  const reportFiles: Record<string, string> = {
+    compile: 'compile/latest.json',
+    runtime: 'runtime/latest.json',
+    hmr: 'hmr/latest.json',
+    size: 'size/wevu-analysis.json',
   }
+  if (args.length && (args.length !== 2 || !section || !reportFiles[section])) {
+    throw new Error('Usage: report:refresh [--section compile|runtime|hmr|size]')
+  }
+  const selected = section ? steps.filter(([id]) => id === section) : steps
+  const verificationDir = path.join(repoRoot, 'reports/verification')
+  const baseline = section ? await readJson<VerificationReport>(path.join(verificationDir, 'latest.json')) : undefined
+  const source = section ? path.join(repoRoot, 'reports', reportFiles[section]!) : undefined
+  const previous = source ? await readJson<ProvenancedReport>(source) : undefined
+  if (section && (aggregationError(previous!, section, baseline) || !baseline?.provenance)) {
+    throw new Error('Cannot rerun an unverified/legacy baseline; perform a full refresh first')
+  }
+  const run = await startReportRun('verification', { steps: selected }, { env })
+  if (baseline?.provenance && baseline.provenance.inputs.fingerprint !== run.inputs.fingerprint) {
+    throw new Error('Baseline inputs changed; perform a full refresh instead of replacing a section')
+  }
+  const runEnv = { ...env, ...run.childEnv }
+  const results: VerificationStep[] = []
+  for (const [id, label, args] of selected) {
+    results.push(await runStep(id, label, args, runEnv))
+  }
+  const provenance = await run.finish()
   const report: VerificationReport = {
     schemaVersion: 1,
+    provenance,
     generatedAt: new Date().toISOString(),
     environment: await createMachineEnvironment(process.env['WECHAT_DEVTOOLS_CLI']
       ? { wechatDevtools: process.env['WECHAT_DEVTOOLS_CLI'] }
       : {}),
-    overallStatus: results.every(step => step.status === 'passed') ? 'passed' : 'failed',
+    overallStatus: provenance.inputStable && results.every(step => step.status === 'passed') ? 'passed' : 'failed',
     steps: results,
   }
-  await writeVerificationReport(path.join(repoRoot, 'reports/verification'), report)
-  await generateDashboard(report)
-  if (report.overallStatus === 'failed') {
+  let current = report
+  if (baseline && previous && source) {
+    // Save actual command evidence before validating the replacement, including failures.
+    await writeVerificationReport(path.join(verificationDir, 'reruns', run.runId), report)
+    current = replaceVerificationSection(baseline, previous, await readJson<ProvenancedReport>(source), report)
+  }
+  await writeVerificationReport(verificationDir, current)
+  await generateDashboard(current)
+  if (current.overallStatus === 'failed') {
     process.exitCode = 1
   }
 }

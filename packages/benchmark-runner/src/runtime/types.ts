@@ -1,4 +1,5 @@
 import type { MachineEnvironment } from '../reports/environment'
+import type { ReportProvenance } from '../reports/provenance/types'
 import type { RuntimeMetric } from '../scenario'
 
 export interface RuntimeSample {
@@ -13,6 +14,7 @@ export interface RuntimeSample {
 }
 
 export interface RuntimeReport {
+  provenance?: ReportProvenance
   generatedAt: string
   mode: 'ide-e2e' | 'plan'
   iterations: number

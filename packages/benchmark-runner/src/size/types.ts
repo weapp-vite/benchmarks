@@ -1,4 +1,5 @@
 import type { ToolchainEnvironment } from '../reports/environment'
+import type { ReportProvenance } from '../reports/provenance/types'
 
 export interface ProjectInput {
   id: string
@@ -59,6 +60,7 @@ export interface WevuPackageInfo {
 }
 
 export interface AnalysisOutput {
+  provenance?: ReportProvenance
   generatedAt: string
   toolchain?: ToolchainEnvironment
   projects: ProjectSize[]

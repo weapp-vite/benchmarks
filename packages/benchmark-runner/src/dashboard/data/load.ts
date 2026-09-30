@@ -1,5 +1,6 @@
 import type { HmrReport } from '../../hmr/types'
 import type { MachineEnvironment } from '../../reports/environment'
+import type { ProvenancedReport } from '../../reports/provenance/types'
 import type { RuntimeReport } from '../../runtime/types'
 import type { AnalysisOutput } from '../../size/types'
 import type { VerificationReport } from '../types'
@@ -8,6 +9,8 @@ import { readdir } from 'node:fs/promises'
 import process from 'node:process'
 import path from 'pathe'
 import { readJson } from '../../fs'
+import { aggregationError } from '../../reports/provenance/accept'
+import { comparableProvenance } from '../../reports/provenance/validate'
 import { buildDashboardReport } from './summarize'
 
 async function readOptional<T>(file: string, errors: string[]) {
@@ -20,7 +23,7 @@ async function readOptional<T>(file: string, errors: string[]) {
   }
 }
 
-async function findPrevious<T extends { generatedAt: string }>(
+async function findPrevious<T extends ProvenancedReport>(
   latest: T | undefined,
   runsDir: string | undefined,
   isComparable: (current: T, candidate: T) => boolean,
@@ -38,7 +41,7 @@ async function findPrevious<T extends { generatedAt: string }>(
   for (const file of files) {
     try {
       const report = await readJson<T>(path.join(runsDir, file))
-      if (report.generatedAt < latest.generatedAt && isComparable(latest, report)) {
+      if (report.generatedAt < latest.generatedAt && comparableProvenance(latest, report) && isComparable(latest, report)) {
         return report
       }
     }
@@ -83,16 +86,17 @@ function machineRunsDir(root: string, section: string, environment: MachineEnvir
 export async function loadDashboardReport(root: string, verification?: VerificationReport) {
   const errors: string[] = []
   const reportsRoot = path.join(root, 'reports')
+  const storedVerification = verification ?? await readOptional<VerificationReport>(
+    path.join(reportsRoot, 'verification/latest.json'),
+    [],
+  )
 
-  async function readCurrent<T extends { generatedAt: string }>(stepId: string, file: string) {
+  async function readCurrent<T extends ProvenancedReport>(stepId: string, file: string) {
     const report = await readOptional<T>(path.join(reportsRoot, file), errors)
-    const step = verification?.steps.find(item => item.id === stepId)
-    if (report && step) {
-      const generatedAt = Date.parse(report.generatedAt)
-      if (!(generatedAt >= Date.parse(step.startedAt) && generatedAt <= Date.parse(step.finishedAt))) {
-        errors.push(`${file}: report was not generated during the current verification step`)
-        return undefined
-      }
+    const error = report && aggregationError(report, stepId, storedVerification)
+    if (error) {
+      errors.push(`${file}: ${error}`)
+      return undefined
     }
     return report
   }
@@ -101,10 +105,6 @@ export async function loadDashboardReport(root: string, verification?: Verificat
   const runtime = await readCurrent<RuntimeReport>('runtime', 'runtime/latest.json')
   const hmr = await readCurrent<HmrReport>('hmr', 'hmr/latest.json')
   const size = await readCurrent<AnalysisOutput>('size', 'size/wevu-analysis.json')
-  const storedVerification = verification ?? await readOptional<VerificationReport>(
-    path.join(reportsRoot, 'verification/latest.json'),
-    [],
-  )
   const previousCompile = await findPrevious(
     compile,
     machineRunsDir(root, 'compile', compile?.environment),
