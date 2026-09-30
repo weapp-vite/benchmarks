@@ -1,5 +1,5 @@
 import { Buffer } from 'node:buffer'
-import { spawn } from 'node:child_process'
+import { execFile, spawn } from 'node:child_process'
 import process from 'node:process'
 
 function sleep(ms: number) {
@@ -20,21 +20,28 @@ export function startDevProcess(options: {
   cwd: string
   env: NodeJS.ProcessEnv
 }) {
+  const controller = new AbortController()
   const output: string[] = []
+  let outputOffset = 0
   const child = spawn(options.command, options.args, {
     cwd: options.cwd,
     env: options.env,
     stdio: ['ignore', 'pipe', 'pipe'],
     detached: process.platform !== 'win32',
+    shell: process.platform === 'win32' && options.command.endsWith('.cmd'),
   })
 
   const appendOutput = (chunk: unknown) => {
     if (typeof chunk === 'string') {
       output.push(chunk)
-      return
     }
-    if (chunk instanceof Uint8Array) {
+    else if (chunk instanceof Uint8Array) {
       output.push(Buffer.from(chunk).toString('utf8'))
+    }
+    const text = output.join('')
+    if (text.length > 64_000) {
+      outputOffset += text.length - 64_000
+      output.splice(0, output.length, text.slice(-64_000))
     }
   }
 
@@ -42,7 +49,15 @@ export function startDevProcess(options: {
   child.stderr?.on('data', appendOutput)
 
   const closed = new Promise<{ code: number | null, signal: NodeJS.Signals | null }>((resolve) => {
-    child.on('close', (code, signal) => resolve({ code, signal }))
+    child.on('close', (code, signal) => {
+      controller.abort(new Error(`Owned dev process exited: ${code ?? signal}`))
+      resolve({ code, signal })
+    })
+    child.on('error', (error) => {
+      output.push(error.message)
+      controller.abort(error)
+      resolve({ code: null, signal: null })
+    })
   })
 
   const waitFor = async <T>(task: Promise<T>, description: string) => {
@@ -59,10 +74,11 @@ export function startDevProcess(options: {
     ))
   }
 
-  const waitForOutput = async (matcher: RegExp, description: string, timeoutMs: number) => {
+  const waitForOutput = async (matcher: RegExp, description: string, timeoutMs: number, since = 0) => {
     const started = Date.now()
     while (Date.now() - started < timeoutMs) {
-      const text = output.join('')
+      controller.signal.throwIfAborted()
+      const text = output.join('').slice(Math.max(0, since - outputOffset))
       matcher.lastIndex = 0
       if (matcher.test(text)) {
         return text
@@ -73,19 +89,21 @@ export function startDevProcess(options: {
   }
 
   const stop = async () => {
-    if (child.exitCode == null && child.pid) {
+    if (!controller.signal.aborted && child.exitCode == null && child.pid) {
       try {
         if (process.platform !== 'win32') {
           process.kill(-child.pid, 'SIGTERM')
         }
         else {
-          child.kill('SIGTERM')
+          await new Promise<void>((resolve) => {
+            execFile('taskkill.exe', ['/PID', String(child.pid), '/T', '/F'], { timeout: 3000 }, () => resolve())
+          })
         }
       }
       catch {}
     }
     await Promise.race([closed, sleep(3_000)])
-    if (child.exitCode == null && child.pid) {
+    if (!controller.signal.aborted && child.exitCode == null && child.pid) {
       try {
         if (process.platform !== 'win32') {
           process.kill(-child.pid, 'SIGKILL')
@@ -96,12 +114,18 @@ export function startDevProcess(options: {
       }
       catch {}
     }
+    await Promise.race([closed, sleep(1_000)])
+    controller.abort(new Error('Owned dev session stopped'))
   }
 
   return {
     waitFor,
     waitForOutput,
     getOutput: () => output.join(''),
+    outputCursor: () => outputOffset + output.join('').length,
+    outputSince: (cursor: number) => output.join('').slice(Math.max(0, cursor - outputOffset)),
     stop,
+    signal: controller.signal,
+    pid: child.pid,
   }
 }

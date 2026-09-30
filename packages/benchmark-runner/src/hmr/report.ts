@@ -1,7 +1,7 @@
 import type { HmrReport, HmrSample } from './types'
-import path from 'pathe'
 import { writeMachineReport } from '../reports/archive'
 import { machineEnvironmentLines } from '../reports/environment'
+import { diagnosticLines } from './diagnostics/report'
 import { durationStatistics, isHealthyHmrScenario, sampleWasRetried } from './statistics'
 
 const metricKeys = [
@@ -98,6 +98,10 @@ export async function writeHmrReport(reportDir: string, report: HmrReport) {
     }
     if (summary.retriedSamples) {
       reasons.push(`重试样本 ${summary.retriedSamples}`)
+    }
+    const restoration = report.samples.find(sample => sample.scenario === summary.id && sample.restoration?.ok === false)
+    if (restoration) {
+      reasons.push(`恢复失败：${restoration.restoration?.error ?? 'unknown'}`)
     }
     return reasons.join('，') || '样本异常'
   }
@@ -204,6 +208,7 @@ export async function writeHmrReport(reportDir: string, report: HmrReport) {
       sample.emittedCount ?? '',
     ].join(' | ')).map(row => `| ${row} |`),
     '',
+    ...diagnosticLines(report.diagnostics),
     '说明：',
     '',
     '- 正式排名要求样本完整且没有重试；平均值、中位数、P95 和最大值共同用于识别长尾。',
@@ -215,11 +220,5 @@ export async function writeHmrReport(reportDir: string, report: HmrReport) {
     report,
     markdown: `${lines.join('\n')}\n`,
     reportName: 'HMR',
-    copyDirs: [
-      {
-        from: path.join(reportDir, 'profiles'),
-        to: 'profiles',
-      },
-    ],
   })
 }

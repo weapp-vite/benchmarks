@@ -11,8 +11,8 @@ const exec = promisify(execFile)
 const inputRoots = ['apps/', 'packages/benchmark-runner/', 'e2e/']
 const rootFiles = new Set(['package.json', 'pnpm-lock.yaml', 'pnpm-workspace.yaml', '.pnpmfile.cjs', '.npmrc', 'tsconfig.json', 'turbo.json'])
 const excluded = /(?:^|\/)(?:node_modules|dist|unpackage|\.weapp-vite|\.turbo|coverage|reports)(?:\/|$)|\.tsbuildinfo$/
-const hiddenEnvironment = /^(?:BENCH_|WECHAT_|NODE_OPTIONS$|NODE_ENV$|CI$|TZ$)/
-const operationalEnvironment = /^(?:BENCH_RUN_ID|BENCH_INPUT_FINGERPRINT|BENCH_REPLACE_|BENCH_REPORT_|BENCH_RUNTIME_REQUIRED|BENCH_MACHINE_|BENCH_TOOLCHAIN_)/
+const hiddenEnvironment = /^(?:BENCH_|WECHAT_|WEAPP_|VITE_|UNI_|TARO_|MPX_|NODE_OPTIONS$|NODE_ENV$|CI$|TZ$)/
+const operationalEnvironment = /^(?:BENCH_RUN_ID|BENCH_INPUT_FINGERPRINT|BENCH_REPLACE_|BENCH_REPORT_|BENCH_HMR_|BENCH_RUNTIME_REQUIRED|BENCH_MACHINE_|BENCH_TOOLCHAIN_)/
 
 interface Manifest {
   name?: string

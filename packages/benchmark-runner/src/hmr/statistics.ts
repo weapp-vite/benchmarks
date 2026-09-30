@@ -47,5 +47,5 @@ export function sampleWasRetried(sample: HmrSample) {
 
 export function isHealthyHmrScenario(samples: HmrSample[], iterations: number) {
   return samples.length === iterations
-    && samples.every(sample => sample.ok && !sampleWasRetried(sample))
+    && samples.every(sample => sample.ok && !sampleWasRetried(sample) && sample.restoration?.ok !== false)
 }

@@ -1,5 +1,6 @@
 import type { MachineEnvironment } from '../reports/environment'
 import type { ReportProvenance } from '../reports/provenance/types'
+import type { HmrDiagnostics } from './diagnostics/types'
 
 export interface HmrProfileSample {
   timestamp?: string
@@ -37,6 +38,10 @@ export interface HmrScenario {
 }
 
 export interface HmrSample {
+  editId?: string
+  marker?: string
+  phase?: 'first' | 'continuous'
+  restoration?: { ok: boolean, durationMs: number, error?: string }
   scenario: string
   label: string
   group: HmrScenario['group']
@@ -70,6 +75,7 @@ export interface HmrReport {
   generatedAt: string
   iterations: number
   environment?: MachineEnvironment
+  diagnostics?: HmrDiagnostics
   samples: HmrSample[]
   notes: string[]
 }
