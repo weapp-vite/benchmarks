@@ -1,8 +1,9 @@
 <script setup lang="ts">
+import type { BenchmarkGroup, BenchmarkItem, RuntimeMetric } from '../../shared/benchmark'
 import { computed, nextTick, onMounted, ref } from 'wevu'
 import {
   batchCount,
-  type BenchmarkGroup,
+
   checksum,
   createItems,
   filterActiveHighScore,
@@ -15,8 +16,7 @@ import {
   sortByScoreThenId,
   stressCycles,
   updateEveryNth,
-  type BenchmarkItem,
-  type RuntimeMetric,
+
 } from '../../shared/benchmark'
 
 definePageJson({
@@ -175,7 +175,9 @@ onMounted(() => {
         class="row"
         @tap="goDetail(item)"
       >
-        <text class="row__title">{{ item.title }}</text>
+        <text class="row__title">
+          {{ item.title }}
+        </text>
         <text>g{{ item.group }}</text>
         <text>{{ item.score }}</text>
       </view>
