@@ -84,6 +84,18 @@ export function generateReport(output: AnalysisOutput) {
     '## 选定文件明细',
     '',
     ...output.projects.flatMap(project => [...fileTable(project), '']),
+    ...(output.artifacts
+      ? [
+          '## 生产产物一致性',
+          '',
+          '每个项目在 runner 独立目录中执行两次无缓存生产构建；文件集合、SHA-256 及静态引用校验通过后才采集体积。原应用输出目录与用户资产不参与清理。',
+          '',
+          '| 项目 | 受管文件数 | 生产输出摘要 |',
+          '| --- | ---: | --- |',
+          ...output.artifacts.map(item => `| ${item.project} | ${item.manifest.files.length} | ${item.manifest.fingerprint} |`),
+          '',
+        ]
+      : []),
     '## wevu 源包入口',
     '',
     ...wevuPackageTable(output.wevuPackage),

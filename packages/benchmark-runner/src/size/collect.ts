@@ -1,3 +1,4 @@
+import type { OutputManifest } from '../artifacts/manifest'
 import type {
   FileBucket,
   FileType,
@@ -9,6 +10,7 @@ import type {
 import { readdir, readFile } from 'node:fs/promises'
 import { brotliCompressSync, gzipSync } from 'node:zlib'
 import path from 'pathe'
+import { assertOutputs, outputManifest } from '../artifacts/manifest'
 import { repoRoot } from '../projects'
 
 const jsExtensions = new Set(['.js', '.mjs', '.cjs'])
@@ -141,8 +143,12 @@ function addFileToTotals(total: SizeTotals, file: ProjectSize['files'][number]) 
   }
 }
 
-export async function analyzeProject(project: ProjectInput): Promise<ProjectSize> {
-  const absoluteOutputDir = path.resolve(repoRoot, project.appDir, project.outputDir)
+export async function analyzeProject(project: ProjectInput, options: { root?: string, manifest?: OutputManifest } = {}): Promise<ProjectSize> {
+  const root = options.root ?? repoRoot
+  const absoluteOutputDir = path.resolve(root, project.appDir, project.outputDir)
+  if (options.manifest) {
+    assertOutputs(options.manifest, await outputManifest(absoluteOutputDir))
+  }
   const files: ProjectSize['files'] = []
 
   for (const file of await listFiles(absoluteOutputDir)) {
@@ -175,10 +181,14 @@ export async function analyzeProject(project: ProjectInput): Promise<ProjectSize
     return total
   }, emptyTotals())
 
+  if (options.manifest) {
+    assertOutputs(options.manifest, await outputManifest(absoluteOutputDir))
+  }
+
   return {
     id: project.id,
     label: project.label,
-    outputDir: path.relative(repoRoot, absoluteOutputDir),
+    outputDir: path.relative(root, absoluteOutputDir),
     files,
     totals,
   }
