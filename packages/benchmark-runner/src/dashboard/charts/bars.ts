@@ -65,7 +65,7 @@ export function sizeChart(report: DashboardReport, palette: ChartPalette): Dashb
     width: 1120,
     height: 760,
     option: {
-      ...baseOption(palette, '运行时包体积', '生产构建后的 runtime 实际体积；单位 KB，越小越好'),
+      ...baseOption(palette, '选定运行时文件体积', '按文件规则统计，可能含模板/样式或混合代码；单位 KB'),
       grid: { left: 230, right: 90, top: 115, bottom: 70 },
       xAxis: { ...axis(palette), type: 'value', name: 'KB' },
       yAxis: { ...axis(palette), type: 'category', data: labels, inverse: true },
