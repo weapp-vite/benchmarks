@@ -13,14 +13,14 @@ function isRuntimeMetric(value: unknown): value is RuntimeMetric {
     && typeof metric.checksum === 'number'
 }
 
-function normalizeMetrics(value: unknown): RuntimeMetric[] {
+export function normalizeMetrics(value: unknown): RuntimeMetric[] {
   if (Array.isArray(value) && value.every(isRuntimeMetric)) {
     return value
   }
   return []
 }
 
-async function readPageMetrics(page: { data: (path?: string) => Promise<unknown> }) {
+export async function readPageMetrics(page: { data: (path?: string) => Promise<unknown> }) {
   const direct = normalizeMetrics(await page.data('metrics'))
   if (direct.length >= metricCount) {
     return direct
@@ -106,7 +106,7 @@ export async function waitForRuntimeMetrics(
   }
 }
 
-export function parseConsolePayload(payload: unknown) {
+export function parseConsolePayload(payload: unknown, token?: string) {
   const text = JSON.stringify(payload)
   if (!text.includes('BENCHMARK_RUNTIME')) {
     return []
@@ -118,7 +118,7 @@ export function parseConsolePayload(payload: unknown) {
     if (!current || typeof current !== 'object') {
       continue
     }
-    if ('metrics' in current) {
+    if ('metrics' in current && (token === undefined || ('token' in current && current.token === token))) {
       const metrics = normalizeMetrics((current as { metrics?: unknown }).metrics)
       if (metrics.length >= metricCount) {
         return metrics

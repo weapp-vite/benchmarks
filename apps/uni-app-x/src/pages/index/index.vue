@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { BenchmarkGroup, BenchmarkItem, RuntimeMetric } from '../../shared/benchmark'
+import { onLoad } from '@dcloudio/uni-app'
 import { computed, nextTick, onMounted, ref } from 'vue'
 import {
   batchCount,
@@ -18,6 +19,11 @@ import {
 
   updateEveryNth,
 } from '../../shared/benchmark'
+
+let pageToken = ''
+onLoad((options) => {
+  pageToken = options?.['benchToken'] ?? ''
+})
 
 const items = ref<BenchmarkItem[]>(createItems())
 const visibleItems = ref<BenchmarkItem[]>(items.value)
@@ -50,6 +56,7 @@ function recordGroups(name: string, start: number, list: BenchmarkGroup[]) {
 }
 
 async function runBenchmark() {
+  const runtimeToken = pageToken
   metrics.value = []
   groups.value = []
   let start = now()
@@ -117,6 +124,7 @@ async function runBenchmark() {
 
   // eslint-disable-next-line no-console
   console.log('BENCHMARK_RUNTIME', {
+    token: runtimeToken,
     framework: 'uni-app-x',
     metrics: metrics.value,
   })

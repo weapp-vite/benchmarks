@@ -4,7 +4,7 @@ import { tmpdir } from 'node:os'
 import path from 'pathe'
 import { hash } from '../reports/provenance/hash'
 
-export async function stageWorkspace(sourceRoot: string, inputs: InputSnapshot, purpose: 'production' | 'transitions' | 'hmr' | 'capabilities' = 'production') {
+export async function stageWorkspace(sourceRoot: string, inputs: InputSnapshot, purpose: 'production' | 'transitions' | 'hmr' | 'capabilities' | 'runtime' = 'production') {
   if (!/^[a-f\d]{64}$/.test(inputs.fingerprint)) {
     throw new Error('Artifact workspace requires a SHA-256 input fingerprint')
   }

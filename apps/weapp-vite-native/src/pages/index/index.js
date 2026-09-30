@@ -60,6 +60,7 @@ Page({
   },
 
   async runBenchmark() {
+    const runtimeToken = this.options?.benchToken ?? ''
     let items = createItems()
     let visibleItems = items
     let groups = []
@@ -139,6 +140,7 @@ Page({
 
     // eslint-disable-next-line no-console
     console.log('BENCHMARK_RUNTIME', {
+      token: runtimeToken,
       framework: 'weapp-vite-native',
       metrics,
     })

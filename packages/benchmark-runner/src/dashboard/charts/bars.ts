@@ -61,7 +61,7 @@ export function sizeChart(report: DashboardReport, palette: ChartPalette): Dashb
   return {
     id: 'size',
     title: '运行时包体积',
-    description: '只统计生产构建后的框架运行时 allowlist 文件；页面业务代码、source map 和配置文件不计入。',
+    description: '按生产产物文件规则统计选定文件，可能包含模板、样式及混合业务代码；完整能力矩阵见体积报告。',
     width: 1120,
     height: 760,
     option: {

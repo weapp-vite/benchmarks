@@ -1,160 +1,18 @@
 import type { BenchmarkProject } from '../projects'
 import type { RuntimeMetric } from '../scenario'
+import type { Deadline } from './session/deadline'
 import type { MiniProgram, RuntimeSample } from './types'
-import { spawn } from 'node:child_process'
+import { randomUUID } from 'node:crypto'
 import process from 'node:process'
 import path from 'pathe'
-import { repoRoot } from '../projects'
-import {
-  defaultIterationRetries,
-  defaultLaunchRetries,
-  defaultLaunchTimeout,
-  defaultRelaunchRetries,
-  metricCount,
-} from './constants'
-import { closeDevtoolsProject } from './devtools-session'
-import { launchWithCleanup } from './launch'
-import { parseConsolePayload, waitForConsoleMetrics, waitForMetrics } from './metrics'
+import { parseConsolePayload } from './metrics'
+import { completionBoundary } from './observe/boundary'
+import { assertMetrics } from './observe/expected'
+import { verifyFinalView } from './observe/view'
+import { DeadlineError } from './session/deadline'
+import { openOwnedProject } from './session/owned'
 
-function sleep(ms: number) {
-  return new Promise(resolve => setTimeout(resolve, ms))
-}
-
-async function relaunchPage(miniProgram: MiniProgram, url: string) {
-  const retries = Number(process.env['BENCH_RUNTIME_RELAUNCH_RETRIES'] ?? defaultRelaunchRetries)
-  let lastError: unknown
-
-  for (let attempt = 1; attempt <= retries; attempt += 1) {
-    try {
-      return await miniProgram.reLaunch(url)
-    }
-    catch (error) {
-      lastError = error
-      if (attempt >= retries) {
-        break
-      }
-      await sleep(1_000)
-    }
-  }
-
-  throw lastError
-}
-
-async function buildProjectNpm(project: BenchmarkProject, cliPath: string, projectPath: string) {
-  if (!project.runtimeNpmBuild) {
-    return
-  }
-  process.stdout.write(`[runtime] ${project.label}: build npm\n`)
-  const child = spawn(cliPath, ['build-npm', '--project', projectPath], {
-    cwd: repoRoot,
-    stdio: 'inherit',
-  })
-  const exitCode = await new Promise<number | null>((resolve) => {
-    child.on('close', resolve)
-  })
-  if (exitCode !== 0) {
-    throw new Error(`微信开发者工具 build-npm 失败：${exitCode ?? 'signal'}`)
-  }
-}
-
-async function launchProject(
-  launcher: InstanceType<typeof import('@weapp-vite/miniprogram-automator').Launcher>,
-  project: BenchmarkProject,
-  cliPath: string,
-  projectPath: string,
-  port: number,
-) {
-  const retries = Number(process.env['BENCH_RUNTIME_LAUNCH_RETRIES'] ?? defaultLaunchRetries)
-  const timeout = Number(process.env['BENCH_RUNTIME_TIMEOUT'] ?? defaultLaunchTimeout)
-
-  return launchWithCleanup({
-    retries,
-    launch: () => launcher.launch({
-      platform: 'wechat',
-      cliPath,
-      projectPath,
-      port,
-      timeout,
-      headless: process.env['BENCH_RUNTIME_HEADLESS'] === '1',
-      trustProject: true,
-    }),
-    cleanup: async ({ attempt }) => {
-      try {
-        await closeDevtoolsProject(cliPath, projectPath, port, {
-          timeoutMs: 30_000,
-          settleMs: 10_000,
-        })
-      }
-      finally {
-        if (attempt < retries) {
-          await sleep(2_000)
-        }
-      }
-    },
-    onFailure: ({ attempt }) => {
-      process.stdout.write(`[runtime] ${project.label}: launch retry ${attempt}/${retries} failed\n`)
-    },
-    onCleanupFailure: (_context, error) => {
-      const message = error instanceof Error ? error.message : String(error)
-      process.stdout.write(`[runtime] ${project.label}: failed launch cleanup warning: ${message}\n`)
-    },
-  })
-}
-
-async function collectIteration(
-  project: BenchmarkProject,
-  iteration: number,
-  miniProgram: MiniProgram,
-  consoleMetrics: RuntimeMetric[][],
-): Promise<RuntimeSample> {
-  const retries = Number(process.env['BENCH_RUNTIME_ITERATION_RETRIES'] ?? defaultIterationRetries)
-  let lastError: unknown
-
-  for (let attempt = 1; attempt <= retries; attempt += 1) {
-    try {
-      consoleMetrics.length = 0
-      await relaunchPage(miniProgram, `/${project.runtimePage}?benchIteration=${iteration}&benchAttempt=${attempt}`)
-
-      const fromConsole = await waitForConsoleMetrics(consoleMetrics)
-      if (fromConsole.length >= metricCount) {
-        return {
-          project: project.id,
-          label: project.label,
-          iteration,
-          page: project.runtimePage,
-          ok: true,
-          source: 'console-log',
-          metrics: fromConsole,
-        }
-      }
-
-      const page = await miniProgram.currentPage({ retries: 60, timeout: 2_000 })
-      const fromPage = await waitForMetrics(page)
-      if (fromPage.length >= metricCount) {
-        return {
-          project: project.id,
-          label: project.label,
-          iteration,
-          page: project.runtimePage,
-          ok: true,
-          source: 'page-data',
-          metrics: fromPage,
-        }
-      }
-
-      lastError = new Error('未在页面数据或控制台日志中找到运行时指标')
-    }
-    catch (error) {
-      lastError = error
-    }
-
-    if (attempt < retries) {
-      process.stdout.write(`[runtime] ${project.label}: iteration ${iteration} retry ${attempt}/${retries} failed\n`)
-      await sleep(1_000)
-    }
-  }
-
-  const message = lastError instanceof Error ? lastError.message : String(lastError)
+function failed(project: BenchmarkProject, iteration: number, error: unknown, kind: RuntimeSample['failureKind']): RuntimeSample {
   return {
     project: project.id,
     label: project.label,
@@ -163,62 +21,103 @@ async function collectIteration(
     ok: false,
     source: 'none',
     metrics: [],
-    error: message,
+    completion: completionBoundary(project.id),
+    error: error instanceof Error ? error.message : String(error),
+    ...(kind ? { failureKind: kind } : {}),
   }
 }
 
-export async function collectProjectSamples(
-  project: BenchmarkProject,
-  iterations: number,
-  cliPath: string,
-  port: number,
-): Promise<RuntimeSample[]> {
-  const { Launcher } = await import('@weapp-vite/miniprogram-automator')
-  const launcher = new Launcher()
-  const projectPath = path.join(repoRoot, project.runtimeProjectDir)
-  const consoleMetrics: RuntimeMetric[][] = []
-  let miniProgram: MiniProgram | undefined
+async function collectIteration(project: BenchmarkProject, iteration: number, program: MiniProgram, queue: RuntimeMetric[][], setToken: (token: string) => void, deadline: Deadline): Promise<RuntimeSample> {
+  queue.length = 0
+  const token = randomUUID()
+  setToken(token)
+  const start = performance.now()
+  await deadline.run('route', () => program.reLaunch(`/${project.runtimePage}?benchToken=${token}`))
+  let metrics: RuntimeMetric[] = []
+  while (!metrics.length) {
+    metrics = queue.shift() ?? []
+    if (!metrics.length) {
+      await deadline.pause(100)
+    }
+  }
+  const metricsObservedMs = performance.now() - start
+  assertMetrics(metrics)
+  const page = await deadline.run('current page', () => program.currentPage({ retries: 1, timeout: deadline.remaining('current page', 5000) }))
+  if (page.path?.replace(/^\//, '') !== project.runtimePage) {
+    throw new Error(`Unexpected runtime route: ${page.path ?? 'unknown'}`)
+  }
+  const checks = await verifyFinalView(page, deadline)
+  const viewObservedMs = performance.now() - start
+  return {
+    project: project.id,
+    label: project.label,
+    iteration,
+    page: project.runtimePage,
+    ok: true,
+    source: 'console-log',
+    metrics,
+    completion: completionBoundary(project.id),
+    observation: {
+      boundary: 'route-to-verified-view',
+      durationMs: viewObservedMs,
+      metricsObservedMs,
+      viewObservedMs,
+      pollIntervalMs: 100,
+      checks,
+    },
+  }
+}
 
-  process.stdout.write(`[runtime] ${project.label}: launch ${projectPath}\n`)
-
+export async function collectProjectSamples(project: BenchmarkProject, iterations: number, cliPath: string, stagedRoot: string, deadline: Deadline): Promise<RuntimeSample[]> {
+  const queue: RuntimeMetric[][] = []
+  let token = ''
+  let session: Awaited<ReturnType<typeof openOwnedProject>> | undefined
+  const samples: RuntimeSample[] = []
   try {
-    await buildProjectNpm(project, cliPath, projectPath)
-
-    const launched = await launchProject(launcher, project, cliPath, projectPath, port)
-    miniProgram = launched
-
-    launched.on('console', (payload: unknown) => {
-      const metrics = parseConsolePayload(payload)
-      if (metrics.length) {
-        consoleMetrics.push(metrics)
+    session = await openOwnedProject(cliPath, path.join(stagedRoot, project.runtimeProjectDir), deadline)
+    const host = session.host
+    session.program.on('console', (payload: unknown) => {
+      const metrics = parseConsolePayload(payload, token)
+      if (metrics.length && queue.length < 2) {
+        queue.push(metrics)
       }
     })
-
-    const samples: RuntimeSample[] = []
     for (let iteration = 1; iteration <= iterations; iteration += 1) {
-      process.stdout.write(`[runtime] ${project.label}: iteration ${iteration}\n`)
-      samples.push(await collectIteration(project, iteration, launched, consoleMetrics))
+      process.stdout.write(`[runtime] ${project.label}: verified-view iteration ${iteration}/${iterations}\n`)
+      try {
+        const setToken = (value: string) => {
+          token = value
+        }
+        const sample = await collectIteration(project, iteration, session.program, queue, setToken, deadline)
+        samples.push({ ...sample, host })
+      }
+      catch (error) {
+        samples.push(failed(project, iteration, error, error instanceof DeadlineError ? 'deadline' : 'assertion'))
+        // Do not turn a failed round into a successful replacement sample.
+        if (error instanceof DeadlineError) {
+          break
+        }
+      }
     }
-    return samples
   }
   catch (error) {
-    const message = error instanceof Error ? error.message : String(error)
-    return Array.from({ length: iterations }, (_, index) => ({
-      project: project.id,
-      label: project.label,
-      iteration: index + 1,
-      page: project.runtimePage,
-      ok: false,
-      source: 'none' as const,
-      metrics: [],
-      error: message,
-    }))
+    samples.push(failed(project, 1, error, error instanceof DeadlineError ? 'deadline' : 'connection'))
   }
   finally {
-    await miniProgram?.close().catch(() => {})
-    await closeDevtoolsProject(cliPath, projectPath, port).catch((error) => {
-      const message = error instanceof Error ? error.message : String(error)
-      process.stdout.write(`[runtime] ${project.label}: final cleanup warning: ${message}\n`)
-    })
+    try {
+      await session?.dispose()
+    }
+    catch (error) {
+      // Cleanup errors are evidence failures, never swallowed after successful sampling.
+      for (const sample of samples) {
+        sample.ok = false
+        sample.failureKind = 'cleanup'
+        sample.error = `Cleanup: ${error instanceof Error ? error.message : String(error)}`
+      }
+    }
   }
+  while (samples.length < iterations) {
+    samples.push(failed(project, samples.length + 1, 'Not executed after project failure/deadline', 'not-executed'))
+  }
+  return samples
 }

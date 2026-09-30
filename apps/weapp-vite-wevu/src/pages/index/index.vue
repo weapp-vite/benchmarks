@@ -54,6 +54,8 @@ function recordGroups(name: string, start: number, list: BenchmarkGroup[]) {
 }
 
 async function runBenchmark() {
+  const runtimePages = getCurrentPages()
+  const runtimeToken = runtimePages[runtimePages.length - 1]?.options?.benchToken ?? ''
   metrics.value = []
   groups.value = []
   let start = now()
@@ -124,6 +126,7 @@ async function runBenchmark() {
 
   // eslint-disable-next-line no-console
   console.log('BENCHMARK_RUNTIME', {
+    token: runtimeToken,
     framework: 'weapp-vite-wevu',
     metrics: metrics.value,
   })
