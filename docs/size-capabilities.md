@@ -27,3 +27,5 @@ pnpm bench:size:wevu
 ```
 
 现有单元测试检查动态配置拒绝、分包和预算边界、改名 chunk 与资产完整性；真实集成测试从构建后的 runner 入口执行全部九个 Provider 与八格应用，检查缺格/重复/不等价证据必须失败。历史报告没有矩阵时明确显示未采集。
+
+Runner 的集成测试直接读取所有 app 输入并启动真实构建/watch，禁用 Turbo 的测试结果缓存，避免只修改 app 后复用旧的 runner 通过结果。标准与 performance 示例必须在 ESLint/Stylelint 格式化后仍保持逐字一致。

@@ -97,6 +97,13 @@
     },
     "sync": {
       "cache": false
+    },
+    "@benchmarks/runner#test": {
+      "dependsOn": [
+        "build",
+        "^test"
+      ],
+      "cache": false
     }
   }
 }
