@@ -18,7 +18,9 @@ permissions:
 jobs:
   build:
     name: Build and Test
-    timeout-minutes: 15
+    # Windows Node 22 needs ~11 minutes for the four serial compiler integration suites.
+    # Include setup and cache upload; per-command/test deadlines still detect hangs.
+    timeout-minutes: 25
     strategy:
       fail-fast: false
       matrix:

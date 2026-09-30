@@ -14,7 +14,8 @@
     "report:dashboard": "tsx src/dashboard/generate.ts",
     "report:refresh": "tsx src/dashboard/refresh.ts",
     "test": "vitest run",
-    "typecheck": "tsc -p tsconfig.json"
+    "typecheck": "tsc -p tsconfig.json",
+    "bench:compile:methods": "tsx src/compile/methods.ts"
   },
   "dependencies": {
     "pathe": "^2.0.3"

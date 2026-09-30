@@ -7,6 +7,7 @@ export const steps = [
   ['test', '单元与集成测试', ['run', 'test']],
   ['audit', '依赖安全审计', ['audit', '--audit-level=moderate']],
   ['hbuilderx', 'HBuilderX uni-app x smoke', ['run', 'test:hbuilderx:uni-app-x']],
+  ['compile-methods', '扩展编译采样与规模矩阵', ['run', 'bench:compile:methods']],
   ['compile', '编译基准', ['run', 'bench:compile']],
   ['runtime-consistency', '真实 IDE 更新一致性', ['run', 'e2e:ide:consistency']],
   ['runtime', '运行时 IDE E2E 基准', ['run', 'bench:runtime']],

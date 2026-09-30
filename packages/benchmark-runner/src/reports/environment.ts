@@ -6,6 +6,7 @@ import process from 'node:process'
 import { promisify } from 'node:util'
 import path from 'pathe'
 import { repoRoot } from '../projects'
+import { readRecordedSubmodule } from './environment/git'
 
 export interface MachineEnvironment {
   machineId: string
@@ -87,7 +88,7 @@ async function readGitCommit() {
 }
 
 async function readWeappViteSubmoduleCommit() {
-  return run('git', ['rev-parse', 'HEAD'], path.join(repoRoot, 'submodules/weapp-vite'))
+  return readRecordedSubmodule(repoRoot, 'submodules/weapp-vite')
 }
 
 async function readPackageVersion(packageFile: string) {
