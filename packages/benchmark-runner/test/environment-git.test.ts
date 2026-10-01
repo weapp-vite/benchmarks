@@ -8,10 +8,12 @@ import { readRecordedSubmodule } from '../src/reports/environment/git'
 
 const execFileAsync = promisify(execFile)
 
+// This real Git fixture starts eight subprocesses. Windows process startup can
+// exceed Vitest's 5s unit-test default; retain a bounded integration-test budget.
 it('reads the recorded gitlink without falling back to the parent HEAD', async () => {
   const root = await mkdtemp(path.join(tmpdir(), 'bench-gitlink-'))
   const reference = 'eb9995e74fc4f760d265972b9148417cd40aab63'
-  const git = (...args: string[]) => execFileAsync('git', args, { cwd: root })
+  const git = (...args: string[]) => execFileAsync('git', args, { cwd: root, timeout: 5_000 })
   try {
     await git('init')
     await mkdir(path.join(root, 'submodules/weapp-vite'), { recursive: true })
@@ -28,4 +30,4 @@ it('reads the recorded gitlink without falling back to the parent HEAD', async (
   finally {
     await rm(root, { recursive: true, force: true })
   }
-})
+}, 30_000)

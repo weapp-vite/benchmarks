@@ -32,6 +32,8 @@ Playwright 页面验收覆盖总览、运行时、验证页签和 390px 窄屏�
 
 CI 中 Windows Node 22 的 85 个测试全部通过，但原 15 分钟总预算在缓存保存阶段耗尽。PR #16 将总预算改为 25 分钟；各构建命令、测试与 IDE 操作链仍有各自 deadline，未用放宽断言或忽略错误获得绿色状态。
 
+PR #17 首轮 Windows Node 22 的 85/86 项测试通过，包含 8 次 Git 子进程调用的真实 fixture 在 Vitest 默认 5 秒总预算处超时（未报告 gitlink 断言失败）。该用例改用独立 30 秒总预算，并为 fixture 自身每条 Git 命令保留 5 秒上限；不调整全局测试预算或基准超时，保留原断言。旧 CI 日志为 [36792457249](https://github.com/weapp-vite/benchmarks/actions/runs/36792457249)，后续 CI 验证修正后的提交。
+
 ## 未关闭的验收
 
 - [#4](https://github.com/weapp-vite/benchmarks/issues/4)：普通开发机的独立采样尚未完成；本机大项目样本不能替代。
