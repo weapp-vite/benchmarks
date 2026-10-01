@@ -8,6 +8,7 @@
     <style>
       :root {
         color-scheme: light dark;
+
         --bg: #fff;
         --fg: #20242b;
         --muted: #667085;
@@ -17,6 +18,7 @@
         --ok: #16794d;
         --bad: #b42318;
       }
+
       @media (prefers-color-scheme: dark) {
         :root {
           --bg: #17191d;
@@ -29,169 +31,205 @@
           --bad: #ff8b83;
         }
       }
+
       * {
         box-sizing: border-box;
       }
+
       body {
         margin: 0;
-        background: var(--bg);
-        color: var(--fg);
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', sans-serif;
+        color: var(--fg);
+        background: var(--bg);
       }
+
       a {
         color: var(--accent);
       }
+
       header {
-        border-bottom: 1px solid var(--line);
         padding: 32px max(20px, calc((100% - 1280px) / 2));
+        border-bottom: 1px solid var(--line);
       }
+
       h1 {
         margin: 0 0 12px;
         font-size: 30px;
         font-weight: 500;
         letter-spacing: 0;
       }
+
       h2 {
         margin: 0;
         font-size: 18px;
         font-weight: 500;
         letter-spacing: 0;
       }
+
       .meta {
         display: flex;
         flex-wrap: wrap;
         gap: 10px 24px;
-        color: var(--muted);
         font-size: 14px;
+        color: var(--muted);
       }
+
       .meta strong {
-        color: var(--fg);
         font-weight: 500;
+        color: var(--fg);
       }
+
       nav {
         display: flex;
         flex-wrap: wrap;
         gap: 4px;
         max-width: 1280px;
-        margin: 0 auto;
         padding: 14px 20px;
+        margin: 0 auto;
         border-bottom: 1px solid var(--line);
       }
+
       .tab {
-        border: 0;
-        border-bottom: 2px solid transparent;
-        background: transparent;
-        color: var(--muted);
         padding: 10px 14px;
         font: inherit;
+        color: var(--muted);
         cursor: pointer;
+        background: transparent;
+        border: 0;
+        border-bottom: 2px solid transparent;
       }
+
       .tab[aria-selected='true'] {
         color: var(--fg);
         border-bottom-color: var(--accent);
       }
+
       .tab:focus-visible {
         outline: 2px solid var(--accent);
         outline-offset: 2px;
       }
+
       main {
         max-width: 1280px;
-        margin: 0 auto;
         padding: 24px 20px 56px;
+        margin: 0 auto;
       }
+
       .panel[hidden] {
         display: none;
       }
+
       .chart {
         width: 100%;
         height: 650px;
         min-height: 420px;
       }
+
       #chart-compile,
       #chart-size {
         height: 760px;
       }
+
       .caption,
       .empty {
-        color: var(--muted);
         font-size: 14px;
+        color: var(--muted);
       }
+
       .table-wrap {
         margin-top: 28px;
         overflow-x: auto;
         border-top: 1px solid var(--line);
       }
+
       .table-heading {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
         gap: 16px;
+        align-items: center;
+        justify-content: space-between;
         padding: 20px 0 12px;
       }
+
       table {
         width: 100%;
-        border-collapse: collapse;
         font-size: 14px;
+        border-collapse: collapse;
       }
+
       th,
       td {
         padding: 11px 12px;
-        border-bottom: 1px solid var(--line);
         text-align: right;
         white-space: nowrap;
+        border-bottom: 1px solid var(--line);
       }
+
       th:first-child,
       td:first-child {
         text-align: left;
       }
+
       thead th {
-        color: var(--muted);
         font-weight: 500;
+        color: var(--muted);
         background: var(--soft);
       }
+
       tbody th {
         font-weight: 400;
       }
+
       code {
         color: var(--fg);
       }
+
       .status {
         font-weight: 500;
       }
+
       .status-passed {
         color: var(--ok);
       }
+
       .status-failed {
         color: var(--bad);
       }
+
       .status-skipped {
         color: var(--muted);
       }
+
       @media (max-width: 640px) {
         header {
           padding-top: 24px;
           padding-bottom: 24px;
         }
+
         h1 {
           font-size: 24px;
         }
+
         main {
-          padding-left: 12px;
           padding-right: 12px;
+          padding-left: 12px;
         }
+
         nav {
-          padding-left: 8px;
           padding-right: 8px;
+          padding-left: 8px;
         }
+
         .tab {
-          padding-left: 10px;
           padding-right: 10px;
+          padding-left: 10px;
         }
+
         .chart,
         #chart-compile,
         #chart-size {
           height: 540px;
         }
+
         th,
         td {
           padding: 10px 9px;
@@ -204,9 +242,11 @@
       <h1>小程序框架基准测试</h1>
       <div class="meta">
         <span><strong>部分完成</strong></span>
-        <span>生成时间 2026-09-30T17:50:07.059Z</span>
+        <span>生成时间 2026-09-30T23:38:58.240Z</span>
         <span>机器 Apple M4 Max 128GB</span>
-        <span>Commit <code>3ef40d10f836</code></span>
+        <span>Commit <code>1923b5d2f69c</code></span>
+        <span>Run ID <code>ed3908e7-8aa6-4d06-aa98-40f13f793f2b</code></span>
+        <span>输入指纹 <code>a6f9c5f6e3cc</code></span>
       </div>
     </header>
     <nav role="tablist" aria-label="报告视图">
@@ -289,59 +329,59 @@
             <tbody>
               <tr>
                 <th scope="row">weapp-vite + wevu</th>
-                <td>1095.1 ms</td>
-                <td>179.6 KB</td>
+                <td>1153.4 ms</td>
+                <td>179.8 KB</td>
                 <td>20/20</td>
                 <td>完整</td>
-                <td>-3.7%</td>
+                <td>-</td>
               </tr>
               <tr>
                 <th scope="row">weapp-vite + wevu performance</th>
-                <td>1079.9 ms</td>
-                <td>198.2 KB</td>
+                <td>1161.4 ms</td>
+                <td>198.3 KB</td>
                 <td>20/20</td>
                 <td>完整</td>
-                <td>-7.4%</td>
+                <td>-</td>
               </tr>
               <tr>
                 <th scope="row">weapp-vite 原生</th>
-                <td>900.5 ms</td>
-                <td>8.7 KB</td>
+                <td>934.3 ms</td>
+                <td>8.8 KB</td>
                 <td>20/20</td>
                 <td>完整</td>
-                <td>-11.9%</td>
+                <td>-</td>
               </tr>
               <tr>
                 <th scope="row">uni-app vite vue3</th>
-                <td>2362.1 ms</td>
-                <td>138.9 KB</td>
+                <td>2395.1 ms</td>
+                <td>139.1 KB</td>
                 <td>20/20</td>
                 <td>完整</td>
-                <td>-7.5%</td>
+                <td>-</td>
               </tr>
               <tr>
                 <th scope="row">uni-app x</th>
-                <td>2877.0 ms</td>
-                <td>176.4 KB</td>
+                <td>2927.9 ms</td>
+                <td>176.5 KB</td>
                 <td>20/20</td>
                 <td>完整</td>
-                <td>-0.0%</td>
+                <td>-</td>
               </tr>
               <tr>
                 <th scope="row">mpx</th>
-                <td>3373.1 ms</td>
-                <td>1161.5 KB</td>
+                <td>3256.2 ms</td>
+                <td>1161.9 KB</td>
                 <td>20/20</td>
                 <td>完整</td>
-                <td>+96.0%</td>
+                <td>-</td>
               </tr>
               <tr>
                 <th scope="row">taro vue3</th>
-                <td>3041.3 ms</td>
-                <td>224.4 KB</td>
+                <td>2502.1 ms</td>
+                <td>224.5 KB</td>
                 <td>20/20</td>
                 <td>完整</td>
-                <td>-11.5%</td>
+                <td>-</td>
               </tr>
             </tbody>
           </table>
@@ -352,7 +392,7 @@
           id="chart-runtime"
           class="chart"
           role="img"
-          aria-label="八个真实 IDE E2E 场景的平均累计耗时，单位为毫秒。"
+          aria-label="从 reLaunch 请求到七项 IDE 视图断言通过的平均外部耗时，包含 RPC 和轮询；内部 tick 耗时不混合排名。"
         ></div>
 
         <div class="table-wrap">
@@ -364,13 +404,70 @@
             <thead>
               <tr>
                 <th scope="col">项目</th>
-                <th scope="col">八场景合计</th>
+                <th scope="col">请求至已验证视图</th>
                 <th scope="col">样本</th>
                 <th scope="col">状态</th>
                 <th scope="col">较上次</th>
               </tr>
             </thead>
-            <tbody></tbody>
+            <tbody>
+              <tr>
+                <th scope="row">weapp-vite + wevu</th>
+                <td>N/A</td>
+                <td>0/20</td>
+                <td>不完整</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <th scope="row">weapp-vite + wevu performance</th>
+                <td>N/A</td>
+                <td>0/20</td>
+                <td>不完整</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <th scope="row">weapp-vite 原生</th>
+                <td>N/A</td>
+                <td>0/20</td>
+                <td>不完整</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <th scope="row">uni-app vite vue3</th>
+                <td>N/A</td>
+                <td>0/20</td>
+                <td>不完整</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <th scope="row">uni-app x</th>
+                <td>N/A</td>
+                <td>0/20</td>
+                <td>不完整</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <th scope="row">mpx</th>
+                <td>N/A</td>
+                <td>0/20</td>
+                <td>不完整</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <th scope="row">taro vue3</th>
+                <td>N/A</td>
+                <td>0/20</td>
+                <td>不完整</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <th scope="row">@vue-mini/core</th>
+                <td>N/A</td>
+                <td>0/20</td>
+                <td>不完整</td>
+                <td>-</td>
+              </tr>
+            </tbody>
           </table>
         </div>
       </section>
@@ -400,52 +497,52 @@
             <tbody>
               <tr>
                 <th scope="row">weapp-vite + wevu</th>
-                <td>202.5 ms</td>
+                <td>200.2 ms</td>
                 <td>80/80</td>
                 <td>完整</td>
-                <td>+130.4%</td>
+                <td>-</td>
               </tr>
               <tr>
                 <th scope="row">weapp-vite + wevu performance</th>
-                <td>203.6 ms</td>
+                <td>204.3 ms</td>
                 <td>80/80</td>
                 <td>完整</td>
-                <td>+135.6%</td>
+                <td>-</td>
               </tr>
               <tr>
                 <th scope="row">weapp-vite 原生</th>
-                <td>215.9 ms</td>
+                <td>213.1 ms</td>
                 <td>80/80</td>
                 <td>完整</td>
-                <td>+351.7%</td>
+                <td>-</td>
               </tr>
               <tr>
                 <th scope="row">uni-app vite vue3</th>
-                <td>163.4 ms</td>
+                <td>149.3 ms</td>
                 <td>60/60</td>
                 <td>完整</td>
-                <td>-25.8%</td>
+                <td>-</td>
               </tr>
               <tr>
                 <th scope="row">uni-app x</th>
-                <td>252.5 ms</td>
+                <td>266.9 ms</td>
                 <td>60/60</td>
                 <td>完整</td>
-                <td>-1.6%</td>
+                <td>-</td>
               </tr>
               <tr>
                 <th scope="row">taro vue3</th>
-                <td>293.4 ms</td>
+                <td>301.6 ms</td>
                 <td>60/60</td>
                 <td>完整</td>
-                <td>-4.9%</td>
+                <td>-</td>
               </tr>
               <tr>
                 <th scope="row">mpx</th>
-                <td>139.7 ms</td>
+                <td>129.2 ms</td>
                 <td>80/80</td>
                 <td>完整</td>
-                <td>-5.7%</td>
+                <td>-</td>
               </tr>
             </tbody>
           </table>
@@ -456,7 +553,7 @@
           id="chart-size"
           class="chart"
           role="img"
-          aria-label="只统计生产构建后的框架运行时 allowlist 文件；页面业务代码、source map 和配置文件不计入。"
+          aria-label="按生产产物文件规则统计选定文件，可能包含模板、样式及混合业务代码；完整能力矩阵见体积报告。"
         ></div>
 
         <div class="table-wrap">
@@ -477,17 +574,17 @@
             <tbody>
               <tr>
                 <th scope="row">weapp-vite + wevu</th>
-                <td>166.7 KB</td>
+                <td>174.2 KB</td>
                 <td>1/1</td>
                 <td>完整</td>
-                <td>-24.0%</td>
+                <td>-</td>
               </tr>
               <tr>
                 <th scope="row">weapp-vite + wevu performance</th>
-                <td>183.7 KB</td>
+                <td>191.7 KB</td>
                 <td>1/1</td>
                 <td>完整</td>
-                <td>-23.3%</td>
+                <td>-</td>
               </tr>
               <tr>
                 <th scope="row">weapp-vite 原生</th>
@@ -498,31 +595,31 @@
               </tr>
               <tr>
                 <th scope="row">uni-app vite vue3</th>
-                <td>132.1 KB</td>
+                <td>132.2 KB</td>
                 <td>1/1</td>
                 <td>完整</td>
-                <td>0.0%</td>
+                <td>-</td>
               </tr>
               <tr>
                 <th scope="row">uni-app x</th>
                 <td>168.3 KB</td>
                 <td>1/1</td>
                 <td>完整</td>
-                <td>0.0%</td>
+                <td>-</td>
               </tr>
               <tr>
                 <th scope="row">mpx</th>
                 <td>170.7 KB</td>
                 <td>1/1</td>
                 <td>完整</td>
-                <td>0.0%</td>
+                <td>-</td>
               </tr>
               <tr>
                 <th scope="row">taro vue3</th>
                 <td>216.9 KB</td>
                 <td>1/1</td>
                 <td>完整</td>
-                <td>0.0%</td>
+                <td>-</td>
               </tr>
             </tbody>
           </table>
@@ -534,6 +631,7 @@
             <h2>验证流水线</h2>
             <a href="/benchmarks/reports/verification/latest.md">详细报告</a>
           </div>
+          <p class="caption">本轮 tsd 命令退出成功，但没有执行任何任务；不计作类型 API 用例通过。</p>
           <table>
             <thead>
               <tr>
@@ -547,73 +645,85 @@
               <tr>
                 <th scope="row">安装依赖</th>
                 <td><span class="status status-passed">passed</span></td>
-                <td>0.1s</td>
+                <td>0.2s</td>
                 <td><code>pnpm install --frozen-lockfile</code></td>
               </tr>
               <tr>
                 <th scope="row">构建</th>
                 <td><span class="status status-passed">passed</span></td>
-                <td>0.4s</td>
+                <td>0.2s</td>
                 <td><code>pnpm run build</code></td>
               </tr>
               <tr>
                 <th scope="row">代码检查</th>
                 <td><span class="status status-passed">passed</span></td>
-                <td>4.2s</td>
+                <td>3.0s</td>
                 <td><code>pnpm run lint</code></td>
               </tr>
               <tr>
                 <th scope="row">类型检查</th>
                 <td><span class="status status-passed">passed</span></td>
-                <td>0.9s</td>
+                <td>0.6s</td>
                 <td><code>pnpm run typecheck</code></td>
               </tr>
               <tr>
                 <th scope="row">类型 API 测试</th>
                 <td><span class="status status-passed">passed</span></td>
-                <td>0.3s</td>
+                <td>0.2s</td>
                 <td><code>pnpm run tsd</code></td>
               </tr>
               <tr>
                 <th scope="row">单元与集成测试</th>
                 <td><span class="status status-passed">passed</span></td>
-                <td>0.3s</td>
+                <td>166.1s</td>
                 <td><code>pnpm run test</code></td>
               </tr>
               <tr>
                 <th scope="row">依赖安全审计</th>
                 <td><span class="status status-failed">failed</span></td>
-                <td>74.3s</td>
+                <td>4.1s</td>
                 <td><code>pnpm audit --audit-level=moderate</code></td>
               </tr>
               <tr>
                 <th scope="row">HBuilderX uni-app x smoke</th>
                 <td><span class="status status-passed">passed</span></td>
-                <td>4.9s</td>
+                <td>4.5s</td>
                 <td><code>pnpm run test:hbuilderx:uni-app-x</code></td>
+              </tr>
+              <tr>
+                <th scope="row">扩展编译采样与规模矩阵</th>
+                <td><span class="status status-passed">passed</span></td>
+                <td>409.5s</td>
+                <td><code>pnpm run bench:compile:methods</code></td>
               </tr>
               <tr>
                 <th scope="row">编译基准</th>
                 <td><span class="status status-passed">passed</span></td>
-                <td>295.2s</td>
+                <td>287.5s</td>
                 <td><code>pnpm run bench:compile</code></td>
+              </tr>
+              <tr>
+                <th scope="row">真实 IDE 更新一致性</th>
+                <td><span class="status status-failed">failed</span></td>
+                <td>1.3s</td>
+                <td><code>pnpm run e2e:ide:consistency</code></td>
               </tr>
               <tr>
                 <th scope="row">运行时 IDE E2E 基准</th>
                 <td><span class="status status-failed">failed</span></td>
-                <td>199.5s</td>
+                <td>0.7s</td>
                 <td><code>pnpm run bench:runtime</code></td>
               </tr>
               <tr>
                 <th scope="row">HMR 基准</th>
-                <td><span class="status status-passed">passed</span></td>
-                <td>176.9s</td>
+                <td><span class="status status-failed">failed</span></td>
+                <td>550.3s</td>
                 <td><code>pnpm run bench:hmr</code></td>
               </tr>
               <tr>
                 <th scope="row">wevu 体积分析</th>
                 <td><span class="status status-passed">passed</span></td>
-                <td>10.9s</td>
+                <td>74.9s</td>
                 <td><code>pnpm run bench:size:wevu</code></td>
               </tr>
             </tbody>
@@ -630,7 +740,7 @@
             title: '跨维度性能指数',
             description: '每个维度以当前完整样本中的最佳结果为 100；缺失或不完整样本显示 N/A。',
             width: 1120,
-            height: 546,
+            height: 594,
             option: {
               backgroundColor: '#ffffff',
               color: ['#1769aa', '#d1495b', '#2a9d8f', '#e09f3e', '#6d597a', '#3a7d44'],
@@ -667,7 +777,7 @@
                 splitLine: { lineStyle: { color: '#d9dee8' } },
                 nameTextStyle: { color: '#667085' },
                 type: 'category',
-                data: ['编译耗时', '运行时总耗时', 'HMR 平均耗时', '运行时体积'],
+                data: ['编译耗时', '运行时视图观察', 'HMR 平均耗时', '运行时体积'],
                 splitArea: { show: true, areaStyle: { color: ['#ffffff'] } },
               },
               yAxis: {
@@ -685,6 +795,7 @@
                   'uni-app x',
                   'mpx',
                   'taro vue3',
+                  '@vue-mini/core',
                 ],
                 inverse: true,
                 splitArea: { show: true, areaStyle: { color: ['#ffffff'] } },
@@ -704,26 +815,26 @@
                   name: '性能指数',
                   type: 'heatmap',
                   data: [
-                    [0, 0, 82.2],
-                    [2, 0, 69],
+                    [0, 0, 81],
+                    [2, 0, 64.5],
                     [3, 0, 0],
-                    [0, 1, 83.4],
-                    [2, 1, 68.6],
+                    [0, 1, 80.4],
+                    [2, 1, 63.2],
                     [3, 1, 0],
                     [0, 2, 100],
-                    [2, 2, 64.7],
+                    [2, 2, 60.6],
                     [3, 2, 100],
-                    [0, 3, 38.1],
-                    [2, 3, 85.5],
+                    [0, 3, 39],
+                    [2, 3, 86.5],
                     [3, 3, 0],
-                    [0, 4, 31.3],
-                    [2, 4, 55.3],
+                    [0, 4, 31.9],
+                    [2, 4, 48.4],
                     [3, 4, 0],
-                    [0, 5, 26.7],
+                    [0, 5, 28.7],
                     [2, 5, 100],
                     [3, 5, 0],
-                    [0, 6, 29.6],
-                    [2, 6, 47.6],
+                    [0, 6, 37.3],
+                    [2, 6, 42.8],
                     [3, 6, 0],
                   ],
                   label: {
@@ -748,6 +859,10 @@
                     [1, 4],
                     [1, 5],
                     [1, 6],
+                    [0, 7],
+                    [1, 7],
+                    [2, 7],
+                    [3, 7],
                   ],
                   symbolSize: 0,
                   tooltip: { show: false },
@@ -831,11 +946,11 @@
                   type: 'category',
                   data: [
                     'weapp-vite 原生',
-                    'weapp-vite + wevu performance',
                     'weapp-vite + wevu',
+                    'weapp-vite + wevu performance',
                     'uni-app vite vue3',
-                    'uni-app x',
                     'taro vue3',
+                    'uni-app x',
                     'mpx',
                   ],
                   inverse: true,
@@ -850,11 +965,11 @@
                   type: 'category',
                   data: [
                     'weapp-vite 原生',
-                    'weapp-vite + wevu performance',
                     'weapp-vite + wevu',
+                    'weapp-vite + wevu performance',
                     'uni-app vite vue3',
-                    'uni-app x',
                     'taro vue3',
+                    'uni-app x',
                     'mpx',
                   ],
                   inverse: true,
@@ -891,7 +1006,7 @@
                   type: 'bar',
                   xAxisIndex: 0,
                   yAxisIndex: 0,
-                  data: [900.5, 1079.9, 1095.1, 2362.1, 2877, 3041.3, 3373.1],
+                  data: [934.3, 1153.4, 1161.4, 2395.1, 2502.1, 2927.9, 3256.2],
                   label: {
                     show: true,
                     position: 'right',
@@ -905,7 +1020,7 @@
                   type: 'bar',
                   xAxisIndex: 1,
                   yAxisIndex: 1,
-                  data: [8.7, 198.2, 179.6, 138.9, 176.4, 224.4, 1161.5],
+                  data: [8.8, 179.8, 198.3, 139.1, 224.5, 176.5, 1161.9],
                   label: {
                     show: true,
                     position: 'right',
@@ -919,10 +1034,11 @@
           },
           {
             id: 'runtime',
-            title: '运行时场景耗时',
-            description: '八个真实 IDE E2E 场景的平均累计耗时，单位为毫秒。',
+            title: '运行时视图观察',
+            description:
+              '从 reLaunch 请求到七项 IDE 视图断言通过的平均外部耗时，包含 RPC 和轮询；内部 tick 耗时不混合排名。',
             width: 1280,
-            height: 560,
+            height: 640,
             option: {
               backgroundColor: '#ffffff',
               color: ['#1769aa', '#d1495b', '#2a9d8f', '#e09f3e', '#6d597a', '#3a7d44'],
@@ -933,7 +1049,7 @@
                 fontSize: 12,
               },
               title: {
-                text: '运行时场景耗时',
+                text: '运行时视图观察',
                 subtext: '微信开发者工具 IDE E2E；数值越小越好',
                 left: 20,
                 top: 16,
@@ -968,7 +1084,16 @@
                 splitLine: { lineStyle: { color: '#d9dee8' } },
                 nameTextStyle: { color: '#667085' },
                 type: 'category',
-                data: [],
+                data: [
+                  'weapp-vite + wevu',
+                  'weapp-vite + wevu performance',
+                  'weapp-vite 原生',
+                  'uni-app vite vue3',
+                  'uni-app x',
+                  'mpx',
+                  'taro vue3',
+                  '@vue-mini/core',
+                ],
                 inverse: true,
               },
               visualMap: {
@@ -1068,7 +1193,7 @@
               },
               visualMap: {
                 min: 0,
-                max: 356.4,
+                max: 395.4,
                 orient: 'horizontal',
                 left: 'center',
                 bottom: 18,
@@ -1080,31 +1205,31 @@
                   name: '平均 HMR',
                   type: 'heatmap',
                   data: [
-                    [0, 0, 197.6],
-                    [1, 0, 201.4],
-                    [2, 0, 205.4],
-                    [3, 0, 205.4],
-                    [0, 1, 197.5],
-                    [1, 1, 206.3],
-                    [2, 1, 205.2],
-                    [3, 1, 205.4],
-                    [0, 2, 107.6],
-                    [1, 2, 159.1],
-                    [2, 2, 274.5],
-                    [3, 2, 322.4],
-                    [0, 3, 191],
-                    [1, 3, 144.8],
-                    [2, 3, 154.3],
-                    [0, 4, 356.4],
-                    [1, 4, 199.8],
-                    [2, 4, 201.3],
-                    [0, 5, 304.1],
-                    [1, 5, 294.7],
-                    [2, 5, 281.5],
-                    [0, 6, 142.8],
-                    [1, 6, 157],
-                    [2, 6, 129.1],
-                    [3, 6, 129.8],
+                    [0, 0, 198],
+                    [1, 0, 200.6],
+                    [2, 0, 201.1],
+                    [3, 0, 200.9],
+                    [0, 1, 197.8],
+                    [1, 1, 205.7],
+                    [2, 1, 206.1],
+                    [3, 1, 207.6],
+                    [0, 2, 109.5],
+                    [1, 2, 152],
+                    [2, 2, 257.8],
+                    [3, 2, 333.1],
+                    [0, 3, 182.2],
+                    [1, 3, 130.7],
+                    [2, 3, 135.1],
+                    [0, 4, 395.4],
+                    [1, 4, 204.4],
+                    [2, 4, 200.8],
+                    [0, 5, 305.1],
+                    [1, 5, 303.8],
+                    [2, 5, 295.9],
+                    [0, 6, 122.5],
+                    [1, 6, 134],
+                    [2, 6, 127.1],
+                    [3, 6, 133.3],
                   ],
                   label: { show: true, formatter: '{@[2]}', color: '#20242b' },
                   itemStyle: { borderColor: '#ffffff', borderWidth: 3 },
@@ -1132,7 +1257,7 @@
           {
             id: 'size',
             title: '运行时包体积',
-            description: '只统计生产构建后的框架运行时 allowlist 文件；页面业务代码、source map 和配置文件不计入。',
+            description: '按生产产物文件规则统计选定文件，可能包含模板、样式及混合业务代码；完整能力矩阵见体积报告。',
             width: 1120,
             height: 760,
             option: {
@@ -1183,9 +1308,9 @@
                 data: [
                   'weapp-vite 原生',
                   'uni-app vite vue3',
-                  'weapp-vite + wevu',
                   'uni-app x',
                   'mpx',
+                  'weapp-vite + wevu',
                   'weapp-vite + wevu performance',
                   'taro vue3',
                 ],
@@ -1195,7 +1320,7 @@
                 {
                   name: '运行时体积',
                   type: 'bar',
-                  data: [0, 132.1, 166.7, 168.3, 170.7, 183.7, 216.9],
+                  data: [0, 132.2, 168.3, 170.7, 174.2, 191.7, 216.9],
                   label: {
                     show: true,
                     position: 'right',
@@ -1213,7 +1338,7 @@
             title: '跨维度性能指数',
             description: '每个维度以当前完整样本中的最佳结果为 100；缺失或不完整样本显示 N/A。',
             width: 1120,
-            height: 546,
+            height: 594,
             option: {
               backgroundColor: '#17191d',
               color: ['#62a8e5', '#f27b88', '#54c4b1', '#f2bd5b', '#b49bc8', '#79b985'],
@@ -1250,7 +1375,7 @@
                 splitLine: { lineStyle: { color: '#3a404b' } },
                 nameTextStyle: { color: '#aab2c0' },
                 type: 'category',
-                data: ['编译耗时', '运行时总耗时', 'HMR 平均耗时', '运行时体积'],
+                data: ['编译耗时', '运行时视图观察', 'HMR 平均耗时', '运行时体积'],
                 splitArea: { show: true, areaStyle: { color: ['#17191d'] } },
               },
               yAxis: {
@@ -1268,6 +1393,7 @@
                   'uni-app x',
                   'mpx',
                   'taro vue3',
+                  '@vue-mini/core',
                 ],
                 inverse: true,
                 splitArea: { show: true, areaStyle: { color: ['#17191d'] } },
@@ -1287,26 +1413,26 @@
                   name: '性能指数',
                   type: 'heatmap',
                   data: [
-                    [0, 0, 82.2],
-                    [2, 0, 69],
+                    [0, 0, 81],
+                    [2, 0, 64.5],
                     [3, 0, 0],
-                    [0, 1, 83.4],
-                    [2, 1, 68.6],
+                    [0, 1, 80.4],
+                    [2, 1, 63.2],
                     [3, 1, 0],
                     [0, 2, 100],
-                    [2, 2, 64.7],
+                    [2, 2, 60.6],
                     [3, 2, 100],
-                    [0, 3, 38.1],
-                    [2, 3, 85.5],
+                    [0, 3, 39],
+                    [2, 3, 86.5],
                     [3, 3, 0],
-                    [0, 4, 31.3],
-                    [2, 4, 55.3],
+                    [0, 4, 31.9],
+                    [2, 4, 48.4],
                     [3, 4, 0],
-                    [0, 5, 26.7],
+                    [0, 5, 28.7],
                     [2, 5, 100],
                     [3, 5, 0],
-                    [0, 6, 29.6],
-                    [2, 6, 47.6],
+                    [0, 6, 37.3],
+                    [2, 6, 42.8],
                     [3, 6, 0],
                   ],
                   label: {
@@ -1331,6 +1457,10 @@
                     [1, 4],
                     [1, 5],
                     [1, 6],
+                    [0, 7],
+                    [1, 7],
+                    [2, 7],
+                    [3, 7],
                   ],
                   symbolSize: 0,
                   tooltip: { show: false },
@@ -1414,11 +1544,11 @@
                   type: 'category',
                   data: [
                     'weapp-vite 原生',
-                    'weapp-vite + wevu performance',
                     'weapp-vite + wevu',
+                    'weapp-vite + wevu performance',
                     'uni-app vite vue3',
-                    'uni-app x',
                     'taro vue3',
+                    'uni-app x',
                     'mpx',
                   ],
                   inverse: true,
@@ -1433,11 +1563,11 @@
                   type: 'category',
                   data: [
                     'weapp-vite 原生',
-                    'weapp-vite + wevu performance',
                     'weapp-vite + wevu',
+                    'weapp-vite + wevu performance',
                     'uni-app vite vue3',
-                    'uni-app x',
                     'taro vue3',
+                    'uni-app x',
                     'mpx',
                   ],
                   inverse: true,
@@ -1474,7 +1604,7 @@
                   type: 'bar',
                   xAxisIndex: 0,
                   yAxisIndex: 0,
-                  data: [900.5, 1079.9, 1095.1, 2362.1, 2877, 3041.3, 3373.1],
+                  data: [934.3, 1153.4, 1161.4, 2395.1, 2502.1, 2927.9, 3256.2],
                   label: {
                     show: true,
                     position: 'right',
@@ -1488,7 +1618,7 @@
                   type: 'bar',
                   xAxisIndex: 1,
                   yAxisIndex: 1,
-                  data: [8.7, 198.2, 179.6, 138.9, 176.4, 224.4, 1161.5],
+                  data: [8.8, 179.8, 198.3, 139.1, 224.5, 176.5, 1161.9],
                   label: {
                     show: true,
                     position: 'right',
@@ -1502,10 +1632,11 @@
           },
           {
             id: 'runtime',
-            title: '运行时场景耗时',
-            description: '八个真实 IDE E2E 场景的平均累计耗时，单位为毫秒。',
+            title: '运行时视图观察',
+            description:
+              '从 reLaunch 请求到七项 IDE 视图断言通过的平均外部耗时，包含 RPC 和轮询；内部 tick 耗时不混合排名。',
             width: 1280,
-            height: 560,
+            height: 640,
             option: {
               backgroundColor: '#17191d',
               color: ['#62a8e5', '#f27b88', '#54c4b1', '#f2bd5b', '#b49bc8', '#79b985'],
@@ -1516,7 +1647,7 @@
                 fontSize: 12,
               },
               title: {
-                text: '运行时场景耗时',
+                text: '运行时视图观察',
                 subtext: '微信开发者工具 IDE E2E；数值越小越好',
                 left: 20,
                 top: 16,
@@ -1551,7 +1682,16 @@
                 splitLine: { lineStyle: { color: '#3a404b' } },
                 nameTextStyle: { color: '#aab2c0' },
                 type: 'category',
-                data: [],
+                data: [
+                  'weapp-vite + wevu',
+                  'weapp-vite + wevu performance',
+                  'weapp-vite 原生',
+                  'uni-app vite vue3',
+                  'uni-app x',
+                  'mpx',
+                  'taro vue3',
+                  '@vue-mini/core',
+                ],
                 inverse: true,
               },
               visualMap: {
@@ -1651,7 +1791,7 @@
               },
               visualMap: {
                 min: 0,
-                max: 356.4,
+                max: 395.4,
                 orient: 'horizontal',
                 left: 'center',
                 bottom: 18,
@@ -1663,31 +1803,31 @@
                   name: '平均 HMR',
                   type: 'heatmap',
                   data: [
-                    [0, 0, 197.6],
-                    [1, 0, 201.4],
-                    [2, 0, 205.4],
-                    [3, 0, 205.4],
-                    [0, 1, 197.5],
-                    [1, 1, 206.3],
-                    [2, 1, 205.2],
-                    [3, 1, 205.4],
-                    [0, 2, 107.6],
-                    [1, 2, 159.1],
-                    [2, 2, 274.5],
-                    [3, 2, 322.4],
-                    [0, 3, 191],
-                    [1, 3, 144.8],
-                    [2, 3, 154.3],
-                    [0, 4, 356.4],
-                    [1, 4, 199.8],
-                    [2, 4, 201.3],
-                    [0, 5, 304.1],
-                    [1, 5, 294.7],
-                    [2, 5, 281.5],
-                    [0, 6, 142.8],
-                    [1, 6, 157],
-                    [2, 6, 129.1],
-                    [3, 6, 129.8],
+                    [0, 0, 198],
+                    [1, 0, 200.6],
+                    [2, 0, 201.1],
+                    [3, 0, 200.9],
+                    [0, 1, 197.8],
+                    [1, 1, 205.7],
+                    [2, 1, 206.1],
+                    [3, 1, 207.6],
+                    [0, 2, 109.5],
+                    [1, 2, 152],
+                    [2, 2, 257.8],
+                    [3, 2, 333.1],
+                    [0, 3, 182.2],
+                    [1, 3, 130.7],
+                    [2, 3, 135.1],
+                    [0, 4, 395.4],
+                    [1, 4, 204.4],
+                    [2, 4, 200.8],
+                    [0, 5, 305.1],
+                    [1, 5, 303.8],
+                    [2, 5, 295.9],
+                    [0, 6, 122.5],
+                    [1, 6, 134],
+                    [2, 6, 127.1],
+                    [3, 6, 133.3],
                   ],
                   label: { show: true, formatter: '{@[2]}', color: '#f2f4f7' },
                   itemStyle: { borderColor: '#17191d', borderWidth: 3 },
@@ -1715,7 +1855,7 @@
           {
             id: 'size',
             title: '运行时包体积',
-            description: '只统计生产构建后的框架运行时 allowlist 文件；页面业务代码、source map 和配置文件不计入。',
+            description: '按生产产物文件规则统计选定文件，可能包含模板、样式及混合业务代码；完整能力矩阵见体积报告。',
             width: 1120,
             height: 760,
             option: {
@@ -1766,9 +1906,9 @@
                 data: [
                   'weapp-vite 原生',
                   'uni-app vite vue3',
-                  'weapp-vite + wevu',
                   'uni-app x',
                   'mpx',
+                  'weapp-vite + wevu',
                   'weapp-vite + wevu performance',
                   'taro vue3',
                 ],
@@ -1778,7 +1918,7 @@
                 {
                   name: '运行时体积',
                   type: 'bar',
-                  data: [0, 132.1, 166.7, 168.3, 170.7, 183.7, 216.9],
+                  data: [0, 132.2, 168.3, 170.7, 174.2, 191.7, 216.9],
                   label: {
                     show: true,
                     position: 'right',

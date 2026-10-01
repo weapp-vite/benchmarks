@@ -1,18 +1,26 @@
-<svg role="img" aria-label="运行时场景耗时" width="1280" height="560" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 1280 560"><title>运行时场景耗时</title><desc>八个真实 IDE E2E 场景的平均累计耗时，单位为毫秒。</desc>
-<rect width="1280" height="560" x="0" y="0" fill="#ffffff"></rect>
-<path d="M220.5 115L220.5 450" fill="none" pointer-events="visible" stroke="#d9dee8" stroke-linecap="round" class="zr2-cls-46"></path>
-<path d="M220 450.5L1190 450.5" fill="none" pointer-events="visible" stroke="#d9dee8" stroke-linecap="round" class="zr2-cls-46"></path>
-<path d="M-15 -35l170 0l0 50l-170 0Z" transform="translate(570 525)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#cfd2d7" stroke-width="0" class="zr2-cls-46"></path>
+<svg role="img" aria-label="运行时视图观察" width="1280" height="640" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" baseProfile="full" viewBox="0 0 1280 640"><title>运行时视图观察</title><desc>从 reLaunch 请求到七项 IDE 视图断言通过的平均外部耗时，包含 RPC 和轮询；内部 tick 耗时不混合排名。</desc>
+<rect width="1280" height="640" x="0" y="0" fill="#ffffff"></rect>
+<path d="M220.5 115L220.5 530" fill="none" pointer-events="visible" stroke="#d9dee8" stroke-linecap="round"></path>
+<path d="M220 530.5L1190 530.5" fill="none" pointer-events="visible" stroke="#d9dee8" stroke-linecap="round"></path>
+<text dominant-baseline="central" text-anchor="end" style="font-family:Arial, sans-serif;font-size:12px;" xml:space="preserve" transform="translate(212 140.9375)" fill="#667085">weapp-vite + wevu</text>
+<text dominant-baseline="central" text-anchor="end" style="font-family:Arial, sans-serif;font-size:12px;" xml:space="preserve" transform="translate(212 192.8125)" fill="#667085">weapp-vite + wevu performance</text>
+<text dominant-baseline="central" text-anchor="end" style="font-family:Arial, sans-serif;font-size:12px;" xml:space="preserve" transform="translate(212 244.6875)" fill="#667085">weapp-vite 原生</text>
+<text dominant-baseline="central" text-anchor="end" style="font-family:Arial, sans-serif;font-size:12px;" xml:space="preserve" transform="translate(212 296.5625)" fill="#667085">uni-app vite vue3</text>
+<text dominant-baseline="central" text-anchor="end" style="font-family:Arial, sans-serif;font-size:12px;" xml:space="preserve" transform="translate(212 348.4375)" fill="#667085">uni-app x</text>
+<text dominant-baseline="central" text-anchor="end" style="font-family:Arial, sans-serif;font-size:12px;" transform="translate(212 400.3125)" fill="#667085">mpx</text>
+<text dominant-baseline="central" text-anchor="end" style="font-family:Arial, sans-serif;font-size:12px;" xml:space="preserve" transform="translate(212 452.1875)" fill="#667085">taro vue3</text>
+<text dominant-baseline="central" text-anchor="end" style="font-family:Arial, sans-serif;font-size:12px;" transform="translate(212 504.0625)" fill="#667085">@vue-mini/core</text>
+<path d="M-15 -35l170 0l0 50l-170 0Z" transform="translate(570 605)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#cfd2d7" stroke-width="0"></path>
 <g clip-path="url(#zr2-c0)">
-<polygon points="0 0 20 0 20 140 0 140" transform="matrix(0,-1,1,0,570,525)" fill="url(#zr2-g0)" class="zr2-cls-48"></polygon>
-<polygon points="0 0 20 0 20 140 0 140" transform="matrix(0,-1,1,0,570,525)" fill="url(#zr2-g1)" class="zr2-cls-49"></polygon>
+<polygon points="0 0 20 0 20 140 0 140" transform="matrix(0,-1,1,0,570,605)" fill="url(#zr2-g0)"></polygon>
+<polygon points="0 0 20 0 20 140 0 140" transform="matrix(0,-1,1,0,570,605)" fill="url(#zr2-g1)"></polygon>
 </g>
-<path d="M-5 -5l227.6 0l0 50l-227.6 0Z" transform="translate(25 21)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#3c3c41" stroke-width="0" class="zr2-cls-46"></path>
-<text dominant-baseline="central" text-anchor="start" style="font-size:18px;font-family:Arial, sans-serif;font-weight:500;" y="9" transform="translate(25 21)" fill="#20242b">运行时场景耗时</text>
-<text dominant-baseline="central" text-anchor="start" style="font-size:12px;font-family:Arial, sans-serif;font-weight:400;" xml:space="preserve" y="34" transform="translate(25 21)" fill="#667085">微信开发者工具 IDE E2E；数值越小越好</text>
+<path d="M-5 -5l227.6 0l0 50l-227.6 0Z" transform="translate(25 21)" fill="rgb(0,0,0)" fill-opacity="0" stroke="#3c3c41" stroke-width="0"></path>
+<text dominant-baseline="central" text-anchor="start" style="font-family:Arial, sans-serif;font-size:18px;font-weight:500;" y="9" transform="translate(25 21)" fill="#20242b">运行时视图观察</text>
+<text dominant-baseline="central" text-anchor="start" style="font-family:Arial, sans-serif;font-size:12px;font-weight:400;" xml:space="preserve" y="34" transform="translate(25 21)" fill="#667085">微信开发者工具 IDE E2E；数值越小越好</text>
 <defs >
 <clipPath id="zr2-c0">
-<path d="M3 0L17 0A3 3 0 0 1 20 3L20 137A3 3 0 0 1 17 140L3 140A3 3 0 0 1 0 137L0 3A3 3 0 0 1 3 0Z" transform="matrix(0,-1,1,0,570,525)" fill="#000" class="zr2-cls-47"></path>
+<path d="M3 0L17 0A3 3 0 0 1 20 3L20 137A3 3 0 0 1 17 140L3 140A3 3 0 0 1 0 137L0 3A3 3 0 0 1 3 0Z" transform="matrix(0,-1,1,0,570,605)" fill="#000"></path>
 </clipPath>
 <linearGradient gradientUnits="objectBoundingBox" x1="0" y1="0" x2="0" y2="1" id="zr2-g0">
 <stop offset="0%" stop-color="rgb(207,210,215)"></stop>
@@ -221,24 +229,4 @@
 <stop offset="100%" stop-color="rgb(181,71,8)"></stop>
 </linearGradient>
 </defs>
-<style ><![CDATA[
-.zr2-cls-46:hover {
-pointer-events:none;
-}
-.zr2-cls-47:hover {
-cursor:pointer;
-fill:rgba(0,0,0,1);
-}
-.zr2-cls-48:hover {
-cursor:pointer;
-fill:[object Object];
-}
-.zr2-cls-49:hover {
-cursor:pointer;
-fill:[object Object];
-}
-
-]]>
-
-</style>
 </svg>

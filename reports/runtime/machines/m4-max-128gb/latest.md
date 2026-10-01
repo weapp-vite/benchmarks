@@ -1,267 +1,565 @@
 # 运行时基准报告
 
-生成时间：2026-07-14T06:39:51.614Z
-模式：IDE E2E 采集
-采样次数：20 次，报告中的场景均值和总耗时由有效样本计算。
+生成时间：2026-09-30T23:03:41.812Z
+采样次数：20
 
 ## 运行环境
 
 - 机器：Apple M4 Max 128GB（`m4-max-128gb`）
-- 系统：macOS 26.5.1 (25F80)；架构：darwin/arm64
+- 系统：macOS 27.0 (26A428)；架构：darwin/arm64
 - CPU：Apple M4 Max；核心数：16；内存：128GB
-- Node：v24.18.0；pnpm：11.13.0
-- 微信开发者工具 CLI：/Applications/wechatwebdevtools.app/Contents/MacOS/cli
-- Git commit：026fe258b63b15a9b9d51c4635348ffeebc3dc41
-- weapp-vite submodule：26510329efcf36cbf934e566ebbc80f069151a22
+- Node：v24.18.0；pnpm：12.8.1
+- 微信开发者工具 CLI：cli
+- Git commit：1923b5d2f69cd5842dfe74e7d9bd8fb44b6d81d2
+- weapp-vite submodule：eb9995e74fc4f760d265972b9148417cd40aab63
 
-## 一眼结论
+## 计时边界
 
-- 总耗时最好：weapp-vite + wevu performance，8 个场景平均合计 173ms。
-- 总耗时最差：weapp-vite 原生，8 个场景平均合计 2732ms。
-- 差距最大场景：过滤高分活跃项，最慢比最快多 689ms。
-- 所有项目样本完整，均已纳入排名。
-- 场景覆盖：初始渲染、追加列表、批量更新、全量排序、过滤、分组聚合渲染、窗口切片和整表替换。
-- 读数规则：性能指数以最快项目为 100，越接近 100 越好；小于 120ms 的绝对差值标为弱信号，只作为参考。
-
-## 项目优劣速览
-
-| 项目                          | 总排名 | 性能指数 | 总耗时 | 慢于最快 | 绝对差 | 场景最快数 | 场景最慢数 | 主要优势                  | 主要短板                        | 判断       |
-| ----------------------------- | -----: | -------: | -----: | -------: | -----: | ---------: | ---------: | ------------------------- | ------------------------------- | ---------- |
-| weapp-vite + wevu performance |      1 |      100 |  173ms |    1.00x |    0ms |          4 |          0 | 初始渲染、全量排序等 4 项 | -                               | 整体最快   |
-| weapp-vite + wevu             |      2 |       82 |  211ms |    1.22x |   38ms |          0 |          0 | -                         | -                               | 表现居中   |
-| uni-app x                     |      3 |       78 |  222ms |    1.28x |   49ms |          2 |          0 | 批量更新、窗口切片        | -                               | 有局部优势 |
-| uni-app vite vue3             |      4 |       71 |  244ms |    1.41x |   71ms |          1 |          0 | 追加批次                  | -                               | 表现居中   |
-| @vue-mini/core                |      5 |       43 |  400ms |    2.31x |  227ms |          1 |          0 | 分组聚合渲染              | -                               | 表现居中   |
-| taro vue3                     |      6 |       10 | 1666ms |    9.63x | 1493ms |          0 |          2 | -                         | 批量更新、全量排序              | 表现居中   |
-| mpx                           |      7 |        6 | 2701ms |   15.61x | 2528ms |          0 |          1 | -                         | 初始渲染                        | 表现居中   |
-| weapp-vite 原生               |      8 |        6 | 2732ms |   15.79x | 2559ms |          0 |          5 | -                         | 追加批次、过滤高分活跃项等 5 项 | 整体最慢   |
+新外部读数从 reLaunch 请求计时，到真实 IDE 文本、列表和计算颜色的七项断言全部满足。它包含导航、协议往返及 100ms 轮询，不是纯宿主提交或屏幕绘制耗时。
+原八场景的内部 durationMs 保留在原始明细，按实际完成边界标注。框架 nextTick、原生 setData callback、Mpx setData callback 不混合排名。没有新观察证据的旧样本不进入排名。
 
 ## 总耗时排名
 
-| 排名 | 项目                          | 性能指数 | 8 场景平均合计 | 相对最快 | 绝对差 | 有效样本 | 全部通过 |
-| ---: | ----------------------------- | -------: | -------------: | -------: | -----: | -------: | -------- |
-|    1 | weapp-vite + wevu performance |      100 |          173ms |    1.00x |    0ms |       20 | 是       |
-|    2 | weapp-vite + wevu             |       82 |          211ms |    1.22x |   38ms |       20 | 是       |
-|    3 | uni-app x                     |       78 |          222ms |    1.28x |   49ms |       20 | 是       |
-|    4 | uni-app vite vue3             |       71 |          244ms |    1.41x |   71ms |       20 | 是       |
-|    5 | @vue-mini/core                |       43 |          400ms |    2.31x |  227ms |       20 | 是       |
-|    6 | taro vue3                     |       10 |         1666ms |    9.63x | 1493ms |       20 | 是       |
-|    7 | mpx                           |        6 |         2701ms |   15.61x | 2528ms |       20 | 是       |
-|    8 | weapp-vite 原生               |        6 |         2732ms |   15.79x | 2559ms |       20 | 是       |
+|                                         排名 | 项目 | reLaunch → 已确认视图均值 | 有效样本 |
+| -------------------------------------------: | ---- | ------------------------: | -------: |
+| 没有通过新边界验收的完整样本，无法给出排名。 |
 
-## 各场景最快和最慢
+## 未完成采集
 
-| 场景           | 最快                          | 最快均值 | 最慢            | 最慢均值 | 相对差距 | 绝对差 | 信号强度 |
-| -------------- | ----------------------------- | -------: | --------------- | -------: | -------: | -----: | -------- |
-| 初始渲染       | weapp-vite + wevu performance |      7ms | mpx             |    259ms |   37.00x |  252ms | 中       |
-| 追加批次       | uni-app vite vue3             |     14ms | weapp-vite 原生 |    151ms |   10.79x |  137ms | 中       |
-| 批量更新       | uni-app x                     |     32ms | taro vue3       |    198ms |    6.19x |  166ms | 中       |
-| 全量排序       | weapp-vite + wevu performance |     29ms | taro vue3       |    701ms |   24.17x |  672ms | 强       |
-| 过滤高分活跃项 | weapp-vite + wevu performance |     20ms | weapp-vite 原生 |    709ms |   35.45x |  689ms | 强       |
-| 分组聚合渲染   | @vue-mini/core                |     16ms | weapp-vite 原生 |    131ms |    8.19x |  115ms | 弱       |
-| 窗口切片       | uni-app x                     |     18ms | weapp-vite 原生 |    275ms |   15.28x |  257ms | 中       |
-| 整表替换       | weapp-vite + wevu performance |     11ms | weapp-vite 原生 |    598ms |   54.36x |  587ms | 强       |
+- weapp-vite + wevu：有效样本 0/20。
+- weapp-vite + wevu performance：有效样本 0/20。
+- weapp-vite 原生：有效样本 0/20。
+- uni-app vite vue3：有效样本 0/20。
+- uni-app x：有效样本 0/20。
+- mpx：有效样本 0/20。
+- taro vue3：有效样本 0/20。
+- @vue-mini/core：有效样本 0/20。
+- weapp-vite + wevu 第 1 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite + wevu 第 2 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite + wevu 第 3 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite + wevu 第 4 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite + wevu 第 5 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite + wevu 第 6 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite + wevu 第 7 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite + wevu 第 8 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite + wevu 第 9 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite + wevu 第 10 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite + wevu 第 11 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite + wevu 第 12 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite + wevu 第 13 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite + wevu 第 14 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite + wevu 第 15 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite + wevu 第 16 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite + wevu 第 17 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite + wevu 第 18 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite + wevu 第 19 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite + wevu 第 20 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite + wevu performance 第 1 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite + wevu performance 第 2 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite + wevu performance 第 3 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite + wevu performance 第 4 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite + wevu performance 第 5 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite + wevu performance 第 6 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite + wevu performance 第 7 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite + wevu performance 第 8 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite + wevu performance 第 9 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite + wevu performance 第 10 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite + wevu performance 第 11 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite + wevu performance 第 12 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite + wevu performance 第 13 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite + wevu performance 第 14 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite + wevu performance 第 15 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite + wevu performance 第 16 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite + wevu performance 第 17 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite + wevu performance 第 18 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite + wevu performance 第 19 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite + wevu performance 第 20 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite 原生 第 1 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite 原生 第 2 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite 原生 第 3 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite 原生 第 4 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite 原生 第 5 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite 原生 第 6 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite 原生 第 7 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite 原生 第 8 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite 原生 第 9 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite 原生 第 10 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite 原生 第 11 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite 原生 第 12 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite 原生 第 13 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite 原生 第 14 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite 原生 第 15 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite 原生 第 16 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite 原生 第 17 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite 原生 第 18 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite 原生 第 19 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- weapp-vite 原生 第 20 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- uni-app vite vue3 第 1 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- uni-app vite vue3 第 2 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- uni-app vite vue3 第 3 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- uni-app vite vue3 第 4 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- uni-app vite vue3 第 5 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- uni-app vite vue3 第 6 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- uni-app vite vue3 第 7 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- uni-app vite vue3 第 8 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- uni-app vite vue3 第 9 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- uni-app vite vue3 第 10 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- uni-app vite vue3 第 11 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- uni-app vite vue3 第 12 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- uni-app vite vue3 第 13 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- uni-app vite vue3 第 14 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- uni-app vite vue3 第 15 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- uni-app vite vue3 第 16 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- uni-app vite vue3 第 17 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- uni-app vite vue3 第 18 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- uni-app vite vue3 第 19 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- uni-app vite vue3 第 20 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- uni-app x 第 1 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- uni-app x 第 2 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- uni-app x 第 3 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- uni-app x 第 4 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- uni-app x 第 5 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- uni-app x 第 6 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- uni-app x 第 7 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- uni-app x 第 8 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- uni-app x 第 9 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- uni-app x 第 10 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- uni-app x 第 11 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- uni-app x 第 12 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- uni-app x 第 13 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- uni-app x 第 14 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- uni-app x 第 15 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- uni-app x 第 16 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- uni-app x 第 17 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- uni-app x 第 18 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- uni-app x 第 19 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- uni-app x 第 20 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- mpx 第 1 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- mpx 第 2 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- mpx 第 3 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- mpx 第 4 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- mpx 第 5 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- mpx 第 6 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- mpx 第 7 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- mpx 第 8 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- mpx 第 9 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- mpx 第 10 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- mpx 第 11 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- mpx 第 12 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- mpx 第 13 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- mpx 第 14 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- mpx 第 15 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- mpx 第 16 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- mpx 第 17 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- mpx 第 18 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- mpx 第 19 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- mpx 第 20 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- taro vue3 第 1 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- taro vue3 第 2 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- taro vue3 第 3 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- taro vue3 第 4 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- taro vue3 第 5 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- taro vue3 第 6 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- taro vue3 第 7 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- taro vue3 第 8 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- taro vue3 第 9 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- taro vue3 第 10 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- taro vue3 第 11 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- taro vue3 第 12 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- taro vue3 第 13 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- taro vue3 第 14 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- taro vue3 第 15 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- taro vue3 第 16 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- taro vue3 第 17 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- taro vue3 第 18 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- taro vue3 第 19 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- taro vue3 第 20 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- @vue-mini/core 第 1 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- @vue-mini/core 第 2 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- @vue-mini/core 第 3 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- @vue-mini/core 第 4 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- @vue-mini/core 第 5 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- @vue-mini/core 第 6 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- @vue-mini/core 第 7 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- @vue-mini/core 第 8 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- @vue-mini/core 第 9 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- @vue-mini/core 第 10 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- @vue-mini/core 第 11 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- @vue-mini/core 第 12 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- @vue-mini/core 第 13 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- @vue-mini/core 第 14 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- @vue-mini/core 第 15 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- @vue-mini/core 第 16 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- @vue-mini/core 第 17 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- @vue-mini/core 第 18 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- @vue-mini/core 第 19 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
+- @vue-mini/core 第 20 轮：preflight；desktop-locked: macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
 
-## 场景含义
+## 运行环境诊断
 
-| 场景           | 对比重点                                                       |
-| -------------- | -------------------------------------------------------------- |
-| 初始渲染       | 连续 3 次重建并渲染 480 条列表，放大首屏列表创建成本           |
-| 追加批次       | 连续 4 次追加 120 条数据，放大增量插入和列表扩容成本           |
-| 批量更新       | 连续 6 次批量更新不同步长的列表项，放大局部批量变更成本        |
-| 全量排序       | 连续 5 次排序并正反切换，放大全量顺序变化成本                  |
-| 过滤高分活跃项 | 连续 6 次在过滤结果和完整列表间切换，放大列表缩减和恢复成本    |
-| 分组聚合渲染   | 连续 6 次按 group 聚合并渲染统计行，放大派生数据和结构切换成本 |
-| 窗口切片       | 连续 10 次切换 140 条窗口数据，放大虚拟窗口类场景成本          |
-| 整表替换       | 连续 3 次用 640 条新数据整表替换，放大大批量替换成本           |
-
-## 项目场景均值
-
-| 项目                          | 总耗时 | 初始渲染 | 追加批次 | 批量更新 | 全量排序 | 过滤高分活跃项 | 分组聚合渲染 | 窗口切片 | 整表替换 |
-| ----------------------------- | -----: | -------: | -------: | -------: | -------: | -------------: | -----------: | -------: | -------: |
-| weapp-vite + wevu performance |  173ms |      7ms |     17ms |     41ms |     29ms |           20ms |         18ms |     30ms |     11ms |
-| weapp-vite + wevu             |  211ms |     11ms |     22ms |     52ms |     36ms |           24ms |         27ms |     25ms |     14ms |
-| uni-app x                     |  222ms |     14ms |     14ms |     32ms |     75ms |           26ms |         22ms |     18ms |     21ms |
-| uni-app vite vue3             |  244ms |     15ms |     14ms |     37ms |     81ms |           29ms |         25ms |     20ms |     23ms |
-| @vue-mini/core                |  400ms |     30ms |     62ms |    118ms |     63ms |           48ms |         16ms |     24ms |     39ms |
-| taro vue3                     | 1666ms |     69ms |     80ms |    198ms |    701ms |          366ms |         21ms |     98ms |    133ms |
-| mpx                           | 2701ms |    259ms |    140ms |    145ms |    572ms |          682ms |         77ms |    255ms |    571ms |
-| weapp-vite 原生               | 2732ms |    192ms |    151ms |    142ms |    534ms |          709ms |        131ms |    275ms |    598ms |
+- 检查时间：2026-09-30T23:03:41.614Z；状态：desktop-locked
+- 官方来源：https://devtools.wxqcloud.qq.com.cn/WechatWebDev/nightly/versions/config.json
+- 稳定版：2.02.2608080；所选安装版本：2.02.2608080
+- 所选 CLI：/Users/icebreaker/.codex/worktrees/issue-1015-css-hmr/weapp-vite/.tmp/wechat-stable-expanded/Payload/Applications/wechatwebdevtools.app/Contents/MacOS/cli；服务端口：未确认
+- 原因：macOS desktop is locked; unlock manually before real IDE screenshot/readiness verification
 
 ## 原始明细
 
-| 项目                          | 轮次 | 通过 | 来源       | 初始渲染 | 追加批次 | 批量更新 | 全量排序 | 过滤高分活跃项 | 分组聚合渲染 | 窗口切片 | 整表替换 |
-| ----------------------------- | ---: | ---- | ---------- | -------: | -------: | -------: | -------: | -------------: | -----------: | -------: | -------: |
-| weapp-vite + wevu             |    1 | 是   | 控制台日志 |       11 |       22 |       48 |       32 |             24 |           29 |       25 |       15 |
-| weapp-vite + wevu             |    2 | 是   | 控制台日志 |       10 |       20 |       47 |       31 |             24 |           26 |       23 |       13 |
-| weapp-vite + wevu             |    3 | 是   | 控制台日志 |       10 |       20 |       52 |       33 |             25 |           30 |       24 |       13 |
-| weapp-vite + wevu             |    4 | 是   | 控制台日志 |       11 |       22 |       52 |       36 |             24 |           27 |       24 |       14 |
-| weapp-vite + wevu             |    5 | 是   | 控制台日志 |       11 |       23 |       53 |       61 |             30 |           27 |       25 |       16 |
-| weapp-vite + wevu             |    6 | 是   | 控制台日志 |       10 |       23 |       69 |       47 |             25 |           27 |       36 |       13 |
-| weapp-vite + wevu             |    7 | 是   | 控制台日志 |       10 |       23 |       48 |       33 |             22 |           27 |       24 |       15 |
-| weapp-vite + wevu             |    8 | 是   | 控制台日志 |       11 |       21 |       49 |       33 |             24 |           27 |       24 |       14 |
-| weapp-vite + wevu             |    9 | 是   | 控制台日志 |       14 |       24 |       68 |       33 |             22 |           29 |       31 |       15 |
-| weapp-vite + wevu             |   10 | 是   | 控制台日志 |       10 |       22 |       47 |       32 |             23 |           28 |       24 |       14 |
-| weapp-vite + wevu             |   11 | 是   | 控制台日志 |       10 |       22 |       48 |       33 |             23 |           27 |       24 |       13 |
-| weapp-vite + wevu             |   12 | 是   | 控制台日志 |       11 |       23 |       49 |       32 |             24 |           25 |       24 |       14 |
-| weapp-vite + wevu             |   13 | 是   | 控制台日志 |       10 |       21 |       55 |       36 |             25 |           25 |       23 |       14 |
-| weapp-vite + wevu             |   14 | 是   | 控制台日志 |       12 |       22 |       53 |       33 |             24 |           27 |       25 |       13 |
-| weapp-vite + wevu             |   15 | 是   | 控制台日志 |       10 |       23 |       45 |       33 |             23 |           26 |       23 |       15 |
-| weapp-vite + wevu             |   16 | 是   | 控制台日志 |       14 |       25 |       55 |       39 |             28 |           30 |       28 |       15 |
-| weapp-vite + wevu             |   17 | 是   | 控制台日志 |       10 |       23 |       47 |       43 |             22 |           27 |       24 |       12 |
-| weapp-vite + wevu             |   18 | 是   | 控制台日志 |       10 |       22 |       47 |       32 |             24 |           26 |       22 |       15 |
-| weapp-vite + wevu             |   19 | 是   | 控制台日志 |       10 |       21 |       50 |       32 |             23 |           29 |       26 |       14 |
-| weapp-vite + wevu             |   20 | 是   | 控制台日志 |       10 |       22 |       48 |       35 |             23 |           25 |       24 |       14 |
-| weapp-vite + wevu performance |    1 | 是   | 控制台日志 |        8 |       26 |       40 |       29 |             19 |           17 |       29 |       11 |
-| weapp-vite + wevu performance |    2 | 是   | 控制台日志 |        7 |       18 |       40 |       29 |             21 |           17 |       31 |       11 |
-| weapp-vite + wevu performance |    3 | 是   | 控制台日志 |        7 |       16 |       41 |       28 |             20 |           19 |       30 |       11 |
-| weapp-vite + wevu performance |    4 | 是   | 控制台日志 |        7 |       16 |       44 |       29 |             19 |           17 |       30 |       11 |
-| weapp-vite + wevu performance |    5 | 是   | 控制台日志 |        7 |       16 |       41 |       30 |             20 |           18 |       30 |       12 |
-| weapp-vite + wevu performance |    6 | 是   | 控制台日志 |        7 |       16 |       37 |       29 |             21 |           17 |       28 |       11 |
-| weapp-vite + wevu performance |    7 | 是   | 控制台日志 |        7 |       17 |       39 |       28 |             19 |           18 |       31 |       10 |
-| weapp-vite + wevu performance |    8 | 是   | 控制台日志 |        7 |       16 |       42 |       29 |             20 |           17 |       29 |       12 |
-| weapp-vite + wevu performance |    9 | 是   | 控制台日志 |        7 |       17 |       37 |       29 |             20 |           18 |       34 |       11 |
-| weapp-vite + wevu performance |   10 | 是   | 控制台日志 |        8 |       17 |       40 |       28 |             19 |           17 |       29 |       12 |
-| weapp-vite + wevu performance |   11 | 是   | 控制台日志 |        7 |       16 |       45 |       31 |             20 |           16 |       28 |       10 |
-| weapp-vite + wevu performance |   12 | 是   | 控制台日志 |        7 |       16 |       39 |       34 |             21 |           17 |       29 |       11 |
-| weapp-vite + wevu performance |   13 | 是   | 控制台日志 |        7 |       16 |       41 |       28 |             19 |           18 |       29 |       10 |
-| weapp-vite + wevu performance |   14 | 是   | 控制台日志 |        7 |       15 |       41 |       29 |             21 |           16 |       28 |       11 |
-| weapp-vite + wevu performance |   15 | 是   | 控制台日志 |        7 |       15 |       40 |       27 |             19 |           18 |       30 |       11 |
-| weapp-vite + wevu performance |   16 | 是   | 控制台日志 |        7 |       17 |       38 |       28 |             19 |           19 |       30 |       11 |
-| weapp-vite + wevu performance |   17 | 是   | 控制台日志 |        7 |       17 |       41 |       29 |             22 |           17 |       30 |       12 |
-| weapp-vite + wevu performance |   18 | 是   | 控制台日志 |        8 |       16 |       39 |       30 |             20 |           19 |       31 |       11 |
-| weapp-vite + wevu performance |   19 | 是   | 控制台日志 |        7 |       15 |       54 |       31 |             21 |           20 |       32 |       10 |
-| weapp-vite + wevu performance |   20 | 是   | 控制台日志 |        7 |       17 |       39 |       28 |             19 |           18 |       28 |       11 |
-| weapp-vite 原生               |    1 | 是   | 控制台日志 |      608 |      392 |      278 |     2165 |           1876 |          218 |      446 |      893 |
-| weapp-vite 原生               |    2 | 是   | 控制台日志 |      141 |      123 |      115 |      286 |           1086 |          153 |      492 |     1076 |
-| weapp-vite 原生               |    3 | 是   | 控制台日志 |      154 |      114 |      125 |      299 |            349 |          118 |      117 |      264 |
-| weapp-vite 原生               |    4 | 是   | 控制台日志 |      140 |      115 |      139 |      273 |            333 |          111 |      116 |      251 |
-| weapp-vite 原生               |    5 | 是   | 控制台日志 |      137 |      112 |      112 |      284 |            867 |          116 |      594 |     1143 |
-| weapp-vite 原生               |    6 | 是   | 控制台日志 |      139 |      118 |      139 |      301 |            355 |          109 |      115 |      242 |
-| weapp-vite 原生               |    7 | 是   | 控制台日志 |      139 |      120 |      119 |      296 |            383 |          132 |      124 |      245 |
-| weapp-vite 原生               |    8 | 是   | 控制台日志 |      137 |      114 |      135 |      290 |           1062 |          226 |      437 |     1110 |
-| weapp-vite 原生               |    9 | 是   | 控制台日志 |      140 |      128 |      158 |      284 |            363 |          111 |      120 |      269 |
-| weapp-vite 原生               |   10 | 是   | 控制台日志 |      138 |      113 |      118 |      296 |            367 |          120 |      115 |      211 |
-| weapp-vite 原生               |   11 | 是   | 控制台日志 |      136 |      111 |      113 |      279 |            877 |          104 |      528 |     1183 |
-| weapp-vite 原生               |   12 | 是   | 控制台日志 |      142 |      115 |      115 |      295 |            361 |          107 |      120 |      249 |
-| weapp-vite 原生               |   13 | 是   | 控制台日志 |      144 |      113 |      136 |      292 |            381 |          120 |      118 |      240 |
-| weapp-vite 原生               |   14 | 是   | 控制台日志 |      654 |      497 |      240 |     3231 |           1846 |          108 |      439 |     1139 |
-| weapp-vite 原生               |   15 | 是   | 控制台日志 |      144 |      123 |      132 |      315 |           1091 |          149 |      543 |     1224 |
-| weapp-vite 原生               |   16 | 是   | 控制台日志 |      148 |      120 |      125 |      296 |            365 |          125 |      130 |      270 |
-| weapp-vite 原生               |   17 | 是   | 控制台日志 |      166 |      137 |      135 |      303 |            377 |          115 |      126 |      277 |
-| weapp-vite 原生               |   18 | 是   | 控制台日志 |      151 |      111 |      135 |      279 |           1097 |          135 |      565 |     1166 |
-| weapp-vite 原生               |   19 | 是   | 控制台日志 |      146 |      134 |      142 |      295 |            371 |          122 |      125 |      261 |
-| weapp-vite 原生               |   20 | 是   | 控制台日志 |      143 |      116 |      136 |      322 |            372 |          116 |      122 |      246 |
-| uni-app vite vue3             |    1 | 是   | 控制台日志 |       21 |       17 |       42 |      122 |             32 |           25 |       20 |       23 |
-| uni-app vite vue3             |    2 | 是   | 控制台日志 |       14 |       14 |       35 |       74 |             25 |           23 |       17 |       21 |
-| uni-app vite vue3             |    3 | 是   | 控制台日志 |       15 |       14 |       33 |       71 |             25 |           21 |       17 |       20 |
-| uni-app vite vue3             |    4 | 是   | 控制台日志 |       14 |       14 |       34 |       75 |             40 |           26 |       22 |       22 |
-| uni-app vite vue3             |    5 | 是   | 控制台日志 |       14 |       14 |       36 |       75 |             28 |           24 |       18 |       21 |
-| uni-app vite vue3             |    6 | 是   | 控制台日志 |       14 |       15 |       37 |       73 |             29 |           27 |       21 |       26 |
-| uni-app vite vue3             |    7 | 是   | 控制台日志 |       14 |       14 |       39 |       77 |             28 |           23 |       19 |       23 |
-| uni-app vite vue3             |    8 | 是   | 控制台日志 |       15 |       16 |       36 |       76 |             26 |           23 |       17 |       22 |
-| uni-app vite vue3             |    9 | 是   | 控制台日志 |       13 |       13 |       32 |       77 |             25 |           22 |       17 |       21 |
-| uni-app vite vue3             |   10 | 是   | 控制台日志 |       15 |       13 |       34 |       73 |             26 |           22 |       17 |       21 |
-| uni-app vite vue3             |   11 | 是   | 控制台日志 |       18 |       16 |       39 |       83 |             30 |           25 |       20 |       24 |
-| uni-app vite vue3             |   12 | 是   | 控制台日志 |       14 |       13 |       37 |       76 |             26 |           24 |       19 |       22 |
-| uni-app vite vue3             |   13 | 是   | 控制台日志 |       15 |       13 |       36 |       81 |             29 |           23 |       19 |       35 |
-| uni-app vite vue3             |   14 | 是   | 控制台日志 |       17 |       15 |       38 |       80 |             28 |           26 |       19 |       23 |
-| uni-app vite vue3             |   15 | 是   | 控制台日志 |       13 |       13 |       34 |       72 |             25 |           23 |       18 |       20 |
-| uni-app vite vue3             |   16 | 是   | 控制台日志 |       15 |       15 |       33 |       80 |             31 |           24 |       18 |       22 |
-| uni-app vite vue3             |   17 | 是   | 控制台日志 |       17 |       15 |       37 |       77 |             28 |           24 |       19 |       21 |
-| uni-app vite vue3             |   18 | 是   | 控制台日志 |       17 |       16 |       42 |       87 |             34 |           36 |       32 |       24 |
-| uni-app vite vue3             |   19 | 是   | 控制台日志 |       17 |       15 |       42 |      121 |             41 |           35 |       26 |       27 |
-| uni-app vite vue3             |   20 | 是   | 控制台日志 |       16 |       14 |       37 |       77 |             27 |           25 |       20 |       22 |
-| uni-app x                     |    1 | 是   | 控制台日志 |       20 |       14 |       30 |       82 |             25 |           21 |       18 |       22 |
-| uni-app x                     |    2 | 是   | 控制台日志 |       15 |       13 |       34 |       78 |             25 |           21 |       18 |       21 |
-| uni-app x                     |    3 | 是   | 控制台日志 |       14 |       14 |       31 |       73 |             27 |           24 |       19 |       21 |
-| uni-app x                     |    4 | 是   | 控制台日志 |       13 |       13 |       31 |       85 |             27 |           21 |       18 |       22 |
-| uni-app x                     |    5 | 是   | 控制台日志 |       13 |       12 |       32 |       75 |             27 |           33 |       16 |       21 |
-| uni-app x                     |    6 | 是   | 控制台日志 |       13 |       13 |       30 |       72 |             26 |           21 |       17 |       21 |
-| uni-app x                     |    7 | 是   | 控制台日志 |       15 |       12 |       32 |       86 |             28 |           21 |       17 |       21 |
-| uni-app x                     |    8 | 是   | 控制台日志 |       14 |       13 |       31 |       71 |             24 |           20 |       17 |       22 |
-| uni-app x                     |    9 | 是   | 控制台日志 |       13 |       14 |       30 |       72 |             25 |           32 |       19 |       21 |
-| uni-app x                     |   10 | 是   | 控制台日志 |       13 |       13 |       29 |       73 |             27 |           21 |       17 |       21 |
-| uni-app x                     |   11 | 是   | 控制台日志 |       13 |       14 |       32 |       72 |             25 |           21 |       17 |       21 |
-| uni-app x                     |   12 | 是   | 控制台日志 |       15 |       15 |       35 |       72 |             25 |           20 |       17 |       21 |
-| uni-app x                     |   13 | 是   | 控制台日志 |       13 |       13 |       32 |       71 |             25 |           21 |       17 |       20 |
-| uni-app x                     |   14 | 是   | 控制台日志 |       14 |       13 |       33 |       83 |             31 |           20 |       18 |       21 |
-| uni-app x                     |   15 | 是   | 控制台日志 |       14 |       13 |       30 |       72 |             25 |           21 |       18 |       20 |
-| uni-app x                     |   16 | 是   | 控制台日志 |       13 |       13 |       38 |       72 |             25 |           22 |       18 |       20 |
-| uni-app x                     |   17 | 是   | 控制台日志 |       16 |       16 |       32 |       72 |             25 |           19 |       17 |       20 |
-| uni-app x                     |   18 | 是   | 控制台日志 |       14 |       14 |       32 |       73 |             26 |           20 |       19 |       21 |
-| uni-app x                     |   19 | 是   | 控制台日志 |       13 |       14 |       30 |       82 |             25 |           21 |       17 |       23 |
-| uni-app x                     |   20 | 是   | 控制台日志 |       19 |       14 |       30 |       71 |             25 |           21 |       18 |       20 |
-| mpx                           |    1 | 是   | 控制台日志 |      263 |      124 |      128 |      268 |            332 |           70 |      107 |      220 |
-| mpx                           |    2 | 是   | 控制台日志 |      244 |      114 |      132 |      280 |            852 |           71 |      471 |     1136 |
-| mpx                           |    3 | 是   | 控制台日志 |      274 |      117 |      124 |      291 |            340 |           90 |      115 |      214 |
-| mpx                           |    4 | 是   | 控制台日志 |      254 |      118 |      136 |      306 |            346 |           82 |      112 |      244 |
-| mpx                           |    5 | 是   | 控制台日志 |      251 |      112 |      137 |      276 |            845 |           64 |      460 |     1080 |
-| mpx                           |    6 | 是   | 控制台日志 |      254 |      130 |      132 |      270 |            345 |           77 |      109 |      229 |
-| mpx                           |    7 | 是   | 控制台日志 |      250 |      112 |      147 |      277 |            319 |           71 |      110 |      247 |
-| mpx                           |    8 | 是   | 控制台日志 |      262 |      514 |      158 |     3081 |           1864 |           63 |      575 |      899 |
-| mpx                           |    9 | 是   | 控制台日志 |      260 |      121 |      279 |     3224 |           1910 |           68 |      422 |     1084 |
-| mpx                           |   10 | 是   | 控制台日志 |      243 |      112 |      146 |      298 |            910 |          123 |      464 |     1137 |
-| mpx                           |   11 | 是   | 控制台日志 |      259 |      123 |      122 |      273 |            349 |           73 |      105 |      232 |
-| mpx                           |   12 | 是   | 控制台日志 |      264 |      123 |      127 |      283 |            335 |           76 |      107 |      222 |
-| mpx                           |   13 | 是   | 控制台日志 |      244 |      120 |      123 |      279 |            837 |           63 |      444 |     1062 |
-| mpx                           |   14 | 是   | 控制台日志 |      265 |      113 |      135 |      277 |            334 |           83 |      106 |      226 |
-| mpx                           |   15 | 是   | 控制台日志 |      293 |      117 |      128 |      284 |            331 |           73 |      109 |      236 |
-| mpx                           |   16 | 是   | 控制台日志 |      254 |      120 |      140 |      288 |            834 |           71 |      479 |     1131 |
-| mpx                           |   17 | 是   | 控制台日志 |      270 |      133 |      137 |      299 |            344 |           71 |      110 |      242 |
-| mpx                           |   18 | 是   | 控制台日志 |      254 |      115 |      171 |      293 |            353 |           83 |      117 |      256 |
-| mpx                           |   19 | 是   | 控制台日志 |      260 |      121 |      172 |      287 |           1482 |           87 |      460 |     1082 |
-| mpx                           |   20 | 是   | 控制台日志 |      265 |      141 |      133 |      304 |            370 |           84 |      111 |      238 |
-| taro vue3                     |    1 | 是   | 控制台日志 |       77 |       91 |      188 |      678 |            357 |           20 |      114 |      135 |
-| taro vue3                     |    2 | 是   | 控制台日志 |       77 |       86 |      215 |      716 |            375 |           20 |       94 |      140 |
-| taro vue3                     |    3 | 是   | 控制台日志 |       70 |       81 |      198 |      696 |            358 |           20 |       96 |      132 |
-| taro vue3                     |    4 | 是   | 控制台日志 |       71 |       76 |      192 |      695 |            390 |           26 |       98 |      133 |
-| taro vue3                     |    5 | 是   | 控制台日志 |       68 |       79 |      196 |      708 |            359 |           21 |      103 |      129 |
-| taro vue3                     |    6 | 是   | 控制台日志 |       70 |       75 |      191 |      694 |            355 |           20 |       94 |      129 |
-| taro vue3                     |    7 | 是   | 控制台日志 |       71 |       75 |      180 |      637 |            384 |           21 |      100 |      141 |
-| taro vue3                     |    8 | 是   | 控制台日志 |       66 |       77 |      205 |      740 |            374 |           24 |       96 |      134 |
-| taro vue3                     |    9 | 是   | 控制台日志 |       69 |       90 |      239 |      811 |            371 |           21 |      114 |      142 |
-| taro vue3                     |   10 | 是   | 控制台日志 |       66 |       87 |      197 |      705 |            379 |           22 |       95 |      130 |
-| taro vue3                     |   11 | 是   | 控制台日志 |       67 |       76 |      204 |      694 |            364 |           22 |       95 |      129 |
-| taro vue3                     |   12 | 是   | 控制台日志 |       66 |       74 |      188 |      676 |            361 |           18 |       92 |      131 |
-| taro vue3                     |   13 | 是   | 控制台日志 |       70 |       78 |      203 |      725 |            357 |           21 |       92 |      130 |
-| taro vue3                     |   14 | 是   | 控制台日志 |       68 |       75 |      192 |      702 |            364 |           20 |       91 |      130 |
-| taro vue3                     |   15 | 是   | 控制台日志 |       69 |       87 |      180 |      662 |            357 |           21 |       93 |      129 |
-| taro vue3                     |   16 | 是   | 控制台日志 |       70 |       80 |      197 |      690 |            364 |           22 |      103 |      133 |
-| taro vue3                     |   17 | 是   | 控制台日志 |       67 |       76 |      194 |      681 |            370 |           21 |       92 |      130 |
-| taro vue3                     |   18 | 是   | 控制台日志 |       65 |       76 |      205 |      714 |            356 |           19 |      104 |      130 |
-| taro vue3                     |   19 | 是   | 控制台日志 |       66 |       72 |      183 |      654 |            360 |           21 |       92 |      135 |
-| taro vue3                     |   20 | 是   | 控制台日志 |       75 |       94 |      206 |      735 |            363 |           22 |       98 |      135 |
-| @vue-mini/core                |    1 | 是   | 控制台日志 |       33 |       59 |      122 |       61 |             47 |           15 |       25 |       38 |
-| @vue-mini/core                |    2 | 是   | 控制台日志 |       27 |       59 |      112 |       60 |             43 |           15 |       23 |       35 |
-| @vue-mini/core                |    3 | 是   | 控制台日志 |       29 |       64 |      116 |       64 |             48 |           17 |       24 |       37 |
-| @vue-mini/core                |    4 | 是   | 控制台日志 |       29 |       59 |      112 |       61 |             45 |           15 |       23 |       37 |
-| @vue-mini/core                |    5 | 是   | 控制台日志 |       30 |       63 |      120 |       63 |             47 |           16 |       23 |       36 |
-| @vue-mini/core                |    6 | 是   | 控制台日志 |       30 |       61 |      123 |       65 |             46 |           26 |       26 |       54 |
-| @vue-mini/core                |    7 | 是   | 控制台日志 |       29 |       60 |      115 |       67 |             47 |           16 |       25 |       40 |
-| @vue-mini/core                |    8 | 是   | 控制台日志 |       30 |       58 |      114 |       60 |             44 |           15 |       22 |       37 |
-| @vue-mini/core                |    9 | 是   | 控制台日志 |       29 |       59 |      113 |       60 |             46 |           16 |       24 |       39 |
-| @vue-mini/core                |   10 | 是   | 控制台日志 |       28 |       62 |      113 |       62 |             56 |           16 |       24 |       38 |
-| @vue-mini/core                |   11 | 是   | 控制台日志 |       32 |       63 |      136 |       67 |             46 |           16 |       25 |       40 |
-| @vue-mini/core                |   12 | 是   | 控制台日志 |       33 |       64 |      124 |       63 |             48 |           17 |       25 |       40 |
-| @vue-mini/core                |   13 | 是   | 控制台日志 |       28 |       61 |      115 |       63 |             45 |           15 |       24 |       37 |
-| @vue-mini/core                |   14 | 是   | 控制台日志 |       28 |       62 |      111 |       60 |             46 |           16 |       23 |       48 |
-| @vue-mini/core                |   15 | 是   | 控制台日志 |       32 |       66 |      123 |       67 |             50 |           16 |       25 |       39 |
-| @vue-mini/core                |   16 | 是   | 控制台日志 |       30 |       69 |      117 |       64 |             49 |           17 |       25 |       40 |
-| @vue-mini/core                |   17 | 是   | 控制台日志 |       29 |       59 |      125 |       72 |             47 |           16 |       24 |       39 |
-| @vue-mini/core                |   18 | 是   | 控制台日志 |       32 |       68 |      127 |       71 |             58 |           17 |       26 |       40 |
-| @vue-mini/core                |   19 | 是   | 控制台日志 |       26 |       58 |      109 |       57 |             53 |           15 |       23 |       36 |
-| @vue-mini/core                |   20 | 是   | 控制台日志 |       27 |       57 |      108 |       60 |             44 |           16 |       23 |       39 |
+| 项目                          | 轮次 | 通过 | 内部计时边界 | 指标观察 | 视图观察 | 实际宿主信息 |
+| ----------------------------- | ---: | ---- | ------------ | -------: | -------: | ------------ |
+| weapp-vite + wevu             |    1 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite + wevu             |    2 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite + wevu             |    3 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite + wevu             |    4 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite + wevu             |    5 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite + wevu             |    6 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite + wevu             |    7 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite + wevu             |    8 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite + wevu             |    9 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite + wevu             |   10 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite + wevu             |   11 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite + wevu             |   12 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite + wevu             |   13 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite + wevu             |   14 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite + wevu             |   15 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite + wevu             |   16 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite + wevu             |   17 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite + wevu             |   18 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite + wevu             |   19 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite + wevu             |   20 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite + wevu performance |    1 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite + wevu performance |    2 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite + wevu performance |    3 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite + wevu performance |    4 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite + wevu performance |    5 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite + wevu performance |    6 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite + wevu performance |    7 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite + wevu performance |    8 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite + wevu performance |    9 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite + wevu performance |   10 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite + wevu performance |   11 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite + wevu performance |   12 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite + wevu performance |   13 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite + wevu performance |   14 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite + wevu performance |   15 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite + wevu performance |   16 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite + wevu performance |   17 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite + wevu performance |   18 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite + wevu performance |   19 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite + wevu performance |   20 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite 原生               |    1 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite 原生               |    2 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite 原生               |    3 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite 原生               |    4 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite 原生               |    5 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite 原生               |    6 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite 原生               |    7 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite 原生               |    8 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite 原生               |    9 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite 原生               |   10 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite 原生               |   11 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite 原生               |   12 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite 原生               |   13 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite 原生               |   14 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite 原生               |   15 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite 原生               |   16 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite 原生               |   17 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite 原生               |   18 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite 原生               |   19 | 否   | 历史未标注   |        - |        - | {}           |
+| weapp-vite 原生               |   20 | 否   | 历史未标注   |        - |        - | {}           |
+| uni-app vite vue3             |    1 | 否   | 历史未标注   |        - |        - | {}           |
+| uni-app vite vue3             |    2 | 否   | 历史未标注   |        - |        - | {}           |
+| uni-app vite vue3             |    3 | 否   | 历史未标注   |        - |        - | {}           |
+| uni-app vite vue3             |    4 | 否   | 历史未标注   |        - |        - | {}           |
+| uni-app vite vue3             |    5 | 否   | 历史未标注   |        - |        - | {}           |
+| uni-app vite vue3             |    6 | 否   | 历史未标注   |        - |        - | {}           |
+| uni-app vite vue3             |    7 | 否   | 历史未标注   |        - |        - | {}           |
+| uni-app vite vue3             |    8 | 否   | 历史未标注   |        - |        - | {}           |
+| uni-app vite vue3             |    9 | 否   | 历史未标注   |        - |        - | {}           |
+| uni-app vite vue3             |   10 | 否   | 历史未标注   |        - |        - | {}           |
+| uni-app vite vue3             |   11 | 否   | 历史未标注   |        - |        - | {}           |
+| uni-app vite vue3             |   12 | 否   | 历史未标注   |        - |        - | {}           |
+| uni-app vite vue3             |   13 | 否   | 历史未标注   |        - |        - | {}           |
+| uni-app vite vue3             |   14 | 否   | 历史未标注   |        - |        - | {}           |
+| uni-app vite vue3             |   15 | 否   | 历史未标注   |        - |        - | {}           |
+| uni-app vite vue3             |   16 | 否   | 历史未标注   |        - |        - | {}           |
+| uni-app vite vue3             |   17 | 否   | 历史未标注   |        - |        - | {}           |
+| uni-app vite vue3             |   18 | 否   | 历史未标注   |        - |        - | {}           |
+| uni-app vite vue3             |   19 | 否   | 历史未标注   |        - |        - | {}           |
+| uni-app vite vue3             |   20 | 否   | 历史未标注   |        - |        - | {}           |
+| uni-app x                     |    1 | 否   | 历史未标注   |        - |        - | {}           |
+| uni-app x                     |    2 | 否   | 历史未标注   |        - |        - | {}           |
+| uni-app x                     |    3 | 否   | 历史未标注   |        - |        - | {}           |
+| uni-app x                     |    4 | 否   | 历史未标注   |        - |        - | {}           |
+| uni-app x                     |    5 | 否   | 历史未标注   |        - |        - | {}           |
+| uni-app x                     |    6 | 否   | 历史未标注   |        - |        - | {}           |
+| uni-app x                     |    7 | 否   | 历史未标注   |        - |        - | {}           |
+| uni-app x                     |    8 | 否   | 历史未标注   |        - |        - | {}           |
+| uni-app x                     |    9 | 否   | 历史未标注   |        - |        - | {}           |
+| uni-app x                     |   10 | 否   | 历史未标注   |        - |        - | {}           |
+| uni-app x                     |   11 | 否   | 历史未标注   |        - |        - | {}           |
+| uni-app x                     |   12 | 否   | 历史未标注   |        - |        - | {}           |
+| uni-app x                     |   13 | 否   | 历史未标注   |        - |        - | {}           |
+| uni-app x                     |   14 | 否   | 历史未标注   |        - |        - | {}           |
+| uni-app x                     |   15 | 否   | 历史未标注   |        - |        - | {}           |
+| uni-app x                     |   16 | 否   | 历史未标注   |        - |        - | {}           |
+| uni-app x                     |   17 | 否   | 历史未标注   |        - |        - | {}           |
+| uni-app x                     |   18 | 否   | 历史未标注   |        - |        - | {}           |
+| uni-app x                     |   19 | 否   | 历史未标注   |        - |        - | {}           |
+| uni-app x                     |   20 | 否   | 历史未标注   |        - |        - | {}           |
+| mpx                           |    1 | 否   | 历史未标注   |        - |        - | {}           |
+| mpx                           |    2 | 否   | 历史未标注   |        - |        - | {}           |
+| mpx                           |    3 | 否   | 历史未标注   |        - |        - | {}           |
+| mpx                           |    4 | 否   | 历史未标注   |        - |        - | {}           |
+| mpx                           |    5 | 否   | 历史未标注   |        - |        - | {}           |
+| mpx                           |    6 | 否   | 历史未标注   |        - |        - | {}           |
+| mpx                           |    7 | 否   | 历史未标注   |        - |        - | {}           |
+| mpx                           |    8 | 否   | 历史未标注   |        - |        - | {}           |
+| mpx                           |    9 | 否   | 历史未标注   |        - |        - | {}           |
+| mpx                           |   10 | 否   | 历史未标注   |        - |        - | {}           |
+| mpx                           |   11 | 否   | 历史未标注   |        - |        - | {}           |
+| mpx                           |   12 | 否   | 历史未标注   |        - |        - | {}           |
+| mpx                           |   13 | 否   | 历史未标注   |        - |        - | {}           |
+| mpx                           |   14 | 否   | 历史未标注   |        - |        - | {}           |
+| mpx                           |   15 | 否   | 历史未标注   |        - |        - | {}           |
+| mpx                           |   16 | 否   | 历史未标注   |        - |        - | {}           |
+| mpx                           |   17 | 否   | 历史未标注   |        - |        - | {}           |
+| mpx                           |   18 | 否   | 历史未标注   |        - |        - | {}           |
+| mpx                           |   19 | 否   | 历史未标注   |        - |        - | {}           |
+| mpx                           |   20 | 否   | 历史未标注   |        - |        - | {}           |
+| taro vue3                     |    1 | 否   | 历史未标注   |        - |        - | {}           |
+| taro vue3                     |    2 | 否   | 历史未标注   |        - |        - | {}           |
+| taro vue3                     |    3 | 否   | 历史未标注   |        - |        - | {}           |
+| taro vue3                     |    4 | 否   | 历史未标注   |        - |        - | {}           |
+| taro vue3                     |    5 | 否   | 历史未标注   |        - |        - | {}           |
+| taro vue3                     |    6 | 否   | 历史未标注   |        - |        - | {}           |
+| taro vue3                     |    7 | 否   | 历史未标注   |        - |        - | {}           |
+| taro vue3                     |    8 | 否   | 历史未标注   |        - |        - | {}           |
+| taro vue3                     |    9 | 否   | 历史未标注   |        - |        - | {}           |
+| taro vue3                     |   10 | 否   | 历史未标注   |        - |        - | {}           |
+| taro vue3                     |   11 | 否   | 历史未标注   |        - |        - | {}           |
+| taro vue3                     |   12 | 否   | 历史未标注   |        - |        - | {}           |
+| taro vue3                     |   13 | 否   | 历史未标注   |        - |        - | {}           |
+| taro vue3                     |   14 | 否   | 历史未标注   |        - |        - | {}           |
+| taro vue3                     |   15 | 否   | 历史未标注   |        - |        - | {}           |
+| taro vue3                     |   16 | 否   | 历史未标注   |        - |        - | {}           |
+| taro vue3                     |   17 | 否   | 历史未标注   |        - |        - | {}           |
+| taro vue3                     |   18 | 否   | 历史未标注   |        - |        - | {}           |
+| taro vue3                     |   19 | 否   | 历史未标注   |        - |        - | {}           |
+| taro vue3                     |   20 | 否   | 历史未标注   |        - |        - | {}           |
+| @vue-mini/core                |    1 | 否   | 历史未标注   |        - |        - | {}           |
+| @vue-mini/core                |    2 | 否   | 历史未标注   |        - |        - | {}           |
+| @vue-mini/core                |    3 | 否   | 历史未标注   |        - |        - | {}           |
+| @vue-mini/core                |    4 | 否   | 历史未标注   |        - |        - | {}           |
+| @vue-mini/core                |    5 | 否   | 历史未标注   |        - |        - | {}           |
+| @vue-mini/core                |    6 | 否   | 历史未标注   |        - |        - | {}           |
+| @vue-mini/core                |    7 | 否   | 历史未标注   |        - |        - | {}           |
+| @vue-mini/core                |    8 | 否   | 历史未标注   |        - |        - | {}           |
+| @vue-mini/core                |    9 | 否   | 历史未标注   |        - |        - | {}           |
+| @vue-mini/core                |   10 | 否   | 历史未标注   |        - |        - | {}           |
+| @vue-mini/core                |   11 | 否   | 历史未标注   |        - |        - | {}           |
+| @vue-mini/core                |   12 | 否   | 历史未标注   |        - |        - | {}           |
+| @vue-mini/core                |   13 | 否   | 历史未标注   |        - |        - | {}           |
+| @vue-mini/core                |   14 | 否   | 历史未标注   |        - |        - | {}           |
+| @vue-mini/core                |   15 | 否   | 历史未标注   |        - |        - | {}           |
+| @vue-mini/core                |   16 | 否   | 历史未标注   |        - |        - | {}           |
+| @vue-mini/core                |   17 | 否   | 历史未标注   |        - |        - | {}           |
+| @vue-mini/core                |   18 | 否   | 历史未标注   |        - |        - | {}           |
+| @vue-mini/core                |   19 | 否   | 历史未标注   |        - |        - | {}           |
+| @vue-mini/core                |   20 | 否   | 历史未标注   |        - |        - | {}           |
 
-说明：
+### 内部场景计时（仅作各自边界诊断）
 
-- 运行时数据由 e2e/ide/runtime-benchmark.ts 通过微信开发者工具真实 IDE 自动化采集。
-- 运行时耗时在各框架页面内部统计，覆盖状态变更和下一次渲染 tick。
-- 每轮都会重新打开 benchmark 页面，确保各框架从同一组确定性数据开始。
-- weapp-vite + wevu performance 本次采集使用 wevu 运行时优化提交 9e43db53392298063eda3cc528a75f3ee2ebda6a。
-- DevTools 启动超时默认是 180000ms，可通过 BENCH_RUNTIME_TIMEOUT 覆盖。
-- DevTools 启动默认最多重试 3 次，可通过 BENCH_RUNTIME_LAUNCH_RETRIES 覆盖。
-- 运行时指标等待超时默认是 180000ms，可通过 BENCH_RUNTIME_METRICS_TIMEOUT 覆盖。
-- 单轮采样默认最多重试 3 次，可通过 BENCH_RUNTIME_ITERATION_RETRIES 覆盖。
-- 页面重开默认最多重试 3 次，可通过 BENCH_RUNTIME_RELAUNCH_RETRIES 覆盖。
-- 微信开发者工具 CLI：/Applications/wechatwebdevtools.app/Contents/MacOS/cli
+| 项目                          | 轮次 | 初始渲染 | 追加批次 | 批量更新 | 全量排序 | 过滤高分活跃项 | 分组聚合渲染 | 窗口切片 | 整表替换 |
+| ----------------------------- | ---: | -------: | -------: | -------: | -------: | -------------: | -----------: | -------: | -------: |
+| weapp-vite + wevu             |    1 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite + wevu             |    2 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite + wevu             |    3 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite + wevu             |    4 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite + wevu             |    5 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite + wevu             |    6 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite + wevu             |    7 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite + wevu             |    8 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite + wevu             |    9 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite + wevu             |   10 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite + wevu             |   11 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite + wevu             |   12 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite + wevu             |   13 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite + wevu             |   14 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite + wevu             |   15 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite + wevu             |   16 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite + wevu             |   17 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite + wevu             |   18 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite + wevu             |   19 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite + wevu             |   20 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite + wevu performance |    1 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite + wevu performance |    2 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite + wevu performance |    3 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite + wevu performance |    4 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite + wevu performance |    5 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite + wevu performance |    6 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite + wevu performance |    7 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite + wevu performance |    8 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite + wevu performance |    9 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite + wevu performance |   10 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite + wevu performance |   11 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite + wevu performance |   12 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite + wevu performance |   13 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite + wevu performance |   14 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite + wevu performance |   15 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite + wevu performance |   16 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite + wevu performance |   17 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite + wevu performance |   18 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite + wevu performance |   19 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite + wevu performance |   20 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite 原生               |    1 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite 原生               |    2 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite 原生               |    3 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite 原生               |    4 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite 原生               |    5 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite 原生               |    6 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite 原生               |    7 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite 原生               |    8 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite 原生               |    9 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite 原生               |   10 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite 原生               |   11 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite 原生               |   12 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite 原生               |   13 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite 原生               |   14 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite 原生               |   15 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite 原生               |   16 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite 原生               |   17 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite 原生               |   18 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite 原生               |   19 |        - |        - |        - |        - |              - |            - |        - |        - |
+| weapp-vite 原生               |   20 |        - |        - |        - |        - |              - |            - |        - |        - |
+| uni-app vite vue3             |    1 |        - |        - |        - |        - |              - |            - |        - |        - |
+| uni-app vite vue3             |    2 |        - |        - |        - |        - |              - |            - |        - |        - |
+| uni-app vite vue3             |    3 |        - |        - |        - |        - |              - |            - |        - |        - |
+| uni-app vite vue3             |    4 |        - |        - |        - |        - |              - |            - |        - |        - |
+| uni-app vite vue3             |    5 |        - |        - |        - |        - |              - |            - |        - |        - |
+| uni-app vite vue3             |    6 |        - |        - |        - |        - |              - |            - |        - |        - |
+| uni-app vite vue3             |    7 |        - |        - |        - |        - |              - |            - |        - |        - |
+| uni-app vite vue3             |    8 |        - |        - |        - |        - |              - |            - |        - |        - |
+| uni-app vite vue3             |    9 |        - |        - |        - |        - |              - |            - |        - |        - |
+| uni-app vite vue3             |   10 |        - |        - |        - |        - |              - |            - |        - |        - |
+| uni-app vite vue3             |   11 |        - |        - |        - |        - |              - |            - |        - |        - |
+| uni-app vite vue3             |   12 |        - |        - |        - |        - |              - |            - |        - |        - |
+| uni-app vite vue3             |   13 |        - |        - |        - |        - |              - |            - |        - |        - |
+| uni-app vite vue3             |   14 |        - |        - |        - |        - |              - |            - |        - |        - |
+| uni-app vite vue3             |   15 |        - |        - |        - |        - |              - |            - |        - |        - |
+| uni-app vite vue3             |   16 |        - |        - |        - |        - |              - |            - |        - |        - |
+| uni-app vite vue3             |   17 |        - |        - |        - |        - |              - |            - |        - |        - |
+| uni-app vite vue3             |   18 |        - |        - |        - |        - |              - |            - |        - |        - |
+| uni-app vite vue3             |   19 |        - |        - |        - |        - |              - |            - |        - |        - |
+| uni-app vite vue3             |   20 |        - |        - |        - |        - |              - |            - |        - |        - |
+| uni-app x                     |    1 |        - |        - |        - |        - |              - |            - |        - |        - |
+| uni-app x                     |    2 |        - |        - |        - |        - |              - |            - |        - |        - |
+| uni-app x                     |    3 |        - |        - |        - |        - |              - |            - |        - |        - |
+| uni-app x                     |    4 |        - |        - |        - |        - |              - |            - |        - |        - |
+| uni-app x                     |    5 |        - |        - |        - |        - |              - |            - |        - |        - |
+| uni-app x                     |    6 |        - |        - |        - |        - |              - |            - |        - |        - |
+| uni-app x                     |    7 |        - |        - |        - |        - |              - |            - |        - |        - |
+| uni-app x                     |    8 |        - |        - |        - |        - |              - |            - |        - |        - |
+| uni-app x                     |    9 |        - |        - |        - |        - |              - |            - |        - |        - |
+| uni-app x                     |   10 |        - |        - |        - |        - |              - |            - |        - |        - |
+| uni-app x                     |   11 |        - |        - |        - |        - |              - |            - |        - |        - |
+| uni-app x                     |   12 |        - |        - |        - |        - |              - |            - |        - |        - |
+| uni-app x                     |   13 |        - |        - |        - |        - |              - |            - |        - |        - |
+| uni-app x                     |   14 |        - |        - |        - |        - |              - |            - |        - |        - |
+| uni-app x                     |   15 |        - |        - |        - |        - |              - |            - |        - |        - |
+| uni-app x                     |   16 |        - |        - |        - |        - |              - |            - |        - |        - |
+| uni-app x                     |   17 |        - |        - |        - |        - |              - |            - |        - |        - |
+| uni-app x                     |   18 |        - |        - |        - |        - |              - |            - |        - |        - |
+| uni-app x                     |   19 |        - |        - |        - |        - |              - |            - |        - |        - |
+| uni-app x                     |   20 |        - |        - |        - |        - |              - |            - |        - |        - |
+| mpx                           |    1 |        - |        - |        - |        - |              - |            - |        - |        - |
+| mpx                           |    2 |        - |        - |        - |        - |              - |            - |        - |        - |
+| mpx                           |    3 |        - |        - |        - |        - |              - |            - |        - |        - |
+| mpx                           |    4 |        - |        - |        - |        - |              - |            - |        - |        - |
+| mpx                           |    5 |        - |        - |        - |        - |              - |            - |        - |        - |
+| mpx                           |    6 |        - |        - |        - |        - |              - |            - |        - |        - |
+| mpx                           |    7 |        - |        - |        - |        - |              - |            - |        - |        - |
+| mpx                           |    8 |        - |        - |        - |        - |              - |            - |        - |        - |
+| mpx                           |    9 |        - |        - |        - |        - |              - |            - |        - |        - |
+| mpx                           |   10 |        - |        - |        - |        - |              - |            - |        - |        - |
+| mpx                           |   11 |        - |        - |        - |        - |              - |            - |        - |        - |
+| mpx                           |   12 |        - |        - |        - |        - |              - |            - |        - |        - |
+| mpx                           |   13 |        - |        - |        - |        - |              - |            - |        - |        - |
+| mpx                           |   14 |        - |        - |        - |        - |              - |            - |        - |        - |
+| mpx                           |   15 |        - |        - |        - |        - |              - |            - |        - |        - |
+| mpx                           |   16 |        - |        - |        - |        - |              - |            - |        - |        - |
+| mpx                           |   17 |        - |        - |        - |        - |              - |            - |        - |        - |
+| mpx                           |   18 |        - |        - |        - |        - |              - |            - |        - |        - |
+| mpx                           |   19 |        - |        - |        - |        - |              - |            - |        - |        - |
+| mpx                           |   20 |        - |        - |        - |        - |              - |            - |        - |        - |
+| taro vue3                     |    1 |        - |        - |        - |        - |              - |            - |        - |        - |
+| taro vue3                     |    2 |        - |        - |        - |        - |              - |            - |        - |        - |
+| taro vue3                     |    3 |        - |        - |        - |        - |              - |            - |        - |        - |
+| taro vue3                     |    4 |        - |        - |        - |        - |              - |            - |        - |        - |
+| taro vue3                     |    5 |        - |        - |        - |        - |              - |            - |        - |        - |
+| taro vue3                     |    6 |        - |        - |        - |        - |              - |            - |        - |        - |
+| taro vue3                     |    7 |        - |        - |        - |        - |              - |            - |        - |        - |
+| taro vue3                     |    8 |        - |        - |        - |        - |              - |            - |        - |        - |
+| taro vue3                     |    9 |        - |        - |        - |        - |              - |            - |        - |        - |
+| taro vue3                     |   10 |        - |        - |        - |        - |              - |            - |        - |        - |
+| taro vue3                     |   11 |        - |        - |        - |        - |              - |            - |        - |        - |
+| taro vue3                     |   12 |        - |        - |        - |        - |              - |            - |        - |        - |
+| taro vue3                     |   13 |        - |        - |        - |        - |              - |            - |        - |        - |
+| taro vue3                     |   14 |        - |        - |        - |        - |              - |            - |        - |        - |
+| taro vue3                     |   15 |        - |        - |        - |        - |              - |            - |        - |        - |
+| taro vue3                     |   16 |        - |        - |        - |        - |              - |            - |        - |        - |
+| taro vue3                     |   17 |        - |        - |        - |        - |              - |            - |        - |        - |
+| taro vue3                     |   18 |        - |        - |        - |        - |              - |            - |        - |        - |
+| taro vue3                     |   19 |        - |        - |        - |        - |              - |            - |        - |        - |
+| taro vue3                     |   20 |        - |        - |        - |        - |              - |            - |        - |        - |
+| @vue-mini/core                |    1 |        - |        - |        - |        - |              - |            - |        - |        - |
+| @vue-mini/core                |    2 |        - |        - |        - |        - |              - |            - |        - |        - |
+| @vue-mini/core                |    3 |        - |        - |        - |        - |              - |            - |        - |        - |
+| @vue-mini/core                |    4 |        - |        - |        - |        - |              - |            - |        - |        - |
+| @vue-mini/core                |    5 |        - |        - |        - |        - |              - |            - |        - |        - |
+| @vue-mini/core                |    6 |        - |        - |        - |        - |              - |            - |        - |        - |
+| @vue-mini/core                |    7 |        - |        - |        - |        - |              - |            - |        - |        - |
+| @vue-mini/core                |    8 |        - |        - |        - |        - |              - |            - |        - |        - |
+| @vue-mini/core                |    9 |        - |        - |        - |        - |              - |            - |        - |        - |
+| @vue-mini/core                |   10 |        - |        - |        - |        - |              - |            - |        - |        - |
+| @vue-mini/core                |   11 |        - |        - |        - |        - |              - |            - |        - |        - |
+| @vue-mini/core                |   12 |        - |        - |        - |        - |              - |            - |        - |        - |
+| @vue-mini/core                |   13 |        - |        - |        - |        - |              - |            - |        - |        - |
+| @vue-mini/core                |   14 |        - |        - |        - |        - |              - |            - |        - |        - |
+| @vue-mini/core                |   15 |        - |        - |        - |        - |              - |            - |        - |        - |
+| @vue-mini/core                |   16 |        - |        - |        - |        - |              - |            - |        - |        - |
+| @vue-mini/core                |   17 |        - |        - |        - |        - |              - |            - |        - |        - |
+| @vue-mini/core                |   18 |        - |        - |        - |        - |              - |            - |        - |        - |
+| @vue-mini/core                |   19 |        - |        - |        - |        - |              - |            - |        - |        - |
+| @vue-mini/core                |   20 |        - |        - |        - |        - |              - |            - |        - |        - |
+
+## 场景含义
+
+- 初始渲染：连续 3 次重建并渲染 480 条列表，放大首屏列表创建成本
+- 追加批次：连续 4 次追加 120 条数据，放大增量插入和列表扩容成本
+- 批量更新：连续 6 次批量更新不同步长的列表项，放大局部批量变更成本
+- 全量排序：连续 5 次排序并正反切换，放大全量顺序变化成本
+- 过滤高分活跃项：连续 6 次在过滤结果和完整列表间切换，放大列表缩减和恢复成本
+- 分组聚合渲染：连续 6 次按 group 聚合并渲染统计行，放大派生数据和结构切换成本
+- 窗口切片：连续 10 次切换 140 条窗口数据，放大虚拟窗口类场景成本
+- 整表替换：连续 3 次用 640 条新数据整表替换，放大大批量替换成本
+
+## 证据边界
+
+- 统一外部边界为请求 reLaunch 至真实 IDE 确认最终视图；包括导航、RPC、100ms 轮询和七项视图检查的观察成本，不称为纯 host commit 或 paint 耗时。
+- 原八场景的页面内部耗时原样保存，但 nextTick、原生 setData 回调与 Mpx setData 回调边界不同，不再混合排名。
+- 独立校验确定性数据的八项 count/checksum；控制台载荷必须匹配本轮唯一 token，不能使用上一轮日志或旧 samples 文件。
+- 预检与每个项目分别设总 deadline；每个项目共享一次 automator，通过 reLaunch 切换轮次；失败不补采为成功。
+- 仅关闭本任务隔离项目并断开自己持有的连接，不调用全局 quit/kill，不清理用户缓存或其他会话。
+- 视图查询确认的是 IDE 自动化可观察结果，不证明显示器已经完成光栅化，也不等价真机。setData 字节/次数和内存收益未采集。
+
+## 采样来源
+
+- Run ID：ed3908e7-8aa6-4d06-aa98-40f13f793f2b；步骤：runtime
+- 采集区间：2026-09-30T23:03:41.613Z 至 2026-09-30T23:03:41.812Z
+- 输入指纹：a6f9c5f6e3cc8d530ef240ed85fe650ef4862057fb40230bfe7d24d864e42a48
+- lockfile SHA-256：8a5d8760666f2a66454271ee0768f65317f03f0c39b8cfdbedf7d898a549fec9
+- runner：0.0.0；源码摘要：8465f9de41f2c3b17f21457f7b4e25bb54d5e53920795eae29ad4cac3456f227
+- 工作区有修改：true；被测输入有修改：false
+- 采样前后输入一致：true
+- 实际包版本、配置/场景文件摘要及测量设置详见同名 JSON 的 provenance 字段；参考子模块 SHA 不代表实际 npm 版本。
