@@ -60,3 +60,29 @@ pnpm tsd
 pnpm test
 pnpm report:refresh
 ```
+
+## 稳定版升级命令
+
+先查看候选版本，不修改文件：
+
+```bash
+pnpm deps:stable:check
+```
+
+按框架应用升级，或一次升级全部框架：
+
+```bash
+pnpm deps:stable:update:weapp-vite
+pnpm deps:stable:update:taro
+pnpm deps:stable:update:dcloud
+pnpm deps:stable:update:mpx
+pnpm deps:stable:update
+```
+
+升级完成后运行：
+
+```bash
+pnpm deps:stable:validate
+```
+
+`weapp-vite`、`wevu`、Taro 和 Mpx 使用 npm `latest` stable tag；DCloud 使用 UVM 的官方 release channel，并要求两个 uni-app 项目的编译器批次一致。命令会拒绝 prerelease、校验框架成组版本，且不会修改 `submodules/weapp-vite`。
