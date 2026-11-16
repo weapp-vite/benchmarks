@@ -1,0 +1,41 @@
+{
+  "fingerprint": "7708663a6e42940b9101ed3f16cf349062474fb2782f0fc6cf20a43283c9fe21",
+  "files": [
+    {
+      "path": "app.js",
+      "sha256": "c63d82b10abefa115dec9c4f20d9f8d204f80d65d9298275d54b0c69ad67b8a3"
+    },
+    {
+      "path": "app.json",
+      "sha256": "c4cbcb4495824f5a82c8a4153c47f153f8aa92c576fcff4aa3f63741d18e7b44"
+    },
+    {
+      "path": "pages/index/index.js",
+      "sha256": "dd4a7000e581bcaac58cfa97a473c2ed0a7b3394c1ff2a57a8cd653036987489"
+    },
+    {
+      "path": "pages/index/index.json",
+      "sha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a"
+    },
+    {
+      "path": "pages/index/index.wxml",
+      "sha256": "c6c5ea83adec0154afa240bff22056746ddbcb8b1e6695d84ca8ba73b1b4d6cf"
+    },
+    {
+      "path": "pages/index/index.wxss",
+      "sha256": "e44c3b8d8c2f677906bbb8021a0fb02c5831677c3972ed74ad22ba674bfb0cd2"
+    },
+    {
+      "path": "weapp-vendors/wevu-reactivity.js",
+      "sha256": "49c1d8d7fbba7ef05d1c4e42eb043f93c45c1ed7c501fb60383e2626b4769360"
+    },
+    {
+      "path": "weapp-vendors/wevu-router.js",
+      "sha256": "34526e57ae303996ec28d5c7b95355d8b78b0a474dabc3ba8574814ae6597b52"
+    },
+    {
+      "path": "weapp-vendors/wevu-runtime.js",
+      "sha256": "7a547d75018fe49e2ef724a1a678506b6394d4f9b2ca4645736060eac8939e7f"
+    }
+  ]
+}

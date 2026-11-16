@@ -29,7 +29,7 @@ export default {
       },
     },
     lintStaged: {
-      monorepoCommand: 'pnpm exec repo',
+      repoCommand: 'pnpm exec repo',
     },
     vitest: {
       includeWorkspaceRootConfig: false,

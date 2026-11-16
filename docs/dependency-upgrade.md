@@ -1,63 +1,62 @@
-# 2026-10 依赖升级评估
+# 2026-11 依赖升级评估
 
-本次升级覆盖根目录、8 个 benchmark 应用和 runner；对照源码子模块保持原提交。直接依赖按 npm 正式发行版本和框架约束选择，锁文件固定实际依赖树。
+本轮升级覆盖根目录、benchmark 应用和 runner。`submodules/weapp-vite` 保持原提交 `eb9995e74fc4f760d265972b9148417cd40aab63`，不把源码子模块变更混入依赖升级。直接依赖按框架兼容约束选择，`pnpm-lock.yaml` 固定实际解析结果。
 
 ## 升级与兼容性约束
 
-| 依赖组                     | 目标版本                | 选择依据                                                  |
-| -------------------------- | ----------------------- | --------------------------------------------------------- |
-| pnpm                       | 12.8.1                  | 稳定版本；同步 packageManager 与锁文件                    |
-| weapp-vite / wevu          | 7.4.0                   | 三个 weapp-vite 应用使用同一版本                          |
-| Taro                       | 4.3.0                   | 所有 @tarojs 包同步；vite-runner 要求 Vite ^4             |
-| uni-app / uni-app x 编译器 | 3.0.0-5020620260917001  | 正式发行批次；不使用指向历史 alpha 的 latest 标签         |
-| uni-app-x runtime          | 0.7.132                 | 与该批次 uni-uts-v1 配套，未单独升级到 0.7.135            |
-| uni-app Vue / Vite / types | 3.4.21 / 5.2.8 / 3.4.31 | 对齐编译器依赖及精确 peer 约束                            |
-| Mpx                        | 2.11.x / CLI 2.2.32     | 目前稳定版本；保留 Vue 2.7、Pinia 2、Router 3、Babel 7    |
-| Mpx ESLint                 | 9.39.5                  | @mpxjs/eslint-config 要求 ESLint ^9.10.0                  |
-| TypeScript / vue-tsc       | 6.0.3 / 3.3.11          | repoctl 要求 TypeScript 5 或 6；保留 Vue 类型检查器兼容性 |
-| repoctl                    | 5.5.10                  | 同步 ESLint、Stylelint、commitlint 和 Vitest 配套版本     |
-| Vitest / coverage-v8       | 5.0.3                   | 测试运行器与覆盖率插件精确对齐                            |
-| tsdown                     | 0.23.0                  | Node 要求同步为 ^22.18.0、^24.11.0 或 >=26.0.0            |
-| miniprogram-automator      | 1.2.23                  | 与 weapp-vite 7.4.0 配套                                  |
-| @vue-mini/core             | 1.2.16                  | 最新稳定修订版                                            |
-| PostCSS                    | 8.5.28                  | 应用声明与全局 override 对齐，消除旧 override 降级        |
+| 依赖组                          | 当前版本                        | 处理说明                                                                    |
+| ------------------------------- | ------------------------------- | --------------------------------------------------------------------------- |
+| pnpm                            | 12.21.0                         | 同步 `packageManager` 和锁文件，使用 frozen install 验证                    |
+| weapp-vite / wevu               | 7.4.0                           | 三个 weapp-vite benchmark 使用同一版本；子模块保持原提交                    |
+| Taro                            | 4.3.3                           | 所有 `@tarojs/*` 同步；`vite-runner` 继续使用 Vite 4 兼容线                 |
+| uni-app / uni-app x 编译器      | 3.0.0-5030420261029002          | 所有 DCloud 包同步到同一正式批次                                            |
+| uni-app-x runtime               | 0.7.132                         | 与当前 `uni-uts-v1` 配套，未跨到未经验证的 runtime 批次                     |
+| uni-app Vue / Vite / types      | 3.4.21 / 5.2.8 / 3.4.31         | 保留 DCloud 编译器的精确 peer 约束                                          |
+| Mpx                             | 2.11.2 / CLI 2.2.32             | 保留 Vue 2.7、Pinia 2、Router 3 和 Babel 7 基线                             |
+| Mpx 构建工具                    | Webpack 5.111.1、PostCSS 8.5.33 | Webpack 固定 5.111.1；5.112.x 会触发 Mpx 对 `ModuleDependency` 的不兼容引用 |
+| Vue / compiler / vue-tsc        | 3.5.45 / 3.5.45 / 3.3.14        | Vue SFC 和类型检查器同步升级                                                |
+| TypeScript                      | 6.0.3                           | 保留仓库当前类型检查基线                                                    |
+| repoctl / ESLint / Stylelint    | 5.10.3 / 10.15.0 / 17.16.0      | 同步 monorepo 工具链                                                        |
+| Vitest / coverage-v8            | 5.0.5                           | 测试运行器和覆盖率插件精确对齐                                              |
+| tsdown / Turbo / Prettier       | 0.23.7 / 2.11.11 / 3.10.1       | 与 Node `^22.18.0`、`^24.11.0` 或 `>=26.0.0` 约束一致                       |
+| miniprogram typings / automator | 5.3.1 / 1.2.23                  | 应用和 runner 统一版本                                                      |
+| runner 能力矩阵                 | esbuild 0.28.2                  | 显式声明，避免依赖偶然提升的间接版本                                        |
 
-其他通用工具更新至评估时的稳定版，包括 ESLint 10.11.0、Stylelint 17.15.0、Turbo 2.11.5、tsx 4.23.15、Prettier 3.9.9、Rollup 4.63.5 和 Webpack 5.111.1。保留 node-ipc-compat 替代规则，避免恢复旧 node-ipc 实现。
+其他根工具同步到当前锁定版本，包括 `@commitlint/cli` 21.2.4、`@types/node` 26.6.6、`pkg-types` 2.4.0、`tailwindcss` 4.3.5、`tslib` 2.9.1 和 `rollup` 4.63.5。保留 `@achrinza/node-ipc` 到 `node-ipc-compat@1.0.0` 的替代规则。
 
-## 验证方式
+为新安装布局补充了两个兼容性边界：
 
-先构建，再运行 ESLint、Stylelint、工作区 TypeScript 检查、现有 tsd 任务和单元测试。runner 保留模块目录结构构建，单元测试通过 Vitest 别名加载 dist 产物；Turbo test 依赖 build。
+- `pnpm-workspace.yaml` 仅对 `@weapp-tailwindcss/postcss` 的 CSS parser/tokenizer 使用兼容版本 override，并统一 PostCSS 8.5.33。
+- DCloud 批次的 `@dcloudio/uni-mp-vite` 通过 scoped `packageExtensions` 补 `estree-walker@2.0.2`；`.pnpmfile.cjs` 只把该批次 UTS Linux 包的 `gnu` 元数据修正为 pnpm 识别的 `glibc`。
 
-完整刷新使用 `pnpm report:refresh`，依次执行 frozen-lockfile 安装、静态验证、安全审计、HBuilderX smoke、compile、runtime IDE E2E、HMR 和 size 基准。运行时失败必须返回失败状态；dashboard 排除不属于本轮采集时间窗口的旧报告。场景、采样数和统计口径保持一致。
+## 验证结果
 
-## 已确认的验证与上游限制
+先构建，再运行 lint、类型检查、tsd 入口和测试；随后刷新完整 benchmark。最新验证 run 为 `d103c8bb-f658-4d02-ac3e-0451b9978eb7`，时间为 `2026-11-16T07:13:04.163Z`。
 
-- 最终依赖树构建、ESLint、Stylelint、9 个工作区类型检查以及 23 项构建产物单元测试通过。
-- `pnpm tsd` 入口正常执行，但目前工作区没有实际 tsd 任务；这不代表已有公共类型测试覆盖。
-- `pnpm peers check` 仍报告 repoctl 内部 pnpm logger/worker 版本混用、weapp-vite 依赖链中的 css-parser-algorithms 以及 tsconfck 对 TypeScript 5 的旧 peer 约束。当前构建和类型检查通过；不通过忽略 peer 规则隐藏这些上游约束。
-- 安全审计仍有 101 项告警（10 low、57 moderate、31 high、3 critical）。例：Mpx api-proxy 精确锁定 axios 1.17.0，Taro Vue 插件锁定 lodash 4.17.21；uni-app 编译器精确要求 Vite 5.2.8。关键告警涉及 Taro components 引入的 swiper 11.1.15，以及 Taro CLI 模板下载链中的 decompress 4.2.1。
-- 已刷新允许范围内的传递依赖。上述问题的修复涉及上游精确版本约束、主版本迁移或组件替换，本轮保留这些兼容性边界并让审计真实返回失败。
+- `pnpm install --frozen-lockfile`、`pnpm build`、`pnpm lint`、`pnpm typecheck` 全部通过。
+- `pnpm tsd` 正常退出，但当前工作区没有实际 tsd 任务；这不等于已有公共类型测试覆盖。
+- 单元与集成测试通过：23 个文件、86 个测试。
+- HBuilderX uni-app x smoke 通过；compile methods 为 180/180，编译基准为 7 个框架各 20 轮（140/140）。
+- wevu 体积分析通过，生产构建清单和 SHA-256 一致性检查通过。
+- `pnpm peers check` 只剩 `tsconfck@3.1.6` 声明 TypeScript `^5.0.0`、而仓库使用 TypeScript 6.0.3 的上游 peer 范围问题。没有通过忽略 peer 规则掩盖它。
 
-完整 IDE、性能基准及刷新结果以 `reports/verification/latest.md` 为准。
+完整刷新总体为失败，失败项都保留了原始报告：
 
-## 本轮基准结果
+- `pnpm audit --audit-level=moderate`：177 项 advisory（26 low / 90 moderate / 56 high / 5 critical）。
+- 真实 IDE 更新一致性：classic 四个阶段通过；stateful-experimental 在 dev 启动时因 Vite 8.3.1/Rolldown 1.2.12 只接受 ESM，而 `weapp-vite 7.4.0` 仍生成 CJS dev output，返回 `INVALID_OPTION`。
+- 运行时 IDE E2E：5 个项目各 20/20 有效样本；performance、uni-app vite vue3 和 taro vue3 受项目 deadline/连接超时影响没有有效样本，命令按失败返回。
+- HMR：500 个场景样本中绝大多数匹配；`weapp-vite + wevu performance / Vue SFC style` 出现一次重试，首个失败标识为 `d103c8bb-f658-4d02-ac3e-0451b9978eb7-wevu-performance-vue-script-batch-13`。按 runner 约定，任何重试或不支持的 profile 都返回失败并移出正式排名。
 
-- 编译：7 个框架、每个 20 轮，共 140 个样本全部通过。
-- HMR：25 个场景、每个 20 轮，共 500 个样本全部通过，无重试；临时源码修改已恢复。
-- HBuilderX smoke：通过，本机实际使用 HBuilderX 5.26.2026091402-alpha。
-- 运行时 IDE E2E：阻塞。CLI 尝试连接 19355 端口，但该端口没有监听；islogin 查询、三次启动和项目清理均超时，因此停止本轮 collector。保留失败状态，dashboard 排除旧 runtime 报告。
-- 体积：适配 wevu 7 的拆包变化，按实际 wevu vendor 文件识别 runtime，并强制生产构建避免 Turbo 缓存恢复后残留 HMR chunk；缺失 runtime 仍视为错误。
+这些运行时问题属于当前上游工具链和环境的已观测边界，不应被静态构建通过掩盖。详见 `reports/verification/latest.md`、`reports/runtime/consistency/latest.json`、`reports/runtime/latest.md` 和 `reports/hmr/latest.md`。
 
-已运行完整 `pnpm report:refresh`。修复体积采集后重跑构建、lint、类型检查、tsd 入口、23 项单元测试和体积统计，将真实重跑结果合并到最终验证报告；保留原编译、HMR 样本及 IDE 阻塞记录。
+## 复跑命令
 
-## PR 跨平台 CI 修复
-
-首轮 CI 的 macOS Node 22/24 通过，Windows 和 Linux 分别暴露路径及原生依赖元数据问题：
-
-- Windows runner 仓库在 D 盘、临时目录在 C 盘，跨盘相对路径会变成绝对路径。体积采集改用 resolve 解析应用和产物目录，测试覆盖绝对路径与仓库相对路径，共 24 项单元测试。
-- 该批次 `@dcloudio/uts-linux-x64-gnu` 的 npm 元数据将 libc 写为 `gnu`，pnpm 需要 `glibc` 才会安装它。`.pnpmfile.cjs` 仅修正该包的精确版本元数据，锁文件同步，不改变编译器版本或原生二进制。
-
-## 能力矩阵新增依赖与安装修复
-
-- runner 显式声明 `esbuild@0.28.2`，用于消费已安装 wevu 的 Provider 阶梯，并保存 metafile 模块贡献。避免依赖偶然提升的间接 esbuild。
-- `@dcloudio/uni-mp-vite@3.0.0-5020620260917001/dist/plugins/independentMain.js` 调用 CommonJS `require('estree-walker')`，但该批次 package.json 未声明依赖。新安装布局会提升 ESM-only 的 3.x，导致 `ERR_PACKAGE_PATH_NOT_EXPORTED`。对该精确批次用 `packageExtensions` 补 `estree-walker@2.0.2`，保持与同批次 DCloud 编译器的依赖兼容；不全局覆盖其他工具使用的 3.x。七框架生产集成和 frozen-lockfile 安装验证这条修复。
+```bash
+corepack pnpm@12.21.0 install --frozen-lockfile
+pnpm build
+pnpm lint
+pnpm typecheck
+pnpm tsd
+pnpm test
+pnpm report:refresh
+```

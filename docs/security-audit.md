@@ -1,32 +1,30 @@
-# 依赖审计处置边界（2026-10-01）
+# 依赖审计处置边界（2026-11-16）
 
-本次完整刷新中 `pnpm audit --audit-level=moderate` 返回失败：106 项 advisory（low 10 / moderate 60 / high 33 / critical 3）。这些是依赖图命中的公告数，不等于 106 个独立包或 106 条已确认可利用的应用路径。CI 的审计步骤保留失败日志但允许其余检查继续，因此 CI 总体成功不代表安全审计成功。
+本轮 `pnpm audit --audit-level=moderate` 返回失败：177 项 advisory（low 26 / moderate 90 / high 56 / critical 5）。这是依赖图命中的公告数，不等于 177 个独立包，也不等于每条公告都能从 benchmark 应用路径触发。审计步骤保留失败状态，其他验证继续执行。
 
-## 可在当前声明范围内更新锁文件的候选
+## 已完成的兼容范围内更新
 
-- `fast-uri 3.1.7 → 3.1.8`：已安装 `ajv 8.20.0` 声明 `^3.0.1`；注册表存在 3.1.8。无需跨主版本覆盖。
-- `brace-expansion 1.1.18 / 5.0.9`：已安装 `minimatch 3.1.5 / 10.2.6` 声明 `^1.1.7 / ^5.0.8`；公告修复线分别为 1.1.21+ / 5.0.12+。应更新兼容分支的解析，不把两个分支强制合成一个主版本。
-- `ip-address 10.7.0`：已安装 `socks 2.8.10` 声明 `^10.1.1`，公告修复线为 10.7.1+。
+锁文件已在 pnpm 12.21.0 下重建，并刷新了当前声明允许的传递依赖。应用声明和锁文件已包含本轮升级的 Taro 4.3.3、DCloud 3.0.0-5030420261029002、Mpx 2.11.2、Vue 3.5.45、PostCSS 8.5.33、ESLint 10.15.0、Stylelint 17.16.0、Vitest 5.0.5、Turbo 2.11.11 和 tsdown 0.23.7。
 
-这些是根据当前声明与公告识别的修复候选，本轮报告对应的锁文件尚未包含这些修复，不标记为已修复。后续应在独立改动中更新解析、验证 frozen install 与完整矩阵，并重新采样；不能在采样过程中修改锁文件或改写旧结果。
+本轮没有运行 `pnpm audit --fix`，也没有用全局 override 强行跨越框架的精确版本约束。构建、lint、类型检查、测试、compile 和 size 验证均使用同一 frozen lockfile 完成。
 
-## 上游固定版本，需要升级发布批次或逐项验证的定向替代
+## 需要上游发布或定向验证的路径
 
-- `@mpxjs/api-proxy 2.11.1` 固定 `axios 1.17.0`；多个公告需要 1.20.0。虽同主版本，仍越过了上游精确声明，不属于单纯更新满足范围的锁文件。
-- `@yarnpkg/shell 4.0.0` 固定 `cross-spawn 7.0.3`；修复线为 7.0.5+。
-- DCloud 当前正式批次固定 `ws 8.18.0`；公告修复线为 8.21.0+。
-- `@tarojs/plugin-framework-vue3 4.3.0` 固定 `lodash 4.17.21`；相关公告需要 4.18.1+。
-- `vue-i18n-bridge 9.14.1` 固定 `@intlify/core-base 9.14.1`；修复线为 9.14.5+。
+当前审计输出中已确认的阻塞集中在以下路径：
 
-优先消费框架上游的新兼容发布；若采用定向替代，需要覆盖相关运行时/构建消费路径，不能仅凭安装成功认定兼容。也不能把这些同主版本固定依赖统称为“必须跨大版本”。
+- Taro components 引入的 `swiper` 11.x：critical 修复线要求 12.x，必须由 Taro 发布兼容版本后升级并验证模板和运行时，不能全局覆盖到 Swiper 12。
+- Taro CLI 的 `download-git-repo → download → decompress` 链：包含压缩包路径逃逸和符号链接链公告；应由上游替换下载/解压实现，并验证压缩包目录边界。
+- `repoctl`/`oxfmt` 依赖链中的 `tinypool`：修复需要上游工具链发布可兼容版本，不能只改锁文件掩盖精确依赖约束。
+- `@mpxjs/api-proxy`、DCloud 编译器、Taro Vue 插件和 `vue-i18n-bridge` 的若干精确依赖：审计修复线越过当前上游声明，需逐项验证定向替代或等待新发布批次。
+- Mpx 的 Vue 2 与旧 webpack dev-server 生态：部分公告修复线涉及 Vue 3 或 dev-server 主版本迁移，暂不跨基线升级。
 
-## 已确认的跨版本或无修复版本阻塞
+运行时还观察到独立的工具链边界：`weapp-vite 7.4.0` 的 stateful-experimental dev output 与 Vite 8.3.1/Rolldown 1.2.12 的 ESM-only devMode 校验不兼容。这不是通过 audit override 可以可靠修复的安全问题，应等待上游兼容发布并重新跑 IDE 一致性矩阵。
 
-| 路径/包                                                    | 原因                                            | 解决方向                                                    |
-| ---------------------------------------------------------- | ----------------------------------------------- | ----------------------------------------------------------- |
-| Taro → components → Swiper 11.1.15                         | critical 公告要求 12.1.2+，超出当前主版本约束   | 由 Taro 升级组件依赖并验证模板/运行时；不全局覆盖 Swiper 12 |
-| Taro CLI → download-git-repo → download → decompress 4.2.1 | 两项 critical，当前同包没有已修复版本           | 上游替换下载/解压链，验证压缩包路径、符号链接和目录边界     |
-| Taro Vite 4 / DCloud Vite 5.2.8                            | 编译器要求的兼容线与公告修复线不完全重合        | 随上游编译器兼容批次升级，继续保留已知失败                  |
-| Mpx 的 Vue 2 与旧 webpack dev server 生态                  | 修复线涉及 Vue 3、dev-server 5 或其他主版本迁移 | 上游支持后再迁移，不强制破坏 Vue 2/Babel 7 基线             |
+## 处置原则
 
-上述分组用于区分处置方式，未覆盖的公告仍保持未解决；不将全部 106 项都归因于同一种上游阻塞。Critical 公告：[Swiper](https://github.com/advisories/GHSA-hmx5-qpq5-p643)、[decompress 路径逃逸](https://github.com/advisories/GHSA-mp2f-45pm-3cg9)、[符号链接链](https://github.com/advisories/GHSA-hrh2-vp3x-79xf)。
+1. 可在现有 semver 声明内安全更新的传递依赖，单独更新解析并验证 frozen install、构建和完整矩阵。
+2. 超出上游精确声明的修复，先升级对应框架/工具发布批次，再验证运行时和模板行为。
+3. 不把 `audit --fix` 生成的跨主版本替换直接合入 benchmark 基线；每个替代都要有路径级兼容证据。
+4. 审计失败、peer 警告、IDE 阻塞和 HMR 重试分别记录，保持 `passed`、`blocked`、`failed` 和 `unknown` 的含义不混用。
+
+最新审计证据保存在 `reports/verification/latest.md` 的“依赖安全审计”段落；完整锁文件指纹和运行时间见同文件的 provenance。

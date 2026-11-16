@@ -1,0 +1,23 @@
+[info] 目标平台：weapp
+[success] 已清空 dist/ 目录
+`output.codeSplitting.groups[0].name` is a function. Set `output.codeSplitting.groups[0].debugName` so the bundler timing report can identify this group.
+`output.codeSplitting.groups[1].name` is a function. Set `output.codeSplitting.groups[1].debugName` so the bundler timing report can identify this group.
+[info] HMR 模式：stateful-experimental（显式配置）
+[info] HMR 切换：修改 weapp.hmr.runtime 为 auto 或 classic 后重启 wv dev。
+[error] Fail to create dev engine: BatchedBuildDiagnostic(
+    [
+        BuildDiagnostic {
+            severity: Error,
+            kind: "INVALID_OPTION",
+            message: "Invalid value \"cjs\" for option \"output.format\" - \"experimental.devMode\" only supports the \"esm\" format. Set \"output.format\" to \"esm\" when using dev mode.",
+            ..
+        },
+    ],
+)
+  at DevEngine.create (/Users/icebreaker/Projects/github/benchmarks/node_modules/.pnpm/rolldown@1.2.12/node_modules/rolldown/dist/experimental-index.mjs:87:17)
+  at async bundledDev.listen (/Users/icebreaker/Projects/github/benchmarks/node_modules/.pnpm/weapp-vite@7.4.0_@babel+core@8.0.6_@mpxjs+webpack-plugin@2.11.2_supports-color@10.2.2_v_b75f4f88b190572160b5db016630e4df/node_modules/weapp-vite/dist/createContext-UOEgeYnA.mjs:20396:19)
+  at async Promise.all (index 0)
+  at async DevEnvironment.listen (/Users/icebreaker/Projects/github/benchmarks/node_modules/.pnpm/vite@8.3.1_@types+node@26.6.6_esbuild@0.28.2_jiti@2.7.0_sass@1.105.1_stylus@0.64.0_supp_557a954992a6b8afd88aca982b8f9092/node_modules/vite/dist/node/chunks/node.js:36740:3)
+  at async Promise.all (index 0)
+  at async /Users/icebreaker/Projects/github/benchmarks/node_modules/.pnpm/vite@8.3.1_@types+node@26.6.6_esbuild@0.28.2_jiti@2.7.0_sass@1.105.1_stylus@0.64.0_supp_557a954992a6b8afd88aca982b8f9092/node_modules/vite/dist/node/chunks/node.js:24919:36
+  at async httpServer.listen (/Users/icebreaker/Projects/github/benchmarks/node_modules/.pnpm/vite@8.3.1_@types+node@26.6.6_esbuild@0.28.2_jiti@2.7.0_sass@1.105.1_stylus@0.64.0_supp_557a954992a6b8afd88aca982b8f9092/node_modules/vite/dist/node/chunks/node.js:24929:5)

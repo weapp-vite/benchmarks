@@ -1,17 +1,17 @@
 {
   "provenance": {
     "schemaVersion": 1,
-    "runId": "ed3908e7-8aa6-4d06-aa98-40f13f793f2b",
+    "runId": "d103c8bb-f658-4d02-ac3e-0451b9978eb7",
     "section": "size",
-    "startedAt": "2026-09-30T23:12:52.908Z",
-    "finishedAt": "2026-09-30T23:14:04.430Z",
+    "startedAt": "2026-11-16T07:01:13.914Z",
+    "finishedAt": "2026-11-16T07:12:57.460Z",
     "inputs": {
-      "fingerprint": "a6f9c5f6e3cc8d530ef240ed85fe650ef4862057fb40230bfe7d24d864e42a48",
-      "lockfileHash": "8a5d8760666f2a66454271ee0768f65317f03f0c39b8cfdbedf7d898a549fec9",
+      "fingerprint": "267013314fcb64e88c54df81193cade4e742fb34a1898be81826d2e632154448",
+      "lockfileHash": "0fc38c72cb6a63f4109eecd8ba14aa7080a4e1914956949973093f0e5b461e2b",
       "files": [
         {
           "path": ".pnpmfile.cjs",
-          "sha256": "a76412eebcbf28c6d3475d05762ba623dd5a856ad98b448db7e6bda69fcca0f1"
+          "sha256": "4a0c3108618f8e44700f5593701440aebeeb0bc00b9192c1906dcfd53c61d5e1"
         },
         {
           "path": "apps/mpx/babel.config.json",
@@ -27,7 +27,7 @@
         },
         {
           "path": "apps/mpx/package.json",
-          "sha256": "590ec0d21003a30e5563aa4c3bdfccdba306f1daf6742d3519c2a25bbe49cff0"
+          "sha256": "c91df47cc82d9ef9782fe75282a31231a04f97914844ceb826ef3259debcba91"
         },
         {
           "path": "apps/mpx/postcss.config.js",
@@ -71,7 +71,7 @@
         },
         {
           "path": "apps/taro-vue3/package.json",
-          "sha256": "369b69979044c100823fcc41a4e6ecc4344117e4597be7ba5de6b36eb69d3ce7"
+          "sha256": "ef7d30fa1db383e6cdb9c60ae6530fbcf46d90399cad639879f672df86b86d47"
         },
         {
           "path": "apps/taro-vue3/project.config.json",
@@ -127,7 +127,7 @@
         },
         {
           "path": "apps/uni-app-vite-vue3/package.json",
-          "sha256": "d1c25494c735e1c50310bae7d3cdd8bfbd05b8b6a968e237f4c38fa0aa8f3448"
+          "sha256": "b8188db4afd336c7ae5af3724b0d47f3d466d523149b844dc1e316f626bec8d2"
         },
         {
           "path": "apps/uni-app-vite-vue3/src/App.vue",
@@ -171,7 +171,7 @@
         },
         {
           "path": "apps/uni-app-x/package.json",
-          "sha256": "45c380d78b2864e2b80ded0957354ba2f0f888228a11f8566e9c2c2ca6ca38be"
+          "sha256": "0305dfe8d34d3348054cdda03fc55093fa43528da12480bac05a29cf3b9af9a3"
         },
         {
           "path": "apps/uni-app-x/src/App.vue",
@@ -275,7 +275,7 @@
         },
         {
           "path": "apps/weapp-vite-native/package.json",
-          "sha256": "f4dc1713bc75bcd96175ae69e39c63eebdd75c72330f74a9b95ad8c4831e2b76"
+          "sha256": "a2b20d0d23ebc1a0839c7e63f6d2f54556aaf3f54e0285d617dc414020ba8d0f"
         },
         {
           "path": "apps/weapp-vite-native/project.config.json",
@@ -343,7 +343,7 @@
         },
         {
           "path": "apps/weapp-vite-wevu-performance/package.json",
-          "sha256": "c1f4d6615d54bbae96682de84fb511a0a7a1034ecbfa64fb191c049b3afe31ef"
+          "sha256": "28a9c3b566b7f899f9c15bf990af6515c3ce81709dd8401096d61c42c372564b"
         },
         {
           "path": "apps/weapp-vite-wevu-performance/project.config.json",
@@ -379,7 +379,7 @@
         },
         {
           "path": "apps/weapp-vite-wevu/package.json",
-          "sha256": "e08149827e8539a8d6e4ece369c5bdf610aa63498b64adc1b686875e31c1e792"
+          "sha256": "ee61616bd3fb761bab116904f5469ee2d5773dd1e0d4ff5dc1111b4f873c7624"
         },
         {
           "path": "apps/weapp-vite-wevu/project.config.json",
@@ -431,11 +431,11 @@
         },
         {
           "path": "package.json",
-          "sha256": "b5f26e180a24c784a77cf8dd7dfc2b2e6d9400a8e158336bdb6d96fac7f4ec28"
+          "sha256": "435be2108b54b8220257d40f5d88daf4b09801e7608294ec8a2ef627b07b89dd"
         },
         {
           "path": "packages/benchmark-runner/package.json",
-          "sha256": "72f528f193cb39f01491514de4a7b59753c6f0d4ce5c86237585f5951deafd7c"
+          "sha256": "19bf8f5340debd4e999f852e6f6d6d521d11a86656d786cd40cc1d569148bb8b"
         },
         {
           "path": "packages/benchmark-runner/src/artifacts/build.ts",
@@ -531,7 +531,11 @@
         },
         {
           "path": "packages/benchmark-runner/src/dashboard/html.ts",
-          "sha256": "7ca102e1faa23bc9d408feb278125d72dcf04c35cd2eed2c9bc397f065815e80"
+          "sha256": "735d592e923f66769406db9e8e00ea842b6ead4c926791d88f3230713b0d1754"
+        },
+        {
+          "path": "packages/benchmark-runner/src/dashboard/html/styles.ts",
+          "sha256": "385b859367948946c7411aef1a8fef4b8e04ae1ea6858cb732b93c8eccbbe281"
         },
         {
           "path": "packages/benchmark-runner/src/dashboard/refresh.ts",
@@ -547,7 +551,7 @@
         },
         {
           "path": "packages/benchmark-runner/src/dashboard/svg.ts",
-          "sha256": "04676ce5d64b9e2bcca53d5852a627c72699eea8c37291ee340118a4339cdb91"
+          "sha256": "0926a3fd687536cc02508777513d17445ba0a7b548224b30badd9d6872f38dab"
         },
         {
           "path": "packages/benchmark-runner/src/dashboard/types.ts",
@@ -894,12 +898,16 @@
           "sha256": "0a2091e73b3a78aec59b205ffe79cbda9a1eaba679795c92333af51145889258"
         },
         {
+          "path": "packages/benchmark-runner/test/dashboard-svg.test.ts",
+          "sha256": "8f2c0e67195231978cb8535039a0b8c7fed54107cb87277961e7d164c13cfc37"
+        },
+        {
           "path": "packages/benchmark-runner/test/dashboard.test.ts",
           "sha256": "3377823e6d2b3ae53eaf6617bae95fa49c542a2e9fbd328c5bb9a6b23ced3a2d"
         },
         {
           "path": "packages/benchmark-runner/test/environment-git.test.ts",
-          "sha256": "44250cdd669177fa6d821378a7eff5bfb6078ebcf42c079aec81926916e5cef7"
+          "sha256": "51b263a7d94a5011b1cbc689ffd2f2b170f55ce15486643bbb371c535b019871"
         },
         {
           "path": "packages/benchmark-runner/test/fixtures/artifacts/src/app.js",
@@ -1027,11 +1035,11 @@
         },
         {
           "path": "pnpm-lock.yaml",
-          "sha256": "8a5d8760666f2a66454271ee0768f65317f03f0c39b8cfdbedf7d898a549fec9"
+          "sha256": "0fc38c72cb6a63f4109eecd8ba14aa7080a4e1914956949973093f0e5b461e2b"
         },
         {
           "path": "pnpm-workspace.yaml",
-          "sha256": "7d3373687cf5a505656995c6725a453ee066f43cdf69570d2504466c03b8b763"
+          "sha256": "db1a6db45dd6563ebcfd1ba0bb395f3b80c3b29b3224de7b36dd50d3f6ce74d4"
         },
         {
           "path": "stylelint.config.js",
@@ -1070,7 +1078,7 @@
         {
           "consumer": "apps/mpx",
           "name": "@mpxjs/api-proxy",
-          "version": "2.11.1"
+          "version": "2.11.2"
         },
         {
           "consumer": "apps/mpx",
@@ -1080,7 +1088,7 @@
         {
           "consumer": "apps/mpx",
           "name": "@mpxjs/core",
-          "version": "2.11.1"
+          "version": "2.11.2"
         },
         {
           "consumer": "apps/mpx",
@@ -1090,7 +1098,7 @@
         {
           "consumer": "apps/mpx",
           "name": "@mpxjs/fetch",
-          "version": "2.11.1"
+          "version": "2.11.2"
         },
         {
           "consumer": "apps/mpx",
@@ -1100,22 +1108,22 @@
         {
           "consumer": "apps/mpx",
           "name": "@mpxjs/pinia",
-          "version": "2.11.0"
+          "version": "2.11.2"
         },
         {
           "consumer": "apps/mpx",
           "name": "@mpxjs/size-report",
-          "version": "2.11.0"
+          "version": "2.11.2"
         },
         {
           "consumer": "apps/mpx",
           "name": "@mpxjs/store",
-          "version": "2.11.0"
+          "version": "2.11.2"
         },
         {
           "consumer": "apps/mpx",
           "name": "@mpxjs/utils",
-          "version": "2.11.0"
+          "version": "2.11.2"
         },
         {
           "consumer": "apps/mpx",
@@ -1135,7 +1143,7 @@
         {
           "consumer": "apps/mpx",
           "name": "@mpxjs/webpack-plugin",
-          "version": "2.11.1"
+          "version": "2.11.2"
         },
         {
           "consumer": "apps/mpx",
@@ -1145,7 +1153,7 @@
         {
           "consumer": "apps/mpx",
           "name": "autoprefixer",
-          "version": "10.6.1"
+          "version": "10.6.2"
         },
         {
           "consumer": "apps/mpx",
@@ -1155,7 +1163,7 @@
         {
           "consumer": "apps/mpx",
           "name": "miniprogram-api-typings",
-          "version": "5.2.3"
+          "version": "5.3.1"
         },
         {
           "consumer": "apps/mpx",
@@ -1165,7 +1173,7 @@
         {
           "consumer": "apps/mpx",
           "name": "postcss",
-          "version": "8.5.28"
+          "version": "8.5.33"
         },
         {
           "consumer": "apps/mpx",
@@ -1180,7 +1188,7 @@
         {
           "consumer": "apps/mpx",
           "name": "stylus-loader",
-          "version": "9.0.0"
+          "version": "9.1.0"
         },
         {
           "consumer": "apps/mpx",
@@ -1220,47 +1228,47 @@
         {
           "consumer": "apps/taro-vue3",
           "name": "@tarojs/cli",
-          "version": "4.3.0"
+          "version": "4.3.3"
         },
         {
           "consumer": "apps/taro-vue3",
           "name": "@tarojs/components",
-          "version": "4.3.0"
+          "version": "4.3.3"
         },
         {
           "consumer": "apps/taro-vue3",
           "name": "@tarojs/helper",
-          "version": "4.3.0"
+          "version": "4.3.3"
         },
         {
           "consumer": "apps/taro-vue3",
           "name": "@tarojs/plugin-framework-vue3",
-          "version": "4.3.0"
+          "version": "4.3.3"
         },
         {
           "consumer": "apps/taro-vue3",
           "name": "@tarojs/plugin-platform-weapp",
-          "version": "4.3.0"
+          "version": "4.3.3"
         },
         {
           "consumer": "apps/taro-vue3",
           "name": "@tarojs/runtime",
-          "version": "4.3.0"
+          "version": "4.3.3"
         },
         {
           "consumer": "apps/taro-vue3",
           "name": "@tarojs/shared",
-          "version": "4.3.0"
+          "version": "4.3.3"
         },
         {
           "consumer": "apps/taro-vue3",
           "name": "@tarojs/taro",
-          "version": "4.3.0"
+          "version": "4.3.3"
         },
         {
           "consumer": "apps/taro-vue3",
           "name": "@tarojs/vite-runner",
-          "version": "4.3.0"
+          "version": "4.3.3"
         },
         {
           "consumer": "apps/taro-vue3",
@@ -1275,7 +1283,7 @@
         {
           "consumer": "apps/taro-vue3",
           "name": "@vue/compiler-sfc",
-          "version": "3.5.43"
+          "version": "3.5.45"
         },
         {
           "consumer": "apps/taro-vue3",
@@ -1290,12 +1298,12 @@
         {
           "consumer": "apps/taro-vue3",
           "name": "vue",
-          "version": "3.5.43"
+          "version": "3.5.45"
         },
         {
           "consumer": "apps/taro-vue3",
           "name": "vue-tsc",
-          "version": "3.3.11"
+          "version": "3.3.14"
         },
         {
           "consumer": "apps/uni-app-vite-vue3",
@@ -1305,107 +1313,107 @@
         {
           "consumer": "apps/uni-app-vite-vue3",
           "name": "@dcloudio/uni-app",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-vite-vue3",
           "name": "@dcloudio/uni-app-harmony",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-vite-vue3",
           "name": "@dcloudio/uni-app-plus",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-vite-vue3",
           "name": "@dcloudio/uni-automator",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-vite-vue3",
           "name": "@dcloudio/uni-cli-shared",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-vite-vue3",
           "name": "@dcloudio/uni-components",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-vite-vue3",
           "name": "@dcloudio/uni-h5",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-vite-vue3",
           "name": "@dcloudio/uni-mp-alipay",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-vite-vue3",
           "name": "@dcloudio/uni-mp-baidu",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-vite-vue3",
           "name": "@dcloudio/uni-mp-harmony",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-vite-vue3",
           "name": "@dcloudio/uni-mp-jd",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-vite-vue3",
           "name": "@dcloudio/uni-mp-kuaishou",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-vite-vue3",
           "name": "@dcloudio/uni-mp-lark",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-vite-vue3",
           "name": "@dcloudio/uni-mp-qq",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-vite-vue3",
           "name": "@dcloudio/uni-mp-toutiao",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-vite-vue3",
           "name": "@dcloudio/uni-mp-vue",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-vite-vue3",
           "name": "@dcloudio/uni-mp-weixin",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-vite-vue3",
           "name": "@dcloudio/uni-mp-xhs",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-vite-vue3",
           "name": "@dcloudio/uni-quickapp-webview",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-vite-vue3",
           "name": "@dcloudio/uni-stacktracey",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-vite-vue3",
           "name": "@dcloudio/vite-plugin-uni",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-vite-vue3",
@@ -1415,7 +1423,7 @@
         {
           "consumer": "apps/uni-app-vite-vue3",
           "name": "postcss",
-          "version": "8.5.28"
+          "version": "8.5.33"
         },
         {
           "consumer": "apps/uni-app-vite-vue3",
@@ -1445,7 +1453,7 @@
         {
           "consumer": "apps/uni-app-vite-vue3",
           "name": "vue-tsc",
-          "version": "3.3.11"
+          "version": "3.3.14"
         },
         {
           "consumer": "apps/uni-app-x",
@@ -1460,17 +1468,17 @@
         {
           "consumer": "apps/uni-app-x",
           "name": "@dcloudio/uni-app",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-x",
           "name": "@dcloudio/uni-app-harmony",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-x",
           "name": "@dcloudio/uni-app-plus",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-x",
@@ -1480,117 +1488,117 @@
         {
           "consumer": "apps/uni-app-x",
           "name": "@dcloudio/uni-automator",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-x",
           "name": "@dcloudio/uni-cli-shared",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-x",
           "name": "@dcloudio/uni-components",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-x",
           "name": "@dcloudio/uni-h5",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-x",
           "name": "@dcloudio/uni-mp-alipay",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-x",
           "name": "@dcloudio/uni-mp-baidu",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-x",
           "name": "@dcloudio/uni-mp-harmony",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-x",
           "name": "@dcloudio/uni-mp-jd",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-x",
           "name": "@dcloudio/uni-mp-kuaishou",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-x",
           "name": "@dcloudio/uni-mp-lark",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-x",
           "name": "@dcloudio/uni-mp-qq",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-x",
           "name": "@dcloudio/uni-mp-toutiao",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-x",
           "name": "@dcloudio/uni-mp-vue",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-x",
           "name": "@dcloudio/uni-mp-weixin",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-x",
           "name": "@dcloudio/uni-mp-xhs",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-x",
           "name": "@dcloudio/uni-quickapp-webview",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-x",
           "name": "@dcloudio/uni-shared",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-x",
           "name": "@dcloudio/uni-stacktracey",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-x",
           "name": "@dcloudio/uni-uts-v1",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-x > @dcloudio/uni-uts-v1",
           "name": "@dcloudio/uts",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-x > @dcloudio/uni-uts-v1",
           "name": "@dcloudio/uni-app-x",
-          "version": "0.7.132"
+          "version": "0.7.134"
         },
         {
           "consumer": "apps/uni-app-x",
           "name": "@dcloudio/uts",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-x",
           "name": "@dcloudio/vite-plugin-uni",
-          "version": "3.0.0-5020620260917001"
+          "version": "3.0.0-5030420261029002"
         },
         {
           "consumer": "apps/uni-app-x",
@@ -1600,7 +1608,7 @@
         {
           "consumer": "apps/uni-app-x",
           "name": "postcss",
-          "version": "8.5.28"
+          "version": "8.5.33"
         },
         {
           "consumer": "apps/uni-app-x",
@@ -1630,7 +1638,7 @@
         {
           "consumer": "apps/uni-app-x",
           "name": "vue-tsc",
-          "version": "3.3.11"
+          "version": "3.3.14"
         },
         {
           "consumer": "apps/vue-mini-core",
@@ -1645,7 +1653,7 @@
         {
           "consumer": "apps/weapp-vite-native",
           "name": "miniprogram-api-typings",
-          "version": "5.2.3"
+          "version": "5.3.1"
         },
         {
           "consumer": "apps/weapp-vite-native",
@@ -1665,7 +1673,7 @@
         {
           "consumer": "apps/weapp-vite-native > weapp-vite",
           "name": "vue",
-          "version": "3.5.43"
+          "version": "3.5.45"
         },
         {
           "consumer": "apps/weapp-vite-native > weapp-vite",
@@ -1675,7 +1683,7 @@
         {
           "consumer": "apps/weapp-vite-wevu-performance",
           "name": "miniprogram-api-typings",
-          "version": "5.2.3"
+          "version": "5.3.1"
         },
         {
           "consumer": "apps/weapp-vite-wevu-performance",
@@ -1685,7 +1693,7 @@
         {
           "consumer": "apps/weapp-vite-wevu-performance",
           "name": "vue-tsc",
-          "version": "3.3.11"
+          "version": "3.3.14"
         },
         {
           "consumer": "apps/weapp-vite-wevu-performance",
@@ -1700,7 +1708,7 @@
         {
           "consumer": "apps/weapp-vite-wevu-performance > weapp-vite",
           "name": "vue",
-          "version": "3.5.43"
+          "version": "3.5.45"
         },
         {
           "consumer": "apps/weapp-vite-wevu-performance > weapp-vite",
@@ -1715,7 +1723,7 @@
         {
           "consumer": "apps/weapp-vite-wevu-performance > wevu",
           "name": "vue",
-          "version": "3.5.43"
+          "version": "3.5.45"
         },
         {
           "consumer": "apps/weapp-vite-wevu-performance > wevu",
@@ -1725,7 +1733,7 @@
         {
           "consumer": "apps/weapp-vite-wevu",
           "name": "miniprogram-api-typings",
-          "version": "5.2.3"
+          "version": "5.3.1"
         },
         {
           "consumer": "apps/weapp-vite-wevu",
@@ -1735,7 +1743,7 @@
         {
           "consumer": "apps/weapp-vite-wevu",
           "name": "vue-tsc",
-          "version": "3.3.11"
+          "version": "3.3.14"
         },
         {
           "consumer": "apps/weapp-vite-wevu",
@@ -1750,7 +1758,7 @@
         {
           "consumer": "apps/weapp-vite-wevu > weapp-vite",
           "name": "vue",
-          "version": "3.5.43"
+          "version": "3.5.45"
         },
         {
           "consumer": "apps/weapp-vite-wevu > weapp-vite",
@@ -1765,7 +1773,7 @@
         {
           "consumer": "apps/weapp-vite-wevu > wevu",
           "name": "vue",
-          "version": "3.5.43"
+          "version": "3.5.45"
         },
         {
           "consumer": "apps/weapp-vite-wevu > wevu",
@@ -1775,12 +1783,12 @@
         {
           "consumer": ".",
           "name": "@commitlint/cli",
-          "version": "21.2.3"
+          "version": "21.2.4"
         },
         {
           "consumer": ".",
           "name": "@types/node",
-          "version": "26.6.3"
+          "version": "26.6.6"
         },
         {
           "consumer": ".",
@@ -1790,12 +1798,12 @@
         {
           "consumer": ".",
           "name": "@vitest/coverage-v8",
-          "version": "5.0.3"
+          "version": "5.0.5"
         },
         {
           "consumer": ".",
           "name": "ci-info",
-          "version": "4.4.0"
+          "version": "4.5.0"
         },
         {
           "consumer": ".",
@@ -1810,12 +1818,12 @@
         {
           "consumer": ".",
           "name": "es-toolkit",
-          "version": "1.52.0"
+          "version": "1.53.2"
         },
         {
           "consumer": ".",
           "name": "eslint",
-          "version": "10.11.0"
+          "version": "10.15.0"
         },
         {
           "consumer": ".",
@@ -1825,7 +1833,7 @@
         {
           "consumer": ".",
           "name": "lint-staged",
-          "version": "17.6.0"
+          "version": "17.6.1"
         },
         {
           "consumer": ".",
@@ -1840,22 +1848,22 @@
         {
           "consumer": ".",
           "name": "pkg-types",
-          "version": "2.3.3"
+          "version": "2.4.0"
         },
         {
           "consumer": ".",
           "name": "repoctl",
-          "version": "5.5.10"
+          "version": "5.10.3"
         },
         {
           "consumer": ".",
           "name": "stylelint",
-          "version": "17.15.0"
+          "version": "17.16.0"
         },
         {
           "consumer": ".",
           "name": "tailwindcss",
-          "version": "4.3.3"
+          "version": "4.3.5"
         },
         {
           "consumer": ".",
@@ -1865,12 +1873,12 @@
         {
           "consumer": ".",
           "name": "tsdown",
-          "version": "0.23.0"
+          "version": "0.23.7"
         },
         {
           "consumer": ".",
           "name": "tslib",
-          "version": "2.8.1"
+          "version": "2.9.1"
         },
         {
           "consumer": ".",
@@ -1880,7 +1888,7 @@
         {
           "consumer": ".",
           "name": "turbo",
-          "version": "2.11.5"
+          "version": "2.11.11"
         },
         {
           "consumer": ".",
@@ -1895,7 +1903,7 @@
         {
           "consumer": ".",
           "name": "vitest",
-          "version": "5.0.3"
+          "version": "5.0.5"
         },
         {
           "consumer": ".",
@@ -1905,7 +1913,7 @@
         {
           "consumer": "packages/benchmark-runner",
           "name": "@types/node",
-          "version": "26.6.3"
+          "version": "26.6.6"
         },
         {
           "consumer": "packages/benchmark-runner",
@@ -1930,12 +1938,12 @@
         {
           "consumer": "packages/benchmark-runner",
           "name": "prettier",
-          "version": "3.9.9"
+          "version": "3.10.1"
         },
         {
           "consumer": "packages/benchmark-runner",
           "name": "tsdown",
-          "version": "0.23.0"
+          "version": "0.23.7"
         },
         {
           "consumer": "packages/benchmark-runner",
@@ -1950,20 +1958,20 @@
         {
           "consumer": "packages/benchmark-runner",
           "name": "vitest",
-          "version": "5.0.3"
+          "version": "5.0.5"
         }
       ],
       "runner": {
         "version": "0.0.0",
-        "sourceHash": "8465f9de41f2c3b17f21457f7b4e25bb54d5e53920795eae29ad4cac3456f227"
+        "sourceHash": "cfd49892467b8d6ed605a4d062164f2a040112ac5c107dee9e35be15d0abcfcc"
       },
       "git": {
-        "commit": "1923b5d2f69cd5842dfe74e7d9bd8fb44b6d81d2",
+        "commit": "ca8e16f1e616d7b88074ff84d613b7b9ba9249c7",
         "dirty": true,
-        "inputDirty": false
+        "inputDirty": true
       },
       "referenceSubmodule": "eb9995e74fc4f760d265972b9148417cd40aab63",
-      "environmentHash": "206259fcbc2cdc529528a2cc67612de55524008fc1d970f1c9a0acaa93af99b2"
+      "environmentHash": "c5d0bd24428cbb578affd55931277bfe738a8080d04548cb335413d08225193d"
     },
     "method": {
       "fingerprint": "d8e04ba10810dae8364997423a284012a18bb34d5b35ebe51a69794f18b3c8e7",
@@ -2042,22 +2050,22 @@
       }
     },
     "inputStable": true,
-    "endingFingerprint": "a6f9c5f6e3cc8d530ef240ed85fe650ef4862057fb40230bfe7d24d864e42a48"
+    "endingFingerprint": "267013314fcb64e88c54df81193cade4e742fb34a1898be81826d2e632154448"
   },
-  "generatedAt": "2026-09-30T23:14:04.430Z",
+  "generatedAt": "2026-11-16T07:12:57.460Z",
   "toolchain": {
-    "toolchainId": "weapp-vite-7.4.0-a6f9c5f6e3cc-node24",
+    "toolchainId": "weapp-vite-7.4.0-267013314fcb-node24",
     "toolchainLabel": "weapp-vite 7.4.0 / Node 24.18.0",
-    "os": "macOS 27.0 (26A428)",
+    "os": "macOS 27.2 (26B123)",
     "arch": "darwin/arm64",
     "node": "v24.18.0",
-    "pnpm": "12.8.1",
-    "gitCommit": "1923b5d2f69cd5842dfe74e7d9bd8fb44b6d81d2",
+    "pnpm": "12.21.0",
+    "gitCommit": "ca8e16f1e616d7b88074ff84d613b7b9ba9249c7",
     "weappViteSubmodule": "eb9995e74fc4f760d265972b9148417cd40aab63",
     "packages": {
       "weapp-vite": "7.4.0",
       "wevu": "7.4.0",
-      "@dcloudio/vite-plugin-uni": "3.0.0-5020620260917001"
+      "@dcloudio/vite-plugin-uni": "3.0.0-5030420261029002"
     }
   },
   "projects": [
@@ -2131,9 +2139,9 @@
         },
         {
           "path": "pages/index/index.js",
-          "bytes": 10186,
-          "gzipBytes": 3135,
-          "brotliBytes": 2801,
+          "bytes": 10138,
+          "gzipBytes": 3116,
+          "brotliBytes": 2795,
           "type": "js",
           "bucket": "page",
           "runtime": false
@@ -2176,9 +2184,9 @@
         },
         {
           "path": "weapp-vendors/wevu-runtime.js",
-          "bytes": 178396,
-          "gzipBytes": 42399,
-          "brotliBytes": 35461,
+          "bytes": 176380,
+          "gzipBytes": 42285,
+          "brotliBytes": 35414,
           "type": "js",
           "bucket": "vendor",
           "runtime": true
@@ -2186,22 +2194,22 @@
       ],
       "totals": {
         "files": 13,
-        "bytes": 192017,
-        "gzipBytes": 47500,
-        "brotliBytes": 39856,
-        "jsBytes": 189607,
+        "bytes": 189953,
+        "gzipBytes": 47367,
+        "brotliBytes": 39803,
+        "jsBytes": 187543,
         "templateBytes": 1173,
         "styleBytes": 792,
         "jsonBytes": 445,
         "assetBytes": 0,
-        "vendorJsBytes": 178396,
-        "pageJsBytes": 10624,
+        "vendorJsBytes": 176380,
+        "pageJsBytes": 10576,
         "appJsBytes": 587,
         "sharedJsBytes": 0,
         "runtimeFiles": 1,
-        "runtimeBytes": 178396,
-        "runtimeGzipBytes": 42399,
-        "runtimeBrotliBytes": 35461
+        "runtimeBytes": 176380,
+        "runtimeGzipBytes": 42285,
+        "runtimeBrotliBytes": 35414
       }
     },
     {
@@ -2274,9 +2282,9 @@
         },
         {
           "path": "pages/index/index.js",
-          "bytes": 10676,
-          "gzipBytes": 3305,
-          "brotliBytes": 2947,
+          "bytes": 10628,
+          "gzipBytes": 3287,
+          "brotliBytes": 2929,
           "type": "js",
           "bucket": "page",
           "runtime": false
@@ -2319,18 +2327,18 @@
         },
         {
           "path": "weapp-vendors/wevu-runtime.js",
-          "bytes": 182146,
-          "gzipBytes": 43046,
-          "brotliBytes": 35955,
+          "bytes": 180106,
+          "gzipBytes": 42954,
+          "brotliBytes": 35884,
           "type": "js",
           "bucket": "vendor",
           "runtime": true
         },
         {
           "path": "weapp-vendors/wevu-runtime2.js",
-          "bytes": 14197,
-          "gzipBytes": 4557,
-          "brotliBytes": 4046,
+          "bytes": 14077,
+          "gzipBytes": 4538,
+          "brotliBytes": 4043,
           "type": "js",
           "bucket": "vendor",
           "runtime": true
@@ -2338,22 +2346,22 @@
       ],
       "totals": {
         "files": 14,
-        "bytes": 211519,
-        "gzipBytes": 53182,
-        "brotliBytes": 44810,
-        "jsBytes": 209109,
+        "bytes": 209311,
+        "gzipBytes": 53053,
+        "brotliBytes": 44718,
+        "jsBytes": 206901,
         "templateBytes": 1173,
         "styleBytes": 792,
         "jsonBytes": 445,
         "assetBytes": 0,
-        "vendorJsBytes": 196343,
-        "pageJsBytes": 11516,
+        "vendorJsBytes": 194183,
+        "pageJsBytes": 11468,
         "appJsBytes": 1250,
         "sharedJsBytes": 0,
         "runtimeFiles": 2,
-        "runtimeBytes": 196343,
-        "runtimeGzipBytes": 47603,
-        "runtimeBrotliBytes": 40001
+        "runtimeBytes": 194183,
+        "runtimeGzipBytes": 47492,
+        "runtimeBrotliBytes": 39927
       }
     },
     {
@@ -2533,9 +2541,9 @@
         },
         {
           "path": "common/vendor.js",
-          "bytes": 135371,
-          "gzipBytes": 46776,
-          "brotliBytes": 41101,
+          "bytes": 135541,
+          "gzipBytes": 46854,
+          "brotliBytes": 41175,
           "type": "js",
           "bucket": "vendor",
           "runtime": true
@@ -2633,22 +2641,22 @@
       ],
       "totals": {
         "files": 15,
-        "bytes": 142394,
-        "gzipBytes": 50419,
-        "brotliBytes": 44089,
-        "jsBytes": 139692,
+        "bytes": 142564,
+        "gzipBytes": 50497,
+        "brotliBytes": 44163,
+        "jsBytes": 139862,
         "templateBytes": 896,
         "styleBytes": 783,
         "jsonBytes": 1023,
         "assetBytes": 0,
-        "vendorJsBytes": 135371,
+        "vendorJsBytes": 135541,
         "pageJsBytes": 2686,
         "appJsBytes": 282,
         "sharedJsBytes": 1353,
         "runtimeFiles": 1,
-        "runtimeBytes": 135371,
-        "runtimeGzipBytes": 46776,
-        "runtimeBrotliBytes": 41101
+        "runtimeBytes": 135541,
+        "runtimeGzipBytes": 46854,
+        "runtimeBrotliBytes": 41175
       }
     },
     {
@@ -2703,9 +2711,9 @@
         },
         {
           "path": "common/vendor.js",
-          "bytes": 165171,
-          "gzipBytes": 56100,
-          "brotliBytes": 49143,
+          "bytes": 165527,
+          "gzipBytes": 56261,
+          "brotliBytes": 49290,
           "type": "js",
           "bucket": "vendor",
           "runtime": true
@@ -2748,9 +2756,9 @@
         },
         {
           "path": "pages/index/index.js",
-          "bytes": 2772,
-          "gzipBytes": 1109,
-          "brotliBytes": 995,
+          "bytes": 2651,
+          "gzipBytes": 1050,
+          "brotliBytes": 934,
           "type": "js",
           "bucket": "page",
           "runtime": false
@@ -2793,18 +2801,18 @@
         },
         {
           "path": "shared/benchmark.js",
-          "bytes": 1609,
-          "gzipBytes": 809,
-          "brotliBytes": 715,
+          "bytes": 1353,
+          "gzipBytes": 655,
+          "brotliBytes": 590,
           "type": "js",
           "bucket": "shared",
           "runtime": false
         },
         {
           "path": "uvue.wxss",
-          "bytes": 2941,
+          "bytes": 2980,
           "gzipBytes": 1092,
-          "brotliBytes": 861,
+          "brotliBytes": 872,
           "type": "style",
           "bucket": "asset",
           "runtime": true
@@ -2812,22 +2820,22 @@
       ],
       "totals": {
         "files": 17,
-        "bytes": 180752,
-        "gzipBytes": 63175,
-        "brotliBytes": 54958,
-        "jsBytes": 170082,
+        "bytes": 180770,
+        "gzipBytes": 63123,
+        "brotliBytes": 54930,
+        "jsBytes": 170061,
         "templateBytes": 1490,
-        "styleBytes": 3931,
+        "styleBytes": 3970,
         "jsonBytes": 1012,
         "assetBytes": 4237,
-        "vendorJsBytes": 165171,
-        "pageJsBytes": 3020,
+        "vendorJsBytes": 165527,
+        "pageJsBytes": 2899,
         "appJsBytes": 282,
-        "sharedJsBytes": 1609,
+        "sharedJsBytes": 1353,
         "runtimeFiles": 3,
-        "runtimeBytes": 172349,
-        "runtimeGzipBytes": 58735,
-        "runtimeBrotliBytes": 51262
+        "runtimeBytes": 172744,
+        "runtimeGzipBytes": 58896,
+        "runtimeBrotliBytes": 51420
       }
     },
     {
@@ -2837,18 +2845,18 @@
       "files": [
         {
           "path": "app.js",
-          "bytes": 14145,
-          "gzipBytes": 4268,
-          "brotliBytes": 3555,
+          "bytes": 14362,
+          "gzipBytes": 4314,
+          "brotliBytes": 3620,
           "type": "js",
           "bucket": "app",
           "runtime": false
         },
         {
           "path": "app.js.map",
-          "bytes": 53779,
-          "gzipBytes": 11886,
-          "brotliBytes": 9700,
+          "bytes": 53932,
+          "gzipBytes": 12178,
+          "brotliBytes": 9971,
           "type": "asset",
           "bucket": "asset",
           "runtime": false
@@ -2873,27 +2881,27 @@
         },
         {
           "path": "bundle.js",
-          "bytes": 174798,
-          "gzipBytes": 55243,
-          "brotliBytes": 47601,
+          "bytes": 174154,
+          "gzipBytes": 55239,
+          "brotliBytes": 47573,
           "type": "js",
           "bucket": "asset",
           "runtime": true
         },
         {
           "path": "bundle.js.map",
-          "bytes": 867061,
-          "gzipBytes": 192356,
-          "brotliBytes": 159777,
+          "bytes": 854571,
+          "gzipBytes": 192439,
+          "brotliBytes": 159819,
           "type": "asset",
           "bucket": "asset",
           "runtime": false
         },
         {
           "path": "pages/detail.js",
-          "bytes": 575,
-          "gzipBytes": 336,
-          "brotliBytes": 300,
+          "bytes": 639,
+          "gzipBytes": 347,
+          "brotliBytes": 323,
           "type": "js",
           "bucket": "page",
           "runtime": false
@@ -2901,7 +2909,7 @@
         {
           "path": "pages/detail.js.map",
           "bytes": 1797,
-          "gzipBytes": 713,
+          "gzipBytes": 712,
           "brotliBytes": 629,
           "type": "asset",
           "bucket": "page",
@@ -2936,9 +2944,9 @@
         },
         {
           "path": "pages/index.js",
-          "bytes": 21974,
-          "gzipBytes": 7071,
-          "brotliBytes": 6193,
+          "bytes": 22031,
+          "gzipBytes": 7101,
+          "brotliBytes": 6204,
           "type": "js",
           "bucket": "page",
           "runtime": false
@@ -2954,9 +2962,9 @@
         },
         {
           "path": "pages/index.js.map",
-          "bytes": 101023,
-          "gzipBytes": 19748,
-          "brotliBytes": 17565,
+          "bytes": 98575,
+          "gzipBytes": 19706,
+          "brotliBytes": 17574,
           "type": "asset",
           "bucket": "page",
           "runtime": false
@@ -3000,22 +3008,22 @@
       ],
       "totals": {
         "files": 18,
-        "bytes": 1237547,
-        "gzipBytes": 293151,
-        "brotliBytes": 246486,
-        "jsBytes": 211492,
+        "bytes": 1222456,
+        "gzipBytes": 293566,
+        "brotliBytes": 246879,
+        "jsBytes": 211186,
         "templateBytes": 977,
         "styleBytes": 677,
         "jsonBytes": 578,
-        "assetBytes": 1023823,
+        "assetBytes": 1009038,
         "vendorJsBytes": 0,
-        "pageJsBytes": 22549,
-        "appJsBytes": 14145,
+        "pageJsBytes": 22670,
+        "appJsBytes": 14362,
         "sharedJsBytes": 0,
         "runtimeFiles": 1,
-        "runtimeBytes": 174798,
-        "runtimeGzipBytes": 55243,
-        "runtimeBrotliBytes": 47601
+        "runtimeBytes": 174154,
+        "runtimeGzipBytes": 55239,
+        "runtimeBrotliBytes": 47573
       }
     },
     {
@@ -3061,9 +3069,9 @@
         },
         {
           "path": "base.wxml",
-          "bytes": 55590,
-          "gzipBytes": 2241,
-          "brotliBytes": 1688,
+          "bytes": 55766,
+          "gzipBytes": 2256,
+          "brotliBytes": 1677,
           "type": "template",
           "bucket": "asset",
           "runtime": true
@@ -3187,9 +3195,9 @@
         },
         {
           "path": "taro.js",
-          "bytes": 165109,
-          "gzipBytes": 59148,
-          "brotliBytes": 52583,
+          "bytes": 168439,
+          "gzipBytes": 60303,
+          "brotliBytes": 53556,
           "type": "js",
           "bucket": "asset",
           "runtime": true
@@ -3206,11 +3214,11 @@
       ],
       "totals": {
         "files": 20,
-        "bytes": 229917,
-        "gzipBytes": 66177,
-        "brotliBytes": 58341,
-        "jsBytes": 171657,
-        "templateBytes": 55890,
+        "bytes": 233423,
+        "gzipBytes": 67347,
+        "brotliBytes": 59303,
+        "jsBytes": 174987,
+        "templateBytes": 56066,
         "styleBytes": 621,
         "jsonBytes": 752,
         "assetBytes": 997,
@@ -3219,18 +3227,18 @@
         "appJsBytes": 403,
         "sharedJsBytes": 0,
         "runtimeFiles": 7,
-        "runtimeBytes": 222153,
-        "runtimeGzipBytes": 62260,
-        "runtimeBrotliBytes": 55003
+        "runtimeBytes": 225659,
+        "runtimeGzipBytes": 63430,
+        "runtimeBrotliBytes": 55965
       }
     }
   ],
   "artifacts": [
     {
       "project": "weapp-vite-wevu",
-      "inputFingerprint": "a6f9c5f6e3cc8d530ef240ed85fe650ef4862057fb40230bfe7d24d864e42a48",
+      "inputFingerprint": "267013314fcb64e88c54df81193cade4e742fb34a1898be81826d2e632154448",
       "manifest": {
-        "fingerprint": "aa65385dfce805ffa03f81ba5316603d5c1dbc74963f171418da42924933aa50",
+        "fingerprint": "1c8f559911d2b25d9c2daef5823dfa540785d3d8b9e4b4db5ea7d9fcab035223",
         "files": [
           {
             "path": "app.js",
@@ -3262,7 +3270,7 @@
           },
           {
             "path": "pages/index/index.js",
-            "sha256": "abd6f6471c239aafaa6d0c83f1ba771369762b20dbf0f001a88b9b7781823ba3"
+            "sha256": "d120b265e4f5604bc2a19948d2d8b64074b55144f678aa1196ce8d60ed640d4b"
           },
           {
             "path": "pages/index/index.json",
@@ -3282,16 +3290,16 @@
           },
           {
             "path": "weapp-vendors/wevu-runtime.js",
-            "sha256": "6fd3cd9ba3c095ca868b001c3414d50057d9ef2c6dc1bf493745806e6ccd00ec"
+            "sha256": "705da63377e40c7657db4683326f889894420d13682a2047559b42ee1698a77a"
           }
         ]
       }
     },
     {
       "project": "weapp-vite-wevu-performance",
-      "inputFingerprint": "a6f9c5f6e3cc8d530ef240ed85fe650ef4862057fb40230bfe7d24d864e42a48",
+      "inputFingerprint": "267013314fcb64e88c54df81193cade4e742fb34a1898be81826d2e632154448",
       "manifest": {
-        "fingerprint": "167b7ca742d5ce4cf0841f1df158ff959961590883c37fa49ff07ffb3846006e",
+        "fingerprint": "1b5ec81921199f69d71466a882b7bb0ec48f929c000ae7eb2a5f4dddc27dd378",
         "files": [
           {
             "path": "app.js",
@@ -3323,7 +3331,7 @@
           },
           {
             "path": "pages/index/index.js",
-            "sha256": "a13923d284934b7e24f7bbeb5f738b20eb07f66a3e21922a10f3f396c377c237"
+            "sha256": "4290a68f36e7259d455910df19a6107d8d1b89f2e6a5b5bcb81d2f5576d9bbe2"
           },
           {
             "path": "pages/index/index.json",
@@ -3343,18 +3351,18 @@
           },
           {
             "path": "weapp-vendors/wevu-runtime.js",
-            "sha256": "0615b48231550fc682e3b16177ed2b6d7e091b2f9255b0704cf5bc3a6a848554"
+            "sha256": "fabb23b10fba8600dde594a28803c9c80e690518bab6b00e946358ee6926109a"
           },
           {
             "path": "weapp-vendors/wevu-runtime2.js",
-            "sha256": "9a1aeb150879498c32c2986f718cfd21a9696ea5ec4a31baaeb9d7c616ed0fc6"
+            "sha256": "ab3b911405a117ad35932ee939a0d6a4a13f707140ebef2b4aa2c55497d5a7b6"
           }
         ]
       }
     },
     {
       "project": "weapp-vite-native",
-      "inputFingerprint": "a6f9c5f6e3cc8d530ef240ed85fe650ef4862057fb40230bfe7d24d864e42a48",
+      "inputFingerprint": "267013314fcb64e88c54df81193cade4e742fb34a1898be81826d2e632154448",
       "manifest": {
         "fingerprint": "c3cd9f4d4c38081bfadd2b240354dcfe29ac689840b3f54d50ea2154a6b1b786",
         "files": [
@@ -3411,9 +3419,9 @@
     },
     {
       "project": "uni-app-vite-vue3",
-      "inputFingerprint": "a6f9c5f6e3cc8d530ef240ed85fe650ef4862057fb40230bfe7d24d864e42a48",
+      "inputFingerprint": "267013314fcb64e88c54df81193cade4e742fb34a1898be81826d2e632154448",
       "manifest": {
-        "fingerprint": "b3618b72c60d8b9122243130c64eb253db98d3e2b5143f409a6c739d491f9bb3",
+        "fingerprint": "6cf701c716aafc9776b4421fcba2bbda5755fca51a6dba515ae564021178ca32",
         "files": [
           {
             "path": "app.js",
@@ -3433,7 +3441,7 @@
           },
           {
             "path": "common/vendor.js",
-            "sha256": "8086302e591dfb8438cc3b3946fcf52ba8ca4bbc92f90d8c084f86e703cdf15d"
+            "sha256": "13541eeeb5d2f3877c4fda4489cf22df1aff7405369421ccad658a9d369cd8c9"
           },
           {
             "path": "pages/detail/index.js",
@@ -3480,9 +3488,9 @@
     },
     {
       "project": "uni-app-x",
-      "inputFingerprint": "a6f9c5f6e3cc8d530ef240ed85fe650ef4862057fb40230bfe7d24d864e42a48",
+      "inputFingerprint": "267013314fcb64e88c54df81193cade4e742fb34a1898be81826d2e632154448",
       "manifest": {
-        "fingerprint": "02a235a7c3957d77a372cbdafa107e92b4e7620ce820f0eaa3f30fa874da5ff6",
+        "fingerprint": "b2950558bf3070d24ec33adb5c8debde131c837ac76958f445d1c63051836542",
         "files": [
           {
             "path": "app.js",
@@ -3506,7 +3514,7 @@
           },
           {
             "path": "common/vendor.js",
-            "sha256": "d38ab6f3049d7733febbd0ec7535cd27408937a8856158a0f376274f1e9bb460"
+            "sha256": "f7237af4ed8e9158be3a3d18ea1ddd785c4c6539f4d1fc8abcfb5f9a34210bd4"
           },
           {
             "path": "pages/detail/index.js",
@@ -3526,7 +3534,7 @@
           },
           {
             "path": "pages/index/index.js",
-            "sha256": "9b34ac0da0cc0c632d6fdf09ba75edc1401899c2c7dad372723cac843a37b2f3"
+            "sha256": "8b046beb538927c5c290730029c0bc06e50736af84abef0dac811f6a20e58960"
           },
           {
             "path": "pages/index/index.json",
@@ -3546,28 +3554,28 @@
           },
           {
             "path": "shared/benchmark.js",
-            "sha256": "57985983c294bd7dbf48564a6e5ad07489f1eb31aae681ed1412ef7abc5d3e90"
+            "sha256": "916b957ce2754e6382d2b51d4b9b11be6365c7ef19ca138ae8d500855650e272"
           },
           {
             "path": "uvue.wxss",
-            "sha256": "0d011e78b5f6b2c637af3d7e8789cdd763c876355490e1376bca82eabe2b01bf"
+            "sha256": "064292ae1e20bf5b84823f34efd977d3ddc58a0c7bef5b60dd929863dcce5d53"
           }
         ]
       }
     },
     {
       "project": "mpx",
-      "inputFingerprint": "a6f9c5f6e3cc8d530ef240ed85fe650ef4862057fb40230bfe7d24d864e42a48",
+      "inputFingerprint": "267013314fcb64e88c54df81193cade4e742fb34a1898be81826d2e632154448",
       "manifest": {
-        "fingerprint": "6c7724ab6e462e8044b8df27cb48e3e3a77120b52fbe155a5a9c788b15ed8c08",
+        "fingerprint": "cf583688c4de1bf30f365cc1d1a9e03fe5a5a8cb06bf6750ed0f777d40bfc191",
         "files": [
           {
             "path": "app.js",
-            "sha256": "5fbfbbc26835a257c314cc15cff086ca4e515d6ebe6611a8f1c055d5c5eb07b1"
+            "sha256": "f4a2fcab0031b38627551a716745fc3a669ee6cb877a6521d6ea203a18e84b94"
           },
           {
             "path": "app.js.map",
-            "sha256": "9f30461148c0b5bfb16659f2e7accc683ce627cf5dfb5b71f3852651e7fff443"
+            "sha256": "2ef95668eab35db7fad175ba6f6d8888c263d9c1ac36eb6d89743c79a75bdc0d"
           },
           {
             "path": "app.json",
@@ -3579,19 +3587,19 @@
           },
           {
             "path": "bundle.js",
-            "sha256": "7455c93a9b572b331a4eadc6858f604b4a6824d20a2a18417ea4dbe471de6416"
+            "sha256": "373c1b0f9294a71841b2184720805c29c5ee2f110b35ac1d96976b03d7491fc8"
           },
           {
             "path": "bundle.js.map",
-            "sha256": "d4f21c0716652093cd817a85178337ec69dd82e622ff3e29f587efe669548670"
+            "sha256": "dffd3a8b77ade4cdf180ecc3c28f5dc082f7563278e0c3addbaaeae2683b77b8"
           },
           {
             "path": "pages/detail.js",
-            "sha256": "c72bdf351f00ac2228de4f8f5ed4e1d3ec38b8b77abf0d6849c6a8818e608b99"
+            "sha256": "bc2f4ba920c69f87e99927d776788d3ec136207c6988d53fcf551d8d61cdc8c4"
           },
           {
             "path": "pages/detail.js.map",
-            "sha256": "038cb3c4c4b08b5c6725a7c51edca5f6f5088d7df4666528ea7b5928871a2c41"
+            "sha256": "8b758b257c2264993905a963e3165a22c6f44e7971db2a25eece272712a7078e"
           },
           {
             "path": "pages/detail.json",
@@ -3607,7 +3615,7 @@
           },
           {
             "path": "pages/index.js",
-            "sha256": "ba0fd2599f82aac7921130d45cdf9f79df3c4747434dde00a4eea03c69f08d2d"
+            "sha256": "1a66261780c744e1e82096a5341681cb76af642749b72ff6aa6cf65b503ec0d4"
           },
           {
             "path": "pages/index.js.LICENSE.txt",
@@ -3615,7 +3623,7 @@
           },
           {
             "path": "pages/index.js.map",
-            "sha256": "19deabad510c7f0a7491a4776d4a149da5021cf6b3f6e86576c7cbbe46446377"
+            "sha256": "67cb38cd415fbe35fe6f44af236c9b6e0351c7ff0eaee86be81330ad7cfe942d"
           },
           {
             "path": "pages/index.json",
@@ -3638,9 +3646,9 @@
     },
     {
       "project": "taro-vue3",
-      "inputFingerprint": "a6f9c5f6e3cc8d530ef240ed85fe650ef4862057fb40230bfe7d24d864e42a48",
+      "inputFingerprint": "267013314fcb64e88c54df81193cade4e742fb34a1898be81826d2e632154448",
       "manifest": {
-        "fingerprint": "96f0bd5dbe7b6f1c6d71dfd457d53641b08656af593cca1e8a36213a2df823d9",
+        "fingerprint": "0d7843a4cf9e00b7853da486e1b26ed690429c037e59690217197a6cab178da6",
         "files": [
           {
             "path": "app-origin.wxss",
@@ -3660,7 +3668,7 @@
           },
           {
             "path": "base.wxml",
-            "sha256": "915560910765559cf118d43996858e4b05b76e34176771998d476dbf7cb06fcc"
+            "sha256": "686f5e5179bdc00c676bc897c0c98c579e0340bda93cd65d1af1ef98684cbf82"
           },
           {
             "path": "common.js",
@@ -3716,7 +3724,7 @@
           },
           {
             "path": "taro.js",
-            "sha256": "8d69adbc89804bbbd20ed8f4e29b5e1a805c673e1f4ec639dede79a9be648fef"
+            "sha256": "a3b99e94005ef0f30148c9bef7c88ceee83ab0a23b022e3b7612b387af5925c9"
           },
           {
             "path": "utils.wxs",
@@ -6686,7 +6694,7 @@
           }
         },
         "manifest": {
-          "fingerprint": "f9d6b8e59fbb2ed1640d8aced085d66969b135fb013f32b5bb30f9c35cc6f1a6",
+          "fingerprint": "66a1a92828640f9ae751f27102b4a00ad4c9d22a8e8e1a972f95cae4d2ed910c",
           "files": [
             {
               "path": "app.js",
@@ -6722,7 +6730,7 @@
             },
             {
               "path": "weapp-vendors/wevu-runtime.js",
-              "sha256": "edc1625efb6ac9b680d3c794aaa7b3868d7b082c48986d34036e5d5500ce222e"
+              "sha256": "760fc7037a21d8d7b93891eb30fee58a0680365f3d1d0144a969aaa19e3e7908"
             }
           ]
         },
@@ -6805,9 +6813,9 @@
             },
             {
               "path": "weapp-vendors/wevu-runtime.js",
-              "bytes": 173821,
-              "gzipBytes": 41313,
-              "brotliBytes": 34651,
+              "bytes": 171877,
+              "gzipBytes": 41197,
+              "brotliBytes": 34585,
               "type": "js",
               "bucket": "vendor",
               "runtime": false
@@ -6815,15 +6823,15 @@
           ],
           "totals": {
             "files": 9,
-            "bytes": 175042,
-            "gzipBytes": 42273,
-            "brotliBytes": 35424,
-            "jsBytes": 174823,
+            "bytes": 173098,
+            "gzipBytes": 42157,
+            "brotliBytes": 35358,
+            "jsBytes": 172879,
             "templateBytes": 62,
             "styleBytes": 0,
             "jsonBytes": 157,
             "assetBytes": 0,
-            "vendorJsBytes": 173821,
+            "vendorJsBytes": 171877,
             "pageJsBytes": 377,
             "appJsBytes": 242,
             "sharedJsBytes": 0,
@@ -6834,9 +6842,9 @@
           }
         },
         "packages": {
-          "mainBytes": 174626,
-          "mainGzipBytes": 41940,
-          "mainBrotliBytes": 35165,
+          "mainBytes": 172682,
+          "mainGzipBytes": 41824,
+          "mainBrotliBytes": 35099,
           "mainFiles": [
             "app.js",
             "app.json",
@@ -6858,7 +6866,7 @@
               ]
             }
           ],
-          "totalBytes": 175042
+          "totalBytes": 173098
         }
       },
       {
@@ -6890,7 +6898,7 @@
           }
         },
         "manifest": {
-          "fingerprint": "59d496804451d35441b3aa9dbfa65cda629e6c8421e0eb28fb8a66ad81b785b9",
+          "fingerprint": "a033a09545762d1315a2d8fa0ad9545cd4d8fc8632acca22b7e896f31bbea5b4",
           "files": [
             {
               "path": "app.js",
@@ -6926,11 +6934,11 @@
             },
             {
               "path": "weapp-vendors/wevu-runtime.js",
-              "sha256": "80b0b1ae12008012a1046d1d2ee6386b60add87d427fb40cada54a116ec5ec1b"
+              "sha256": "67f4973a9d4756f6a0d8af656d9c752ac942a9583dfa4087519236a17fe9c92b"
             },
             {
               "path": "weapp-vendors/wevu-runtime2.js",
-              "sha256": "5d8a3a0d09bc0b07e91af8e3d3619f0a5848b8c4f81d33121ddd49616d08e8bc"
+              "sha256": "c585c56cca644f2241842215988f611806e67a4c5c02a715478c18385fb8a5b4"
             }
           ]
         },
@@ -7013,18 +7021,18 @@
             },
             {
               "path": "weapp-vendors/wevu-runtime.js",
-              "bytes": 177723,
-              "gzipBytes": 41999,
-              "brotliBytes": 35168,
+              "bytes": 175755,
+              "gzipBytes": 41888,
+              "brotliBytes": 35175,
               "type": "js",
               "bucket": "vendor",
               "runtime": false
             },
             {
               "path": "weapp-vendors/wevu-runtime2.js",
-              "bytes": 14197,
-              "gzipBytes": 4555,
-              "brotliBytes": 4042,
+              "bytes": 14077,
+              "gzipBytes": 4535,
+              "brotliBytes": 4033,
               "type": "js",
               "bucket": "vendor",
               "runtime": false
@@ -7032,15 +7040,15 @@
           ],
           "totals": {
             "files": 10,
-            "bytes": 194612,
-            "gzipBytes": 47988,
-            "brotliBytes": 40368,
-            "jsBytes": 194393,
+            "bytes": 192524,
+            "gzipBytes": 47857,
+            "brotliBytes": 40366,
+            "jsBytes": 192305,
             "templateBytes": 62,
             "styleBytes": 0,
             "jsonBytes": 157,
             "assetBytes": 0,
-            "vendorJsBytes": 191920,
+            "vendorJsBytes": 189832,
             "pageJsBytes": 779,
             "appJsBytes": 909,
             "sharedJsBytes": 0,
@@ -7051,9 +7059,9 @@
           }
         },
         "packages": {
-          "mainBytes": 193794,
-          "mainGzipBytes": 47497,
-          "mainBrotliBytes": 39983,
+          "mainBytes": 191706,
+          "mainGzipBytes": 47366,
+          "mainBrotliBytes": 39981,
           "mainFiles": [
             "app.js",
             "app.json",
@@ -7076,7 +7084,7 @@
               ]
             }
           ],
-          "totalBytes": 194612
+          "totalBytes": 192524
         }
       },
       {
@@ -7106,7 +7114,7 @@
           }
         },
         "manifest": {
-          "fingerprint": "f9b6d346747b5c143a121b60beef901ccbc87749305b3e29feac392d35918569",
+          "fingerprint": "856ce8bc49d5a9536dc39ff324a7714236b0fd4af076d953b5a27f84e1de4e03",
           "files": [
             {
               "path": "app.js",
@@ -7142,7 +7150,7 @@
             },
             {
               "path": "weapp-vendors/wevu-runtime.js",
-              "sha256": "18aac8143d31908bfc46d707f5dec9b6e92675ce4b47d9e1246a009b144d80d1"
+              "sha256": "2a8cafac13ab39d161daa87bf16a912025534e925695569926f46db005213a4a"
             }
           ]
         },
@@ -7225,9 +7233,9 @@
             },
             {
               "path": "weapp-vendors/wevu-runtime.js",
-              "bytes": 173919,
-              "gzipBytes": 41323,
-              "brotliBytes": 34653,
+              "bytes": 171975,
+              "gzipBytes": 41206,
+              "brotliBytes": 34592,
               "type": "js",
               "bucket": "vendor",
               "runtime": false
@@ -7235,15 +7243,15 @@
           ],
           "totals": {
             "files": 9,
-            "bytes": 175296,
-            "gzipBytes": 42353,
-            "brotliBytes": 35482,
-            "jsBytes": 175086,
+            "bytes": 173352,
+            "gzipBytes": 42236,
+            "brotliBytes": 35421,
+            "jsBytes": 173142,
             "templateBytes": 53,
             "styleBytes": 0,
             "jsonBytes": 157,
             "assetBytes": 0,
-            "vendorJsBytes": 173919,
+            "vendorJsBytes": 171975,
             "pageJsBytes": 542,
             "appJsBytes": 242,
             "sharedJsBytes": 0,
@@ -7254,9 +7262,9 @@
           }
         },
         "packages": {
-          "mainBytes": 174880,
-          "mainGzipBytes": 42020,
-          "mainBrotliBytes": 35223,
+          "mainBytes": 172936,
+          "mainGzipBytes": 41903,
+          "mainBrotliBytes": 35162,
           "mainFiles": [
             "app.js",
             "app.json",
@@ -7278,7 +7286,7 @@
               ]
             }
           ],
-          "totalBytes": 175296
+          "totalBytes": 173352
         }
       },
       {
@@ -7310,7 +7318,7 @@
           }
         },
         "manifest": {
-          "fingerprint": "8bf286dae8165eb6756b59527cc8ecb9ab56e4edce97d61d3dd8c148aa4e8cec",
+          "fingerprint": "c4f1b5a84ae64450657bdac7fb08ce0c75ec1cbe4d396509d5b65d1d2d8321bd",
           "files": [
             {
               "path": "app.js",
@@ -7346,11 +7354,11 @@
             },
             {
               "path": "weapp-vendors/wevu-runtime.js",
-              "sha256": "9a4583f20252aad45e88a9e54fcec5ef29115f20e034d2493e3b1b5e09fd2367"
+              "sha256": "cbe095d4860d0c0e9f579de9f6ad0478d41f730897415c3e182ebf2eedb2184c"
             },
             {
               "path": "weapp-vendors/wevu-runtime2.js",
-              "sha256": "5d8a3a0d09bc0b07e91af8e3d3619f0a5848b8c4f81d33121ddd49616d08e8bc"
+              "sha256": "c585c56cca644f2241842215988f611806e67a4c5c02a715478c18385fb8a5b4"
             }
           ]
         },
@@ -7433,18 +7441,18 @@
             },
             {
               "path": "weapp-vendors/wevu-runtime.js",
-              "bytes": 177823,
-              "gzipBytes": 42006,
-              "brotliBytes": 35222,
+              "bytes": 175855,
+              "gzipBytes": 41895,
+              "brotliBytes": 35125,
               "type": "js",
               "bucket": "vendor",
               "runtime": false
             },
             {
               "path": "weapp-vendors/wevu-runtime2.js",
-              "bytes": 14197,
-              "gzipBytes": 4555,
-              "brotliBytes": 4042,
+              "bytes": 14077,
+              "gzipBytes": 4535,
+              "brotliBytes": 4033,
               "type": "js",
               "bucket": "vendor",
               "runtime": false
@@ -7452,15 +7460,15 @@
           ],
           "totals": {
             "files": 10,
-            "bytes": 194882,
-            "gzipBytes": 48067,
-            "brotliBytes": 40484,
-            "jsBytes": 194672,
+            "bytes": 192794,
+            "gzipBytes": 47936,
+            "brotliBytes": 40378,
+            "jsBytes": 192584,
             "templateBytes": 53,
             "styleBytes": 0,
             "jsonBytes": 157,
             "assetBytes": 0,
-            "vendorJsBytes": 192020,
+            "vendorJsBytes": 189932,
             "pageJsBytes": 958,
             "appJsBytes": 909,
             "sharedJsBytes": 0,
@@ -7471,9 +7479,9 @@
           }
         },
         "packages": {
-          "mainBytes": 194064,
-          "mainGzipBytes": 47576,
-          "mainBrotliBytes": 40099,
+          "mainBytes": 191976,
+          "mainGzipBytes": 47445,
+          "mainBrotliBytes": 39993,
           "mainFiles": [
             "app.js",
             "app.json",
@@ -7496,7 +7504,7 @@
               ]
             }
           ],
-          "totalBytes": 194882
+          "totalBytes": 192794
         }
       },
       {
@@ -7526,7 +7534,7 @@
           }
         },
         "manifest": {
-          "fingerprint": "96b802cacce4d1f79b5294733061491ac121cd1899a2148640700a6c08f53172",
+          "fingerprint": "726db2c1c329dc024252991c94d402d384759276adb7b2e0215b66ad0e49f940",
           "files": [
             {
               "path": "app.js",
@@ -7562,7 +7570,7 @@
             },
             {
               "path": "weapp-vendors/wevu-runtime.js",
-              "sha256": "c112d7b251f9eb508982fe226f6dcc50dc8624d2620552bfb8248d7c64b4d33f"
+              "sha256": "1a1c9cff18867e57eacbadaf7ea51793c7a8ba6cd93db465b6aa0693770e342b"
             }
           ]
         },
@@ -7645,9 +7653,9 @@
             },
             {
               "path": "weapp-vendors/wevu-runtime.js",
-              "bytes": 174844,
-              "gzipBytes": 41554,
-              "brotliBytes": 34801,
+              "bytes": 172876,
+              "gzipBytes": 41444,
+              "brotliBytes": 34806,
               "type": "js",
               "bucket": "vendor",
               "runtime": false
@@ -7655,15 +7663,15 @@
           ],
           "totals": {
             "files": 9,
-            "bytes": 176299,
-            "gzipBytes": 42628,
-            "brotliBytes": 35665,
-            "jsBytes": 176087,
+            "bytes": 174331,
+            "gzipBytes": 42518,
+            "brotliBytes": 35670,
+            "jsBytes": 174119,
             "templateBytes": 55,
             "styleBytes": 0,
             "jsonBytes": 157,
             "assetBytes": 0,
-            "vendorJsBytes": 174844,
+            "vendorJsBytes": 172876,
             "pageJsBytes": 618,
             "appJsBytes": 242,
             "sharedJsBytes": 0,
@@ -7674,9 +7682,9 @@
           }
         },
         "packages": {
-          "mainBytes": 175883,
-          "mainGzipBytes": 42295,
-          "mainBrotliBytes": 35406,
+          "mainBytes": 173915,
+          "mainGzipBytes": 42185,
+          "mainBrotliBytes": 35411,
           "mainFiles": [
             "app.js",
             "app.json",
@@ -7698,7 +7706,7 @@
               ]
             }
           ],
-          "totalBytes": 176299
+          "totalBytes": 174331
         }
       },
       {
@@ -7730,7 +7738,7 @@
           }
         },
         "manifest": {
-          "fingerprint": "dae85a3eea6398c39930fab5eab44eb9614e3a4366c62b22805d4d262cd51715",
+          "fingerprint": "a0e808020efb028c6dace6ce994e9d7247b84e8f324130e80428e45ad34a3c52",
           "files": [
             {
               "path": "app.js",
@@ -7766,11 +7774,11 @@
             },
             {
               "path": "weapp-vendors/wevu-runtime.js",
-              "sha256": "ed1b6d357db73f9c62f5ce473c281d42c1c71d62886bbe6d9ab69848eee0fb93"
+              "sha256": "22a3ad850d47254239492fdc4763ba9d66120b082f12221386f3ff30c795fbd4"
             },
             {
               "path": "weapp-vendors/wevu-runtime2.js",
-              "sha256": "72b4acdbb6e0417433b88be5a575f229220c29631388f440452f2099e6516839"
+              "sha256": "11dc50ec74c41e551d1c311b9be6f595c00dbd34dc53d191f3c8cdb3d9b7ceb1"
             }
           ]
         },
@@ -7853,18 +7861,18 @@
             },
             {
               "path": "weapp-vendors/wevu-runtime.js",
-              "bytes": 178750,
-              "gzipBytes": 42254,
-              "brotliBytes": 35354,
+              "bytes": 176758,
+              "gzipBytes": 42134,
+              "brotliBytes": 35280,
               "type": "js",
               "bucket": "vendor",
               "runtime": false
             },
             {
               "path": "weapp-vendors/wevu-runtime2.js",
-              "bytes": 14197,
-              "gzipBytes": 4555,
-              "brotliBytes": 4040,
+              "bytes": 14077,
+              "gzipBytes": 4535,
+              "brotliBytes": 4033,
               "type": "js",
               "bucket": "vendor",
               "runtime": false
@@ -7872,15 +7880,15 @@
           ],
           "totals": {
             "files": 10,
-            "bytes": 195891,
-            "gzipBytes": 48358,
-            "brotliBytes": 40650,
-            "jsBytes": 195679,
+            "bytes": 193779,
+            "gzipBytes": 48218,
+            "brotliBytes": 40569,
+            "jsBytes": 193567,
             "templateBytes": 55,
             "styleBytes": 0,
             "jsonBytes": 157,
             "assetBytes": 0,
-            "vendorJsBytes": 192947,
+            "vendorJsBytes": 190835,
             "pageJsBytes": 1038,
             "appJsBytes": 909,
             "sharedJsBytes": 0,
@@ -7891,9 +7899,9 @@
           }
         },
         "packages": {
-          "mainBytes": 195073,
-          "mainGzipBytes": 47867,
-          "mainBrotliBytes": 40265,
+          "mainBytes": 192961,
+          "mainGzipBytes": 47727,
+          "mainBrotliBytes": 40184,
           "mainFiles": [
             "app.js",
             "app.json",
@@ -7916,7 +7924,7 @@
               ]
             }
           ],
-          "totalBytes": 195891
+          "totalBytes": 193779
         }
       },
       {
@@ -7950,7 +7958,7 @@
           }
         },
         "manifest": {
-          "fingerprint": "579f69487c85334eef6f981852491b738eb74dab6d1865c76bd70f91635de2d1",
+          "fingerprint": "35a1164a3f482fe49083adc9cacdcce10381a56cf28200f4ea69d54bc960ff45",
           "files": [
             {
               "path": "app.js",
@@ -7962,7 +7970,7 @@
             },
             {
               "path": "components/counter/index.js",
-              "sha256": "fd1dc3961194d53d84e705a6b21344771d44e944ab41b6544fd0044494a455a6"
+              "sha256": "b0c581540b0d8eba99e98fed8084ccb09e1ca022a212d998b4770178255e0e65"
             },
             {
               "path": "components/counter/index.json",
@@ -7998,11 +8006,11 @@
             },
             {
               "path": "weapp-vendors/wevu-runtime.js",
-              "sha256": "7055f78da9fb91fdc59c2316578ec4639bd1c114cef39fbb5a07b0cb3fd6e2f7"
+              "sha256": "ce6e989b651c2ec2103b10f2adc2874249f8a8421d6a193338dae6555c87bf68"
             },
             {
               "path": "weapp-vendors/wevu-runtime2.js",
-              "sha256": "13d71c6236a5c13a4d8b04dfd4cf1bcb5b1146d140f3d55b018d4f1404a375f1"
+              "sha256": "f8b146324831ba65104640a13ae5af42b628c7bc250a12af362744dd2a56a11c"
             }
           ]
         },
@@ -8031,9 +8039,9 @@
             },
             {
               "path": "components/counter/index.js",
-              "bytes": 3045,
-              "gzipBytes": 1406,
-              "brotliBytes": 1206,
+              "bytes": 3021,
+              "gzipBytes": 1397,
+              "brotliBytes": 1205,
               "type": "js",
               "bucket": "asset",
               "runtime": false
@@ -8112,18 +8120,18 @@
             },
             {
               "path": "weapp-vendors/wevu-runtime.js",
-              "bytes": 177483,
-              "gzipBytes": 42143,
-              "brotliBytes": 35346,
+              "bytes": 175515,
+              "gzipBytes": 42037,
+              "brotliBytes": 35296,
               "type": "js",
               "bucket": "vendor",
               "runtime": false
             },
             {
               "path": "weapp-vendors/wevu-runtime2.js",
-              "bytes": 3183,
-              "gzipBytes": 1296,
-              "brotliBytes": 1140,
+              "bytes": 3135,
+              "gzipBytes": 1276,
+              "brotliBytes": 1138,
               "type": "js",
               "bucket": "vendor",
               "runtime": false
@@ -8131,15 +8139,15 @@
           ],
           "totals": {
             "files": 13,
-            "bytes": 185632,
-            "gzipBytes": 46247,
-            "brotliBytes": 38823,
-            "jsBytes": 185101,
+            "bytes": 183592,
+            "gzipBytes": 46112,
+            "brotliBytes": 38770,
+            "jsBytes": 183061,
             "templateBytes": 280,
             "styleBytes": 0,
             "jsonBytes": 251,
             "assetBytes": 0,
-            "vendorJsBytes": 180666,
+            "vendorJsBytes": 178650,
             "pageJsBytes": 763,
             "appJsBytes": 244,
             "sharedJsBytes": 0,
@@ -8150,9 +8158,9 @@
           }
         },
         "packages": {
-          "mainBytes": 185216,
-          "mainGzipBytes": 45914,
-          "mainBrotliBytes": 38564,
+          "mainBytes": 183176,
+          "mainGzipBytes": 45779,
+          "mainBrotliBytes": 38511,
           "mainFiles": [
             "app.js",
             "app.json",
@@ -8178,7 +8186,7 @@
               ]
             }
           ],
-          "totalBytes": 185632
+          "totalBytes": 183592
         }
       },
       {
@@ -8214,7 +8222,7 @@
           }
         },
         "manifest": {
-          "fingerprint": "4e06c2f4c8b0107ea9f1a2507612ee2eb86d0aedaf5aaa2b30ef35caa88deddd",
+          "fingerprint": "3fd0ed6d4d156e25bcf22bdc0addec2625a1348e56f33f34b84d9507df0ed80e",
           "files": [
             {
               "path": "app.js",
@@ -8226,7 +8234,7 @@
             },
             {
               "path": "components/counter/index.js",
-              "sha256": "1f5dede77facdd8b2766ded237df60f80b07f03a80ab8da5509bf2bfe3a23dc1"
+              "sha256": "4e2d17701ae18b0b903119fe9685c8722f1141a9a242a2783ead8d416a2d5e25"
             },
             {
               "path": "components/counter/index.json",
@@ -8262,15 +8270,15 @@
             },
             {
               "path": "weapp-vendors/wevu-runtime.js",
-              "sha256": "ed7d95f9d5f9d474178bce4855b3fe08767bbdd1f227e5a14c1e214ec92a6fd6"
+              "sha256": "344d024114496afeef6c6deb1f6c61e9ceecb036765baebc91019570354e533e"
             },
             {
               "path": "weapp-vendors/wevu-runtime2.js",
-              "sha256": "2c271f41601f9f5fa434806ffa9c0bd2d0cd767932e6ad166a448c9e11f804ba"
+              "sha256": "35d5a7505174e8796200cad8b13c3413119e2e59451c18db1b8d6b62645ecfce"
             },
             {
               "path": "weapp-vendors/wevu-runtime3.js",
-              "sha256": "72b4acdbb6e0417433b88be5a575f229220c29631388f440452f2099e6516839"
+              "sha256": "11dc50ec74c41e551d1c311b9be6f595c00dbd34dc53d191f3c8cdb3d9b7ceb1"
             }
           ]
         },
@@ -8299,9 +8307,9 @@
             },
             {
               "path": "components/counter/index.js",
-              "bytes": 3459,
-              "gzipBytes": 1560,
-              "brotliBytes": 1325,
+              "bytes": 3435,
+              "gzipBytes": 1550,
+              "brotliBytes": 1314,
               "type": "js",
               "bucket": "asset",
               "runtime": false
@@ -8380,27 +8388,27 @@
             },
             {
               "path": "weapp-vendors/wevu-runtime.js",
-              "bytes": 181231,
-              "gzipBytes": 42815,
-              "brotliBytes": 35825,
+              "bytes": 179239,
+              "gzipBytes": 42700,
+              "brotliBytes": 35822,
               "type": "js",
               "bucket": "vendor",
               "runtime": false
             },
             {
               "path": "weapp-vendors/wevu-runtime2.js",
-              "bytes": 3191,
-              "gzipBytes": 1298,
-              "brotliBytes": 1143,
+              "bytes": 3143,
+              "gzipBytes": 1278,
+              "brotliBytes": 1139,
               "type": "js",
               "bucket": "vendor",
               "runtime": false
             },
             {
               "path": "weapp-vendors/wevu-runtime3.js",
-              "bytes": 14197,
-              "gzipBytes": 4555,
-              "brotliBytes": 4040,
+              "bytes": 14077,
+              "gzipBytes": 4535,
+              "brotliBytes": 4033,
               "type": "js",
               "bucket": "vendor",
               "runtime": false
@@ -8408,15 +8416,15 @@
           ],
           "totals": {
             "files": 14,
-            "bytes": 205535,
-            "gzipBytes": 52111,
-            "brotliBytes": 43861,
-            "jsBytes": 205004,
+            "bytes": 203351,
+            "gzipBytes": 51946,
+            "brotliBytes": 43836,
+            "jsBytes": 202820,
             "templateBytes": 280,
             "styleBytes": 0,
             "jsonBytes": 251,
             "assetBytes": 0,
-            "vendorJsBytes": 198619,
+            "vendorJsBytes": 196459,
             "pageJsBytes": 1230,
             "appJsBytes": 911,
             "sharedJsBytes": 0,
@@ -8427,9 +8435,9 @@
           }
         },
         "packages": {
-          "mainBytes": 204717,
-          "mainGzipBytes": 51620,
-          "mainBrotliBytes": 43476,
+          "mainBytes": 202533,
+          "mainGzipBytes": 51455,
+          "mainBrotliBytes": 43451,
           "mainFiles": [
             "app.js",
             "app.json",
@@ -8456,7 +8464,7 @@
               ]
             }
           ],
-          "totalBytes": 205535
+          "totalBytes": 203351
         }
       }
     ],
@@ -8505,7 +8513,7 @@
         {
           "consumer": "",
           "name": "miniprogram-api-typings",
-          "version": "5.2.3"
+          "version": "5.3.1"
         },
         {
           "consumer": "",
@@ -8515,7 +8523,7 @@
         {
           "consumer": "",
           "name": "vue-tsc",
-          "version": "3.3.11"
+          "version": "3.3.14"
         },
         {
           "consumer": "",
@@ -8530,7 +8538,7 @@
         {
           "consumer": " > weapp-vite",
           "name": "vue",
-          "version": "3.5.43"
+          "version": "3.5.45"
         },
         {
           "consumer": " > weapp-vite",
@@ -8545,7 +8553,7 @@
         {
           "consumer": " > wevu",
           "name": "vue",
-          "version": "3.5.43"
+          "version": "3.5.45"
         },
         {
           "consumer": " > wevu",
@@ -8563,8 +8571,8 @@
           "sha256": "ff0049a298783f2941775350af2fb10fefff1db0579c94c3e9ef7bb7a525f2c0"
         }
       ],
-      "manifestHash": "24e090e07861a62ebe21aee072ee82682ac752965101becf735e07a7f7ecb48a",
-      "environmentHash": "206259fcbc2cdc529528a2cc67612de55524008fc1d970f1c9a0acaa93af99b2",
+      "manifestHash": "3bf827874b1ad60175d321d536505d18bc16119edc3ea71689ed5010f7845ae1",
+      "environmentHash": "c5d0bd24428cbb578affd55931277bfe738a8080d04548cb335413d08225193d",
       "differences": [
         "weapp.wevu.preset"
       ],

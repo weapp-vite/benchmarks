@@ -11,23 +11,23 @@
     "typecheck": "vue-tsc --noEmit -p tsconfig.json"
   },
   "dependencies": {
-    "@tarojs/components": "4.3.0",
-    "@tarojs/helper": "4.3.0",
-    "@tarojs/plugin-framework-vue3": "4.3.0",
-    "@tarojs/plugin-platform-weapp": "4.3.0",
-    "@tarojs/runtime": "4.3.0",
-    "@tarojs/shared": "4.3.0",
-    "@tarojs/taro": "4.3.0",
-    "vue": "^3.5.43"
+    "@tarojs/components": "4.3.3",
+    "@tarojs/helper": "4.3.3",
+    "@tarojs/plugin-framework-vue3": "4.3.3",
+    "@tarojs/plugin-platform-weapp": "4.3.3",
+    "@tarojs/runtime": "4.3.3",
+    "@tarojs/shared": "4.3.3",
+    "@tarojs/taro": "4.3.3",
+    "vue": "^3.5.45"
   },
   "devDependencies": {
-    "@tarojs/cli": "4.3.0",
-    "@tarojs/vite-runner": "4.3.0",
+    "@tarojs/cli": "4.3.3",
+    "@tarojs/vite-runner": "4.3.3",
     "@vitejs/plugin-vue": "4.6.2",
     "@vitejs/plugin-vue-jsx": "3.1.0",
-    "@vue/compiler-sfc": "^3.5.43",
+    "@vue/compiler-sfc": "^3.5.45",
     "typescript": "^6.0.3",
     "vite": "^4.5.14",
-    "vue-tsc": "^3.3.11"
+    "vue-tsc": "^3.3.14"
   }
 }

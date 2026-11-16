@@ -9,12 +9,14 @@ minimumReleaseAge: 0
 
 overrides:
   '@achrinza/node-ipc': npm:node-ipc-compat@1.0.0
-  postcss: 8.5.28
+  '@weapp-tailwindcss/postcss>@csstools/css-parser-algorithms': 4.0.1
+  '@weapp-tailwindcss/postcss>@csstools/css-tokenizer': 4.0.2
+  postcss: 8.5.33
 
 # This DCloud release requires estree-walker from CommonJS without declaring it.
 # A scoped dependency extension prevents accidental resolution to the ESM-only v3.
 packageExtensions:
-  '@dcloudio/uni-mp-vite@3.0.0-5020620260917001':
+  '@dcloudio/uni-mp-vite@3.0.0-5030420261029002':
     dependencies:
       estree-walker: 2.0.2
 

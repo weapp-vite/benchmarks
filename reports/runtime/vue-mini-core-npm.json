@@ -1,0 +1,52 @@
+{
+  "runId": "d103c8bb-f658-4d02-ac3e-0451b9978eb7",
+  "packages": [
+    {
+      "name": "@vue-mini/core",
+      "version": "1.2.16"
+    },
+    {
+      "name": "@vue/reactivity",
+      "version": "3.5.43"
+    },
+    {
+      "name": "@vue/shared",
+      "version": "3.5.43"
+    },
+    {
+      "name": "miniprogram-api-typings",
+      "version": "4.0.8"
+    }
+  ],
+  "code": 0,
+  "output": "- initialize\n\n(node:68961) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.\n(Use `Electron --trace-deprecation ...` to show where the warning was created)\n✔ IDE server has started, listening on http://127.0.0.1:19355\n- preparing\n- Fetching AppID () permissions\n✔ Using AppID: wxb3d842a4a7e3440d\n✔ build-npm\n\n{\n  \"cost\": 2646,\n  \"warnings\": [\n    \"/private/var/folders/nc/lnt357c50gdcwqlvymm9jn040000gn/T/benchmark-artifacts/267013314fcb64e88c54df81193cade4e742fb34a1898be81826d2e632154448-runtime/apps/vue-mini-core/node_modules/miniprogram-api-typings/index.d.ts.js: Npm package entry file not found\"\n  ]\n}\n",
+  "artifacts": {
+    "fingerprint": "d310bbfdbce4a4517b1bc0a2fa71a4eea235d5666a7988fbf6499e1396675b10",
+    "files": [
+      {
+        "path": "@vue-mini/core/index.js",
+        "sha256": "7e55347fdc95329ec2bc0e2eb3c696b04f33966bae7b55e12a6abf6774317091"
+      },
+      {
+        "path": "@vue-mini/core/index.js.map",
+        "sha256": "e800828ebcd36d9149153acb26ebf28d58d5c3402bf3387e024a502f5e2f5a7f"
+      },
+      {
+        "path": "@vue/reactivity/index.js",
+        "sha256": "5e5cf956b02cab4ee693cb251805896049eef8ddeceb1e21651cbba50102fe6c"
+      },
+      {
+        "path": "@vue/reactivity/index.js.map",
+        "sha256": "01a6ba1e92c7bff4c0813ae2ac06d1a396c62631c45964e0a75c35c4796bcfae"
+      },
+      {
+        "path": "@vue/shared/index.js",
+        "sha256": "18327b22f439838fae0ead0c76f82ccbf63bc3b0b23a5fd8027869057d0863e6"
+      },
+      {
+        "path": "@vue/shared/index.js.map",
+        "sha256": "e73766766438b6864539d66e0a00cd316a8993ab874b6cef3b15792a0b520d8d"
+      }
+    ]
+  }
+}

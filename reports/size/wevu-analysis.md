@@ -1,35 +1,35 @@
 # wevu 体积分析
 
-生成时间：2026-09-30T23:14:04.430Z
+生成时间：2026-11-16T07:12:57.460Z
 
 ## 工具链环境
 
-- 工具链：weapp-vite 7.4.0 / Node 24.18.0（`weapp-vite-7.4.0-a6f9c5f6e3cc-node24`）
-- 系统：macOS 27.0 (26A428)；架构：darwin/arm64
-- Node：v24.18.0；pnpm：12.8.1
-- Git commit：1923b5d2f69cd5842dfe74e7d9bd8fb44b6d81d2
+- 工具链：weapp-vite 7.4.0 / Node 24.18.0（`weapp-vite-7.4.0-267013314fcb-node24`）
+- 系统：macOS 27.2 (26B123)；架构：darwin/arm64
+- Node：v24.18.0；pnpm：12.21.0
+- Git commit：ca8e16f1e616d7b88074ff84d613b7b9ba9249c7
 - weapp-vite submodule：eb9995e74fc4f760d265972b9148417cd40aab63
-- 包版本：weapp-vite@7.4.0、wevu@7.4.0、@dcloudio/vite-plugin-uni@3.0.0-5020620260917001
+- 包版本：weapp-vite@7.4.0、wevu@7.4.0、@dcloudio/vite-plugin-uni@3.0.0-5030420261029002
 
 ## 结论
 
 - 统计生产构建中被 runtime 文件规则选中的完整文件，单位 KB 按 1024 字节换算；具体文件、类型和字节数见下表。
 - 不同框架的规则可能包含 JS、模板、样式、WXS 或 JSON。只按文件归类，不能分离同一 chunk 内的业务代码和框架模块，因此不代表精确的纯 runtime 成本。
-- weapp-vite + wevu performance 选定文件体积为 191.7 KB，相对 weapp-vite + wevu 的差值为 17.5 KB。
-- weapp-vite 原生 选定文件体积为 0.0 KB，相对 weapp-vite + wevu 的差值为 -174.2 KB。
-- uni-app vite vue3 选定文件体积为 132.2 KB，相对 weapp-vite + wevu 的差值为 -42.0 KB。
+- weapp-vite + wevu performance 选定文件体积为 189.6 KB，相对 weapp-vite + wevu 的差值为 17.4 KB。
+- weapp-vite 原生 选定文件体积为 0.0 KB，相对 weapp-vite + wevu 的差值为 -172.2 KB。
+- uni-app vite vue3 选定文件体积为 132.4 KB，相对 weapp-vite + wevu 的差值为 -39.9 KB。
 
 ## 总览
 
 | 项目                          | 选定文件数 | 选定文件体积 |
 | ----------------------------- | ---------: | -----------: |
-| weapp-vite + wevu             |          1 |     174.2 KB |
-| weapp-vite + wevu performance |          2 |     191.7 KB |
+| weapp-vite + wevu             |          1 |     172.2 KB |
+| weapp-vite + wevu performance |          2 |     189.6 KB |
 | weapp-vite 原生               |          0 |       0.0 KB |
-| uni-app vite vue3             |          1 |     132.2 KB |
-| uni-app x                     |          3 |     168.3 KB |
-| mpx                           |          1 |     170.7 KB |
-| taro vue3                     |          7 |     216.9 KB |
+| uni-app vite vue3             |          1 |     132.4 KB |
+| uni-app x                     |          3 |     168.7 KB |
+| mpx                           |          1 |     170.1 KB |
+| taro vue3                     |          7 |     220.4 KB |
 
 ## 选定文件明细
 
@@ -37,14 +37,14 @@
 
 | 选定文件                      |     体积 | 原始字节 | 类型 | 分组   |
 | ----------------------------- | -------: | -------: | ---- | ------ |
-| weapp-vendors/wevu-runtime.js | 174.2 KB |   178396 | js   | vendor |
+| weapp-vendors/wevu-runtime.js | 172.2 KB |   176380 | js   | vendor |
 
 ### weapp-vite + wevu performance
 
 | 选定文件                       |     体积 | 原始字节 | 类型 | 分组   |
 | ------------------------------ | -------: | -------: | ---- | ------ |
-| weapp-vendors/wevu-runtime.js  | 177.9 KB |   182146 | js   | vendor |
-| weapp-vendors/wevu-runtime2.js |  13.9 KB |    14197 | js   | vendor |
+| weapp-vendors/wevu-runtime.js  | 175.9 KB |   180106 | js   | vendor |
+| weapp-vendors/wevu-runtime2.js |  13.7 KB |    14077 | js   | vendor |
 
 ### weapp-vite 原生
 
@@ -55,28 +55,28 @@
 
 | 选定文件         |     体积 | 原始字节 | 类型 | 分组   |
 | ---------------- | -------: | -------: | ---- | ------ |
-| common/vendor.js | 132.2 KB |   135371 | js   | vendor |
+| common/vendor.js | 132.4 KB |   135541 | js   | vendor |
 
 ### uni-app x
 
 | 选定文件           |     体积 | 原始字节 | 类型  | 分组   |
 | ------------------ | -------: | -------: | ----- | ------ |
-| common/vendor.js   | 161.3 KB |   165171 | js    | vendor |
+| common/vendor.js   | 161.6 KB |   165527 | js    | vendor |
 | common/uniView.wxs |   4.1 KB |     4237 | asset | vendor |
-| uvue.wxss          |   2.9 KB |     2941 | style | asset  |
+| uvue.wxss          |   2.9 KB |     2980 | style | asset  |
 
 ### mpx
 
 | 选定文件  |     体积 | 原始字节 | 类型 | 分组  |
 | --------- | -------: | -------: | ---- | ----- |
-| bundle.js | 170.7 KB |   174798 | js   | asset |
+| bundle.js | 170.1 KB |   174154 | js   | asset |
 
 ### taro vue3
 
 | 选定文件  |     体积 | 原始字节 | 类型     | 分组  |
 | --------- | -------: | -------: | -------- | ----- |
-| taro.js   | 161.2 KB |   165109 | js       | asset |
-| base.wxml |  54.3 KB |    55590 | template | asset |
+| taro.js   | 164.5 KB |   168439 | js       | asset |
+| base.wxml |  54.5 KB |    55766 | template | asset |
 | utils.wxs |   1.0 KB |      997 | asset    | asset |
 | comp.wxml |   0.1 KB |      140 | template | asset |
 | common.js |   0.1 KB |      111 | js       | asset |
@@ -89,13 +89,13 @@
 
 | 项目                        | 受管文件数 | 生产输出摘要                                                     |
 | --------------------------- | ---------: | ---------------------------------------------------------------- |
-| weapp-vite-wevu             |         13 | aa65385dfce805ffa03f81ba5316603d5c1dbc74963f171418da42924933aa50 |
-| weapp-vite-wevu-performance |         14 | 167b7ca742d5ce4cf0841f1df158ff959961590883c37fa49ff07ffb3846006e |
+| weapp-vite-wevu             |         13 | 1c8f559911d2b25d9c2daef5823dfa540785d3d8b9e4b4db5ea7d9fcab035223 |
+| weapp-vite-wevu-performance |         14 | 1b5ec81921199f69d71466a882b7bb0ec48f929c000ae7eb2a5f4dddc27dd378 |
 | weapp-vite-native           |         12 | c3cd9f4d4c38081bfadd2b240354dcfe29ac689840b3f54d50ea2154a6b1b786 |
-| uni-app-vite-vue3           |         15 | b3618b72c60d8b9122243130c64eb253db98d3e2b5143f409a6c739d491f9bb3 |
-| uni-app-x                   |         17 | 02a235a7c3957d77a372cbdafa107e92b4e7620ce820f0eaa3f30fa874da5ff6 |
-| mpx                         |         18 | 6c7724ab6e462e8044b8df27cb48e3e3a77120b52fbe155a5a9c788b15ed8c08 |
-| taro-vue3                   |         20 | 96f0bd5dbe7b6f1c6d71dfd457d53641b08656af593cca1e8a36213a2df823d9 |
+| uni-app-vite-vue3           |         15 | 6cf701c716aafc9776b4421fcba2bbda5755fca51a6dba515ae564021178ca32 |
+| uni-app-x                   |         17 | b2950558bf3070d24ec33adb5c8debde131c837ac76958f445d1c63051836542 |
+| mpx                         |         18 | cf583688c4de1bf30f365cc1d1a9e03fe5a5a8cb06bf6750ed0f777d40bfc191 |
+| taro-vue3                   |         20 | 0d7843a4cf9e00b7853da486e1b26ed690429c037e59690217197a6cab178da6 |
 
 ## 能力成本矩阵
 
@@ -119,23 +119,23 @@
 
 | 场景                | 预设        | 主包 bytes | 分包 bytes | 总包 bytes | gzip bytes | brotli bytes | 相对同预设空白成本 |
 | ------------------- | ----------- | ---------: | ---------: | ---------: | ---------: | -----------: | -----------------: |
-| 空白页面            | standard    |     174626 |        416 |     175042 |      42273 |        35424 |            0 bytes |
-| 空白页面            | performance |     193794 |        818 |     194612 |      47988 |        40368 |            0 bytes |
-| ref                 | standard    |     174880 |        416 |     175296 |      42353 |        35482 |          254 bytes |
-| ref                 | performance |     194064 |        818 |     194882 |      48067 |        40484 |          270 bytes |
-| ref + computed      | standard    |     175883 |        416 |     176299 |      42628 |        35665 |         1257 bytes |
-| ref + computed      | performance |     195073 |        818 |     195891 |      48358 |        40650 |         1279 bytes |
-| 组件 / 事件 / model | standard    |     185216 |        416 |     185632 |      46247 |        38823 |        10590 bytes |
-| 组件 / 事件 / model | performance |     204717 |        818 |     205535 |      52111 |        43861 |        10923 bytes |
+| 空白页面            | standard    |     172682 |        416 |     173098 |      42157 |        35358 |            0 bytes |
+| 空白页面            | performance |     191706 |        818 |     192524 |      47857 |        40366 |            0 bytes |
+| ref                 | standard    |     172936 |        416 |     173352 |      42236 |        35421 |          254 bytes |
+| ref                 | performance |     191976 |        818 |     192794 |      47936 |        40378 |          270 bytes |
+| ref + computed      | standard    |     173915 |        416 |     174331 |      42518 |        35670 |         1233 bytes |
+| ref + computed      | performance |     192961 |        818 |     193779 |      48218 |        40569 |         1255 bytes |
+| 组件 / 事件 / model | standard    |     183176 |        416 |     183592 |      46112 |        38770 |        10494 bytes |
+| 组件 / 事件 / model | performance |     202533 |        818 |     203351 |      51946 |        43836 |        10827 bytes |
 
 ### performance 成本与收益
 
 | 场景                | performance 总包增量 | 更新延迟 | setData 次数/字节 | 内存收益 |
 | ------------------- | -------------------: | -------- | ----------------- | -------- |
-| 空白页面            |          19570 bytes | 未测量   | 未测量            | 未测量   |
-| ref                 |          19586 bytes | 未测量   | 未测量            | 未测量   |
-| ref + computed      |          19592 bytes | 未测量   | 未测量            | 未测量   |
-| 组件 / 事件 / model |          19903 bytes | 未测量   | 未测量            | 未测量   |
+| 空白页面            |          19426 bytes | 未测量   | 未测量            | 未测量   |
+| ref                 |          19442 bytes | 未测量   | 未测量            | 未测量   |
+| ref + computed      |          19448 bytes | 未测量   | 未测量            | 未测量   |
+| 组件 / 事件 / model |          19759 bytes | 未测量   | 未测量            | 未测量   |
 
 运行时状态：not-measured。No matching, independently verified IDE runtime sample is attached to these generated applications; only size costs are reported.
 
@@ -175,11 +175,11 @@ pnpm bench:size:wevu
 
 ## 采样来源
 
-- Run ID：ed3908e7-8aa6-4d06-aa98-40f13f793f2b；步骤：size
-- 采集区间：2026-09-30T23:12:52.908Z 至 2026-09-30T23:14:04.430Z
-- 输入指纹：a6f9c5f6e3cc8d530ef240ed85fe650ef4862057fb40230bfe7d24d864e42a48
-- lockfile SHA-256：8a5d8760666f2a66454271ee0768f65317f03f0c39b8cfdbedf7d898a549fec9
-- runner：0.0.0；源码摘要：8465f9de41f2c3b17f21457f7b4e25bb54d5e53920795eae29ad4cac3456f227
-- 工作区有修改：true；被测输入有修改：false
+- Run ID：d103c8bb-f658-4d02-ac3e-0451b9978eb7；步骤：size
+- 采集区间：2026-11-16T07:01:13.914Z 至 2026-11-16T07:12:57.460Z
+- 输入指纹：267013314fcb64e88c54df81193cade4e742fb34a1898be81826d2e632154448
+- lockfile SHA-256：0fc38c72cb6a63f4109eecd8ba14aa7080a4e1914956949973093f0e5b461e2b
+- runner：0.0.0；源码摘要：cfd49892467b8d6ed605a4d062164f2a040112ac5c107dee9e35be15d0abcfcc
+- 工作区有修改：true；被测输入有修改：true
 - 采样前后输入一致：true
 - 实际包版本、配置/场景文件摘要及测量设置详见同名 JSON 的 provenance 字段；参考子模块 SHA 不代表实际 npm 版本。

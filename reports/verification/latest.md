@@ -1,76 +1,90 @@
 # 全量验证报告
 
-生成时间：2026-09-30T23:14:07.232Z
+生成时间：2026-11-16T07:13:04.163Z
 总体状态：失败
 
-| 检查                      | 状态 |   耗时 | 退出码 | 命令                                |
-| ------------------------- | ---- | -----: | -----: | ----------------------------------- |
-| 安装依赖                  | 通过 |   0.2s |      0 | `pnpm install --frozen-lockfile`    |
-| 构建                      | 通过 |   0.2s |      0 | `pnpm run build`                    |
-| 代码检查                  | 通过 |   3.0s |      0 | `pnpm run lint`                     |
-| 类型检查                  | 通过 |   0.6s |      0 | `pnpm run typecheck`                |
-| 类型 API 测试             | 通过 |   0.2s |      0 | `pnpm run tsd`                      |
-| 单元与集成测试            | 通过 | 166.1s |      0 | `pnpm run test`                     |
-| 依赖安全审计              | 失败 |   4.1s |      1 | `pnpm audit --audit-level=moderate` |
-| HBuilderX uni-app x smoke | 通过 |   4.5s |      0 | `pnpm run test:hbuilderx:uni-app-x` |
-| 扩展编译采样与规模矩阵    | 通过 | 409.5s |      0 | `pnpm run bench:compile:methods`    |
-| 编译基准                  | 通过 | 287.5s |      0 | `pnpm run bench:compile`            |
-| 真实 IDE 更新一致性       | 失败 |   1.3s |      1 | `pnpm run e2e:ide:consistency`      |
-| 运行时 IDE E2E 基准       | 失败 |   0.7s |      1 | `pnpm run bench:runtime`            |
-| HMR 基准                  | 失败 | 550.3s |      1 | `pnpm run bench:hmr`                |
-| wevu 体积分析             | 通过 |  74.9s |      0 | `pnpm run bench:size:wevu`          |
+| 检查                      | 状态 |    耗时 | 退出码 | 命令                                |
+| ------------------------- | ---- | ------: | -----: | ----------------------------------- |
+| 安装依赖                  | 通过 |    1.9s |      0 | `pnpm install --frozen-lockfile`    |
+| 构建                      | 通过 |    1.5s |      0 | `pnpm run build`                    |
+| 代码检查                  | 通过 |   21.8s |      0 | `pnpm run lint`                     |
+| 类型检查                  | 通过 |    3.6s |      0 | `pnpm run typecheck`                |
+| 类型 API 测试             | 通过 |    1.2s |      0 | `pnpm run tsd`                      |
+| 单元与集成测试            | 通过 |  718.2s |      0 | `pnpm run test`                     |
+| 依赖安全审计              | 失败 |  255.1s |      1 | `pnpm audit --audit-level=moderate` |
+| HBuilderX uni-app x smoke | 通过 |    8.5s |      0 | `pnpm run test:hbuilderx:uni-app-x` |
+| 扩展编译采样与规模矩阵    | 通过 | 2602.2s |      0 | `pnpm run bench:compile:methods`    |
+| 编译基准                  | 通过 | 1376.9s |      0 | `pnpm run bench:compile`            |
+| 真实 IDE 更新一致性       | 失败 |  176.7s |      1 | `pnpm run e2e:ide:consistency`      |
+| 运行时 IDE E2E 基准       | 失败 | 1117.6s |      1 | `pnpm run bench:runtime`            |
+| HMR 基准                  | 失败 | 1484.7s |      1 | `pnpm run bench:hmr`                |
+| wevu 体积分析             | 通过 |  712.0s |      0 | `pnpm run bench:size:wevu`          |
 
 ## 失败摘要
 
 ### 依赖安全审计
 
 ```text
-                                                 │
-│                     │                                                                                                                                                              │
-│                     │ ... Found 20 paths, run `pnpm why axios` for more information                                                                                                │
-├─────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ More info           │ https://github.com/advisories/GHSA-j8rh-479h-cp32                                                                                                            │
-└─────────────────────┴──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-┌─────────────────────┬──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│ moderate            │ Axios: Fetch Adapter Header Injection via Inherited FormData getHeaders                                                                                      │
-├─────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ Package             │ axios                                                                                                                                                        │
-├─────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ Vulnerable versions │ >=1.12.0 <1.20.0                                                                                                                                             │
-├─────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ Patched versions    │ >=1.20.0                                                                                                                                                     │
-├─────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ Paths               │ apps__weapp-vite-wevu-performance>weapp-vite>@weapp-vite/tailwindcss>weapp-tailwindcss>@mpxjs/webpack-plugin>@mpxjs/utils>@mpxjs/core>@mpxjs/api-proxy>axios │
-│                     │                                                                                                                                                              │
-│                     │ apps__weapp-vite-wevu-performance>weapp-vite>weapp-tailwindcss>@mpxjs/webpack-plugin>@mpxjs/utils>@mpxjs/core>@mpxjs/api-proxy>axios                         │
-│                     │                                                                                                                                                              │
-│                     │ apps__mpx>@mpxjs/utils>@mpxjs/core>@mpxjs/api-proxy>axios                                                                                                    │
-│                     │                                                                                                                                                              │
-│                     │ ... Found 20 paths, run `pnpm why axios` for more information                                                                                                │
-├─────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ More info           │ https://github.com/advisories/GHSA-4hqw-qxg8-jxx2                                                                                                            │
-└─────────────────────┴──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-┌─────────────────────┬──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
-│ moderate            │ Axios: CIDR-form NO_PROXY entries are ignored, causing proxy exclusion bypass for internal IP ranges                                                         │
-├─────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ Package             │ axios                                                                                                                                                        │
-├─────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ Vulnerable versions │ >=1.15.0 <1.20.0                                                                                                                                             │
-├─────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ Patched versions    │ >=1.20.0                                                                                                                                                     │
-├─────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ Paths               │ apps__weapp-vite-wevu-performance>weapp-vite>@weapp-vite/tailwindcss>weapp-tailwindcss>@mpxjs/webpack-plugin>@mpxjs/utils>@mpxjs/core>@mpxjs/api-proxy>axios │
-│                     │                                                                                                                                                              │
-│                     │ apps__weapp-vite-wevu-performance>weapp-vite>weapp-tailwindcss>@mpxjs/webpack-plugin>@mpxjs/utils>@mpxjs/core>@mpxjs/api-proxy>axios                         │
-│                     │                                                                                                                                                              │
-│                     │ apps__mpx>@mpxjs/utils>@mpxjs/core>@mpxjs/api-proxy>axios                                                                                                    │
-│                     │                                                                                                                                                              │
-│                     │ ... Found 20 paths, run `pnpm why axios` for more information                                                                                                │
-├─────────────────────┼──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ More info           │ https://github.com/advisories/GHSA-44g4-m2mj-wpvx                                                                                                            │
-└─────────────────────┴──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
-106 vulnerabilities found
-Severity: 10 low | 60 moderate | 33 high | 3 critical
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+┌─────────────────────┬────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ moderate            │ Hono: RegExpRouter skips wildcard middleware for some route sets and for paths with an encoded line terminator │
+├─────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ Package             │ hono                                                                                                           │
+├─────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ Vulnerable versions │ >=4.1.4 <=4.13.15                                                                                              │
+├─────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ Patched versions    │ >=4.13.16                                                                                                      │
+├─────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ Paths               │ apps__weapp-vite-wevu>weapp-vite>@weapp-vite/mcp>@modelcontextprotocol/node>@hono/node-server>hono             │
+│                     │                                                                                                                │
+│                     │ apps__weapp-vite-wevu>weapp-vite>@weapp-vite/mcp>@modelcontextprotocol/node>hono                               │
+│                     │                                                                                                                │
+│                     │ apps__weapp-vite-wevu-performance>weapp-vite>@weapp-vite/mcp>@modelcontextprotocol/node>@hono/node-server>hono │
+│                     │                                                                                                                │
+│                     │ ... Found 6 paths, run `pnpm why hono` for more information                                                    │
+├─────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ More info           │ https://github.com/advisories/GHSA-h7mg-cq63-vhpq                                                              │
+└─────────────────────┴────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+┌─────────────────────┬────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ moderate            │ Hono: `csrf()` does not check requests sent by hyperlink auditing (`text/ping`)                                │
+├─────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ Package             │ hono                                                                                                           │
+├─────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ Vulnerable versions │ <4.13.16                                                                                                       │
+├─────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ Patched versions    │ >=4.13.16                                                                                                      │
+├─────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ Paths               │ apps__weapp-vite-wevu>weapp-vite>@weapp-vite/mcp>@modelcontextprotocol/node>@hono/node-server>hono             │
+│                     │                                                                                                                │
+│                     │ apps__weapp-vite-wevu>weapp-vite>@weapp-vite/mcp>@modelcontextprotocol/node>hono                               │
+│                     │                                                                                                                │
+│                     │ apps__weapp-vite-wevu-performance>weapp-vite>@weapp-vite/mcp>@modelcontextprotocol/node>@hono/node-server>hono │
+│                     │                                                                                                                │
+│                     │ ... Found 6 paths, run `pnpm why hono` for more information                                                    │
+├─────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ More info           │ https://github.com/advisories/GHSA-46wx-v44x-9hh2                                                              │
+└─────────────────────┴────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+┌─────────────────────┬────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│ moderate            │ Hono: `validator('form')` skips validation for `multipart/form-data` requests with extra parameters            │
+├─────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ Package             │ hono                                                                                                           │
+├─────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ Vulnerable versions │ >=4.5.1 <=4.13.15                                                                                              │
+├─────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ Patched versions    │ >=4.13.16                                                                                                      │
+├─────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ Paths               │ apps__weapp-vite-wevu>weapp-vite>@weapp-vite/mcp>@modelcontextprotocol/node>@hono/node-server>hono             │
+│                     │                                                                                                                │
+│                     │ apps__weapp-vite-wevu>weapp-vite>@weapp-vite/mcp>@modelcontextprotocol/node>hono                               │
+│                     │                                                                                                                │
+│                     │ apps__weapp-vite-wevu-performance>weapp-vite>@weapp-vite/mcp>@modelcontextprotocol/node>@hono/node-server>hono │
+│                     │                                                                                                                │
+│                     │ ... Found 6 paths, run `pnpm why hono` for more information                                                    │
+├─────────────────────┼────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ More info           │ https://github.com/advisories/GHSA-4h7h-rv7c-7m2v                                                              │
+└─────────────────────┴────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+177 vulnerabilities found
+Severity: 26 low | 90 moderate | 56 high | 5 critical
 
 ```
 
@@ -90,8 +104,8 @@ $ tsx src/runtime.ts
 [ELIFECYCLE] Command failed with exit code 1.
 Error: ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL
 
-  × "pnpm recursive run" failed in /Users/icebreaker/.codex/worktrees/size-
-  │ capability-matrix/benchmarks/packages/benchmark-runner
+  × "pnpm recursive run" failed in /Users/icebreaker/Projects/github/
+  │ benchmarks/packages/benchmark-runner
 
 [ELIFECYCLE] Command failed with exit code 1.
 
@@ -105,8 +119,8 @@ $ tsx src/hmr.ts
 [ELIFECYCLE] Command failed with exit code 1.
 Error: ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL
 
-  × "pnpm recursive run" failed in /Users/icebreaker/.codex/worktrees/size-
-  │ capability-matrix/benchmarks/packages/benchmark-runner
+  × "pnpm recursive run" failed in /Users/icebreaker/Projects/github/
+  │ benchmarks/packages/benchmark-runner
 
 [ELIFECYCLE] Command failed with exit code 1.
 
@@ -114,11 +128,11 @@ Error: ERR_PNPM_RECURSIVE_RUN_FIRST_FAIL
 
 ## 采样来源
 
-- Run ID：ed3908e7-8aa6-4d06-aa98-40f13f793f2b；步骤：verification
-- 采集区间：2026-09-30T22:49:04.047Z 至 2026-09-30T23:14:07.232Z
-- 输入指纹：a6f9c5f6e3cc8d530ef240ed85fe650ef4862057fb40230bfe7d24d864e42a48
-- lockfile SHA-256：8a5d8760666f2a66454271ee0768f65317f03f0c39b8cfdbedf7d898a549fec9
-- runner：0.0.0；源码摘要：8465f9de41f2c3b17f21457f7b4e25bb54d5e53920795eae29ad4cac3456f227
-- 工作区有修改：false；被测输入有修改：false
+- Run ID：d103c8bb-f658-4d02-ac3e-0451b9978eb7；步骤：verification
+- 采集区间：2026-11-16T04:51:36.350Z 至 2026-11-16T07:13:04.163Z
+- 输入指纹：267013314fcb64e88c54df81193cade4e742fb34a1898be81826d2e632154448
+- lockfile SHA-256：0fc38c72cb6a63f4109eecd8ba14aa7080a4e1914956949973093f0e5b461e2b
+- runner：0.0.0；源码摘要：cfd49892467b8d6ed605a4d062164f2a040112ac5c107dee9e35be15d0abcfcc
+- 工作区有修改：true；被测输入有修改：true
 - 采样前后输入一致：true
 - 实际包版本、配置/场景文件摘要及测量设置详见同名 JSON 的 provenance 字段；参考子模块 SHA 不代表实际 npm 版本。
