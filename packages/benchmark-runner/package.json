@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@types/node": "^26.6.6",
-    "@weapp-vite/miniprogram-automator": "1.2.23",
+    "@weapp-vite/miniprogram-automator": "1.5.4",
     "echarts": "6.1.0",
     "esbuild": "0.28.2",
     "prettier": "3.10.1",

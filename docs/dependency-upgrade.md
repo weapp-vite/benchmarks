@@ -7,19 +7,19 @@
 | 依赖组                          | 当前版本                        | 处理说明                                                                    |
 | ------------------------------- | ------------------------------- | --------------------------------------------------------------------------- |
 | pnpm                            | 12.21.0                         | 同步 `packageManager` 和锁文件，使用 frozen install 验证                    |
-| weapp-vite / wevu               | 7.4.0                           | 三个 weapp-vite benchmark 使用同一版本；子模块保持原提交                    |
+| weapp-vite / wevu               | 7.11.0                          | 三个 weapp-vite benchmark 使用同一版本；子模块保持原提交                    |
 | Taro                            | 4.3.3                           | 所有 `@tarojs/*` 同步；`vite-runner` 继续使用 Vite 4 兼容线                 |
 | uni-app / uni-app x 编译器      | 3.0.0-5030420261029002          | 所有 DCloud 包同步到同一正式批次                                            |
 | uni-app-x runtime               | 0.7.132                         | 与当前 `uni-uts-v1` 配套，未跨到未经验证的 runtime 批次                     |
-| uni-app Vue / Vite / types      | 3.4.21 / 5.2.8 / 3.4.31         | 保留 DCloud 编译器的精确 peer 约束                                          |
-| Mpx                             | 2.11.2 / CLI 2.2.32             | 保留 Vue 2.7、Pinia 2、Router 3 和 Babel 7 基线                             |
+| uni-app Vue / Vite / types      | 3.4.21 / 5.2.8 / 3.4.31         | 按 UVM 生成的范围和 DCloud 编译器 peer 约束安装                             |
+| Mpx                             | 2.11.2 / CLI 2.3.0              | 保留 Vue 2.7、Pinia 2、Router 3 和 Babel 7 基线                             |
 | Mpx 构建工具                    | Webpack 5.111.1、PostCSS 8.5.33 | Webpack 固定 5.111.1；5.112.x 会触发 Mpx 对 `ModuleDependency` 的不兼容引用 |
 | Vue / compiler / vue-tsc        | 3.5.45 / 3.5.45 / 3.3.14        | Vue SFC 和类型检查器同步升级                                                |
 | TypeScript                      | 6.0.3                           | 保留仓库当前类型检查基线                                                    |
 | repoctl / ESLint / Stylelint    | 5.10.3 / 10.15.0 / 17.16.0      | 同步 monorepo 工具链                                                        |
 | Vitest / coverage-v8            | 5.0.5                           | 测试运行器和覆盖率插件精确对齐                                              |
 | tsdown / Turbo / Prettier       | 0.23.7 / 2.11.11 / 3.10.1       | 与 Node `^22.18.0`、`^24.11.0` 或 `>=26.0.0` 约束一致                       |
-| miniprogram typings / automator | 5.3.1 / 1.2.23                  | 应用和 runner 统一版本                                                      |
+| miniprogram typings / automator | 5.3.1 / 1.5.4                   | 应用和 runner 统一版本                                                      |
 | runner 能力矩阵                 | esbuild 0.28.2                  | 显式声明，避免依赖偶然提升的间接版本                                        |
 
 其他根工具同步到当前锁定版本，包括 `@commitlint/cli` 21.2.4、`@types/node` 26.6.6、`pkg-types` 2.4.0、`tailwindcss` 4.3.5、`tslib` 2.9.1 和 `rollup` 4.63.5。保留 `@achrinza/node-ipc` 到 `node-ipc-compat@1.0.0` 的替代规则。
