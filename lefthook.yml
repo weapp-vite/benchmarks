@@ -1,0 +1,20 @@
+# repoctl-managed: hooks/v1
+glob_matcher: doublestar
+
+pre-commit:
+  jobs:
+    - name: lint-staged
+      run: pnpm exec lint-staged
+
+commit-msg:
+  jobs:
+    - name: commitlint
+      run: pnpm exec repo verify commit-msg "{1}"
+
+pre-push:
+  piped: true
+  jobs:
+    - name: lint
+      run: pnpm lint
+    - name: typecheck
+      run: pnpm typecheck

@@ -5,7 +5,7 @@ framework compatibility are welcome.
 
 ## Development setup
 
-1. Use Node.js 22.13 or newer and enable Corepack.
+1. Use Node.js 22.23.4+, 24.22.1+, or 26.12.1+ and enable Corepack.
 2. Initialize the `submodules/weapp-vite` submodule.
 3. Run `pnpm install`.
 4. Add or update focused tests with implementation changes.

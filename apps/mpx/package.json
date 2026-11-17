@@ -22,10 +22,10 @@
     "vue-router": "^3.6.5"
   },
   "devDependencies": {
-    "@babel/core": "^7.29.7",
+    "@babel/core": "^7.29.13",
     "@babel/plugin-transform-runtime": "^7.29.7",
-    "@babel/preset-env": "^7.29.7",
-    "@babel/runtime-corejs3": "^7.29.7",
+    "@babel/preset-env": "^7.29.14",
+    "@babel/runtime-corejs3": "^7.29.14",
     "@mpxjs/babel-plugin-inject-page-events": "^2.11.2",
     "@mpxjs/eslint-config": "^2.0.14",
     "@mpxjs/mpx-cli-service": "^2.3.0",

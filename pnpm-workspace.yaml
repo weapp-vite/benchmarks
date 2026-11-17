@@ -3,23 +3,19 @@ packages:
   - packages/*
   - templates/*
   - '!**/test/**'
-
 # Benchmark projects intentionally validate same-day framework releases.
 minimumReleaseAge: 0
-
 overrides:
   '@achrinza/node-ipc': npm:node-ipc-compat@1.0.0
-  '@weapp-tailwindcss/postcss>@csstools/css-parser-algorithms': 4.0.1
+  '@weapp-tailwindcss/postcss>@csstools/css-parser-algorithms': 4.0.2
   '@weapp-tailwindcss/postcss>@csstools/css-tokenizer': 4.0.2
   postcss: 8.5.33
-
 # This DCloud release requires estree-walker from CommonJS without declaring it.
 # A scoped dependency extension prevents accidental resolution to the ESM-only v3.
 packageExtensions:
   '@dcloudio/uni-mp-vite@3.0.0-5030420261029002':
     dependencies:
       estree-walker: 2.0.2
-
 allowBuilds:
   '@dcloudio/hbuilderx-cli': false
   '@parcel/watcher': false
@@ -34,6 +30,7 @@ allowBuilds:
   sharp: true
   vue-demi: false
   workerd: true
+  lefthook: true
 
 versioning:
   changelog:

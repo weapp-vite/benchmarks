@@ -6,7 +6,7 @@ This pnpm + Turbo monorepo keeps template sources under `templates/` (`cli`, `cl
 
 ## Build, Test, and Development Commands
 
-- `pnpm install` — set up workspaces; ensure Node 22.13+ as defined in `package.json`.
+- `pnpm install` — set up workspaces; use Node 22.23.4+, 24.22.1+, or 26.12.1+ as defined in `package.json`.
 - `pnpm dev` — run `turbo run dev --parallel` for all apps that expose a `dev` script.
 - `pnpm build` — execute `turbo run build` to build every workspace with caching.
 - `pnpm test` / `pnpm test:dev` — run Vitest suites once or in watch mode across packages.
@@ -15,7 +15,7 @@ This pnpm + Turbo monorepo keeps template sources under `templates/` (`cli`, `cl
 
 ## Coding Style & Naming Conventions
 
-Follow the root `.editorconfig`: two-space indentation, LF line endings, UTF-8. Prefer TypeScript (`.ts`/`.tsx`) and Vue SFCs; name files with kebab-case (`user-table.vue`) and exported symbols with PascalCase for components or camelCase for utilities. ESLint (`@icebreakers/eslint-config`) and Stylelint enforce formatting; run `pnpm lint` before committing, and rely on Husky + lint-staged to auto-fix staged files. Any style-related code changes (CSS, SCSS, Less, Vue style blocks, and similar files) must pass Stylelint checks before commit. All changed JavaScript, TypeScript, and Vue code must pass ESLint checks before commit.
+Follow the root `.editorconfig`: two-space indentation, LF line endings, UTF-8. Prefer TypeScript (`.ts`/`.tsx`) and Vue SFCs; name files with kebab-case (`user-table.vue`) and exported symbols with PascalCase for components or camelCase for utilities. ESLint (`@icebreakers/eslint-config`) and Stylelint enforce formatting; run `pnpm lint` before committing, and rely on Lefthook + lint-staged to validate and auto-fix staged files. Any style-related code changes (CSS, SCSS, Less, Vue style blocks, and similar files) must pass Stylelint checks before commit. All changed JavaScript, TypeScript, and Vue code must pass ESLint checks before commit.
 
 `lint-staged.config.js` must include Stylelint checks for staged style files so style validation also runs during pre-commit. It must also route staged TypeScript and Vue files into workspace `typecheck` scripts so Vue workspaces run `vue-tsc` and non-Vue TypeScript workspaces run `tsc`.
 

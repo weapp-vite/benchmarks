@@ -86,3 +86,13 @@ pnpm deps:stable:validate
 ```
 
 `weapp-vite`、`wevu`、Taro 和 Mpx 使用 npm `latest` stable tag；DCloud 使用 UVM 的官方 release channel，并要求两个 uni-app 项目的编译器批次一致。命令会拒绝 prerelease、校验框架成组版本，且不会修改 `submodules/weapp-vite`。
+
+## 2026-11-17 后续评估
+
+根 workspace 的 Node 要求提高为 `^22.23.4 || ^24.22.1 || >=26.12.1`，并在 CI 中分别验证 Node 22.23.4 和 24.22.1。根目录新增 `pnpm up:pkg`，执行递归、latest、交互式更新，并包含 workspace root；DCloud 框架包仍使用 UVM 更新命令。
+
+repoctl 升至 6.6.3，Vitest 与 coverage-v8 同步升至 5.1.0，Stylelint 升至 18.0.0，type-fest 升至 6.0.1。Vue 3 项目的 vue-i18n 升至 11.4.21；uni-app x runtime 升至 0.7.138。其余 semver 范围内的依赖同步更新。
+
+保留项均有兼容性依据：TypeScript 7 暂不升级，因为当前 `@typescript-eslint/parser` peer 范围为 `<6.1.0`；Mpx 保留 Vue 2、Pinia 2、Vue Router 3 和 ESLint 9。验证显示 Webpack 5.112.2 会令 Mpx 构建因缺少 `webpack/lib/dependencies/ModuleDependency` 失败，因此固定回 5.111.1。Taro 的 Vite runner 要求 Vite 4，DCloud 当前编译器要求 Vue 3.4.21 与 `@dcloudio/types` 3.4.31；DCloud UVM 同步后也将 Rollup 固定回 4.14.3。npm 上部分 DCloud `latest` 标签落在旧 alpha，因此不使用这些标签升级编译器。
+
+Tailwind CSS parser override 从 4.0.1 调整到 4.0.2，以满足当前 `@weapp-tailwindcss/postcss` 的 `^4.0.2` peer 范围。
